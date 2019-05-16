@@ -17,7 +17,8 @@
     "shortner",
     "url"
   ],
-  "author": "Jonah Snider <me@jonahsnider.ninja>",
+  "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
+  "contributors": ["Yousef Sultan <yousef.su.2000@gmail.com>"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pizzafox/zero-width-shortener/issues"
