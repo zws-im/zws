@@ -65,7 +65,7 @@ app
 
 			ctx.body = { short };
 		} else {
-			const short = decodeURIComponent(ctx.path);
+			const short = decodeURIComponent(ctx.path.split('+')[0] + '+');
 
 			const record = db.find(row => row.short === short);
 
