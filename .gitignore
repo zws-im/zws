@@ -149,3 +149,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/node,linux,windows,firebase,visualstudiocode
+
+# Package manager lockfiles
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
