@@ -78,4 +78,4 @@ app
 
 app.listen(port);
 
-logger.info(`Running on port ${port}`);
+logger.info(`Running on port ${port} - http://127.0.0.1:${port}`);
