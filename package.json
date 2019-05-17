@@ -32,5 +32,5 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "0.2.0"
+  "version": "0.2.1"
 }
