@@ -5,12 +5,9 @@ async function shorten() {
   const long = document.getElementById("long");
   result.innerText = "Shortening…";
 
-  const trace = perf.trace("shortenURL");
-  trace.start();
   const response = await fetch(
     `${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`
   );
-  trace.stop();
 
   const url = `${window.location.origin}/${(await response.json()).short}`;
   copy(url);
