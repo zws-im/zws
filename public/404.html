@@ -2,6 +2,37 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <!-- Firebase performance monitoring -->
+  <script type="text/javascript">
+    const firebaseConfig = {
+      apiKey: "AIzaSyCIqCPfiJBy520wr73EkZXXuNX-BBwCWm4",
+      authDomain: "zero-width-shortener.firebaseapp.com",
+      databaseURL: "https://zero-width-shortener.firebaseio.com",
+      projectId: "zero-width-shortener",
+      storageBucket: "zero-width-shortener.appspot.com",
+      messagingSenderId: "1090998003190",
+      appId: "1:1090998003190:web:c26f056545426aa4"
+    };
+
+    (function (sa, fbc) {
+      function load(f, c) {
+        var a = document.createElement('script');
+        a.async = 1; a.src = f; var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(a, s);
+      } load(sa); window.onload = function () { firebase.initializeApp(fbc).performance(); };
+    })('https://www.gstatic.com/firebasejs/6.0.2/firebase-performance-standalone.js', firebaseConfig);
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133415948-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-133415948-3');
+  </script>
+
   <!-- CSS and formatting -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -22,13 +53,13 @@
   <meta name="description" content="Shorten URLs using invisible spaces.">
   <meta name="twitter:description" content="Shorten URLs using invisible spaces.">
   <meta property="og:description" content="Shorten URLs using invisible spaces.">
-  
+
   <meta property="og:type" content="website">
-  
+
   <meta name="twitter:card" content="summary">
-  
+
   <meta name="theme-color" content="#252f3b">
-  
+
   <meta name="keywords" content="zero, width, shortener, url, url shortener, zero-width">
 </head>
 
