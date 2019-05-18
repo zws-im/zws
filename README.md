@@ -1,4 +1,3 @@
-# zero-width-shortener
-this is stupid
+# [Zero Width Shortener](https://zero-width-shortener.web.app/)
 
-contributor comment: that is true ^
+Shorten URLs using invisible spaces.
