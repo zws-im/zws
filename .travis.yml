@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "lts/*"
+before_install:
+  - cd functions
+install:
+  - npm install
+jobs:
+  include:
+    - stage: "Tests"
+    - name: "Lint"
+      script: npm run lint
+    - stage: "Deploy"
+      name: "Firebase deploy"
+      script:
+        - npx firebase deploy --token "$FIREBASE_TOKEN"
