@@ -40,5 +40,5 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
     .doc(short)
     .set({ url });
 
-  return cors(req, res, () => res.status(201).json({ url }));
+  return cors(req, res, () => res.status(201).json({ short }));
 });
