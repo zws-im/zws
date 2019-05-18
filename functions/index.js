@@ -17,10 +17,10 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
     .doc(short)
     .get();
 
-  const okok = result.data();
+  const doc = result.data();
 
-  if (okok) {
-    return cors(req, res, () => res.redirect(okok.url));
+  if (doc) {
+    return cors(req, res, () => res.redirect(doc.url));
   } else {
     return cors(req, res, () => res.status(404).end());
   }
