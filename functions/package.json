@@ -32,6 +32,7 @@
     "url"
   ],
   "license": "MIT",
+  "main": "./src/index.js",
   "name": "zero-width-shortener-functions",
   "private": true,
   "repository": {
