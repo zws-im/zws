@@ -1,0 +1,30 @@
+div.center {
+  text-align: center;
+}
+
+#long {
+  width: 100%;
+}
+
+#submit {
+  width: 25%;
+  align-items: center;
+}
+
+#text {
+  overflow: hidden;
+  padding-right: 5%;
+}
+
+.clipboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
