@@ -13,4 +13,4 @@ jobs:
     - stage: "Deploy"
       name: "Firebase deploy"
       script:
-        - npx firebase deploy --token "$FIREBASE_TOKEN"
+        - npx firebase-tools deploy --token "$FIREBASE_TOKEN"
