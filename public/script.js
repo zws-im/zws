@@ -1,17 +1,22 @@
-async function shorten() {
+function shorten() {
   const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.net";
 
   const result = document.getElementById("result");
   const long = document.getElementById("long");
   result.innerText = "Shortening…";
 
-  const response = await fetch(
-    `${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`
-  );
-
-  const url = `${window.location.origin}/${(await response.json()).short}`;
-  copy(url);
-  result.innerText = `Copied to clipboard: ${url}`;
+  fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
+    .then(
+      async response => {
+        const url = `${window.location.origin}/${(await response.json()).short}`;
+        copy(url);
+        result.innerText = `Copied to clipboard: ${url}`;
+      }
+    )
+    .catch(error => {
+      console.error(error);
+      result.innerText `An error occurred: ${error}`;
+    });
 }
 
 // Credit: https://stackoverflow.com/a/30810322/2164304
