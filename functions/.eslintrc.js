@@ -6,7 +6,7 @@ module.exports = {
   "plugins": [
     "promise"
   ],
-  "extends": "eslint:recommended",
+  "extends": "@dice-discord",
   "rules": {
     // Removed rule "disallow the use of console" from recommended eslint rules
     "no-console": "off",
@@ -118,6 +118,6 @@ module.exports = {
     "promise/catch-or-return": 2,
 
     // Warn against nested then() or catch() statements
-    "promise/no-nesting": 1
+    "promise/no-nesting": 1,
   }
 }
