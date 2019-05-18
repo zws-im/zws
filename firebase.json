@@ -1,0 +1,24 @@
+{
+  "firestore": {
+    "indexes": "firestore.indexes.json",
+    "rules": "firestore.rules"
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint --fix"
+    ]
+  },
+  "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "public": "public",
+    "rewrites": [{
+      "source": "**",
+      "function": "getURL"
+    }
+    ]
+  }
+}
