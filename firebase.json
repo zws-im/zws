@@ -5,7 +5,7 @@
   },
   "functions": {
     "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run lint"
+      "npm --prefix \"$RESOURCE_DIR\" run lint --fix"
     ]
   },
   "hosting": {
@@ -14,6 +14,11 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "public": "public"
+    "public": "public",
+    "rewrites": [{
+      "source": "**",
+      "function": "getURL"
+    }
+    ]
   }
 }
