@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/pizzafox
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zero-width-shortener.web.app
+  * I am pizzafox (https://keybase.io/pizzafox) on keybase.
+  * I have a public key ASA1aNdOJtPV-z41qL4MS9oC025RMMmIoc_7FECDKyECJgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012078d8478babc3fbf624787afc6ae06c180e8bfbfa9a5a3b2e56a7beac7b030bf80a",
+      "host": "keybase.io",
+      "kid": "01203568d74e26d3d5fb3e35a8be0c4bda02d36e5130c988a1cffb1440832b2102260a",
+      "uid": "45f53f29517c3f06292153689754c219",
+      "username": "pizzafox"
+    },
+    "merkle_root": {
+      "ctime": 1558228003,
+      "hash": "b33ea4ff5b07b4ca5ca2a2c6594b1d637b3de512e574d7e875fa7a953bf345846fde7062e1d8d342666754dbedd4bbe96915094bcefc3f81595e4357d67ea14f",
+      "hash_meta": "a189373a5af13421af313616362b752471831eb90eaed5d8960ace801dd9093b",
+      "seqno": 5401672
+    },
+    "service": {
+      "entropy": "9KiZd2jt2H+bZSKHB0yvMJwq",
+      "hostname": "zero-width-shortener.web.app",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.0"
+  },
+  "ctime": 1558228039,
+  "expire_in": 504576000,
+  "prev": "359f742bcc4567dc0c7a20f0b3533412c58eca74cf7f9733f933f12f2b6771b7",
+  "seqno": 91,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNWjXTibT1fs+Nai+DEvaAtNuUTDJiKHP+xRAgyshAiYKp3BheWxvYWTESpcCW8QgNZ90K8xFZ9wMeiDws1M0EsWOynTPf5cz+TPxLytncbfEIOQ898YGICX2iM6LDw9+9Dyti5lwktoBV8rFYNgVZR2nAgHCo3NpZ8RA/AmnNjXu1Ud8DMXNkpBo6h85uPDPryHFQSNCJG5hl9s2bq51THPXryQzBbNsuRRbvoPu3YP2GGUp0RGdlYM7AahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIObSMcWERNBsuVpEykdjSHJ1ADv2RFYRu6QFYJvtx483o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pizzafox
+
+==================================================================
