@@ -101,7 +101,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         await Promise.all([
           // Set the shortened URL document
           urls.doc(Number(count).toString(2)).set({ url }),
-          //
+          // Set the count to be one higher
           idCount.set({ count: count + 1 })
         ]);
 
