@@ -39,7 +39,6 @@
   <!-- CSS and formatting -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">
   <link rel="stylesheet" href="./styles.css">
 
   <!-- SEO meta tags -->
@@ -67,19 +66,15 @@
 </head>
 
 <body>
-  <div class="center">
-    <h1>
-      Zero Width Shortener
-    </h1>
-  </div>
+  <h1>
+    Zero Width Shortener
+  </h1>
 
   <form onsubmit="event.preventDefault(); shorten()">
-    <div class="center">
-      <input id="long" type="url" placeholder="Your long URL (max 255 characters)" minlength="0" maxlength="255"
-        required autofocus />
-      <input id="submit" type="submit" value="Shorten">
-      <p id="result"></p>
-    </div>
+    <input id="long" type="url" placeholder="Your long URL (max 255 characters)" minlength="0" maxlength="255" required
+      autofocus />
+    <input id="submit" type="submit" value="Shorten">
+    <p id="result"></p>
   </form>
 </body>
 
