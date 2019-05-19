@@ -22,7 +22,7 @@
     "prettier": "^1.17.1"
   },
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "homepage": "https://zero-width-shortener.web.app/",
   "keywords": [
