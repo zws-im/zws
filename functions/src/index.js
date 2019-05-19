@@ -4,7 +4,6 @@ admin.initializeApp();
 
 const firestore = admin.firestore();
 const urls = firestore.collection("urls");
-const idCount = firestore.collection("settings").doc("short");
 
 const functions = require("firebase-functions");
 
@@ -93,7 +92,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         // This is a new URL so enter it into the database
 
         // Count is a number used for generating the short ID
-        const { count } = (await idCount.get()).data();
+        const count = firestore.collection("settings").doc("short");
 
         // The math here converts the number to binary (decimal => binary string => binary)
         const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
@@ -102,7 +101,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
           // Set the shortened URL document
           urls.doc(Number(count).toString(2)).set({ url }),
           // Set the count to be one higher
-          idCount.set({ count: count + 1 })
+          count.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
 
         return cors(req, res, () =>
