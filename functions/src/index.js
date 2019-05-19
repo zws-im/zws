@@ -92,16 +92,19 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         // This is a new URL so enter it into the database
 
         // Count is a number used for generating the short ID
-        const count = firestore.collection("settings").doc("short");
+        const countDoc = firestore.collection("settings").doc("short");
+        const { count } = (await countDoc.get()).data();
 
         // The math here converts the number to binary (decimal => binary string => binary)
-        const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
+        const short = binaryToSpaces(
+          parseInt(Number(countDoc).toString(2), 10)
+        );
 
         await Promise.all([
           // Set the shortened URL document
           urls.doc(Number(count).toString(2)).set({ url }),
           // Set the count to be one higher
-          count.update({ count: admin.firestore.FieldValue.increment(1) })
+          countDoc.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
 
         return cors(req, res, () =>
