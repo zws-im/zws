@@ -1,20 +1,20 @@
-workflow "New workflow" {
-  on = "push"
+workflow "Test and deploy to Firebase on push" {
   resolves = [
-    "Deploy Firebase Functions",
     "Deploy Firebase Hosting",
     "Deploy Firebase Firestore",
+    "Deploy Firebase Functions",
   ]
+  on = "push"
 }
 
 action "Install" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  args = "install"
+  args = "--prefix \"./functions\" install"
 }
 
 action "Lint" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  args = "run lint"
+  args = "--prefix \"./functions\" run lint"
   needs = ["Install"]
 }
 
