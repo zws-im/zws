@@ -15,7 +15,7 @@ function shorten() {
     )
     .catch(error => {
       console.error(error);
-      result.innerText `An error occurred: ${error}`;
+      result.innerText = `An error occurred: ${error}`;
     });
 }
 
