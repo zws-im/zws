@@ -83,7 +83,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       const { docs } = await urls.where("url", "==", url).get();
       const [entry] = docs;
 
-      if (entry.exists) {
+      if (entry) {
         // Someone already shortened this URL so give the old one to them
 
         // Increase the usage counter for this link by one in the background
