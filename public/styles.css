@@ -17,15 +17,18 @@ body {
   font-family: -apple-system, Roboto, Oxygen, BlinkMacSystemFont, "Segoe UI",
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 h1 {
   font-size: 56px;
   font-weight: bold;
   text-align: center;
   margin-top: 25vh;
 }
+
 p {
   text-align: center;
 }
+
 input {
   display: block;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
