@@ -20,16 +20,14 @@ function shorten() {
 }
 
 // Credit: https://stackoverflow.com/a/30810322/2164304
-function copy(string) {
-  const clipboard = document.createElement("textarea");
+function copy(str) {
+  const el = document.createElement('textarea');
+  el.classList.add("clipboard");
+  el.value = str;
+  document.body.appendChild(el);
 
-  clipboard.classList.add("clipboard");
-  clipboard.value = string;
-  document.body.appendChild(clipboard);
+  el.select();
+  document.execCommand('copy');
 
-  clipboard.focus();
-  clipboard.select();
-  document.execCommand("copy");
-
-  document.body.removeChild(clipboard);
+  document.body.removeChild(el);
 }
