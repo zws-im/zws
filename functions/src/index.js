@@ -25,6 +25,8 @@ const binaryToSpaces = binary =>
     .join("");
 
 exports.getURL = functions.https.onRequest(async (req, res) => {
+  cors(req, res, () => {});
+
   const short = req.params["0"];
 
   if (short) {
@@ -37,37 +39,33 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
       const doc = await urls.doc(binary).get();
       const data = doc.data();
 
-      return cors(req, res, () => {
-        if (doc.exists) {
-          // Increase the usage counter for this link by one in the background
-          doc.ref.update({
-            "stats.get": admin.firestore.FieldValue.increment(1)
-          });
+      if (doc.exists) {
+        // Increase the usage counter for this link by one in the background
+        doc.ref.update({
+          "stats.get": admin.firestore.FieldValue.increment(1)
+        });
 
-          return res.redirect(data.url);
-        } else {
-          return res.status(404).end();
-        }
-      });
+        return res.redirect(data.url);
+      } else {
+        return res.status(404).end();
+      }
     } else {
-      return cors(req, res, () =>
-        res
-          .status(400)
-          .json({ error: "Short ID must be string type" })
-          .end()
-      );
+      return res
+        .status(400)
+        .json({ error: "Short ID must be string type" })
+        .end();
     }
   } else {
-    return cors(req, res, () =>
-      res
-        .status(400)
-        .json({ error: "You must specify a short ID" })
-        .end()
-    );
+    return res
+      .status(400)
+      .json({ error: "You must specify a short ID" })
+      .end();
   }
 });
 
 exports.shortenURL = functions.https.onRequest(async (req, res) => {
+  cors(req, res, () => {});
+
   const { url } = req.query;
 
   if (url) {
@@ -75,12 +73,10 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       try {
         new URL(url);
       } catch (error) {
-        return cors(req, res, () =>
-          res
-            .status(400)
-            .json({ error: "Not a valid URL" })
-            .end()
-        );
+        return res
+          .status(400)
+          .json({ error: "Not a valid URL" })
+          .end();
       }
 
       // Find documents that have the same long URL (duplicates)
@@ -95,12 +91,10 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
           "stats.shorten": admin.firestore.FieldValue.increment(1)
         });
 
-        return cors(req, res, () =>
-          res
-            .status(200)
-            .json({ short: binaryToSpaces(entry.id) })
-            .end()
-        );
+        return res
+          .status(200)
+          .json({ short: binaryToSpaces(entry.id) })
+          .end();
       } else {
         // This is a new URL so enter it into the database
 
@@ -122,27 +116,21 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
           countDoc.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
 
-        return cors(req, res, () =>
-          res
-            .status(201)
-            .json({ short })
-            .end()
-        );
+        return res
+          .status(201)
+          .json({ short })
+          .end();
       }
     } else {
-      return cors(req, res, () =>
-        res
-          .status(400)
-          .json({ error: "URL must be string type" })
-          .end()
-      );
+      return res
+        .status(400)
+        .json({ error: "URL must be string type" })
+        .end();
     }
   } else {
-    return cors(req, res, () =>
-      res
-        .status(400)
-        .json({ error: "You must specify a URL" })
-        .end()
-    );
+    return res
+      .status(400)
+      .json({ error: "You must specify a URL" })
+      .end();
   }
 });
