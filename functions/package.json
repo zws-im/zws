@@ -24,14 +24,14 @@
   "engines": {
     "node": "10"
   },
-  "homepage": "https://zero-width-shortener.web.app/",
+  "homepage": "https://zws.im",
   "keywords": [
     "zero",
     "width",
     "shortner",
     "url"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "./src/index.js",
   "name": "zero-width-shortener-functions",
   "private": true,

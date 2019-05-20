@@ -1,3 +1,3 @@
-# [Zero Width Shortener](https://zero-width-shortener.web.app/)
+# [Zero Width Shortener](https://zws.im/)
 
 Shorten URLs using invisible spaces.

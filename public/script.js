@@ -8,7 +8,7 @@ function shorten() {
   fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
     .then(
       async response => {
-        const url = `${window.location.origin}/${(await response.json()).short}`;
+        const url = `https://zws.im/${(await response.json()).short}`;
         copy(url);
         result.innerText = `Copied to clipboard: ${url}`;
       }
