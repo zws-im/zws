@@ -35,12 +35,20 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
         .join("");
 
       const doc = await urls.doc(binary).get();
+      const data = doc.data();
 
-      const entry = doc.data();
+      return cors(req, res, () => {
+        if (doc.exists) {
+          // Increase the usage counter for this link by one in the background
+          doc.ref.update({
+            "stats.get": admin.firestore.FieldValue.increment(1)
+          });
 
-      return cors(req, res, () =>
-        entry ? res.redirect(entry.url) : res.status(404).end()
-      );
+          return res.redirect(data.url);
+        } else {
+          return res.status(404).end();
+        }
+      });
     } else {
       return cors(req, res, () =>
         res
@@ -79,8 +87,13 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       const { docs } = await urls.where("url", "==", url).get();
       const [entry] = docs;
 
-      if (entry) {
+      if (entry.exists) {
         // Someone already shortened this URL so give the old one to them
+
+        // Increase the usage counter for this link by one in the background
+        entry.ref.update({
+          "stats.shorten": admin.firestore.FieldValue.increment(1)
+        });
 
         return cors(req, res, () =>
           res
@@ -102,7 +115,9 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
 
         await Promise.all([
           // Set the shortened URL document
-          urls.doc(Number(count).toString(2)).set({ url }),
+          urls
+            .doc(Number(count).toString(2))
+            .set({ url, stats: { get: 0, shorten: 1 } }),
           // Set the count to be one higher
           countDoc.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
