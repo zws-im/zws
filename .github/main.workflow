@@ -30,7 +30,6 @@ action "Deploy Firebase Functions" {
 
 action "Deploy Firebase Hosting" {
   uses = "w9jds/firebase-action@7d6b2b058813e1224cdd4db255b2f163ae4084d3"
-  needs = ["Lint"]
   args = "deploy --only hosting"
   secrets = ["FIREBASE_TOKEN"]
   env = {
@@ -40,7 +39,6 @@ action "Deploy Firebase Hosting" {
 
 action "Deploy Firebase Firestore" {
   uses = "w9jds/firebase-action@7d6b2b058813e1224cdd4db255b2f163ae4084d3"
-  needs = ["Lint"]
   args = "deploy --only firestore"
   secrets = ["FIREBASE_TOKEN"]
   env = {
