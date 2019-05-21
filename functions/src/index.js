@@ -69,14 +69,29 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
   const { url } = req.query;
 
   if (url) {
+    let urlInstance;
     if (typeof url === "string") {
       try {
-        new URL(url);
+        urlInstance = new URL(url);
       } catch (error) {
         return res
           .status(400)
           .json({ error: "Not a valid URL" })
           .end();
+      }
+
+      if (
+        [
+          "zws.im",
+          "zero-width-shortener.firebaseapp.com",
+          "zero-width-shortener.web.app",
+          "zws.jonahsnider.ninja"
+        ].includes(urlInstance.hostname)
+      ) {
+        return res.status(400).json({
+          error:
+            "Shortening a URL containing the URL shortener's hostname is disallowed"
+        });
       }
 
       if (url.length > 500) {
