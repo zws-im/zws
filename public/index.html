@@ -74,8 +74,9 @@
   </h1>
 
   <form onsubmit="event.preventDefault(); shorten()">
-    <input id="long" type="url" placeholder="Your long URL (max 500 characters)" maxlength="500" required
-      autofocus />
+
+    <input id="long" type="url" placeholder="Your long URL (max 500 characters)" maxlength="500" required autofocus
+      aria-label="Your long URL (max 500 characters)">
     <input id="submit" type="submit" value="Shorten">
     <p id="result"></p>
   </form>
