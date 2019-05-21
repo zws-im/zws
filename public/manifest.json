@@ -5,5 +5,12 @@
   "scope": "/",
   "short_name": "ZWS",
   "start_url": "/",
-  "theme_color": "#121212"
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "/images/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
