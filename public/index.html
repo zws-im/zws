@@ -48,6 +48,7 @@
   <meta property="og:title" content="Zero Width Shortener">
 
   <meta property="og:url" content="https://zws.im">
+  <link rel="canonical" href="https://zws.im/">
 
   <meta name="language" content="EN">
   <meta property="og:locale" content="en_US">
@@ -71,7 +72,7 @@
   </h1>
 
   <form onsubmit="event.preventDefault(); shorten()">
-    <input id="long" type="url" placeholder="Your long URL (max 255 characters)" minlength="0" maxlength="255" required
+    <input id="long" type="url" placeholder="Your long URL (max 500 characters)" maxlength="500" required
       autofocus />
     <input id="submit" type="submit" value="Shorten">
     <p id="result"></p>

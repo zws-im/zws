@@ -79,6 +79,13 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
           .end();
       }
 
+      if (url.length > 500) {
+        return res
+          .status(413)
+          .json({ error: "URL can not exceed 500 characters" })
+          .end();
+      }
+
       // Find documents that have the same long URL (duplicates)
       const { docs } = await urls.where("url", "==", url).get();
       const [entry] = docs;
