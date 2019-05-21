@@ -125,15 +125,11 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         const { count } = (await countDoc.get()).data();
 
         // The math here converts the number to binary (decimal => binary string => binary)
-        const short = binaryToSpaces(
-          parseInt(Number(countDoc).toString(2), 10)
-        );
+        const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
 
         await Promise.all([
           // Set the shortened URL document
-          urls
-            .doc(Number(count).toString(2))
-            .set({ url, stats: { get: 0, shorten: 1 } }),
+          urls.doc(Number(count).toString(2)).set({ url, stats: { get: 0, shorten: 1 } }),
           // Set the count to be one higher
           countDoc.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
