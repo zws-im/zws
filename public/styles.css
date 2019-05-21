@@ -40,11 +40,15 @@ input {
   color: #efefef;
   padding: 1rem;
   margin: auto;
-  width: 720px;
-  max-width: 100%;
+  width: 80%;
 }
+
 input:hover,
 input:active,
 input:focus {
   border: 1px solid #efefef;
+}
+
+#submit {
+  margin-top: 1em;
 }
