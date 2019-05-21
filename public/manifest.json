@@ -1,0 +1,9 @@
+{
+  "background_color": "#121212",
+  "display": "standalone",
+  "name": "Zero Width Shortener",
+  "scope": "/",
+  "short_name": "ZWS",
+  "start_url": "/",
+  "theme_color": "#121212"
+}
