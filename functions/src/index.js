@@ -89,8 +89,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         ].includes(urlInstance.hostname)
       ) {
         return res.status(400).json({
-          error:
-            "Shortening a URL containing the URL shortener's hostname is disallowed"
+          error: "Shortening a URL containing the URL shortener's hostname is disallowed"
         });
       }
 
