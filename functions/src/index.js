@@ -16,6 +16,7 @@ const spaces = ["\u180e", "\u200b"];
 
 const binaryToSpaces = binary =>
   Number(binary)
+    // Convert to string
     .toString()
     // Convert to array
     .split("")
