@@ -40,7 +40,6 @@ input {
   color: #efefef;
   padding: 1rem;
   margin: auto;
-  width: 80%;
 }
 
 input:hover,
@@ -49,6 +48,12 @@ input:focus {
   border: 1px solid #efefef;
 }
 
+#long {
+  width: 60%;
+}
+
 #submit {
   margin-top: 1em;
+  width: 15%;
+  min-width: 200px;
 }
