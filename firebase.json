@@ -9,6 +9,7 @@
     ]
   },
   "hosting": {
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
