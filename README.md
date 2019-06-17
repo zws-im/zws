@@ -1,3 +1,2 @@
-# [Zero Width Shortener](https://zws.im/)
+# Initial page
 
-Shorten URLs using invisible spaces.
