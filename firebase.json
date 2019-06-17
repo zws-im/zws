@@ -16,10 +16,11 @@
       "**/node_modules/**"
     ],
     "public": "public",
-    "rewrites": [{
-      "source": "**",
-      "function": "getURL"
-    }
+    "rewrites": [
+      {
+        "function": "getURL",
+        "source": "**"
+      }
     ]
   }
 }
