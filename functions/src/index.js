@@ -18,12 +18,10 @@ const binaryToSpaces = binary =>
   Number(binary)
     // Convert to string
     .toString()
-    // Convert to array
-    .split("")
-    // Replace 0s and 1s with space characters
-    .map(digit => spaces[digit])
-    // Convert to string
-    .join("");
+    // Replace zeroes with spaces
+    .replace(/0/g, spaces[0])
+    // Replace ones with spaces
+    .replace(/1/g, spaces[1]);
 
 exports.getURL = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
@@ -33,9 +31,12 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
   if (short) {
     if (typeof short === "string") {
       const binary = short
-        .split("")
-        .map(space => spaces.indexOf(space))
-        .join("");
+        // Convert one type of space to zeroes
+        .replace(new RegExp(spaces[0], "g"), "0")
+        // Convert the other type of space to ones
+        .replace(new RegExp(spaces[1], "g"), "1")
+        // Remove any Zs used to mark the end of the URL to applications
+        .replace(/Z/i, "");
 
       const doc = await urls.doc(binary).get();
       const data = doc.data();
@@ -124,8 +125,8 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         const countDoc = firestore.collection("settings").doc("short");
         const { count } = (await countDoc.get()).data();
 
-        // The math here converts the number to binary (decimal => binary string => binary)
-        const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
+        // The math here converts the number to binary (decimal => binary string => binary number)
+        const short = `${binaryToSpaces(parseInt(Number(count).toString(2), 10))}Z`;
 
         await Promise.all([
           // Set the shortened URL document
