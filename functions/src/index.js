@@ -7,9 +7,7 @@ const urls = firestore.collection("urls");
 
 const functions = require("firebase-functions");
 
-const cors = require("cors")({
-  origin: true
-});
+const cors = require("cors")({ origin: true });
 
 // Space characters that are used in shortened URLs
 const spaces = ["\u180e", "\u200b"];
