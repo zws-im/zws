@@ -6,7 +6,7 @@ description: Redirect to the long URL from a shortened URL
 
 {% api-method method="get" host="https://us-central1-zero-width-shortener.cloudfunctions.net" path="/getURL/:short" %}
 {% api-method-summary %}
-Get URL
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -23,9 +23,9 @@ Short ID of the URL to redirect to. Optionally you may append a `Z` to the end t
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=200 %}
+{% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
-
+Redirects you to the long URL corresponding to the provided short ID.
 {% endapi-method-response-example-description %}
 
 ```
@@ -33,9 +33,29 @@ Short ID of the URL to redirect to. Optionally you may append a `Z` to the end t
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=302 %}
+{% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Redirects you to the long URL corresponding to the provided short ID.
+The short ID wasn't specified or wasn't a string type.
+{% endapi-method-response-example-description %}
+
+{% code-tabs %}
+{% code-tabs-item title="no short ID" %}
+```javascript
+{ "error": "You must specify a short ID" }
+```
+{% endcode-tabs-item %}
+
+{% code-tabs-item title="invalid ID type" %}
+```javascript
+{ "error": "Short ID must be string type" }
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=404 %}
+{% api-method-response-example-description %}
+The requested short ID couldn't be found.
 {% endapi-method-response-example-description %}
 
 ```
