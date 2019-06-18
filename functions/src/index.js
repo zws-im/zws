@@ -6,7 +6,7 @@ if (functions.config().sqreen.app.name && functions.config().sqreen.token) {
 
   require("sqreen");
 }
-const { binaryToSpaces, spacesToBinary } = require("./util/conversion");
+
 const admin = require("firebase-admin");
 admin.initializeApp();
 
@@ -15,6 +15,18 @@ const urls = firestore.collection("urls");
 
 const cors = require("cors")({ origin: true });
 
+// Space characters that are used in shortened URLs
+const spaces = ["\u180e", "\u200b"];
+
+const binaryToSpaces = binary =>
+  Number(binary)
+    // Convert to string
+    .toString()
+    // Replace zeroes with spaces
+    .replace(/0/g, spaces[0])
+    // Replace ones with spaces
+    .replace(/1/g, spaces[1]);
+
 exports.getURL = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
 
@@ -22,8 +34,13 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
 
   if (short) {
     if (typeof short === "string") {
-      // Remove any Zs (used to mark the end of the URL to applications) and then convert it to binary
-      const binary = spacesToBinary(short.replace(/Z/i, ""));
+      const binary = short
+        // Convert one type of space to zeroes
+        .replace(new RegExp(spaces[0], "g"), "0")
+        // Convert the other type of space to ones
+        .replace(new RegExp(spaces[1], "g"), "1")
+        // Remove any Zs used to mark the end of the URL to applications
+        .replace(/Z/i, "");
 
       const doc = await urls.doc(binary).get();
       const data = doc.data();
