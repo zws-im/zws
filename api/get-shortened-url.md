@@ -41,13 +41,17 @@ The short ID wasn't specified or wasn't a string type.
 {% code-tabs %}
 {% code-tabs-item title="no short ID" %}
 ```javascript
-{ "error": "You must specify a short ID" }
+{
+    "error": "You must specify a short ID"
+}
 ```
 {% endcode-tabs-item %}
 
 {% code-tabs-item title="invalid ID type" %}
 ```javascript
-{ "error": "Short ID must be string type" }
+{
+    "error": "Short ID must be string type"
+}
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
