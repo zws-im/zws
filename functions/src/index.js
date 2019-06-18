@@ -1,12 +1,16 @@
 const functions = require("firebase-functions");
 
-if (functions.config().sqreen.app.name && functions.config().sqreen.token) {
+if (
+  functions.config().sqreen &&
+  functions.config().sqreen.app &&
+  functions.config().sqreen.app.name &&
+  functions.config().sqreen.token
+) {
   process.env.SQREEN_APP_NAME = functions.config().sqreen.app.name;
   process.env.SQREEN_TOKEN = functions.config().sqreen.token;
 
   require("sqreen");
 }
-
 const admin = require("firebase-admin");
 admin.initializeApp();
 
