@@ -9,7 +9,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "firebase-admin": "~7.4.0",
-    "firebase-functions": "^2.3.0",
+    "firebase-functions": "^2.3.0"
+  },
+  "peerDependencies": {
     "sqreen": "^1.30.3"
   },
   "description": "Firebase Cloud Functions for Zero Width Shortener",
