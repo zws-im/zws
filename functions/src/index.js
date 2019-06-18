@@ -1,11 +1,15 @@
-// The Firebase Admin SDK to access the Cloud Firestore.
+const functions = require("firebase-functions");
+
+process.env.SQREEN_APP_NAME = functions.config().sqreen.app.name;
+process.env.SQREEN_TOKEN = functions.config().sqreen.token;
+
+require("sqreen");
+
 const admin = require("firebase-admin");
 admin.initializeApp();
 
 const firestore = admin.firestore();
 const urls = firestore.collection("urls");
-
-const functions = require("firebase-functions");
 
 const cors = require("cors")({ origin: true });
 
