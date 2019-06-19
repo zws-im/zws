@@ -43,8 +43,8 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
         .replace(new RegExp(spaces[0], "g"), "0")
         // Convert the other type of space to ones
         .replace(new RegExp(spaces[1], "g"), "1")
-        // Remove any Zs used to mark the end of the URL to applications
-        .replace(/Z/i, "");
+        // Remove any slashes used to mark the end of the URL to applications
+        .replace(/\//i, "");
 
       const doc = await urls.doc(binary).get();
       const data = doc.data();
@@ -124,7 +124,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
 
         return res
           .status(200)
-          .json({ short: `${binaryToSpaces(entry.id)}Z` })
+          .json({ short: `${binaryToSpaces(entry.id)}/` })
           .end();
       } else {
         // This is a new URL so enter it into the database
@@ -134,7 +134,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         const { count } = (await countDoc.get()).data();
 
         // The math here converts the number to binary (decimal => binary string => binary number)
-        const short = `${binaryToSpaces(parseInt(Number(count).toString(2), 10))}Z`;
+        const short = `${binaryToSpaces(parseInt(Number(count).toString(2), 10))}/`;
 
         await Promise.all([
           // Set the shortened URL document
