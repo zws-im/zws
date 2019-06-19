@@ -17,7 +17,7 @@ This endpoint redirects you to the long URL corresponding to a short ID.
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="short" type="string" required=true %}
-Short ID of the URL to redirect to. Optionally you may append a `Z` to the end to help mark the end of the URL.
+Short ID of the URL to redirect to.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
