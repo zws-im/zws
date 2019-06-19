@@ -124,7 +124,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
 
         return res
           .status(200)
-          .json({ short: binaryToSpaces(entry.id) })
+          .json({ short: `${binaryToSpaces(entry.id)}Z` })
           .end();
       } else {
         // This is a new URL so enter it into the database
