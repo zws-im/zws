@@ -1,11 +1,23 @@
+const hostnames = [
+  "zws.im",
+  "zero-width-shortener.firebaseapp.com",
+  "zero-width-shortener.web.app",
+  "zws.jonahsnider.ninja"
+];
+
 function shorten() {
   const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.net";
 
   const result = document.getElementById("result");
   const long = document.getElementById("long");
+
+  if (hostnames.includes(new URL(long.value).hostname)) {
+    return result.innerText = "Shortening a URL containing the URL shortener's hostname is disallowed"
+  }
+
   result.innerText = "Shortening…";
 
-  fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
+  return fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
     .then(
       async response => {
         const json = await response.json();
@@ -18,12 +30,12 @@ function shorten() {
 
         const url = `https://zws.im/${json.short}`;
         copy(url);
-        result.innerText = `Copied to clipboard: ${url}`;
+        return result.innerText = `Copied to clipboard: ${url}`;
       }
     )
     .catch(error => {
       console.error(error);
-      result.innerText = `An error occurred: ${error}`;
+      return result.innerText = `An error occurred: ${error}`;
     });
 }
 
