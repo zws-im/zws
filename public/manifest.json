@@ -1,16 +1,16 @@
 {
   "background_color": "#121212",
   "display": "standalone",
+  "icons": [
+    {
+      "sizes": "512x512",
+      "src": "/image/logo-type.png",
+      "type": "image/png"
+    }
+  ],
   "name": "Zero Width Shortener",
   "scope": "/",
   "short_name": "ZWS",
   "start_url": "/",
-  "theme_color": "#121212",
-  "icons": [
-    {
-      "src": "/image/logo-type.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ]
+  "theme_color": "#121212"
 }
