@@ -8,7 +8,15 @@ function shorten() {
   fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
     .then(
       async response => {
-        const url = `https://zws.im/${(await response.json()).short}`;
+        const json = await response.json();
+        if (json.error) {
+          throw json.error;
+        } else if (!((200 <= response.status) && (response.status <= 299))) {
+          response.
+          throw `${response.status} ${response.statusText} and said ${await response.json()}`
+        }
+
+        const url = `https://zws.im/${json.short}`;
         copy(url);
         result.innerText = `Copied to clipboard: ${url}`;
       }
