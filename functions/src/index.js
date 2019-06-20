@@ -11,6 +11,14 @@ if (
 
   require("sqreen");
 }
+
+const hostnames = [
+  "zws.im",
+  "zero-width-shortener.firebaseapp.com",
+  "zero-width-shortener.web.app",
+  "zws.jonahsnider.ninja"
+];
+
 const admin = require("firebase-admin");
 admin.initializeApp();
 
@@ -90,14 +98,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
           .end();
       }
 
-      if (
-        [
-          "zws.im",
-          "zero-width-shortener.firebaseapp.com",
-          "zero-width-shortener.web.app",
-          "zws.jonahsnider.ninja"
-        ].includes(urlInstance.hostname)
-      ) {
+      if (hostnames.includes(urlInstance.hostname)) {
         return res.status(400).json({
           error: "Shortening a URL containing the URL shortener's hostname is disallowed"
         });
