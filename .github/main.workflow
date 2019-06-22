@@ -8,12 +8,12 @@ workflow "Test and deploy to Firebase on push" {
 }
 
 action "Install functions dependencies" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  uses = "actions/npm@master"
   args = "--prefix \"./functions\" install"
 }
 
 action "Lint" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  uses = "actions/npm@master"
   args = "--prefix \"./functions\" run lint"
   needs = ["Install functions dependencies"]
 }
@@ -29,7 +29,7 @@ action "Deploy Firebase Functions" {
 }
 
 action "Install hosting dependencies" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  uses = "actions/npm@master"
   args = "--prefix \"./hosting\" install -D"
 }
 
