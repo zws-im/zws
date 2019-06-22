@@ -30,7 +30,7 @@ action "Deploy Firebase Functions" {
 
 action "Install hosting dependencies" {
   uses = "actions/npm@master"
-  args = "--prefix ./hosting install -D"
+  args = "--prefix ./public install -D"
 }
 
 action "Deploy Firebase Hosting" {
