@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <%- include("blocks/head.ejs") %>
+</head>
+
+<body>
+  <%- include("blocks/navbar.ejs") %>
+
+  <div>
+    <div class="container">
+      <div class="auth__inner">
+        <div class="auth__media">
+          <img src="/image/undraw_link_shortener.svg">
+        </div>
+        <div class="auth__auth">
+          <h1 class="auth__title">Shorten a URL</h1>
+          <form onsubmit="event.preventDefault(); shorten()" role="presentation" class="form">
+            <input id="long" type="url" placeholder="Your long URL (max 500 characters)" maxlength="500" required="" autofocus="" aria-label="Your long URL (max 500 characters)">
+            <p id="result"></p>
+            <button id="submit" type="submit" class="button button__accent">Shorten</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("blocks/footer.ejs") %>
+
+  <%- include("blocks/scripts.ejs") %>
+</body>
+
+</html>

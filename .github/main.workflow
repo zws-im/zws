@@ -7,7 +7,7 @@ workflow "Test and deploy to Firebase on push" {
   on = "push"
 }
 
-action "Install" {
+action "Install functions dependencies" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   args = "--prefix \"./functions\" install"
 }
@@ -15,7 +15,7 @@ action "Install" {
 action "Lint" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   args = "--prefix \"./functions\" run lint"
-  needs = ["Install"]
+  needs = ["Install functions dependencies"]
 }
 
 action "Deploy Firebase Functions" {
@@ -28,8 +28,14 @@ action "Deploy Firebase Functions" {
   }
 }
 
+action "Install hosting dependencies" {
+  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  args = "--prefix \"./hosting\" install"
+}
+
 action "Deploy Firebase Hosting" {
   uses = "pizzafox/firebase-action@master"
+  needs = ["Install hosting dependencies"]
   args = "deploy --only hosting"
   secrets = ["FIREBASE_TOKEN"]
   env = {

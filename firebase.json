@@ -15,7 +15,8 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "public": "public",
+    "predeploy": "cd public && npm run build",
+    "public": "public/build",
     "rewrites": [
       {
         "function": "getURL",

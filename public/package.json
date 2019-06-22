@@ -1,0 +1,15 @@
+{
+  "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "ejs": "^2.6.2"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "version": "1.0.0"
+}
