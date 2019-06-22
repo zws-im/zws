@@ -20,7 +20,7 @@
     "rewrites": [
       {
         "function": "getURL",
-        "source": "*"
+        "source": "**"
       },
       {
         "function": "getURLStats",
