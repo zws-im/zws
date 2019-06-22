@@ -9,12 +9,12 @@ workflow "Test and deploy to Firebase on push" {
 
 action "Install functions dependencies" {
   uses = "actions/npm@master"
-  args = "--prefix \"./functions\" install"
+  args = "--prefix ./functions install"
 }
 
 action "Lint" {
   uses = "actions/npm@master"
-  args = "--prefix \"./functions\" run lint"
+  args = "--prefix ./functions run lint"
   needs = ["Install functions dependencies"]
 }
 
@@ -30,7 +30,7 @@ action "Deploy Firebase Functions" {
 
 action "Install hosting dependencies" {
   uses = "actions/npm@master"
-  args = "--prefix \"./hosting\" install -D"
+  args = "--prefix ./hosting install -D"
 }
 
 action "Deploy Firebase Hosting" {
