@@ -162,3 +162,79 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       .end();
   }
 });
+
+exports.getURLStats = functions.https.onRequest(async (req, res) => {
+  cors(req, res, () => {});
+
+  console.log("req.params:", req.params);
+  const short = req.params["0"].split("/")[0] || req.query.short;
+  const { url } = req.query;
+
+  if (short) {
+    if (typeof short === "string") {
+      const binary = short
+        // Convert one type of space to zeroes
+        .replace(new RegExp(spaces[0], "g"), "0")
+        // Convert the other type of space to ones
+        .replace(new RegExp(spaces[1], "g"), "1");
+
+      const doc = await urls.doc(binary).get();
+      const data = doc.data();
+
+      if (doc.exists) {
+        return res
+          .status(200)
+          .json(data.stats)
+          .end();
+      } else {
+        return res.status(404).end();
+      }
+    } else {
+      return res
+        .status(400)
+        .json({ error: "Short ID must be string type" })
+        .end();
+    }
+  } else if (url) {
+    if (typeof url === "string") {
+      try {
+        new URL(url);
+      } catch (error) {
+        return res
+          .status(400)
+          .json({ error: "Not a valid URL" })
+          .end();
+      }
+
+      if (url.length > 500) {
+        return res
+          .status(413)
+          .json({ error: "URL can not exceed 500 characters" })
+          .end();
+      }
+
+      // Find documents that have the same long URL (duplicates)
+      const { docs } = await urls.where("url", "==", url).get();
+      const [entry] = docs;
+
+      if (entry) {
+        return res
+          .status(200)
+          .json(entry.data().stats)
+          .end();
+      } else {
+        return res.status(404).end();
+      }
+    } else {
+      return res
+        .status(400)
+        .json({ error: "URL must be string type" })
+        .end();
+    }
+  } else {
+    return res
+      .status(400)
+      .json({ error: "You must specify a short ID or a URL" })
+      .end();
+  }
+});
