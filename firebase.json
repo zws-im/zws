@@ -20,7 +20,7 @@
     "rewrites": [
       {
         "function": "getURL",
-        "source": "*.[\u180e\u200b]"
+        "source": "*"
       },
       {
         "function": "getURLStats",
