@@ -2,14 +2,6 @@
   background-color: #121212;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: initial;
-  padding-top: 36pt;
-}
-
 .footer--dark {
   background-color: #121212;
 }
