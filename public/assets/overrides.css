@@ -28,3 +28,7 @@
 input:focus {
   border-color: rgb(18, 18, 18, 0.5);
 }
+
+.navbar {
+  background-color: #121212;
+}
