@@ -22,3 +22,7 @@
     border-color: #333333;
   }
 }
+
+input:focus {
+  border-color: rgb(18, 18, 18, .5);
+}
