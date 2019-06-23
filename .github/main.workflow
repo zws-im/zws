@@ -50,7 +50,10 @@ action "Lint hosting" {
 }
 
 action "Deploy Firebase Hosting" {
-  uses = "pizzafox/firebase-action"
+  uses = "pizzafox/firebase-action@master"
+  env = {
+    PROJECT_ID = "zero-width-shortener"
+  }
   needs = ["Lint hosting"]
   secrets = ["FIREBASE_TOKEN"]
   args = "deploy --only hosting"
