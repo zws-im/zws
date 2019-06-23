@@ -12,5 +12,5 @@
     "prebuild": "rm -rf build",
     "serve": "eleventy --serve"
   },
-  "version": "1.0.3"
+  "version": "1.1.0"
 }
