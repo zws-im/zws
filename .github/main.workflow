@@ -50,7 +50,7 @@ action "Lint hosting" {
 }
 
 action "Deploy Firebase Hosting" {
-  uses = "pizzafox/firebase-action"
+  uses = "pizzafox/firebase-action@master"
   needs = ["Lint hosting"]
   secrets = ["FIREBASE_TOKEN"]
   args = "deploy --only hosting"
