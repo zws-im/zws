@@ -8,7 +8,11 @@ permalink: "/index.html"
 <head>
   <%- include("blocks/head.ejs") %>
 
-  <script type="module" src="/assets/js/shorten.js"></script>
+  <script type="module">
+    import shorten from "/assets/js/shorten.js"
+
+    window.shorten = shorten;
+  </script>
 </head>
 
 <body>
