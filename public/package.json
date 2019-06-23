@@ -15,6 +15,7 @@
   "scripts": {
     "build": "npm run prebuild && eleventy",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prebuild": "rm -rf build",
     "serve": "npm run prebuild && eleventy --serve"
   },

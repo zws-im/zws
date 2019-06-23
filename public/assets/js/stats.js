@@ -5,26 +5,25 @@ export default () => {
   const long = document.getElementById("long");
 
   if (hostnames.includes(new URL(long.value).hostname)) {
-    return result.innerText = "Shortening a URL containing the URL shortener's hostname is disallowed so there won't be any results"
+    return (result.innerText =
+      "Shortening a URL containing the URL shortener's hostname is disallowed so there won't be any results");
   }
 
   result.innerText = "Loading...";
 
   return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
-    .then(
-      async response => {
-        const json = await response.json();
-        if (json.error) {
-          throw json.error;
-        } else if (!((200 <= response.status) && (response.status <= 299))) {
-          throw `${response.status} ${response.statusText} and said ${await response.json()}`
-        }
-
-        return result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`;
+    .then(async response => {
+      const json = await response.json();
+      if (json.error) {
+        throw json.error;
+      } else if (!(200 <= response.status && response.status <= 299)) {
+        throw `${response.status} ${response.statusText} and said ${await response.json()}`;
       }
-    )
+
+      return (result.innerText = `Shortened ${json.shorten} times and visited ${json.get} times`);
+    })
     .catch(error => {
       console.error(error);
-      return result.innerText = `An error occurred: ${error}`;
+      return (result.innerText = `An error occurred: ${error}`);
     });
-}
+};
