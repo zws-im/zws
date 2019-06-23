@@ -1,13 +1,7 @@
-const hostnames = [
-  "zws.im",
-  "zero-width-shortener.firebaseapp.com",
-  "zero-width-shortener.web.app",
-  "zws.jonahsnider.ninja"
-];
+import { apiURL } from "/assets/js/constants.js";
+import copy from "/assets/js/copy.js";
 
-function shorten() {
-  const apiURL = "https://us-central1-zero-width-shortener.cloudfunctions.net";
-
+export default () => {
   const result = document.getElementById("result");
   const long = document.getElementById("long");
 
@@ -24,12 +18,11 @@ function shorten() {
         if (json.error) {
           throw json.error;
         } else if (!((200 <= response.status) && (response.status <= 299))) {
-          response.
           throw `${response.status} ${response.statusText} and said ${await response.json()}`
         }
 
         const url = `https://zws.im/${json.short}`;
-        copy(url);
+        copy(url)
         return result.innerText = `Copied to clipboard: ${url}`;
       }
     )
@@ -37,16 +30,4 @@ function shorten() {
       console.error(error);
       return result.innerText = `An error occurred: ${error}`;
     });
-}
-
-function copy(str) {
-  const el = document.createElement('textarea');
-  el.classList.add("clipboard");
-  el.value = str;
-  document.body.appendChild(el);
-
-  el.select();
-  document.execCommand('copy');
-
-  document.body.removeChild(el);
 }
