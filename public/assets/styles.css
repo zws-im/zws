@@ -3,11 +3,11 @@
 }
 
 .footer {
-  padding: initial;
-  padding-top: 36pt;
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: initial;
+  padding-top: 36pt;
 }
 
 .footer--dark {
@@ -26,5 +26,5 @@
 }
 
 input:focus {
-  border-color: rgb(18, 18, 18, .5);
+  border-color: rgb(18, 18, 18, 0.5);
 }
