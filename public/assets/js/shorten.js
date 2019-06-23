@@ -10,7 +10,7 @@ export default () => {
   }
 
   if (!navigator.onLine) {
-    return result.innerText = "You are offline"
+    return (result.innerText = "You are offline");
   }
 
   result.innerText = "Shortening…";
