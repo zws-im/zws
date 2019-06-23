@@ -166,7 +166,6 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
 exports.getURLStats = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
 
-  console.log("req.params:", req.params);
   const short = req.params["0"].split("/")[0] || req.query.short;
   const { url } = req.query;
 
