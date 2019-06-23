@@ -5,9 +5,6 @@ const images = ["undraw_browser_stats.svg", "undraw_page_not_found.svg", "undraw
 );
 
 const pages = ["index", "404", "stats"].map(fileName => `/${fileName}`);
-pages.forEach(file => {
-  pages.push(`${file}.html`);
-});
 pages.push("./");
 
 const toCache = [...images, ...pages, ...scripts, ...styles];
