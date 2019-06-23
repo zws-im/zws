@@ -1,8 +1,14 @@
-const scripts = ["constants.js", "copy.js", "registerServiceWorker.js", "shorten.js", "stats.js"].map(fileName => `/assets/js/${fileName}`);
-const styles = ["overrides.css"].map(fileName => `/assets/${fileName}`);
-const images = ["undraw_browser_stats.svg", "undraw_page_not_found.svg", "undraw_portfolio.svg"].map(
-  fileName => `/assets/image/${fileName}`
+const scripts = ["constants.js", "copy.js", "registerServiceWorker.js", "shorten.js", "stats.js"].map(
+  fileName => `/assets/js/${fileName}`
 );
+const styles = ["overrides.css"].map(fileName => `/assets/${fileName}`);
+const images = [
+  "logo-512.png",
+  "logo-type.png",
+  "undraw_browser_stats.svg",
+  "undraw_page_not_found.svg",
+  "undraw_portfolio.svg"
+].map(fileName => `/assets/image/${fileName}`);
 
 const pages = ["index", "404", "stats"].map(fileName => `/${fileName}`);
 pages.push("./");
