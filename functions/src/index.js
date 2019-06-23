@@ -63,7 +63,7 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
           "stats.get": admin.firestore.FieldValue.increment(1)
         });
 
-        return res.redirect(data.url);
+        return res.redirect(301, data.url);
       } else {
         return res.status(404).end();
       }
