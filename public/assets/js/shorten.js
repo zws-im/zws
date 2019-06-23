@@ -9,6 +9,10 @@ export default () => {
     return (result.innerText = "Shortening a URL containing the URL shortener's hostname is disallowed");
   }
 
+  if (!navigator.onLine) {
+    return result.innerText = "You are offline"
+  }
+
   result.innerText = "Shortening…";
 
   return fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
