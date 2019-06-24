@@ -23,7 +23,7 @@ Short ID of the URL to redirect to.
 {% endapi-method-request %}
 
 {% api-method-response %}
-{% api-method-response-example httpCode=302 %}
+{% api-method-response-example httpCode=301 %}
 {% api-method-response-example-description %}
 Redirects you to the long URL corresponding to the provided short ID.
 {% endapi-method-response-example-description %}
