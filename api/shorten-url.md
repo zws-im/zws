@@ -53,7 +53,7 @@ The URL wasn't specified, wasn't string type, was invalid, or contained the URL 
 {% endapi-method-response-example-description %}
 
 {% code-tabs %}
-{% code-tabs-item title="URL wasn\'t not specified" %}
+{% code-tabs-item title="URL was not specified" %}
 ```javascript
 {
     "error": "You must specify a URL"
