@@ -1,33 +1,33 @@
-.navbar {
+body > .navbar {
   background-color: #121212;
 }
 
-.footer--dark {
+body > .footer--dark {
   background-color: #121212;
 }
 
-.button__accent {
+body > .button__accent {
   background-color: #121212;
   border-color: #121212;
 }
 @media (min-width: 992px) {
-  .button__accent:hover {
+  body > .button__accent:hover {
     background-color: #333333;
     border-color: #333333;
   }
 }
 
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="text"]:focus,
-input[type="url"]:focus {
+body > input[type="email"]:focus,
+body > input[type="number"]:focus,
+body > input[type="password"]:focus,
+body > input[type="search"]:focus,
+body > input[type="tel"]:focus,
+body > input[type="text"]:focus,
+body > input[type="url"]:focus {
   border-color: rgb(18, 18, 18, 0.5);
 }
 
-.navbar {
+body > .navbar {
   background-color: #121212;
 }
 
@@ -37,7 +37,7 @@ body {
   min-height: 100vh;
 }
 
-body > .main-content {
+body > main > {
   flex-grow: 1;
 
   display: flex;
@@ -47,29 +47,29 @@ body > .main-content {
   padding-top: 60px;
 }
 
-body > .main-content .auth__title {
+body > main > .auth__title {
   margin-top: 1.5rem;
 }
 
-body > .main-content .auth__media {
+body > main > .auth__media {
   text-align: center;
 }
 
-body > .main-content .auth__inner {
+body > main > .auth__inner {
   min-height: 0px;
   margin-top: 0px !important;
 }
 
-body > .main-content .auth__inner form {
+body > main > .auth__inner form {
   margin-bottom: 0px;
 }
 
-body > .main-content .auth__inner form button {
+body > main > .auth__inner form button {
   margin-bottom: 0px;
 }
 
 @media (max-width: 992px) {
-  body > .main-content .auth__auth {
+  body > main > .auth__auth {
     width: 100%;
     max-width: 420px;
   }

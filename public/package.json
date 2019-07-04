@@ -9,7 +9,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
   },
-  "keywords": [],
+  "keywords": ["url shortener", "url", "shortener", "zero width space"],
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -19,5 +19,5 @@
     "prebuild": "rm -rf build",
     "serve": "npm run prebuild && eleventy --serve"
   },
-  "version": "1.8.0"
+  "version": "1.8.1"
 }
