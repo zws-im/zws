@@ -2,33 +2,29 @@ body > .navbar {
   background-color: #121212;
 }
 
-body > .footer--dark {
+body > footer.footer--dark {
   background-color: #121212;
 }
 
-body > .button__accent {
+.button__accent {
   background-color: #121212;
   border-color: #121212;
 }
 @media (min-width: 992px) {
-  body > .button__accent:hover {
+  body > main > .button__accent:hover {
     background-color: #333333;
     border-color: #333333;
   }
 }
 
-body > input[type="email"]:focus,
-body > input[type="number"]:focus,
-body > input[type="password"]:focus,
-body > input[type="search"]:focus,
-body > input[type="tel"]:focus,
-body > input[type="text"]:focus,
-body > input[type="url"]:focus {
+body > main > input[type="email"]:focus,
+body > main > input[type="number"]:focus,
+body > main > input[type="password"]:focus,
+body > main > input[type="search"]:focus,
+body > main > input[type="tel"]:focus,
+body > main > input[type="text"]:focus,
+body > main > input[type="url"]:focus {
   border-color: rgb(18, 18, 18, 0.5);
-}
-
-body > .navbar {
-  background-color: #121212;
 }
 
 body {
