@@ -1,3 +1,5 @@
+/* global ga */
+
 import { apiURL, hostnames } from "/assets/js/constants.js";
 
 export default () => {
@@ -14,6 +16,8 @@ export default () => {
   }
 
   result.innerText = "Loading...";
+
+  ga("send", "event", "URLs", "stats");
 
   return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
     .then(async response => {

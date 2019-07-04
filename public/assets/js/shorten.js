@@ -1,3 +1,4 @@
+/* global ga */
 import { apiURL, hostnames } from "/assets/js/constants.js";
 import copy from "/assets/js/copy.js";
 
@@ -14,6 +15,8 @@ export default () => {
   }
 
   result.innerText = "Shortening…";
+
+  ga("send", "event", "URLs", "shorten");
 
   return fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
     .then(async response => {
