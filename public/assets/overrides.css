@@ -2,29 +2,39 @@ body > div.navbar {
   background-color: #121212;
 }
 
-body > footer.footer--dark {
+body > footer.footer.footer--dark {
   background-color: #121212;
 }
 
-button.button__accent {
+body button.button__accent {
   background-color: #121212;
   border-color: #121212;
 }
 @media (min-width: 992px) {
-  button.button__accent:hover {
+  body button.button__accent:hover {
     background-color: #333333;
     border-color: #333333;
   }
 }
 
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="text"]:focus,
-input[type="url"]:focus {
+body input[type="email"]:focus,
+body input[type="number"]:focus,
+body input[type="password"]:focus,
+body input[type="search"]:focus,
+body input[type="tel"]:focus,
+body input[type="text"]:focus,
+body input[type="url"]:focus {
   border-color: rgb(18, 18, 18, 0.5);
+}
+
+body input[type="email"]:hover:not(:focus),
+body input[type="number"]:hover:not(:focus),
+body input[type="password"]:hover:not(:focus),
+body input[type="search"]:hover:not(:focus),
+body input[type="tel"]:hover:not(:focus),
+body input[type="text"]:hover:not(:focus),
+body input[type="url"]:hover:not(:focus) {
+  border-color: rgb(18, 18, 18, 0.25);
 }
 
 body {
@@ -33,7 +43,7 @@ body {
   min-height: 100vh;
 }
 
-body > main > {
+body > main {
   flex-grow: 1;
 
   display: flex;
@@ -43,29 +53,29 @@ body > main > {
   padding-top: 60px;
 }
 
-h1.auth__title {
+body > main .auth__title {
   margin-top: 1.5rem;
 }
 
-div.auth__media {
+body > main div.auth__media {
   text-align: center;
 }
 
-div.auth__inner {
+body > main div.auth__inner {
   min-height: 0px;
   margin-top: 0px !important;
 }
 
-div.auth__inner form {
+body > main div.auth__inner form {
   margin-bottom: 0px;
 }
 
-body > main > .auth__inner form button {
+body > main div.auth__inner form button {
   margin-bottom: 0px;
 }
 
 @media (max-width: 992px) {
-  div.auth__inner > .auth__auth {
+  body > main div.auth__auth {
     width: 100%;
     max-width: 420px;
   }
