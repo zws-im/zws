@@ -1,4 +1,4 @@
-body > .navbar {
+body > div.navbar {
   background-color: #121212;
 }
 
@@ -43,20 +43,20 @@ body > main > {
   padding-top: 60px;
 }
 
-body > main > .auth__title {
+h1.auth__title {
   margin-top: 1.5rem;
 }
 
-body > main > .auth__media {
+div.auth__media {
   text-align: center;
 }
 
-body > main > .auth__inner {
+div.auth__inner {
   min-height: 0px;
   margin-top: 0px !important;
 }
 
-body > main > .auth__inner form {
+div.auth__inner form {
   margin-bottom: 0px;
 }
 
@@ -65,7 +65,7 @@ body > main > .auth__inner form button {
 }
 
 @media (max-width: 992px) {
-  body > main > .auth__auth {
+  div.auth__inner > .auth__auth {
     width: 100%;
     max-width: 420px;
   }
