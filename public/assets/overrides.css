@@ -59,6 +59,8 @@ body > main .auth__title {
 
 body > main div.auth__media {
   text-align: center;
+  width: 100%;
+  height: auto;
 }
 
 body > main div.auth__inner {
