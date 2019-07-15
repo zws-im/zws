@@ -17,7 +17,7 @@ export default () => {
 
   result.innerText = "Loading...";
 
-  ga("send", "event", "URLs", "stats");
+  ga ? ga("send", "event", "URLs", "stats") : console.error("Unable to log URL stats event to Google Analytics");
 
   return fetch(`${apiURL}/getURLStats?url=${encodeURIComponent(long.value)}`)
     .then(async response => {

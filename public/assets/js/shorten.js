@@ -16,7 +16,11 @@ export default () => {
 
   result.innerText = "Shortening…";
 
-  ga("send", "event", "URLs", "shorten");
+  try {
+    ga("send", "event", "URLs", "shorten");
+  } catch(error) {
+    console.error("Error sending statistics to Google Analytics", error);
+  }
 
   return fetch(`${apiURL}/shortenURL?url=${encodeURIComponent(long.value)}`)
     .then(async response => {
