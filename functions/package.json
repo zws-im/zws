@@ -1,7 +1,7 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
   "bugs": {
-    "url": "https://github.com/pizzafox/zero-width-shortener/issues"
+    "url": "https://github.com/zws-im/zws/issues"
   },
   "contributors": [
     "Yousef Sultan <yousef.su.2000@gmail.com>"
@@ -40,7 +40,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pizzafox/zero-width-shortener.git"
+    "url": "git+https://github.com/zws-im/zws.git"
   },
   "scripts": {
     "deploy": "firebase deploy --only functions",

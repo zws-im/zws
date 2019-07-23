@@ -1,5 +1,8 @@
 {
   "author": "Jonah Snider <me@jonahsnider.ninja> (jonahsnider.ninja)",
+  "bugs": {
+    "url": "https://github.com/zws-im/zws/issues"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
     "@dice-discord/eslint-config": "^3.0.0",
@@ -9,9 +12,18 @@
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2"
   },
-  "keywords": ["url shortener", "url", "shortener", "zero width space"],
+  "keywords": [
+    "url shortener",
+    "url",
+    "shortener",
+    "zero width space"
+  ],
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zws-im/zws.git"
+  },
   "scripts": {
     "build": "npm run prebuild && eleventy",
     "lint": "eslint .",
@@ -19,5 +31,5 @@
     "prebuild": "rm -rf build",
     "serve": "npm run prebuild && eleventy --serve"
   },
-  "version": "1.10.2"
+  "version": "1.10.3"
 }
