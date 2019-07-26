@@ -45,24 +45,31 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
 
   if (short) {
     if (typeof short === "string") {
-      const binary = short
-        // Convert one type of space to zeros or use the legacy \u180e character (caused problems on iOS)
-        .replace(new RegExp(`${spaces[0]}|\u180e`, "g"), "0")
-        // Convert the other type of space to ones
-        .replace(new RegExp(spaces[1], "g"), "1");
+      if (/(\u180e|\u200b|\u200c)+/.test(short)) {
+        const binary = short
+          // Convert one type of space to zeros or use the legacy \u180e character (caused problems on iOS)
+          .replace(new RegExp(`${spaces[0]}|\u180e`, "g"), "0")
+          // Convert the other type of space to ones
+          .replace(new RegExp(spaces[1], "g"), "1");
 
-      const doc = await urls.doc(binary).get();
-      const data = doc.data();
+        const doc = await urls.doc(binary).get();
+        const data = doc.data();
 
-      if (doc.exists) {
-        // Increase the usage counter for this link by one in the background
-        doc.ref.update({
-          "stats.get": admin.firestore.FieldValue.increment(1)
-        });
+        if (doc.exists) {
+          // Increase the usage counter for this link by one in the background
+          doc.ref.update({
+            "stats.get": admin.firestore.FieldValue.increment(1)
+          });
 
-        return res.redirect(301, data.url);
+          return res.redirect(301, data.url);
+        } else {
+          return res.status(404).end();
+        }
       } else {
-        return res.status(404).end();
+        return res
+          .status(400)
+          .json({ error: "Short ID contained invalid characters" })
+          .end();
       }
     } else {
       return res
