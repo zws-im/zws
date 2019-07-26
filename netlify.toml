@@ -12,3 +12,8 @@
 
   # Default build command.
   command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "https://us-central1-zero-width-shortener.cloudfunctions.net"
+  status = 302
