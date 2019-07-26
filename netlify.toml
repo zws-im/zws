@@ -15,5 +15,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://us-central1-zero-width-shortener.cloudfunctions.net"
+  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
   status = 302
