@@ -57,12 +57,6 @@ body > main .auth__title {
   margin-top: 1.5rem;
 }
 
-body > main div.auth__media {
-  text-align: center;
-  width: 100%;
-  height: auto;
-}
-
 body > main div.auth__inner {
   min-height: 0px;
   margin-top: 0px !important;

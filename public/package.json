@@ -31,5 +31,5 @@
     "prebuild": "rm -rf build",
     "serve": "npm run prebuild && eleventy --serve"
   },
-  "version": "1.10.3"
+  "version": "1.10.4"
 }
