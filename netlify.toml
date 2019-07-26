@@ -14,6 +14,11 @@
   command = "npm run build"
 
 [[redirects]]
+  from = "/*/stats"
+  to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURLStats/:splat"
+  status = 302
+
+[[redirects]]
   from = "/*"
   to = "https://us-central1-zero-width-shortener.cloudfunctions.net/getURL/:splat"
   status = 302
