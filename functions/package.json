@@ -45,6 +45,7 @@
   "scripts": {
     "deploy": "firebase deploy --only functions",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "logs": "firebase functions:log",
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
