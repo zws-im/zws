@@ -7,25 +7,5 @@
     "predeploy": [
       "npm --prefix \"$RESOURCE_DIR\" run lint --fix"
     ]
-  },
-  "hosting": {
-    "cleanUrls": true,
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "predeploy": "cd public && npm run build",
-    "public": "public/build",
-    "rewrites": [
-      {
-        "function": "getURL",
-        "source": "*[\u180e\u200C\u200b]*"
-      },
-      {
-        "function": "getURLStats",
-        "source": "*/stats"
-      }
-    ]
   }
 }
