@@ -43,7 +43,8 @@ const binaryToSpaces = binary =>
 exports.getURL = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
 
-  const short = req.params["0"];
+  // Remove any trailing slashes
+  const short = req.params["0"].replace(/\//g , "");
 
   if (short) {
     if (typeof short === "string") {
