@@ -178,27 +178,28 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
   if (short) {
     if (typeof short === "string") {
       if (regexForSpaces.test(short)) {
-      const binary = short
-        // Convert one type of space to zeroes
-        .replace(new RegExp(spaces[0], "g"), "0")
-        // Convert the other type of space to ones
-        .replace(new RegExp(spaces[1], "g"), "1");
+        const binary = short
+          // Convert one type of space to zeroes
+          .replace(new RegExp(spaces[0], "g"), "0")
+          // Convert the other type of space to ones
+          .replace(new RegExp(spaces[1], "g"), "1");
 
-      const doc = await urls.doc(binary).get();
-      const data = doc.data();
+        const doc = await urls.doc(binary).get();
+        const data = doc.data();
 
-      if (doc.exists) {
-        return res
-          .status(200)
-          .json(data.stats)
-          .end();
+        if (doc.exists) {
+          return res
+            .status(200)
+            .json(data.stats)
+            .end();
+        } else {
+          return res.status(404).end();
+        }
       } else {
-        return res.status(404).end();
-      }} else {
         return res
-        .status(400)
-        .json({ error: "Short ID contained invalid characters" })
-        .end();
+          .status(400)
+          .json({ error: "Short ID contained invalid characters" })
+          .end();
       }
     } else {
       return res
