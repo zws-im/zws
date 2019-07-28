@@ -30,6 +30,7 @@ const cors = require("cors")({ origin: true });
 
 // Space characters that are used in shortened URLs
 const spaces = ["\u200C", "\u200b"];
+const regexForSpaces = /^(\u180e|\u200b|\u200c)+$/;
 const binaryToSpaces = binary =>
   Number(binary)
     // Convert to string
@@ -46,7 +47,7 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
 
   if (short) {
     if (typeof short === "string") {
-      if (/(\u180e|\u200b|\u200c)+/.test(short)) {
+      if (regexForSpaces.test(short)) {
         const binary = short
           // Convert one type of space to zeros or use the legacy \u180e character (caused problems on iOS)
           .replace(new RegExp(`${spaces[0]}|\u180e`, "g"), "0")
@@ -176,6 +177,7 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
 
   if (short) {
     if (typeof short === "string") {
+      if (regexForSpaces.test(short)) {
       const binary = short
         // Convert one type of space to zeroes
         .replace(new RegExp(spaces[0], "g"), "0")
@@ -192,6 +194,11 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
           .end();
       } else {
         return res.status(404).end();
+      }} else {
+        return res
+        .status(400)
+        .json({ error: "Short ID contained invalid characters" })
+        .end();
       }
     } else {
       return res
