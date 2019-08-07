@@ -31,6 +31,11 @@ const cors = require("cors")({ origin: true });
 // Space characters that are used in shortened URLs
 const spaces = ["\u200C", "\u200b"];
 const regexForSpaces = /^(\u180e|\u200b|\u200c)+$/;
+
+/**
+ * Convert binary numbers to zero-width spaces
+ * @param {number} binary Binary values to convert
+ */
 const binaryToSpaces = binary =>
   Number(binary)
     // Convert to string
@@ -39,6 +44,12 @@ const binaryToSpaces = binary =>
     .replace(/0/g, spaces[0])
     // Replace ones with spaces
     .replace(/1/g, spaces[1]);
+
+/**
+ * Helper function for URL stats.
+ * @param {Object} data
+ */
+const dataToResponse = data => ({ shorten: data.stats.shorten, get: data.stats.get, usage: data.usage });
 
 exports.getURL = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
@@ -55,14 +66,15 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
           // Convert the other type of space to ones
           .replace(new RegExp(spaces[1], "g"), "1");
 
-        const doc = await urls.doc(binary).get();
+        const ref = urls.doc(binary);
+        const doc = await ref.get();
         const data = doc.data();
 
         if (doc.exists) {
           // Increment the counter for this URL and record the timestamp in the background
-          doc.ref.update({
+          ref.update({
             "stats.get": admin.firestore.FieldValue.increment(1),
-            "usage.get": admin.firestore.FieldValue.arrayUnion(new Date().getTime())
+            "usage.get": admin.firestore.FieldValue.arrayUnion(new Date())
           });
 
           return res.redirect(301, data.url);
@@ -120,37 +132,42 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       }
 
       // Find documents that have the same long URL (duplicates)
-      const { docs } = await urls.where("url", "==", url).get();
-      const [entry] = docs;
+      const query = urls.where("url", "==", url);
+      const snapshot = await query.get();
+      const { docs } = snapshot;
+      const [doc] = docs;
 
-      if (entry) {
+      if (doc) {
         // Someone already shortened this URL so give the old one to them
 
         // Increment the counter for this URL by one and record the timestamp in the background
-        entry.ref.update({
+        doc.ref.update({
           "stats.shorten": admin.firestore.FieldValue.increment(1),
-          "usage.shorten": admin.firestore.FieldValue.arrayUnion(new Date().getTime())
+          "usage.shorten": admin.firestore.FieldValue.arrayUnion(new Date())
         });
 
         return res
           .status(200)
-          .json({ short: `${binaryToSpaces(entry.id)}/` })
+          .json({ short: `${binaryToSpaces(doc.id)}/` })
           .end();
       } else {
         // This is a new URL so enter it into the database
 
         // Count is a number used for generating the short ID
-        const countDoc = firestore.collection("settings").doc("short");
-        const { count } = (await countDoc.get()).data();
+        const countRef = firestore.collection("settings").doc("short");
+        const countDoc = await countRef.get();
+        const { count } = countDoc.data();
 
         // The math here converts the number to binary (decimal => binary string => binary number)
         const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
 
         await Promise.all([
           // Set the shortened URL document
-          urls.doc(Number(count).toString(2)).set({ url, stats: { get: 0, shorten: 1 } }),
+          urls
+            .doc(Number(count).toString(2))
+            .set({ url, stats: { get: 0, shorten: 1 }, usage: { get: [], shorten: [new Date()] } }),
           // Set the count to be one higher
-          countDoc.update({ count: admin.firestore.FieldValue.increment(1) })
+          countRef.update({ count: admin.firestore.FieldValue.increment(1) })
         ]);
 
         return res
@@ -187,13 +204,13 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
           // Convert the other type of space to ones
           .replace(new RegExp(spaces[1], "g"), "1");
 
-        const doc = await urls.doc(binary).get();
-        const data = doc.data();
+        const ref = urls.doc(binary);
+        const doc = await ref.get();
 
         if (doc.exists) {
           return res
             .status(200)
-            .json({ stats: data.stats, usage: data.usage })
+            .json(dataToResponse(doc.data()))
             .end();
         } else {
           return res.status(404).end();
@@ -229,13 +246,16 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
       }
 
       // Find documents that have the same long URL (duplicates)
-      const { docs } = await urls.where("url", "==", url).get();
-      const [entry] = docs;
+      const query = urls.where("url", "==", url);
+      const snapshot = await query.get();
+      const { docs } = snapshot;
+      const [doc] = docs;
+      const data = doc.data();
 
-      if (entry) {
+      if (doc.exists) {
         return res
           .status(200)
-          .json(entry.data().stats)
+          .json(dataToResponse(data))
           .end();
       } else {
         return res.status(404).end();
