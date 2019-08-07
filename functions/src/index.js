@@ -59,9 +59,10 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
         const data = doc.data();
 
         if (doc.exists) {
-          // Increase the usage counter for this link by one in the background
+          // Increment the counter for this URL and record the timestamp in the background
           doc.ref.update({
-            "stats.get": admin.firestore.FieldValue.increment(1)
+            "stats.get": admin.firestore.FieldValue.increment(1),
+            "usage.get": admin.firestore.FieldValue.arrayUnion(new Date().getTime())
           });
 
           return res.redirect(301, data.url);
@@ -125,9 +126,10 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
       if (entry) {
         // Someone already shortened this URL so give the old one to them
 
-        // Increase the usage counter for this link by one in the background
+        // Increment the counter for this URL by one and record the timestamp in the background
         entry.ref.update({
-          "stats.shorten": admin.firestore.FieldValue.increment(1)
+          "stats.shorten": admin.firestore.FieldValue.increment(1),
+          "usage.shorten": admin.firestore.FieldValue.arrayUnion(new Date().getTime())
         });
 
         return res
