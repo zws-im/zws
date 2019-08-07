@@ -142,7 +142,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
         const { count } = (await countDoc.get()).data();
 
         // The math here converts the number to binary (decimal => binary string => binary number)
-        const short = `${binaryToSpaces(parseInt(Number(count).toString(2), 10))}/`;
+        const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
 
         await Promise.all([
           // Set the shortened URL document
