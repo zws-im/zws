@@ -193,7 +193,7 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
         if (doc.exists) {
           return res
             .status(200)
-            .json(data.stats)
+            .json({ stats: data.stats, usage: data.usage })
             .end();
         } else {
           return res.status(404).end();
