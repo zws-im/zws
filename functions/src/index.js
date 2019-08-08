@@ -49,7 +49,11 @@ const binaryToSpaces = binary =>
  * Helper function for URL stats.
  * @param {Object} data
  */
-const dataToResponse = data => ({ shorten: data.stats.shorten, get: data.stats.get, usage: data.usage });
+const dataToResponse = data => ({
+  shorten: data.stats.shorten,
+  get: data.stats.get,
+  usage: data.usage || { get: [], shorten: [] }
+});
 
 exports.getURL = functions.https.onRequest(async (req, res) => {
   cors(req, res, () => {});
