@@ -28,8 +28,10 @@
   "keywords": [
     "zero",
     "width",
-    "shortner",
-    "url"
+    "shortener",
+    "url",
+    "zero-width-shortener",
+    "zws"
   ],
   "license": "Apache-2.0",
   "main": "./src/index.js",
