@@ -52,7 +52,10 @@ const binaryToSpaces = binary =>
 const dataToResponse = data => ({
   shorten: data.stats.shorten,
   get: data.stats.get,
-  usage: data.usage || { get: [], shorten: [] }
+  usage: {
+    get: (data.usage.get || []).map(firestoreTimestamp => firestoreTimestamp.toMillis()),
+    shorten: (data.usage.shorten || []).map(firestoreTimestamp => firestoreTimestamp.toMillis())
+  }
 });
 
 exports.getURL = functions.https.onRequest(async (req, res) => {
