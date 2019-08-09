@@ -28,22 +28,56 @@ const urls = firestore.collection("urls");
 
 const cors = require("cors")({ origin: true });
 
-// Space characters that are used in shortened URLs
-const spaces = ["\u200C", "\u200b"];
-const regexForSpaces = /^(\u180e|\u200b|\u200c)+$/;
+/**
+ * @typedef {Object} CharacterConfig Configuration object for a specific type of short character.
+ * @property {string} preferred The preferred character to use for this type of character
+ * @property {Array<string>} [compatible] Array of compatible other compatible characters, not including the preferred character
+ */
+
+/**
+ * Space characters that are used in shortened URLs.
+ * @enum {CharacterConfig} Array of character configs, array index is their numerical ID
+ */
+const characters = [
+  {
+    preferred: "\u200c",
+    compatible: ["\u180e"]
+  },
+  {
+    preferred: "\u200d",
+    compatible: ["\u200b"]
+  }
+];
+
+const regexForSpaces = new RegExp(
+  `^${characters.map(spaceConfig => `${spaceConfig.preferred}|${spaceConfig.compatible.join("|")}`)}+$`
+);
 
 /**
  * Convert binary numbers to zero-width spaces
  * @param {number} binary Binary values to convert
  */
-const binaryToSpaces = binary =>
-  Number(binary)
-    // Convert to string
-    .toString()
-    // Replace zeroes with spaces
-    .replace(/0/g, spaces[0])
-    // Replace ones with spaces
-    .replace(/1/g, spaces[1]);
+const binaryToSpaces = binary => {
+  let string = Number(binary).toString();
+
+  characters.forEach(
+    (spaceConfig, index) => (string = string.replace(new RegExp(index.toString(), "g"), spaceConfig.preferred))
+  );
+
+  return string;
+};
+
+const spacesToBinary = spaceCharacters => {
+  characters.forEach(
+    (spaceConfig, index) =>
+      (spaceCharacters = spaceCharacters.replace(
+        new RegExp(`${spaceConfig.compatible.join("|")}|${spaceConfig.preferred}`, "g"),
+        index
+      ))
+  );
+
+  return spaceCharacters;
+};
 
 /**
  * Helper function for URL stats.
@@ -67,11 +101,7 @@ exports.getURL = functions.https.onRequest(async (req, res) => {
   if (short) {
     if (typeof short === "string") {
       if (regexForSpaces.test(short)) {
-        const binary = short
-          // Convert one type of space to zeros or use the legacy \u180e character (caused problems on iOS)
-          .replace(new RegExp(`${spaces[0]}|\u180e`, "g"), "0")
-          // Convert the other type of space to ones
-          .replace(new RegExp(spaces[1], "g"), "1");
+        const binary = spacesToBinary(short);
 
         const ref = urls.doc(binary);
         const doc = await ref.get();
@@ -155,7 +185,7 @@ exports.shortenURL = functions.https.onRequest(async (req, res) => {
 
         return res
           .status(200)
-          .json({ short: `${binaryToSpaces(doc.id)}/` })
+          .json({ short: binaryToSpaces(doc.id) })
           .end();
       } else {
         // This is a new URL so enter it into the database
@@ -207,9 +237,9 @@ exports.getURLStats = functions.https.onRequest(async (req, res) => {
       if (regexForSpaces.test(short)) {
         const binary = short
           // Convert one type of space to zeroes
-          .replace(new RegExp(spaces[0], "g"), "0")
+          .replace(new RegExp(characters[0], "g"), "0")
           // Convert the other type of space to ones
-          .replace(new RegExp(spaces[1], "g"), "1");
+          .replace(new RegExp(characters[1], "g"), "1");
 
         const ref = urls.doc(binary);
         const doc = await ref.get();
