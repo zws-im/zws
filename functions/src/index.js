@@ -50,7 +50,7 @@ const characters = [
 ];
 
 const regexForSpaces = new RegExp(
-  `^${characters.map(spaceConfig => `${spaceConfig.preferred}|${spaceConfig.compatible.join("|")}`)}+$`
+  `^(${characters.map(spaceConfig => `${spaceConfig.preferred}|${spaceConfig.compatible.join("|")}`).join("|")})+$`
 );
 
 /**
