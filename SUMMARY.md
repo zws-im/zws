@@ -7,4 +7,3 @@
 * [Get URL](api/get-shortened-url.md)
 * [Shorten URL](api/shorten-url.md)
 * [Get URL stats](api/get-url-stats.md)
-
