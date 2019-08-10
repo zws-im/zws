@@ -3,7 +3,6 @@ workflow "Test and deploy to Firebase on push" {
     "Deploy Firebase Firestore",
     "Deploy Firebase Functions",
     "Install hosting dependencies",
-    "Deploy Firebase Hosting",
     "Filter for master branch",
   ]
   on = "push"
@@ -33,11 +32,6 @@ action "Deploy Firebase Functions" {
   ]
 }
 
-action "Install hosting dependencies" {
-  uses = "actions/npm@master"
-  args = "--prefix ./public install -D"
-}
-
 action "Deploy Firebase Firestore" {
   uses = "pizzafox/firebase-action@master"
   args = "deploy --only firestore"
@@ -46,25 +40,6 @@ action "Deploy Firebase Firestore" {
     PROJECT_ID = "zero-width-shortener"
   }
   needs = ["Filter for master branch"]
-}
-
-action "Lint hosting" {
-  uses = "actions/npm@master"
-  needs = ["Install hosting dependencies"]
-  args = "-- prefix ./public run lint"
-}
-
-action "Deploy Firebase Hosting" {
-  uses = "pizzafox/firebase-action@master"
-  env = {
-    PROJECT_ID = "zero-width-shortener"
-  }
-  needs = [
-    "Lint hosting",
-    "Filter for master branch",
-  ]
-  secrets = ["FIREBASE_TOKEN"]
-  args = "deploy --only hosting"
 }
 
 action "Filter for master branch" {
