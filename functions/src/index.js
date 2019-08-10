@@ -13,7 +13,17 @@ if (
 }
 
 const admin = require("firebase-admin");
-admin.initializeApp();
+
+if (process.env.NODE_ENV === "development") {
+  const serviceAccount = require("../../serviceAccount.json");
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://zero-width-shortener.firebaseio.com"
+  });
+} else {
+  admin.initializeApp();
+}
+
 
 // Lots of Firebase stuff must be required after the app is initialized, including endpoints
 const getURL = require("./endpoints/getURL");
