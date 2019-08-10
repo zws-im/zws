@@ -69,12 +69,11 @@ module.exports = functions.https.onRequest(async (req, res) => {
       const snapshot = await query.get();
       const { docs } = snapshot;
       const [doc] = docs;
-      const data = doc.data();
 
       if (doc.exists) {
         return res
           .status(200)
-          .json(dataToResponse(data))
+          .json(dataToResponse(doc.data()))
           .end();
       } else {
         return res.status(404).end();
