@@ -24,7 +24,6 @@ if (process.env.NODE_ENV === "development") {
   admin.initializeApp();
 }
 
-
 // Lots of Firebase stuff must be required after the app is initialized, including endpoints
 const getURL = require("./endpoints/getURL");
 const shortenURL = require("./endpoints/shortenURL");
