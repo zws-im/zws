@@ -21,15 +21,15 @@ module.exports = functions.https.onRequest(async (req, res) => {
 
         const ref = urls.doc(binary);
         const doc = await ref.get();
-        const data = doc.data();
 
-        if (doc.exists) {
+        if (doc && doc.exists) {
           // Increment the counter for this URL and record the timestamp in the background
           ref.update({
             "stats.get": admin.firestore.FieldValue.increment(1),
             "usage.get": admin.firestore.FieldValue.arrayUnion(new Date())
           });
 
+          const data = doc.data();
           return res.redirect(301, data.url);
         } else {
           return res.status(404).end();

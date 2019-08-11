@@ -26,7 +26,7 @@ module.exports = functions.https.onRequest(async (req, res) => {
         const ref = urls.doc(binary);
         const doc = await ref.get();
 
-        if (doc.exists) {
+        if (doc && doc.exists) {
           return res
             .status(200)
             .json(dataToResponse(doc.data()))
@@ -70,7 +70,7 @@ module.exports = functions.https.onRequest(async (req, res) => {
       const { docs } = snapshot;
       const [doc] = docs;
 
-      if (doc.exists) {
+      if (doc && doc.exists) {
         return res
           .status(200)
           .json(dataToResponse(doc.data()))
