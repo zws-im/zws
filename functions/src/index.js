@@ -22,6 +22,16 @@ if (process.env.NODE_ENV === "development") {
   });
 } else {
   admin.initializeApp();
+
+  const profiler = require("@google-cloud/profiler");
+  const { version } = require("../package.json");
+
+  profiler.start({
+    serviceContext: {
+      service: "functions",
+      version
+    }
+  });
 }
 
 // Lots of Firebase stuff must be required after the app is initialized, including endpoints
