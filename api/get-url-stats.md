@@ -35,13 +35,17 @@ Long URL to get stats for.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-`get` is the number of times the shortened URL was visited and `shorten` is the number of times it was shortened.
+`get` is the number of times the shortened URL was visited and `shorten` is the number of times it was shortened. `usage` contains arrays of UNIX timestamps when the URL was visited or shortened.
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
     "get": 123,
-    "shorten": 123
+    "shorten": 123,
+    "usage": {
+        "get": [1565561037]
+        "shorten": [1564561037]
+    }
 }
 ```
 {% endapi-method-response-example %}
@@ -80,14 +84,6 @@ Long URL to get stats for.
 ```javascript
 {
     "error": "Not a valid URL"
-}
-```
-{% endcode-tabs-item %}
-
-{% code-tabs-item title="invalid characters in short ID" %}
-```javascript
-{
-    "error": "Short ID contained invalid characters"
 }
 ```
 {% endcode-tabs-item %}

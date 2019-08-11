@@ -54,14 +54,6 @@ The short ID wasn't specified or wasn't a string type.
 }
 ```
 {% endcode-tabs-item %}
-
-{% code-tabs-item title="invalid characters in short ID" %}
-```javascript
-{
-    "error": "Short ID contained invalid characters"
-}
-```
-{% endcode-tabs-item %}
 {% endcode-tabs %}
 {% endapi-method-response-example %}
 
