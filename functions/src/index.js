@@ -1,4 +1,11 @@
 const functions = require("firebase-functions");
+const debugAgent = require("@google-cloud/debug-agent");
+const { version } = require("../package.json");
+
+const serviceContext = {
+  service: "functions",
+  version
+};
 
 if (
   functions.config().sqreen &&
@@ -20,18 +27,22 @@ if (process.env.NODE_ENV === "development") {
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://zero-width-shortener.firebaseio.com"
   });
+
+  debugAgent.start({
+    projectId: "zero-width-shortener",
+    keyFilename: "../../serviceAccount.json",
+    serviceContext
+  });
 } else {
+  const profiler = require("@google-cloud/profiler");
+
   admin.initializeApp();
 
-  const profiler = require("@google-cloud/profiler");
-  const { version } = require("../package.json");
-
   profiler.start({
-    serviceContext: {
-      service: "functions",
-      version
-    }
+    serviceContext
   });
+
+  debugAgent.start({ serviceContext });
 }
 
 // Lots of Firebase stuff must be required after the app is initialized, including endpoints
