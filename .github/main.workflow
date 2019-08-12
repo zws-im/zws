@@ -2,7 +2,6 @@ workflow "Test and deploy to Firebase on push" {
   resolves = [
     "Deploy Firebase Firestore",
     "Deploy Firebase Functions",
-    "Install hosting dependencies",
     "Filter for master branch",
   ]
   on = "push"
