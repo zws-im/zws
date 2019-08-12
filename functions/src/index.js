@@ -1,6 +1,5 @@
 const functions = require("firebase-functions");
 const debugAgent = require("@google-cloud/debug-agent");
-const traceAgent = require("@google-cloud/trace-agent");
 const { version } = require("../package.json");
 
 const serviceContext = {
@@ -44,8 +43,6 @@ if (process.env.NODE_ENV === "development") {
   });
 
   debugAgent.start({ serviceContext });
-
-  traceAgent.start();
 }
 
 // Lots of Firebase stuff must be required after the app is initialized, including endpoints
