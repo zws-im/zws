@@ -9,6 +9,7 @@
   "dependencies": {
     "@google-cloud/debug-agent": "^4.0.1",
     "@google-cloud/profiler": "^2.0.2",
+    "@google-cloud/trace-agent": "^4.1.1",
     "cors": "^2.8.5",
     "firebase-admin": "~8.3.0",
     "firebase-functions": "^3.2.0"
