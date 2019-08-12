@@ -34,11 +34,6 @@ if (process.env.NODE_ENV === "development") {
     keyFilename: "../../serviceAccount.json",
     serviceContext
   });
-
-  traceAgent.start({
-    projectId: "zero-width-shortener",
-    keyFilename: "../../serviceAccount.json"
-  });
 } else {
   const profiler = require("@google-cloud/profiler");
 

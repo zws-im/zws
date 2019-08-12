@@ -57,5 +57,5 @@
     "shell": "firebase functions:shell",
     "start": "npm run shell"
   },
-  "version": "1.11.9"
+  "version": "1.11.10"
 }
