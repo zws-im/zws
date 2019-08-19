@@ -31,6 +31,7 @@ if (process.env.NODE_ENV === "development") {
   debugAgent.start({
     projectId: "zero-width-shortener",
     keyFilename: "../../serviceAccount.json",
+    allowExpressions: true,
     serviceContext
   });
 } else {
