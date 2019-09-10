@@ -1,31 +1,32 @@
-on: push
-name: Test and deploy to Firebase on push
+on: [push, pull_request]
+name: CI
 jobs:
-  installFunctionsDependencies:
-    name: Install functions dependencies
+  test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@master
+    - name: Git checkout
+      uses: actions/checkout@v1
+      with:
+        fetch-depth: 0
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
     - name: Install functions dependencies
-      uses: actions/npm@master
-      with:
-        args: --prefix ./functions install
+      run: npm --prefix ./functions install
     - name: Lint functions
-      uses: actions/npm@master
-      with:
-        args: --prefix ./functions run lint
-    - name: Filter for master branch
-      uses: actions/bin/filter@master
-      with:
-        args: branch master
+      uses: npm --prefix ./functions run lint
     - name: Deploy Firebase Functions
       uses: pizzafox/firebase-action@master
+      if: github.event == 'push' && github.branch == 'master'
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         PROJECT_ID: zero-width-shortener
       with:
         args: deploy --only functions
     - name: Deploy Firebase Firestore
+      if: github.event == 'push' && github.branch == 'master'
       uses: pizzafox/firebase-action@master
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
