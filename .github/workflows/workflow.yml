@@ -16,7 +16,7 @@ jobs:
     - name: Install functions dependencies
       run: npm --prefix ./functions install
     - name: Lint functions
-      uses: npm --prefix ./functions run lint
+      run: npm --prefix ./functions run lint
     - name: Deploy Firebase Functions
       uses: pizzafox/firebase-action@master
       if: github.event == 'push' && github.branch == 'master'
