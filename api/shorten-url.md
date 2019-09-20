@@ -4,7 +4,7 @@ description: Shorten a long URL
 
 # Shorten URL
 
-{% api-method method="get" host="https://us-central1-zero-width-shortener.cloudfunctions.net" path="/shortenURL" %}
+{% api-method method="get" host="https://zws.im/api" path="/shortenURL" %}
 {% api-method-summary %}
 Shorten URL
 {% endapi-method-summary %}

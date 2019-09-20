@@ -4,7 +4,7 @@ description: Redirect to the long URL from a shortened URL
 
 # Get URL
 
-{% api-method method="get" host="https://us-central1-zero-width-shortener.cloudfunctions.net" path="/getURL/:short" %}
+{% api-method method="get" host="https://zws.im/api" path="/getURL/:short" %}
 {% api-method-summary %}
 Get URL
 {% endapi-method-summary %}

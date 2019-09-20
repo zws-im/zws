@@ -4,7 +4,7 @@ description: Get usage stats for a URL
 
 # Get URL stats
 
-{% api-method method="get" host="https://us-central1-zero-width-shortener.cloudfunctions.net" path="/:short" %}
+{% api-method method="get" host="https://zws.im/api" path="/:short" %}
 {% api-method-summary %}
 Get URL Stats
 {% endapi-method-summary %}
