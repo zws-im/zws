@@ -52,39 +52,39 @@ The URL was shortened and added to the database.
 The URL wasn't specified, wasn't string type, was invalid, or contained the URL shortener's hostname.
 {% endapi-method-response-example-description %}
 
-{% code-tabs %}
-{% code-tabs-item title="URL was not specified" %}
+{% tabs %}
+{% tab title="URL was not specified" %}
 ```javascript
 {
     "error": "You must specify a URL"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="URL is invalid" %}
+{% tab title="URL is invalid" %}
 ```javascript
 {
     "error": "Not a valid URL"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="URL contains hostname" %}
+{% tab title="URL contains hostname" %}
 ```javascript
 {
     "error": "Shortening a URL containing the URL shortener's hostname is disallowed"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="invalid URL type" %}
+{% tab title="invalid URL type" %}
 ```javascript
 {
     "error": "URL must be string type"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=413 %}
@@ -101,6 +101,4 @@ The URL exceeded 500 characters.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 

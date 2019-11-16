@@ -55,39 +55,39 @@ Long URL to get stats for.
 
 {% endapi-method-response-example-description %}
 
-{% code-tabs %}
-{% code-tabs-item title="URL was not specified" %}
+{% tabs %}
+{% tab title="URL was not specified" %}
 ```javascript
 {
     "error": "You must specify a short ID or a URL"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="invalid URL type" %}
+{% tab title="invalid URL type" %}
 ```javascript
 {
     "error": "URL must be string type"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="invalid short ID type" %}
+{% tab title="invalid short ID type" %}
 ```javascript
 {
     "error": "Short ID must be string type"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="URL is invalid" %}
+{% tab title="URL is invalid" %}
 ```javascript
 {
     "error": "Not a valid URL"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -95,7 +95,7 @@ Long URL to get stats for.
 The URL or short ID couldn't be found.
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
