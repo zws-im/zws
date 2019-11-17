@@ -28,7 +28,7 @@ Short ID of the URL to redirect to.
 Redirects you to the long URL corresponding to the provided short ID.
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -38,23 +38,23 @@ Redirects you to the long URL corresponding to the provided short ID.
 The short ID wasn't specified or wasn't a string type.
 {% endapi-method-response-example-description %}
 
-{% code-tabs %}
-{% code-tabs-item title="no short ID" %}
+{% tabs %}
+{% tab title="no short ID" %}
 ```javascript
 {
     "error": "You must specify a short ID"
 }
 ```
-{% endcode-tabs-item %}
+{% endtab %}
 
-{% code-tabs-item title="invalid ID type" %}
+{% tab title="invalid ID type" %}
 ```javascript
 {
     "error": "Short ID must be string type"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
@@ -62,13 +62,11 @@ The short ID wasn't specified or wasn't a string type.
 The requested short ID couldn't be found.
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
 
