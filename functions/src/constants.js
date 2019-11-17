@@ -28,6 +28,7 @@ module.exports.hostnames = [
   "zero-width-shortener.firebaseapp.com",
   "zero-width-shortener.web.app",
   "zws.jonahsnider.ninja",
+  "zws.jonah.pw",
   "zerowidthshortener.netlify.com"
 ];
 
