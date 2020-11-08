@@ -38,50 +38,27 @@ module.exports = functions.https.onRequest(async (req, res) => {
           .end();
       }
 
-      // Find documents that have the same long URL (duplicates)
-      const query = urls.where("url", "==", url);
-      const snapshot = await query.get();
-      const { docs } = snapshot;
-      const [doc] = docs;
+      // Count is a number used for generating the short ID
+      const countRef = firestore.collection("settings").doc("short");
+      const countDoc = await countRef.get();
+      const { count } = countDoc.data();
 
-      if (doc) {
-        // Someone already shortened this URL so give the old one to them
+      // The math here converts the number to binary (decimal => binary string => binary number)
+      const short = binaryToSpaces(count.toString(2));
 
-        // Increment the counter for this URL by one and record the timestamp in the background
-        doc.ref.update({
-          "stats.shorten": admin.firestore.FieldValue.increment(1),
-          "usage.shorten": admin.firestore.FieldValue.arrayUnion(new Date())
-        });
+      await Promise.all([
+        // Set the shortened URL document
+        urls
+          .doc(Number(count).toString(2))
+          .set({ url, stats: { get: 0, shorten: 1 }, usage: { get: [], shorten: [new Date()] } }),
+        // Set the count to be one higher
+        countRef.update({ count: admin.firestore.FieldValue.increment(1) })
+      ]);
 
-        return res
-          .status(200)
-          .json({ short: binaryToSpaces(doc.id) })
-          .end();
-      } else {
-        // This is a new URL so enter it into the database
-
-        // Count is a number used for generating the short ID
-        const countRef = firestore.collection("settings").doc("short");
-        const countDoc = await countRef.get();
-        const { count } = countDoc.data();
-
-        // The math here converts the number to binary (decimal => binary string => binary number)
-        const short = binaryToSpaces(parseInt(Number(count).toString(2), 10));
-
-        await Promise.all([
-          // Set the shortened URL document
-          urls
-            .doc(Number(count).toString(2))
-            .set({ url, stats: { get: 0, shorten: 1 }, usage: { get: [], shorten: [new Date()] } }),
-          // Set the count to be one higher
-          countRef.update({ count: admin.firestore.FieldValue.increment(1) })
-        ]);
-
-        return res
-          .status(201)
-          .json({ short })
-          .end();
-      }
+      return res
+        .status(201)
+        .json({ short })
+        .end();
     } else {
       return res
         .status(400)

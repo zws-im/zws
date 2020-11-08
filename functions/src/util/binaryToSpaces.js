@@ -1,15 +1,14 @@
 const { characters } = require("../constants");
 
 /**
- * Convert binary numbers to zero-width spaces
- * @param {number} binary Binary values to convert
+ * Convert binary numbers in string form to zero-width spaces
+ * @param {string} binaryString Binary values to convert
  */
-module.exports = binary => {
-  let string = Number(binary).toString();
-
+module.exports = binaryString => {
   characters.forEach(
-    (spaceConfig, index) => (string = string.replace(new RegExp(index.toString(), "g"), spaceConfig.preferred))
+    (spaceConfig, index) =>
+      (binaryString = binaryString.replace(new RegExp(index.toString(), "g"), spaceConfig.preferred))
   );
 
-  return string;
+  return binaryString;
 };
