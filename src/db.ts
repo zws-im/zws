@@ -1,5 +1,5 @@
 import {PrismaClient} from '@prisma/client';
-import baseLogger from '../logger';
+import baseLogger from './logger';
 
 const logger = baseLogger.getChildLogger({name: 'db'});
 
