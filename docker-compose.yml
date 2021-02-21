@@ -5,6 +5,8 @@ services:
       - '3000:3000'
     links:
       - db
+    depends_on:
+      - migration
     env_file: ./.env
   migration:
     build: .
