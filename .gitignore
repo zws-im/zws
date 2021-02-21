@@ -200,5 +200,9 @@ tsc_output
 !.yarn/versions
 .pnp.*
 
+# Dotenv files
 *.env
-!example.env
+!*example.env
+
+# Google Cloud Service account
+service-account-key.json
