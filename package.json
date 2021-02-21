@@ -21,7 +21,7 @@
 	},
 	"license": "Apache-2.0",
 	"main": "./tsc_output/index.js",
-	"name": "zws",
+	"name": "@zws.im/zws",
 	"engines": {
 		"node": "15.x"
 	},

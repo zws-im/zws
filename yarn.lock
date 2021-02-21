@@ -563,6 +563,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zws.im/zws@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@zws.im/zws@workspace:."
+  dependencies:
+    "@pizzafox/util": 2.5.0
+    "@prisma/client": 2.17.0
+    "@tsconfig/node14": 1.0.0
+    "@types/node": 14.14.31
+    dotenv: 8.2.0
+    eslint-plugin-prettier: 3.3.1
+    fastify: 3.12.0
+    fastify-cors: 5.2.0
+    fluent-json-schema: 2.0.4
+    ow: 0.23.0
+    prettier: 2.2.1
+    prettier-config-xo: 1.0.3
+    prisma: 2.17.0
+    ts-node: 9.1.1
+    tslog: 3.1.1
+    type-fest: 0.21.1
+    typescript: 4.1.5
+    xo: 0.38.1
+  languageName: unknown
+  linkType: soft
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -6812,28 +6837,3 @@ __metadata:
   checksum: 096c3b40beb2804659539be1605a35c58eb0c85285f94b77b3e924f42ee265c1a40bf9f4153770039517146b469a964d51742395f35ca8135fc9f7e4982b785d
   languageName: node
   linkType: hard
-
-"zws@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "zws@workspace:."
-  dependencies:
-    "@pizzafox/util": 2.5.0
-    "@prisma/client": 2.17.0
-    "@tsconfig/node14": 1.0.0
-    "@types/node": 14.14.31
-    dotenv: 8.2.0
-    eslint-plugin-prettier: 3.3.1
-    fastify: 3.12.0
-    fastify-cors: 5.2.0
-    fluent-json-schema: 2.0.4
-    ow: 0.23.0
-    prettier: 2.2.1
-    prettier-config-xo: 1.0.3
-    prisma: 2.17.0
-    ts-node: 9.1.1
-    tslog: 3.1.1
-    type-fest: 0.21.1
-    typescript: 4.1.5
-    xo: 0.38.1
-  languageName: unknown
-  linkType: soft
