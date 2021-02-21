@@ -1,0 +1,13 @@
+.github
+.vscode
+node_modules
+tsc_output
+.editorconfig
+*.env
+.gitignore
+.prettierignore
+app.json
+openapi.yml
+prettier.config.js
+renovate.json
+*.log

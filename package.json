@@ -1,0 +1,68 @@
+{
+	"author": {
+		"email": "jonah@jonah.pw",
+		"name": "Jonah Snider",
+		"url": "https://jonah.pw"
+	},
+	"bugs": {
+		"url": "https://github.com/zws-im/zws/issues"
+	},
+	"devDependencies": {
+		"@tsconfig/node14": "1.0.0",
+		"@types/node": "14.14.31",
+		"eslint-plugin-prettier": "3.3.1",
+		"prettier": "2.2.1",
+		"prettier-config-xo": "1.0.3",
+		"prisma": "2.17.0",
+		"ts-node": "9.1.1",
+		"type-fest": "0.21.1",
+		"typescript": "4.1.5",
+		"xo": "0.38.1"
+	},
+	"license": "Apache-2.0",
+	"main": "./tsc_output/index.js",
+	"name": "zws",
+	"engines": {
+		"node": "15.x"
+	},
+	"nyc": {
+		"all": true,
+		"extends": "@istanbuljs/nyc-config-typescript",
+		"include": [
+			"src/**/*.ts"
+		],
+		"reporter": [
+			"lcov",
+			"cobertura"
+		]
+	},
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zws-im/zws.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"lint": "xo",
+		"prebuild": "rm -rf tsc_output",
+		"style": "prettier --check .",
+		"start": "node ."
+	},
+	"version": "2.0.0",
+	"xo": {
+		"prettier": true,
+		"rules": {
+			"prettier/prettier": "off"
+		}
+	},
+	"dependencies": {
+		"@pizzafox/util": "2.5.0",
+		"@prisma/client": "2.17.0",
+		"dotenv": "8.2.0",
+		"fastify": "3.12.0",
+		"fastify-cors": "5.2.0",
+		"fluent-json-schema": "2.0.4",
+		"ow": "0.23.0",
+		"tslog": "3.1.1"
+	}
+}

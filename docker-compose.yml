@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    links:
+      - db
+    env_file: ./.env
+  migration:
+    build: .
+    links:
+      - db
+    env_file: ./.env
+    command: ['yarn', 'prisma', 'migrate', 'deploy', '--preview-feature']
+  db:
+    image: postgres:13
+    env_file: ./db.env
+    expose:
+      - '5432'

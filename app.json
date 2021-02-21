@@ -1,0 +1,45 @@
+{
+	"addons": [
+		{
+			"plan": "heroku-postgresql",
+			"options": {
+				"version": "13"
+			}
+		}
+	],
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		}
+	],
+	"description": "A configurable URL shortener",
+	"env": {
+		"DATABASE_URL": {
+			"description": "URL or path to database. Leave this blank if you are using a Heroku add-on for your database.",
+			"required": false
+		},
+		"SHORT_LENGTH": {
+			"description": "Length of shortened IDs. Default is calculated based on length of SHORT_CHARS.",
+			"required": false
+		},
+		"SHORT_CHARS": {
+			"description": "JSON array of characters to used in shortened IDs. Default is alphanumeric (a-z, A-Z, 0-9).",
+			"required": false
+		},
+		"SHORT_REWRITES": {
+			"description": "JSON object of rewrites to normalize shortened IDs. Advanced use only.",
+			"required": false
+		}
+	},
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "free"
+		}
+	},
+	"keywords": ["URL Shortener", "Node.js"],
+	"logo": "https://avatars.githubusercontent.com/u/53232036",
+	"name": "Custom ZWS Instance",
+	"repository": "https://github.com/zws-im/zws",
+	"website": "https://docs.zws.im"
+}

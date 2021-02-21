@@ -1,0 +1,115 @@
+openapi: '3.0.3'
+info:
+  title: Zero Width Shortener
+  version: 2.0.0
+  contact:
+    name: Jonah Snider
+    email: jonah@jonah.pw
+    url: https://jonah.pw
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  description: Shorten URLs with invisible spaces
+servers:
+  - url: https://api.zws.im/
+    description: Production API
+paths:
+  /{short}:
+    get:
+      tags:
+        - urls
+      description: Retrieve a shortened URL.
+      parameters:
+        - $ref: '#/components/parameters/ShortenedUrl'
+        - in: query
+          name: visit
+          schema:
+            type: boolean
+            default: true
+          required: false
+          description: If you should be redirected to the URL instead of returning it as JSON.
+      responses:
+        '301':
+          description: Redirected to the long URL.
+        '404':
+          $ref: '#/components/responses/UrlNotFound'
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    $ref: '#/components/schemas/Url'
+          description: Long URL returned.
+  /{short}/stats:
+    get:
+      tags:
+        - urls
+      description: Retrieve usage statistics for a shortened URL.
+      parameters:
+        - $ref: '#/components/parameters/ShortenedUrl'
+      responses:
+        '404':
+          $ref: '#/components/responses/UrlNotFound'
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    $ref: '#/components/schemas/Url'
+                  visits:
+                    type: array
+                    items:
+                      type: string
+                      format: date-time
+                      example: 2021-02-21T03:58:25.794Z
+          description: Long URL returned.
+  /:
+    post:
+      tags:
+        - urls
+      description: Shorten a URL.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  $ref: '#/components/schemas/Url'
+              required:
+                - url
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  short:
+                    type: string
+                    description: The shortened ID for the URL.
+          description: URL shortened.
+components:
+  schemas:
+    Url:
+      type: string
+      example: https://jonah.pw
+      maxLength: 500
+  responses:
+    UrlNotFound:
+      description: Shortened URL couldn't be found.
+      content:
+        text/plain:
+          example: ''
+  parameters:
+    ShortenedUrl:
+      in: path
+      name: short
+      schema:
+        type: string
+      required: true
+      description: The shortened ID for the URL.

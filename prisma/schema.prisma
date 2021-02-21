@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model ShortenedUrl {
+  /// The base64 encoded shortened ID
+  shortBase64 String  @id @map("short_base64")
+  /// The long URL
+  url         String
+  /// Statistics of when this URL was visited
+  visits      Visit[]
+
+  @@map("shortened_urls")
+}
+
+model Visit {
+  /// When the visit occurred
+  timestamp      DateTime      @id @default(now())
+  shortenedUrl   ShortenedUrl? @relation(fields: [shortenedUrlId], references: [shortBase64])
+  shortenedUrlId String?       @map("shortened_url_base64")
+
+
+  @@index([shortenedUrlId])
+  @@map("visits")
+}
