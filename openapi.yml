@@ -9,10 +9,10 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-  description: Shorten URLs with invisible spaces
+  description: Shorten URLs with invisible spaces.
 servers:
   - url: https://api.zws.im/
-    description: Production API
+    description: Production API.
 paths:
   /{short}:
     get:
@@ -32,7 +32,7 @@ paths:
         '301':
           description: Redirected to the long URL.
         '404':
-          $ref: '#/components/responses/Error'
+          $ref: '#/components/responses/UrlNotFoundError'
         '500':
           $ref: '#/components/responses/Error'
         '200':
@@ -53,7 +53,7 @@ paths:
         - $ref: '#/components/parameters/ShortenedUrl'
       responses:
         '404':
-          $ref: '#/components/responses/Error'
+          $ref: '#/components/responses/UrlNotFoundError'
         '500':
           $ref: '#/components/responses/Error'
         '200':
@@ -89,8 +89,10 @@ paths:
       responses:
         '500':
           $ref: '#/components/responses/Error'
+        '422':
+          $ref: '#/components/responses/AttemptedShortenHostnameError'
         '503':
-          $ref: '#/components/responses/Error'
+          $ref: '#/components/responses/UniqueShortIdTimeoutError'
         '201':
           content:
             application/json:
@@ -108,35 +110,101 @@ components:
       example: https://jonah.pw
       maxLength: 500
   responses:
-    Error:
-      description: An error occurred while processing the request
+    UrlNotFoundError:
+      description: The shortened URL couldn't be found.
       content:
         application/json:
           schema:
+            type: object
             properties:
               statusCode:
-                type: number
+                type: integer
                 enum:
                   - 404
-                  - 422
-                  - 500
-                  - 503
-
               message:
                 type: string
               error:
                 type: string
                 enum:
                   - Not Found
-                  - Unprocessable Entity
-                  - Internal Server Error
-                  - Service Unavailable
               code:
                 type: string
                 enum:
                   - E_URL_NOT_FOUND
+            required:
+              - statusCode
+              - message
+              - error
+              - code
+    AttemptedShortenHostnameError:
+      description: You attempted to shorten a URL with the same hostname as this instance.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: integer
+                enum:
+                  - 422
+              message:
+                type: string
+              error:
+                type: string
+                enum:
+                  - Unprocessable Entity
+              code:
+                type: string
+                enum:
                   - E_SHORTEN_HOSTNAME
+            required:
+              - statusCode
+              - message
+              - error
+              - code
+    UniqueShortIdTimeoutError:
+      description: A unique short ID couldn't be generated in enough time.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: integer
+                enum:
+                  - 503
+              message:
+                type: string
+              error:
+                type: string
+                enum:
+                  - Service Unavailable
+              code:
+                type: string
+                enum:
                   - E_UNIQUE_SHORT_ID_TIMEOUT
+            required:
+              - statusCode
+              - message
+              - error
+              - code
+    Error:
+      description: An error occurred while processing the request.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              statusCode:
+                type: integer
+                enum:
+                  - 500
+              message:
+                type: string
+              error:
+                type: string
+                enum:
+                  - Internal Server Error
             required:
               - statusCode
               - message
