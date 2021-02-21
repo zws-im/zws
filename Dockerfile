@@ -14,6 +14,8 @@ RUN yarn install --immutable
 RUN yarn prisma generate
 RUN yarn build
 
-RUN rm -rf .yarn/cache src
+# Remove devDepencnies manually, Yarn 2 doesn't support skipping them (see https://yarnpkg.com/configuration/manifest#devDependencies)
+RUN yarn remove @tsconfig/node14 @types/node @types/supports-color eslint-plugin-prettier prettier prettier-config-xo prisma ts-node type-fest typescript xo
+RUN rm -rf .yarn/cache src tsconfig.json
 
 CMD ["node", "."]
