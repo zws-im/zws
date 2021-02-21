@@ -17,5 +17,10 @@ services:
   db:
     image: postgres:13
     env_file: ./db.env
+    volumes:
+      - zws-postgres-storage:/var/lib/postgresql/data
     expose:
       - '5432'
+volumes:
+  zws-postgres-storage:
+    external: true
