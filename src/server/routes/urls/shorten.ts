@@ -1,5 +1,6 @@
 import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import S from 'fluent-json-schema';
+// eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
 import {server} from '../../../config';
 import {urls} from '../../../services';
