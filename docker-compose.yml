@@ -25,6 +25,7 @@ services:
       - '5432'
   watchtower:
     image: containrrr/watchtower
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 volumes:
