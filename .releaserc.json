@@ -12,6 +12,12 @@
 		[
 			"@semantic-release/exec",
 			{
+				"prepareCmd": "yarn version ${nextRelease.version}"
+			}
+		],
+		[
+			"@semantic-release/exec",
+			{
 				"prepareCmd": "docker build -t zwsim/zws ."
 			}
 		],
