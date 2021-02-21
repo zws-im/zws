@@ -13,7 +13,7 @@ This project exists thanks to all the people who contribute.
 
 ### Financial Contributors
 
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/zws/contribute)]
+Become a financial contributor and help us sustain our community. [[Contribute][open-collective]]
 
 #### Individuals
 
@@ -21,7 +21,7 @@ Become a financial contributor and help us sustain our community. [[Contribute](
 
 #### Organizations
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/zws/contribute)]
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute][open-collective]]
 
 <a href="https://opencollective.com/zws/organization/0/website"><img src="https://opencollective.com/zws/organization/0/avatar.svg"></a>
 <a href="https://opencollective.com/zws/organization/1/website"><img src="https://opencollective.com/zws/organization/1/avatar.svg"></a>
@@ -100,3 +100,4 @@ If you know a better way to do this, please open a pull request!
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-postgres]: https://www.heroku.com/postgres
 [docker-compose]: https://docs.docker.com/compose/
+[open-collective]: https://opencollective.com/zws/contribute
