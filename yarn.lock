@@ -579,6 +579,7 @@ __metadata:
     "@tsconfig/node14": 1.0.0
     "@types/node": 14.14.31
     "@types/supports-color": 7.2.0
+    convert: 1.6.2
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     execa: 5.0.0
@@ -1497,6 +1498,13 @@ __metadata:
   dependencies:
     safe-buffer: ~5.1.1
   checksum: b10fbf041e3221c65e1ab67f05c8fcbad9c5fd078c62f4a6e05cb5fddc4b5a0e8a17c6a361c6a44f011b1a0c090b36aa88543be9dfa65da8c9e7f39c5de2d4df
+  languageName: node
+  linkType: hard
+
+"convert@npm:1.6.2":
+  version: 1.6.2
+  resolution: "convert@npm:1.6.2"
+  checksum: 674a4f918ff1cb6b42e820d0ac9006c778eeb19cb2e8a370806a85a0d84ed9178ecad76c90ec0b4107c8cc1dc669251f97bff1ebad05a495c9e6bb959130e45a
   languageName: node
   linkType: hard
 

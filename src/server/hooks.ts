@@ -1,7 +1,6 @@
-import execa from 'execa';
 import {FastifyInstance} from 'fastify';
 import {env} from '../config';
-import db from '../db';
+import db, {applyMigrations} from '../db';
 import baseLogger from '../logger';
 
 let requestId: string | undefined;
@@ -19,7 +18,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			dbLogger.info('Heroku environment detected, running migrations');
 
 			try {
-				await execa('yarn', ['run', 'migrations'], {stderr: 'inherit', stdout: 'inherit'});
+				await applyMigrations();
 			} catch (error: unknown) {
 				dbLogger.error('Migrations failed', error);
 				throw error;

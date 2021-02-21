@@ -1,7 +1,12 @@
 import {PrismaClient} from '@prisma/client';
+import execa from 'execa';
 import baseLogger from './logger';
 
 const logger = baseLogger.getChildLogger({name: 'db'});
+
+export async function applyMigrations(): Promise<void> {
+	await execa('yarn', ['run', 'migrations'], {stderr: 'inherit', stdout: 'inherit'});
+}
 
 const db = new PrismaClient({
 	log: [
