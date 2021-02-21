@@ -47,7 +47,8 @@
 		"lint": "xo",
 		"prebuild": "rm -rf tsc_output",
 		"style": "prettier --check .",
-		"start": "node ."
+		"start": "node .",
+		"migrations": "prisma migrate deploy --preview-feature"
 	},
 	"version": "2.0.0",
 	"xo": {
@@ -60,6 +61,7 @@
 		"@pizzafox/util": "2.5.0",
 		"@prisma/client": "2.17.0",
 		"dotenv": "8.2.0",
+		"execa": "5.0.0",
 		"fastify": "3.12.0",
 		"fastify-cors": "5.2.0",
 		"fluent-json-schema": "2.0.4",

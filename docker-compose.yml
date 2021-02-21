@@ -13,7 +13,7 @@ services:
     links:
       - db
     env_file: ./.env
-    command: ['yarn', 'prisma', 'migrate', 'deploy', '--preview-feature']
+    command: ['yarn', 'run', 'migrations']
   db:
     image: postgres:13
     env_file: ./db.env

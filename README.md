@@ -44,20 +44,6 @@ Running an instance of ZWS on Heroku is the easiest way to self-host.
 You can also stay totally within the free limits of both the [`web` process](https://devcenter.heroku.com/articles/procfile) and the [Heroku Postgres][heroku-postgres] database.
 Note that the Hobby Dev (free) plan of [Heroku Postgres][heroku-postgres] has a row limit of 10,000, which might not be enough for your use case.
 
-After you create an app using the above button you'll need to run the database migrations before shortening any URLs.
-Read [the migrations section](#Database%20migrations) below.
-
-1. Get the [Heroku Postgres][heroku-postgres] connection URI from
-   - [the web interface](https://data.heroku.com/) (select your datastore, "Settings", "Database Credentials", "URI")
-   - [the Heroku CLI](https://devcenter.heroku.com/articles/heroku-postgresql#external-connections-ingress)
-2. Create a `.env` file and enter in the connection URI
-
-Example:
-
-```env
-DATABASE_URL=postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public
-```
-
 ### [Docker Compose][docker-compose]
 
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
@@ -69,7 +55,7 @@ DATABASE_URL=postgresql://johndoe:randompassword@localhost:5432/mydb?schema=publ
 ### Database migrations
 
 After you create an app using the above button you'll need to run the database migrations before shortening any URLs.
-**These are done automatically if you are self-hosting your instance using [Docker Compose][docker-compose]**.
+**These are done automatically, but manual usage may be required when upgrading versions**.
 
 This can be done easily through [Docker Compose][docker-compose] by running the following commands:
 
@@ -82,6 +68,23 @@ docker-compose down
 Even if your database isn't being run through [Docker Compose][docker-compose] you'll still need to create the volume and start the `db` service.
 You can delete the volume right after.
 If you know a better way to do this, please open a pull request!
+
+#### [Heroku Postgres][heroku-postgres]
+
+If you are using a Heroku database migrations are automatically applied, but to manually do so you'll need the credentials for your database:
+
+1. Get the [Heroku Postgres][heroku-postgres] connection URI from
+   - [the web interface](https://data.heroku.com/) (select your datastore, "Settings", "Database Credentials", "URI")
+   - [the Heroku CLI](https://devcenter.heroku.com/articles/heroku-postgresql#external-connections-ingress)
+2. Create a `.env` file and enter in the connection URI
+
+Example:
+
+```env
+DATABASE_URL=postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public
+```
+
+Afterward you can run the migration commands shown above.
 
 [deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws/tree/v2
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg

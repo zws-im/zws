@@ -1,4 +1,6 @@
+import execa from 'execa';
 import {FastifyInstance} from 'fastify';
+import {env} from '../config';
 import db from '../db';
 import baseLogger from '../logger';
 
@@ -10,7 +12,24 @@ const fastifyLogger = baseLogger.getChildLogger({
 });
 
 export default function addHooks(fastify: FastifyInstance): void {
-	fastify.addHook('onReady', async () => db.$connect());
+	fastify.addHook('onReady', async () => {
+		if (env.heroku) {
+			const dbLogger = baseLogger.getChildLogger({name: 'db'});
+
+			dbLogger.info('Heroku environment detected, running migrations');
+
+			try {
+				await execa('yarn', ['run', 'migrations'], {stderr: 'inherit', stdout: 'inherit'});
+			} catch (error: unknown) {
+				dbLogger.error('Migrations failed', error);
+				throw error;
+			}
+
+			dbLogger.info('Migrations completed');
+		}
+
+		await db.$connect();
+	});
 
 	fastify.addHook('onClose', async () => db.$disconnect());
 
