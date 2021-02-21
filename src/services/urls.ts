@@ -2,6 +2,7 @@ import {sample} from '@pizzafox/util';
 import {Opaque} from 'type-fest';
 import {characters} from '../config';
 import db from '../db';
+import {UniqueShortIdTimeout} from '../server/errors';
 
 /** A base64 encoded string. */
 type Base64 = Opaque<string, 'Base64'>;
@@ -105,7 +106,7 @@ export async function shorten(url: string): Promise<string> {
 
 	do {
 		if (attempts++ > maxGenerationAttempts) {
-			throw new Error(`Couldn't generate a new shortened ID in ${maxGenerationAttempts}`);
+			throw new UniqueShortIdTimeout(maxGenerationAttempts);
 		}
 
 		id = generateShortId();

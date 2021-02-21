@@ -1,13 +1,13 @@
 import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import S from 'fluent-json-schema';
-import logger from '../../../logger';
 import {urls} from '../../../services';
+import {UrlNotFound} from '../../errors';
 
 const route: RouteOptions<
 	RawServerDefault,
 	RawRequestDefaultExpression,
 	RawReplyDefaultExpression,
-	{Params: {short: string}; Reply: '' | {url: string; visits: Date[]}}
+	{Params: {short: string}; Reply: {url: string; visits: Date[]}}
 > = {
 	method: 'GET',
 	url: '/:short/stats',
@@ -22,8 +22,7 @@ const route: RouteOptions<
 		const stats = await urls.stats(urls.normalizeShortId(short));
 
 		if (stats === null) {
-			void reply.code(404);
-			return '';
+			throw new UrlNotFound();
 		}
 
 		return stats;

@@ -1,12 +1,13 @@
 import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import S from 'fluent-json-schema';
 import {urls} from '../../../services';
+import {UrlNotFound} from '../../errors';
 
 const route: RouteOptions<
 	RawServerDefault,
 	RawRequestDefaultExpression,
 	RawReplyDefaultExpression,
-	{Params: {short: string}; Querystring: {visit: boolean}; Reply: '' | {url: string}}
+	{Params: {short: string}; Querystring: {visit: boolean}; Reply: {url: string}}
 > = {
 	method: 'GET',
 	url: '/:short',
@@ -23,8 +24,7 @@ const route: RouteOptions<
 		const url = await urls.visit(urls.normalizeShortId(short), true);
 
 		if (url === null) {
-			void reply.status(404);
-			return '';
+			throw new UrlNotFound();
 		}
 
 		if (visit) {

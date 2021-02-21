@@ -32,7 +32,9 @@ paths:
         '301':
           description: Redirected to the long URL.
         '404':
-          $ref: '#/components/responses/UrlNotFound'
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
         '200':
           content:
             application/json:
@@ -51,7 +53,9 @@ paths:
         - $ref: '#/components/parameters/ShortenedUrl'
       responses:
         '404':
-          $ref: '#/components/responses/UrlNotFound'
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
         '200':
           content:
             application/json:
@@ -83,6 +87,10 @@ paths:
               required:
                 - url
       responses:
+        '500':
+          $ref: '#/components/responses/Error'
+        '503':
+          $ref: '#/components/responses/Error'
         '201':
           content:
             application/json:
@@ -100,11 +108,39 @@ components:
       example: https://jonah.pw
       maxLength: 500
   responses:
-    UrlNotFound:
-      description: Shortened URL couldn't be found.
+    Error:
+      description: An error occurred while processing the request
       content:
-        text/plain:
-          example: ''
+        application/json:
+          schema:
+            properties:
+              statusCode:
+                type: number
+                enum:
+                  - 404
+                  - 422
+                  - 500
+                  - 503
+
+              message:
+                type: string
+              error:
+                type: string
+                enum:
+                  - Not Found
+                  - Unprocessable Entity
+                  - Internal Server Error
+                  - Service Unavailable
+              code:
+                type: string
+                enum:
+                  - E_URL_NOT_FOUND
+                  - E_SHORTEN_HOSTNAME
+                  - E_UNIQUE_SHORT_ID_TIMEOUT
+            required:
+              - statusCode
+              - message
+              - error
   parameters:
     ShortenedUrl:
       in: path
