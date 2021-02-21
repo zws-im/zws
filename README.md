@@ -60,33 +60,20 @@ DATABASE_URL=postgresql://johndoe:randompassword@localhost:5432/mydb?schema=publ
 
 ### [Docker Compose][docker-compose]
 
-Currently we don't publish ZWS images to a registry, so for the time being the steps are slightly more complicated:
-
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-2. Run [`docker-compose build`](https://docs.docker.com/compose/reference/build/)
-3. Copy `db.example.env` to `db.env` and fill in the values
-4. Copy `example.env` to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
-5. Run [`docker volume create --name=zws-postgres-storage`](https://docs.docker.com/engine/reference/commandline/volume_create/)
-6. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
-
-You should keep your instance up to date by periodically running the following commands:
-
-```sh
-git pull
-docker-compose build
-docker-compose up -d
-```
+2. Copy `db.example.env` to `db.env` and fill in the values
+3. Copy `example.env` to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
+4. Run [`docker volume create --name=zws-postgres-storage`](https://docs.docker.com/engine/reference/commandline/volume_create/)
+5. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
 
 ### Database migrations
 
 After you create an app using the above button you'll need to run the database migrations before shortening any URLs.
 **These are done automatically if you are self-hosting your instance using [Docker Compose][docker-compose]**.
 
-This can be done easily through [Docker Compose][docker-compose] by running the following commands.
-Currently we don't publish ZWS images to a registry, so for the time being the steps are slightly more complicated:
+This can be done easily through [Docker Compose][docker-compose] by running the following commands:
 
 ```sh
-docker-compose build
 docker volume create --name=zws-postgres-storage
 docker-compose up migration
 docker-compose down

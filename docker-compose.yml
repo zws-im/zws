@@ -1,6 +1,6 @@
 services:
   web:
-    build: .
+    image: zwsim/zws
     ports:
       - '3000:3000'
     links:
@@ -9,7 +9,7 @@ services:
       - migration
     env_file: ./.env
   migration:
-    build: .
+    image: zwsim/zws
     links:
       - db
     env_file: ./.env
