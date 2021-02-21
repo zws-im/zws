@@ -1,0 +1,78 @@
+{
+	"author": {
+		"email": "jonah@jonah.pw",
+		"name": "Jonah Snider",
+		"url": "https://jonah.pw"
+	},
+	"bugs": {
+		"url": "https://github.com/zws-im/zws/issues"
+	},
+	"devDependencies": {
+		"@semantic-release/exec": "5.0.0",
+		"@tsconfig/node14": "1.0.0",
+		"@types/node": "14.14.31",
+		"@types/supports-color": "7.2.0",
+		"eslint-plugin-prettier": "3.3.1",
+		"prettier": "2.2.1",
+		"prettier-config-xo": "1.0.3",
+		"prisma": "2.17.0",
+		"semantic-release": "17.3.9",
+		"semantic-release-docker": "2.2.0",
+		"ts-node": "9.1.1",
+		"type-fest": "0.21.1",
+		"typescript": "4.1.5",
+		"xo": "0.38.1"
+	},
+	"license": "Apache-2.0",
+	"main": "./tsc_output/index.js",
+	"name": "@zws.im/zws",
+	"engines": {
+		"node": "15.x"
+	},
+	"nyc": {
+		"all": true,
+		"extends": "@istanbuljs/nyc-config-typescript",
+		"include": [
+			"src/**/*.ts"
+		],
+		"reporter": [
+			"lcov",
+			"cobertura"
+		]
+	},
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zws-im/zws.git"
+	},
+	"scripts": {
+		"build": "tsc",
+		"deploy": "semantic-release",
+		"lint": "xo",
+		"prebuild": "rm -rf tsc_output",
+		"style": "prettier --check .",
+		"start": "node .",
+		"migrations": "prisma migrate deploy --preview-feature"
+	},
+	"version": "2.0.0",
+	"xo": {
+		"prettier": true,
+		"rules": {
+			"prettier/prettier": "off"
+		}
+	},
+	"dependencies": {
+		"@pizzafox/util": "2.5.0",
+		"@prisma/client": "2.17.0",
+		"convert": "1.6.2",
+		"dotenv": "8.2.0",
+		"execa": "5.0.0",
+		"fastify": "3.12.0",
+		"fastify-cors": "5.2.0",
+		"fastify-error": "0.3.0",
+		"fluent-json-schema": "2.0.4",
+		"ow": "0.23.0",
+		"supports-color": "8.1.1",
+		"tslog": "3.1.1"
+	}
+}
