@@ -25,11 +25,11 @@ model ShortenedUrl {
 
 model Visit {
   /// When the visit occurred
-  timestamp      DateTime      @id @default(now())
-  shortenedUrl   ShortenedUrl? @relation(fields: [shortenedUrlId], references: [shortBase64])
-  shortenedUrlId String?       @map("shortened_url_base64")
+  timestamp      DateTime     @default(now())
+  shortenedUrl   ShortenedUrl @relation(fields: [shortenedUrlId], references: [shortBase64])
+  shortenedUrlId String       @map("shortened_url_base64")
 
 
-  @@index([shortenedUrlId])
+  @@id([shortenedUrlId, timestamp])
   @@map("visits")
 }
