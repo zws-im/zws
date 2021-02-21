@@ -1,16 +1,14 @@
----
-description: Shorten URLs with invisible spaces
----
+# [Zero Width Shortener (ZWS)](https://zws.im)
 
-# Zero Width Shortener
+Shorten URLs with invisible spaces.
 
-Zero Width Shortener \(abbreviated as ZWS\) is a URL shortener that shortens URLs using spaces that have zero width, making them invisible to humans.
+Or, [configure your own instance](#Self-hosting) to use any other kinds of characters.
 
 ## Contributors
 
 ### Code Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+This project exists thanks to all the people who contribute.
 <a href="https://github.com/zws-im/zws/graphs/contributors"><img src="https://opencollective.com/zws/contributors.svg?width=890&button=false" /></a>
 
 ### Financial Contributors
