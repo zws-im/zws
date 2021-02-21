@@ -1,6 +1,7 @@
 services:
   web:
     image: zwsim/zws
+    restart: unless-stopped
     ports:
       - '3000:3000'
     links:
@@ -17,6 +18,7 @@ services:
   db:
     image: postgres:13
     env_file: ./db.env
+    restart: unless-stopped
     volumes:
       - zws-postgres-storage:/var/lib/postgresql/data
     expose:
