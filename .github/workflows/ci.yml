@@ -107,7 +107,7 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Check style with Prisma CLI
-        run: yarn run prisma format && git diff --exit-code -s schema.prisma
+        run: yarn run prisma format && git diff --exit-code -s prisma/schema.prisma
   deploy:
     name: Deploy
 
