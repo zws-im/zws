@@ -1,0 +1,25 @@
+{
+	"plugins": [
+		[
+			"@semantic-release/commit-analyzer",
+			{
+				"preset": "angular"
+			}
+		],
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/github",
+		["@semantic-release/exec", {"prepareCmd": "docker pull zwsim/zws"}],
+		[
+			"@semantic-release/exec",
+			{
+				"prepareCmd": "docker build -t zwsim/zws ."
+			}
+		],
+		[
+			"semantic-release-docker",
+			{
+				"name": "zwsim/zws"
+			}
+		]
+	]
+}
