@@ -463,6 +463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/supports-color@npm:7.2.0":
+  version: 7.2.0
+  resolution: "@types/supports-color@npm:7.2.0"
+  checksum: c17abde9400b1ce7bfc519810964e659288741587fb077c8976a060113d5782263b5d6bc5a56d9961e7c04451700ec627205a9ca91e270754742c5047f3c442f
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^4.15.1":
   version: 4.15.1
   resolution: "@typescript-eslint/eslint-plugin@npm:4.15.1"
@@ -571,6 +578,7 @@ __metadata:
     "@prisma/client": 2.17.0
     "@tsconfig/node14": 1.0.0
     "@types/node": 14.14.31
+    "@types/supports-color": 7.2.0
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     fastify: 3.12.0
@@ -580,6 +588,7 @@ __metadata:
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
     prisma: 2.17.0
+    supports-color: 8.1.1
     ts-node: 9.1.1
     tslog: 3.1.1
     type-fest: 0.21.1
@@ -6133,6 +6142,15 @@ __metadata:
   version: 2.0.1
   resolution: "strip-json-comments@npm:2.0.1"
   checksum: e60d99aa2849c27a04dce0620334f45822197df6b83664dd3746971e9a0a766d989dbb8d87f9cb7350725d2b5df401a2343222ad06e36a1ba7d62c6633267fcb
+  languageName: node
+  linkType: hard
+
+"supports-color@npm:8.1.1":
+  version: 8.1.1
+  resolution: "supports-color@npm:8.1.1"
+  dependencies:
+    has-flag: ^4.0.0
+  checksum: 0219f5c91753fea8dc8046cd4b18d39458b5dc0c6421c67c1072209faae9ba93b89283252e3b05d5c18901fd9f8b95001e3247fb93e2265f66d584a676522c75
   languageName: node
   linkType: hard
 
