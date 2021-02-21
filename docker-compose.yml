@@ -21,6 +21,10 @@ services:
       - zws-postgres-storage:/var/lib/postgresql/data
     expose:
       - '5432'
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   zws-postgres-storage:
     external: true
