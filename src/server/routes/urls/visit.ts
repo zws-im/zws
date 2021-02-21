@@ -20,7 +20,7 @@ const route: RouteOptions<
 			params: {short}
 		} = request;
 
-		const url = await urls.visit(urls.normalizeShortId(short), visit);
+		const url = await urls.visit(urls.normalizeShortId(short), true);
 
 		if (url === null) {
 			void reply.status(404);
