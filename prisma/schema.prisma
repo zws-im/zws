@@ -12,11 +12,13 @@ generator client {
 
 model ShortenedUrl {
   /// The base64 encoded shortened ID
-  shortBase64 String  @id @map("short_base64")
+  shortBase64 String   @id @map("short_base64")
   /// The long URL
   url         String
   /// Statistics of when this URL was visited
   visits      Visit[]
+  /// The datetime the URL was shortened
+  createdAt   DateTime @default(now()) @map("created_at")
 
   @@map("shortened_urls")
 }

@@ -2,6 +2,7 @@
 CREATE TABLE "shortened_urls" (
     "short_base64" TEXT NOT NULL,
     "url" TEXT NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY ("short_base64")
 );
