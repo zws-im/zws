@@ -1,7 +1,6 @@
 import convert from 'convert';
 import createServer, {RouteOptions} from 'fastify';
 import {heroku} from '../config/env';
-import {fastifyLogger} from '../logger';
 import registerHooks from './hooks';
 import * as routes from './routes';
 
