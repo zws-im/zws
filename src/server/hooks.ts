@@ -27,6 +27,10 @@ export default function addHooks(fastify: FastifyInstance): void {
 			dbLogger.info('Migrations completed');
 		}
 
+		if (env.env === env.Env.Dev) {
+			fastifyLogger.debug(fastify.printRoutes().trim().split('\n'));
+		}
+
 		await db.$connect();
 	});
 
