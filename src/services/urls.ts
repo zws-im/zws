@@ -1,4 +1,5 @@
 import {sample} from '@pizzafox/util';
+import {ShortenedUrl} from '@prisma/client';
 import {Opaque} from 'type-fest';
 import {characters} from '../config';
 import db from '../db';
@@ -100,9 +101,9 @@ export async function stats(id: string): Promise<null | {url: string; visits: Da
  * @returns The ID of the shortened URL
  */
 export async function shorten(url: string): Promise<string> {
-	let id: string;
-	let shortBase64: Base64;
 	let attempts = 0;
+	let created: ShortenedUrl | null = null;
+	let id: string;
 
 	do {
 		if (attempts++ > maxGenerationAttempts) {
@@ -110,11 +111,16 @@ export async function shorten(url: string): Promise<string> {
 		}
 
 		id = generateShortId();
-		shortBase64 = encode(id);
-		// eslint-disable-next-line no-await-in-loop
-	} while ((await db.shortenedUrl.count({where: {shortBase64}})) > 0);
+		const shortBase64 = encode(id);
 
-	await db.shortenedUrl.create({data: {url, shortBase64}});
+		try {
+			created = await db.shortenedUrl.create({data: {url, shortBase64}});
+		} catch {
+			continue;
+		}
+
+		// eslint-disable-next-line no-await-in-loop
+	} while (!created);
 
 	return id;
 }
