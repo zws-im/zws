@@ -50,8 +50,8 @@ Note that the Hobby Dev (free) plan of [Heroku Postgres][heroku-postgres] has a 
 ### [Docker Compose][docker-compose]
 
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-2. Copy `db.example.env` to `db.env` and fill in the values
-3. Copy `example.env` to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
+2. Copy [`db.example.env`](db.example.env) to `db.env` and fill in the values
+3. Copy [`example.env`](example.env) to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
 4. Run [`docker volume create --name=zws-postgres-storage`](https://docs.docker.com/engine/reference/commandline/volume_create/)
 5. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
 
