@@ -87,7 +87,11 @@ ow(parsedCharacters, EnvVarNames.ShortChars, ow.any(ow.array.ofType(ow.string.no
 /** Characters to use in the shortened ID for a URL. */
 export const characters = parsedCharacters === null ? alphaNumeric : [...new Set<string>(parsedCharacters)];
 
-const defaultShortLength = Math.round(8.5 / (2 * Math.log10(characters.length)) + 4);
+/** The maximum number of short URLs that can be generated. */
+const maxShortUrls = 1e9;
+/** The default length of a generated short ID. */
+const defaultShortLength = Math.round(Math.log(maxShortUrls) / Math.log(characters.length));
+
 /** The length of the shortened ID for a URL. */
 export const length = process.env[EnvVarNames.ShortLength] === undefined ? defaultShortLength : Number(process.env[EnvVarNames.ShortLength]);
 

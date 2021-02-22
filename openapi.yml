@@ -1,7 +1,7 @@
 openapi: '3.0.3'
 info:
   title: Zero Width Shortener
-  version: 2.1.0
+  version: 2.2.0
   contact:
     name: Jonah Snider
     email: jonah@jonah.pw
