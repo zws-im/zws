@@ -851,7 +851,6 @@ __metadata:
     eslint-plugin-prettier: 3.3.1
     execa: 5.0.0
     fastify: 3.12.0
-    fastify-cors: 5.2.0
     fastify-error: 0.3.0
     fluent-json-schema: 2.0.4
     ow: 0.23.0
@@ -3689,27 +3688,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-cors@npm:5.2.0":
-  version: 5.2.0
-  resolution: "fastify-cors@npm:5.2.0"
-  dependencies:
-    fastify-plugin: ^3.0.0
-    vary: ^1.1.2
-  checksum: 9681a45c0358a2e36a091224cfd07cf4647856243af6d2cb75eb6479213d1b2693ddb33db6c58ecd37445150947099481ca29feca0fded94ee1918096d13a814
-  languageName: node
-  linkType: hard
-
 "fastify-error@npm:0.3.0, fastify-error@npm:^0.3.0":
   version: 0.3.0
   resolution: "fastify-error@npm:0.3.0"
   checksum: 8b66bd0f3ed68d90b31e59dfee38e41fa4ab1d5206fc5675c8ec5d0ef65e37067d5305ff3a2e754b129212353b30bd5e78958c1446e909153116ffac86a2539e
-  languageName: node
-  linkType: hard
-
-"fastify-plugin@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "fastify-plugin@npm:3.0.0"
-  checksum: 201c30749b42e77e6159359ae436a56243dc2b920d2efab126b2b680f61d23251d51ee2334a7cbb9b30d8be13746983df8d5695828fb1e4495e4d1d325f66793
   languageName: node
   linkType: hard
 
@@ -10206,13 +10188,6 @@ __metadata:
   dependencies:
     builtins: ^1.0.3
   checksum: 3c5a5b154a32d141a8fff660e4cdfcbd359bfafb1fc544772d50fb04377bea2eb7073bd49d914309c21c1fd19af68849e8022791573b88fc6413560a8dcf5016
-  languageName: node
-  linkType: hard
-
-"vary@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "vary@npm:1.1.2"
-  checksum: 591f059f727ac1ba0d97cb7767f8583a03fcbb07db7be2b7dce838ede520ec0e958a41cb19077054769077fdc49a9b9a2dc391c83426bfee89c054b8cc7404bf
   languageName: node
   linkType: hard
 
