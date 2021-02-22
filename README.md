@@ -1,5 +1,8 @@
 # [Zero Width Shortener (ZWS)](https://zws.im)
 
+[![Number of shortened URLs][stats-urls-image]](#Badges)
+[![Number of visited URLs][stats-visits-image]](#Badges)
+
 Shorten URLs with invisible spaces.
 
 Or, [configure your own instance](#Self-hosting) to use any other kinds of characters.
@@ -86,8 +89,19 @@ DATABASE_URL=postgresql://johndoe:randompassword@localhost:5432/mydb?schema=publ
 
 Afterward you can run the migration commands shown above.
 
+## Badges
+
+ZWS instances expose two routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
+
+| Route                   | Description              | Example                                                                                                                                           |
+| ----------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/stats/shields/urls`   | Number of shortened URLs | [![Number of shortened URLs][stats-urls-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]     |
+| `/stats/shields/visits` | Number of visited URLs   | [![Number of visited URLs][stats-visits-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image] |
+
 [deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws/tree/v2
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-postgres]: https://www.heroku.com/postgres
 [docker-compose]: https://docs.docker.com/compose/
 [open-collective]: https://opencollective.com/zws/contribute
+[stats-urls-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls
+[stats-visits-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits
