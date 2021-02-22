@@ -2,7 +2,7 @@ import convert from 'convert';
 import createServer, {RouteOptions} from 'fastify';
 import cors from 'fastify-cors';
 import {heroku} from '../config/env';
-import logger from '../logger';
+import {fastifyLogger} from '../logger';
 import registerHooks from './hooks';
 import * as routes from './routes';
 
@@ -19,6 +19,6 @@ for (const route of Object.values(routes)) {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-fastify.register(cors).then(() => {}, logger.getChildLogger({name: 'http'}).error);
+fastify.register(cors).then(() => {}, fastifyLogger.error);
 
 export default fastify;

@@ -10,4 +10,8 @@ const logger = new Logger({
 	displayDateTime: !heroku
 });
 
+export const fastifyLogger = logger.getChildLogger({name: 'http'});
+export const configLogger = logger.getChildLogger({name: 'config'});
+export const dbLogger = logger.getChildLogger({name: 'db'});
+
 export default logger;

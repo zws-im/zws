@@ -1,20 +1,17 @@
 import {FastifyInstance} from 'fastify';
 import {env} from '../config';
 import db, {applyMigrations} from '../db';
-import baseLogger from '../logger';
+import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
 
 let requestId: string | undefined;
 
-const fastifyLogger = baseLogger.getChildLogger({
-	name: 'http',
+const fastifyLogger = baseFastifyLogger.getChildLogger({
 	requestId: () => requestId!
 });
 
 export default function addHooks(fastify: FastifyInstance): void {
 	fastify.addHook('onReady', async () => {
 		if (env.heroku) {
-			const dbLogger = baseLogger.getChildLogger({name: 'db'});
-
 			dbLogger.info('Heroku environment detected, running migrations');
 
 			try {

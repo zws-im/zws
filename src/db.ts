@@ -1,8 +1,6 @@
 import {PrismaClient} from '@prisma/client';
 import execa from 'execa';
-import baseLogger from './logger';
-
-const logger = baseLogger.getChildLogger({name: 'db'});
+import {dbLogger} from './logger';
 
 export async function applyMigrations(): Promise<void> {
 	await execa('yarn', ['run', 'migrations'], {stderr: 'inherit', stdout: 'inherit'});
@@ -16,8 +14,8 @@ const db = new PrismaClient({
 	]
 });
 
-db.$on('error', error => logger.error(error.message));
-db.$on('info', info => logger.info(info.message));
-db.$on('warn', warning => logger.warn(warning.message));
+db.$on('error', error => dbLogger.error(error.message));
+db.$on('info', info => dbLogger.info(info.message));
+db.$on('warn', warning => dbLogger.warn(warning.message));
 
 export default db;
