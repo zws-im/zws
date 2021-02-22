@@ -1,7 +1,7 @@
 openapi: '3.0.3'
 info:
   title: Zero Width Shortener
-  version: 2.0.0
+  version: 2.1.0
   contact:
     name: Jonah Snider
     email: jonah@jonah.pw
@@ -103,12 +103,84 @@ paths:
                     type: string
                     description: The shortened ID for the URL.
           description: URL shortened.
+  /stats:
+    get:
+      description: Total usage statistics for this instance.
+      tags:
+        - stats
+      responses:
+        '500':
+          $ref: '#/components/responses/Error'
+        '200':
+          description: Total usage statistics.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  urls:
+                    type: integer
+                    description: Total number of shortened URLs.
+                  visits:
+                    type: integer
+                    description: Total number of visited shortened URLs.
+                required:
+                  - urls
+                  - visits
+  /stats/shields/urls:
+    get:
+      description: Shields endpoint badge response for total number of URLs shortened.
+      tags:
+        - stats
+        - shields
+      responses:
+        '500':
+          $ref: '#/components/responses/Error'
+        '200':
+          description: Shields endpoint badge response for total number of URLs shortened.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShieldsEndpointResponse'
+  /stats/shields/visits:
+    get:
+      description: Shields endpoint badge response for total number of shortened URLs visited.
+      tags:
+        - stats
+        - shields
+      responses:
+        '500':
+          $ref: '#/components/responses/Error'
+        '200':
+          description: Shields endpoint badge response for total number of shortened URLs visited.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShieldsEndpointResponse'
 components:
   schemas:
     Url:
       type: string
       example: https://jonah.pw
       maxLength: 500
+    ShieldsEndpointResponse:
+      type: object
+      properties:
+        schemaVersion:
+          type: integer
+          enum:
+            - 1
+        label:
+          type: string
+        message:
+          type: string
+        color:
+          type: string
+      required:
+        - schemaVersion
+        - label
+        - message
+        - color
   responses:
     UrlNotFoundError:
       description: The shortened URL couldn't be found.

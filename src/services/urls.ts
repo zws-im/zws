@@ -118,3 +118,14 @@ export async function shorten(url: string): Promise<string> {
 
 	return id;
 }
+
+/**
+ * Get total statistics for all URLs.
+ *
+ * @returns Total statistics for all URLs
+ */
+export async function totalStats(): Promise<{urls: number; visits: number}> {
+	const [urls, visits] = await db.$transaction([db.shortenedUrl.count(), db.visit.count()]);
+
+	return {urls, visits};
+}
