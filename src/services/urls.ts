@@ -114,12 +114,11 @@ export async function shorten(url: string): Promise<string> {
 		const shortBase64 = encode(id);
 
 		try {
+			// eslint-disable-next-line no-await-in-loop
 			created = await db.shortenedUrl.create({data: {url, shortBase64}});
 		} catch {
 			continue;
 		}
-
-		// eslint-disable-next-line no-await-in-loop
 	} while (!created);
 
 	return id;
