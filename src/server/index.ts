@@ -1,5 +1,5 @@
 import convert from 'convert';
-import createServer, {RouteOptions} from 'fastify';
+import createServer from 'fastify';
 import {heroku} from '../config/env';
 import registerHooks from './hooks';
 import * as routes from './routes';
@@ -12,8 +12,10 @@ const fastify = createServer({
 
 registerHooks(fastify);
 
-for (const route of Object.values(routes)) {
-	fastify.route(route as RouteOptions);
-}
+fastify.after(() => {
+	for (const declareRoute of Object.values(routes)) {
+		declareRoute(fastify);
+	}
+});
 
 export default fastify;
