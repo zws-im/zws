@@ -24,7 +24,7 @@
 		"xo": "0.38.1"
 	},
 	"license": "Apache-2.0",
-	"main": "./tsc_output/index.js",
+	"main": "./tsc_output/src/index.js",
 	"name": "@zws.im/zws",
 	"engines": {
 		"node": "15.x"
