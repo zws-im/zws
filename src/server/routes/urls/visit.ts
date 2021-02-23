@@ -29,7 +29,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 
 			if (visit) {
-				void reply.redirect(url);
+				void reply.redirect(301, url);
 			} else {
 				return {url};
 			}
