@@ -94,11 +94,11 @@ Afterward you can run the migration commands shown above.
 
 ZWS instances expose two routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
 
-| Route                    | Description              | Example                                                                                                                                           |
-| ------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/stats/shields/urls`    | Number of shortened URLs | [![Number of shortened URLs][stats-urls-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]     |
-| `/stats/shields/visits`  | Number of visited URLs   | [![Number of visited URLs][stats-visits-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image] |
-| `/stats/shields/version` | ZWS version              | [![ZWS version][stats-version-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version`][stats-version-image]         |
+| Image                                         | Route                    | Description              | Example                                                                                               |
+| --------------------------------------------- | ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------- |
+| ![Number of shortened URLs][stats-urls-image] | `/stats/shields/urls`    | Number of shortened URLs | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]       |
+| ![Number of visited URLs][stats-visits-image] | `/stats/shields/visits`  | Number of visited URLs   | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image]   |
+| ![ZWS version][stats-version-image]           | `/stats/shields/version` | ZWS version              | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version`][stats-version-image] |
 
 [deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws/tree/v2
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
