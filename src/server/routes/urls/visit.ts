@@ -22,6 +22,11 @@ export default function declareRoute(fastify: FastifyInstance) {
 				params: {short}
 			} = request;
 
+			if (short === '') {
+				reply.callNotFound();
+				return;
+			}
+
 			const url = await urls.visit(urls.normalizeShortId(short), true);
 
 			if (url === null) {
