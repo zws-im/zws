@@ -38,6 +38,10 @@ Support this project with your organization. Your logo will show up here with a 
 <a href="https://opencollective.com/zws/organization/8/website"><img src="https://opencollective.com/zws/organization/8/avatar.svg"></a>
 <a href="https://opencollective.com/zws/organization/9/website"><img src="https://opencollective.com/zws/organization/9/avatar.svg"></a>
 
+## [Status page][status-page]
+
+A status page for the official zws.im instance of ZWS is available at **[status.zws.im][status-page]**.
+
 ## Self-hosting
 
 ### Heroku
@@ -108,3 +112,4 @@ ZWS instances expose two routes that implement the [Shields endpoint schema](htt
 [stats-urls-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls
 [stats-visits-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits
 [stats-version-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version
+[status-page]: https://status.zws.im/
