@@ -6,7 +6,7 @@ tags:
     description: Usage statistics
 info:
   title: Zero Width Shortener
-  version: 2.3.0
+  version: 2.3.1
   description: Shorten URLs with invisible spaces.
   license:
     name: Apache 2.0

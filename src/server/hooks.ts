@@ -6,6 +6,7 @@ import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
 let requestId: string | undefined;
 
 const fastifyLogger = baseFastifyLogger.getChildLogger({
+	...baseFastifyLogger.settings,
 	requestId: () => requestId!
 });
 
