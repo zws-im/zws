@@ -1,5 +1,5 @@
 import {FastifyInstance} from 'fastify';
-import {env} from '../config';
+import {env, server} from '../config';
 import db, {applyMigrations} from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
 
@@ -38,6 +38,10 @@ export default function addHooks(fastify: FastifyInstance): void {
 		requestId = request.id;
 
 		fastifyLogger.info(`${request.routerMethod} ${request.routerPath}`);
+	});
+
+	fastify.addHook('onSend', async (request, reply) => {
+		void reply.header('Server', server.serverString);
 	});
 
 	fastify.addHook('onError', async (request, reply, error) => {
