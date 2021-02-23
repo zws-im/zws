@@ -104,7 +104,7 @@ ZWS instances expose two routes that implement the [Shields endpoint schema](htt
 | ![Number of visited URLs][stats-visits-image] | `/stats/shields/visits`  | Number of visited URLs   | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image]   |
 | ![ZWS version][stats-version-image]           | `/stats/shields/version` | ZWS version              | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version`][stats-version-image] |
 
-[deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws/tree/v2
+[deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
 [heroku-postgres]: https://www.heroku.com/postgres
 [docker-compose]: https://docs.docker.com/compose/
