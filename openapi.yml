@@ -4,9 +4,11 @@ tags:
     description: Shortened URLs
   - name: stats
     description: Usage statistics
+  - name: shields
+    description: Shields endpoint badges
 info:
   title: Zero Width Shortener
-  version: 2.4.0
+  version: 2.5.0
   description: Shorten URLs with invisible spaces.
   license:
     name: Apache 2.0
@@ -179,9 +181,14 @@ paths:
                         example: '1,234'
                         pattern: '^\d{1,3}(?:,\d{1,3})*$'
                         readOnly: true
+                      version:
+                        type: string
+                        pattern: '^v\d+\.\d+\.\d+(?:\-.+)?$'
+                        readOnly: true
                     required:
                       - urls
                       - visits
+                      - version
                   - properties:
                       urls:
                         type: integer
@@ -193,9 +200,15 @@ paths:
                         minimum: 0
                         example: 1234
                         readOnly: true
+                      version:
+                        type: string
+                        pattern: '^\d+\.\d+\.\d+(?:\-.+)?$'
+                        example: 2.0.0
+                        readOnly: true
                     required:
                       - urls
                       - visits
+                      - version
                 type: object
         '500':
           $ref: '#/components/responses/Error'
@@ -211,6 +224,7 @@ paths:
       summary: Shields endpoint for URLs
       tags:
         - stats
+        - shields
       responses:
         '200':
           $ref: '#/components/responses/ShieldsEndpointResponse'
@@ -222,6 +236,7 @@ paths:
     get:
       tags:
         - stats
+        - shields
       summary: Shields endpoint for visits
       responses:
         '200':

@@ -1,11 +1,14 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {urls} from '../../../services';
 import S from 'fluent-json-schema';
+import {server} from '../../../config';
 
 interface Stats<T extends number | string> {
 	urls: T;
 	visits: T;
+	version: string;
 }
+
 export default function declareRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
 		RawServerDefault,
@@ -19,13 +22,17 @@ export default function declareRoute(fastify: FastifyInstance) {
 			querystring: S.object().prop('format', S.boolean().default(false))
 		},
 		handler: async (request, reply) => {
-			const stats = await urls.totalStats();
+			const urlStats = await urls.totalStats();
 
 			if (request.query.format) {
-				return {urls: stats.urls.toLocaleString(), visits: stats.visits.toLocaleString()};
+				return {
+					urls: urlStats.urls.toLocaleString(),
+					visits: urlStats.visits.toLocaleString(),
+					version: `v${server.version}`
+				};
 			}
 
-			return stats;
+			return {...urlStats, version: server.version};
 		}
 	};
 
