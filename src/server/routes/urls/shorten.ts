@@ -31,5 +31,11 @@ export default function declareRoute(fastify: FastifyInstance) {
 		}
 	};
 
+	if (fastify.verifyBearerAuth) {
+		route.preHandler = fastify.auth([fastify.verifyBearerAuth]);
+	} else if (server.apiKey !== null) {
+		fastifyLogger.warn("API key was defined but bearer auth decorator wasn't");
+	}
+
 	fastify.route(route);
 }

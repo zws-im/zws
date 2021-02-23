@@ -1,118 +1,169 @@
-openapi: '3.0.3'
+openapi: 3.0.3
+tags:
+  - name: urls
+    description: Shortened URLs
+  - name: stats
+    description: Usage statistics
 info:
   title: Zero Width Shortener
-  version: 2.2.0
-  contact:
-    name: Jonah Snider
-    email: jonah@jonah.pw
-    url: https://jonah.pw
+  version: 2.3.0
+  description: Shorten URLs with invisible spaces.
   license:
     name: Apache 2.0
-    url: https://www.apache.org/licenses/LICENSE-2.0.html
-  description: Shorten URLs with invisible spaces.
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  contact:
+    name: Jonah Snider
+    url: 'https://jonah.pw'
+    email: jonah@jonah.pw
 servers:
-  - url: https://api.zws.im/
-    description: Production API.
+  - url: 'https://api.zws.im'
+    description: Production
 paths:
-  /{short}:
-    get:
-      tags:
-        - urls
-      description: Retrieve a shortened URL.
-      parameters:
-        - $ref: '#/components/parameters/ShortenedUrl'
-        - in: query
-          name: visit
-          schema:
-            type: boolean
-            default: true
-          required: false
-          description: If you should be redirected to the URL instead of returning it as JSON.
-      responses:
-        '301':
-          description: Redirected to the long URL.
-        '404':
-          $ref: '#/components/responses/UrlNotFoundError'
-        '500':
-          $ref: '#/components/responses/Error'
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  url:
-                    $ref: '#/components/schemas/Url'
-          description: Long URL returned.
-  /{short}/stats:
-    get:
-      tags:
-        - urls
-      description: Retrieve usage statistics for a shortened URL.
-      parameters:
-        - $ref: '#/components/parameters/ShortenedUrl'
-      responses:
-        '404':
-          $ref: '#/components/responses/UrlNotFoundError'
-        '500':
-          $ref: '#/components/responses/Error'
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  url:
-                    $ref: '#/components/schemas/Url'
-                  visits:
-                    type: array
-                    items:
-                      type: string
-                      format: date-time
-                      example: 2021-02-21T03:58:25.794Z
-          description: Long URL returned.
   /:
     post:
+      summary: Shorten URL
+      operationId: urls-shorten
       tags:
         - urls
-      description: Shorten a URL.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                url:
-                  $ref: '#/components/schemas/Url'
-              required:
-                - url
       responses:
-        '500':
-          $ref: '#/components/responses/Error'
-        '422':
-          $ref: '#/components/responses/AttemptedShortenHostnameError'
-        '503':
-          $ref: '#/components/responses/UniqueShortIdTimeoutError'
         '201':
+          description: Created
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   short:
-                    type: string
-                    description: The shortened ID for the URL.
-          description: URL shortened.
-  /stats:
-    get:
-      description: Total usage statistics for this instance.
-      tags:
-        - stats
-      responses:
+                    $ref: '#/components/schemas/Short'
+                required:
+                  - short
+        '401':
+          $ref: '#/components/responses/ApiKeyError'
+        '422':
+          description: Shortening a URL with the same hostname as the server is disallowed
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      statusCode:
+                        type: integer
+                        enum:
+                          - 422
+                        readOnly: true
+                      code:
+                        type: string
+                        enum:
+                          - E_SHORTEN_HOSTNAME
+                        readOnly: true
+                      error:
+                        type: string
+                        enum:
+                          - Unprocessable Entity
+                        readOnly: true
+                    required:
+                      - statusCode
+                      - code
+                      - error
+                  - $ref: '#/components/schemas/Error'
         '500':
           $ref: '#/components/responses/Error'
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UniqueShortIdTimeoutError'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Url'
+        description: Long URL to shorten
+      description: Shorten a URL
+      security:
+        - API key: []
+  '/{short}':
+    parameters:
+      - schema:
+          $ref: '#/components/schemas/Short'
+        in: path
+        name: short
+        required: true
+        description: Short ID
+    get:
+      summary: Visit URL
+      tags:
+        - urls
+      responses:
         '200':
-          description: Total usage statistics.
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Url'
+        '301':
+          description: Moved Permanently
+        '404':
+          $ref: '#/components/responses/UrlNotFoundError'
+        '500':
+          $ref: '#/components/responses/Error'
+      operationId: urls-visit
+      parameters:
+        - schema:
+            type: boolean
+            default: 'true'
+          in: query
+          name: visit
+          description: If you should be redirected to the URL instead of returning it as JSON
+      description: Visit a shortened URL or retrieve the original long URL
+  '/{short}/stats':
+    parameters:
+      - schema:
+          $ref: '#/components/schemas/Short'
+        in: path
+        name: short
+        required: true
+        description: Short ID
+    get:
+      summary: URL stats
+      tags:
+        - urls
+        - stats
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/Url'
+                  - type: object
+                    properties:
+                      visits:
+                        type: array
+                        format: date-time
+                        items:
+                          type: string
+                          format: date-time
+                          example: '2021-02-21T03:58:25.794Z'
+        '404':
+          $ref: '#/components/responses/UrlNotFoundError'
+        '500':
+          $ref: '#/components/responses/Error'
+      operationId: urls-stats
+      description: Retrieve usage statistics for a shortened URL
+  /stats:
+    get:
+      summary: Total statistics
+      tags:
+        - stats
+      operationId: total-stats
+      description: Total usage statistics for this instance
+      responses:
+        '200':
+          description: OK
           content:
             application/json:
               schema:
@@ -120,172 +171,225 @@ paths:
                 properties:
                   urls:
                     type: integer
-                    description: Total number of shortened URLs.
+                    minimum: 0
+                    readOnly: true
                   visits:
                     type: integer
-                    description: Total number of visited shortened URLs.
+                    minimum: 0
+                    readOnly: true
                 required:
                   - urls
                   - visits
+        '500':
+          $ref: '#/components/responses/Error'
   /stats/shields/urls:
     get:
-      description: Shields endpoint badge response for total number of URLs shortened.
+      summary: Shields endpoint for URLs
       tags:
         - stats
-        - shields
       responses:
+        '200':
+          $ref: '#/components/responses/ShieldsEndpointResponse'
         '500':
           $ref: '#/components/responses/Error'
-        '200':
-          description: Shields endpoint badge response for total number of URLs shortened.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ShieldsEndpointResponse'
+      operationId: shields-urls
+      description: Shields endpoint badge response for total number of URLs shortened
   /stats/shields/visits:
     get:
-      description: Shields endpoint badge response for total number of shortened URLs visited.
       tags:
         - stats
-        - shields
+      summary: Shields endpoint for visits
       responses:
+        '200':
+          $ref: '#/components/responses/ShieldsEndpointResponse'
         '500':
           $ref: '#/components/responses/Error'
-        '200':
-          description: Shields endpoint badge response for total number of shortened URLs visited.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ShieldsEndpointResponse'
+      operationId: shields-visits
+      description: Shields endpoint badge response for total number of shortened URLs visited
 components:
   schemas:
     Url:
-      type: string
-      example: https://jonah.pw
-      maxLength: 500
-    ShieldsEndpointResponse:
+      title: Url
       type: object
+      description: A long URL
       properties:
-        schemaVersion:
-          type: integer
-          enum:
-            - 1
-        label:
-          type: string
-        message:
-          type: string
-        color:
+        url:
+          format: uri
+          maxLength: 500
+          example: 'https://jonah.pw'
           type: string
       required:
-        - schemaVersion
-        - label
-        - message
-        - color
-  responses:
-    UrlNotFoundError:
-      description: The shortened URL couldn't be found.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              statusCode:
-                type: integer
-                enum:
-                  - 404
-              message:
-                type: string
-              error:
-                type: string
-                enum:
-                  - Not Found
-              code:
-                type: string
-                enum:
-                  - E_URL_NOT_FOUND
-            required:
-              - statusCode
-              - message
-              - error
-              - code
-    AttemptedShortenHostnameError:
-      description: You attempted to shorten a URL with the same hostname as this instance.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              statusCode:
-                type: integer
-                enum:
-                  - 422
-              message:
-                type: string
-              error:
-                type: string
-                enum:
-                  - Unprocessable Entity
-              code:
-                type: string
-                enum:
-                  - E_SHORTEN_HOSTNAME
-            required:
-              - statusCode
-              - message
-              - error
-              - code
-    UniqueShortIdTimeoutError:
-      description: A unique short ID couldn't be generated in enough time.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              statusCode:
-                type: integer
-                enum:
-                  - 503
-              message:
-                type: string
-              error:
-                type: string
-                enum:
-                  - Service Unavailable
-              code:
-                type: string
-                enum:
-                  - E_UNIQUE_SHORT_ID_TIMEOUT
-            required:
-              - statusCode
-              - message
-              - error
-              - code
+        - url
     Error:
-      description: An error occurred while processing the request.
+      description: Generic error response
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          maximum: 600
+          exclusiveMaximum: true
+          minimum: 400
+          example: 500
+          readOnly: true
+        message:
+          type: string
+          readOnly: true
+        error:
+          type: string
+          example: Internal Server Error
+          readOnly: true
+        code:
+          type: string
+          readOnly: true
+      required:
+        - statusCode
+        - message
+        - error
+      readOnly: true
+    MissingApiKeyError:
+      description: You must provide an API key to access this route
+      allOf:
+        - type: object
+          properties:
+            statusCode:
+              type: integer
+              enum:
+                - 401
+              readOnly: true
+            code:
+              type: string
+              enum:
+                - E_MISSING_API_KEY
+              readOnly: true
+            error:
+              type: string
+              enum:
+                - Unauthorized
+              readOnly: true
+          required:
+            - code
+        - $ref: '#/components/schemas/Error'
+    IncorrectApiKeyError:
+      description: The provided API key was not correct
+      allOf:
+        - type: object
+          properties:
+            statusCode:
+              type: integer
+              enum:
+                - 401
+              readOnly: true
+            code:
+              type: string
+              enum:
+                - E_INCORRECT_API_KEY
+              readOnly: true
+            error:
+              type: string
+              enum:
+                - Unauthorized
+              readOnly: true
+          required:
+            - code
+        - $ref: '#/components/schemas/Error'
+    UniqueShortIdTimeoutError:
+      description: Couldn't generate a unique shortened ID in time
+      allOf:
+        - type: object
+          properties:
+            statusCode:
+              type: integer
+              enum:
+                - 503
+              readOnly: true
+            code:
+              type: string
+              enum:
+                - E_UNIQUE_SHORT_ID_TIMEOUT
+              readOnly: true
+            error:
+              type: string
+              enum:
+                - Service Unavailable
+              readOnly: true
+          required:
+            - code
+        - $ref: '#/components/schemas/Error'
+    Short:
+      type: string
+      title: Short
+      example: aBcXyZ
+      maxLength: 1024
+      readOnly: true
+      description: Shortened URL ID
+  securitySchemes:
+    API key:
+      type: http
+      scheme: bearer
+      description: ''
+  responses:
+    Error:
+      description: A generic server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    UrlNotFoundError:
+      description: Shortened URL not found in database
+      content:
+        application/json:
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  statusCode:
+                    type: integer
+                    enum:
+                      - 404
+                  code:
+                    type: string
+                    enum:
+                      - E_URL_NOT_FOUND
+                  error:
+                    type: string
+                    enum:
+                      - Not Found
+                required:
+                  - statusCode
+                  - code
+                  - error
+              - $ref: '#/components/schemas/Error'
+    ApiKeyError:
+      description: You must provide an API key to access this route
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: '#/components/schemas/MissingApiKeyError'
+              - $ref: '#/components/schemas/IncorrectApiKeyError'
+    ShieldsEndpointResponse:
+      description: Shields endpoint response
       content:
         application/json:
           schema:
             type: object
             properties:
-              statusCode:
+              schemaVersion:
                 type: integer
                 enum:
-                  - 500
+                  - 1
+                readOnly: true
+              label:
+                type: string
+                readOnly: true
               message:
                 type: string
-              error:
+                readOnly: true
+              color:
                 type: string
-                enum:
-                  - Internal Server Error
+                readOnly: true
             required:
-              - statusCode
+              - schemaVersion
+              - label
               - message
-              - error
-  parameters:
-    ShortenedUrl:
-      in: path
-      name: short
-      schema:
-        type: string
-      required: true
-      description: The shortened ID for the URL.
+              - color

@@ -7,3 +7,9 @@ export const UrlNotFound = createError('E_URL_NOT_FOUND', 'Shortened URL not fou
 export const AttemptedShortenHostname = createError('E_SHORTEN_HOSTNAME', 'Shortening a URL with the same hostname as the server is disallowed', 422);
 
 export const UniqueShortIdTimeout = createError('E_UNIQUE_SHORT_ID_TIMEOUT', `Couldn't generate a new shortened ID in %s attempts`, 503);
+
+/** An incorrect API key was provided. */
+export const IncorrectApiKey = createError('E_INCORRECT_API_KEY', 'The provided API key was not correct', 401);
+
+/** An API key was required, but not provided. */
+export const MissingApiKey = createError('E_MISSING_API_KEY', 'You must provide an API key to access this route', 401);

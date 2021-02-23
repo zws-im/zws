@@ -8,3 +8,5 @@ const rawHostname: JsonValue = process.env.HOSTNAME ?? 'localhost';
 ow(rawHostname, 'HOSTNAME', ow.string);
 
 export const hostname: string = rawHostname;
+
+export const apiKey: string | null = process.env.API_KEY ?? null;

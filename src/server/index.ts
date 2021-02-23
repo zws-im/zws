@@ -1,7 +1,9 @@
 import convert from 'convert';
 import createServer from 'fastify';
 import {heroku} from '../config/env';
+import {fastifyLogger} from '../logger';
 import registerHooks from './hooks';
+import registerPlugins from './plugins';
 import * as routes from './routes';
 
 const fastify = createServer({
@@ -11,6 +13,10 @@ const fastify = createServer({
 });
 
 registerHooks(fastify);
+
+registerPlugins(fastify).catch(error => {
+	fastifyLogger.error('Failed to register plugins', error);
+});
 
 fastify.after(() => {
 	for (const declareRoute of Object.values(routes)) {
