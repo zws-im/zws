@@ -245,6 +245,19 @@ paths:
           $ref: '#/components/responses/Error'
       operationId: shields-visits
       description: Shields endpoint badge response for total number of shortened URLs visited
+  /stats/shields/version:
+    get:
+      summary: Shields endpoint for version
+      tags:
+        - stats
+        - shields
+      responses:
+        '200':
+          $ref: '#/components/responses/ShieldsEndpointResponse'
+        '500':
+          $ref: '#/components/responses/Error'
+      operationId: shields-version
+      description: Shields endpoint badge response for instance version
 components:
   schemas:
     Url:

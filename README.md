@@ -2,6 +2,7 @@
 
 [![Number of shortened URLs][stats-urls-image]](#Badges)
 [![Number of visited URLs][stats-visits-image]](#Badges)
+[![ZWS version][stats-version-image]](#Badges)
 
 Shorten URLs with invisible spaces.
 
@@ -93,10 +94,11 @@ Afterward you can run the migration commands shown above.
 
 ZWS instances expose two routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
 
-| Route                   | Description              | Example                                                                                                                                           |
-| ----------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/stats/shields/urls`   | Number of shortened URLs | [![Number of shortened URLs][stats-urls-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]     |
-| `/stats/shields/visits` | Number of visited URLs   | [![Number of visited URLs][stats-visits-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image] |
+| Route                    | Description              | Example                                                                                                                                           |
+| ------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/stats/shields/urls`    | Number of shortened URLs | [![Number of shortened URLs][stats-urls-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]     |
+| `/stats/shields/visits`  | Number of visited URLs   | [![Number of visited URLs][stats-visits-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image] |
+| `/stats/shields/version` | ZWS version              | [![ZWS version][stats-version-image] `https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version`][stats-version-image]         |
 
 [deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws/tree/v2
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
@@ -105,3 +107,4 @@ ZWS instances expose two routes that implement the [Shields endpoint schema](htt
 [open-collective]: https://opencollective.com/zws/contribute
 [stats-urls-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls
 [stats-visits-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits
+[stats-version-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version
