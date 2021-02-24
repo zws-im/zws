@@ -29,17 +29,6 @@
 	"engines": {
 		"node": "15.x"
 	},
-	"nyc": {
-		"all": true,
-		"extends": "@istanbuljs/nyc-config-typescript",
-		"include": [
-			"src/**/*.ts"
-		],
-		"reporter": [
-			"lcov",
-			"cobertura"
-		]
-	},
 	"private": true,
 	"repository": {
 		"type": "git",
