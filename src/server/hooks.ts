@@ -26,7 +26,13 @@ export default function addHooks(fastify: FastifyInstance): void {
 		}
 
 		if (env.env === env.Env.Dev) {
-			fastifyLogger.debug(fastify.printRoutes().trim().split('\n'));
+			const routeLogger = fastifyLogger.getChildLogger({...fastifyLogger.settings, prefix: ['routes']});
+
+			const routes = fastify.printRoutes().trim().split('\n');
+
+			for (const route of routes) {
+				routeLogger.debug(route);
+			}
 		}
 
 		await db.$connect();
