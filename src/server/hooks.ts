@@ -35,6 +35,10 @@ export default function addHooks(fastify: FastifyInstance): void {
 	fastify.addHook('onClose', async () => db.$disconnect());
 
 	fastify.addHook('onRequest', async (request, reply) => {
+		if (request.is404) {
+			return;
+		}
+
 		requestId = request.id;
 
 		fastifyLogger.info(`${request.routerMethod} ${request.routerPath}`);
