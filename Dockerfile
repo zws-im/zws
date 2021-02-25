@@ -9,6 +9,7 @@ COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 COPY prisma ./prisma
 COPY .yarn ./.yarn
 COPY src ./src
+COPY types ./types
 
 RUN yarn install --immutable
 RUN yarn prisma generate
