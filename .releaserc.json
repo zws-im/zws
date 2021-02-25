@@ -18,7 +18,7 @@
 		[
 			"@semantic-release/exec",
 			{
-				"prepareCmd": "docker build -t zwsim/zws ."
+				"prepareCmd": "docker buildx build --load --tag zwsim/zws ."
 			}
 		],
 		[
