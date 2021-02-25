@@ -1,5 +1,8 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import S from 'fluent-json-schema';
+import Short from '../../../../types/schemas/models/Short';
+import Url from '../../../../types/schemas/models/Url';
+import VisitOptions from '../../../../types/schemas/parameters/VisitOptions';
+import {server} from '../../../config';
 import {urls} from '../../../services';
 import {UrlNotFound} from '../../errors';
 
@@ -8,13 +11,15 @@ export default function declareRoute(fastify: FastifyInstance) {
 		RawServerDefault,
 		RawRequestDefaultExpression,
 		RawReplyDefaultExpression,
-		{Params: {short: string}; Querystring: {visit: boolean}; Reply: {url: string}}
+		{Params: Short; Querystring: VisitOptions; Reply: Url}
 	> = {
 		method: 'GET',
 		url: '/:short',
 		schema: {
-			params: S.object().prop('short', S.string()),
-			querystring: S.object().prop('visit', S.boolean().default(true))
+			operationId: 'urls-visit',
+			tags: [server.Tags.Urls],
+			params: fastify.getSchema('https://zws.im/schemas/Short.json'),
+			querystring: fastify.getSchema('https://zws.im/schemas/VisitOptions.json')
 		},
 		handler: async (request, reply) => {
 			const {

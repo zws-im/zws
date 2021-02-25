@@ -1,0 +1,64 @@
+{
+	"$id": "https://zws.im/schemas/ApiKeyError.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"anyOf": [
+		{
+			"$ref": "#/definitions/IncorrectApiKeyError"
+		},
+		{
+			"$ref": "#/definitions/MissingApiKeyError"
+		}
+	],
+	"title": "ApiKeyError",
+	"description": "Something is wrong with the provided API key",
+	"definitions": {
+		"IncorrectApiKeyError": {
+			"type": "object",
+			"properties": {
+				"statusCode": {
+					"type": "number",
+					"const": 401
+				},
+				"message": {
+					"type": "string"
+				},
+				"error": {
+					"type": "string",
+					"const": "Unauthorized"
+				},
+				"code": {
+					"type": "string",
+					"const": "E_INCORRECT_API_KEY"
+				}
+			},
+			"required": ["code", "error", "message", "statusCode"],
+			"additionalProperties": false,
+			"title": "IncorrectApiKeyError",
+			"description": "The provided API key was incorrect"
+		},
+		"MissingApiKeyError": {
+			"type": "object",
+			"properties": {
+				"statusCode": {
+					"type": "number",
+					"const": 401
+				},
+				"message": {
+					"type": "string"
+				},
+				"error": {
+					"type": "string",
+					"const": "Unauthorized"
+				},
+				"code": {
+					"type": "string",
+					"const": "E_MISSING_API_KEY"
+				}
+			},
+			"required": ["code", "error", "message", "statusCode"],
+			"additionalProperties": false,
+			"title": "MissingApiKeyError",
+			"description": "You must provide an API key to access this route"
+		}
+	}
+}

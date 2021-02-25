@@ -1,0 +1,16 @@
+{
+	"$id": "https://zws.im/schemas/TotalStatsOptions.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"format": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"required": ["format"],
+	"additionalProperties": false,
+	"title": "TotalStatsOptions",
+	"description": "Options used in the `total-stats` operation",
+	"definitions": {}
+}

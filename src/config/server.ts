@@ -17,3 +17,9 @@ export {version} from '../../package.json';
 type UserAgent = `${string}/${string} (${string})`;
 
 export const serverString: UserAgent = `ZWS/${version as '2.0.0'} (+https://zws.im)` as const;
+
+export enum Tags {
+	Urls = 'urls',
+	Stats = 'stats',
+	Shields = 'shields'
+}

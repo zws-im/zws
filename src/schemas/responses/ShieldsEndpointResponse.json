@@ -1,0 +1,25 @@
+{
+	"$id": "https://zws.im/schemas/ShieldsEndpointResponse.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"schemaVersion": {
+			"type": "number",
+			"const": 1
+		},
+		"label": {
+			"type": "string"
+		},
+		"message": {
+			"type": "string"
+		},
+		"color": {
+			"type": "string"
+		}
+	},
+	"required": ["schemaVersion", "label", "message", "color"],
+	"additionalProperties": false,
+	"title": "ShieldsEndpointResponse",
+	"description": "Shields endpoint response",
+	"definitions": {}
+}

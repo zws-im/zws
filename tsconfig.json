@@ -6,6 +6,6 @@
 		"sourceMap": true
 	},
 	"extends": "@tsconfig/node14/tsconfig.json",
-	"exclude": ["node_modules", "nyc_output", "coverage"],
-	"include": ["src"]
+	"exclude": ["node_modules"],
+	"include": ["src", "types"]
 }

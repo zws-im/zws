@@ -1,0 +1,27 @@
+{
+	"$id": "https://zws.im/schemas/UniqueShortIdTimeoutError.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"statusCode": {
+			"type": "number",
+			"const": 503
+		},
+		"message": {
+			"type": "string"
+		},
+		"error": {
+			"type": "string",
+			"const": "Service Unavailable"
+		},
+		"code": {
+			"type": "string",
+			"const": "E_UNIQUE_SHORT_ID_TIMEOUT"
+		}
+	},
+	"required": ["code", "error", "message", "statusCode"],
+	"additionalProperties": false,
+	"title": "UniqueShortIdTimeoutError",
+	"description": "Couldn't generate a unique shortened ID in time",
+	"definitions": {}
+}

@@ -1,18 +1,32 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import S from 'fluent-json-schema';
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
+import type Url from '../../../../types/schemas/models/Url';
+import type Short from '../../../../types/schemas/models/Short';
 import {server} from '../../../config';
 import {fastifyLogger} from '../../../logger';
 import {urls} from '../../../services';
 import {AttemptedShortenHostname} from '../../errors';
 
 export default function declareRoute(fastify: FastifyInstance) {
-	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Body: {url: string}; Reply: {short: string}}> = {
+	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Body: Url; Reply: Short}> = {
 		method: 'POST',
 		url: '/',
 		schema: {
-			body: S.object().prop('url', S.string().format(S.FORMATS.URL).maxLength(500))
+			operationId: 'urls-shorten',
+			summary: 'Shorten URL',
+			description: 'Shorten a URL',
+			tags: [server.Tags.Urls],
+			body: fastify.getSchema('https://zws.im/schemas/Url.json'),
+			security: [{'API key': ['']}],
+			response: {
+				201: fastify.getSchema('https://zws.im/schemas/Short.json'),
+				400: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				401: fastify.getSchema('https://zws.im/schemas/ApiKeyError.json'),
+				422: fastify.getSchema('https://zws.im/schemas/AttemptedShortenHostnameError.json'),
+				500: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				503: fastify.getSchema('https://zws.im/schemas/UniqueShortIdTimeoutError.json')
+			}
 		},
 		handler: async (request, reply) => {
 			const {

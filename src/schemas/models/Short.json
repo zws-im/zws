@@ -1,0 +1,15 @@
+{
+	"$id": "https://zws.im/schemas/Short.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"short": {
+			"type": "string"
+		}
+	},
+	"required": ["short"],
+	"additionalProperties": false,
+	"title": "Short",
+	"description": "Shortened URL ID",
+	"definitions": {}
+}

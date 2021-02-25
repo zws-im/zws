@@ -1,19 +1,25 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import S from 'fluent-json-schema';
+import Short from '../../../../types/schemas/models/Short';
+import UrlStats from '../../../../types/schemas/models/UrlStats';
+import {server} from '../../../config';
 import {urls} from '../../../services';
 import {UrlNotFound} from '../../errors';
 
 export default function declareRoute(fastify: FastifyInstance) {
-	const route: RouteOptions<
-		RawServerDefault,
-		RawRequestDefaultExpression,
-		RawReplyDefaultExpression,
-		{Params: {short: string}; Reply: {url: string; visits: Date[]}}
-	> = {
+	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Params: Short; Reply: UrlStats}> = {
 		method: 'GET',
 		url: '/:short/stats',
 		schema: {
-			params: S.object().prop('short', S.string())
+			operationId: 'urls-stats',
+			summary: 'URL stats',
+			description: 'Retrieve usage statistics for a shortened URL',
+			tags: [server.Tags.Urls, server.Tags.Stats],
+			params: fastify.getSchema('https://zws.im/schemas/Short.json'),
+			response: {
+				200: fastify.getSchema('https://zws.im/schemas/UrlStats.json'),
+				404: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
+				500: fastify.getSchema('https://zws.im/schemas/Error.json')
+			}
 		},
 		handler: async (request, reply) => {
 			const {

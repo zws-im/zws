@@ -1,0 +1,47 @@
+{
+	"$id": "https://zws.im/schemas/Stats.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"anyOf": [
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"urls": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"visits": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"version": {
+					"type": "string",
+					"pattern": "^v\\d+\\.\\d+\\.\\d+(?:\\-.+)?$"
+				}
+			},
+			"required": ["urls", "version", "visits"]
+		},
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"urls": {
+					"type": "string",
+					"pattern": "^\\d{1,3}(?:,\\d{1,3})*$"
+				},
+				"visits": {
+					"type": "string",
+					"pattern": "^\\d{1,3}(?:,\\d{1,3})*$"
+				},
+				"version": {
+					"type": "string",
+					"pattern": "^v\\d+\\.\\d+\\.\\d+(?:\\-.+)?$"
+				}
+			},
+			"required": ["urls", "version", "visits"]
+		}
+	],
+	"title": "Stats",
+	"description": "Usage statistics for this instance",
+	"definitions": {}
+}

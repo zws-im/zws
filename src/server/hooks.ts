@@ -11,7 +11,17 @@ const fastifyLogger = baseFastifyLogger.getChildLogger({
 });
 
 export default function addHooks(fastify: FastifyInstance): void {
-	fastify.addHook('onReady', async () => {
+	fastify.ready(async error => {
+		if (error) {
+			throw error;
+		}
+
+		try {
+			fastify.swagger();
+		} catch (error: unknown) {
+			fastifyLogger.error('Fastify error', error);
+		}
+
 		if (env.heroku) {
 			dbLogger.info('Heroku environment detected, running migrations');
 

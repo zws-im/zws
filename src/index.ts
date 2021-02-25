@@ -2,7 +2,7 @@ import {server} from './config';
 import fastify from './server';
 import {fastifyLogger} from './logger';
 
-(async () => {
+async function main() {
 	try {
 		const address = await fastify.listen({port: server.port, host: '0.0.0.0'});
 
@@ -11,7 +11,9 @@ import {fastifyLogger} from './logger';
 		fastifyLogger.error(error);
 		throw error;
 	}
-})().catch(error => {
+}
+
+main().catch(error => {
 	process.nextTick(() => {
 		throw error;
 	});
