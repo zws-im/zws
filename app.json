@@ -50,10 +50,7 @@
 			"size": "free"
 		}
 	},
-	"keywords": [
-		"URL Shortener",
-		"Node.js"
-	],
+	"keywords": ["URL Shortener", "Node.js"],
 	"logo": "https://avatars.githubusercontent.com/u/53232036",
 	"name": "Custom ZWS Instance",
 	"repository": "https://github.com/zws-im/zws",
