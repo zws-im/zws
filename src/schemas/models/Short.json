@@ -4,12 +4,17 @@
 	"type": "object",
 	"properties": {
 		"short": {
-			"type": "string"
+			"type": "string",
+			"description": "The short ID."
+		},
+		"url": {
+			"type": "string",
+			"description": "The absolute URL for the shortened URL"
 		}
 	},
 	"required": ["short"],
 	"additionalProperties": false,
 	"title": "Short",
-	"description": "Shortened URL ID",
+	"description": "Shortened URL",
 	"definitions": {}
 }

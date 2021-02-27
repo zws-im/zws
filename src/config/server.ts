@@ -1,14 +1,20 @@
 import ow from 'ow';
-import {JsonValue} from 'type-fest';
+import {URL} from 'url';
 import {version} from '../../package.json';
 
 export const port = process.env.PORT === undefined ? 3000 : Number(process.env.PORT);
 
-const rawHostname: JsonValue = process.env.HOSTNAME ?? 'localhost';
+const rawHostname = process.env.HOSTNAME;
 
-ow(rawHostname, 'HOSTNAME', ow.string);
+ow(rawHostname, 'HOSTNAME', ow.optional.string);
 
-export const hostname: string = rawHostname;
+const rawShortenedBaseUrl = process.env.SHORTENED_BASE_URL;
+
+ow(rawShortenedBaseUrl, 'SHORTENED_BASE_URL', ow.optional.string.url);
+
+export const hostname: null | string = rawHostname ?? null;
+
+export const shortenedBaseUrl: null | URL = rawShortenedBaseUrl ? new URL(rawShortenedBaseUrl) : null;
 
 export const apiKey: string | null = process.env.API_KEY ?? null;
 

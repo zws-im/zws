@@ -1,12 +1,14 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
-import type Url from '../../../../types/schemas/models/Url';
 import type Short from '../../../../types/schemas/models/Short';
+import type Url from '../../../../types/schemas/models/Url';
 import {server} from '../../../config';
 import {fastifyLogger} from '../../../logger';
 import {urls} from '../../../services';
 import {AttemptedShortenHostname} from '../../errors';
+
+const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
 
 export default function declareRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Body: Url; Reply: Short}> = {
@@ -33,7 +35,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 				body: {url}
 			} = request;
 
-			if (new URL(url).hostname === server.hostname) {
+			if (forbiddenHostnames.has(new URL(url).hostname)) {
 				throw new AttemptedShortenHostname();
 			}
 
@@ -41,7 +43,13 @@ export default function declareRoute(fastify: FastifyInstance) {
 
 			void reply.code(201);
 
-			return {short: id};
+			const response: Short = {short: id};
+
+			if (server.shortenedBaseUrl) {
+				response.url = decodeURI(new URL(id, server.shortenedBaseUrl).toString());
+			}
+
+			return response;
 		}
 	};
 

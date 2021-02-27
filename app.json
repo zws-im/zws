@@ -34,6 +34,14 @@
 		"SHORT_REWRITES": {
 			"description": "JSON object of rewrites to normalize shortened IDs. Advanced use only.",
 			"required": false
+		},
+		"HOSTNAME": {
+			"description": "The hostname of this API instance. If you leave this blank users will be allowed to shorten URLs with the same hostname as your instance.",
+			"required": false
+		},
+		"SHORTENED_BASE_URL": {
+			"description": "The base URL to build shortened URLs from. If you leave this blank clients will have to assemble shortened URLs themselves.",
+			"requireed": false
 		}
 	},
 	"formation": {
@@ -42,7 +50,10 @@
 			"size": "free"
 		}
 	},
-	"keywords": ["URL Shortener", "Node.js"],
+	"keywords": [
+		"URL Shortener",
+		"Node.js"
+	],
 	"logo": "https://avatars.githubusercontent.com/u/53232036",
 	"name": "Custom ZWS Instance",
 	"repository": "https://github.com/zws-im/zws",
