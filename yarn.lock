@@ -938,7 +938,7 @@ __metadata:
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     execa: 5.0.0
-    fastify: 3.12.0
+    fastify: "pizzafox/fastify#patch-1"
     fastify-auth: 1.0.1
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
@@ -3829,7 +3829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-deep-equal@npm:^3.1.1":
+"fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
   checksum: 451526766b219503131d11e823eaadd1533080b0be4860e316670b039dcaf31cd1007c2fe036a9b922abba7c040dfad5e942ed79d21f2ff849e50049f36e0fb7
@@ -3984,9 +3984,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.12.0":
+"fastify@pizzafox/fastify#patch-1":
   version: 3.12.0
-  resolution: "fastify@npm:3.12.0"
+  resolution: "fastify@https://github.com/pizzafox/fastify.git#commit=aebbd8f87dd6f1619a92a3aa73a2924977104141"
   dependencies:
     "@fastify/proxy-addr": ^3.0.0
     abstract-logging: ^2.0.0
@@ -3995,7 +3995,7 @@ __metadata:
     fast-json-stringify: ^2.2.1
     fastify-error: ^0.3.0
     fastify-warning: ^0.2.0
-    find-my-way: ^3.0.5
+    find-my-way: ^4.0.0
     flatstr: ^1.0.12
     light-my-request: ^4.2.0
     pino: ^6.2.1
@@ -4004,7 +4004,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: c23a285472b19ea8f72814430a1273ac82b50787109f397612a775dda377bb03d864d047cec5d34bb546397353b770731b2803a23fe75c6c10970ed27df29264
+  checksum: eb282106d134e90436bc4c099e297ada9ee8a5779b889c8c17e2a11d7cb64581c648c308dd9581543ba0187018176be9f0a0ca2d95960edb448c1aad776eab55
   languageName: node
   linkType: hard
 
@@ -4090,14 +4090,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-my-way@npm:^3.0.5":
-  version: 3.0.5
-  resolution: "find-my-way@npm:3.0.5"
+"find-my-way@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "find-my-way@npm:4.0.0"
   dependencies:
     fast-decode-uri-component: ^1.0.1
+    fast-deep-equal: ^3.1.3
     safe-regex2: ^2.0.0
     semver-store: ^0.3.0
-  checksum: 95b9cd5974ef4092b2e28235c6ee0e9706fd10b8635ce78e332bd65818177788502c1d126a2865c662f6e387fba0e7e43002d10d501ead5f6877d56e0fb69c1b
+  checksum: 275c19550f67c0a7613594809443a597ebf78bf00cbe9cd46d47d2d2901bbd93533f836a40ee0cb5a1c68ba5c582f47071ed7df86b9d156c191283e455c17edb
   languageName: node
   linkType: hard
 

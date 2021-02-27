@@ -63,7 +63,7 @@
 		"convert": "1.6.2",
 		"dotenv": "8.2.0",
 		"execa": "5.0.0",
-		"fastify": "3.12.0",
+		"fastify": "pizzafox/fastify#patch-1",
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",
