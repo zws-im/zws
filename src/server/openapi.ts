@@ -18,26 +18,7 @@ const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 	},
 	servers: [{url: 'https://api.zws.im', description: 'Production'}],
 	components: {
-		securitySchemes: {'API key': {type: 'http', scheme: 'bearer'}},
-		responses: {
-			ShieldsEndpointResponse: {
-				description: 'Shields endpoint response',
-				content: {
-					'application/json': {
-						schema: {
-							type: 'object',
-							properties: {
-								schemaVersion: {type: 'integer', enum: [1], readOnly: true},
-								label: {type: 'string', readOnly: true},
-								message: {},
-								color: {type: 'string', readOnly: true}
-							},
-							required: ['schemaVersion', 'label', 'message', 'color']
-						}
-					}
-				}
-			}
-		}
+		securitySchemes: {'API key': {type: 'http', scheme: 'bearer'}}
 	}
 };
 
