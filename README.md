@@ -70,7 +70,6 @@ This can be done easily through [Docker Compose][docker-compose] by running the 
 ```sh
 docker volume create --name=zws-postgres-storage
 docker-compose up migration
-docker-compose down
 ```
 
 Even if your database isn't being run through [Docker Compose][docker-compose] you'll still need to create the volume and start the `db` service.
