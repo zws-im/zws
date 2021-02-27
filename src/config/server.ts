@@ -1,4 +1,5 @@
 import ow from 'ow';
+// eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
 import {version} from '../../package.json';
 
