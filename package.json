@@ -53,7 +53,8 @@
 			"unicorn/filename-case": "off",
 			"import/extensions": "off",
 			"unicorn/no-array-reduce": "off",
-			"unicorn/no-array-callback-reference": "off"
+			"unicorn/no-array-callback-reference": "off",
+			"unicorn/no-process-exit": "off"
 		}
 	},
 	"dependencies": {
