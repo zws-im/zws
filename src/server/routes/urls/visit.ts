@@ -21,7 +21,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			params: fastify.getSchema('https://zws.im/schemas/Short.json'),
 			querystring: fastify.getSchema('https://zws.im/schemas/VisitOptions.json'),
 			response: {
-				200: fastify.getSchema('https://zws.im/schemas/Short.json'),
+				200: fastify.getSchema('https://zws.im/schemas/Url.json'),
 				404: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
 				500: fastify.getSchema('https://zws.im/schemas/Error.json')
 			}
