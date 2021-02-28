@@ -47,7 +47,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 
 		try {
 			await db.$connect();
-		} catch (error) {
+		} catch (error: unknown) {
 			dbLogger.fatal('Failed to connect to database', error);
 			process.exit(1);
 		}
