@@ -45,7 +45,12 @@ export default function addHooks(fastify: FastifyInstance): void {
 			}
 		}
 
-		await db.$connect();
+		try {
+			await db.$connect();
+		} catch (error) {
+			dbLogger.fatal('Failed to connect to database', error);
+			process.exit(1);
+		}
 	});
 
 	fastify.addHook('onClose', async () => db.$disconnect());
