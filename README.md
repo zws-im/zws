@@ -51,6 +51,7 @@ A status page for the official zws.im instance of ZWS is available at **[status.
 Running an instance of ZWS on Heroku is the easiest way to self-host.
 You can also stay totally within the free limits of both the [`web` process](https://devcenter.heroku.com/articles/procfile) and the [Heroku Postgres][heroku-postgres] database.
 Note that the Hobby Dev (free) plan of [Heroku Postgres][heroku-postgres] has a row limit of 10,000, which might not be enough for your use case.
+Consider using the API key feature of ZWS to restrict access to your instance.
 
 ### [Docker Compose][docker-compose]
 
@@ -78,7 +79,8 @@ If you know a better way to do this, please open a pull request!
 
 #### [Heroku Postgres][heroku-postgres]
 
-If you are using a Heroku database migrations are automatically applied, but to manually do so you'll need the credentials for your database:
+If you are hosting your instance on Heroku migrations are automatically applied.
+If you need to manually apply migrations or are only using Heroku for your database you'll need the credentials for your database:
 
 1. Get the [Heroku Postgres][heroku-postgres] connection URI from
    - [the web interface](https://data.heroku.com/) (select your datastore, "Settings", "Database Credentials", "URI")
