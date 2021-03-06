@@ -79,7 +79,7 @@ If you know a better way to do this, please open a pull request!
 
 #### [Heroku Postgres][heroku-postgres]
 
-If you are hosting your instance on Heroku migrations are automatically applied.
+If you are hosting your instance on Heroku, migrations are automatically applied.
 If you need to manually apply migrations or are only using Heroku for your database you'll need the credentials for your database:
 
 1. Get the [Heroku Postgres][heroku-postgres] connection URI from
