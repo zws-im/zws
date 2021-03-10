@@ -41,7 +41,7 @@
 		},
 		"SHORTENED_BASE_URL": {
 			"description": "The base URL to build shortened URLs from. If you leave this blank clients will have to assemble shortened URLs themselves.",
-			"requireed": false
+			"required": false
 		}
 	},
 	"formation": {
