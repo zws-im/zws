@@ -15,6 +15,8 @@ Or, [configure your own instance](#Self-hosting) to use any other kinds of chara
 This project exists thanks to all the people who contribute.
 <a href="https://github.com/zws-im/zws/graphs/contributors"><img src="https://opencollective.com/zws/contributors.svg?width=890&button=false" /></a>
 
+Special thanks to [Jaex](https://github.com/Jaex) for integrating ZWS into [ShareX](https://getsharex.com/).
+
 ### Financial Contributors
 
 Become a financial contributor and help us sustain our community. [[Contribute][open-collective]]
