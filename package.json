@@ -61,7 +61,7 @@
 		"@pizzafox/util": "2.7.0",
 		"@prisma/client": "2.19.0",
 		"cli-ux": "5.5.1",
-		"convert": "1.6.3",
+		"convert": "1.8.1",
 		"dotenv": "8.2.0",
 		"fastify": "pizzafox/fastify#patch-1",
 		"fastify-auth": "1.0.1",
