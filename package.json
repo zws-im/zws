@@ -63,7 +63,7 @@
 		"cli-ux": "5.5.1",
 		"convert": "1.8.1",
 		"dotenv": "8.2.0",
-		"fastify": "pizzafox/fastify#patch-1",
+		"fastify": "patch:fastify@3.14.0#./fastify.diff",
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",
