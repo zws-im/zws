@@ -42,7 +42,7 @@
 		"prebuild": "rm -rf tsc_output",
 		"style": "prettier --check .",
 		"start": "node .",
-		"migrations": "prisma migrate deploy --preview-feature",
+		"migrations": "prisma migrate deploy",
 		"generate-schemas": "node tsc_output/src/generate-schemas"
 	},
 	"version": "0.0.0-development",
