@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 ENV PORT=3000
 EXPOSE 3000
 
-COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
+COPY package.json yarn.lock .yarnrc.yml tsconfig.json fastify.diff ./
 COPY prisma ./prisma
 COPY .yarn ./.yarn
 COPY src ./src
