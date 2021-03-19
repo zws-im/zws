@@ -960,7 +960,7 @@ __metadata:
     ts-json-schema-generator: 0.86.1
     ts-node: 9.1.1
     tslog: 3.1.2
-    type-fest: 0.21.1
+    type-fest: 0.21.3
     typescript: 4.1.5
     xo: 0.38.2
   languageName: unknown
@@ -10352,10 +10352,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:0.21.1":
-  version: 0.21.1
-  resolution: "type-fest@npm:0.21.1"
-  checksum: c5653b66e12ae5c7053c30ae8361d183a62954449ed2b0e5faea1202875fa5a21113802200ad0a94d97ad108b5795333d5f2d360394f45a5a43a44bec83128db
+"type-fest@npm:0.21.3":
+  version: 0.21.3
+  resolution: "type-fest@npm:0.21.3"
+  checksum: bbe5f5c60e8da4e0b0fe290c31821b10c2fd935768802cd659784cb5e792c7a31bb25a89174d3b42dde3bf8eb9d301ede7456a274c1068280b7698438e250f49
   languageName: node
   linkType: hard
 
