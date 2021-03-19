@@ -1,6 +1,6 @@
 import {FastifyInstance} from 'fastify';
 import {env, server} from '../config';
-import db, {applyMigrations} from '../db';
+import db from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
 
 let requestId: string | undefined;
@@ -20,19 +20,6 @@ export default function addHooks(fastify: FastifyInstance): void {
 			fastify.swagger();
 		} catch (error: unknown) {
 			fastifyLogger.error('Fastify error', error);
-		}
-
-		if (env.heroku) {
-			dbLogger.info('Heroku environment detected, running migrations');
-
-			try {
-				await applyMigrations();
-			} catch (error: unknown) {
-				dbLogger.error('Migrations failed', error);
-				throw error;
-			}
-
-			dbLogger.info('Migrations completed');
 		}
 
 		if (env.env === env.Env.Dev) {

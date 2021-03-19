@@ -44,12 +44,6 @@
 			"required": false
 		}
 	},
-	"formation": {
-		"web": {
-			"quantity": 1,
-			"size": "free"
-		}
-	},
 	"keywords": ["URL Shortener", "Node.js"],
 	"logo": "https://avatars.githubusercontent.com/u/53232036",
 	"name": "Custom ZWS Instance",
