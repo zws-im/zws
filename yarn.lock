@@ -962,7 +962,7 @@ __metadata:
     tslog: 3.1.1
     type-fest: 0.21.1
     typescript: 4.1.5
-    xo: 0.38.1
+    xo: 0.38.2
   languageName: unknown
   linkType: soft
 
@@ -10922,9 +10922,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xo@npm:0.38.1":
-  version: 0.38.1
-  resolution: "xo@npm:0.38.1"
+"xo@npm:0.38.2":
+  version: 0.38.2
+  resolution: "xo@npm:0.38.2"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^4.15.1
     "@typescript-eslint/parser": ^4.15.1
@@ -10971,7 +10971,7 @@ __metadata:
     update-notifier: ^5.1.0
   bin:
     xo: cli.js
-  checksum: 650a6136b7f4f7068e450036c31c6fe1576aa5c94228d765b4e1ee226a5279b551b2b6fce0cdd2645dca90435af03502da17dd1681bb286211a61c83c42a7b70
+  checksum: 65c330db6f440bca2ad841abf1789cc993840f194a694737c2550d94bd261ffe3eed41486e729191681c0ffa43c38b53a19ee7f0f1e834918c3c3cdebffca496
   languageName: node
   linkType: hard
 
