@@ -948,7 +948,7 @@ __metadata:
     fastify-auth: 1.0.1
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
-    fastify-swagger: 4.3.1
+    fastify-swagger: 4.3.3
     fluent-json-schema: 2.0.4
     ow: 0.23.0
     prettier: 2.2.1
@@ -2356,6 +2356,15 @@ __metadata:
   version: 0.1.0
   resolution: "contains-path@npm:0.1.0"
   checksum: 59920a59a0c7d1244235d76b8cfd2b2e7a8dcc463fa578ef9d4d5a5a73eeb14d75dada6b21188e0b35f2474ae9efd10c3698372e674db9c6a904b281998b97d6
+  languageName: node
+  linkType: hard
+
+"content-disposition@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "content-disposition@npm:0.5.3"
+  dependencies:
+    safe-buffer: 5.1.2
+  checksum: 8f1f235c0423be68023df7f5a3948601d859ce44ee94e1d0fa2a97383bd469e789320b6ddf6f31b3620605c75cf771522df11386f51aff401e5d51b6ccfde3e2
   languageName: node
   linkType: hard
 
@@ -3958,28 +3967,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-static@npm:^3.3.0":
-  version: 3.4.0
-  resolution: "fastify-static@npm:3.4.0"
+"fastify-static@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "fastify-static@npm:4.0.1"
   dependencies:
+    content-disposition: ^0.5.3
     fastify-plugin: ^3.0.0
     glob: ^7.1.4
     readable-stream: ^3.4.0
     send: ^0.17.1
-  checksum: 8a0798c06e67b13a5e6aa70cb15388da498270ac1ca9d3ca6be5feffe9888b7b24386468be482fe770757f60759bd2f09571811b8818db4f6b67bf6a748e9402
+  checksum: 201576040be21dffbfc7e0993b3f3d8f2b0d31d142a605e4a9de76719ddfbe5a2670811afea6375d1769b7c4a4cdef5b77cd74fee1024b49a851b128baab2a02
   languageName: node
   linkType: hard
 
-"fastify-swagger@npm:4.3.1":
-  version: 4.3.1
-  resolution: "fastify-swagger@npm:4.3.1"
+"fastify-swagger@npm:4.3.3":
+  version: 4.3.3
+  resolution: "fastify-swagger@npm:4.3.3"
   dependencies:
     fastify-plugin: ^3.0.0
-    fastify-static: ^3.3.0
+    fastify-static: ^4.0.0
     js-yaml: ^4.0.0
     json-schema-resolver: ^1.2.0
     openapi-types: ^7.2.3
-  checksum: 0a722a6522c35995b12d487ed411f7f42c37ebbfab0f758942828e5256be527c0c55a1cc3a2a66b76ffdbc5d4abecc63043478e42de1bb53e87cd9a6c1f40ef7
+  checksum: 3a816d2d774bb353141f0a51347ef1ec5afd24a7a49df8d218790de6f6b4e8e9bbf548fd4a8b23936faf418984ee3656e0de07d702b1f8e62856f7d3b7868a6e
   languageName: node
   linkType: hard
 
@@ -9074,17 +9084,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"safe-buffer@npm:5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
+  version: 5.1.2
+  resolution: "safe-buffer@npm:5.1.2"
+  checksum: 2708587c1b5e70a5e420714ceb59f30f5791c6e831d39812125a008eca63a4ac18578abd020a0776ea497ff03b4543f2b2a223a7b9073bf2d6c7af9ec6829218
+  languageName: node
+  linkType: hard
+
 "safe-buffer@npm:^5.0.1, safe-buffer@npm:^5.1.0, safe-buffer@npm:^5.1.1, safe-buffer@npm:^5.1.2, safe-buffer@npm:^5.2.0, safe-buffer@npm:~5.2.0":
   version: 5.2.1
   resolution: "safe-buffer@npm:5.2.1"
   checksum: 0bb57f0d8f9d1fa4fe35ad8a2db1f83a027d48f2822d59ede88fd5cd4ddad83c0b497213feb7a70fbf90597a70c5217f735b0eb1850df40ce9b4ae81dd22b3f9
-  languageName: node
-  linkType: hard
-
-"safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
-  version: 5.1.2
-  resolution: "safe-buffer@npm:5.1.2"
-  checksum: 2708587c1b5e70a5e420714ceb59f30f5791c6e831d39812125a008eca63a4ac18578abd020a0776ea497ff03b4543f2b2a223a7b9073bf2d6c7af9ec6829218
   languageName: node
   linkType: hard
 

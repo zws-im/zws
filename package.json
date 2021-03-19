@@ -67,7 +67,7 @@
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",
-		"fastify-swagger": "4.3.1",
+		"fastify-swagger": "4.3.3",
 		"fluent-json-schema": "2.0.4",
 		"ow": "0.23.0",
 		"supports-color": "8.1.1",
