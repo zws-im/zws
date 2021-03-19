@@ -16,13 +16,13 @@
 		"prettier": "2.2.1",
 		"prettier-config-xo": "1.0.3",
 		"prisma": "2.19.0",
-		"semantic-release": "17.3.9",
+		"semantic-release": "17.4.2",
 		"semantic-release-docker": "2.2.0",
 		"ts-json-schema-generator": "0.86.1",
 		"ts-node": "9.1.1",
 		"type-fest": "0.21.1",
 		"typescript": "4.1.5",
-		"xo": "0.38.1"
+		"xo": "0.38.2"
 	},
 	"license": "Apache-2.0",
 	"main": "./tsc_output/src/index.js",
@@ -61,16 +61,16 @@
 		"@pizzafox/util": "2.7.0",
 		"@prisma/client": "2.19.0",
 		"cli-ux": "5.5.1",
-		"convert": "1.6.2",
+		"convert": "1.6.3",
 		"dotenv": "8.2.0",
 		"fastify": "pizzafox/fastify#patch-1",
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",
-		"fastify-swagger": "4.3.1",
+		"fastify-swagger": "4.3.3",
 		"fluent-json-schema": "2.0.4",
 		"ow": "0.23.0",
 		"supports-color": "8.1.1",
-		"tslog": "3.1.1"
+		"tslog": "3.1.2"
 	}
 }
