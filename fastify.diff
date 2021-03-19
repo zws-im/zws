@@ -1,0 +1,16 @@
+diff --git a/lib/reply.js b/lib/reply.js
+index 0f454d4cc60bd3835767175d9252c99907eec683..775c91b13540fdb205fa8b868b5f8dd8dd486773 100644
+--- a/lib/reply.js
++++ b/lib/reply.js
+@@ -547,8 +547,9 @@ function handleError (reply, error, cb) {
+         message: error.message || '',
+         statusCode: statusCode
+       })
+-    : serializerFn(Object.create(error, {
+-      error: { value: statusCodes[statusCode + ''] },
++      : serializerFn(Object.create(error, {
++        error: { value: statusCodes[statusCode + ''] },
++        code: { value: error.code },
+       message: { value: error.message || '' },
+       statusCode: { value: statusCode }
+     }))
