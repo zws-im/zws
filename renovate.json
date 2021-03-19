@@ -1,12 +1,3 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:base", ":semanticCommitTypeAll(build)"],
-	"labels": ["dependencies"],
-	"packageRules": [
-		{
-			"automerge": true,
-			"updateTypes": ["patch"]
-		}
-	],
-	"semanticCommits": true
+	"extends": ["@pizzafox"]
 }
