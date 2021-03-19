@@ -959,7 +959,7 @@ __metadata:
     supports-color: 8.1.1
     ts-json-schema-generator: 0.86.1
     ts-node: 9.1.1
-    tslog: 3.1.1
+    tslog: 3.1.2
     type-fest: 0.21.1
     typescript: 4.1.5
     xo: 0.38.1
@@ -10291,12 +10291,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslog@npm:3.1.1":
-  version: 3.1.1
-  resolution: "tslog@npm:3.1.1"
+"tslog@npm:3.1.2":
+  version: 3.1.2
+  resolution: "tslog@npm:3.1.2"
   dependencies:
     source-map-support: ^0.5.19
-  checksum: 5438ac1a930daf00ab70886d4ac9ac6b317e72ea8e1723cc892518dbfbf1a3977628b3a9967b7f92e4d19d0540521f97de0189e6ef84bc5f5be2201d751e171f
+  checksum: 043684ff94f82f2c60f91df68212841a426b4ebf3cb43d8fff1c2b6374f930d404b7a00a4cbb6d6928bacb83ec1a7c2d2c6830581c1599cae06af34e8386bf5c
   languageName: node
   linkType: hard
 
