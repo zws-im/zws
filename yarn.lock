@@ -963,7 +963,7 @@ __metadata:
     "@types/node": 14.14.35
     "@types/supports-color": 7.2.0
     cli-ux: 5.5.1
-    convert: 1.8.1
+    convert: 1.8.2
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     fastify: "patch:fastify@3.14.0#./fastify.diff"
@@ -2485,10 +2485,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert@npm:1.8.1":
-  version: 1.8.1
-  resolution: "convert@npm:1.8.1"
-  checksum: f7a59414f2153901e3dc78fde2a7c62fd6f60bea1240bf670ca1d48de2f120766a4ad82cb1e167acc899d0673d5b40e36ad1ec0e61fdc023f5af2fcd1d8e8a18
+"convert@npm:1.8.2":
+  version: 1.8.2
+  resolution: "convert@npm:1.8.2"
+  checksum: bfea9cc618ded138946183de65327dded025bbe31123b9f4bb66c890a25373c4808cee09b070176dac786b2e3feb86e9aa2283079dcd064683d76e74254886e7
   languageName: node
   linkType: hard
 
