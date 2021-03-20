@@ -845,10 +845,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/supports-color@npm:7.2.0":
-  version: 7.2.0
-  resolution: "@types/supports-color@npm:7.2.0"
-  checksum: c17abde9400b1ce7bfc519810964e659288741587fb077c8976a060113d5782263b5d6bc5a56d9961e7c04451700ec627205a9ca91e270754742c5047f3c442f
+"@types/supports-color@npm:7.2.1":
+  version: 7.2.1
+  resolution: "@types/supports-color@npm:7.2.1"
+  checksum: 07b6dd790a9809a1470e7a2c3e46b6697c3b5c260120c11be5da29880f70833958bc8e730079a31c64914ebc324af2d281813601c2cf0b9794d5315ac0d69415
   languageName: node
   linkType: hard
 
@@ -961,7 +961,7 @@ __metadata:
     "@semantic-release/exec": 5.0.0
     "@tsconfig/node14": 1.0.0
     "@types/node": 14.14.35
-    "@types/supports-color": 7.2.0
+    "@types/supports-color": 7.2.1
     cli-ux: 5.5.1
     convert: 1.8.2
     dotenv: 8.2.0
