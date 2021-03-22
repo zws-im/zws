@@ -982,7 +982,7 @@ __metadata:
     ts-json-schema-generator: 0.89.0
     ts-node: 9.1.1
     tslog: 3.1.2
-    type-fest: 0.21.3
+    type-fest: 1.0.0
     typescript: 4.2.3
     xo: 0.38.2
   languageName: unknown
@@ -10482,10 +10482,10 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"type-fest@npm:0.21.3":
-  version: 0.21.3
-  resolution: "type-fest@npm:0.21.3"
-  checksum: bbe5f5c60e8da4e0b0fe290c31821b10c2fd935768802cd659784cb5e792c7a31bb25a89174d3b42dde3bf8eb9d301ede7456a274c1068280b7698438e250f49
+"type-fest@npm:1.0.0":
+  version: 1.0.0
+  resolution: "type-fest@npm:1.0.0"
+  checksum: 82a12bd4b8fd48501c4056f249dde55192bb80a181cd359e8992433168f5f35b2ef030595b10c8876f8b6936422dec1689024a4beadb48d4d448b45debbdc2e4
   languageName: node
   linkType: hard
 
