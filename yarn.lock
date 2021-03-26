@@ -986,7 +986,7 @@ __metadata:
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
     supports-color: 8.1.1
-    ts-json-schema-generator: 0.89.0
+    ts-json-schema-generator: 0.89.1
     ts-node: 9.1.1
     tslog: 3.1.2
     type-fest: 1.0.1
@@ -2294,10 +2294,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "commander@npm:7.1.0"
-  checksum: 2b6dacb11f17cd9b702ae18b586b060327590dd57e2702edefbff701ec7c63b55338e70544210893bad280fc9579ffb839dd8ae0a6bc652fceffe3f9ad1c2c44
+"commander@npm:^7.2.0":
+  version: 7.2.0
+  resolution: "commander@npm:7.2.0"
+  checksum: bdc0eca5e25cd24af8440163d3c9a996785bbac4b49a590365699cdc1ed08cefbac8f268153208ab2bc5dc3cb1d3fb573fd1590c681e36e371342186bd331a4c
   languageName: node
   linkType: hard
 
@@ -10374,19 +10374,19 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"ts-json-schema-generator@npm:0.89.0":
-  version: 0.89.0
-  resolution: "ts-json-schema-generator@npm:0.89.0"
+"ts-json-schema-generator@npm:0.89.1":
+  version: 0.89.1
+  resolution: "ts-json-schema-generator@npm:0.89.1"
   dependencies:
     "@types/json-schema": ^7.0.7
-    commander: ^7.1.0
+    commander: ^7.2.0
     fast-json-stable-stringify: ^2.1.0
     glob: ^7.1.6
     json-stable-stringify: ^1.0.1
-    typescript: ~4.2.2
+    typescript: ~4.2.3
   bin:
     ts-json-schema-generator: bin/ts-json-schema-generator
-  checksum: 209f7208be03598bd83b2f050064323cb84b3d3151ce24c34fa7571899319c1ae285c8d82392c5b3f8a68be1b861c3f31731f1b661dcba5e94d79e9af7648da2
+  checksum: c67d7169c60f37e3186b11318fc6db7c187986f8acda7f79bcdfbe38dd17c797ed8a3c0230ec08b307ecb9ffa401792d8b1476e7c6ab7b1417a005d4dfbc206a
   languageName: node
   linkType: hard
 
@@ -10561,7 +10561,7 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"typescript@4.2.3, typescript@^4.1.5, typescript@~4.2.2":
+"typescript@4.2.3, typescript@^4.1.5, typescript@~4.2.3":
   version: 4.2.3
   resolution: "typescript@npm:4.2.3"
   bin:
@@ -10571,7 +10571,7 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.2.3#builtin<compat/typescript>, typescript@patch:typescript@^4.1.5#builtin<compat/typescript>, typescript@patch:typescript@~4.2.2#builtin<compat/typescript>":
+"typescript@patch:typescript@4.2.3#builtin<compat/typescript>, typescript@patch:typescript@^4.1.5#builtin<compat/typescript>, typescript@patch:typescript@~4.2.3#builtin<compat/typescript>":
   version: 4.2.3
   resolution: "typescript@patch:typescript@npm%3A4.2.3#builtin<compat/typescript>::version=4.2.3&hash=a45b0e"
   bin:
