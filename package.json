@@ -58,7 +58,7 @@
 		}
 	},
 	"dependencies": {
-		"@pizzafox/util": "2.7.2",
+		"@pizzafox/util": "2.7.3",
 		"@prisma/client": "2.19.0",
 		"cli-ux": "5.5.1",
 		"convert": "1.8.2",
