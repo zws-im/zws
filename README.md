@@ -57,7 +57,7 @@ Consider using the API key feature of ZWS to restrict access to your instance.
 
 ### DigitalOcean
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/zws-im/zws/tree/master)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/zws-im/zws/tree/digitalocean-deploy-test)
 
 We provide a template app specification YAML file to allow users to launch an instance on the DigitalOcean App Platform.
 
