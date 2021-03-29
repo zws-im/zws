@@ -55,6 +55,12 @@ You can also stay totally within the free limits of both the [`web` process](htt
 Note that the Hobby Dev (free) plan of [Heroku Postgres][heroku-postgres] has a row limit of 10,000, which might not be enough for your use case.
 Consider using the API key feature of ZWS to restrict access to your instance.
 
+### DigitalOcean
+
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/zws-im/zws/tree/master)
+
+We provide a template app specification YAML file to allow users to launch an instance on the DigitalOcean App Platform.
+
 ### [Docker Compose][docker-compose]
 
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
