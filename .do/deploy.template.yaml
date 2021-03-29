@@ -27,4 +27,4 @@ spec:
   databases:
     - name: urls
       engine: PG
-      version: '13.2'
+      version: '12'
