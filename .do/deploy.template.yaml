@@ -1,29 +1,30 @@
-name: zws
-services:
-  - name: api
-    image:
-      registry_type: DOCKER_HUB
-      registry: registry.hub.docker.com
-      repository: zwsim/zws
-    envs:
-      - key: API_KEY
-        scope: RUN_TIME
-        type: SECRET
-      - key: DATABASE_URL
-        scope: RUN_TIME
-        value: ${urls.DATABASE_URL}
-      - key: SHORT_LENGTH
-        scope: RUN_TIME
-      - key: SHORT_CHARS
-        scope: RUN_TIME
-      - key: SHORT_REWRITES
-        scope: RUN_TIME
-      - key: HOSTNAME
-        scope: RUN_TIME
-      - key: SHORTENED_BASE_URL
-        scope: RUN_TIME
-    http_port: 3000
-databases:
-  - name: urls
-    engine: PG
-    version: '13.2'
+spec:
+  name: zws
+  services:
+    - name: api
+      image:
+        registry_type: DOCKER_HUB
+        registry: registry.hub.docker.com
+        repository: zwsim/zws
+      envs:
+        - key: API_KEY
+          scope: RUN_TIME
+          type: SECRET
+        - key: DATABASE_URL
+          scope: RUN_TIME
+          value: ${urls.DATABASE_URL}
+        - key: SHORT_LENGTH
+          scope: RUN_TIME
+        - key: SHORT_CHARS
+          scope: RUN_TIME
+        - key: SHORT_REWRITES
+          scope: RUN_TIME
+        - key: HOSTNAME
+          scope: RUN_TIME
+        - key: SHORTENED_BASE_URL
+          scope: RUN_TIME
+      http_port: 3000
+  databases:
+    - name: urls
+      engine: PG
+      version: '12'
