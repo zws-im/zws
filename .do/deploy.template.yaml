@@ -4,7 +4,7 @@ spec:
     - name: api
       image:
         registry_type: DOCKER_HUB
-        registry: registry.hub.docker.com
+        registry: docker.io
         repository: zwsim/zws
       envs:
         - key: API_KEY
