@@ -3,7 +3,7 @@
 		"moduleResolution": "node",
 		"outDir": "tsc_output",
 		"resolveJsonModule": true,
-		"sourceMap": true
+		"inlineSourceMap": true
 	},
 	"extends": "@tsconfig/node14/tsconfig.json",
 	"exclude": ["node_modules"],

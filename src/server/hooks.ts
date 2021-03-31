@@ -1,7 +1,28 @@
+import * as Sentry from '@sentry/node';
 import {FastifyInstance} from 'fastify';
-import {env, server} from '../config';
+import {env, sentry, server} from '../config';
 import db from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
+
+if (sentry.dsn) {
+	let environment: 'production' | 'development' | undefined;
+
+	switch (env.env) {
+		case env.Env.Dev:
+			environment = 'development';
+			break;
+		case env.Env.Prod:
+			environment = 'production';
+			break;
+		default:
+	}
+
+	Sentry.init({
+		dsn: sentry.dsn,
+		environment,
+		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`
+	});
+}
 
 let requestId: string | undefined;
 
@@ -47,9 +68,29 @@ export default function addHooks(fastify: FastifyInstance): void {
 			return;
 		}
 
+		const requestName = `${request.routerMethod} ${request.routerPath}`;
+
+		const requestContext = {
+			body: request.body,
+			params: request.params,
+			query: request.query
+		};
+
+		Sentry.addBreadcrumb({
+			category: sentry.BreadcrumbCategory.Request,
+			message: requestName,
+			data: {...requestContext, request_id: request.id}
+		});
+
+		Sentry.configureScope(scope => {
+			scope.setTransactionName(requestName);
+
+			scope.setContext('request', requestContext);
+		});
+
 		requestId = request.id;
 
-		fastifyLogger.info(`${request.routerMethod} ${request.routerPath}`);
+		fastifyLogger.info(requestName, requestContext);
 	});
 
 	fastify.addHook('onSend', async (request, reply) => {
@@ -61,6 +102,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			requestId = request.id;
 
 			fastifyLogger.error(error);
+			Sentry.captureException(error, {tags: {request_id: request.id}, user: {ip_address: '{{auto}}'}});
 		}
 	});
 }

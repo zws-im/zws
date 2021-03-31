@@ -42,6 +42,10 @@
 		"SHORTENED_BASE_URL": {
 			"description": "The base URL to build shortened URLs from. If you leave this blank clients will have to assemble shortened URLs themselves.",
 			"required": false
+		},
+		"SENTRY_DSN": {
+			"description": "Sentry Data Source Name (DSN) https://docs.sentry.io/product/sentry-basics/dsn-explainer/",
+			"required": false
 		}
 	},
 	"keywords": ["URL Shortener", "Node.js"],

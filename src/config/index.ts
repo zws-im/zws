@@ -14,3 +14,4 @@ configLogger.debug('env', env.Env[env.env]);
 export * as characters from './characters';
 export * as env from './env';
 export * as server from './server';
+export * as sentry from './sentry';

@@ -23,6 +23,8 @@ spec:
           scope: RUN_TIME
         - key: SHORTENED_BASE_URL
           scope: RUN_TIME
+        - key: SENTRY_DSN
+          scope: RUN_TIME
       http_port: 3000
       health_check:
         initial_delay_seconds: 5
