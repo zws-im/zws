@@ -12,11 +12,13 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 CMD curl -
 COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 COPY prisma ./prisma
 COPY .yarn ./.yarn
-COPY src ./src
-COPY types ./types
 
 RUN yarn install --immutable
 RUN yarn prisma generate
+
+COPY src ./src
+COPY types ./types
+
 RUN yarn build
 
 # Remove devDependencies manually, Yarn 2 doesn't support skipping them (see https://yarnpkg.com/configuration/manifest#devDependencies)
