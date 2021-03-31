@@ -17,7 +17,8 @@ const schemas = {
 		'UniqueShortIdTimeoutError',
 		'AttemptedShortenHostnameError',
 		'UrlStats',
-		'UrlNotFoundError'
+		'UrlNotFoundError',
+		'NotHealthyError'
 	],
 	parameters: ['VisitOptions', 'TotalStatsOptions']
 };

@@ -24,6 +24,13 @@ spec:
         - key: SHORTENED_BASE_URL
           scope: RUN_TIME
       http_port: 3000
+      health_check:
+        initial_delay_seconds: 5
+        period_seconds: 30
+        timeout_seconds: 5
+        success_threshold: 1
+        failure_threshold: 3
+        http_path: /health
   databases:
     - name: urls
       engine: PG

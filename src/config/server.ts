@@ -28,5 +28,6 @@ export const serverString: UserAgent = `ZWS/${version as '2.0.0'} (+https://zws.
 export enum Tags {
 	Urls = 'urls',
 	Stats = 'stats',
-	Shields = 'shields'
+	Shields = 'shields',
+	Health = 'health'
 }

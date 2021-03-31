@@ -14,3 +14,6 @@ export const IncorrectApiKey = createError('E_INCORRECT_API_KEY', 'The provided 
 
 /** An API key was required, but not provided. */
 export const MissingApiKey = createError('E_MISSING_API_KEY', 'You must provide an API key to access this route', 401);
+
+/** The server failed a health check. */
+export const NotHealthy = createError('E_NOT_HEALTHY', 'The server is not healthy', 500);
