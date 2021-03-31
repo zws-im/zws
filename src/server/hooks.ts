@@ -24,13 +24,6 @@ if (sentry.dsn) {
 	});
 }
 
-let requestId: string | undefined;
-
-const fastifyLogger = baseFastifyLogger.getChildLogger({
-	...baseFastifyLogger.settings,
-	requestId: () => requestId!
-});
-
 export default function addHooks(fastify: FastifyInstance): void {
 	fastify.ready(async error => {
 		if (error) {
@@ -40,11 +33,11 @@ export default function addHooks(fastify: FastifyInstance): void {
 		try {
 			fastify.swagger();
 		} catch (error: unknown) {
-			fastifyLogger.error('Fastify error', error);
+			baseFastifyLogger.error('Fastify error', error);
 		}
 
 		if (env.env === env.Env.Dev) {
-			const routeLogger = fastifyLogger.getChildLogger({...fastifyLogger.settings, prefix: ['routes']});
+			const routeLogger = baseFastifyLogger.withTag('routes');
 
 			const routes = fastify.printRoutes().trim().split('\n');
 
@@ -68,6 +61,8 @@ export default function addHooks(fastify: FastifyInstance): void {
 			return;
 		}
 
+		const fastifyLogger = baseFastifyLogger.withTag(request.id);
+
 		const requestName = `${request.routerMethod} ${request.routerPath}`;
 
 		const requestContext = {
@@ -88,8 +83,6 @@ export default function addHooks(fastify: FastifyInstance): void {
 			scope.setContext('request', requestContext);
 		});
 
-		requestId = request.id;
-
 		fastifyLogger.info(requestName, requestContext);
 	});
 
@@ -99,7 +92,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 
 	fastify.addHook('onError', async (request, reply, error) => {
 		if (reply.statusCode >= 500 && reply.statusCode < 600) {
-			requestId = request.id;
+			const fastifyLogger = baseFastifyLogger.withTag(request.id);
 
 			fastifyLogger.error(error);
 			Sentry.captureException(error, {tags: {request_id: request.id}, user: {ip_address: '{{auto}}'}});

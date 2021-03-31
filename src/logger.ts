@@ -1,17 +1,13 @@
-import supportsColor from 'supports-color';
-import {Logger} from 'tslog';
-import {heroku} from './config/env';
+import consola, {ConsolaOptions, LogLevel} from 'consola';
 
-const logger = new Logger({
-	displayFilePath: 'hidden',
-	displayFunctionName: false,
-	colorizePrettyLogs: Boolean(supportsColor.stdout) && Boolean(supportsColor.stderr),
-	// Heroku logs display timestamps next to each line
-	displayDateTime: !heroku
-});
+const consolaOptions: ConsolaOptions = {
+	level: LogLevel.Debug
+};
 
-export const fastifyLogger = logger.getChildLogger({name: 'http'});
-export const configLogger = logger.getChildLogger({name: 'config'});
-export const dbLogger = logger.getChildLogger({name: 'db'});
+const baseLogger = consola.create(consolaOptions);
 
-export default logger;
+export default baseLogger;
+
+export const fastifyLogger = baseLogger.withTag('http');
+export const configLogger = baseLogger.withTag('config');
+export const dbLogger = baseLogger.withTag('db');

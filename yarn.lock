@@ -1053,10 +1053,11 @@ __metadata:
     "@types/node": 14.14.37
     "@types/supports-color": 7.2.1
     cli-ux: 5.5.1
+    consola: 2.15.3
     convert: 1.8.2
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
-    fastify: "patch:fastify@3.14.0#./fastify.diff"
+    fastify: 3.14.0
     fastify-auth: 1.0.1
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
@@ -1068,10 +1069,8 @@ __metadata:
     prisma: 2.20.0
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
-    supports-color: 8.1.1
     ts-json-schema-generator: 0.89.1
     ts-node: 9.1.1
-    tslog: 3.1.2
     type-fest: 1.0.1
     typescript: 4.2.3
     xo: 0.38.2
@@ -2469,6 +2468,13 @@ __metadata:
   version: 1.0.10
   resolution: "confusing-browser-globals@npm:1.0.10"
   checksum: 47e9365de6afe12e11b8dfbd12ce38d20bf8f4fd4614c838f88be5deb7c84dd20a5f00e432a6dd7e85d9e2be4601553cc6f28cc54d4cb07a3b04508aae0b4bd0
+  languageName: node
+  linkType: hard
+
+"consola@npm:2.15.3":
+  version: 2.15.3
+  resolution: "consola@npm:2.15.3"
+  checksum: 914e2b0b24605a41f1a83ae29a0238558d01a01c40ada5817db81b2dd1543a540d59e38e81e736d05360246379a18013e6930b32231650898dfc4adb52a93523
   languageName: node
   linkType: hard
 
@@ -4172,30 +4178,6 @@ fastify@3.14.0:
     semver: ^7.3.2
     tiny-lru: ^7.0.0
   checksum: acb5c8e1263b522cf370cdc0b5ea518acc987a76f4bd8080d75b28a8218da550a343433e792fef1a3d8ebefefa016e86a00458ecc3253bc4cca7dc1c5b6df112
-  languageName: node
-  linkType: hard
-
-"fastify@patch:fastify@3.14.0#./fastify.diff::locator=%40zws.im%2Fzws%40workspace%3A.":
-  version: 3.14.0
-  resolution: "fastify@patch:fastify@npm%3A3.14.0#./fastify.diff::version=3.14.0&hash=a1a2d2&locator=%40zws.im%2Fzws%40workspace%3A."
-  dependencies:
-    "@fastify/proxy-addr": ^3.0.0
-    abstract-logging: ^2.0.0
-    ajv: ^6.12.2
-    avvio: ^7.1.2
-    fast-json-stringify: ^2.5.0
-    fastify-error: ^0.3.0
-    fastify-warning: ^0.2.0
-    find-my-way: ^4.0.0
-    flatstr: ^1.0.12
-    light-my-request: ^4.2.0
-    pino: ^6.2.1
-    readable-stream: ^3.4.0
-    rfdc: ^1.1.4
-    secure-json-parse: ^2.0.0
-    semver: ^7.3.2
-    tiny-lru: ^7.0.0
-  checksum: 78431ef3352cb200d9207cf32e5fa67013c586d76b25325371d8871238b772e8dda00a535454a969265e08353da4e1050cad081e80d325234bf02d45ab14dac9
   languageName: node
   linkType: hard
 
@@ -9753,7 +9735,7 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.17, source-map-support@npm:^0.5.19":
+"source-map-support@npm:^0.5.17":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -10171,15 +10153,6 @@ fastify@3.14.0:
   languageName: node
   linkType: hard
 
-"supports-color@npm:8.1.1":
-  version: 8.1.1
-  resolution: "supports-color@npm:8.1.1"
-  dependencies:
-    has-flag: ^4.0.0
-  checksum: 0219f5c91753fea8dc8046cd4b18d39458b5dc0c6421c67c1072209faae9ba93b89283252e3b05d5c18901fd9f8b95001e3247fb93e2265f66d584a676522c75
-  languageName: node
-  linkType: hard
-
 "supports-color@npm:^5.3.0":
   version: 5.5.0
   resolution: "supports-color@npm:5.5.0"
@@ -10524,15 +10497,6 @@ fastify@3.14.0:
   version: 2.1.0
   resolution: "tslib@npm:2.1.0"
   checksum: d8f5bdd067611651c6b846c2388f4dc8ba1f5af124e66105f5263d1ad56da17f4b8c6566887ca2f205c5a9758451871ceca87d5d06087af2dca1699c5e33db69
-  languageName: node
-  linkType: hard
-
-"tslog@npm:3.1.2":
-  version: 3.1.2
-  resolution: "tslog@npm:3.1.2"
-  dependencies:
-    source-map-support: ^0.5.19
-  checksum: 043684ff94f82f2c60f91df68212841a426b4ebf3cb43d8fff1c2b6374f930d404b7a00a4cbb6d6928bacb83ec1a7c2d2c6830581c1599cae06af34e8386bf5c
   languageName: node
   linkType: hard
 
