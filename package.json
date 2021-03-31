@@ -16,7 +16,7 @@
 		"eslint-plugin-prettier": "3.3.1",
 		"prettier": "2.2.1",
 		"prettier-config-xo": "1.0.3",
-		"prisma": "2.20.0",
+		"prisma": "2.20.1",
 		"semantic-release": "17.4.2",
 		"semantic-release-docker": "2.2.0",
 		"ts-json-schema-generator": "0.89.1",
@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"@pizzafox/util": "2.7.3",
-		"@prisma/client": "2.20.0",
+		"@prisma/client": "2.20.1",
 		"@sentry/node": "6.2.4",
 		"consola": "2.15.3",
 		"convert": "1.8.2",
