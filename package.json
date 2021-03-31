@@ -65,7 +65,7 @@
 		"consola": "2.15.3",
 		"convert": "1.8.2",
 		"dotenv": "8.2.0",
-		"fastify": "3.14.0",
+		"fastify": "3.14.1",
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",

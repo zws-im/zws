@@ -1057,7 +1057,7 @@ __metadata:
     convert: 1.8.2
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
-    fastify: 3.14.0
+    fastify: 3.14.1
     fastify-auth: 1.0.1
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
@@ -4049,15 +4049,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stringify@npm:^2.5.0":
-  version: 2.5.2
-  resolution: "fast-json-stringify@npm:2.5.2"
+"fast-json-stringify@npm:^2.5.2":
+  version: 2.5.3
+  resolution: "fast-json-stringify@npm:2.5.3"
   dependencies:
     ajv: ^6.11.0
     deepmerge: ^4.2.2
     rfdc: ^1.2.0
     string-similarity: ^4.0.1
-  checksum: c4071096fba7af692c90a8475cf519771e2bd8c4ad972d357e6c3c1d0c27f92e2e30a474a8da7662281a4b5b66367d2b0850ca25d5653e5ab6aca19e6324de18
+  checksum: b6d1204da2af4672e789d07e5edd5dc50977fedaeaa016daaaf81a7120b84ef7603b8eb530d3238c26e7df7cd2b5d5eaaa2f7d227520cfb438ba39a2a2f9422e
   languageName: node
   linkType: hard
 
@@ -4157,15 +4157,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-fastify@3.14.0:
-  version: 3.14.0
-  resolution: "fastify@npm:3.14.0"
+"fastify@npm:3.14.1":
+  version: 3.14.1
+  resolution: "fastify@npm:3.14.1"
   dependencies:
     "@fastify/proxy-addr": ^3.0.0
     abstract-logging: ^2.0.0
     ajv: ^6.12.2
     avvio: ^7.1.2
-    fast-json-stringify: ^2.5.0
+    fast-json-stringify: ^2.5.2
     fastify-error: ^0.3.0
     fastify-warning: ^0.2.0
     find-my-way: ^4.0.0
@@ -4177,7 +4177,7 @@ fastify@3.14.0:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: acb5c8e1263b522cf370cdc0b5ea518acc987a76f4bd8080d75b28a8218da550a343433e792fef1a3d8ebefefa016e86a00458ecc3253bc4cca7dc1c5b6df112
+  checksum: afbcf12c11173c78c931bb7cff41e17b510b10e785cf793809126693e5c11f2aca33f9234a6d394678984d4a95177e0a731ada1ca2fd3e948d4c147bf8c90a4b
   languageName: node
   linkType: hard
 
