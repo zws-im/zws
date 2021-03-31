@@ -24,7 +24,7 @@ if (sentry.dsn) {
 	});
 }
 
-const baseRequestLogger = baseFastifyLogger.withTag('request')
+const baseRequestLogger = baseFastifyLogger.withTag('request');
 
 export default function addHooks(fastify: FastifyInstance): void {
 	fastify.ready(async error => {
