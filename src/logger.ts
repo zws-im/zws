@@ -1,10 +1,7 @@
-import consola, {ConsolaOptions, LogLevel} from 'consola';
+import consola from 'consola';
+import * as logger from './config/logger';
 
-const consolaOptions: ConsolaOptions = {
-	level: LogLevel.Debug
-};
-
-const baseLogger = consola.create(consolaOptions);
+const baseLogger = consola.create(logger.consolaOptions);
 
 export default baseLogger;
 
