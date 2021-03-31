@@ -8,5 +8,3 @@ export const consolaOptions: ConsolaOptions = {
 if (env.env === env.Env.Prod) {
 	consolaOptions.reporters = [new BasicReporter()];
 }
-
-consolaOptions.reporters;
