@@ -65,8 +65,7 @@ export async function visit(id: string, track: boolean): Promise<string | null> 
 	}
 
 	if (track) {
-		// TODO: Remove new Date()` when Prisma is patched (see https://github.com/prisma/prisma/issues/5762)
-		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}, timestamp: new Date()}}).catch(error => {
+		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}).catch(error => {
 			throw error;
 		});
 	}
