@@ -50,6 +50,8 @@ export default function addHooks(fastify: FastifyInstance): void {
 			await db.$connect();
 		} catch (error: unknown) {
 			dbLogger.fatal('Failed to connect to database', error);
+			Sentry.captureException(error);
+
 			process.exit(1);
 		}
 	});
