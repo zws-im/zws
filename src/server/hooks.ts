@@ -24,6 +24,8 @@ if (sentry.dsn) {
 	});
 }
 
+const baseRequestLogger = baseFastifyLogger.withTag('request')
+
 export default function addHooks(fastify: FastifyInstance): void {
 	fastify.ready(async error => {
 		if (error) {
@@ -63,7 +65,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			return;
 		}
 
-		const fastifyLogger = baseFastifyLogger.withTag(request.id);
+		const fastifyLogger = baseRequestLogger.withTag(request.id);
 
 		const requestName = `${request.routerMethod} ${request.routerPath}`;
 
