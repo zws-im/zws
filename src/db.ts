@@ -1,4 +1,4 @@
-import {PrismaClient} from '@prisma/client';
+import {Prisma, PrismaClient} from '@prisma/client';
 import {dbLogger} from './logger';
 import * as Sentry from '@sentry/node';
 import {sentry} from './config';
@@ -11,8 +11,14 @@ const db = new PrismaClient({
 	]
 });
 
+class PrismaError extends Error {}
+
+function prismaLogEventToError(event: Prisma.LogEvent): PrismaError {
+	return new PrismaError(`${event.target}: ${event.message}`);
+}
+
 db.$on('error', error => {
-	Sentry.captureException(error);
+	Sentry.captureException(prismaLogEventToError(error));
 	dbLogger.error(error.message);
 });
 
