@@ -14,6 +14,13 @@ const db = new PrismaClient({
 class PrismaError extends Error {}
 
 function prismaLogEventToError(event: Prisma.LogEvent): PrismaError {
+	if (event.target === undefined) {
+		// See https://github.com/prisma/prisma/issues/6353
+		dbLogger.warn('Prisma.LogEvent.target was undefined');
+
+		return new PrismaError(event.message);
+	}
+
 	return new PrismaError(`${event.target}: ${event.message}`);
 }
 
