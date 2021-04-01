@@ -61,7 +61,7 @@
 	"dependencies": {
 		"@pizzafox/util": "2.7.3",
 		"@prisma/client": "2.20.1",
-		"@sentry/node": "6.2.4",
+		"@sentry/node": "6.2.5",
 		"consola": "2.15.3",
 		"convert": "1.8.2",
 		"dotenv": "8.2.0",
