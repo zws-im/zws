@@ -3,6 +3,7 @@ import Short from '../../../../types/schemas/models/Short';
 import Url from '../../../../types/schemas/models/Url';
 import VisitOptions from '../../../../types/schemas/parameters/VisitOptions';
 import {server} from '../../../config';
+import baseLogger from '../../../logger';
 import {urls} from '../../../services';
 import {UrlNotFound} from '../../errors';
 
@@ -44,7 +45,8 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 
 			if (visit) {
-				void reply.redirect(301, url);
+				// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
+				void reply.redirect(301, encodeURI(url));
 			} else {
 				return {url};
 			}
