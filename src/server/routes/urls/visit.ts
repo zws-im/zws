@@ -3,7 +3,6 @@ import Short from '../../../../types/schemas/models/Short';
 import Url from '../../../../types/schemas/models/Url';
 import VisitOptions from '../../../../types/schemas/parameters/VisitOptions';
 import {server} from '../../../config';
-import baseLogger from '../../../logger';
 import {urls} from '../../../services';
 import {UrlNotFound} from '../../errors';
 
