@@ -11,7 +11,6 @@
 		"@semantic-release/exec": "5.0.0",
 		"@tsconfig/node14": "1.0.0",
 		"@types/node": "14.14.37",
-		"@types/supports-color": "7.2.1",
 		"cli-ux": "5.5.1",
 		"eslint-plugin-prettier": "3.3.1",
 		"prettier": "2.2.1",
@@ -63,14 +62,12 @@
 		"@prisma/client": "2.20.1",
 		"@sentry/node": "6.2.5",
 		"consola": "2.15.3",
-		"convert": "1.8.2",
 		"dotenv": "8.2.0",
 		"fastify": "3.14.1",
 		"fastify-auth": "1.0.1",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.0",
 		"fastify-swagger": "4.4.2",
-		"fluent-json-schema": "2.0.4",
 		"ow": "0.23.0"
 	}
 }

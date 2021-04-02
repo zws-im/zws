@@ -934,13 +934,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/supports-color@npm:7.2.1":
-  version: 7.2.1
-  resolution: "@types/supports-color@npm:7.2.1"
-  checksum: 07b6dd790a9809a1470e7a2c3e46b6697c3b5c260120c11be5da29880f70833958bc8e730079a31c64914ebc324af2d281813601c2cf0b9794d5315ac0d69415
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/eslint-plugin@npm:^4.15.1":
   version: 4.18.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.18.0"
@@ -1051,10 +1044,8 @@ __metadata:
     "@sentry/node": 6.2.5
     "@tsconfig/node14": 1.0.0
     "@types/node": 14.14.37
-    "@types/supports-color": 7.2.1
     cli-ux: 5.5.1
     consola: 2.15.3
-    convert: 1.8.2
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     fastify: 3.14.1
@@ -1062,7 +1053,6 @@ __metadata:
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
     fastify-swagger: 4.4.2
-    fluent-json-schema: 2.0.4
     ow: 0.23.0
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
@@ -2578,13 +2568,6 @@ __metadata:
   dependencies:
     safe-buffer: ~5.1.1
   checksum: b10fbf041e3221c65e1ab67f05c8fcbad9c5fd078c62f4a6e05cb5fddc4b5a0e8a17c6a361c6a44f011b1a0c090b36aa88543be9dfa65da8c9e7f39c5de2d4df
-  languageName: node
-  linkType: hard
-
-"convert@npm:1.8.2":
-  version: 1.8.2
-  resolution: "convert@npm:1.8.2"
-  checksum: bfea9cc618ded138946183de65327dded025bbe31123b9f4bb66c890a25373c4808cee09b070176dac786b2e3feb86e9aa2283079dcd064683d76e74254886e7
   languageName: node
   linkType: hard
 
@@ -4357,15 +4340,6 @@ __metadata:
   version: 3.1.1
   resolution: "flatted@npm:3.1.1"
   checksum: 1065cd78294ea651b8c1b96c298a3e70893a23da655e2288e40c06d5d9b1ebce4bd977e604678e01065a92580f3de5078d60d9ee4cdcede9a9989859d7eb5057
-  languageName: node
-  linkType: hard
-
-"fluent-json-schema@npm:2.0.4":
-  version: 2.0.4
-  resolution: "fluent-json-schema@npm:2.0.4"
-  dependencies:
-    deepmerge: ^4.2.2
-  checksum: 0ee9cbce3985f2395b889ab789842ef0874a9a82d083fcdf7e769ed7a695d545c54de49d8c6e85c66d3e6e0f42e9606d7d013000baa784b9fda7be82603a65e0
   languageName: node
   linkType: hard
 
