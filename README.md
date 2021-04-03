@@ -66,24 +66,18 @@ We provide a template app specification YAML file to allow users to launch an in
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 2. Copy [`db.example.env`](db.example.env) to `db.env` and fill in the values
 3. Copy [`example.env`](example.env) to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
-4. Run [`docker volume create --name=zws-postgres-storage`](https://docs.docker.com/engine/reference/commandline/volume_create/)
-5. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
+4. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
 
 ### Database migrations
 
-After you create an app using the above button you'll need to run the database migrations before shortening any URLs.
-**These are done automatically, but manual usage may be required when upgrading versions**.
-
-This can be done easily through [Docker Compose][docker-compose] by running the following commands:
+Database migrations are automatically applied on Heroku and Docker Compose.
+You can easily run database migrations manually through [Docker Compose][docker-compose] by running the following command:
 
 ```sh
-docker volume create --name=zws-postgres-storage
 docker-compose up migration
 ```
 
-Even if your database isn't being run through [Docker Compose][docker-compose] you'll still need to create the volume and start the `db` service.
-You can delete the volume right after.
-If you know a better way to do this, please open a pull request!
+Make sure the `DATABASE_URL` environment variable in `.env` is accurate.
 
 #### [Heroku Postgres][heroku-postgres]
 
