@@ -1049,7 +1049,7 @@ __metadata:
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.3.1
     fastify: 3.14.2
-    fastify-auth: 1.0.1
+    fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
     fastify-swagger: 4.5.0
@@ -4065,13 +4065,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-auth@npm:1.0.1":
-  version: 1.0.1
-  resolution: "fastify-auth@npm:1.0.1"
+"fastify-auth@npm:1.1.0":
+  version: 1.1.0
+  resolution: "fastify-auth@npm:1.1.0"
   dependencies:
-    fastify-plugin: ^2.0.0
+    fastify-plugin: ^3.0.0
     reusify: ^1.0.4
-  checksum: 62ccbc030d55678cc7832aac13e666d1bd664f49335e2c1c5d124c45c67840f9378ef8a144ef982b965786ee0ac8f685ea7b604e3024f04d915e88e60f7f5a20
+  checksum: 655caebcb38de264b79b6b90cdf4d06174701b1534eaf418290213c783540ca38825cdce3b54ea95436cbdca9f6260b2aacdd490d534b43f2bf74f22015bd6e8
   languageName: node
   linkType: hard
 
@@ -4088,15 +4088,6 @@ __metadata:
   version: 0.3.0
   resolution: "fastify-error@npm:0.3.0"
   checksum: 8b66bd0f3ed68d90b31e59dfee38e41fa4ab1d5206fc5675c8ec5d0ef65e37067d5305ff3a2e754b129212353b30bd5e78958c1446e909153116ffac86a2539e
-  languageName: node
-  linkType: hard
-
-"fastify-plugin@npm:^2.0.0":
-  version: 2.3.4
-  resolution: "fastify-plugin@npm:2.3.4"
-  dependencies:
-    semver: ^7.3.2
-  checksum: 31426b9698776b91efaca65a0afd1ae7e4546d5c116747970fa3dcf3df5f3ec6a87f5fd689e42e09081d684ec889e2659114289667bbead6eab23036911065ca
   languageName: node
   linkType: hard
 
