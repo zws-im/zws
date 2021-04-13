@@ -1202,7 +1202,7 @@ __metadata:
     semantic-release-docker: 2.2.0
     ts-json-schema-generator: 0.89.3
     ts-node: 9.1.1
-    type-fest: 1.0.1
+    type-fest: 1.0.2
     typescript: 4.2.4
     xo: 0.38.2
   languageName: unknown
@@ -9462,10 +9462,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:1.0.1":
-  version: 1.0.1
-  resolution: "type-fest@npm:1.0.1"
-  checksum: 3bd90161148674da21a3fc74cc784163b9b3e577fe70c0f110a456e6140109251a7b3ef4a4b07d10839fda8c119484a13c8b5d4c3984ba6c9aeb89cbf6eecbde
+"type-fest@npm:1.0.2":
+  version: 1.0.2
+  resolution: "type-fest@npm:1.0.2"
+  checksum: 5e9696dd0e6903ad5fa8413a83ddab375ca9a3529d14ca156e1ef47d54dfc5606da038485f849fcb9153fa35a52b1134e5235232cbf5f2c6837c35cc5ae62448
   languageName: node
   linkType: hard
 
