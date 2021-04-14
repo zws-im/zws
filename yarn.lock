@@ -1038,10 +1038,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:14.14.37":
+"@types/node@npm:*":
   version: 14.14.37
   resolution: "@types/node@npm:14.14.37"
   checksum: 5e2d9baf7594ebacaf016716515f30de0765169412787f981481c2fb8b468923149bb9e2e3219ee672399811672ceddc339a7372a61cf15bc656836a5494d991
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:14.14.38":
+  version: 14.14.38
+  resolution: "@types/node@npm:14.14.38"
+  checksum: da15fadd7e96ccea9b44b3fb72cfe020f9e8adce018a79ba85631b64b428fbfdff5b2c479dde03d9129b091de5e3a091e5fb0ec7514b06a3f4f9f9386ad42603
   languageName: node
   linkType: hard
 
@@ -1184,7 +1191,7 @@ __metadata:
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.2.5
     "@tsconfig/node14": 1.0.0
-    "@types/node": 14.14.37
+    "@types/node": 14.14.38
     cli-ux: 5.5.1
     consola: 2.15.3
     dotenv: 8.2.0
