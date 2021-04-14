@@ -1193,7 +1193,7 @@ __metadata:
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.0
-    fastify-swagger: 4.5.1
+    fastify-swagger: 4.6.0
     ow: 0.23.0
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
@@ -3953,16 +3953,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-swagger@npm:4.5.1":
-  version: 4.5.1
-  resolution: "fastify-swagger@npm:4.5.1"
+"fastify-swagger@npm:4.6.0":
+  version: 4.6.0
+  resolution: "fastify-swagger@npm:4.6.0"
   dependencies:
     fastify-plugin: ^3.0.0
     fastify-static: ^4.0.0
     js-yaml: ^4.0.0
     json-schema-resolver: ^1.2.0
     openapi-types: ^8.0.0
-  checksum: 201151add21148e3ca1382bf10c911c5841739fd7f96600fe5861c5b492bbe05e81c005c2ae9e01cf5cce0db021ed29ada4f4b7e81f3f679b1cdcf9988345a86
+  checksum: c0be62a4ca6f8b289bdbf8f8c32a849e9e50d50b906bd5553d5d14a503850546473064b19afdcfd08d61feccd2a2d306bff84cd358334d4ecd627ba174a2db63
   languageName: node
   linkType: hard
 
