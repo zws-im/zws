@@ -735,9 +735,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:2.21.0":
-  version: 2.21.0
-  resolution: "@prisma/client@npm:2.21.0"
+"@prisma/client@npm:2.21.1":
+  version: 2.21.1
+  resolution: "@prisma/client@npm:2.21.1"
   dependencies:
     "@prisma/engines-version": 2.21.0-36.e421996c87d5f3c8f7eeadd502d4ad402c89464d
   peerDependencies:
@@ -745,7 +745,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 97a5bcd3f059506777a9524ccbbb2c3e196add4e4cb9ddd0a719a36e3ce27e98ceeca62e7de9cce06e08e2247a4852239eb5e9f4fba5bb5847964cc2bba9d65d
+  checksum: bb3d6139e9f83f16e216fc94fab5ebbaeb2ed08e65f2dcd92098c75a3ef7580a2088dc87c5b45bfc8add3e36f4e2b5bd61aa4dacd6db3f2f888e96e2c85ba92d
   languageName: node
   linkType: hard
 
@@ -1180,7 +1180,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@pizzafox/util": 2.8.0
-    "@prisma/client": 2.21.0
+    "@prisma/client": 2.21.1
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.2.5
     "@tsconfig/node14": 1.0.0
@@ -1197,7 +1197,7 @@ __metadata:
     ow: 0.23.0
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
-    prisma: 2.21.0
+    prisma: 2.21.1
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
     ts-json-schema-generator: 0.89.3
@@ -7720,15 +7720,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:2.21.0":
-  version: 2.21.0
-  resolution: "prisma@npm:2.21.0"
+"prisma@npm:2.21.1":
+  version: 2.21.1
+  resolution: "prisma@npm:2.21.1"
   dependencies:
     "@prisma/engines": 2.21.0-36.e421996c87d5f3c8f7eeadd502d4ad402c89464d
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: f94fb145cc56f3199e21f7aab9f3ecf4bf31354be342ff214ffe3bd4a1fcf445fcc80de30c405ee8b8d0c89d1459a05649a9f55a795ac407d83b4808e3f01a2f
+  checksum: fb87709ef5893b753f038cfbf29ee57325c6807907b2c81638801deeabe6029ec5bce178b7310d74b3c71525504a0a39bfdbbef1ec5ee83656fb7e75eebc5653
   languageName: node
   linkType: hard
 
