@@ -52,6 +52,28 @@ jobs:
         run: yarn install --immutable
       - name: Lint
         run: yarn run lint
+  validate-prisma:
+    name: Validate Prisma schema
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v2
+      - name: Get Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Validate Prisma schema
+        run: yarn run prisma validate
   lint-dockerfile:
     name: Lint Dockerfile
 
@@ -117,7 +139,7 @@ jobs:
     # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
     if: ${{ github.ref  == 'refs/heads/master' }}
 
-    needs: [build, lint, lint-dockerfile]
+    needs: [build, lint, lint-dockerfile, validate-prisma]
 
     steps:
       - name: Checkout git repository
