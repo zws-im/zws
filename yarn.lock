@@ -728,10 +728,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pizzafox/util@npm:2.8.0":
-  version: 2.8.0
-  resolution: "@pizzafox/util@npm:2.8.0"
-  checksum: 9d7f29e32e67d1fb6a458a80b1717162606154f8596726c98da16ffd208809d1efc8c404d0e66ac5ac49a9fe57ad25b8b0e626a6843d6dcc7a1005d12dda8fbc
+"@pizzafox/util@npm:2.9.0":
+  version: 2.9.0
+  resolution: "@pizzafox/util@npm:2.9.0"
+  checksum: dd928bdc9598b5c12ef1565dc933fe37b2a324f12ad9df7acc771cb86a86c422f845f3dbfb97705454c7a431c60a526438c6d943104b6582385013ebcd54bed2
   languageName: node
   linkType: hard
 
@@ -1186,7 +1186,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@pizzafox/util": 2.8.0
+    "@pizzafox/util": 2.9.0
     "@prisma/client": 2.21.2
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.2.5

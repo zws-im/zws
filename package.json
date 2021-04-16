@@ -58,7 +58,7 @@
 		}
 	},
 	"dependencies": {
-		"@pizzafox/util": "2.8.0",
+		"@pizzafox/util": "2.9.0",
 		"@prisma/client": "2.21.2",
 		"@sentry/node": "6.2.5",
 		"consola": "2.15.3",

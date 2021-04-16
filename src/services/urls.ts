@@ -1,4 +1,4 @@
-import {sample} from '@pizzafox/util';
+import {multiReplace, sample} from '@pizzafox/util';
 import {ShortenedUrl} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {Opaque} from 'type-fest';
@@ -25,15 +25,8 @@ export function debugInfo(id: string, encodedId: Base64) {
 	return {short: id, encodedShort: encodedId, shortCodepoints: id.split('').map(char => char.charCodeAt(0).toString(16))};
 }
 
-// Reused to avoid expensive iteration
-const rewritesEntries = Object.entries(characters.rewrites);
-
 export function normalizeShortId(id: string): string {
-	for (const [original, rewrite] of rewritesEntries) {
-		id = id.replaceAll(original, rewrite);
-	}
-
-	return id;
+	return multiReplace(id, characters.rewrites);
 }
 
 /**
