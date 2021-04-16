@@ -1,9 +1,15 @@
 import {sample} from '@pizzafox/util';
 import {ShortenedUrl} from '@prisma/client';
+import * as Sentry from '@sentry/node';
 import {Opaque} from 'type-fest';
 import {characters} from '../config';
 import db from '../db';
+import baseLogger from '../logger';
 import {UniqueShortIdTimeout} from '../server/errors';
+
+const logger = baseLogger.withTag('services').withTag('urls');
+/** Logger for the visits operation. */
+const visitLogger = logger.withScope('visit');
 
 /** A base64 encoded string. */
 type Base64 = Opaque<string, 'Base64'>;
@@ -66,7 +72,8 @@ export async function visit(id: string, track: boolean): Promise<string | null> 
 
 	if (track) {
 		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}).catch(error => {
-			throw error;
+			Sentry.captureException(error);
+			visitLogger.error('Failed to create visit', error);
 		});
 	}
 
