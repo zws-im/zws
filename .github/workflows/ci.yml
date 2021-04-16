@@ -61,7 +61,7 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@v2
       - name: Lint Dockerfile
-        uses: brpaz/hadolint-action@v1.3.1
+        uses: brpaz/hadolint-action@v1.4.0
         with:
           dockerfile: 'Dockerfile'
   style:
