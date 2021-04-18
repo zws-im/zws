@@ -74,6 +74,8 @@ jobs:
         run: yarn install --immutable
       - name: Validate Prisma schema
         run: yarn run prisma validate
+        env:
+          DATABASE_URL: postgresql://user:pass@localhost:5432/db
   lint-dockerfile:
     name: Lint Dockerfile
 
