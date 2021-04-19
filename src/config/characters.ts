@@ -4,7 +4,7 @@ import {JsonValue} from 'type-fest';
 /**
  * Every character matching this regular expression:
  * ```js
- * /[a-z\d]/i;
+ * /^[a-z\d]$/i;
  * ```
  */
 const alphaNumeric: string[] = [
@@ -85,7 +85,7 @@ const parsedCharacters: JsonValue = JSON.parse(process.env[EnvVarNames.ShortChar
 ow(parsedCharacters, EnvVarNames.ShortChars, ow.any(ow.array.ofType(ow.string.nonEmpty).minLength(1)));
 
 /** Characters to use in the shortened ID for a URL. */
-export const characters = parsedCharacters === null ? alphaNumeric : [...new Set<string>(parsedCharacters)];
+export const characters = parsedCharacters === null ? alphaNumeric : [...new Set(parsedCharacters)];
 
 /** The maximum number of short URLs that can be generated. */
 const maxShortUrls = 1e9;
