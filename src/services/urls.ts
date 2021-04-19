@@ -83,13 +83,16 @@ export async function visit(id: string, track: boolean): Promise<string | null> 
 export async function stats(id: string): Promise<null | {url: string; visits: Date[]}> {
 	const encodedId = encode(id);
 
-	const shortenedUrl = await db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, visits: {select: {timestamp: true}}}});
+	const [visits, shortenedUrl] = await db.$transaction([
+		db.visit.findMany({where: {shortenedUrlId: encodedId}, select: {timestamp: true}, orderBy: {timestamp: 'asc'}}),
+		db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true}})
+	]);
 
 	if (!shortenedUrl) {
 		return null;
 	}
 
-	return {visits: shortenedUrl.visits.map(visit => visit.timestamp), url: shortenedUrl.url};
+	return {visits: visits.map(visit => visit.timestamp), url: shortenedUrl.url};
 }
 
 /**
