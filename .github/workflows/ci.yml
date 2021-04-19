@@ -137,9 +137,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    # Don't run this job if we aren't on master branch
+    # Don't run this job if we aren't on main branch
     # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
-    if: ${{ github.ref  == 'refs/heads/master' }}
+    if: ${{ github.ref  == 'refs/heads/main' }}
 
     needs: [build, lint, lint-dockerfile, validate-prisma]
 
