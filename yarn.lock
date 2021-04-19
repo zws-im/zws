@@ -1199,7 +1199,7 @@ __metadata:
     fastify: 3.14.2
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
-    fastify-error: 0.3.0
+    fastify-error: 0.3.1
     fastify-swagger: 4.6.0
     ow: 0.23.0
     prettier: 2.2.1
@@ -3948,7 +3948,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-error@npm:0.3.0, fastify-error@npm:^0.3.0":
+"fastify-error@npm:0.3.1":
+  version: 0.3.1
+  resolution: "fastify-error@npm:0.3.1"
+  checksum: ba3b964a9cc7ee72e1573f10951705ee8cadbc7a395af54ad5cfef7be05ad6eec558b71d7d9862cce92dd68145ccc7e9ab79487c37ed8c763bcf7bbf40ef6d36
+  languageName: node
+  linkType: hard
+
+"fastify-error@npm:^0.3.0":
   version: 0.3.0
   resolution: "fastify-error@npm:0.3.0"
   checksum: 8b66bd0f3ed68d90b31e59dfee38e41fa4ab1d5206fc5675c8ec5d0ef65e37067d5305ff3a2e754b129212353b30bd5e78958c1446e909153116ffac86a2539e
