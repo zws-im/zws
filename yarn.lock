@@ -302,6 +302,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/util@npm:2.10.0":
+  version: 2.10.0
+  resolution: "@jonahsnider/util@npm:2.10.0"
+  checksum: 3942e472d0633e5c43dac0163d3df4add06e426457d723b286abaad3e3367752e5c25509398e86f10039f0377e27b6e69a7d2081814ebdd5ab46b5b0fc88811d
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -725,13 +732,6 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^6.0.0
   checksum: 20e7f159be0ebd386291b8e37521f191ca1adc922e2096b6f1434e980336f3a5ee4073bc0e99a8bb91e1657c4a8a1671ce458fbe299d918d773bd4bcf7cb8f5c
-  languageName: node
-  linkType: hard
-
-"@pizzafox/util@npm:2.9.0":
-  version: 2.9.0
-  resolution: "@pizzafox/util@npm:2.9.0"
-  checksum: dd928bdc9598b5c12ef1565dc933fe37b2a324f12ad9df7acc771cb86a86c422f845f3dbfb97705454c7a431c60a526438c6d943104b6582385013ebcd54bed2
   languageName: node
   linkType: hard
 
@@ -1186,7 +1186,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@pizzafox/util": 2.9.0
+    "@jonahsnider/util": 2.10.0
     "@prisma/client": 2.21.2
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.2.5

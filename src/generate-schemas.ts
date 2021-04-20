@@ -1,4 +1,4 @@
-import {sum} from '@pizzafox/util';
+import {sum} from '@jonahsnider/util';
 import cli from 'cli-ux';
 import fs from 'fs/promises';
 import path from 'path';

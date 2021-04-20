@@ -1,4 +1,4 @@
-import {multiReplace, sample} from '@pizzafox/util';
+import {multiReplace, sample} from '@jonahsnider/util';
 import {ShortenedUrl} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {Opaque} from 'type-fest';
