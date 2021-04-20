@@ -1203,7 +1203,7 @@ __metadata:
     fastify-swagger: 4.6.0
     ow: 0.23.0
     prettier: 2.2.1
-    prettier-config-xo: 1.0.3
+    prettier-config-xo: 1.0.4
     prisma: 2.21.2
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
@@ -7724,10 +7724,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-config-xo@npm:1.0.3":
-  version: 1.0.3
-  resolution: "prettier-config-xo@npm:1.0.3"
-  checksum: e3c93e0b9560abc5064fb0734ac23e98a9e5cf58fea621c687c28bfd58c3b49dfdc2aeccf42d2c0d21945806666d6ba12e55dbfdf7e72baedae515a266198a6c
+"prettier-config-xo@npm:1.0.4":
+  version: 1.0.4
+  resolution: "prettier-config-xo@npm:1.0.4"
+  checksum: 3ca2fc5ccf6a426b90520bf0e50fc2511c098505784eb1f09ae5d0b468df092ecf229464518b2ede541949e05c79b9ba35fbef698156c84d337c0564fe532feb
   languageName: node
   linkType: hard
 
