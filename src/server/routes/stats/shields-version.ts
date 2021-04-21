@@ -20,7 +20,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			response: {200: fastify.getSchema('https://zws.im/schemas/ShieldsEndpointResponse.json'), 500: fastify.getSchema('https://zws.im/schemas/Error.json')}
 		},
-		handler: async (request, reply) => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1})
+		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1})
 	};
 
 	fastify.route(route);

@@ -60,12 +60,12 @@ export default function addHooks(fastify: FastifyInstance): void {
 
 	fastify.addHook('onClose', async () => db.$disconnect());
 
-	fastify.addHook('onRequest', async (request, reply) => {
+	fastify.addHook('onRequest', async request => {
 		if (request.is404) {
 			return;
 		}
 
-		const fastifyLogger = baseRequestLogger.withTag(request.id);
+		const fastifyLogger = baseRequestLogger.withTag(request.id as string);
 
 		const requestName = `${request.routerMethod} ${request.routerPath}`;
 
@@ -78,7 +78,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 		Sentry.addBreadcrumb({
 			category: sentry.BreadcrumbCategory.Request,
 			message: requestName,
-			data: {...requestContext, request_id: request.id}
+			data: {...requestContext, request_id: request.id as string}
 		});
 
 		Sentry.configureScope(scope => {
@@ -96,7 +96,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 
 	fastify.addHook('onError', async (request, reply, error) => {
 		if (reply.statusCode >= 500 && reply.statusCode < 600) {
-			const fastifyLogger = baseFastifyLogger.withTag(request.id);
+			const fastifyLogger = baseFastifyLogger.withTag(request.id as string);
 
 			fastifyLogger.error(error);
 			Sentry.captureException(error, {tags: {request_id: request.id}, user: {ip_address: '{{auto}}'}});

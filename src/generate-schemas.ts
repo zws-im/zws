@@ -52,6 +52,7 @@ async function main() {
 
 					promises.push(promise);
 				})
+				// eslint-disable-next-line promise/prefer-await-to-then
 				.catch(error => {
 					logger.error(error);
 				});

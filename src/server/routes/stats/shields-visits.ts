@@ -21,7 +21,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			response: {200: fastify.getSchema('https://zws.im/schemas/ShieldsEndpointResponse.json'), 500: fastify.getSchema('https://zws.im/schemas/Error.json')}
 		},
-		handler: async (request, reply) => {
+		handler: async () => {
 			const stats = await urls.totalStats();
 
 			return {color: 'informational', label: 'visits', message: format.abbreviateNumber(stats.visits), schemaVersion: 1};

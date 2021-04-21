@@ -16,7 +16,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			querystring: fastify.getSchema('https://zws.im/schemas/TotalStatsOptions.json'),
 			response: {200: fastify.getSchema('https://zws.im/schemas/Stats.json'), 500: fastify.getSchema('https://zws.im/schemas/Error.json')}
 		},
-		handler: async (request, reply) => {
+		handler: async request => {
 			const urlStats = await urls.totalStats();
 
 			if (request.query.format) {
