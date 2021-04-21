@@ -21,7 +21,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 				500: fastify.getSchema('https://zws.im/schemas/Error.json')
 			}
 		},
-		handler: async (request, reply) => {
+		handler: async request => {
 			const {
 				params: {short}
 			} = request;

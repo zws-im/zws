@@ -64,6 +64,7 @@ export async function visit(id: string, track: boolean): Promise<string | null> 
 	}
 
 	if (track) {
+		// eslint-disable-next-line promise/prefer-await-to-then
 		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}).catch(error => {
 			Sentry.captureException(error);
 			visitLogger.error('Failed to create visit', error);
