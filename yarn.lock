@@ -1207,7 +1207,7 @@ __metadata:
     prisma: 2.21.2
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
-    ts-json-schema-generator: 0.90.0
+    ts-json-schema-generator: 0.91.0
     ts-node: 9.1.1
     type-fest: 1.0.2
     typescript: 4.2.4
@@ -9405,9 +9405,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-json-schema-generator@npm:0.90.0":
-  version: 0.90.0
-  resolution: "ts-json-schema-generator@npm:0.90.0"
+"ts-json-schema-generator@npm:0.91.0":
+  version: 0.91.0
+  resolution: "ts-json-schema-generator@npm:0.91.0"
   dependencies:
     "@types/json-schema": ^7.0.7
     commander: ^7.2.0
@@ -9417,7 +9417,7 @@ __metadata:
     typescript: ~4.2.3
   bin:
     ts-json-schema-generator: bin/ts-json-schema-generator
-  checksum: 1eece913dfeab4fe786efcdaf87ad9ba7377891f655eff93e2d8b877a572cc8a3f8b3c67c8f3fdd907d2d83257a0b27c06bbddeb21a50f965ac6829ef7136946
+  checksum: 948d9a1b798ff922238ceaed2ffcd66c80b5d83c5622fc738185d360a4e60ab83359ee8214b1b72d9cb02a9e909fe32d25bfc87075095467f8cf92a9d3b330ae
   languageName: node
   linkType: hard
 
