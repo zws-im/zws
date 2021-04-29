@@ -19,7 +19,7 @@ export const MissingApiKey = createError('E_MISSING_API_KEY', 'You must provide 
 export const NotHealthy = createError('E_NOT_HEALTHY', 'The server is not healthy', 500);
 
 /** You tried to shorten a blocked hostname. */
-export const AttempedShortenBlockedHostname = createError('E_SHORTEN_BLOCKED_HOSTNAME', 'Shortening that hostname is forbidden', 422);
+export const AttemptedShortenBlockedHostname = createError('E_SHORTEN_BLOCKED_HOSTNAME', 'Shortening that hostname is forbidden', 422);
 
 /** You tried to access a URL that has been marked in the database as blocked. */
 export const UrlBlocked = createError('E_URL_BLOCKED', "That URL has been blocked and can't be visited", 410);

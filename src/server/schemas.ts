@@ -1,5 +1,5 @@
 import {FastifyInstance} from 'fastify';
-import AttempedShortenBlockedHostnameError from '../schemas/models/AttempedShortenBlockedHostnameError.json';
+import AttemptedShortenBlockedHostnameError from '../schemas/models/AttemptedShortenBlockedHostnameError.json';
 import AttemptedShortenHostnameError from '../schemas/models/AttemptedShortenHostnameError.json';
 import ErrorModel from '../schemas/models/Error.json';
 import IncorrectApiKeyError from '../schemas/models/IncorrectApiKeyError.json';
@@ -19,7 +19,7 @@ import ShieldsEndpointResponse from '../schemas/responses/ShieldsEndpointRespons
 import ShortenHostnameError from '../schemas/responses/ShortenHostnameError.json';
 
 export default function addSchemas(fastify: FastifyInstance): void {
-	fastify.addSchema(AttempedShortenBlockedHostnameError);
+	fastify.addSchema(AttemptedShortenBlockedHostnameError);
 	fastify.addSchema(AttemptedShortenHostnameError);
 	fastify.addSchema(ErrorModel);
 	fastify.addSchema(IncorrectApiKeyError);

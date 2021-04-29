@@ -19,7 +19,7 @@ const schemas = {
 		'UrlStats',
 		'UrlNotFoundError',
 		'NotHealthyError',
-		'AttempedShortenBlockedHostnameError',
+		'AttemptedShortenBlockedHostnameError',
 		'UrlBlockedError'
 	],
 	parameters: ['VisitOptions', 'TotalStatsOptions']

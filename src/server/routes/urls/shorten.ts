@@ -7,7 +7,7 @@ import {server, blocklist} from '../../../config';
 
 import {fastifyLogger} from '../../../logger';
 import {urls} from '../../../services';
-import {AttemptedShortenHostname, AttempedShortenBlockedHostname} from '../../errors';
+import {AttemptedShortenHostname, AttemptedShortenBlockedHostname} from '../../errors';
 
 const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
 
@@ -43,7 +43,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 
 			if (blocklist.blockedHostnames.has(longUrlHostname)) {
-				throw new AttempedShortenBlockedHostname();
+				throw new AttemptedShortenBlockedHostname();
 			}
 
 			const id = await urls.shorten(url);

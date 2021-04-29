@@ -3,7 +3,7 @@
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"anyOf": [
 		{
-			"$ref": "#/definitions/AttempedShortenBlockedHostnameError"
+			"$ref": "#/definitions/AttemptedShortenBlockedHostnameError"
 		},
 		{
 			"$ref": "#/definitions/AttemptedShortenHostnameError"
@@ -12,7 +12,7 @@
 	"title": "ShortenHostnameError",
 	"description": "The hostname you tried to shorten isn't allowed",
 	"definitions": {
-		"AttempedShortenBlockedHostnameError": {
+		"AttemptedShortenBlockedHostnameError": {
 			"type": "object",
 			"properties": {
 				"statusCode": {
@@ -33,7 +33,7 @@
 			},
 			"required": ["code", "error", "message", "statusCode"],
 			"additionalProperties": false,
-			"title": "AttempedShortenBlockedHostnameError",
+			"title": "AttemptedShortenBlockedHostnameError",
 			"description": "Shortening that hostname is forbidden"
 		},
 		"AttemptedShortenHostnameError": {

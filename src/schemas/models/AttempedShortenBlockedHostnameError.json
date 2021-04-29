@@ -1,5 +1,5 @@
 {
-	"$id": "https://zws.im/schemas/AttempedShortenBlockedHostnameError.json",
+	"$id": "https://zws.im/schemas/AttemptedShortenBlockedHostnameError.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"type": "object",
 	"properties": {
@@ -21,7 +21,7 @@
 	},
 	"required": ["code", "error", "message", "statusCode"],
 	"additionalProperties": false,
-	"title": "AttempedShortenBlockedHostnameError",
+	"title": "AttemptedShortenBlockedHostnameError",
 	"description": "Shortening that hostname is forbidden",
 	"definitions": {}
 }
