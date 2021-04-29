@@ -19,6 +19,8 @@ model ShortenedUrl {
   visits      Visit[]
   /// The datetime the URL was shortened
   createdAt   DateTime @default(now()) @map("created_at")
+  /// If this URL was marked as blocked after it was shortened
+  blocked     Boolean  @default(false)
 
   @@map("shortened_urls")
 }

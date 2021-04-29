@@ -5,7 +5,7 @@ import {Opaque} from 'type-fest';
 import {characters} from '../config';
 import db from '../db';
 import baseLogger from '../logger';
-import {UniqueShortIdTimeout} from '../server/errors';
+import {UniqueShortIdTimeout, UrlBlocked} from '../server/errors';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */
@@ -52,18 +52,21 @@ function generateShortId(): string {
  * @param id - The ID of the shortened URL to visit
  * @param track - If the visit should be tracked
  *
- * @returns The long URL, or `null` if it couldn't be found
+ * @returns The long URL and if it was blocked
  */
-export async function visit(id: string, track: boolean): Promise<string | null> {
+export async function visit(id: string, track: boolean): Promise<{longUrl: string; blocked: boolean} | null> {
 	const encodedId = encode(id);
 
-	const url = (await db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true}}))?.url;
+	const shortenedUrl = await db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, blocked: true}});
 
-	if (url === undefined) {
+	if (shortenedUrl === null) {
 		return null;
 	}
 
-	if (track) {
+	if (track && !shortenedUrl.blocked) {
+		// Only track URLs if they aren't blocked
+		// This is because we know that a blocked URL won't be sent to clients if they are visiting it
+
 		// eslint-disable-next-line promise/prefer-await-to-then
 		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}).catch(error => {
 			Sentry.captureException(error);
@@ -71,7 +74,7 @@ export async function visit(id: string, track: boolean): Promise<string | null> 
 		});
 	}
 
-	return url;
+	return {longUrl: shortenedUrl.url, blocked: shortenedUrl.blocked};
 }
 
 /**

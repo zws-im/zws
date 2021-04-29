@@ -6,7 +6,7 @@ import * as tsj from 'ts-json-schema-generator';
 import logger from './logger';
 
 const schemas = {
-	responses: ['ShieldsEndpointResponse', 'ApiKeyError'],
+	responses: ['ShieldsEndpointResponse', 'ApiKeyError', 'ShortenHostnameError'],
 	models: [
 		'Error',
 		'Short',
@@ -18,7 +18,9 @@ const schemas = {
 		'AttemptedShortenHostnameError',
 		'UrlStats',
 		'UrlNotFoundError',
-		'NotHealthyError'
+		'NotHealthyError',
+		'AttempedShortenBlockedHostnameError',
+		'UrlBlockedError'
 	],
 	parameters: ['VisitOptions', 'TotalStatsOptions']
 };

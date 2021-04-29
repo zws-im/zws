@@ -4,9 +4,10 @@ import {URL} from 'url';
 import type Short from '../../../../types/schemas/models/Short';
 import type Url from '../../../../types/schemas/models/Url';
 import {server} from '../../../config';
+import {blocklist} from '../../../config';
 import {fastifyLogger} from '../../../logger';
 import {urls} from '../../../services';
-import {AttemptedShortenHostname} from '../../errors';
+import {AttemptedShortenHostname, AttempedShortenBlockedHostname} from '../../errors';
 
 const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
 
@@ -25,7 +26,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 				201: fastify.getSchema('https://zws.im/schemas/Short.json'),
 				400: fastify.getSchema('https://zws.im/schemas/Error.json'),
 				401: fastify.getSchema('https://zws.im/schemas/ApiKeyError.json'),
-				422: fastify.getSchema('https://zws.im/schemas/AttemptedShortenHostnameError.json'),
+				422: fastify.getSchema('https://zws.im/schemas/ShortenHostnameError.json'),
 				500: fastify.getSchema('https://zws.im/schemas/Error.json'),
 				503: fastify.getSchema('https://zws.im/schemas/UniqueShortIdTimeoutError.json')
 			}
@@ -35,8 +36,14 @@ export default function declareRoute(fastify: FastifyInstance) {
 				body: {url}
 			} = request;
 
-			if (forbiddenHostnames.has(new URL(url).hostname)) {
+			const longUrlHostname = new URL(url).hostname;
+
+			if (forbiddenHostnames.has(longUrlHostname)) {
 				throw new AttemptedShortenHostname();
+			}
+
+			if (blocklist.blockedHostnames.has(longUrlHostname)) {
+				throw new AttempedShortenBlockedHostname();
 			}
 
 			const id = await urls.shorten(url);

@@ -4,7 +4,7 @@ import Url from '../../../../types/schemas/models/Url';
 import VisitOptions from '../../../../types/schemas/parameters/VisitOptions';
 import {server} from '../../../config';
 import {urls} from '../../../services';
-import {UrlNotFound} from '../../errors';
+import {UrlBlocked, UrlNotFound} from '../../errors';
 
 export default function declareRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
@@ -44,10 +44,15 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 
 			if (visit) {
+				if (url.blocked) {
+					// Don't allow users to visit blocked URLs
+					throw new UrlBlocked();
+				}
+
 				// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
-				void reply.redirect(301, encodeURI(url));
+				void reply.redirect(301, encodeURI(url.longUrl));
 			} else {
-				return {url};
+				return {url: url.longUrl};
 			}
 		}
 	};

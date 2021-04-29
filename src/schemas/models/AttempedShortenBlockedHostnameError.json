@@ -1,0 +1,27 @@
+{
+	"$id": "https://zws.im/schemas/AttempedShortenBlockedHostnameError.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"statusCode": {
+			"type": "number",
+			"const": 422
+		},
+		"message": {
+			"type": "string"
+		},
+		"error": {
+			"type": "string",
+			"const": "Unprocessable Entity"
+		},
+		"code": {
+			"type": "string",
+			"const": "E_SHORTEN_BLOCKED_HOSTNAME"
+		}
+	},
+	"required": ["code", "error", "message", "statusCode"],
+	"additionalProperties": false,
+	"title": "AttempedShortenBlockedHostnameError",
+	"description": "Shortening that hostname is forbidden",
+	"definitions": {}
+}
