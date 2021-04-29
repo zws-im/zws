@@ -25,8 +25,10 @@ export default function declareRoute(fastify: FastifyInstance) {
 			response: {
 				201: fastify.getSchema('https://zws.im/schemas/Short.json'),
 				400: fastify.getSchema('https://zws.im/schemas/Error.json'),
-				401: fastify.getSchema('https://zws.im/schemas/ApiKeyError.json'),
-				422: fastify.getSchema('https://zws.im/schemas/ShortenHostnameError.json'),
+				// Should be https://zws.im/schemas/ApiKeyError.json but the schema generator emits bad references
+				401: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				// Should be https://zws.im/schemas/ShortenHostnameError.json but the schema generator emits bad references
+				422: fastify.getSchema('https://zws.im/schemas/Error.json'),
 				500: fastify.getSchema('https://zws.im/schemas/Error.json'),
 				503: fastify.getSchema('https://zws.im/schemas/UniqueShortIdTimeoutError.json')
 			}
