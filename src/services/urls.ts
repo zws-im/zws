@@ -5,7 +5,7 @@ import {Opaque} from 'type-fest';
 import {characters} from '../config';
 import db from '../db';
 import baseLogger from '../logger';
-import {UniqueShortIdTimeout, UrlBlocked} from '../server/errors';
+import {UniqueShortIdTimeout} from '../server/errors';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */
