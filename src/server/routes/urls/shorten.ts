@@ -3,8 +3,8 @@ import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression,
 import {URL} from 'url';
 import type Short from '../../../../types/schemas/models/Short';
 import type Url from '../../../../types/schemas/models/Url';
-import {server} from '../../../config';
-import {blocklist} from '../../../config';
+import {server, blocklist} from '../../../config';
+
 import {fastifyLogger} from '../../../logger';
 import {urls} from '../../../services';
 import {AttemptedShortenHostname, AttempedShortenBlockedHostname} from '../../errors';
