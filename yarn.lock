@@ -1196,7 +1196,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 8.2.0
     eslint-plugin-prettier: 3.4.0
-    fastify: 3.15.0
+    fastify: 3.15.1
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.1
@@ -3996,9 +3996,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.15.0":
-  version: 3.15.0
-  resolution: "fastify@npm:3.15.0"
+"fastify@npm:3.15.1":
+  version: 3.15.1
+  resolution: "fastify@npm:3.15.1"
   dependencies:
     "@fastify/proxy-addr": ^3.0.0
     abstract-logging: ^2.0.0
@@ -4016,7 +4016,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: efda8f5cc9ed8bec6b28c3fb3bd7fa51a65d294bafd6d75018d57e48508e4dc6108f74d51fd1953b32e7e1a132ff0432bb6ca57d4c5c7976b688adf16183a010
+  checksum: eac651eb18ce8f1c26f69391c13fbe014a8cfd23a2ba72bb79b328c66f5b6809beeea4550b55f879e5fbec09b1e8fe9e37eb0c592e7f7a1441b5fc2034e5aedc
   languageName: node
   linkType: hard
 
