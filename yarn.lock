@@ -1194,7 +1194,7 @@ __metadata:
     "@types/node": 14.14.44
     cli-ux: 5.5.1
     consola: 2.15.3
-    dotenv: 8.2.0
+    dotenv: 9.0.0
     eslint-plugin-prettier: 3.4.0
     fastify: 3.15.1
     fastify-auth: 1.1.0
@@ -3043,10 +3043,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:8.2.0":
-  version: 8.2.0
-  resolution: "dotenv@npm:8.2.0"
-  checksum: 16cb89cbd7b98b053899b8aba8c5044c8fb61a2db8a81fe70360b75035fce5fed53bd7a34d772be717d0880c0321122a4c09423f518025e1b52d96791521b1a7
+"dotenv@npm:9.0.0":
+  version: 9.0.0
+  resolution: "dotenv@npm:9.0.0"
+  checksum: 8111fb99a12a8da9fedc90d855d734bbf026f3257d67b611b2517d393b027ca5774c1f9dd5aa0887f339f4e7c711f99bdd8bc82fa076e572f3eb6000b2c09343
   languageName: node
   linkType: hard
 
