@@ -1207,7 +1207,7 @@ __metadata:
     prisma: 2.22.1
     semantic-release: 17.4.2
     semantic-release-docker: 2.2.0
-    ts-json-schema-generator: 0.91.0
+    ts-json-schema-generator: 0.92.0
     ts-node: 9.1.1
     type-fest: 1.1.0
     typescript: 4.2.4
@@ -9405,19 +9405,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-json-schema-generator@npm:0.91.0":
-  version: 0.91.0
-  resolution: "ts-json-schema-generator@npm:0.91.0"
+"ts-json-schema-generator@npm:0.92.0":
+  version: 0.92.0
+  resolution: "ts-json-schema-generator@npm:0.92.0"
   dependencies:
     "@types/json-schema": ^7.0.7
     commander: ^7.2.0
     fast-json-stable-stringify: ^2.1.0
     glob: ^7.1.6
     json-stable-stringify: ^1.0.1
-    typescript: ~4.2.3
+    typescript: ~4.2.4
   bin:
     ts-json-schema-generator: bin/ts-json-schema-generator
-  checksum: 948d9a1b798ff922238ceaed2ffcd66c80b5d83c5622fc738185d360a4e60ab83359ee8214b1b72d9cb02a9e909fe32d25bfc87075095467f8cf92a9d3b330ae
+  checksum: 566b9765f15ccca9579c1b3204b9b5747e41ac6ec3e5899c29748bc1092a276fd2c4523ea10fd549e753196fe904e77101ab9880ec3fb01b76831ef3300faf55
   languageName: node
   linkType: hard
 
@@ -9576,7 +9576,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@4.2.4, typescript@^4.2.4, typescript@~4.2.3":
+"typescript@4.2.4, typescript@^4.2.4, typescript@~4.2.4":
   version: 4.2.4
   resolution: "typescript@npm:4.2.4"
   bin:
@@ -9586,7 +9586,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.2.4#builtin<compat/typescript>, typescript@patch:typescript@^4.2.4#builtin<compat/typescript>, typescript@patch:typescript@~4.2.3#builtin<compat/typescript>":
+"typescript@patch:typescript@4.2.4#builtin<compat/typescript>, typescript@patch:typescript@^4.2.4#builtin<compat/typescript>, typescript@patch:typescript@~4.2.4#builtin<compat/typescript>":
   version: 4.2.4
   resolution: "typescript@patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"
   bin:
