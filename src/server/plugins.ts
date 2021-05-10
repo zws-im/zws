@@ -28,9 +28,9 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 				errorResponse: (error: Error) => {
 					switch (error.message) {
 						case 'missing authorization header':
-							return (new MissingApiKey() as unknown) as {error: string};
+							return new MissingApiKey() as unknown as {error: string};
 						default:
-							return (new IncorrectApiKey() as unknown) as {error: string};
+							return new IncorrectApiKey() as unknown as {error: string};
 					}
 				}
 			}),
