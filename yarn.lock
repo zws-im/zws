@@ -1202,7 +1202,7 @@ __metadata:
     fastify-error: 0.3.1
     fastify-swagger: 4.7.0
     ow: 0.23.0
-    prettier: 2.2.1
+    prettier: 2.3.0
     prettier-config-xo: 1.0.4
     prisma: 2.22.1
     semantic-release: 17.4.2
@@ -7760,7 +7760,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.2.1, prettier@npm:^2.2.1":
+"prettier@npm:2.3.0":
+  version: 2.3.0
+  resolution: "prettier@npm:2.3.0"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 652640cc8b71bc5277cfb8bf6f161783ca588efcf683c3d630837b39da8d57fef35c9e00ae5855a8e3c75136c42274046c913cc2b2d2968558315f31c6a26981
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.2.1":
   version: 2.2.1
   resolution: "prettier@npm:2.2.1"
   bin:
