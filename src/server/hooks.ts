@@ -99,7 +99,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			const fastifyLogger = baseFastifyLogger.withTag(request.id as string);
 
 			fastifyLogger.error(error);
-			Sentry.captureException(error, {tags: {request_id: request.id}, user: {ip_address: '{{auto}}'}});
+			Sentry.captureException(error, {tags: {request_id: request.id as string}, user: {ip_address: '{{auto}}'}});
 		}
 	});
 }

@@ -1,7 +1,7 @@
-import {sum} from '@jonahsnider/util';
-import cli from 'cli-ux';
 import fs from 'fs/promises';
 import path from 'path';
+import {sum} from '@jonahsnider/util';
+import cli from 'cli-ux';
 import * as tsj from 'ts-json-schema-generator';
 import logger from './logger';
 
@@ -25,7 +25,7 @@ const schemas = {
 	parameters: ['VisitOptions', 'TotalStatsOptions']
 };
 
-const progress = cli.progress();
+const progress = cli.progress() as {stop: () => void; increment: () => void; start: (max: number, start: number) => void};
 const promises: Array<Promise<void>> = [];
 
 async function generate(config: tsj.Config) {
@@ -72,7 +72,9 @@ progress.start(
 );
 
 main()
-	.then(() => progress.stop())
+	.then(() => {
+		progress.stop();
+	})
 	.catch(error => {
 		process.nextTick(() => {
 			throw error;

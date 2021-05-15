@@ -5,7 +5,8 @@
 		"outDir": "tsc_output",
 		"resolveJsonModule": true,
 		"sourceMap": true,
-		"sourceRoot": "/"
+		"sourceRoot": "/",
+		"lib": ["DOM"]
 	},
 	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node14/tsconfig.json",

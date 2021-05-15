@@ -10,7 +10,7 @@
 	"devDependencies": {
 		"@semantic-release/exec": "5.0.0",
 		"@tsconfig/node14": "1.0.0",
-		"@types/node": "14.14.45",
+		"@types/node": "15.3.0",
 		"cli-ux": "5.5.1",
 		"eslint-plugin-prettier": "3.4.0",
 		"prettier": "2.3.0",
@@ -22,7 +22,7 @@
 		"ts-node": "9.1.1",
 		"type-fest": "1.1.1",
 		"typescript": "4.2.4",
-		"xo": "0.39.1"
+		"xo": "0.40.1"
 	},
 	"license": "Apache-2.0",
 	"main": "./tsc_output/src/index.js",
@@ -50,6 +50,7 @@
 		"prettier": true,
 		"rules": {
 			"prettier/prettier": "off",
+			"unicorn/prefer-node-protocol": "off",
 			"unicorn/filename-case": "off",
 			"import/extensions": "off",
 			"unicorn/no-array-reduce": "off",
