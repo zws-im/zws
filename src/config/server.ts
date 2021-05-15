@@ -1,6 +1,6 @@
-import ow from 'ow';
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
+import ow from 'ow';
 import {version} from '../../package.json';
 
 export const port = process.env.PORT === undefined ? 3000 : Number(process.env.PORT);

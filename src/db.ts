@@ -1,6 +1,6 @@
 import {Prisma, PrismaClient} from '@prisma/client';
-import {dbLogger} from './logger';
 import * as Sentry from '@sentry/node';
+import {dbLogger} from './logger';
 import {sentry} from './config';
 
 const db = new PrismaClient({

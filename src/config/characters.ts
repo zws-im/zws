@@ -80,7 +80,7 @@ enum EnvVarNames {
 	ShortRewrites = 'SHORT_REWRITES'
 }
 
-const parsedCharacters: JsonValue = JSON.parse(process.env[EnvVarNames.ShortChars] ?? 'null');
+const parsedCharacters = JSON.parse(process.env[EnvVarNames.ShortChars] ?? 'null') as JsonValue;
 
 ow(parsedCharacters, EnvVarNames.ShortChars, ow.any(ow.array.ofType(ow.string.nonEmpty).minLength(1)));
 
@@ -97,7 +97,7 @@ export const length = process.env[EnvVarNames.ShortLength] === undefined ? defau
 
 ow(length, EnvVarNames.ShortLength, ow.number.integer.positive);
 
-const parsedRewrites: JsonValue = JSON.parse(process.env[EnvVarNames.ShortRewrites] ?? '{}');
+const parsedRewrites = JSON.parse(process.env[EnvVarNames.ShortRewrites] ?? '{}') as JsonValue;
 
 ow(parsedRewrites, EnvVarNames.ShortRewrites, ow.object.valuesOfType(ow.string.nonEmpty));
 ow(parsedRewrites, EnvVarNames.ShortRewrites, ow.object.not.instanceOf(Array));

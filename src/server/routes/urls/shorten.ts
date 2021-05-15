@@ -1,6 +1,6 @@
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
+import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import type Short from '../../../../types/schemas/models/Short';
 import type Url from '../../../../types/schemas/models/Url';
 import {server, blocklist} from '../../../config';
