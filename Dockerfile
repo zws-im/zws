@@ -13,8 +13,8 @@ COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 COPY prisma ./prisma
 COPY .yarn ./.yarn
 
-RUN yarn install --immutable
-RUN yarn prisma generate
+RUN yarn install --immutable \
+	&& yarn prisma generate
 
 COPY src ./src
 COPY types ./types
@@ -22,8 +22,9 @@ COPY types ./types
 RUN yarn build
 
 # Remove devDependencies manually, Yarn 2 doesn't support skipping them (see https://yarnpkg.com/configuration/manifest#devDependencies)
-RUN yarn remove @semantic-release/exec @tsconfig/node14 @types/node cli-ux eslint-plugin-prettier prettier prettier-config-xo semantic-release semantic-release-docker ts-json-schema-generator ts-node type-fest typescript xo
-RUN yarn install --immutable
-RUN rm -rf .yarn/cache src tsconfig.json
+RUN yarn remove @semantic-release/exec @tsconfig/node14 @types/node cli-ux eslint-plugin-prettier prettier prettier-config-xo semantic-release semantic-release-docker ts-json-schema-generator ts-node type-fest typescript xo \
+	&& yarn install --immutable \
+	&& yarn cache clean \
+	&& rm -rf src tsconfig.json
 
 CMD ["node", "."]
