@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"@jonahsnider/util": "2.10.2",
-		"@prisma/client": "2.22.1",
+		"@prisma/client": "2.23.0",
 		"@sentry/node": "6.4.0",
 		"consola": "2.15.3",
 		"dotenv": "9.0.2",
