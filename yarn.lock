@@ -302,6 +302,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fastify/ajv-compiler@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "@fastify/ajv-compiler@npm:1.1.0"
+  dependencies:
+    ajv: ^6.12.6
+  checksum: 2df7d2edb4f14fb6cfbdd3bba3d059e9c495ce33f8cce2b73c72a5ef753e0e98cd92cd7be9b025c970276a729a2f5309de14d1e8f06eaa75ef24224a7cd31778
+  languageName: node
+  linkType: hard
+
 "@fastify/forwarded@npm:^1.0.0":
   version: 1.0.0
   resolution: "@fastify/forwarded@npm:1.0.0"
@@ -1234,7 +1243,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
-    fastify: 3.15.1
+    fastify: 3.16.2
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.1
@@ -1327,7 +1336,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^6.10.0, ajv@npm:^6.11.0, ajv@npm:^6.12.2, ajv@npm:^6.12.3, ajv@npm:^6.12.4":
+"ajv@npm:^6.10.0, ajv@npm:^6.11.0, ajv@npm:^6.12.2, ajv@npm:^6.12.3, ajv@npm:^6.12.4, ajv@npm:^6.12.6":
   version: 6.12.6
   resolution: "ajv@npm:6.12.6"
   dependencies:
@@ -4048,13 +4057,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.15.1":
-  version: 3.15.1
-  resolution: "fastify@npm:3.15.1"
+"fastify@npm:3.16.2":
+  version: 3.16.2
+  resolution: "fastify@npm:3.16.2"
   dependencies:
+    "@fastify/ajv-compiler": ^1.0.0
     "@fastify/proxy-addr": ^3.0.0
     abstract-logging: ^2.0.0
-    ajv: ^6.12.2
     avvio: ^7.1.2
     fast-json-stringify: ^2.5.2
     fastify-error: ^0.3.0
@@ -4068,7 +4077,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: eac651eb18ce8f1c26f69391c13fbe014a8cfd23a2ba72bb79b328c66f5b6809beeea4550b55f879e5fbec09b1e8fe9e37eb0c592e7f7a1441b5fc2034e5aedc
+  checksum: 5bcc3ddb182035ae0999dc09cca8ccda3d3d0e4517b7516c5688416667b9a6b920fe2b8bd49de52c8cba28d2b72e921ddc02b82217ec51a21fd7599c5b151523
   languageName: node
   linkType: hard
 
