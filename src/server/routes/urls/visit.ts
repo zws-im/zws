@@ -46,7 +46,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 					}
 
 					// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
-					void reply.redirect(301, encodeURI(url.longUrl));
+					void reply.redirect(308, encodeURI(url.longUrl));
 				} else {
 					return {url: url.longUrl};
 				}
