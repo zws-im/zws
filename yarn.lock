@@ -1248,6 +1248,7 @@ __metadata:
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.1
     fastify-swagger: 4.7.0
+    millify: 4.0.0
     ow: 0.23.0
     prettier: 2.3.0
     prettier-config-xo: 1.0.4
@@ -6461,6 +6462,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"millify@npm:4.0.0":
+  version: 4.0.0
+  resolution: "millify@npm:4.0.0"
+  dependencies:
+    yargs: ^17.0.1
+  bin:
+    millify: bin/millify
+  checksum: 2a794fe2f619c275a5f9c597b979c69ad7976b0e79cc199abb476738b1a3848f2ad8735405fe0adbb2105d827b8aa8c51f90d5f37590ed9914a02f9c0808e93a
+  languageName: node
+  linkType: hard
+
 "mime-db@npm:1.47.0":
   version: 1.47.0
   resolution: "mime-db@npm:1.47.0"
@@ -10187,6 +10199,21 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^20.2.2
   checksum: a79ce1f043021cd645de1ffebb6149541d382ba68f4a6b5eca5d2ad65af51893371bbd78e240dc3b6cf0cbb419511ba5bda715dec992e4266e6863ea49f14feb
+  languageName: node
+  linkType: hard
+
+"yargs@npm:^17.0.1":
+  version: 17.0.1
+  resolution: "yargs@npm:17.0.1"
+  dependencies:
+    cliui: ^7.0.2
+    escalade: ^3.1.1
+    get-caller-file: ^2.0.5
+    require-directory: ^2.1.1
+    string-width: ^4.2.0
+    y18n: ^5.0.5
+    yargs-parser: ^20.2.2
+  checksum: a7969b48d2dea129a7d4fcc3f13e88d4f94bacbd24f720b2ce19946fa9facc42cfed89c059d953091241f4e9e9000ed9dbf86e4bb4b6ceb3a26af10ddebdd0b2
   languageName: node
   linkType: hard
 
