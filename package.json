@@ -64,7 +64,7 @@
 		"@sentry/node": "6.4.1",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
-		"fastify": "3.16.2",
+		"fastify": "3.17.0",
 		"fastify-auth": "1.1.0",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.1",
