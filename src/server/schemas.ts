@@ -18,23 +18,29 @@ import ApiKeyError from '../schemas/responses/ApiKeyError.json';
 import ShieldsEndpointResponse from '../schemas/responses/ShieldsEndpointResponse.json';
 import ShortenHostnameError from '../schemas/responses/ShortenHostnameError.json';
 
+const schemas = [
+	AttemptedShortenBlockedHostnameError,
+	AttemptedShortenHostnameError,
+	ErrorModel,
+	IncorrectApiKeyError,
+	MissingApiKeyError,
+	NotHealthyError,
+	Short,
+	Stats,
+	UniqueShortIdTimeoutError,
+	Url,
+	UrlBlockedError,
+	UrlNotFoundError,
+	UrlStats,
+	TotalStatsOptions,
+	VisitOptions,
+	ApiKeyError,
+	ShieldsEndpointResponse,
+	ShortenHostnameError
+];
+
 export default function addSchemas(fastify: FastifyInstance): void {
-	fastify.addSchema(AttemptedShortenBlockedHostnameError);
-	fastify.addSchema(AttemptedShortenHostnameError);
-	fastify.addSchema(ErrorModel);
-	fastify.addSchema(IncorrectApiKeyError);
-	fastify.addSchema(MissingApiKeyError);
-	fastify.addSchema(NotHealthyError);
-	fastify.addSchema(Short);
-	fastify.addSchema(Stats);
-	fastify.addSchema(UniqueShortIdTimeoutError);
-	fastify.addSchema(Url);
-	fastify.addSchema(UrlBlockedError);
-	fastify.addSchema(UrlNotFoundError);
-	fastify.addSchema(UrlStats);
-	fastify.addSchema(TotalStatsOptions);
-	fastify.addSchema(VisitOptions);
-	fastify.addSchema(ApiKeyError);
-	fastify.addSchema(ShieldsEndpointResponse);
-	fastify.addSchema(ShortenHostnameError);
+	for (const schema of schemas) {
+		fastify.addSchema(schema);
+	}
 }
