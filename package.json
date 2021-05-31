@@ -28,7 +28,7 @@
 	"main": "./tsc_output/src/index.js",
 	"name": "@zws.im/zws",
 	"engines": {
-		"node": "15.x"
+		"node": "15.x || 16.x"
 	},
 	"private": true,
 	"repository": {
