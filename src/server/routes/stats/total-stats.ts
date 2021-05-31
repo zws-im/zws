@@ -1,4 +1,5 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import {Http} from '@jonahsnider/util';
 import Stats from '../../../../types/schemas/models/Stats';
 import TotalStatsOptions from '../../../../types/schemas/parameters/TotalStatsOptions';
 import {server} from '../../../config';
@@ -14,7 +15,10 @@ export default function declareRoute(fastify: FastifyInstance) {
 			summary: 'Total statistics',
 			description: 'Total usage statistics for this instance',
 			querystring: fastify.getSchema('https://zws.im/schemas/TotalStatsOptions.json'),
-			response: {200: fastify.getSchema('https://zws.im/schemas/Stats.json'), 500: fastify.getSchema('https://zws.im/schemas/Error.json')}
+			response: {
+				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/Stats.json'),
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
+			}
 		},
 		handler: async request => {
 			const urlStats = await urls.totalStats();

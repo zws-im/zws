@@ -1,3 +1,4 @@
+import {Http} from '@jonahsnider/util';
 import {FastifyInstance, RouteOptions} from 'fastify';
 import {server} from '../../config';
 import db from '../../db';
@@ -12,7 +13,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Health],
 			summary: 'Health check',
 			description: 'Check if the instance is healthy',
-			response: {204: {}, 500: fastify.getSchema('https://zws.im/schemas/NotHealthyError.json')}
+			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/NotHealthyError.json')}
 		},
 		handler: async (request, reply) => {
 			try {
@@ -22,7 +23,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 				return new NotHealthy();
 			}
 
-			void reply.status(204);
+			void reply.status(Http.Status.NoContent);
 		}
 	};
 

@@ -1,3 +1,4 @@
+import {Http} from '@jonahsnider/util';
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import Short from '../../../../types/schemas/models/Short';
 import Url from '../../../../types/schemas/models/Url';
@@ -17,9 +18,9 @@ export default function declareRoute(fastify: FastifyInstance) {
 				params: fastify.getSchema('https://zws.im/schemas/Short.json'),
 				querystring: fastify.getSchema('https://zws.im/schemas/VisitOptions.json'),
 				response: {
-					200: fastify.getSchema('https://zws.im/schemas/Url.json'),
-					404: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
-					500: fastify.getSchema('https://zws.im/schemas/Error.json')
+					[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/Url.json'),
+					[Http.Status.NotFound]: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
+					[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
 				}
 			},
 			handler: async (request, reply) => {
@@ -46,7 +47,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 					}
 
 					// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
-					void reply.redirect(308, encodeURI(url.longUrl));
+					void reply.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
 				} else {
 					return {url: url.longUrl};
 				}

@@ -1,4 +1,5 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import {Http} from '@jonahsnider/util';
 import Short from '../../../../types/schemas/models/Short';
 import UrlStats from '../../../../types/schemas/models/UrlStats';
 import {server} from '../../../config';
@@ -16,9 +17,9 @@ export default function declareRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Urls, server.Tags.Stats],
 			params: fastify.getSchema('https://zws.im/schemas/Short.json'),
 			response: {
-				200: fastify.getSchema('https://zws.im/schemas/UrlStats.json'),
-				404: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
-				500: fastify.getSchema('https://zws.im/schemas/Error.json')
+				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/UrlStats.json'),
+				[Http.Status.NotFound]: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
 			}
 		},
 		handler: async request => {
