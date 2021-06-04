@@ -761,31 +761,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:2.24.0":
-  version: 2.24.0
-  resolution: "@prisma/client@npm:2.24.0"
+"@prisma/client@npm:2.24.1":
+  version: 2.24.1
+  resolution: "@prisma/client@npm:2.24.1"
   dependencies:
-    "@prisma/engines-version": 2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858
+    "@prisma/engines-version": 2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4
   peerDependencies:
     prisma: "*"
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 03edf45f488960f70759dd83e6e3940d09dba611eee24f9c7779066f4093c74394055b8a498795bbceb167e291095d2949225dbf6de58aa1f452936f91a98d1b
+  checksum: 1c3c12ea091a037272b0f80f0de104f1c05922961b7ff0eee94d35039f276f2c25e135ac9a59a0a9ea9abe1f07c2ce7e257e7221cf4eba78683fb41104d165b8
   languageName: node
   linkType: hard
 
-"@prisma/engines-version@npm:2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858":
-  version: 2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858
-  resolution: "@prisma/engines-version@npm:2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858"
-  checksum: bc75b9d67c7823620512319f1ea0f5adfbf73aa6c8ef0826adeb42cc5178b1670b8dfc9c68abf95efaa38feb24f2d29f2276021faac2076ddad9ea3c2d97747c
+"@prisma/engines-version@npm:2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4":
+  version: 2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4
+  resolution: "@prisma/engines-version@npm:2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4"
+  checksum: d4704f556423635a078ae11135e12f737f560d020ddebb0f8215e26d411314a72ea25287b15311de4b5a8ba52fe8b2901a2d082e0ebd3ff5a8a79a3e0b61abf8
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858":
-  version: 2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858
-  resolution: "@prisma/engines@npm:2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858"
-  checksum: c0aa706c7caf8ecc2dfd176eaa5f8710d19c332ac08c3624fe768090745a47204b22612191021a6f84e0539bb0ac664465affb10a5d021a85f2eb0a5c0da4c1a
+"@prisma/engines@npm:2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4":
+  version: 2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4
+  resolution: "@prisma/engines@npm:2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4"
+  checksum: a7346f724262d598de3633edd8df8798d17db7339cb8d87059fe7ff7ff0a166ee6d57581df33a00cb66df8814264bfc7a98b3da50b7d3e3a6f8f504d36bacae9
   languageName: node
   linkType: hard
 
@@ -1234,7 +1234,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@jonahsnider/util": 2.14.0
-    "@prisma/client": 2.24.0
+    "@prisma/client": 2.24.1
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.5.1
     "@tsconfig/node14": 1.0.0
@@ -1252,7 +1252,7 @@ __metadata:
     ow: 0.23.0
     prettier: 2.3.0
     prettier-config-xo: 1.0.4
-    prisma: 2.24.0
+    prisma: 2.24.1
     semantic-release: 17.4.3
     semantic-release-docker: 2.2.0
     ts-json-schema-generator: 0.92.0
@@ -7871,15 +7871,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:2.24.0":
-  version: 2.24.0
-  resolution: "prisma@npm:2.24.0"
+"prisma@npm:2.24.1":
+  version: 2.24.1
+  resolution: "prisma@npm:2.24.1"
   dependencies:
-    "@prisma/engines": 2.24.0-30.f3e341280d96d0abc068f97e959ddf01f321a858
+    "@prisma/engines": 2.24.1-2.18095475d5ee64536e2f93995e48ad800737a9e4
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 80c2ca9640303370c40a0a76ceacea2f89927de976ce1f376ab7c959d752014d21b3df8ad911173076110dbf454caf29ed96ca04e667fd486ab5be840afd86cc
+  checksum: 24f1c7cb36db4926d990f5b9b71eb4199d5a72d0ba398f77bff91baee09c3719870ef1a362484334a111266a417e2fdb0d8e28f118e1720fd97a81c22bf8bd9a
   languageName: node
   linkType: hard
 
