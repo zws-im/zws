@@ -15,7 +15,7 @@
 		"eslint-plugin-prettier": "3.4.0",
 		"prettier": "2.3.0",
 		"prettier-config-xo": "1.0.4",
-		"prisma": "2.24.0",
+		"prisma": "2.24.1",
 		"semantic-release": "17.4.3",
 		"semantic-release-docker": "2.2.0",
 		"ts-json-schema-generator": "0.92.0",
@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"@jonahsnider/util": "2.14.0",
-		"@prisma/client": "2.24.0",
+		"@prisma/client": "2.24.1",
 		"@sentry/node": "6.5.1",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
