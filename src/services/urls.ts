@@ -11,6 +11,9 @@ const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */
 const visitLogger = logger.withScope('visit');
 
+/** A short ID. */
+export type Short = Opaque<string, 'Short'>;
+
 /** A base64 encoded string. */
 type Base64 = Opaque<string, 'Base64'>;
 
@@ -21,8 +24,8 @@ function encode(value: string): Base64 {
 	return Buffer.from(value).toString('base64') as Base64;
 }
 
-export function normalizeShortId(id: string): string {
-	return multiReplace(id, characters.rewrites);
+export function normalizeShortId(id: Short): Short {
+	return multiReplace(id, characters.rewrites) as Short;
 }
 
 /**
@@ -31,12 +34,13 @@ export function normalizeShortId(id: string): string {
  *
  * @returns A short ID
  */
-function generateShortId(): string {
-	let shortId = '';
+function generateShortId(): Short {
+	let shortId = '' as Short;
 
 	// eslint-disable-next-line @typescript-eslint/prefer-for-of
 	for (let i = 0; i < characters.length; i++) {
-		shortId += sample(characters.characters);
+		// @ts-expect-error
+		shortId += sample(characters.characters) as Short;
 	}
 
 	return shortId;
@@ -50,7 +54,7 @@ function generateShortId(): string {
  *
  * @returns The long URL and if it was blocked
  */
-export async function visit(id: string, track: boolean): Promise<{longUrl: string; blocked: boolean} | null> {
+export async function visit(id: Short, track: boolean): Promise<{longUrl: string; blocked: boolean} | null> {
 	const encodedId = encode(id);
 
 	const shortenedUrl = await db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, blocked: true}});
@@ -80,7 +84,7 @@ export async function visit(id: string, track: boolean): Promise<{longUrl: strin
  *
  * @returns Shortened URL information and statistics, or `null` if it couldn't be found
  */
-export async function stats(id: string): Promise<null | {url: string; visits: Date[]}> {
+export async function stats(id: Short): Promise<null | {url: string; visits: Date[]}> {
 	const encodedId = encode(id);
 
 	const [visits, shortenedUrl] = await db.$transaction([
@@ -102,7 +106,7 @@ export async function stats(id: string): Promise<null | {url: string; visits: Da
  *
  * @returns The ID of the shortened URL
  */
-export async function shorten(url: string): Promise<string> {
+export async function shorten(url: string): Promise<Short> {
 	let attempts = 0;
 	let created: ShortenedUrl | null = null;
 	let id: string;
@@ -121,7 +125,7 @@ export async function shorten(url: string): Promise<string> {
 		} catch {}
 	} while (!created);
 
-	return id;
+	return id as Short;
 }
 
 /**

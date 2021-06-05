@@ -27,7 +27,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 				params: {short}
 			} = request;
 
-			const stats = await urls.stats(urls.normalizeShortId(short));
+			const stats = await urls.stats(urls.normalizeShortId(short as urls.Short));
 
 			if (stats === null) {
 				throw new UrlNotFound();
