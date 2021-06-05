@@ -17,6 +17,21 @@ export type Short = Opaque<string, 'Short'>;
 /** A base64 encoded string. */
 type Base64 = Opaque<string, 'Base64'>;
 
+interface Stats {
+	url: string;
+	visits: Date[];
+}
+
+interface TotalStats {
+	urls: number;
+	visits: number;
+}
+
+interface VisitUrlData {
+	longUrl: string;
+	blocked: boolean;
+}
+
 /** Maximum number of attempts to generate a unique ID. */
 const maxGenerationAttempts = 10;
 
@@ -54,7 +69,7 @@ function generateShortId(): Short {
  *
  * @returns The long URL and if it was blocked
  */
-export async function visit(id: Short, track: boolean): Promise<{longUrl: string; blocked: boolean} | null> {
+export async function visit(id: Short, track: boolean): Promise<VisitUrlData | null> {
 	const encodedId = encode(id);
 
 	const shortenedUrl = await db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, blocked: true}});
@@ -84,7 +99,7 @@ export async function visit(id: Short, track: boolean): Promise<{longUrl: string
  *
  * @returns Shortened URL information and statistics, or `null` if it couldn't be found
  */
-export async function stats(id: Short): Promise<null | {url: string; visits: Date[]}> {
+export async function stats(id: Short): Promise<null | Stats> {
 	const encodedId = encode(id);
 
 	const [visits, shortenedUrl] = await db.$transaction([
@@ -133,7 +148,7 @@ export async function shorten(url: string): Promise<Short> {
  *
  * @returns Total statistics for all URLs
  */
-export async function totalStats(): Promise<{urls: number; visits: number}> {
+export async function totalStats(): Promise<TotalStats> {
 	const [urls, visits] = await db.$transaction([db.shortenedUrl.count(), db.visit.count()]);
 
 	return {urls, visits};
