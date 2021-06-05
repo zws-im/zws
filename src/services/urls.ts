@@ -21,10 +21,6 @@ function encode(value: string): Base64 {
 	return Buffer.from(value).toString('base64') as Base64;
 }
 
-export function debugInfo(id: string, encodedId: Base64) {
-	return {short: id, encodedShort: encodedId, shortCodepoints: id.split('').map(char => char.charCodeAt(0).toString(16))};
-}
-
 export function normalizeShortId(id: string): string {
 	return multiReplace(id, characters.rewrites);
 }
