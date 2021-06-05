@@ -8,6 +8,6 @@ const blockedHostnamesParser = z
 	.transform(hostnames => (hostnames === undefined ? [] : (JSON.parse(hostnames) as JsonValue)));
 
 /**
- * Hostnames that should be forbidden from
+ * Hostnames that should be forbidden from being shortened.
  */
 export const blockedHostnames: Set<string> = new Set(blockedHostnamesSchema.parse(blockedHostnamesParser.parse(process.env.BLOCKED_HOSTNAMES)));
