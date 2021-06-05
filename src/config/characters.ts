@@ -1,5 +1,5 @@
-import ow from 'ow';
 import {JsonValue} from 'type-fest';
+import {z} from 'zod';
 
 /**
  * Every character matching this regular expression:
@@ -74,33 +74,31 @@ const alphaNumeric: string[] = [
 	// #endregion
 ];
 
-enum EnvVarNames {
-	ShortChars = 'SHORT_CHARS',
-	ShortLength = 'SHORT_LENGTH',
-	ShortRewrites = 'SHORT_REWRITES'
-}
-
-const parsedCharacters = JSON.parse(process.env[EnvVarNames.ShortChars] ?? 'null') as JsonValue;
-
-ow(parsedCharacters, EnvVarNames.ShortChars, ow.any(ow.array.ofType(ow.string.nonEmpty).minLength(1)));
-
+const charactersSchema = z.array(z.string().min(1)).min(1).default(alphaNumeric);
+const charactersParser = z
+	.string()
+	.optional()
+	.transform(characters => (characters === undefined ? undefined : (JSON.parse(characters) as JsonValue)));
 /** Characters to use in the shortened ID for a URL. */
-export const characters = parsedCharacters === null ? alphaNumeric : [...new Set(parsedCharacters)];
+export const characters = charactersSchema.parse(charactersParser.parse(process.env.SHORT_CHARS));
 
 /** The maximum number of short URLs that can be generated. */
 const maxShortUrls = 1e9;
 /** The default length of a generated short ID. */
 const defaultShortLength = Math.round(Math.log(maxShortUrls) / Math.log(characters.length));
 
+const lengthSchema = z.number().int().positive().default(defaultShortLength);
+const lengthParser = z
+	.string()
+	.optional()
+	.transform(length => (length === undefined ? undefined : Number(length)));
 /** The length of the shortened ID for a URL. */
-export const length = process.env[EnvVarNames.ShortLength] === undefined ? defaultShortLength : Number(process.env[EnvVarNames.ShortLength]);
+export const length = lengthSchema.parse(lengthParser.parse(process.env.SHORT_LENGTH));
 
-ow(length, EnvVarNames.ShortLength, ow.number.integer.positive);
-
-const parsedRewrites = JSON.parse(process.env[EnvVarNames.ShortRewrites] ?? '{}') as JsonValue;
-
-ow(parsedRewrites, EnvVarNames.ShortRewrites, ow.object.valuesOfType(ow.string.nonEmpty));
-ow(parsedRewrites, EnvVarNames.ShortRewrites, ow.object.not.instanceOf(Array));
-
+const rewritesSchema = z.object({}).catchall(z.string().min(1));
+const rewritesParser = z
+	.string()
+	.optional()
+	.transform(rewrites => (rewrites === undefined ? {} : (JSON.parse(rewrites) as JsonValue)));
 /** Rewrites applied to a URL before redirecting. */
-export const rewrites = parsedRewrites as Record<string, string>;
+export const rewrites = rewritesSchema.parse(rewritesParser.parse(process.env.SHORT_REWRITES));

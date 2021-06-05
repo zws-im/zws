@@ -1,23 +1,24 @@
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
-import ow from 'ow';
+import {z} from 'zod';
 import {version} from '../../package.json';
 
-export const port = process.env.PORT === undefined ? 3000 : Number(process.env.PORT);
+const portSchema = z.number().int().positive().default(3000);
+const portParser = z
+	.string()
+	.optional()
+	.transform(port => (port === undefined ? undefined : Number(port)));
+export const port = portSchema.parse(portParser.parse(process.env.PORT));
 
-const rawHostname = process.env.HOSTNAME;
+const hostnameSchema = z.string().nullable().optional().default(null);
+export const hostname: string | null = hostnameSchema.parse(process.env.HOSTNAME);
 
-ow(rawHostname, 'HOSTNAME', ow.optional.string);
+const shortenedBaseUrlSchema = z.string().url().optional();
+const parsedShortenedBaseUrl = shortenedBaseUrlSchema.parse(process.env.SHORTENED_BASE_URL);
+export const shortenedBaseUrl: URL | null = parsedShortenedBaseUrl ? new URL(parsedShortenedBaseUrl) : null;
 
-const rawShortenedBaseUrl = process.env.SHORTENED_BASE_URL;
-
-ow(rawShortenedBaseUrl, 'SHORTENED_BASE_URL', ow.optional.string.url);
-
-export const hostname: null | string = rawHostname ?? null;
-
-export const shortenedBaseUrl: null | URL = rawShortenedBaseUrl ? new URL(rawShortenedBaseUrl) : null;
-
-export const apiKey: string | null = process.env.API_KEY ?? null;
+const apiKeySchema = z.string().nullable().optional().default(null);
+export const apiKey: string | null = apiKeySchema.parse(process.env.API_KEY);
 
 export {version} from '../../package.json';
 
