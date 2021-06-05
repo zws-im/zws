@@ -46,7 +46,8 @@ export default function declareRoute(fastify: FastifyInstance) {
 						throw new UrlBlocked();
 					}
 
-					const redirect = request.headers['user-agent']?.toLowerCase().includes('discord') ? Http.Status.Found : Http.Status.PermanentRedirect;
+					const userAgent = request.headers['user-agent']?.toLowerCase();
+					const redirect = userAgent?.includes('discord') || userAgent?.endsWith('firefox/38.0') ? Http.Status.Found : Http.Status.PermanentRedirect;
 					// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
 					void reply.redirect(redirect, encodeURI(url.longUrl));
 				} else {
