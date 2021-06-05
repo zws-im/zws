@@ -1,7 +1,7 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
 import {server} from '../../../config';
-import {format, urls} from '../../../services';
+import {format, instance} from '../../../services';
 import ShieldsEndpointResponse from '../../../../types/schemas/responses/ShieldsEndpointResponse';
 
 export default function declareRoute(fastify: FastifyInstance) {
@@ -26,7 +26,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 		},
 		handler: async () => {
-			const stats = await urls.totalStats();
+			const stats = await instance.stats();
 
 			return {color: 'informational', label: 'urls', message: format.abbreviateNumber(stats.urls), schemaVersion: 1};
 		}

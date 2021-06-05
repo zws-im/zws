@@ -2,7 +2,7 @@ import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression,
 import {Http} from '@jonahsnider/util';
 import ShieldsEndpointResponse from '../../../../types/schemas/responses/ShieldsEndpointResponse';
 import {server} from '../../../config';
-import {format, urls} from '../../../services';
+import {format, instance} from '../../../services';
 
 export default function declareRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
@@ -26,7 +26,7 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 		},
 		handler: async () => {
-			const stats = await urls.totalStats();
+			const stats = await instance.stats();
 
 			return {color: 'informational', label: 'visits', message: format.abbreviateNumber(stats.visits), schemaVersion: 1};
 		}

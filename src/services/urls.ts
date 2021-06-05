@@ -22,11 +22,6 @@ interface Stats {
 	visits: Date[];
 }
 
-interface TotalStats {
-	urls: number;
-	visits: number;
-}
-
 interface VisitUrlData {
 	longUrl: string;
 	blocked: boolean;
@@ -141,15 +136,4 @@ export async function shorten(url: string): Promise<Short> {
 	} while (!created);
 
 	return id as Short;
-}
-
-/**
- * Get total statistics for all URLs.
- *
- * @returns Total statistics for all URLs
- */
-export async function totalStats(): Promise<TotalStats> {
-	const [urls, visits] = await db.$transaction([db.shortenedUrl.count(), db.visit.count()]);
-
-	return {urls, visits};
 }
