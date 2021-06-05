@@ -1249,7 +1249,7 @@ __metadata:
     fastify-error: 0.3.1
     fastify-swagger: 4.7.0
     millify: 4.0.0
-    ow: 0.23.0
+    ow: 0.23.1
     prettier: 2.3.0
     prettier-config-xo: 1.0.4
     prisma: 2.24.1
@@ -7323,17 +7323,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ow@npm:0.23.0":
-  version: 0.23.0
-  resolution: "ow@npm:0.23.0"
+"ow@npm:0.23.1":
+  version: 0.23.1
+  resolution: "ow@npm:0.23.1"
   dependencies:
     "@sindresorhus/is": ^4.0.0
     callsites: ^3.1.0
     dot-prop: ^6.0.1
     lodash.isequal: ^4.5.0
-    type-fest: ^0.20.2
+    type-fest: ^1.2.0
     vali-date: ^1.0.0
-  checksum: 04df72cbcdeab7e3696b4f061d4c4cc69f07b46cde3f4a099d6661730579ef9054da5dd80d9b09baa368fd975183c4ad39bce5cc014ef599c9aa497ce543eb59
+  checksum: 1e06c11aa1aff5077dd079abf0915eeb844ed6d1eca0c5605aa0181b9d37aa2eacf02285715608c32c5e38d8ae4522c0427e06597733ae0903fc9d16b9e51288
   languageName: node
   linkType: hard
 
@@ -9626,7 +9626,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:1.2.0":
+"type-fest@npm:1.2.0, type-fest@npm:^1.2.0":
   version: 1.2.0
   resolution: "type-fest@npm:1.2.0"
   checksum: a020ddb653376de0df5db5c07d840ee5787eb1a5982fedff2c6a1a25e689f86fc9946d30457f34776202055aa935778b9d8de33c446e293cc60c0e1ebb6bb972

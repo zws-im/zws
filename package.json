@@ -70,6 +70,6 @@
 		"fastify-error": "0.3.1",
 		"fastify-swagger": "4.7.0",
 		"millify": "4.0.0",
-		"ow": "0.23.0"
+		"ow": "0.23.1"
 	}
 }
