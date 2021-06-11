@@ -1,12 +1,12 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import Short from '../../../../types/schemas/models/Short';
-import UrlStats from '../../../../types/schemas/models/UrlStats';
-import {server} from '../../../config';
-import {urls} from '../../../services';
-import {UrlNotFound} from '../../errors';
+import Short from '../../../../../types/schemas/models/Short';
+import UrlStats from '../../../../../types/schemas/models/UrlStats';
+import {server} from '../../../../config';
+import {urls} from '../../services';
+import {UrlNotFound} from '../../../errors';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Params: Short; Reply: UrlStats}> = {
 		method: 'GET',
 		url: '/:short/stats',
@@ -37,5 +37,5 @@ export default function declareRoute(fastify: FastifyInstance) {
 		}
 	};
 
-	fastify.route(route);
+	return route;
 }

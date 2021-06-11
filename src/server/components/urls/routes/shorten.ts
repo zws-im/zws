@@ -1,18 +1,17 @@
 // eslint-disable-next-line node/prefer-global/url
 import {URL} from 'url';
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import type Short from '../../../../types/schemas/models/Short';
-import type Url from '../../../../types/schemas/models/Url';
-import {server, blocklist} from '../../../config';
-
-import {fastifyLogger} from '../../../logger';
-import {urls} from '../../../services';
-import {AttemptedShortenHostname, AttemptedShortenBlockedHostname} from '../../errors';
+import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import {urls} from '../../services';
+import type Short from '../../../../../types/schemas/models/Short';
+import type Url from '../../../../../types/schemas/models/Url';
+import {blocklist, server} from '../../../../config';
+import {fastifyLogger} from '../../../../logger';
+import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors';
 
 const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Body: Url; Reply: Short}> = {
 		method: 'POST',
 		url: '/',
@@ -69,5 +68,5 @@ export default function declareRoute(fastify: FastifyInstance) {
 		fastifyLogger.warn("API key was defined but bearer auth decorator wasn't");
 	}
 
-	fastify.route(route);
+	return route;
 }

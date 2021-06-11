@@ -1,10 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {FastifyInstance, RouteOptions} from 'fastify';
-import {server} from '../../config';
-import db from '../../db';
-import {NotHealthy} from '../errors';
+import {server} from '../../../../config';
+import db from '../../../../db';
+import {NotHealthy} from '../../../errors';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions = {
 		method: 'GET',
 		url: '/health',
@@ -27,5 +27,5 @@ export default function declareRoute(fastify: FastifyInstance) {
 		}
 	};
 
-	fastify.route(route);
+	return route;
 }

@@ -1,9 +1,9 @@
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import ShieldsEndpointResponse from '../../../../types/schemas/responses/ShieldsEndpointResponse';
-import {server} from '../../../config';
+import ShieldsEndpointResponse from '../../../../../types/schemas/responses/ShieldsEndpointResponse';
+import {server} from '../../../../config';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
 		RawServerDefault,
 		RawRequestDefaultExpression,
@@ -27,5 +27,5 @@ export default function declareRoute(fastify: FastifyInstance) {
 		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1})
 	};
 
-	fastify.route(route);
+	return route;
 }

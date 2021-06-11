@@ -1,13 +1,13 @@
 import {Http} from '@jonahsnider/util';
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import Short from '../../../../types/schemas/models/Short';
-import Url from '../../../../types/schemas/models/Url';
-import VisitOptions from '../../../../types/schemas/parameters/VisitOptions';
-import {server} from '../../../config';
-import {urls} from '../../../services';
-import {UrlBlocked, UrlNotFound} from '../../errors';
+import Short from '../../../../../types/schemas/models/Short';
+import Url from '../../../../../types/schemas/models/Url';
+import VisitOptions from '../../../../../types/schemas/parameters/VisitOptions';
+import {server} from '../../../../config';
+import {UrlBlocked, UrlNotFound} from '../../../errors';
+import {urls} from '../../services';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Params: Short; Querystring: VisitOptions; Reply: Url}> =
 		{
 			method: 'GET',
@@ -56,5 +56,5 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 		};
 
-	fastify.route(route);
+	return route;
 }

@@ -1,6 +1,27 @@
-import {server} from './config';
+import * as Sentry from '@sentry/node';
+import {sentry, server, env} from './config';
 import fastify from './server';
 import {fastifyLogger} from './logger';
+
+if (sentry.dsn) {
+	let environment: 'production' | 'development' | undefined;
+
+	switch (env.env) {
+		case env.Env.Dev:
+			environment = 'development';
+			break;
+		case env.Env.Prod:
+			environment = 'production';
+			break;
+		default:
+	}
+
+	Sentry.init({
+		dsn: sentry.dsn,
+		environment,
+		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`
+	});
+}
 
 async function main() {
 	try {

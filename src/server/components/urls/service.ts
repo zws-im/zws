@@ -2,10 +2,10 @@ import {multiReplace, sample} from '@jonahsnider/util';
 import {ShortenedUrl} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {Opaque} from 'type-fest';
-import {characters} from '../config';
-import db from '../db';
-import baseLogger from '../logger';
-import {UniqueShortIdTimeout} from '../server/errors';
+import {characters} from '../../../config';
+import db from '../../../db';
+import baseLogger from '../../../logger';
+import {UniqueShortIdTimeout} from '../../errors';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */

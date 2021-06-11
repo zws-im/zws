@@ -1,11 +1,11 @@
 import {Http} from '@jonahsnider/util';
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import Stats from '../../../../types/schemas/models/Stats';
-import TotalStatsOptions from '../../../../types/schemas/parameters/TotalStatsOptions';
-import {server} from '../../../config';
-import {instance} from '../../../services';
+import Stats from '../../../../../types/schemas/models/Stats';
+import TotalStatsOptions from '../../../../../types/schemas/parameters/TotalStatsOptions';
+import {server} from '../../../../config';
+import {stats} from '../../services';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Querystring: TotalStatsOptions; Reply: Stats}> = {
 		method: 'GET',
 		url: '/stats',
@@ -21,19 +21,19 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 		},
 		handler: async request => {
-			const stats = await instance.stats();
+			const instanceStats = await stats.instanceStats();
 
 			if (request.query.format) {
 				return {
-					urls: stats.urls.toLocaleString(),
-					visits: stats.visits.toLocaleString(),
+					urls: instanceStats.urls.toLocaleString(),
+					visits: instanceStats.visits.toLocaleString(),
 					version: `v${server.version}`
 				};
 			}
 
-			return {...stats, version: server.version};
+			return {...instanceStats, version: server.version};
 		}
 	};
 
-	fastify.route(route);
+	return route;
 }

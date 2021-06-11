@@ -4,26 +4,6 @@ import {env, sentry, server} from '../config';
 import db from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
 
-if (sentry.dsn) {
-	let environment: 'production' | 'development' | undefined;
-
-	switch (env.env) {
-		case env.Env.Dev:
-			environment = 'development';
-			break;
-		case env.Env.Prod:
-			environment = 'production';
-			break;
-		default:
-	}
-
-	Sentry.init({
-		dsn: sentry.dsn,
-		environment,
-		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`
-	});
-}
-
 const baseRequestLogger = baseFastifyLogger.withTag('request');
 
 export default function addHooks(fastify: FastifyInstance): void {

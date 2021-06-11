@@ -1,8 +1,8 @@
-import createServer from 'fastify';
+import createServer, {RouteOptions} from 'fastify';
 import {fastifyLogger} from '../logger';
+import routes from './components/routes';
 import registerHooks from './hooks';
 import registerPlugins from './plugins';
-import * as routes from './routes';
 import addSchemas from './schemas';
 
 const fastify = createServer({
@@ -18,8 +18,8 @@ registerHooks(fastify);
 addSchemas(fastify);
 
 fastify.after(() => {
-	for (const declareRoute of Object.values(routes)) {
-		declareRoute(fastify);
+	for (const getRoute of routes) {
+		fastify.route(getRoute(fastify) as RouteOptions);
 	}
 });
 

@@ -1,10 +1,10 @@
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import ShieldsEndpointResponse from '../../../../types/schemas/responses/ShieldsEndpointResponse';
-import {server} from '../../../config';
-import {format, instance} from '../../../services';
+import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import ShieldsEndpointResponse from '../../../../../types/schemas/responses/ShieldsEndpointResponse';
+import {server} from '../../../../config';
+import {stats} from '../../services';
 
-export default function declareRoute(fastify: FastifyInstance) {
+export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
 		RawServerDefault,
 		RawRequestDefaultExpression,
@@ -26,11 +26,11 @@ export default function declareRoute(fastify: FastifyInstance) {
 			}
 		},
 		handler: async () => {
-			const stats = await instance.stats();
+			const instanceStats = await stats.instanceStats();
 
-			return {color: 'informational', label: 'visits', message: format.abbreviateNumber(stats.visits), schemaVersion: 1};
+			return {color: 'informational', label: 'visits', message: stats.abbreviateNumber(instanceStats.visits), schemaVersion: 1};
 		}
 	};
 
-	fastify.route(route);
+	return route;
 }
