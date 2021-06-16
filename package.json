@@ -16,7 +16,7 @@
 		"prettier": "2.3.1",
 		"prettier-config-xo": "1.0.4",
 		"prisma": "2.25.0",
-		"semantic-release": "17.4.3",
+		"semantic-release": "17.4.4",
 		"semantic-release-docker": "2.2.0",
 		"ts-json-schema-generator": "0.93.0",
 		"ts-node": "10.0.0",
