@@ -311,23 +311,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fastify/forwarded@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@fastify/forwarded@npm:1.0.0"
-  checksum: ce8131fe51bed9315c2df8ff0d143a216ef603f88b0590e73e0e7abc6ad1eb78f6cab593b73ac9be0ca8e8921ec5c405161987a964011501451ca7e1b892839d
-  languageName: node
-  linkType: hard
-
-"@fastify/proxy-addr@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@fastify/proxy-addr@npm:3.0.0"
-  dependencies:
-    "@fastify/forwarded": ^1.0.0
-    ipaddr.js: ^2.0.0
-  checksum: 9bad0be0ecd00b1d05b04620346d38442f092839ca038477cb31bc4937304c1e1593a0e0a8478208563c3b99f99b61d43879102904b97d8aa14132048642b552
-  languageName: node
-  linkType: hard
-
 "@jonahsnider/util@npm:3.2.0":
   version: 3.2.0
   resolution: "@jonahsnider/util@npm:3.2.0"
@@ -1236,7 +1219,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
-    fastify: 3.17.0
+    fastify: 3.18.0
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.1
@@ -4042,12 +4025,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.17.0":
-  version: 3.17.0
-  resolution: "fastify@npm:3.17.0"
+"fastify@npm:3.18.0":
+  version: 3.18.0
+  resolution: "fastify@npm:3.18.0"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
-    "@fastify/proxy-addr": ^3.0.0
     abstract-logging: ^2.0.0
     avvio: ^7.1.2
     fast-json-stringify: ^2.5.2
@@ -4057,12 +4039,13 @@ __metadata:
     flatstr: ^1.0.12
     light-my-request: ^4.2.0
     pino: ^6.2.1
+    proxy-addr: ^2.0.7
     readable-stream: ^3.4.0
     rfdc: ^1.1.4
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: d2fe251909227c4cf6a4f0098b36bc97d4d0f9d368b7ce3fdca8c3a7aac0e76fb6c0031122b9faf22af9fa88b7edef3abcf31cb0c5c778cb3ebdd12b5d08983b
+  checksum: 2a32682fb1df1712b87f426eded4e614d38e6ab3d2ff0c168900d118378fd3ab7739525877bf66be805a65b4a3db4107ce4fa2f83cf008924750d4c883f5798f
   languageName: node
   linkType: hard
 
@@ -4237,6 +4220,13 @@ __metadata:
     combined-stream: ^1.0.6
     mime-types: ^2.1.12
   checksum: 862e686b105634222db77138d5f5ae08ba85f88c04925de5be86b2b9d03cf671d86566ad10f1dd5217634c0f1634069dfc1a663a1cc13e8fbac0ce8f670ad070
+  languageName: node
+  linkType: hard
+
+"forwarded@npm:0.2.0":
+  version: 0.2.0
+  resolution: "forwarded@npm:0.2.0"
+  checksum: 1e84548d8ffb072d7edd4c5375ce71e2631c28efcd1084c4578f1a71dd6c4b0d58a6ddcdc923514766030cf38068258971a919e91ffa472460ec0f6dac7209ea
   languageName: node
   linkType: hard
 
@@ -5052,10 +5042,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipaddr.js@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "ipaddr.js@npm:2.0.0"
-  checksum: c14a0aaac9b3383be5226ea8b0b7707d9d6b021d5a8b04c6cdd9f6cea29583089d93718e10a8352460ed63becd834c7b93b62dbd46d2db4595086c9dc880630b
+"ipaddr.js@npm:1.9.1":
+  version: 1.9.1
+  resolution: "ipaddr.js@npm:1.9.1"
+  checksum: de15bc7e63973d960abc43c9fbbf19589c726774f59d157d1b29382a1e86ae87c68cbd8b5c78a1712a87fc4fcd91e10762c7671950c66a1a19040ff4fd2f9c9b
   languageName: node
   linkType: hard
 
@@ -7925,6 +7915,16 @@ __metadata:
   version: 2.0.0
   resolution: "proto-props@npm:2.0.0"
   checksum: 8b2f1604926a8de1cf3570579305cce6d5502f0999d4c3c1ec2f99d03016ddc4abb72fd4d5c44d1d614607c6794a53e13e2a1f1b40bf61261a24144fda6e3c65
+  languageName: node
+  linkType: hard
+
+"proxy-addr@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "proxy-addr@npm:2.0.7"
+  dependencies:
+    forwarded: 0.2.0
+    ipaddr.js: 1.9.1
+  checksum: ad78682246dc20ed6ca4080539349828bc2708cf0b69c55d6a3c41532780a8d05f563dcbac6ec4b74dce367421bff6fc4bc6b700b14319ecf57c93bd62727fc6
   languageName: node
   linkType: hard
 
