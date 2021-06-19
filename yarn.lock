@@ -1221,7 +1221,7 @@ __metadata:
     eslint-plugin-prettier: 3.4.0
     fastify: 3.18.0
     fastify-auth: 1.1.0
-    fastify-bearer-auth: 5.1.0
+    fastify-bearer-auth: 6.0.0
     fastify-error: 0.3.1
     fastify-swagger: 4.7.0
     millify: 4.0.0
@@ -3962,12 +3962,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-bearer-auth@npm:5.1.0":
-  version: 5.1.0
-  resolution: "fastify-bearer-auth@npm:5.1.0"
+"fastify-bearer-auth@npm:6.0.0":
+  version: 6.0.0
+  resolution: "fastify-bearer-auth@npm:6.0.0"
   dependencies:
     fastify-plugin: ^3.0.0
-  checksum: 876a70a4c6ef2cfdbd1611fe1264ba5742e23ef57b27bf1687f64276320ccc95d38e44662ccea466431f5c8aa12c587419250f888398ade103951de585d3a71a
+  checksum: c9b811dca366474c56f11550f6f80f8ab02c5a055273720f5efcbbfd6138d264d78857948c5c33d47cfa47628d445be24ec0b52cc47457ea5b81ac8775bafdd7
   languageName: node
   linkType: hard
 
