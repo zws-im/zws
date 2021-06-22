@@ -1215,7 +1215,7 @@ __metadata:
     "@sentry/node": 6.7.2
     "@tsconfig/node16": 1.0.1
     "@types/node": 15.3.1
-    cli-ux: 5.5.1
+    cli-ux: 5.6.2
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
@@ -2283,9 +2283,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-ux@npm:5.5.1":
-  version: 5.5.1
-  resolution: "cli-ux@npm:5.5.1"
+"cli-ux@npm:5.6.2":
+  version: 5.6.2
+  resolution: "cli-ux@npm:5.6.2"
   dependencies:
     "@oclif/command": ^1.6.0
     "@oclif/errors": ^1.2.1
@@ -2310,10 +2310,10 @@ __metadata:
     semver: ^7.3.2
     string-width: ^4.2.0
     strip-ansi: ^6.0.0
-    supports-color: ^7.1.0
+    supports-color: ^8.1.0
     supports-hyperlinks: ^2.1.0
     tslib: ^2.0.0
-  checksum: 5719712f4c50cecf567ef7dc12c79ca4a4da9077fc88dfcdde90aafb813af12bd8738f7e25c6af2792ecd94106fb891a68c8636bb8d5ac1fbd16da39ad4f7282
+  checksum: 73a9d95a5f71917e1c5f441ecae3ff02f6652004b2e63448e6741b6f22c46272df1da4aa4b49d010231f801d98667b75dc5ce743dc4119c2a7736cb6a2557f66
   languageName: node
   linkType: hard
 
@@ -9234,6 +9234,15 @@ __metadata:
   dependencies:
     has-flag: ^4.0.0
   checksum: 8e57067c39216f3c2ffce7cc14ca934d54746192571203aa9c9922d97d2d55cc1bdaa9e41a11f91e620670b5a74ebdec6b548a885d8cc2dea7cab59e21416029
+  languageName: node
+  linkType: hard
+
+"supports-color@npm:^8.1.0":
+  version: 8.1.1
+  resolution: "supports-color@npm:8.1.1"
+  dependencies:
+    has-flag: ^4.0.0
+  checksum: 0219f5c91753fea8dc8046cd4b18d39458b5dc0c6421c67c1072209faae9ba93b89283252e3b05d5c18901fd9f8b95001e3247fb93e2265f66d584a676522c75
   languageName: node
   linkType: hard
 
