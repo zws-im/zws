@@ -59,7 +59,7 @@
 		}
 	},
 	"dependencies": {
-		"@jonahsnider/util": "4.0.0",
+		"@jonahsnider/util": "4.1.0",
 		"@prisma/client": "2.25.0",
 		"@sentry/node": "6.7.2",
 		"consola": "2.15.3",
