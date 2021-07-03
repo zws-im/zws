@@ -5,7 +5,8 @@ WORKDIR /usr/src/app
 ENV PORT=3000
 EXPOSE 3000
 
-RUN apk add --no-cache curl=7.77.0-r0
+# hadolint ignore=DL3018
+RUN apk add --no-cache curl
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 CMD curl -X GET --fail http://localhost:3000/health || exit 0
 
