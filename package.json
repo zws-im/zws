@@ -11,7 +11,7 @@
 		"@semantic-release/exec": "5.0.0",
 		"@tsconfig/node16": "1.0.1",
 		"@types/node": "15.3.1",
-		"cli-ux": "5.6.2",
+		"cli-ux": "5.6.3",
 		"eslint-plugin-prettier": "3.4.0",
 		"prettier": "2.3.2",
 		"prettier-config-xo": "1.0.4",
