@@ -1212,7 +1212,7 @@ __metadata:
     "@sentry/node": 6.8.0
     "@tsconfig/node16": 1.0.1
     "@types/node": 15.3.1
-    cli-ux: 5.6.2
+    cli-ux: 5.6.3
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
@@ -2073,9 +2073,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-ux@npm:5.6.2":
-  version: 5.6.2
-  resolution: "cli-ux@npm:5.6.2"
+"cli-ux@npm:5.6.3":
+  version: 5.6.3
+  resolution: "cli-ux@npm:5.6.3"
   dependencies:
     "@oclif/command": ^1.6.0
     "@oclif/errors": ^1.2.1
@@ -2103,7 +2103,7 @@ __metadata:
     supports-color: ^8.1.0
     supports-hyperlinks: ^2.1.0
     tslib: ^2.0.0
-  checksum: 73a9d95a5f71917e1c5f441ecae3ff02f6652004b2e63448e6741b6f22c46272df1da4aa4b49d010231f801d98667b75dc5ce743dc4119c2a7736cb6a2557f66
+  checksum: e9358e0607a4295f4a0c813c66199c8e2ea4e472c2292377d5376a07b914ceb74d3359561aaa11dfd4a01beb31614210cd59216ac0cd200ca132df77b4fe5be5
   languageName: node
   linkType: hard
 
