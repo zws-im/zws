@@ -5,5 +5,5 @@ export const dsn = dsnSchema.parse(process.env.SENTRY_DSN);
 
 export enum BreadcrumbCategory {
 	Database = 'db',
-	Request = 'request'
+	Request = 'request',
 }

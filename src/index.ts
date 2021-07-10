@@ -19,7 +19,7 @@ if (sentry.dsn) {
 	Sentry.init({
 		dsn: sentry.dsn,
 		environment,
-		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`
+		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`,
 	});
 }
 

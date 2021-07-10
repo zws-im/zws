@@ -13,7 +13,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Health],
 			summary: 'Health check',
 			description: 'Check if the instance is healthy',
-			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/NotHealthyError.json')}
+			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/NotHealthyError.json')},
 		},
 		handler: async (request, reply) => {
 			try {
@@ -24,7 +24,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			}
 
 			void reply.status(Http.Status.NoContent);
-		}
+		},
 	};
 
 	return route;

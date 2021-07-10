@@ -30,12 +30,12 @@ export default function getRoute(fastify: FastifyInstance) {
 				// Should be https://zws.im/schemas/ShortenHostnameError.json but the schema generator emits bad references
 				[Http.Status.UnprocessableEntity]: fastify.getSchema('https://zws.im/schemas/Error.json'),
 				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
-				[Http.Status.ServiceUnavailable]: fastify.getSchema('https://zws.im/schemas/UniqueShortIdTimeoutError.json')
-			}
+				[Http.Status.ServiceUnavailable]: fastify.getSchema('https://zws.im/schemas/UniqueShortIdTimeoutError.json'),
+			},
 		},
 		handler: async (request, reply) => {
 			const {
-				body: {url}
+				body: {url},
 			} = request;
 
 			const longUrlHostname = new URL(url).hostname;
@@ -59,7 +59,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			}
 
 			return response;
-		}
+		},
 	};
 
 	if (fastify.verifyBearerAuth) {

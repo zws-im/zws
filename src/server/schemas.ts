@@ -36,7 +36,7 @@ const schemas = [
 	VisitOptions,
 	ApiKeyError,
 	ShieldsEndpointResponse,
-	ShortenHostnameError
+	ShortenHostnameError,
 ];
 
 export default function addSchemas(fastify: FastifyInstance): void {

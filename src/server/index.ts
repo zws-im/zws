@@ -6,7 +6,7 @@ import registerPlugins from './plugins';
 import addSchemas from './schemas';
 
 const fastify = createServer({
-	maxParamLength: 1024
+	maxParamLength: 1024,
 });
 
 registerPlugins(fastify).catch(error => {

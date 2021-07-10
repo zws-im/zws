@@ -7,8 +7,8 @@ const db = new PrismaClient({
 	log: [
 		{emit: 'event', level: 'error'},
 		{emit: 'event', level: 'info'},
-		{emit: 'event', level: 'warn'}
-	]
+		{emit: 'event', level: 'warn'},
+	],
 });
 
 class PrismaError extends Error {}
@@ -33,7 +33,7 @@ db.$on('info', info => {
 	Sentry.addBreadcrumb({
 		category: sentry.BreadcrumbCategory.Database,
 		message: info.message,
-		level: Sentry.Severity.Info
+		level: Sentry.Severity.Info,
 	});
 	dbLogger.info(info.message);
 });
@@ -42,7 +42,7 @@ db.$on('warn', warning => {
 	Sentry.addBreadcrumb({
 		category: sentry.BreadcrumbCategory.Database,
 		message: warning.message,
-		level: Sentry.Severity.Warning
+		level: Sentry.Severity.Warning,
 	});
 	dbLogger.warn(warning.message);
 });

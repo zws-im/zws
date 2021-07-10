@@ -52,13 +52,13 @@ export default function addHooks(fastify: FastifyInstance): void {
 		const requestContext = {
 			body: request.body,
 			params: request.params,
-			query: request.query
+			query: request.query,
 		};
 
 		Sentry.addBreadcrumb({
 			category: sentry.BreadcrumbCategory.Request,
 			message: requestName,
-			data: {...requestContext, request_id: request.id as string}
+			data: {...requestContext, request_id: request.id as string},
 		});
 
 		Sentry.configureScope(scope => {

@@ -20,9 +20,9 @@ const schemas = {
 		'UrlNotFoundError',
 		'NotHealthyError',
 		'AttemptedShortenBlockedHostnameError',
-		'UrlBlockedError'
+		'UrlBlockedError',
 	],
-	parameters: ['VisitOptions', 'TotalStatsOptions']
+	parameters: ['VisitOptions', 'TotalStatsOptions'],
 };
 
 const progress = cli.progress() as {stop: () => void; increment: () => void; start: (max: number, start: number) => void};
@@ -41,7 +41,7 @@ async function main() {
 				path: typeDeclaration,
 				schemaId: `https://zws.im/schemas/${type}.json`,
 				topRef: false,
-				skipTypeCheck: true
+				skipTypeCheck: true,
 			};
 
 			progress.increment();
@@ -68,7 +68,7 @@ progress.start(
 	Object.values(schemas)
 		.map(x => x.length)
 		.reduce(sum),
-	0
+	0,
 );
 
 main()

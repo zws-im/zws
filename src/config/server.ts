@@ -30,5 +30,5 @@ export enum Tags {
 	Urls = 'urls',
 	Stats = 'stats',
 	Shields = 'shields',
-	Health = 'health'
+	Health = 'health',
 }

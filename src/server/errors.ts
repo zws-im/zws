@@ -8,14 +8,14 @@ export const UrlNotFound = createError('E_URL_NOT_FOUND', 'Shortened URL not fou
 export const AttemptedShortenHostname = createError(
 	'E_SHORTEN_HOSTNAME',
 	'Shortening a URL with the same hostname as the server is disallowed',
-	Http.Status.UnprocessableEntity
+	Http.Status.UnprocessableEntity,
 );
 
 /** The maximum number of attempts to generate a unique short ID were hit. */
 export const UniqueShortIdTimeout = createError(
 	'E_UNIQUE_SHORT_ID_TIMEOUT',
 	`Couldn't generate a unique shortened ID in %s attempts`,
-	Http.Status.ServiceUnavailable
+	Http.Status.ServiceUnavailable,
 );
 
 /** An incorrect API key was provided. */
@@ -31,7 +31,7 @@ export const NotHealthy = createError('E_NOT_HEALTHY', 'The server is not health
 export const AttemptedShortenBlockedHostname = createError(
 	'E_SHORTEN_BLOCKED_HOSTNAME',
 	'Shortening that hostname is forbidden',
-	Http.Status.UnprocessableEntity
+	Http.Status.UnprocessableEntity,
 );
 
 /** You tried to access a URL that has been marked in the database as blocked. */
