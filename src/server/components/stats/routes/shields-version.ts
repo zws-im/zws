@@ -21,10 +21,10 @@ export default function getRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			response: {
 				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/ShieldsEndpointResponse.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
-			}
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+			},
 		},
-		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1})
+		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1}),
 	};
 
 	return route;

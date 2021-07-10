@@ -99,7 +99,7 @@ export async function stats(id: Short): Promise<null | Stats> {
 
 	const [visits, shortenedUrl] = await db.$transaction([
 		db.visit.findMany({where: {shortenedUrlId: encodedId}, select: {timestamp: true}, orderBy: {timestamp: 'asc'}}),
-		db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true}})
+		db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true}}),
 	]);
 
 	if (!shortenedUrl) {

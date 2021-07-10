@@ -22,14 +22,14 @@ export default function getRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			response: {
 				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/ShieldsEndpointResponse.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
-			}
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+			},
 		},
 		handler: async () => {
 			const instanceStats = await stats.instanceStats();
 
 			return {color: 'informational', label: 'visits', message: stats.abbreviateNumber(instanceStats.visits), schemaVersion: 1};
-		}
+		},
 	};
 
 	return route;

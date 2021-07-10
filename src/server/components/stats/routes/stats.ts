@@ -17,8 +17,8 @@ export default function getRoute(fastify: FastifyInstance) {
 			querystring: fastify.getSchema('https://zws.im/schemas/TotalStatsOptions.json'),
 			response: {
 				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/Stats.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
-			}
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+			},
 		},
 		handler: async request => {
 			const instanceStats = await stats.instanceStats();
@@ -27,12 +27,12 @@ export default function getRoute(fastify: FastifyInstance) {
 				return {
 					urls: instanceStats.urls.toLocaleString(),
 					visits: instanceStats.visits.toLocaleString(),
-					version: `v${server.version}`
+					version: `v${server.version}`,
 				};
 			}
 
 			return {...instanceStats, version: server.version};
-		}
+		},
 	};
 
 	return route;

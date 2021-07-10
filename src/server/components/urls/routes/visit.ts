@@ -20,13 +20,13 @@ export default function getRoute(fastify: FastifyInstance) {
 				response: {
 					[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/Url.json'),
 					[Http.Status.NotFound]: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
-					[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
-				}
+					[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				},
 			},
 			handler: async (request, reply) => {
 				const {
 					query: {visit},
-					params: {short}
+					params: {short},
 				} = request;
 
 				if (short === '') {
@@ -53,7 +53,7 @@ export default function getRoute(fastify: FastifyInstance) {
 				} else {
 					return {url: url.longUrl};
 				}
-			}
+			},
 		};
 
 	return route;

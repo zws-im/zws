@@ -14,7 +14,7 @@
 		"cli-ux": "5.6.3",
 		"eslint-plugin-prettier": "3.4.0",
 		"prettier": "2.3.2",
-		"prettier-config-xo": "1.0.4",
+		"prettier-config-xo": "2.0.0",
 		"prisma": "2.26.0",
 		"semantic-release": "17.4.4",
 		"semantic-release-docker": "2.2.0",

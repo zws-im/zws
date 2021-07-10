@@ -70,7 +70,7 @@ const alphaNumeric: string[] = [
 	'7',
 	'8',
 	'9',
-	'0'
+	'0',
 	// #endregion
 ];
 

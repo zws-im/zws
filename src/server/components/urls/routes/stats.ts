@@ -19,12 +19,12 @@ export default function getRoute(fastify: FastifyInstance) {
 			response: {
 				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/UrlStats.json'),
 				[Http.Status.NotFound]: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json')
-			}
+				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+			},
 		},
 		handler: async request => {
 			const {
-				params: {short}
+				params: {short},
 			} = request;
 
 			const stats = await urls.stats(urls.normalizeShortId(short as urls.Short));
@@ -34,7 +34,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			}
 
 			return stats;
-		}
+		},
 	};
 
 	return route;

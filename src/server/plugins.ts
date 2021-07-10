@@ -12,8 +12,8 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 		fastify.register(swaggerPlugin, {
 			openapi,
 			routePrefix: '/docs/api',
-			exposeRoute: true
-		})
+			exposeRoute: true,
+		}),
 	];
 
 	if (server.apiKey === null) {
@@ -32,9 +32,9 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 						default:
 							return new IncorrectApiKey() as unknown as {error: string};
 					}
-				}
+				},
 			}),
-			fastify.register(authPlugin)
+			fastify.register(authPlugin),
 		);
 	}
 
