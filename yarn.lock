@@ -1220,7 +1220,7 @@ __metadata:
     fastify-auth: 1.1.0
     fastify-bearer-auth: 6.0.0
     fastify-error: 0.3.1
-    fastify-swagger: 4.8.2
+    fastify-swagger: 4.8.3
     millify: 4.0.0
     prettier: 2.3.2
     prettier-config-xo: 2.0.0
@@ -3669,16 +3669,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-swagger@npm:4.8.2":
-  version: 4.8.2
-  resolution: "fastify-swagger@npm:4.8.2"
+"fastify-swagger@npm:4.8.3":
+  version: 4.8.3
+  resolution: "fastify-swagger@npm:4.8.3"
   dependencies:
     fastify-plugin: ^3.0.0
     fastify-static: ^4.0.0
     js-yaml: ^4.0.0
     json-schema-resolver: ^1.2.0
-    openapi-types: ^8.0.0
-  checksum: f56ab5bac9c2bd06e5d8539e8e2d33aa088066d368c6ff30df4d7f1607f819e1e0c5273ed489c972f344a4bec9fc11963f9b87f0841328d0af77a5e8e55d952a
+    openapi-types: ^9.1.0
+  checksum: a70e5da8cde8c0a3f1b903ecb0679dcaa20ce5def2697e141487c3419f23385401f8e9d88f8ba909f489708cdafa2c394801c5dafe6c4575f2e8aa42de6c8f8d
   languageName: node
   linkType: hard
 
@@ -6706,10 +6706,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openapi-types@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "openapi-types@npm:8.0.0"
-  checksum: ae344841778ce034ba41197ef60f7a15ff6a4fd3b7ec07aea879584cf9ca57f8e3183d0ca1f3362ed0b27d22b24b74945888b96ed7c62311af3861fb7cd74e3f
+"openapi-types@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "openapi-types@npm:9.1.0"
+  checksum: c80261953f8039756d97c9b016b61d070d03f3d571ed0ec83474076b5dd9bb47acdcaca278d5c41500f61f2d61ea9b4792cf36e0448ef238924ca43cfbd2076f
   languageName: node
   linkType: hard
 
