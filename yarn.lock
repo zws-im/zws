@@ -975,7 +975,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node16@npm:1.0.1, @tsconfig/node16@npm:^1.0.1":
+"@tsconfig/node16@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@tsconfig/node16@npm:1.0.2"
+  checksum: 57310e88858be59b36603e5d9bd7bd1714d16402ef1e536c01521ad3b207833a2fc64d260d362cae07bf4e50759a3aba3958c2faf9c42b52c4c817be60a93123
+  languageName: node
+  linkType: hard
+
+"@tsconfig/node16@npm:^1.0.1":
   version: 1.0.1
   resolution: "@tsconfig/node16@npm:1.0.1"
   checksum: c389a4a81c291a27b96705de7fbe46d29aa4eb771450a41dfc075d89e1fdd63141898043a0d9f627460a1c409d06635a044dc4b3a4516173769a7d0a1558c51d
@@ -1169,7 +1176,7 @@ __metadata:
     "@prisma/client": 2.27.0
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.9.0
-    "@tsconfig/node16": 1.0.1
+    "@tsconfig/node16": 1.0.2
     "@types/node": 15.3.1
     cli-ux: 5.6.3
     consola: 2.15.3
