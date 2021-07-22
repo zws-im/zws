@@ -1182,7 +1182,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
-    fastify: 3.19.1
+    fastify: 3.19.2
     fastify-auth: 1.1.0
     fastify-bearer-auth: 6.0.0
     fastify-error: 0.3.1
@@ -3333,10 +3333,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-safe-stringify@npm:^2.0.7":
-  version: 2.0.7
-  resolution: "fast-safe-stringify@npm:2.0.7"
-  checksum: 7bd22543263b707870d70c6f2336b6e8563e34d6807dc388cc0566895e31e0a8273af017a7eb1c9538d0ef54288284e1c0585b557bd856491295a847159fd929
+"fast-safe-stringify@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "fast-safe-stringify@npm:2.0.8"
+  checksum: 2198ef6c4917ac6ad7a3cff8b80abc2762c89a0c700548459288fce45598a2488c0ae393cd456b4212a8259fed9d1630303106efe4ae3b1c35dab2fb66526cdd
   languageName: node
   linkType: hard
 
@@ -3413,9 +3413,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.19.1":
-  version: 3.19.1
-  resolution: "fastify@npm:3.19.1"
+"fastify@npm:3.19.2":
+  version: 3.19.2
+  resolution: "fastify@npm:3.19.2"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3426,14 +3426,14 @@ __metadata:
     find-my-way: ^4.0.0
     flatstr: ^1.0.12
     light-my-request: ^4.2.0
-    pino: ^6.2.1
+    pino: ^6.13.0
     proxy-addr: ^2.0.7
     readable-stream: ^3.4.0
     rfdc: ^1.1.4
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: c0eb6be95e648f62965643978d137f2b322e4f4c3431792dd286b723ebf8b93059c64a8f1791e7d9c70c94e036dfb395c537a9b7405c024c424c55d0fbe07c89
+  checksum: 7e206fd7fdb6aa8f791c1a1a3414d5ad5ab3b0a17f42c909de3ad1a5526f2486906a8fbf817f459e2fc1133a1d0331b1dbc6ceb901049750e2ee9d763dc6f75b
   languageName: node
   linkType: hard
 
@@ -6430,19 +6430,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino@npm:^6.2.1":
-  version: 6.11.2
-  resolution: "pino@npm:6.11.2"
+"pino@npm:^6.13.0":
+  version: 6.13.0
+  resolution: "pino@npm:6.13.0"
   dependencies:
     fast-redact: ^3.0.0
-    fast-safe-stringify: ^2.0.7
+    fast-safe-stringify: ^2.0.8
     flatstr: ^1.0.12
     pino-std-serializers: ^3.1.0
-    quick-format-unescaped: 4.0.1
+    quick-format-unescaped: ^4.0.3
     sonic-boom: ^1.0.2
   bin:
-    pino: ./bin.js
-  checksum: e854d37d659080c6f96c4030a279b44a25cc1550b8ca6aee0c9a62420773c2771090cfec96587aa917d4c82a2d1744d52e63d9d9135d4c410f9d30438069a013
+    pino: bin.js
+  checksum: 4fd045eeff8edffb8e5bd9677553f511155d1f56353d9a12a03880a7ca26a0eb29808705a2ace223dff9c77dc20c269b31e33591b73728c6f4f641cc968a1080
   languageName: node
   linkType: hard
 
@@ -6677,10 +6677,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"quick-format-unescaped@npm:4.0.1":
-  version: 4.0.1
-  resolution: "quick-format-unescaped@npm:4.0.1"
-  checksum: 0935e55e0aaaf789baa080768e822694bc0a497a3170fd35bf2b1aee2a953cf3b5a24e9d29a70dbe7bdc72534c6e1be917ab5c599d587ce0425c98293d8cc1c7
+"quick-format-unescaped@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "quick-format-unescaped@npm:4.0.3"
+  checksum: 08bbbe4937df113082fcc42dfbdb75df7e5291df805cd25347e0241f2f97bfb8368899dfbece10b79411249f81196b268ad1a36cc42208e4074cf89d27c3d055
   languageName: node
   linkType: hard
 
