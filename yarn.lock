@@ -1195,7 +1195,7 @@ __metadata:
     semantic-release-docker: 2.2.0
     ts-json-schema-generator: 0.95.0
     ts-node: 10.1.0
-    type-fest: 1.2.2
+    type-fest: 1.2.3
     typescript: 4.3.5
     xo: 0.42.0
     zod: 3.5.1
@@ -7997,10 +7997,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:1.2.2, type-fest@npm:^1.2.1, type-fest@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "type-fest@npm:1.2.2"
-  checksum: 1f5510d0afa1f17523ba7f320c6e3f222fe6c1f9d15689a69460ba7fc6ae24150958ddca7e509f9abc7ec456ed187dbf2da019fd308788d53094dc25f56eda59
+"type-fest@npm:1.2.3":
+  version: 1.2.3
+  resolution: "type-fest@npm:1.2.3"
+  checksum: d8ed2822979add85836c156962c5fa9f7679b647ecfa742a802e3e49f62af4df18db8c907b69dbf0a38780bff4ecf25e8afcf7c4dbf2fa159d9a3605302727cd
   languageName: node
   linkType: hard
 
@@ -8057,6 +8057,13 @@ __metadata:
   version: 1.2.1
   resolution: "type-fest@npm:1.2.1"
   checksum: 03c56d304481db8498aca7a093cee5680080da36cd9cc59dc64679c3a296dd6b58b940963ee4ab93e91f02b9d6dec0c41efbb02d3672b4d3ccde5b64f5d3667b
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^1.2.1, type-fest@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "type-fest@npm:1.2.2"
+  checksum: 1f5510d0afa1f17523ba7f320c6e3f222fe6c1f9d15689a69460ba7fc6ae24150958ddca7e509f9abc7ec456ed187dbf2da019fd308788d53094dc25f56eda59
   languageName: node
   linkType: hard
 
