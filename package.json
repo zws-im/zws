@@ -70,6 +70,6 @@
 		"fastify-error": "0.3.1",
 		"fastify-swagger": "4.8.3",
 		"millify": "4.0.0",
-		"zod": "3.5.4"
+		"zod": "3.7.1"
 	}
 }
