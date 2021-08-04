@@ -1182,7 +1182,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 3.4.0
-    fastify: 3.20.0
+    fastify: 3.20.1
     fastify-auth: 1.1.0
     fastify-bearer-auth: 6.0.0
     fastify-error: 0.3.1
@@ -3413,9 +3413,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.20.0":
-  version: 3.20.0
-  resolution: "fastify@npm:3.20.0"
+"fastify@npm:3.20.1":
+  version: 3.20.1
+  resolution: "fastify@npm:3.20.1"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3423,7 +3423,7 @@ __metadata:
     fast-json-stringify: ^2.5.2
     fastify-error: ^0.3.0
     fastify-warning: ^0.2.0
-    find-my-way: ^4.0.0
+    find-my-way: ^4.1.0
     flatstr: ^1.0.12
     light-my-request: ^4.2.0
     pino: ^6.13.0
@@ -3433,7 +3433,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: 2b415ec7cb392cab55928c37ada3e0b8b59b12a4b4387ed932dbb6e7c791fe57bb4d1fe938c0f2487431cd99d4147820c475fe7d1c6f7e6666e16770ed93c397
+  checksum: e6742daf0ff7aa95c21ee5ca3dc46c39f270d708981c8952b0e7cb35285c41f3b53ff59933e90169a6c813bbe65e34d0eed722b734dcad1681c1f9c5e691248e
   languageName: node
   linkType: hard
 
@@ -3493,15 +3493,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-my-way@npm:^4.0.0":
-  version: 4.1.0
-  resolution: "find-my-way@npm:4.1.0"
+"find-my-way@npm:^4.1.0":
+  version: 4.3.3
+  resolution: "find-my-way@npm:4.3.3"
   dependencies:
     fast-decode-uri-component: ^1.0.1
     fast-deep-equal: ^3.1.3
     safe-regex2: ^2.0.0
     semver-store: ^0.3.0
-  checksum: 1142df6047cb517de2c1df0a457ea475ae582c1f4310d2f79e246619472e494c88fbdee41edca8996aa3e6ab291d584c83529bdde04711a65296c78e3ae472d8
+  checksum: c5f212d2d2a5e76be91a86409b2de9391a1c3cf5210d357facf0fe91d1e46608865aa2396a98a8d4772116bfae2eb0b05abe4efa725d5cf3cc9b9554bb34e048
   languageName: node
   linkType: hard
 
