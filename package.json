@@ -68,7 +68,7 @@
 		"fastify-auth": "1.1.0",
 		"fastify-bearer-auth": "6.0.0",
 		"fastify-error": "0.3.1",
-		"fastify-swagger": "4.8.3",
+		"fastify-swagger": "4.8.4",
 		"millify": "4.0.0",
 		"zod": "3.7.1"
 	}
