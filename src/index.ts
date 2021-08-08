@@ -1,3 +1,4 @@
+import process from 'process';
 import * as Sentry from '@sentry/node';
 import {sentry, server, env} from './config';
 import fastify from './server';
