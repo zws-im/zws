@@ -71,5 +71,6 @@
 		"fastify-swagger": "4.8.4",
 		"millify": "4.0.0",
 		"zod": "3.7.1"
-	}
+	},
+	"packageManager": "yarn@3.0.0"
 }
