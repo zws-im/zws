@@ -1,3 +1,4 @@
+import process from 'process';
 import {JsonValue} from 'type-fest';
 import {z} from 'zod';
 

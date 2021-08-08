@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import process from 'process';
 import {sum} from '@jonahsnider/util';
 import cli from 'cli-ux';
 import * as tsj from 'ts-json-schema-generator';
