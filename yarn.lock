@@ -312,10 +312,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:4.4.0":
-  version: 4.4.0
-  resolution: "@jonahsnider/util@npm:4.4.0"
-  checksum: 7630822ec24e3a337fe033015bf42feb579efb960d3ef70e8d3c399a2a533c94251826a631911c5ef058ebd30805f02bb560f9303b1b0d647725a49d8a479286
+"@jonahsnider/util@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@jonahsnider/util@npm:5.0.0"
+  checksum: 4962633264d208128fb8709b5dbfaa8b8b19a8fc50c2f9ba037a665e7c123f390c97dd4184158ad6fe131acd376101ebbc035862f54810a48dec94be0b5b586b
   languageName: node
   linkType: hard
 
@@ -1172,7 +1172,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@jonahsnider/util": 4.4.0
+    "@jonahsnider/util": 5.0.0
     "@prisma/client": 2.28.0
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.11.0
