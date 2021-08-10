@@ -50,7 +50,7 @@ function generateShortId(): Short {
 
 	// eslint-disable-next-line @typescript-eslint/prefer-for-of
 	for (let i = 0; i < characters.length; i++) {
-		// @ts-expect-error
+		// @ts-expect-error String concatenation forces string type
 		shortId += sample(characters.characters) as Short;
 	}
 
