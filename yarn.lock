@@ -1214,7 +1214,7 @@ __metadata:
     cli-ux: 5.6.3
     consola: 2.15.3
     dotenv: 10.0.0
-    eslint-plugin-prettier: 3.4.0
+    eslint-plugin-prettier: 3.4.1
     fastify: 3.20.2
     fastify-auth: 1.1.0
     fastify-bearer-auth: 6.0.0
@@ -2968,7 +2968,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:3.4.0, eslint-plugin-prettier@npm:^3.4.0":
+"eslint-plugin-prettier@npm:3.4.1":
+  version: 3.4.1
+  resolution: "eslint-plugin-prettier@npm:3.4.1"
+  dependencies:
+    prettier-linter-helpers: ^1.0.0
+  peerDependencies:
+    eslint: ">=5.0.0"
+    prettier: ">=1.13.0"
+  peerDependenciesMeta:
+    eslint-config-prettier:
+      optional: true
+  checksum: fa6a89f0d7cba1cc87064352f5a4a68dc3739448dd279bec2bced1bfa3b704467e603d13b69dcec853f8fa30b286b8b715912898e9da776e1b016cf0ee48bd99
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-prettier@npm:^3.4.0":
   version: 3.4.0
   resolution: "eslint-plugin-prettier@npm:3.4.0"
   dependencies:
