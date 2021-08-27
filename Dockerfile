@@ -1,4 +1,4 @@
-FROM node:16.7.0-alpine3.13
+FROM node:16.8.0-alpine3.13
 
 WORKDIR /usr/src/app
 
