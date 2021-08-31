@@ -12,7 +12,7 @@
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "15.3.1",
 		"cli-ux": "5.6.3",
-		"eslint-plugin-prettier": "3.4.1",
+		"eslint-plugin-prettier": "4.0.0",
 		"prettier": "2.3.2",
 		"prettier-config-xo": "2.0.0",
 		"prisma": "2.30.0",
