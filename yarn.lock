@@ -768,9 +768,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:2.30.2":
-  version: 2.30.2
-  resolution: "@prisma/client@npm:2.30.2"
+"@prisma/client@npm:2.30.3":
+  version: 2.30.3
+  resolution: "@prisma/client@npm:2.30.3"
   dependencies:
     "@prisma/engines-version": 2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20
   peerDependencies:
@@ -778,7 +778,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 9ad4c4036b39002d0fec44be59d1f4652cd7c3e99a0b4afa0c993b683f3a53c87baae7455ec7b8470c2f177425f737a84b48d73a905fc091a0e6357804b3831c
+  checksum: 134a0e88b020dee556623a5473626e36869df44c46adbba0f63402f4f852c790ba310f4cb031d7a06df91352cc6a633216a405573e50bf865812b3f9091ee8e2
   languageName: node
   linkType: hard
 
@@ -1206,7 +1206,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@jonahsnider/util": 7.2.0
-    "@prisma/client": 2.30.2
+    "@prisma/client": 2.30.3
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.12.0
     "@tsconfig/node16": 1.0.2
@@ -1223,7 +1223,7 @@ __metadata:
     millify: 4.0.0
     prettier: 2.3.2
     prettier-config-xo: 2.0.0
-    prisma: 2.30.2
+    prisma: 2.30.3
     semantic-release: 17.4.7
     semantic-release-docker: 2.2.0
     ts-json-schema-generator: 0.95.0
@@ -6607,15 +6607,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:2.30.2":
-  version: 2.30.2
-  resolution: "prisma@npm:2.30.2"
+"prisma@npm:2.30.3":
+  version: 2.30.3
+  resolution: "prisma@npm:2.30.3"
   dependencies:
     "@prisma/engines": 2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 65f4b99d773beefbf9dce9433b54dbcd0bf5a68100e240a15f83de71c4af29f5e063eaecb28a64c9ca240fb07dfaf430a8593e736ed09194247819a33a2a6e8a
+  checksum: 42e9c6ef4eaea3618116c6105e5ab6550aff3d481bc03e0ef4a28f6e37dd55f84b53ccb5706fcba7bbef3c22b0eacda59db629c31ff9c8391c78b0801d748c83
   languageName: node
   linkType: hard
 
