@@ -1,10 +1,12 @@
-# [Zero Width Shortener (ZWS)](https://zws.im)
+# Zero Width Shortener (ZWS)
 
 [![Number of shortened URLs][stats-urls-image]](#Badges)
 [![Number of visited URLs][stats-visits-image]](#Badges)
 [![ZWS version][stats-version-image]](#Badges)
 
 Shorten URLs with invisible spaces.
+
+[Try it out online: zws.im](https://zws.im) (or with our [CLI](https://github.com/zws-im/cli#readme)).
 
 Or, [configure your own instance](#Self-hosting) to use any other kinds of characters.
 
