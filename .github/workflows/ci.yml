@@ -161,6 +161,6 @@ jobs:
       - name: Deploy
         run: yarn run deploy
         env:
-          DOCKER_USERNAME: pizzafox
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
