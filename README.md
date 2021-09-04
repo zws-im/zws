@@ -13,7 +13,7 @@ Or, [configure your own instance](#Self-hosting) to use any other kinds of chara
 ### Code Contributors
 
 This project exists thanks to all the people who contribute.
-<a href="https://github.com/zws-im/zws/graphs/contributors"><img src="https://opencollective.com/zws/contributors.svg?width=890&button=false" /></a>
+[![Code contributors](https://opencollective.com/zws/contributors.svg?width=890&button=false)](https://github.com/zws-im/zws/graphs/contributors)
 
 Special thanks to [Jaex](https://github.com/Jaex) for integrating ZWS into [ShareX](https://getsharex.com/).
 
@@ -23,22 +23,22 @@ Become a financial contributor and help us sustain our community. [[Contribute][
 
 #### Individuals
 
-<a href="https://opencollective.com/zws"><img src="https://opencollective.com/zws/individuals.svg?width=890"></a>
+[![Individual contributors](https://opencollective.com/zws/individuals.svg?width=890)](https://opencollective.com/zws)
 
 #### Organizations
 
 Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute][open-collective]]
 
-<a href="https://opencollective.com/zws/organization/0/website"><img src="https://opencollective.com/zws/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/1/website"><img src="https://opencollective.com/zws/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/2/website"><img src="https://opencollective.com/zws/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/3/website"><img src="https://opencollective.com/zws/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/4/website"><img src="https://opencollective.com/zws/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/5/website"><img src="https://opencollective.com/zws/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/6/website"><img src="https://opencollective.com/zws/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/7/website"><img src="https://opencollective.com/zws/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/8/website"><img src="https://opencollective.com/zws/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/zws/organization/9/website"><img src="https://opencollective.com/zws/organization/9/avatar.svg"></a>
+[![Organization avatar](https://opencollective.com/zws/organization/0/avatar.svg)](https://opencollective.com/zws/organization/0/website)
+[![Organization avatar](https://opencollective.com/zws/organization/1/avatar.svg)](https://opencollective.com/zws/organization/1/website)
+[![Organization avatar](https://opencollective.com/zws/organization/2/avatar.svg)](https://opencollective.com/zws/organization/2/website)
+[![Organization avatar](https://opencollective.com/zws/organization/3/avatar.svg)](https://opencollective.com/zws/organization/3/website)
+[![Organization avatar](https://opencollective.com/zws/organization/4/avatar.svg)](https://opencollective.com/zws/organization/4/website)
+[![Organization avatar](https://opencollective.com/zws/organization/5/avatar.svg)](https://opencollective.com/zws/organization/5/website)
+[![Organization avatar](https://opencollective.com/zws/organization/6/avatar.svg)](https://opencollective.com/zws/organization/6/website)
+[![Organization avatar](https://opencollective.com/zws/organization/7/avatar.svg)](https://opencollective.com/zws/organization/7/website)
+[![Organization avatar](https://opencollective.com/zws/organization/8/avatar.svg)](https://opencollective.com/zws/organization/8/website)
+[![Organization avatar](https://opencollective.com/zws/organization/9/avatar.svg)](https://opencollective.com/zws/organization/9/website)
 
 ## [Status page][status-page]
 
