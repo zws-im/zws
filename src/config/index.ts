@@ -16,5 +16,6 @@ export * as characters from './characters';
 export * as env from './env';
 export * as server from './server';
 export * as sentry from './sentry';
+export * as google from './google';
 export * as logger from './logger';
 export * as blocklist from './blocklist';

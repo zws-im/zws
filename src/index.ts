@@ -1,8 +1,9 @@
 import process from 'process';
+import profiler from '@google-cloud/profiler';
 import * as Sentry from '@sentry/node';
-import {sentry, server, env} from './config';
+import {env, google, sentry, server} from './config';
+import baseLogger, {fastifyLogger} from './logger';
 import fastify from './server';
-import {fastifyLogger} from './logger';
 
 if (sentry.dsn) {
 	let environment: 'production' | 'development' | undefined;
@@ -22,6 +23,28 @@ if (sentry.dsn) {
 		environment,
 		release: env.env === env.Env.Dev ? undefined : `zws-${server.version}`,
 	});
+}
+
+if (google.appCredentials && google.projectId) {
+	const logger = baseLogger.withTag('google').withTag('profiler');
+
+	profiler
+		.start({
+			projectId: google.projectId,
+			serviceContext: {
+				service: 'zws',
+				version: server.version,
+			},
+			keyFilename: google.appCredentials,
+		})
+		// eslint-disable-next-line promise/prefer-await-to-then
+		.then(() => {
+			logger.info('Started');
+		})
+		// eslint-disable-next-line promise/prefer-await-to-then
+		.catch(error => {
+			logger.error(error);
+		});
 }
 
 async function main() {

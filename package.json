@@ -59,6 +59,7 @@
 		}
 	},
 	"dependencies": {
+		"@google-cloud/profiler": "4.1.3",
 		"@jonahsnider/util": "7.2.0",
 		"@prisma/client": "2.30.3",
 		"@sentry/node": "6.12.0",
