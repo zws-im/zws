@@ -39,7 +39,7 @@ if (google.appCredentials && google.projectId) {
 		})
 		// eslint-disable-next-line promise/prefer-await-to-then
 		.then(() => {
-			logger.info('Started');
+			logger.success('Started');
 		})
 		// eslint-disable-next-line promise/prefer-await-to-then
 		.catch(error => {
