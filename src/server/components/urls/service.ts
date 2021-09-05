@@ -10,7 +10,7 @@ import {UniqueShortIdTimeout} from '../../errors';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */
-const visitLogger = logger.withScope('visit');
+const visitLogger = logger.withTag('visit');
 
 /** A short ID. */
 export type Short = Opaque<string, 'Short'>;
