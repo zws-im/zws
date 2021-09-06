@@ -13,7 +13,7 @@
 		[
 			"@semantic-release/exec",
 			{
-				"prepareCmd": "yarn version ${nextRelease.version}"
+				"prepareCmd": "npm version ${nextRelease.version}"
 			}
 		],
 		[
