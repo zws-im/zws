@@ -2,7 +2,7 @@
 	"author": {
 		"email": "jonah@jonah.pw",
 		"name": "Jonah Snider",
-		"url": "https://jonah.pw"
+		"url": "https://jonahsnider.com"
 	},
 	"bugs": {
 		"url": "https://github.com/zws-im/zws/issues"
@@ -18,7 +18,6 @@
 		"prisma": "2.30.3",
 		"semantic-release": "17.4.7",
 		"semantic-release-docker": "2.2.0",
-		"ts-json-schema-generator": "0.95.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.1.0",
 		"typescript": "4.3.5",
@@ -42,8 +41,7 @@
 		"prebuild": "rm -rf tsc_output",
 		"style": "prettier --check .",
 		"start": "node .",
-		"migrations": "prisma migrate deploy",
-		"generate-schemas": "node tsc_output/src/generate-schemas"
+		"migrations": "prisma migrate deploy"
 	},
 	"version": "0.0.0-development",
 	"xo": {
@@ -55,14 +53,31 @@
 			"import/extensions": "off",
 			"unicorn/no-array-reduce": "off",
 			"unicorn/no-array-callback-reference": "off",
-			"unicorn/no-process-exit": "off"
-		}
+			"unicorn/no-process-exit": "off",
+			"import/namespace": "off",
+			"@typescript-eslint/no-redeclare": "off"
+		},
+		"overrides": [
+			{
+				"files": "./src/schemas/**/*.ts",
+				"rules": {
+					"new-cap": "off"
+				}
+			},
+			{
+				"files": "./src/server/**/*.ts",
+				"rules": {
+					"new-cap": "off"
+				}
+			}
+		]
 	},
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.3",
 		"@jonahsnider/util": "7.2.0",
 		"@prisma/client": "2.30.3",
 		"@sentry/node": "6.12.0",
+		"@sinclair/typebox": "0.20.5",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
 		"fastify": "3.20.2",

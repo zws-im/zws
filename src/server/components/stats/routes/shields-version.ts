@@ -1,15 +1,16 @@
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import ShieldsEndpointResponse from '../../../../../types/schemas/responses/ShieldsEndpointResponse';
+import {Type} from '@sinclair/typebox';
+import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {server} from '../../../../config';
+import * as Schemas from '../../../../schemas';
 
-export default function getRoute(fastify: FastifyInstance) {
+export default function getRoute() {
 	const route: RouteOptions<
 		RawServerDefault,
 		RawRequestDefaultExpression,
 		RawReplyDefaultExpression,
 		{
-			Reply: ShieldsEndpointResponse;
+			Reply: Schemas.Models.ShieldsEndpointResponse;
 		}
 	> = {
 		method: 'GET',
@@ -20,8 +21,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			description: 'Shields endpoint badge response for instance version',
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			response: {
-				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/ShieldsEndpointResponse.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				[Http.Status.Ok]: Type.Ref(Schemas.Models.ShieldsEndpointResponse),
 			},
 		},
 		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1}),

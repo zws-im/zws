@@ -1,0 +1,46 @@
+import {Static, Type} from '@sinclair/typebox';
+
+const versionRegExp = /^v\d+\.\d+\.\d+(?:-.+)?$/;
+
+const version = Type.RegEx(versionRegExp, {examples: ['2.0.0']});
+const RawStats = Type.Object({
+	// TODO: Use Type.Intersect instead of defining version twice
+	version,
+	urls: Type.Integer({minimum: 0, examples: [4321]}),
+	visits: Type.Integer({minimum: 0, examples: [4321]}),
+});
+
+type RawStats = Static<typeof RawStats>;
+
+const formattedNumberRegExp = /^\d{1,3}(?:,\d{1,3})*$/;
+
+const FormattedStats = Type.Object({
+	// TODO: Use Type.Intersect instead of defining version twice
+	version,
+	urls: Type.RegEx(formattedNumberRegExp, {examples: ['4,321']}),
+	visits: Type.RegEx(formattedNumberRegExp, {examples: ['4,321']}),
+});
+
+type FormattedStats = Static<typeof FormattedStats>;
+
+export const Stats = Type.Union([RawStats, FormattedStats], {
+	$id: 'Stats',
+	title: 'Stats',
+	description: 'Usage statistics for this instance',
+});
+export type Stats = Static<typeof Stats>;
+
+// TODO: Use Type.Intersect
+// TypeBox is bugged, see https://github.com/sinclairzx81/typebox/issues/102
+// const BaseStats = Type.Object({
+// 	version,
+// });
+// export const Stats = Type.Intersect([BaseStats, Type.Union([RawStats, FormattedStats])], {
+// 	$id: 'Stats',
+// 	title: 'Stats',
+// 	description: 'Usage statistics for this instance',
+// });
+
+// export type Stats = Static<typeof Stats>;
+
+// export type Stats = Static<typeof BaseStats> & (RawStats | FormattedStats);

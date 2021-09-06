@@ -1131,6 +1131,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sinclair/typebox@npm:0.20.5":
+  version: 0.20.5
+  resolution: "@sinclair/typebox@npm:0.20.5"
+  checksum: 774160187966b0c7b2c9aab2fc4c443cc72820fa6808211d719d9b00d8272d6183668a6de73ad21ddbb2339b3012d5c0a79a8cc3ae87b578501187b4f39fd339
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -1382,6 +1389,7 @@ __metadata:
     "@prisma/client": 2.30.3
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.12.0
+    "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
     "@types/node": 15.3.1
     cli-ux: 5.6.3
@@ -1399,7 +1407,6 @@ __metadata:
     prisma: 2.30.3
     semantic-release: 17.4.7
     semantic-release-docker: 2.2.0
-    ts-json-schema-generator: 0.95.0
     ts-node: 10.2.1
     type-fest: 2.1.0
     typescript: 4.3.5
@@ -2315,13 +2322,6 @@ __metadata:
   dependencies:
     delayed-stream: ~1.0.0
   checksum: 49fa4aeb4916567e33ea81d088f6584749fc90c7abec76fd516bf1c5aa5c79f3584b5ba3de6b86d26ddd64bae5329c4c7479343250cfe71c75bb366eae53bb7c
-  languageName: node
-  linkType: hard
-
-"commander@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "commander@npm:8.0.0"
-  checksum: 4b652188473fbc5cbacc5a95c53ed854278cb28a94bd6743c2013c00c11433fa60bdf41835b7e4fb3751ca6c8836dc9c09a68b587736dbd59a72a47a91fd5cd0
   languageName: node
   linkType: hard
 
@@ -3646,7 +3646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
+"fast-json-stable-stringify@npm:^2.0.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: b191531e36c607977e5b1c47811158733c34ccb3bfde92c44798929e9b4154884378536d26ad90dfecd32e1ffc09c545d23535ad91b3161a27ddbb8ebe0cbecb
@@ -4191,20 +4191,6 @@ __metadata:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 351d549dd90553b87c2d3f90ce11aed9e1093c74130440e7ae0592e11bbcd2ce7f0ebb8ba6bfe63aaf9b62166a7f4c80cb84490ae5d78408bb2572bf7d4ee0a6
-  languageName: node
-  linkType: hard
-
-"glob@npm:^7.1.7":
-  version: 7.1.7
-  resolution: "glob@npm:7.1.7"
-  dependencies:
-    fs.realpath: ^1.0.0
-    inflight: ^1.0.4
-    inherits: 2
-    minimatch: ^3.0.4
-    once: ^1.3.0
-    path-is-absolute: ^1.0.0
-  checksum: b61f48973bbdcf5159997b0874a2165db572b368b931135832599875919c237fc05c12984e38fe828e69aa8a921eb0e8a4997266211c517c9cfaae8a93988bb8
   languageName: node
   linkType: hard
 
@@ -5214,15 +5200,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-stable-stringify@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "json-stable-stringify@npm:1.0.1"
-  dependencies:
-    jsonify: ~0.0.0
-  checksum: 65d6cbf0fca72a4136999f65f4401cf39a129f7aeff0fdd987ac3d3423a2113659294045fb8377e6e20d865cac32b1b8d70f3d87346c9786adcee60661d96ca5
-  languageName: node
-  linkType: hard
-
 "json-stringify-nice@npm:^1.1.2":
   version: 1.1.3
   resolution: "json-stringify-nice@npm:1.1.3"
@@ -5281,13 +5258,6 @@ __metadata:
     graceful-fs:
       optional: true
   checksum: 7af3b8e1ac8fe7f1eccc6263c6ca14e1966fcbc74b618d3c78a0a2075579487547b94f72b7a1114e844a1e15bb00d440e5d1720bfc4612d790a6f285d5ea8354
-  languageName: node
-  linkType: hard
-
-"jsonify@npm:~0.0.0":
-  version: 0.0.0
-  resolution: "jsonify@npm:0.0.0"
-  checksum: d8d4ed476c116e6987a460dcb82f22284686caae9f498ac87b0502c1765ac1522f4f450a4cad4cc368d202fd3b27a3860735140a82867fc6d558f5f199c38bce
   languageName: node
   linkType: hard
 
@@ -8507,23 +8477,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-json-schema-generator@npm:0.95.0":
-  version: 0.95.0
-  resolution: "ts-json-schema-generator@npm:0.95.0"
-  dependencies:
-    "@types/json-schema": ^7.0.7
-    commander: ^8.0.0
-    fast-json-stable-stringify: ^2.1.0
-    glob: ^7.1.7
-    json-stable-stringify: ^1.0.1
-    json5: ^2.2.0
-    typescript: ~4.3.4
-  bin:
-    ts-json-schema-generator: bin/ts-json-schema-generator
-  checksum: ce2de1fd0bee716db99466deff19eb924b5a26b50bbca06b5b9f4cff4d27c49c979b2b9b239410fe3c0d69f239f14dc35fdc7b20de8090187f224e697808765f
-  languageName: node
-  linkType: hard
-
 "ts-node@npm:10.2.1":
   version: 10.2.1
   resolution: "ts-node@npm:10.2.1"
@@ -8701,7 +8654,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@4.3.5, typescript@>=4.3, typescript@^4.3.5, typescript@~4.3.4":
+"typescript@4.3.5, typescript@>=4.3, typescript@^4.3.5":
   version: 4.3.5
   resolution: "typescript@npm:4.3.5"
   bin:
@@ -8711,7 +8664,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.3.5#~builtin<compat/typescript>, typescript@patch:typescript@>=4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>, typescript@patch:typescript@~4.3.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.3.5#~builtin<compat/typescript>, typescript@patch:typescript@>=4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
   version: 4.3.5
   resolution: "typescript@patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"
   bin:

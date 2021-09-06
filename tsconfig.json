@@ -5,10 +5,9 @@
 		"outDir": "tsc_output",
 		"resolveJsonModule": true,
 		"sourceMap": true,
-		"sourceRoot": "/",
-		"lib": ["DOM"]
+		"sourceRoot": "/"
 	},
 	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node16/tsconfig.json",
-	"include": ["src", "types"]
+	"include": ["src"]
 }

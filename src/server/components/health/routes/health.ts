@@ -1,10 +1,11 @@
 import {Http} from '@jonahsnider/util';
-import {FastifyInstance, RouteOptions} from 'fastify';
+import {RouteOptions} from 'fastify';
 import {server} from '../../../../config';
 import db from '../../../../db';
+import * as Schemas from '../../../../schemas';
 import {NotHealthy} from '../../../errors';
 
-export default function getRoute(fastify: FastifyInstance) {
+export default function getRoute() {
 	const route: RouteOptions = {
 		method: 'GET',
 		url: '/health',
@@ -13,7 +14,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Health],
 			summary: 'Health check',
 			description: 'Check if the instance is healthy',
-			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/NotHealthyError.json')},
+			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: Schemas.Errors.NotHealthy},
 		},
 		handler: async (request, reply) => {
 			try {

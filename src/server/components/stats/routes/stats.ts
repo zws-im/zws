@@ -1,12 +1,17 @@
 import {Http} from '@jonahsnider/util';
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import Stats from '../../../../../types/schemas/models/Stats';
-import TotalStatsOptions from '../../../../../types/schemas/parameters/TotalStatsOptions';
+import {Type} from '@sinclair/typebox';
+import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {server} from '../../../../config';
+import * as Schemas from '../../../../schemas';
 import {stats} from '../../services';
 
-export default function getRoute(fastify: FastifyInstance) {
-	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Querystring: TotalStatsOptions; Reply: Stats}> = {
+export default function getRoute() {
+	const route: RouteOptions<
+		RawServerDefault,
+		RawRequestDefaultExpression,
+		RawReplyDefaultExpression,
+		{Querystring: Schemas.Inputs.Formatting; Reply: Schemas.Models.Stats}
+	> = {
 		method: 'GET',
 		url: '/stats',
 		schema: {
@@ -14,10 +19,9 @@ export default function getRoute(fastify: FastifyInstance) {
 			tags: [server.Tags.Stats, server.Tags.Shields],
 			summary: 'Total statistics',
 			description: 'Total usage statistics for this instance',
-			querystring: fastify.getSchema('https://zws.im/schemas/TotalStatsOptions.json'),
+			querystring: Schemas.Inputs.Formatting,
 			response: {
-				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/Stats.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				[Http.Status.Ok]: Type.Ref(Schemas.Models.Stats),
 			},
 		},
 		handler: async request => {

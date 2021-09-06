@@ -1,13 +1,19 @@
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {Http} from '@jonahsnider/util';
-import Short from '../../../../../types/schemas/models/Short';
-import UrlStats from '../../../../../types/schemas/models/UrlStats';
+import {Type} from '@sinclair/typebox';
+import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {server} from '../../../../config';
-import {urls} from '../../services';
+import * as Schemas from '../../../../schemas';
 import {UrlNotFound} from '../../../errors';
 
-export default function getRoute(fastify: FastifyInstance) {
-	const route: RouteOptions<RawServerDefault, RawRequestDefaultExpression, RawReplyDefaultExpression, {Params: Short; Reply: UrlStats}> = {
+import {urls} from '../../services';
+
+export default function getRoute() {
+	const route: RouteOptions<
+		RawServerDefault,
+		RawRequestDefaultExpression,
+		RawReplyDefaultExpression,
+		{Params: Schemas.Inputs.Short; Reply: Schemas.Models.UrlStats}
+	> = {
 		method: 'GET',
 		url: '/:short/stats',
 		schema: {
@@ -15,11 +21,10 @@ export default function getRoute(fastify: FastifyInstance) {
 			summary: 'URL stats',
 			description: 'Retrieve usage statistics for a shortened URL',
 			tags: [server.Tags.Urls, server.Tags.Stats],
-			params: fastify.getSchema('https://zws.im/schemas/Short.json'),
+			params: Type.Ref(Schemas.Inputs.Short),
 			response: {
-				[Http.Status.Ok]: fastify.getSchema('https://zws.im/schemas/UrlStats.json'),
-				[Http.Status.NotFound]: fastify.getSchema('https://zws.im/schemas/UrlNotFoundError.json'),
-				[Http.Status.InternalServerError]: fastify.getSchema('https://zws.im/schemas/Error.json'),
+				[Http.Status.Ok]: Type.Ref(Schemas.Models.UrlStats),
+				[Http.Status.NotFound]: Type.Ref(Schemas.Errors.UrlNotFound),
 			},
 		},
 		handler: async request => {

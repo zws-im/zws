@@ -1,13 +1,15 @@
 import {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
 import {author} from '../../package.json';
 import {server} from '../config';
+import {Tags} from '../config/server';
 
 const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 	openapi: '3.0.3',
 	tags: [
-		{name: 'urls', description: 'Shortened URLs'},
-		{name: 'stats', description: 'Usage statistics'},
-		{name: 'shields', description: 'Shields endpoint badges'},
+		{name: Tags.Urls, description: 'Shortened URLs'},
+		{name: Tags.Stats, description: 'Usage statistics'},
+		{name: Tags.Shields, description: 'Shields endpoint badges'},
+		{name: Tags.Health, description: 'Health checks'},
 	],
 	info: {
 		title: 'Zero Width Shortener',
