@@ -1,5 +1,5 @@
 import process from 'process';
-import profiler from '@google-cloud/profiler';
+import * as profiler from '@google-cloud/profiler';
 import * as Sentry from '@sentry/node';
 import {env, google, sentry, server} from './config';
 import baseLogger, {fastifyLogger} from './logger';
