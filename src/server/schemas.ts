@@ -9,6 +9,4 @@ export default function addSchemas(fastify: FastifyInstance): void {
 	for (const schema of routes) {
 		fastify.addSchema(schema);
 	}
-
-	console.log(fastify.getSchemas());
 }
