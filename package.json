@@ -88,5 +88,5 @@
 		"millify": "4.0.0",
 		"zod": "3.8.2"
 	},
-	"packageManager": "yarn@3.0.0"
+	"packageManager": "yarn@3.0.2"
 }
