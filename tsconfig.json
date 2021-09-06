@@ -9,5 +9,5 @@
 	},
 	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node16/tsconfig.json",
-	"include": ["src"]
+	"include": ["src", "types"]
 }
