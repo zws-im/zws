@@ -839,9 +839,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:3.0.1":
-  version: 3.0.1
-  resolution: "@prisma/client@npm:3.0.1"
+"@prisma/client@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@prisma/client@npm:3.0.2"
   dependencies:
     "@prisma/engines-version": 2.31.0-32.2452cc6313d52b8b9a96999ac0e974d0aedf88db
   peerDependencies:
@@ -849,7 +849,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 501b4cc4397451c4081c130f35b0071816c1cabb118b9acf65c4861b19c7850c5e2c97d70001d7a9a0e99bab6f7b64082da55df7906eb7becfd06b45bb0a3722
+  checksum: f72bae6cc67a8d848845669caf5c652def14fe93591651a3c4b107caefd6f20252edef712caffb32a9153d04633d950bfec6baa12edd1e17b38f4ea94c99bf9e
   languageName: node
   linkType: hard
 
@@ -1386,7 +1386,7 @@ __metadata:
   dependencies:
     "@google-cloud/profiler": 4.1.3
     "@jonahsnider/util": 7.2.0
-    "@prisma/client": 3.0.1
+    "@prisma/client": 3.0.2
     "@semantic-release/exec": 5.0.0
     "@sentry/node": 6.12.0
     "@sinclair/typebox": 0.20.5
@@ -1404,7 +1404,7 @@ __metadata:
     millify: 4.0.0
     prettier: 2.3.2
     prettier-config-xo: 2.0.0
-    prisma: 3.0.1
+    prisma: 3.0.2
     semantic-release: 17.4.7
     semantic-release-docker: 2.2.0
     ts-node: 10.2.1
@@ -7059,15 +7059,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:3.0.1":
-  version: 3.0.1
-  resolution: "prisma@npm:3.0.1"
+"prisma@npm:3.0.2":
+  version: 3.0.2
+  resolution: "prisma@npm:3.0.2"
   dependencies:
     "@prisma/engines": 2.31.0-32.2452cc6313d52b8b9a96999ac0e974d0aedf88db
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: cada072251c6abb737ab965dda6a65a474a6c4fcde03d87c76de69133f147871e4ef5dfeba7851e17284526287b7ff930368ed86e0a900e8c119f9268f637d4c
+  checksum: 916d0c190724eec13a74c8fd68f2a84fde12e841041897cfaf242050a67ae2eef8c54ad5c2823126da7d0cf21d1f8819e5ca7efef82d59271b78dfa326025299
   languageName: node
   linkType: hard
 
