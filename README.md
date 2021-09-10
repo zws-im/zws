@@ -8,7 +8,7 @@ Shorten URLs with invisible spaces.
 
 [Try it out online: zws.im](https://zws.im) (or with our [CLI](https://github.com/zws-im/cli#readme)).
 
-Or, [configure your own instance](#Self-hosting) to use any other kinds of characters.
+You could also [host your own private instance](#Self-hosting) and use any characters you'd like (a-z, emoji, etc).
 
 ## Contributors
 
