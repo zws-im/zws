@@ -68,7 +68,8 @@ We provide a template app specification YAML file to allow users to launch an in
 1. [Clone the repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 2. Copy [`db.example.env`](db.example.env) to `db.env` and fill in the values
 3. Copy [`example.env`](example.env) to `.env` and update the `DATABASE_URL` environment variable to match the values in `db.env`
-4. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
+4. Remember to change the hostname of the database container to `db` - trying to use `localhost` will not work
+5. Run [`docker-compose up -d`](https://docs.docker.com/compose/reference/up/) (this will automatically apply database migrations)
 
 ### Database migrations
 
