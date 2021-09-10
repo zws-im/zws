@@ -1,0 +1,3 @@
+{
+	"recommendations": ["prisma.prisma", "samverschueren.linter-xo", "esbenp.prettier-vscode"]
+}
