@@ -28,7 +28,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			description: 'Shorten a URL',
 			tags: [server.Tags.Urls],
 			body: Type.Ref(Schemas.Models.LongUrl),
-			security: [{'API key': ['']}],
+			security: [{[server.SecuritySchemes.ApiKey]: ['']}],
 			response: {
 				[Http.Status.Created]: Type.Ref(Schemas.Models.ShortenedUrl),
 				[Http.Status.Unauthorized]: Type.Ref(Schemas.Errors.ApiKeyError),

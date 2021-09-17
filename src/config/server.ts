@@ -33,3 +33,7 @@ export enum Tags {
 	Shields = 'shields',
 	Health = 'health',
 }
+
+export enum SecuritySchemes {
+	ApiKey = 'apiKey',
+}
