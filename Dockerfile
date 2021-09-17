@@ -14,6 +14,7 @@ COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 COPY prisma ./prisma
 COPY .yarn ./.yarn
 
+# hadolint ignore=DL3060
 RUN yarn install --immutable \
 	&& yarn prisma generate
 
