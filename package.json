@@ -78,7 +78,7 @@
 		"prettier": "2.3.2",
 		"prettier-config-xo": "2.0.0",
 		"prisma": "3.0.2",
-		"semantic-release": "17.4.7",
+		"semantic-release": "18.0.0",
 		"semantic-release-docker": "2.2.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.3.2",
