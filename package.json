@@ -57,7 +57,7 @@
 		"@google-cloud/profiler": "4.1.4",
 		"@jonahsnider/util": "8.0.1",
 		"@prisma/client": "3.0.2",
-		"@sentry/node": "6.12.0",
+		"@sentry/node": "6.13.2",
 		"@sinclair/typebox": "0.20.5",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
