@@ -971,19 +971,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/exec@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@semantic-release/exec@npm:5.0.0"
+"@semantic-release/exec@npm:6.0.1":
+  version: 6.0.1
+  resolution: "@semantic-release/exec@npm:6.0.1"
   dependencies:
     "@semantic-release/error": ^2.1.0
     aggregate-error: ^3.0.0
     debug: ^4.0.0
-    execa: ^4.0.0
+    execa: ^5.0.0
     lodash: ^4.17.4
     parse-json: ^5.0.0
   peerDependencies:
-    semantic-release: ">=16.0.0 <18.0.0"
-  checksum: 09078ed21c1f0a1f93ff095af9f5d4210db7085ec000125afb9c38520461738966bb4e62c4966ddaf9411f9e03b08f4da918ab17194050af3445e54241379660
+    semantic-release: ">=18.0.0"
+  checksum: bb84c784603023258f107652c4d195f3acf05b9e423c34b3c9d46f4495731dd59583ee9dd6b321507ae939822131b1c3dd3d703c4ada9f901caf853ab216ef54
   languageName: node
   linkType: hard
 
@@ -1394,7 +1394,7 @@ __metadata:
     "@google-cloud/profiler": 4.1.4
     "@jonahsnider/util": 8.0.1
     "@prisma/client": 3.1.1
-    "@semantic-release/exec": 5.0.0
+    "@semantic-release/exec": 6.0.1
     "@sentry/node": 6.13.2
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
