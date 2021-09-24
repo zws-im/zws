@@ -1403,7 +1403,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 4.0.0
-    fastify: 3.21.5
+    fastify: 3.21.6
     fastify-auth: 1.1.0
     fastify-bearer-auth: 6.0.0
     fastify-error: 0.3.1
@@ -3766,9 +3766,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.21.5":
-  version: 3.21.5
-  resolution: "fastify@npm:3.21.5"
+"fastify@npm:3.21.6":
+  version: 3.21.6
+  resolution: "fastify@npm:3.21.6"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3786,7 +3786,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: dca084de52c68bc8b1c02210027b6dac7d9658f3fe79998226ab47689c589bc5675dc6a5340d21eca6619cb9ca3ee0459065d1e579544dbbbdfb04ca360b9ca7
+  checksum: 5ce7a60d2f1ab3c96ffe24b1a47bf79828e712e0d290962d02560bde8f3e11ff927f846a177d17e3890bc906251aba9d6aeab08f1fbd8e7efcfce466f24af154
   languageName: node
   linkType: hard
 
