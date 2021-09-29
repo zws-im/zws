@@ -9,23 +9,11 @@
 		],
 		"@semantic-release/release-notes-generator",
 		"@semantic-release/github",
-		["@semantic-release/exec", {"prepareCmd": "docker pull zwsim/zws"}],
 		[
 			"@semantic-release/exec",
 			{
-				"prepareCmd": "npm version --git-tag-version=false ${nextRelease.version}"
-			}
-		],
-		[
-			"@semantic-release/exec",
-			{
-				"prepareCmd": "docker buildx build --load --tag zwsim/zws ."
-			}
-		],
-		[
-			"semantic-release-docker",
-			{
-				"name": "zwsim/zws"
+				"prepareCmd": "bash ./scripts/prepare.bash ${nextRelease.version}",
+				"publishCmd": "bash ./scripts/publish.bash ${nextRelease.version}"
 			}
 		]
 	]
