@@ -6,7 +6,15 @@ ENV PORT=3000
 EXPOSE 3000
 
 # hadolint ignore=DL3018
-RUN apk add --no-cache curl ca-certificates
+RUN apk add --no-cache \
+	#  Needed for healthchecks
+	curl \
+	# Needed to use Google Cloud Profiler
+	ca-certificates \
+	# Needed to use compile Prisma on arm64
+	openssl libc6-compat \
+	# Needed to compile pprof
+	python3 make g++
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 CMD curl -X GET --fail http://localhost:3000/health || exit 0
 
@@ -28,5 +36,8 @@ RUN yarn remove @semantic-release/exec @tsconfig/node16 @types/node eslint-plugi
 	&& yarn install --immutable \
 	&& yarn cache clean \
 	&& rm -rf src tsconfig.json
+
+# Remove these since they are only needed to compile dependencies
+RUN apk del openssl libc6-compat python3 make g++
 
 CMD ["node", "."]
