@@ -33,7 +33,9 @@ export default function getRoute(fastify: FastifyInstance) {
 			response: {
 				[Http.Status.Created]: Type.Ref(Schemas.Models.ShortenedUrl),
 				[Http.Status.Unauthorized]: Type.Ref(Schemas.Errors.ApiKeyError),
-				[Http.Status.UnprocessableEntity]: Schemas.Errors.ShortenHostnameError,
+				[Http.Status.UnprocessableEntity]: Type.Ref(Schemas.Errors.GenericError),
+				// TODO: fast-json-stringify is unable to handle a oneOf/anyOf for some reason, so it serializes to {}
+				// [Http.Status.UnprocessableEntity]: Schemas.Errors.ShortenHostnameError,
 				[Http.Status.ServiceUnavailable]: Schemas.Errors.UniqueShortIdTimeout,
 			},
 		},
