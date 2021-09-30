@@ -63,7 +63,7 @@
 		"dotenv": "10.0.0",
 		"fastify": "3.21.6",
 		"fastify-auth": "1.1.0",
-		"fastify-bearer-auth": "6.0.0",
+		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.1",
 		"fastify-swagger": "4.12.3",
 		"millify": "4.0.0",

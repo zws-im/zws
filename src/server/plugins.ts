@@ -25,6 +25,7 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 			fastify.register(bearerAuthPlugin, {
 				addHook: false,
 				keys: new Set([server.apiKey]),
+				// TODO: fastify-bearer-auth v6 makes this error response logic stop working
 				errorResponse: (error: Error) => {
 					switch (error.message) {
 						case 'missing authorization header':
