@@ -12,6 +12,7 @@ import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../.
 import {urls} from '../../services';
 
 const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
+const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;
 
 export default function getRoute(fastify: FastifyInstance) {
 	const route: RouteOptions<
@@ -47,7 +48,12 @@ export default function getRoute(fastify: FastifyInstance) {
 				throw new AttemptedShortenHostname();
 			}
 
-			if (blocklist.blockedHostnames.has(longUrlHostname)) {
+			if (
+				// Exact match
+				blocklist.blockedHostnames.has(longUrlHostname) ||
+				// Domain name match
+				blocklist.blockedHostnames.has(longUrlHostname.replace(domainNameRegExp, '$1'))
+			) {
 				throw new AttemptedShortenBlockedHostname();
 			}
 
