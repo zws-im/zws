@@ -61,7 +61,7 @@
 		"@sinclair/typebox": "0.20.5",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
-		"fastify": "3.21.6",
+		"fastify": "3.22.0",
 		"fastify-auth": "1.1.0",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-error": "0.3.1",
