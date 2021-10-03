@@ -15,10 +15,10 @@
 		"email": "jonah@jonah.pw",
 		"url": "https://jonahsnider.com"
 	},
-	"main": "./tsc_output/src/index.js",
+	"main": "./dist/index.js",
 	"scripts": {
-		"prebuild": "rm -rf tsc_output",
-		"build": "tsc",
+		"prebuild": "rm -rf dist",
+		"build": "swc src -d dist --source-root /",
 		"deploy": "semantic-release",
 		"lint": "xo",
 		"style": "prettier --check .",
@@ -71,6 +71,8 @@
 	},
 	"devDependencies": {
 		"@semantic-release/exec": "6.0.1",
+		"@swc/cli": "0.1.51",
+		"@swc/core": "1.2.93",
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "15.3.1",
 		"eslint-plugin-prettier": "4.0.0",

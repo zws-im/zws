@@ -189,8 +189,8 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/node,linux,macos,windows,visualstudiocode
 
-# TypeScript compiler output
-tsc_output
+# compiler output
+dist
 
 # Yarn
 .yarn/*

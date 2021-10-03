@@ -1,11 +1,7 @@
 {
 	"compilerOptions": {
-		"inlineSources": true,
 		"moduleResolution": "node",
-		"outDir": "tsc_output",
-		"resolveJsonModule": true,
-		"sourceMap": true,
-		"sourceRoot": "/"
+		"resolveJsonModule": true
 	},
 	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node16/tsconfig.json",
