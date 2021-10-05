@@ -35,7 +35,7 @@ RUN yarn build
 RUN yarn remove @semantic-release/exec @tsconfig/node16 @types/node eslint-plugin-prettier prettier prettier-config-xo semantic-release ts-node type-fest typescript xo \
 	&& yarn install --immutable \
 	&& yarn cache clean \
-	&& rm -rf src tsconfig.json
+	&& rm -rf src types tsconfig.json
 
 # Remove these since they are only needed to compile dependencies
 RUN apk del openssl libc6-compat python3 make g++
