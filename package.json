@@ -74,14 +74,14 @@
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "15.3.1",
 		"eslint-plugin-prettier": "4.0.0",
-		"prettier": "2.3.2",
+		"prettier": "2.4.1",
 		"prettier-config-xo": "2.0.0",
 		"prisma": "3.2.0",
 		"semantic-release": "18.0.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.3.4",
-		"typescript": "4.3.5",
-		"xo": "0.44.0"
+		"typescript": "4.4.3",
+		"xo": "0.45.0"
 	},
 	"engines": {
 		"node": "15.x || 16.x"
