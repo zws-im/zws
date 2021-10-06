@@ -56,7 +56,7 @@
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.4",
 		"@jonahsnider/util": "8.0.1",
-		"@prisma/client": "3.1.1",
+		"@prisma/client": "3.2.0",
 		"@sentry/node": "6.13.2",
 		"@sinclair/typebox": "0.20.5",
 		"consola": "2.15.3",
@@ -76,7 +76,7 @@
 		"eslint-plugin-prettier": "4.0.0",
 		"prettier": "2.3.2",
 		"prettier-config-xo": "2.0.0",
-		"prisma": "3.1.1",
+		"prisma": "3.2.0",
 		"semantic-release": "18.0.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.3.4",
