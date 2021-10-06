@@ -1,5 +1,4 @@
-// eslint-disable-next-line node/prefer-global/url
-import {URL} from 'url';
+import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';

@@ -1,5 +1,6 @@
 import {Static, Type} from '@sinclair/typebox';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const NotHealthy = Type.Object(
 	{
 		statusCode: Type.Literal(500),

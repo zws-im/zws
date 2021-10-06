@@ -25,34 +25,6 @@
 		"start": "node .",
 		"migrations": "prisma migrate deploy"
 	},
-	"xo": {
-		"overrides": [
-			{
-				"files": "./src/schemas/**/*.ts",
-				"rules": {
-					"new-cap": "off"
-				}
-			},
-			{
-				"files": "./src/server/**/*.ts",
-				"rules": {
-					"new-cap": "off"
-				}
-			}
-		],
-		"prettier": true,
-		"rules": {
-			"prettier/prettier": "off",
-			"unicorn/prefer-node-protocol": "off",
-			"unicorn/filename-case": "off",
-			"import/extensions": "off",
-			"unicorn/no-array-reduce": "off",
-			"unicorn/no-array-callback-reference": "off",
-			"unicorn/no-process-exit": "off",
-			"import/namespace": "off",
-			"@typescript-eslint/no-redeclare": "off"
-		}
-	},
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.4",
 		"@jonahsnider/util": "8.0.1",
@@ -70,21 +42,22 @@
 		"zod": "3.9.8"
 	},
 	"devDependencies": {
+		"@jonahsnider/prettier-config": "1.0.0",
+		"@jonahsnider/xo-config": "1.0.0",
 		"@semantic-release/exec": "6.0.1",
 		"@tsconfig/node16": "1.0.2",
-		"@types/node": "15.3.1",
+		"@types/node": "16.10.3",
 		"eslint-plugin-prettier": "4.0.0",
-		"prettier": "2.3.2",
-		"prettier-config-xo": "2.0.0",
+		"prettier": "2.4.1",
 		"prisma": "3.2.0",
 		"semantic-release": "18.0.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.3.4",
-		"typescript": "4.3.5",
-		"xo": "0.44.0"
+		"typescript": "4.4.3",
+		"xo": "0.45.0"
 	},
 	"engines": {
-		"node": "15.x || 16.x"
+		"node": "16.x"
 	},
 	"packageManager": "yarn@3.0.2"
 }

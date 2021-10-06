@@ -1,4 +1,4 @@
-import {Buffer} from 'buffer';
+import {Buffer} from 'node:buffer';
 import {multiReplace, sample} from '@jonahsnider/util';
 import {ShortenedUrl} from '@prisma/client';
 import * as Sentry from '@sentry/node';

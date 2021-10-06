@@ -1,4 +1,4 @@
-import process from 'process';
+import process from 'node:process';
 import {z} from 'zod';
 
 const dsnSchema = z.string().nullable().optional().default(null);

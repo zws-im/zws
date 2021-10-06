@@ -1,6 +1,5 @@
-// eslint-disable-next-line node/prefer-global/url
-import {URL} from 'url';
-import process from 'process';
+import {URL} from 'node:url';
+import process from 'node:process';
 import {z} from 'zod';
 import {version} from '../../package.json';
 
