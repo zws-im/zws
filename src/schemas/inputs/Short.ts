@@ -1,5 +1,6 @@
 import {Static, Type} from '@sinclair/typebox';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Short = Type.Object(
 	{
 		short: Type.String({description: 'The short ID.'}),

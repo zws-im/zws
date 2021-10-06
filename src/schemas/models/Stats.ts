@@ -3,6 +3,7 @@ import {Static, Type} from '@sinclair/typebox';
 const versionRegExp = /^v\d+\.\d+\.\d+(?:-.+)?$/;
 
 const version = Type.RegEx(versionRegExp, {examples: ['2.0.0']});
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const RawStats = Type.Object({
 	// TODO: Use Type.Intersect instead of defining version twice
 	version,
@@ -14,6 +15,7 @@ type RawStats = Static<typeof RawStats>;
 
 const formattedNumberRegExp = /^\d{1,3}(?:,\d{1,3})*$/;
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const FormattedStats = Type.Object({
 	// TODO: Use Type.Intersect instead of defining version twice
 	version,
@@ -23,6 +25,7 @@ const FormattedStats = Type.Object({
 
 type FormattedStats = Static<typeof FormattedStats>;
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Stats = Type.Union([RawStats, FormattedStats], {
 	$id: 'Stats',
 	title: 'Stats',

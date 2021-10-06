@@ -404,10 +404,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/prettier-config@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@jonahsnider/prettier-config@npm:1.0.0"
+  dependencies:
+    "@types/prettier": 2.4.1
+    prettier-config-xo: 2.0.0
+  checksum: 822e4125ac303058ea8c0735eef87e4e8a2bbc5f1bd1e486edf15bcabeba46db7f0316c7af753b61961228fecb6611e8c299ffdf02ae5312f3b2291ae790634d
+  languageName: node
+  linkType: hard
+
 "@jonahsnider/util@npm:8.0.1":
   version: 8.0.1
   resolution: "@jonahsnider/util@npm:8.0.1"
   checksum: 01e4295e8ef2e70e5b91891d039290e75cc7621e9d3de382f639d22fd371569f743cd24364f3ecf64d95fa439b5ece28ebce2bf351cf1c1ffd56f26681fb2482
+  languageName: node
+  linkType: hard
+
+"@jonahsnider/xo-config@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@jonahsnider/xo-config@npm:1.0.0"
+  checksum: 0a1f3b60228224359d5994ff804dddddad341bcbceb4aaa1dcf2d3addcd7c051d16ee14af834d6442cade492a462496f424c2edb9cb97d81d0952647f94f426a
   languageName: node
   linkType: hard
 
@@ -1159,10 +1176,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:15.3.1":
-  version: 15.3.1
-  resolution: "@types/node@npm:15.3.1"
-  checksum: b62091a7228a5725f257b113508661e92bd4da43626de1e6da8a73842f08cdbce61a7dd72204a0e153a70b6756ca61aaf30481e2e69e760da5e9290595484501
+"@types/node@npm:16.10.3":
+  version: 16.10.3
+  resolution: "@types/node@npm:16.10.3"
+  checksum: 3fd429bce8a4acb497dcc62b536782a5e87ccf7cd91d64a78b263ae5d66cb72bf84be9eeeff6f84ae0567b065a40b267caa66d311f9e094990a5847bbd168a29
   languageName: node
   linkType: hard
 
@@ -1184,6 +1201,13 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: fd6bce2b674b6efc3db4c7c3d336bd70c90838e8439de639b909ce22f3720d21344f52427f1d9e57b265fcb7f6c018699b99e5e0c208a1a4823014269a6bf35b
+  languageName: node
+  linkType: hard
+
+"@types/prettier@npm:2.4.1":
+  version: 2.4.1
+  resolution: "@types/prettier@npm:2.4.1"
+  checksum: df330c2d6fe7c282839b0f17701e069a9c6c96d2ff54704e933a1b3c1b98844d963a7cb00c5629d173604892ceee802312bbaeb8a97f5da21e13db8f653b519e
   languageName: node
   linkType: hard
 
@@ -1306,13 +1330,15 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@google-cloud/profiler": 4.1.4
+    "@jonahsnider/prettier-config": 1.0.0
     "@jonahsnider/util": 8.0.1
+    "@jonahsnider/xo-config": 1.0.0
     "@prisma/client": 3.2.0
     "@semantic-release/exec": 6.0.1
     "@sentry/node": 6.13.2
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
-    "@types/node": 15.3.1
+    "@types/node": 16.10.3
     consola: 2.15.3
     dotenv: 10.0.0
     eslint-plugin-prettier: 4.0.0
@@ -1323,7 +1349,6 @@ __metadata:
     fastify-swagger: 4.12.4
     millify: 4.0.0
     prettier: 2.4.1
-    prettier-config-xo: 2.0.0
     prisma: 3.2.0
     semantic-release: 18.0.0
     ts-node: 10.2.1

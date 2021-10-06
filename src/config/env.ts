@@ -1,4 +1,4 @@
-import process from 'process';
+import process from 'node:process';
 
 export enum Env {
 	Prod,

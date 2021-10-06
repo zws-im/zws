@@ -1,4 +1,4 @@
-import process from 'process';
+import process from 'node:process';
 import * as Sentry from '@sentry/node';
 import {FastifyInstance} from 'fastify';
 import {env, sentry, server} from '../config';
@@ -59,6 +59,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 		Sentry.addBreadcrumb({
 			category: sentry.BreadcrumbCategory.Request,
 			message: requestName,
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			data: {...requestContext, request_id: request.id as string},
 		});
 
@@ -80,6 +81,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			const fastifyLogger = baseFastifyLogger.withTag(request.id as string);
 
 			fastifyLogger.error(error);
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			Sentry.captureException(error, {tags: {request_id: request.id as string}, user: {ip_address: '{{auto}}'}});
 		}
 	});
