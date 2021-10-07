@@ -26,7 +26,7 @@
 		"migrations": "prisma migrate deploy"
 	},
 	"dependencies": {
-		"@google-cloud/profiler": "4.1.4",
+		"@google-cloud/profiler": "4.1.5",
 		"@jonahsnider/util": "8.0.1",
 		"@prisma/client": "3.2.0",
 		"@sentry/node": "6.13.2",

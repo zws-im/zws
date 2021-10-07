@@ -351,9 +351,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/profiler@npm:4.1.4":
-  version: 4.1.4
-  resolution: "@google-cloud/profiler@npm:4.1.4"
+"@google-cloud/profiler@npm:4.1.5":
+  version: 4.1.5
+  resolution: "@google-cloud/profiler@npm:4.1.5"
   dependencies:
     "@google-cloud/common": ^3.0.0
     "@types/console-log-level": ^1.4.0
@@ -368,7 +368,7 @@ __metadata:
     protobufjs: ~6.11.0
     semver: ^7.0.0
     teeny-request: ^7.0.0
-  checksum: b261cd5b5b5127d23b943ff55605488ec1171af0d921a8f8668b423ce48db9310aa66c45c1dc77bf862a4ab240b90c9377226e03ffa4dbbf22cbebd81045a5a5
+  checksum: 36c2160ac721c4f9c65b5210c4e2035c3d0e35ef87cc4184292ab465548376e0ac7d60cbb8a4733ed6602d9f0333c12c8be3f9464581a8c7538f5f45bea9ae69
   languageName: node
   linkType: hard
 
@@ -1329,7 +1329,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@google-cloud/profiler": 4.1.4
+    "@google-cloud/profiler": 4.1.5
     "@jonahsnider/prettier-config": 1.0.0
     "@jonahsnider/util": 8.0.1
     "@jonahsnider/xo-config": 1.0.0
