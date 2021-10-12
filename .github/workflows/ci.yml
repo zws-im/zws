@@ -3,6 +3,17 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  docker-build:
+    name: Build Docker image
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        # run: docker buildx build --pull --tag zwsim/zws:latest --tag zwsim/zws:$NEXT_VERSION --platform linux/amd64,linux/arm64 .
+        run: docker buildx build --pull --tag zwsim/zws:latest --tag zwsim/zws:$NEXT_VERSION --platform linux/amd64 .
   build:
     name: Build
 
@@ -141,7 +152,7 @@ jobs:
     # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
     if: ${{ github.ref  == 'refs/heads/main' }}
 
-    needs: [build, lint, lint-dockerfile, validate-prisma]
+    needs: [build, docker-build, lint, lint-dockerfile, validate-prisma]
 
     steps:
       - name: Checkout git repository
