@@ -3,9 +3,9 @@ import {Static, Type} from '@sinclair/typebox';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const GenericError = Type.Object(
 	{
-		statusCode: Type.Integer({minimum: 400, maximum: 599, examples: [500]}),
+		statusCode: Type.Integer({minimum: 400, maximum: 599, example: 500}),
 		code: Type.Optional(Type.String()),
-		error: Type.String({examples: ['Internal Server Error']}),
+		error: Type.String({example: 'Internal Server Error'}),
 		message: Type.String(),
 	},
 	{
