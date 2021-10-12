@@ -49,10 +49,8 @@ export default function getRoute() {
 					throw new UrlBlocked();
 				}
 
-				const userAgent = request.headers['user-agent']?.toLowerCase();
-				const redirect = userAgent?.includes('discord') || userAgent?.endsWith('firefox/38.0') ? Http.Status.Found : Http.Status.PermanentRedirect;
 				// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
-				void reply.redirect(redirect, encodeURI(url.longUrl));
+				void reply.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
 			} else {
 				return {url: url.longUrl};
 			}
