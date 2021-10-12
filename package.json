@@ -21,9 +21,9 @@
 		"build": "tsc",
 		"deploy": "semantic-release",
 		"lint": "xo",
-		"style": "prettier --check .",
+		"migrations": "prisma migrate deploy",
 		"start": "node .",
-		"migrations": "prisma migrate deploy"
+		"style": "prettier --check ."
 	},
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.5",
@@ -39,6 +39,7 @@
 		"fastify-error": "0.3.1",
 		"fastify-swagger": "4.12.4",
 		"millify": "4.0.0",
+		"prisma": "3.2.1",
 		"tslib": "2.3.1",
 		"zod": "3.9.8"
 	},
@@ -48,9 +49,7 @@
 		"@semantic-release/exec": "6.0.1",
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "16.10.3",
-		"eslint-plugin-prettier": "4.0.0",
 		"prettier": "2.4.1",
-		"prisma": "3.2.1",
 		"semantic-release": "18.0.0",
 		"ts-node": "10.2.1",
 		"type-fest": "2.3.4",

@@ -32,7 +32,7 @@ COPY types ./types
 RUN yarn build
 
 # Remove devDependencies manually, Yarn 2 doesn't support skipping them (see https://yarnpkg.com/configuration/manifest#devDependencies)
-RUN yarn remove @semantic-release/exec @tsconfig/node16 @types/node eslint-plugin-prettier prettier prettier-config-xo semantic-release ts-node type-fest typescript xo \
+RUN yarn remove @jonahsnider/prettier-config @jonahsnider/xo-config @semantic-release/exec @tsconfig/node16 @types/node prettier semantic-release ts-node type-fest typescript xo \
 	&& yarn install --immutable \
 	&& yarn cache clean \
 	&& rm -rf src types tsconfig.json

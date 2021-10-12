@@ -1341,7 +1341,6 @@ __metadata:
     "@types/node": 16.10.3
     consola: 2.15.3
     dotenv: 10.0.0
-    eslint-plugin-prettier: 4.0.0
     fastify: 3.22.0
     fastify-auth: 1.1.0
     fastify-bearer-auth: 5.1.0
@@ -3102,7 +3101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:4.0.0, eslint-plugin-prettier@npm:^4.0.0":
+"eslint-plugin-prettier@npm:^4.0.0":
   version: 4.0.0
   resolution: "eslint-plugin-prettier@npm:4.0.0"
   dependencies:
