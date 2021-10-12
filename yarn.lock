@@ -1352,6 +1352,7 @@ __metadata:
     prisma: 3.2.1
     semantic-release: 18.0.0
     ts-node: 10.2.1
+    tslib: 2.3.1
     type-fest: 2.3.4
     typescript: 4.4.3
     xo: 0.45.0
@@ -8290,6 +8291,13 @@ __metadata:
     minimist: ^1.2.0
     strip-bom: ^3.0.0
   checksum: e14aaa6883f316d611db41cbb0fc8779b59c66b31d1e045565ad4540c77ccd3d2bb66f7c261b74ff535d3cc6b4a1ce21dc84774bf2a2a603ed6b0fb96f7e0cc7
+  languageName: node
+  linkType: hard
+
+"tslib@npm:2.3.1":
+  version: 2.3.1
+  resolution: "tslib@npm:2.3.1"
+  checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
   languageName: node
   linkType: hard
 

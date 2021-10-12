@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"importHelpers": true,
 		"inlineSources": true,
 		"moduleResolution": "node",
 		"outDir": "tsc_output",
