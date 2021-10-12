@@ -414,10 +414,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@jonahsnider/util@npm:8.0.1"
-  checksum: 01e4295e8ef2e70e5b91891d039290e75cc7621e9d3de382f639d22fd371569f743cd24364f3ecf64d95fa439b5ece28ebce2bf351cf1c1ffd56f26681fb2482
+"@jonahsnider/util@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@jonahsnider/util@npm:8.1.1"
+  checksum: d2a385d2538ff7b9702ceb04e6afc724a37d882392df69afaea7e066a6345617aa58f453e598afdea491e7397cfae2779c1497bfc39ff1500edefc6adef03ea9
   languageName: node
   linkType: hard
 
@@ -1331,7 +1331,7 @@ __metadata:
   dependencies:
     "@google-cloud/profiler": 4.1.5
     "@jonahsnider/prettier-config": 1.0.0
-    "@jonahsnider/util": 8.0.1
+    "@jonahsnider/util": 8.1.1
     "@jonahsnider/xo-config": 1.0.0
     "@prisma/client": 3.2.1
     "@semantic-release/exec": 6.0.1
