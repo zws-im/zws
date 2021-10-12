@@ -1,6 +1,6 @@
 import {Buffer} from 'node:buffer';
 import {multiReplace, sample} from '@jonahsnider/util';
-import {ShortenedUrl} from '@prisma/client';
+import {ShortenedUrl, ApproximateCountKind} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {Opaque} from 'type-fest';
 import {characters} from '../../../config';
@@ -78,11 +78,15 @@ export async function visit(id: Short, track: boolean): Promise<VisitUrlData | n
 		// Only track URLs if they aren't blocked
 		// This is because we know that a blocked URL won't be sent to clients if they are visiting it
 
-		// eslint-disable-next-line promise/prefer-await-to-then
-		db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}).catch(error => {
-			Sentry.captureException(error);
-			visitLogger.error('Failed to create visit', error);
-		});
+		db.$transaction([
+			db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}),
+			db.approximateCounts.update({where: {kind: ApproximateCountKind.VISITS}, data: {count: {increment: 1}}}),
+		])
+			// eslint-disable-next-line promise/prefer-await-to-then
+			.catch(error => {
+				Sentry.captureException(error);
+				visitLogger.error('Failed to create visit', error);
+			});
 	}
 
 	return {longUrl: shortenedUrl.url, blocked: shortenedUrl.blocked};
@@ -120,7 +124,7 @@ export async function stats(id: Short): Promise<null | Stats> {
 export async function shorten(url: string): Promise<Short> {
 	let attempts = 0;
 	let created: ShortenedUrl | null = null;
-	let id: string;
+	let id: Short;
 
 	do {
 		if (attempts++ > maxGenerationAttempts) {
@@ -132,9 +136,12 @@ export async function shorten(url: string): Promise<Short> {
 
 		try {
 			// eslint-disable-next-line no-await-in-loop
-			created = await db.shortenedUrl.create({data: {url, shortBase64}});
+			[created] = await db.$transaction([
+				db.shortenedUrl.create({data: {url, shortBase64}}),
+				db.approximateCounts.update({where: {kind: ApproximateCountKind.SHORTENED_URLS}, data: {count: {increment: 1}}}),
+			]);
 		} catch {}
 	} while (!created);
 
-	return id as Short;
+	return id;
 }

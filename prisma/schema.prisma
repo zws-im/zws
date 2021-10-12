@@ -35,3 +35,18 @@ model Visit {
   @@index([shortenedUrlId])
   @@map("visits")
 }
+
+enum ApproximateCountKind {
+  SHORTENED_URLS  @map("shortened_urls")
+  VISITS          @map("visits")
+}
+
+model ApproximateCounts {
+  kind      ApproximateCountKind @id
+  /// The count for this kind
+  count     Int                  @default(0)
+  /// Currently unused
+  updatedAt DateTime             @default(now()) @updatedAt @map("updated_at")
+
+  @@map("approximate_counts")
+}

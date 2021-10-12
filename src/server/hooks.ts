@@ -4,6 +4,7 @@ import {FastifyInstance} from 'fastify';
 import {env, sentry, server} from '../config';
 import db from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
+import {stats} from './components/services';
 
 const baseRequestLogger = baseFastifyLogger.withTag('request');
 
@@ -37,6 +38,9 @@ export default function addHooks(fastify: FastifyInstance): void {
 
 			process.exit(1);
 		}
+
+		// Periodically update stats with the precise counts
+		await stats.savePreciseInstanceStats();
 	});
 
 	fastify.addHook('onClose', async () => db.$disconnect());
