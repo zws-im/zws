@@ -14,8 +14,10 @@ jobs:
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
+        with:
+          install: true
       - name: Pull latest image
-        run: docker buildx
+        run: docker pull zwsim/zws:latest
       - name: Build Docker image
         # run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64,linux/arm64 .
         run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64 .
