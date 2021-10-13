@@ -1352,7 +1352,7 @@ __metadata:
     semantic-release: 18.0.0
     ts-node: 10.3.0
     tslib: 2.3.1
-    type-fest: 2.3.4
+    type-fest: 2.5.0
     typescript: 4.4.3
     xo: 0.45.0
     zod: 3.9.8
@@ -8343,10 +8343,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:2.3.4":
-  version: 2.3.4
-  resolution: "type-fest@npm:2.3.4"
-  checksum: 95b5930587f52d467aacc88db0a39e947b2913d896bc382c1a43a0bba78624774c1725448ab5c0161e02ed9ac496cb351486b42a407158b40e7f3aee282d5b69
+"type-fest@npm:2.5.0":
+  version: 2.5.0
+  resolution: "type-fest@npm:2.5.0"
+  checksum: 25fc675e276c8acec915c3166a07aea2f2e74b8c6b55a977ffa36477ff686309ba36a818cef48d03c66c8e1b8618d4a15bd00fc53bc4d571238ed4512cabb25e
   languageName: node
   linkType: hard
 
