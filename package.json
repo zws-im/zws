@@ -44,7 +44,7 @@
 		"zod": "3.9.8"
 	},
 	"devDependencies": {
-		"@jonahsnider/prettier-config": "1.0.0",
+		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/xo-config": "1.0.0",
 		"@semantic-release/exec": "6.0.1",
 		"@tsconfig/node16": "1.0.2",
