@@ -404,13 +404,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/prettier-config@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@jonahsnider/prettier-config@npm:1.0.0"
+"@jonahsnider/prettier-config@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@jonahsnider/prettier-config@npm:1.1.0"
   dependencies:
     "@types/prettier": 2.4.1
     prettier-config-xo: 2.0.0
-  checksum: 822e4125ac303058ea8c0735eef87e4e8a2bbc5f1bd1e486edf15bcabeba46db7f0316c7af753b61961228fecb6611e8c299ffdf02ae5312f3b2291ae790634d
+  checksum: 7ff95794438cb2c7f4f794812d2933cd4f7e6958f017452f0ed4aae9ebccab25fc2fefa3a11986f7fa1cb61db2363eaecd59c2f67ac863fade63d643775ce874
   languageName: node
   linkType: hard
 
@@ -1330,7 +1330,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@google-cloud/profiler": 4.1.5
-    "@jonahsnider/prettier-config": 1.0.0
+    "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 8.1.1
     "@jonahsnider/xo-config": 1.0.0
     "@prisma/client": 3.2.1
