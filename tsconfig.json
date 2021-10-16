@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"importHelpers": true,
 		"inlineSources": true,
-		"moduleResolution": "node",
+		"module": "ESNext",
+		"moduleResolution": "Node",
 		"outDir": "tsc_output",
 		"resolveJsonModule": true,
 		"sourceMap": true,

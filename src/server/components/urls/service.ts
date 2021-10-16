@@ -1,13 +1,16 @@
-import {Buffer} from 'node:buffer';
 import {multiReplace, sample} from '@jonahsnider/util';
 import type {ShortenedUrl} from '@prisma/client';
-import {ApproximateCountKind} from '@prisma/client';
+import PrismaClientPackage from '@prisma/client';
 import * as Sentry from '@sentry/node';
+import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {characters} from '../../../config/index.js';
 import db from '../../../db.js';
 import baseLogger from '../../../logger.js';
 import {UniqueShortIdTimeout} from '../../errors.js';
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const {ApproximateCountKind} = PrismaClientPackage;
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */

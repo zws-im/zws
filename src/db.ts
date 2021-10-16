@@ -1,8 +1,11 @@
 import type {Prisma} from '@prisma/client';
-import {PrismaClient} from '@prisma/client';
+import PrismaPackage from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {dbLogger} from './logger.js';
 import {sentry} from './config/index.js';
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const {PrismaClient} = PrismaPackage;
 
 const db = new PrismaClient({
 	log: [

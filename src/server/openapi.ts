@@ -1,5 +1,5 @@
 import type {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
-import {author} from '../../package.json';
+import pkg from '../../package.json';
 import {server} from '../config/index.js';
 import {SecuritySchemes, Tags} from '../config/server.js';
 
@@ -16,7 +16,7 @@ const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 		version: server.version,
 		description: 'Shorten URLs with invisible spaces.',
 		license: {name: 'Apache 2.0', url: 'https://www.apache.org/licenses/LICENSE-2.0.html'},
-		contact: author,
+		contact: pkg.author,
 	},
 	servers: [{url: 'https://api.zws.im', description: 'Production'}],
 	components: {

@@ -1,7 +1,9 @@
 import {URL} from 'node:url';
 import process from 'node:process';
 import {z} from 'zod';
-import {version} from '../../package.json';
+import pkg from '../../package.json';
+
+export const {version} = pkg;
 
 const portSchema = z.number().int().positive().default(3000);
 const portParser = z
@@ -19,8 +21,6 @@ export const shortenedBaseUrl: URL | null = parsedShortenedBaseUrl ? new URL(par
 
 const apiKeySchema = z.string().nullable().optional().default(null);
 export const apiKey: string | null = apiKeySchema.parse(process.env.API_KEY);
-
-export {version} from '../../package.json';
 
 type UserAgent = `${string}/${string} (${string})`;
 

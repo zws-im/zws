@@ -15,6 +15,7 @@
 		"email": "jonah@jonah.pw",
 		"url": "https://jonahsnider.com"
 	},
+	"type": "module",
 	"main": "./tsc_output/src/index.js",
 	"scripts": {
 		"prebuild": "rm -rf tsc_output",
@@ -22,7 +23,7 @@
 		"deploy": "semantic-release",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
-		"start": "node .",
+		"start": "node --experimental-json-modules .",
 		"style": "prettier --check ."
 	},
 	"dependencies": {
