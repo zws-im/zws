@@ -1,4 +1,5 @@
-import {BasicReporter, ConsolaOptions, LogLevel} from 'consola';
+import type {ConsolaOptions} from 'consola';
+import {BasicReporter, LogLevel} from 'consola';
 import * as env from './env';
 
 export const consolaOptions: ConsolaOptions = {

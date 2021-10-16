@@ -1,6 +1,6 @@
 import process from 'node:process';
 import * as Sentry from '@sentry/node';
-import {FastifyInstance} from 'fastify';
+import type {FastifyInstance} from 'fastify';
 import {env, sentry, server} from '../config';
 import db from '../db';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';

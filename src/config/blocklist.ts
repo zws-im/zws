@@ -1,5 +1,5 @@
 import process from 'node:process';
-import {JsonValue} from 'type-fest';
+import type {JsonValue} from 'type-fest';
 import {z} from 'zod';
 
 const blockedHostnamesSchema = z.array(z.string().min(1)).default([]);

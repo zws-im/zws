@@ -1,4 +1,5 @@
-import {Prisma, PrismaClient} from '@prisma/client';
+import type {Prisma} from '@prisma/client';
+import {PrismaClient} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import {dbLogger} from './logger';
 import {sentry} from './config';

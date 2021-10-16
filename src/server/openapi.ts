@@ -1,4 +1,4 @@
-import {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
+import type {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
 import {author} from '../../package.json';
 import {server} from '../config';
 import {SecuritySchemes, Tags} from '../config/server';

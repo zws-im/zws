@@ -1,4 +1,4 @@
-import {FastifyInstance} from 'fastify';
+import type {FastifyInstance} from 'fastify';
 import authPlugin from 'fastify-auth';
 import bearerAuthPlugin from 'fastify-bearer-auth';
 import swaggerPlugin from 'fastify-swagger';

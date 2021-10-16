@@ -1,4 +1,5 @@
-import createServer, {RouteOptions} from 'fastify';
+import type {RouteOptions} from 'fastify';
+import createServer from 'fastify';
 import {fastifyLogger} from '../logger';
 import routes from './components/routes';
 import registerHooks from './hooks';

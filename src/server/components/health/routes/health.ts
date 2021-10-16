@@ -1,5 +1,5 @@
 import {Http} from '@jonahsnider/util';
-import {RouteOptions} from 'fastify';
+import type {RouteOptions} from 'fastify';
 import {server} from '../../../../config';
 import db from '../../../../db';
 import * as Schemas from '../../../../schemas';

@@ -1,7 +1,7 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
-import {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import type {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import {blocklist, server} from '../../../../config';
 import {fastifyLogger} from '../../../../logger';
 
