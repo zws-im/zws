@@ -2,13 +2,13 @@ import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {blocklist, server} from '../../../../config';
-import {fastifyLogger} from '../../../../logger';
+import {blocklist, server} from '../../../../config/index.js';
+import {fastifyLogger} from '../../../../logger.js';
 
-import * as Schemas from '../../../../schemas';
+import * as Schemas from '../../../../schemas/index.js';
 
-import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors';
-import {urls} from '../../services';
+import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors.js';
+import {urls} from '../../services.js';
 
 const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;

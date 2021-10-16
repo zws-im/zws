@@ -1,3 +1,3 @@
-export * as Errors from './errors';
-export * as Inputs from './inputs';
-export * as Models from './models';
+export * as Errors from './errors/index.js';
+export * as Inputs from './inputs/index.js';
+export * as Models from './models/index.js';

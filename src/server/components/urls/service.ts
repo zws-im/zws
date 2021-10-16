@@ -4,10 +4,10 @@ import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind} from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import type {Opaque} from 'type-fest';
-import {characters} from '../../../config';
-import db from '../../../db';
-import baseLogger from '../../../logger';
-import {UniqueShortIdTimeout} from '../../errors';
+import {characters} from '../../../config/index.js';
+import db from '../../../db.js';
+import baseLogger from '../../../logger.js';
+import {UniqueShortIdTimeout} from '../../errors.js';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */

@@ -1,1 +1,1 @@
-export {default as health} from './health';
+export {default as health} from './health.js';

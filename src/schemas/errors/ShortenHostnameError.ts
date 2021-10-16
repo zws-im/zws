@@ -1,7 +1,7 @@
 import type {Static} from '@sinclair/typebox';
 import {Type} from '@sinclair/typebox';
-import {AttemptedShortenBlockedHostname} from './AttemptedShortenBlockedHostname';
-import {AttemptedShortenHostname} from './AttemptedShortenHostname';
+import {AttemptedShortenBlockedHostname} from './AttemptedShortenBlockedHostname.js';
+import {AttemptedShortenHostname} from './AttemptedShortenHostname.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ShortenHostnameError = Type.Union([AttemptedShortenBlockedHostname, AttemptedShortenHostname], {

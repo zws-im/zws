@@ -1,9 +1,9 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
-import {server} from '../../../../config';
-import db from '../../../../db';
-import * as Schemas from '../../../../schemas';
-import {NotHealthy} from '../../../errors';
+import {server} from '../../../../config/index.js';
+import db from '../../../../db.js';
+import * as Schemas from '../../../../schemas/index.js';
+import {NotHealthy} from '../../../errors.js';
 
 export default function getRoute() {
 	const route: RouteOptions = {

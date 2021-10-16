@@ -1,10 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config';
-import * as Schemas from '../../../../schemas';
+import {server} from '../../../../config/index.js';
+import * as Schemas from '../../../../schemas/index.js';
 
-import {stats} from '../../services';
+import {stats} from '../../services.js';
 
 export default function getRoute() {
 	const route: RouteOptions<
