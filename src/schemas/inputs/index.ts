@@ -1,3 +1,3 @@
-export * from './Short';
-export * from './TotalStats';
-export * from './Visit';
+export * from './Short.js';
+export * from './TotalStats.js';
+export * from './Visit.js';

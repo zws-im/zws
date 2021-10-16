@@ -1,5 +1,5 @@
 import consola from 'consola';
-import * as logger from './config/logger';
+import * as logger from './config/logger.js';
 
 const baseLogger = consola.create(logger.consolaOptions);
 

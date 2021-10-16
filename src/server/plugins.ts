@@ -1,11 +1,11 @@
-import {FastifyInstance} from 'fastify';
+import type {FastifyInstance} from 'fastify';
 import authPlugin from 'fastify-auth';
 import bearerAuthPlugin from 'fastify-bearer-auth';
 import swaggerPlugin from 'fastify-swagger';
-import {server} from '../config';
-import {configLogger} from '../logger';
-import {IncorrectApiKey, MissingApiKey} from './errors';
-import openapi from './openapi';
+import {server} from '../config/index.js';
+import {configLogger} from '../logger.js';
+import {IncorrectApiKey, MissingApiKey} from './errors.js';
+import openapi from './openapi.js';
 
 export default async function registerPlugins(fastify: FastifyInstance): Promise<void> {
 	const plugins = [

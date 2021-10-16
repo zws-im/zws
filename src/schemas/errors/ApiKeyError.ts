@@ -1,6 +1,7 @@
-import {Static, Type} from '@sinclair/typebox';
-import {IncorrectApiKey} from './IncorrectApiKey';
-import {MissingApiKey} from './MissingApiKey';
+import type {Static} from '@sinclair/typebox';
+import {Type} from '@sinclair/typebox';
+import {IncorrectApiKey} from './IncorrectApiKey.js';
+import {MissingApiKey} from './MissingApiKey.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ApiKeyError = Type.Union([IncorrectApiKey, MissingApiKey], {

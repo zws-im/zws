@@ -1,10 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
-import {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config';
-import * as Schemas from '../../../../schemas';
-import {UrlBlocked, UrlNotFound} from '../../../errors';
-import {urls} from '../../services';
+import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import {server} from '../../../../config/index.js';
+import * as Schemas from '../../../../schemas/index.js';
+import {UrlBlocked, UrlNotFound} from '../../../errors.js';
+import {urls} from '../../services.js';
 
 export default function getRoute() {
 	const route: RouteOptions<
@@ -28,7 +28,7 @@ export default function getRoute() {
 		},
 		handler: async (request, reply) => {
 			const {
-				query: {visit},
+				query: {visit: shouldVisit},
 				params: {short},
 			} = request;
 
@@ -43,7 +43,7 @@ export default function getRoute() {
 				throw new UrlNotFound();
 			}
 
-			if (visit) {
+			if (shouldVisit) {
 				if (url.blocked) {
 					// Don't allow users to visit blocked URLs
 					throw new UrlBlocked();

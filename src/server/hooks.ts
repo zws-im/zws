@@ -1,10 +1,10 @@
 import process from 'node:process';
 import * as Sentry from '@sentry/node';
-import {FastifyInstance} from 'fastify';
-import {env, sentry, server} from '../config';
-import db from '../db';
-import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger';
-import {stats} from './components/services';
+import type {FastifyInstance} from 'fastify';
+import {env, sentry, server} from '../config/index.js';
+import db from '../db.js';
+import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger.js';
+import {stats} from './components/services.js';
 
 const baseRequestLogger = baseFastifyLogger.withTag('request');
 

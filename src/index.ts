@@ -1,9 +1,9 @@
 import process from 'node:process';
 import * as profiler from '@google-cloud/profiler';
 import * as Sentry from '@sentry/node';
-import {env, google, sentry, server} from './config';
-import baseLogger, {fastifyLogger} from './logger';
-import fastify from './server';
+import {env, google, sentry, server} from './config/index.js';
+import baseLogger, {fastifyLogger} from './logger.js';
+import fastify from './server/index.js';
 
 if (sentry.dsn) {
 	let environment: 'production' | 'development' | undefined;

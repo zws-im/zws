@@ -1,12 +1,13 @@
 import {Buffer} from 'node:buffer';
 import {multiReplace, sample} from '@jonahsnider/util';
-import {ShortenedUrl, ApproximateCountKind} from '@prisma/client';
+import type {ShortenedUrl} from '@prisma/client';
+import {ApproximateCountKind} from '@prisma/client';
 import * as Sentry from '@sentry/node';
-import {Opaque} from 'type-fest';
-import {characters} from '../../../config';
-import db from '../../../db';
-import baseLogger from '../../../logger';
-import {UniqueShortIdTimeout} from '../../errors';
+import type {Opaque} from 'type-fest';
+import {characters} from '../../../config/index.js';
+import db from '../../../db.js';
+import baseLogger from '../../../logger.js';
+import {UniqueShortIdTimeout} from '../../errors.js';
 
 const logger = baseLogger.withTag('services').withTag('urls');
 /** Logger for the visits operation. */

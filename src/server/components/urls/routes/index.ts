@@ -1,3 +1,3 @@
-export {default as shorten} from './shorten';
-export {default as stats} from './stats';
-export {default as visit} from './visit';
+export {default as shorten} from './shorten.js';
+export {default as stats} from './stats.js';
+export {default as visit} from './visit.js';

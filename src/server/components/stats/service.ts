@@ -1,7 +1,7 @@
 import {ApproximateCountKind} from '@prisma/client';
 import millify from 'millify';
 
-import db from '../../../db';
+import db from '../../../db.js';
 
 interface Stats {
 	urls: number;

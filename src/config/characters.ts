@@ -1,5 +1,5 @@
 import process from 'node:process';
-import {JsonValue} from 'type-fest';
+import type {JsonValue} from 'type-fest';
 import {z} from 'zod';
 
 /**
