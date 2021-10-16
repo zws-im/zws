@@ -28,7 +28,7 @@ export default function getRoute() {
 		},
 		handler: async (request, reply) => {
 			const {
-				query: {visit},
+				query: {visit: shouldVisit},
 				params: {short},
 			} = request;
 
@@ -43,7 +43,7 @@ export default function getRoute() {
 				throw new UrlNotFound();
 			}
 
-			if (visit) {
+			if (shouldVisit) {
 				if (url.blocked) {
 					// Don't allow users to visit blocked URLs
 					throw new UrlBlocked();
