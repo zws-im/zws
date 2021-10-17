@@ -1,2 +1,2 @@
 release: yarn run migrations
-web: node .
+web: yarn start
