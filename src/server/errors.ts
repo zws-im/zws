@@ -1,5 +1,4 @@
 import {Http} from '@jonahsnider/util';
-import type {FastifyError} from 'fastify';
 import type {GenericError} from '../schemas/errors/GenericError.js';
 import type * as Schemas from '../schemas/index.js';
 
