@@ -10,7 +10,7 @@ import * as Schemas from '../../../../schemas/index.js';
 
 import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors.js';
 import {urls} from '../../services.js';
-import {OpenApiSecuritySchemes, OpenApiTags} from '../../../../utils.js';
+import {OpenApiSecuritySchemes, OpenApiTags} from '../../../../utils/enums.js';
 
 const forbiddenHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;

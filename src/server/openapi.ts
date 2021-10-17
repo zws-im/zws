@@ -1,7 +1,7 @@
 import type {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
 import pkg from '../../package.json';
 import * as config from '../config/index.js';
-import {OpenApiSecuritySchemes, OpenApiTags} from '../utils.js';
+import {OpenApiSecuritySchemes, OpenApiTags} from '../utils/enums.js';
 
 const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 	openapi: '3.0.3',

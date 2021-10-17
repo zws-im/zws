@@ -3,7 +3,7 @@ import PrismaPackage from '@prisma/client';
 import * as Sentry from '@sentry/node';
 
 import {dbLogger} from './logger.js';
-import {SentryBreadcrumbCategory} from './utils.js';
+import {SentryBreadcrumbCategory} from './utils/enums.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const {PrismaClient} = PrismaPackage;

@@ -6,7 +6,7 @@ import * as config from '../config/index.js';
 
 import db from '../db.js';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger.js';
-import {Env, SentryBreadcrumbCategory} from '../utils.js';
+import {Env, SentryBreadcrumbCategory} from '../utils/enums.js';
 import {stats} from './components/services.js';
 
 const baseRequestLogger = baseFastifyLogger.withTag('request');

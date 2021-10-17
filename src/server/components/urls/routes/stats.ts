@@ -3,7 +3,7 @@ import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 
 import * as Schemas from '../../../../schemas/index.js';
-import {OpenApiTags} from '../../../../utils.js';
+import {OpenApiTags} from '../../../../utils/enums.js';
 import {UrlNotFound} from '../../../errors.js';
 
 import {urls} from '../../services.js';

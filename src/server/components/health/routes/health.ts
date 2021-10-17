@@ -1,6 +1,6 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
-import {OpenApiTags} from '../../../../utils.js';
+import {OpenApiTags} from '../../../../utils/enums.js';
 
 import db from '../../../../db.js';
 import * as Schemas from '../../../../schemas/index.js';

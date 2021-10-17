@@ -1,6 +1,6 @@
 import type {ConsolaOptions} from 'consola';
 import consolaPkg from 'consola';
-import {Env} from './utils.js';
+import {Env} from './utils/enums.js';
 import * as config from './config/index.js';
 
 // Consola doesn't have ESM support

@@ -1,4 +1,4 @@
-import {Env} from '../utils.js';
+import {Env} from '../utils/enums.js';
 
 export default function parse(processEnv: NodeJS.ProcessEnv) {
 	const env = processEnv.NODE_ENV === 'development' ? Env.Dev : Env.Prod;

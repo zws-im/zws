@@ -1,6 +1,6 @@
 import process from 'node:process';
 import * as dotenv from 'dotenv';
-import {Env} from '../utils.js';
+import {Env} from '../utils/enums.js';
 import parseBlocklist from './blocklist.js';
 import parseCharacters from './characters.js';
 import parseEnv from './env.js';

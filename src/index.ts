@@ -4,7 +4,7 @@ import * as Sentry from '@sentry/node';
 import * as config from './config/index.js';
 import baseLogger, {configLogger, fastifyLogger} from './logger.js';
 import fastify from './server/index.js';
-import {Env} from './utils.js';
+import {Env} from './utils/enums.js';
 
 function logConfig() {
 	baseLogger.info('ZWS API version', config.server.version);
