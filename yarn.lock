@@ -1395,7 +1395,7 @@ __metadata:
     consola: 2.15.3
     dotenv: 10.0.0
     fastify: 3.22.0
-    fastify-bearer-auth: 6.0.0
+    fastify-bearer-auth: 5.1.0
     fastify-error: 0.3.1
     fastify-swagger: 4.12.4
     millify: 4.0.0
@@ -3607,12 +3607,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-bearer-auth@npm:6.0.0":
-  version: 6.0.0
-  resolution: "fastify-bearer-auth@npm:6.0.0"
+"fastify-bearer-auth@npm:5.1.0":
+  version: 5.1.0
+  resolution: "fastify-bearer-auth@npm:5.1.0"
   dependencies:
     fastify-plugin: ^3.0.0
-  checksum: 713f9e003a1d07041fc4f410368ee910ce6f5fa6b9ba76d2fee4bd1879dda0e7f8d883fd7cb4ff4f78a43baeefb6aec785226c2774734c68dcefe5f2b66b2724
+  checksum: 88bb34dd274ec154d3177ecdb244e0febc95e9a0923c97ea51915f7fa7d20b21f995d1a9f286449c7a271bbaf1dfc7c6511afe8e3c11dd3cc8a0f4850bb034ea
   languageName: node
   linkType: hard
 

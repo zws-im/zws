@@ -4,9 +4,9 @@ import {Type} from '../../utils/typebox.js';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const NotHealthy = Type.Object(
 	{
-		statusCode: Type.EnumList([500]),
-		code: Type.EnumList(['E_NOT_HEALTHY']),
-		error: Type.EnumList(['Internal Server Error']),
+		statusCode: Type.EnumList([500] as const),
+		code: Type.EnumList(['E_NOT_HEALTHY'] as const),
+		error: Type.EnumList(['Internal Server Error'] as const),
 		message: Type.String(),
 	},
 	{

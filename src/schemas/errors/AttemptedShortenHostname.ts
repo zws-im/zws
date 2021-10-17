@@ -4,9 +4,9 @@ import {Type} from '../../utils/typebox.js';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const AttemptedShortenHostname = Type.Object(
 	{
-		statusCode: Type.EnumList([422]),
-		code: Type.EnumList(['E_SHORTEN_HOSTNAME']),
-		error: Type.EnumList(['Unprocessable Entity']),
+		statusCode: Type.EnumList([422] as const),
+		code: Type.EnumList(['E_SHORTEN_HOSTNAME'] as const),
+		error: Type.EnumList(['Unprocessable Entity'] as const),
 		message: Type.String(),
 	},
 	{

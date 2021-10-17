@@ -4,9 +4,9 @@ import {Type} from '../../utils/typebox.js';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const UrlBlocked = Type.Object(
 	{
-		statusCode: Type.EnumList([410]),
-		code: Type.EnumList(['E_URL_BLOCKED']),
-		error: Type.EnumList(['Gone']),
+		statusCode: Type.EnumList([410] as const),
+		code: Type.EnumList(['E_URL_BLOCKED'] as const),
+		error: Type.EnumList(['Gone'] as const),
 		message: Type.String(),
 	},
 	{

@@ -6,7 +6,7 @@ type IntoStringLiteralUnion<T> = {[K in keyof T]: T[K] extends string | number ?
 
 export class OpenApiTypeBuilder extends TypeBox.TypeBuilder {
 	// eslint-disable-next-line @typescript-eslint/naming-convention
-	public EnumList<T extends unknown[]>(values: readonly [...T]): TypeBox.TUnion<IntoStringLiteralUnion<T>> {
+	public EnumList<T extends Array<string | number>>(values: readonly [...T]): TypeBox.TUnion<IntoStringLiteralUnion<T>> {
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
 		return {enum: values} as any;
 	}

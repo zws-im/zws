@@ -4,9 +4,9 @@ import {Type} from '../../utils/typebox.js';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const UniqueShortIdTimeout = Type.Object(
 	{
-		statusCode: Type.EnumList([503]),
-		code: Type.EnumList(['E_UNIQUE_SHORT_ID_TIMEOUT']),
-		error: Type.EnumList(['Service Unavailable']),
+		statusCode: Type.EnumList([503] as const),
+		code: Type.EnumList(['E_UNIQUE_SHORT_ID_TIMEOUT'] as const),
+		error: Type.EnumList(['Service Unavailable'] as const),
 		message: Type.String(),
 	},
 	{
