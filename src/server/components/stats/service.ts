@@ -1,5 +1,5 @@
 import PrismaClientPackage from '@prisma/client';
-import millify from 'millify';
+import {millify} from 'millify';
 
 import db from '../../../db.js';
 
