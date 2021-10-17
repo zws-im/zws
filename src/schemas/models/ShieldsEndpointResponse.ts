@@ -4,7 +4,8 @@ import {Type} from '../../utils/typebox.js';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const ShieldsEndpointResponse = Type.Object(
 	{
-		schemaVersion: Type.EnumList([1] as const),
+		// Seems to be a fast-json-stringify bug https://github.com/fastify/fastify/issues/2818
+		schemaVersion: {...Type.EnumList([1] as const), type: 'number'},
 		label: Type.String(),
 		message: Type.String(),
 		color: Type.String(),
