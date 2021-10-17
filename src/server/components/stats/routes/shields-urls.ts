@@ -1,9 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
-import {stats} from '../../services.js';
+import {OpenApiTags} from '../../../../utils.js';
+
 import * as Schemas from '../../../../schemas/index.js';
+import {stats} from '../../services.js';
 
 export default function getRoute() {
 	const route: RouteOptions<
@@ -20,7 +21,7 @@ export default function getRoute() {
 			operationId: 'shields-urls',
 			summary: 'Shields endpoint for URLs',
 			description: 'Shields endpoint badge response for total number of URLs shortened',
-			tags: [server.Tags.Stats, server.Tags.Shields],
+			tags: [OpenApiTags.Stats, OpenApiTags.Shields],
 			response: {
 				[Http.Status.Ok]: Type.Ref(Schemas.Models.ShieldsEndpointResponse),
 			},

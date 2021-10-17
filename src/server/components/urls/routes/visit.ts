@@ -1,7 +1,8 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
+import {OpenApiTags} from '../../../../utils.js';
+
 import * as Schemas from '../../../../schemas/index.js';
 import {UrlBlocked, UrlNotFound} from '../../../errors.js';
 import {urls} from '../../services.js';
@@ -17,7 +18,7 @@ export default function getRoute() {
 		url: '/:short',
 		schema: {
 			operationId: 'urls-visit',
-			tags: [server.Tags.Urls],
+			tags: [OpenApiTags.Urls],
 			params: Type.Ref(Schemas.Inputs.Short),
 			querystring: Schemas.Inputs.Visit,
 			response: {

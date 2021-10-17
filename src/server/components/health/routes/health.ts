@@ -1,6 +1,7 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
+import {OpenApiTags} from '../../../../utils.js';
+
 import db from '../../../../db.js';
 import * as Schemas from '../../../../schemas/index.js';
 import {NotHealthy} from '../../../errors.js';
@@ -11,7 +12,7 @@ export default function getRoute() {
 		url: '/health',
 		schema: {
 			operationId: 'health',
-			tags: [server.Tags.Health],
+			tags: [OpenApiTags.Health],
 			summary: 'Health check',
 			description: 'Check if the instance is healthy',
 			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: Schemas.Errors.NotHealthy},

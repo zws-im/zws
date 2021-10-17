@@ -1,7 +1,21 @@
-import consola from 'consola';
-import * as logger from './config/logger.js';
+import type {ConsolaOptions} from 'consola';
+import consolaPkg from 'consola';
+import {Env} from './utils.js';
+import * as config from './config/index.js';
 
-const baseLogger = consola.create(logger.consolaOptions);
+// Consola doesn't have ESM support
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports, @typescript-eslint/naming-convention
+const {BasicReporter, LogLevel} = consolaPkg as unknown as typeof import('consola');
+
+const consolaOptions: ConsolaOptions = {
+	level: LogLevel.Debug,
+};
+
+if (config.env.env === Env.Prod) {
+	consolaOptions.reporters = [new BasicReporter()];
+}
+
+const baseLogger = consolaPkg.create(consolaOptions);
 
 export default baseLogger;
 

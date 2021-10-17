@@ -1,4 +1,3 @@
-import process from 'node:process';
 import type {JsonValue} from 'type-fest';
 import {z} from 'zod';
 
@@ -11,4 +10,9 @@ const blockedHostnamesParser = z
 /**
  * Hostnames that should be forbidden from being shortened.
  */
-export const blockedHostnames: Set<string> = new Set(blockedHostnamesSchema.parse(blockedHostnamesParser.parse(process.env.BLOCKED_HOSTNAMES)));
+
+export default function parse(processEnv: NodeJS.ProcessEnv) {
+	const blockedHostnames: Set<string> = new Set(blockedHostnamesSchema.parse(blockedHostnamesParser.parse(processEnv.BLOCKED_HOSTNAMES)));
+
+	return {blockedHostnames};
+}

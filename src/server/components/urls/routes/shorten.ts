@@ -2,15 +2,17 @@ import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {blocklist, server} from '../../../../config/index.js';
+import * as config from '../../../../config/index.js';
+
 import {fastifyLogger} from '../../../../logger.js';
 
 import * as Schemas from '../../../../schemas/index.js';
 
 import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors.js';
 import {urls} from '../../services.js';
+import {OpenApiSecuritySchemes, OpenApiTags} from '../../../../utils.js';
 
-const forbiddenHostnames = new Set([server.shortenedBaseUrl?.hostname ?? null, server.hostname]);
+const forbiddenHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;
 
 export default function getRoute(fastify: FastifyInstance) {
@@ -26,9 +28,9 @@ export default function getRoute(fastify: FastifyInstance) {
 			operationId: 'urls-shorten',
 			summary: 'Shorten URL',
 			description: 'Shorten a URL',
-			tags: [server.Tags.Urls],
+			tags: [OpenApiTags.Urls],
 			body: Type.Ref(Schemas.Models.LongUrl),
-			security: [{[server.SecuritySchemes.ApiKey]: ['']}],
+			security: [{[OpenApiSecuritySchemes.ApiKey]: ['']}],
 			response: {
 				[Http.Status.Created]: Type.Ref(Schemas.Models.ShortenedUrl),
 				[Http.Status.Unauthorized]: Type.Ref(Schemas.Errors.ApiKeyError),
@@ -51,9 +53,9 @@ export default function getRoute(fastify: FastifyInstance) {
 
 			if (
 				// Exact match
-				blocklist.blockedHostnames.has(longUrlHostname) ||
+				config.blocklist.blockedHostnames.has(longUrlHostname) ||
 				// Domain name match
-				blocklist.blockedHostnames.has(longUrlHostname.replace(domainNameRegExp, '$1'))
+				config.blocklist.blockedHostnames.has(longUrlHostname.replace(domainNameRegExp, '$1'))
 			) {
 				throw new AttemptedShortenBlockedHostname();
 			}
@@ -64,8 +66,8 @@ export default function getRoute(fastify: FastifyInstance) {
 
 			const response: Schemas.Models.ShortenedUrl = {short: id};
 
-			if (server.shortenedBaseUrl) {
-				response.url = decodeURI(new URL(id, server.shortenedBaseUrl).toString());
+			if (config.server.shortenedBaseUrl) {
+				response.url = decodeURI(new URL(id, config.server.shortenedBaseUrl).toString());
 			}
 
 			return response;
@@ -73,8 +75,8 @@ export default function getRoute(fastify: FastifyInstance) {
 	};
 
 	if (fastify.verifyBearerAuth) {
-		route.preHandler = fastify.auth([fastify.verifyBearerAuth]);
-	} else if (server.apiKey !== null) {
+		route.preHandler = fastify.verifyBearerAuth;
+	} else if (config.server.apiKey !== null) {
 		fastifyLogger.warn("API key was defined but bearer auth decorator wasn't");
 	}
 

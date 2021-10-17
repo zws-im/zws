@@ -1,8 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
+import {OpenApiTags} from '../../../../utils.js';
 import * as Schemas from '../../../../schemas/index.js';
+import * as config from '../../../../config/index.js';
+
 import {stats} from '../../services.js';
 
 export default function getRoute() {
@@ -16,7 +18,7 @@ export default function getRoute() {
 		url: '/stats',
 		schema: {
 			operationId: 'total-stats',
-			tags: [server.Tags.Stats, server.Tags.Shields],
+			tags: [OpenApiTags.Stats, OpenApiTags.Shields],
 			summary: 'Total statistics',
 			description: 'Total usage statistics for this instance',
 			querystring: Schemas.Inputs.Formatting,
@@ -31,11 +33,11 @@ export default function getRoute() {
 				return {
 					urls: instanceStats.urls.toLocaleString(),
 					visits: instanceStats.visits.toLocaleString(),
-					version: `v${server.version}`,
+					version: `v${config.server.version}`,
 				};
 			}
 
-			return {...instanceStats, version: server.version};
+			return {...instanceStats, version: config.server.version};
 		},
 	};
 

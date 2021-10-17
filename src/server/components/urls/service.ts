@@ -4,7 +4,8 @@ import type {ShortenedUrl} from '@prisma/client';
 import PrismaClientPackage from '@prisma/client';
 import * as Sentry from '@sentry/node';
 import type {Opaque} from 'type-fest';
-import {characters} from '../../../config/index.js';
+import * as config from '../../../config/index.js';
+
 import db from '../../../db.js';
 import baseLogger from '../../../logger.js';
 import {UniqueShortIdTimeout} from '../../errors.js';
@@ -40,7 +41,7 @@ function encode(value: string): Base64 {
 }
 
 export function normalizeShortId(id: Short): Short {
-	return multiReplace(id, characters.rewrites) as Short;
+	return multiReplace(id, config.characters.rewrites) as Short;
 }
 
 /**
@@ -53,9 +54,9 @@ function generateShortId(): Short {
 	let shortId = '' as Short;
 
 	// eslint-disable-next-line @typescript-eslint/prefer-for-of
-	for (let i = 0; i < characters.length; i++) {
+	for (let i = 0; i < config.characters.length; i++) {
 		// @ts-expect-error String concatenation forces string type
-		shortId += sample(characters.characters) as Short;
+		shortId += sample(config.characters.characters) as Short;
 	}
 
 	return shortId;

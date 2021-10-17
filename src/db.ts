@@ -1,8 +1,9 @@
 import type {Prisma} from '@prisma/client';
 import PrismaPackage from '@prisma/client';
 import * as Sentry from '@sentry/node';
+
 import {dbLogger} from './logger.js';
-import {sentry} from './config/index.js';
+import {SentryBreadcrumbCategory} from './utils.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const {PrismaClient} = PrismaPackage;
@@ -35,7 +36,7 @@ db.$on('error', error => {
 
 db.$on('info', info => {
 	Sentry.addBreadcrumb({
-		category: sentry.BreadcrumbCategory.Database,
+		category: SentryBreadcrumbCategory.Database,
 		message: info.message,
 		level: Sentry.Severity.Info,
 	});
@@ -44,7 +45,7 @@ db.$on('info', info => {
 
 db.$on('warn', warning => {
 	Sentry.addBreadcrumb({
-		category: sentry.BreadcrumbCategory.Database,
+		category: SentryBreadcrumbCategory.Database,
 		message: warning.message,
 		level: Sentry.Severity.Warning,
 	});

@@ -1,7 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
+import * as config from '../../../../config/index.js';
+
+import {OpenApiTags} from '../../../../utils.js';
+
 import * as Schemas from '../../../../schemas/index.js';
 
 export default function getRoute() {
@@ -19,12 +22,12 @@ export default function getRoute() {
 			operationId: 'shields-version',
 			summary: 'Shields endpoint for version',
 			description: 'Shields endpoint badge response for instance version',
-			tags: [server.Tags.Stats, server.Tags.Shields],
+			tags: [OpenApiTags.Stats, OpenApiTags.Shields],
 			response: {
 				[Http.Status.Ok]: Type.Ref(Schemas.Models.ShieldsEndpointResponse),
 			},
 		},
-		handler: async () => ({color: 'informational', label: 'zws', message: `v${server.version}`, schemaVersion: 1}),
+		handler: async () => ({color: 'informational', label: 'zws', message: `v${config.server.version}`, schemaVersion: 1}),
 	};
 
 	return route;

@@ -16,15 +16,10 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 		}),
 	];
 
-	if (server.apiKey === null) {
-		configLogger.info('No API key provided, access to all routes will be public');
-	} else {
-		configLogger.info('Using API key to restrict access to routes');
-
+	if (config.server.apiKey !== null) {
 		plugins.push(
 			fastify.register(bearerAuthPlugin, {
-				addHook: false,
-				keys: new Set([server.apiKey]),
+				keys: new Set([config.server.apiKey]),
 				// TODO: fastify-bearer-auth v6 makes this error response logic stop working
 				errorResponse: (error: Error) => {
 					switch (error.message) {

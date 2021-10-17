@@ -1,8 +1,9 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
-import {server} from '../../../../config/index.js';
+
 import * as Schemas from '../../../../schemas/index.js';
+import {OpenApiTags} from '../../../../utils.js';
 import {UrlNotFound} from '../../../errors.js';
 
 import {urls} from '../../services.js';
@@ -20,7 +21,7 @@ export default function getRoute() {
 			operationId: 'urls-stats',
 			summary: 'URL stats',
 			description: 'Retrieve usage statistics for a shortened URL',
-			tags: [server.Tags.Urls, server.Tags.Stats],
+			tags: [OpenApiTags.Urls, OpenApiTags.Stats],
 			params: Type.Ref(Schemas.Inputs.Short),
 			response: {
 				[Http.Status.Ok]: Type.Ref(Schemas.Models.UrlStats),

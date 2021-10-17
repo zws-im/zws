@@ -1,9 +1,12 @@
 import process from 'node:process';
 import * as Sentry from '@sentry/node';
 import type {FastifyInstance} from 'fastify';
-import {env, sentry, server} from '../config/index.js';
+
+import * as config from '../config/index.js';
+
 import db from '../db.js';
 import {dbLogger, fastifyLogger as baseFastifyLogger} from '../logger.js';
+import {Env, SentryBreadcrumbCategory} from '../utils.js';
 import {stats} from './components/services.js';
 
 const baseRequestLogger = baseFastifyLogger.withTag('request');
@@ -20,7 +23,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 			baseFastifyLogger.error('Fastify error', error);
 		}
 
-		if (env.env === env.Env.Dev) {
+		if (config.env.env === Env.Dev) {
 			const routeLogger = baseFastifyLogger.withTag('routes');
 
 			const routes = fastify.printRoutes().trim().split('\n');
@@ -61,7 +64,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 		};
 
 		Sentry.addBreadcrumb({
-			category: sentry.BreadcrumbCategory.Request,
+			category: SentryBreadcrumbCategory.Request,
 			message: requestName,
 			// eslint-disable-next-line @typescript-eslint/naming-convention
 			data: {...requestContext, request_id: request.id as string},
@@ -77,7 +80,7 @@ export default function addHooks(fastify: FastifyInstance): void {
 	});
 
 	fastify.addHook('onSend', async (request, reply) => {
-		void reply.header('Server', server.serverString);
+		void reply.header('Server', config.server.serverString);
 	});
 
 	fastify.addHook('onError', async (request, reply, error) => {

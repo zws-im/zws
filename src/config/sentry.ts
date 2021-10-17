@@ -1,10 +1,9 @@
-import process from 'node:process';
 import {z} from 'zod';
 
 const dsnSchema = z.string().nullable().optional().default(null);
-export const dsn = dsnSchema.parse(process.env.SENTRY_DSN);
 
-export enum BreadcrumbCategory {
-	Database = 'db',
-	Request = 'request',
+export default function parse(processEnv: NodeJS.ProcessEnv) {
+	const dsn = dsnSchema.parse(processEnv.SENTRY_DSN);
+
+	return {dsn};
 }

@@ -1,7 +1,7 @@
-import process from 'node:process';
+import {Env} from '../utils.js';
 
-export enum Env {
-	Prod,
-	Dev,
+export default function parse(processEnv: NodeJS.ProcessEnv) {
+	const env = processEnv.NODE_ENV === 'development' ? Env.Dev : Env.Prod;
+
+	return {env};
 }
-export const env = process.env.NODE_ENV === 'development' ? Env.Dev : Env.Prod;
