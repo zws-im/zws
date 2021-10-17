@@ -1396,7 +1396,6 @@ __metadata:
     dotenv: 10.0.0
     fastify: 3.22.0
     fastify-bearer-auth: 5.1.0
-    fastify-error: 0.3.1
     fastify-swagger: 4.12.4
     millify: 4.0.0
     prettier: 2.4.1
@@ -3613,13 +3612,6 @@ __metadata:
   dependencies:
     fastify-plugin: ^3.0.0
   checksum: 88bb34dd274ec154d3177ecdb244e0febc95e9a0923c97ea51915f7fa7d20b21f995d1a9f286449c7a271bbaf1dfc7c6511afe8e3c11dd3cc8a0f4850bb034ea
-  languageName: node
-  linkType: hard
-
-"fastify-error@npm:0.3.1":
-  version: 0.3.1
-  resolution: "fastify-error@npm:0.3.1"
-  checksum: fd6a0f6f87b5e4ab59a4d3d66124bd13830a1cf85cf1987259dfb1175fc6a4bcae68b076ad78f6bb06654f72af133b44813090e9ce5502d2ef56ddcb2b0fa867
   languageName: node
   linkType: hard
 
