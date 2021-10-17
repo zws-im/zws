@@ -40,4 +40,4 @@ RUN yarn remove @jonahsnider/prettier-config @jonahsnider/xo-config @semantic-re
 # Remove these since they are only needed to compile dependencies
 RUN apk del openssl libc6-compat python3 make g++
 
-CMD ["node", "."]
+CMD ["yarn", "start"]
