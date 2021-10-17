@@ -1,5 +1,5 @@
 import type {Static} from '@sinclair/typebox';
-import {Type} from '@sinclair/typebox';
+import {Type} from '../../utils/typebox.js';
 
 const versionRegExp = /^v\d+\.\d+\.\d+(?:-.+)?$/;
 

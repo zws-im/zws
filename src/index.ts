@@ -1,4 +1,3 @@
-import process from 'node:process';
 import * as profiler from '@google-cloud/profiler';
 import * as Sentry from '@sentry/node';
 import * as config from './config/index.js';

@@ -1,12 +1,12 @@
 import type {Static} from '@sinclair/typebox';
-import {Type} from '@sinclair/typebox';
+import {Type} from '../../utils/typebox.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const UniqueShortIdTimeout = Type.Object(
 	{
-		statusCode: Type.Literal(503),
-		code: Type.Literal('E_UNIQUE_SHORT_ID_TIMEOUT'),
-		error: Type.Literal('Service Unavailable'),
+		statusCode: Type.EnumList([503]),
+		code: Type.EnumList(['E_UNIQUE_SHORT_ID_TIMEOUT']),
+		error: Type.EnumList(['Service Unavailable']),
 		message: Type.String(),
 	},
 	{

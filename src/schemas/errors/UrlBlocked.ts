@@ -1,12 +1,12 @@
 import type {Static} from '@sinclair/typebox';
-import {Type} from '@sinclair/typebox';
+import {Type} from '../../utils/typebox.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const UrlBlocked = Type.Object(
 	{
-		statusCode: Type.Literal(410),
-		code: Type.Literal('E_URL_BLOCKED'),
-		error: Type.Literal('Gone'),
+		statusCode: Type.EnumList([410]),
+		code: Type.EnumList(['E_URL_BLOCKED']),
+		error: Type.EnumList(['Gone']),
 		message: Type.String(),
 	},
 	{

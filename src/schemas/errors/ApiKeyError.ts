@@ -1,5 +1,5 @@
 import type {Static} from '@sinclair/typebox';
-import {Type} from '@sinclair/typebox';
+import {Type} from '../../utils/typebox.js';
 import {IncorrectApiKey} from './IncorrectApiKey.js';
 import {MissingApiKey} from './MissingApiKey.js';
 
