@@ -30,17 +30,17 @@ function logConfig() {
 		configLogger.withTag('blocklist').debug('no blocked hostnames');
 	}
 
-	configLogger.withTag('characters').debug('characters', config.characters.characters);
-	configLogger.withTag('characters').debug('length', config.characters.length);
+	configLogger.withTag('characters').debug('characters:', config.characters.characters);
+	configLogger.withTag('characters').debug('length:', config.characters.length);
 	if (Object.keys(config.characters.rewrites).length > 0) {
-		configLogger.withTag('characters').debug('rewrites', config.characters.rewrites);
+		configLogger.withTag('characters').debug('rewrites:', config.characters.rewrites);
 	} else {
 		configLogger.withTag('characters').debug('no rewrites');
 	}
 
 	configLogger.withTag('sentry').debug('DSN', config.sentry.dsn ? 'defined' : 'not defined');
 
-	configLogger.withTag('google').debug('project ID', config.google.projectId);
+	configLogger.withTag('google').debug('project ID:', config.google.projectId);
 	configLogger.withTag('google').debug('credentials', config.google.appCredentials ? 'defined' : 'not defined');
 }
 
