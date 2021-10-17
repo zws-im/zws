@@ -6,16 +6,17 @@ if (env.env === env.Env.Dev) {
 	dotenv.config();
 }
 
-// eslint-disable-next-line import/first
-import * as characters from './characters.js';
+// `import` function is used to avoid Node.js running import/export syntax before the file runs (meaning process.env is not populated from dotenv)
+/* eslint-disable node/no-unsupported-features/es-syntax */
+const characters = await import('./characters.js');
+const server = await import('./server.js');
+const sentry = await import('./sentry.js');
+const google = await import('./google.js');
+const logger = await import('./logger.js');
+const blocklist = await import('./blocklist.js');
+/* eslint-enable node/no-unsupported-features/es-syntax */
 
 configLogger.debug('characters', {characters: characters.characters, length: characters.length, rewrites: characters.rewrites});
 configLogger.debug('env', env.Env[env.env]);
 
-export * as characters from './characters.js';
-export * as env from './env.js';
-export * as server from './server.js';
-export * as sentry from './sentry.js';
-export * as google from './google.js';
-export * as logger from './logger.js';
-export * as blocklist from './blocklist.js';
+export {characters, env, server, sentry, google, logger, blocklist};
