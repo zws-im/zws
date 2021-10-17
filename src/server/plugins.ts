@@ -14,7 +14,7 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 
 	if (config.server.apiKey !== null) {
 		await fastify.register(bearerAuthPlugin, {
-			addHook: true,
+			addHook: false,
 			keys: new Set([config.server.apiKey]),
 			errorResponse: (error: Error) => {
 				switch (error.message) {
