@@ -89,19 +89,11 @@ if (config.google.appCredentials && config.google.projectId) {
 		});
 }
 
-async function main() {
-	try {
-		const address = await fastify.listen({port: config.server.port, host: '0.0.0.0'});
+try {
+	const address = await fastify.listen({port: config.server.port, host: '0.0.0.0'});
 
-		fastifyLogger.info(`Listening at ${address}`);
-	} catch (error: unknown) {
-		fastifyLogger.error(error);
-		throw error;
-	}
+	fastifyLogger.info(`Listening at ${address}`);
+} catch (error: unknown) {
+	fastifyLogger.error(error);
+	throw error;
 }
-
-main().catch(error => {
-	process.nextTick(() => {
-		throw error;
-	});
-});
