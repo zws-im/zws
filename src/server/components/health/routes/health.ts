@@ -1,6 +1,5 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
-import {Type} from '@sinclair/typebox';
 import {OpenApiTags} from '../../../../utils/enums.js';
 
 import db from '../../../../db.js';
