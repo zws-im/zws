@@ -18,7 +18,7 @@ export default function getRoute() {
 			description: 'Check if the instance is healthy',
 			response: {
 				[Http.Status.NoContent]: {},
-				[Http.Status.InternalServerError]: Type.Ref(Schemas.Errors.NotHealthy),
+				[Http.Status.InternalServerError]: Schemas.Errors.NotHealthy,
 			},
 		},
 		handler: async (request, reply) => {
