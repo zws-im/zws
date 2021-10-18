@@ -18,7 +18,25 @@ const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 		license: {name: 'Apache 2.0', url: 'https://www.apache.org/licenses/LICENSE-2.0.html'},
 		contact: pkg.author,
 	},
-	servers: [{url: 'https://api.zws.im', description: 'Production'}],
+	servers: [
+		{
+			description: 'Custom server (HTTPS)',
+			url: 'https://{host}/{basePath}',
+			variables: {
+				host: {default: config.server.hostname === null ? `localhost:${config.server.port}` : config.server.hostname},
+				basePath: {default: ''},
+			},
+		},
+		{
+			description: 'Custom server (HTTP)',
+			url: 'http://{host}/{basePath}',
+			variables: {
+				host: {default: config.server.hostname === null ? `localhost:${config.server.port}` : config.server.hostname},
+				basePath: {default: ''},
+			},
+		},
+		{url: 'https://api.zws.im', description: 'zws.im production'},
+	],
 	components: {
 		securitySchemes: {[OpenApiSecuritySchemes.ApiKey]: {type: 'http', scheme: 'bearer'}},
 	},
