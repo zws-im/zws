@@ -10,7 +10,7 @@ import * as Schemas from '../../../../schemas/index.js';
 
 import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors.js';
 import {urls} from '../../services.js';
-import {OpenApiSecuritySchemes, OpenApiTags} from '../../../../utils/enums.js';
+import {OpenApiTags, SECURED_ROUTE} from '../../../../utils/enums.js';
 
 const forbiddenHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;
@@ -30,7 +30,6 @@ export default function getRoute(fastify: FastifyInstance) {
 			description: 'Shorten a URL',
 			tags: [OpenApiTags.Urls],
 			body: Type.Ref(Schemas.Models.LongUrl),
-			security: [{[OpenApiSecuritySchemes.ApiKey]: ['']}],
 			response: {
 				[Http.Status.Created]: Type.Ref(Schemas.Models.ShortenedUrl),
 				[Http.Status.Unauthorized]: Type.Ref(Schemas.Errors.ApiKeyError),
@@ -76,8 +75,12 @@ export default function getRoute(fastify: FastifyInstance) {
 
 	if (fastify.verifyBearerAuth) {
 		route.preHandler = fastify.verifyBearerAuth;
+
+		if (route.schema) {
+			route.schema.security = SECURED_ROUTE;
+		}
 	} else if (config.server.apiKey !== null) {
-		fastifyLogger.warn("API key was defined but bearer auth decorator wasn't");
+		fastifyLogger.warn("API key was defined but bearer auth decorator wasn't, this route will not be secured");
 	}
 
 	return route;

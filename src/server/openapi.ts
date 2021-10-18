@@ -1,7 +1,7 @@
 import type {FastifyDynamicSwaggerOptions} from 'fastify-swagger';
 import pkg from '../../package.json';
 import * as config from '../config/index.js';
-import {OpenApiSecuritySchemes, OpenApiTags} from '../utils/enums.js';
+import {OpenApiSecuritySchemeNames, OpenApiTags} from '../utils/enums.js';
 
 const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 	openapi: '3.0.3',
@@ -37,9 +37,12 @@ const openapi: FastifyDynamicSwaggerOptions['openapi'] = {
 		},
 		{url: 'https://api.zws.im', description: 'zws.im production'},
 	],
-	components: {
-		securitySchemes: {[OpenApiSecuritySchemes.ApiKey]: {type: 'http', scheme: 'bearer'}},
-	},
 };
+
+if (config.server.apiKey !== null) {
+	openapi.components = {
+		securitySchemes: {[OpenApiSecuritySchemeNames.ApiKey]: {type: 'http', scheme: 'bearer'}},
+	};
+}
 
 export default openapi;

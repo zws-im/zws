@@ -10,9 +10,11 @@ export enum OpenApiTags {
 	Health = 'health',
 }
 
-export enum OpenApiSecuritySchemes {
+export enum OpenApiSecuritySchemeNames {
 	ApiKey = 'apiKey',
 }
+
+export const SECURED_ROUTE = [{[OpenApiSecuritySchemeNames.ApiKey]: []}];
 
 export enum SentryBreadcrumbCategory {
 	Database = 'db',
