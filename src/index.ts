@@ -14,7 +14,7 @@ function logConfig() {
 	}
 
 	configLogger.withTag('server').debug('port:', config.server.port);
-	configLogger.withTag('server').debug('API key', config.server.apiKey ? 'enabled' : 'not enabled');
+	configLogger.withTag('server').debug('API key', config.server.apiKey === null ? 'not enabled' : 'enabled');
 
 	if (config.server.shortenedBaseUrl) {
 		configLogger.withTag('server').debug('shortened base URL:', config.server.shortenedBaseUrl.toString());
@@ -38,10 +38,10 @@ function logConfig() {
 		configLogger.withTag('characters').debug('no rewrites');
 	}
 
-	configLogger.withTag('sentry').debug('DSN', config.sentry.dsn ? 'defined' : 'not defined');
+	configLogger.withTag('sentry').debug('DSN', config.sentry.dsn === null ? 'not defined' : 'defined');
 
-	configLogger.withTag('google').debug('project ID:', config.google.projectId);
-	configLogger.withTag('google').debug('credentials', config.google.appCredentials ? 'defined' : 'not defined');
+	configLogger.withTag('google').debug('project ID:', config.google.projectId ?? 'not defined');
+	configLogger.withTag('google').debug('credentials', config.google.appCredentials === null ? 'not defined' : 'defined');
 }
 
 logConfig();
