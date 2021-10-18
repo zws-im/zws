@@ -2,13 +2,12 @@ import * as TypeBox from '@sinclair/typebox';
 
 export * from '@sinclair/typebox';
 
-type IntoStringLiteralUnion<T> = {[K in keyof T]: T[K] extends string | number ? TypeBox.TLiteral<T[K]> : never};
-
 export class OpenApiTypeBuilder extends TypeBox.TypeBuilder {
+	// This return type is wrong, it doesn't expose a `const` field value
 	// eslint-disable-next-line @typescript-eslint/naming-convention
-	public EnumList<T extends Array<string | number>>(values: readonly [...T]): TypeBox.TUnion<IntoStringLiteralUnion<T>> {
+	public EnumList<T extends number | string>(values: readonly T[]): TypeBox.TLiteral<T> {
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-		return {enum: values} as any;
+		return {enum: values, type: typeof values[0]} as any;
 	}
 }
 
