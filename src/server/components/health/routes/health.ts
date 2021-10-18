@@ -1,5 +1,6 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
+import {Type} from '@sinclair/typebox';
 import {OpenApiTags} from '../../../../utils/enums.js';
 
 import db from '../../../../db.js';
@@ -15,7 +16,10 @@ export default function getRoute() {
 			tags: [OpenApiTags.Health],
 			summary: 'Health check',
 			description: 'Check if the instance is healthy',
-			response: {[Http.Status.NoContent]: {}, [Http.Status.InternalServerError]: Schemas.Errors.NotHealthy},
+			response: {
+				[Http.Status.NoContent]: {},
+				[Http.Status.InternalServerError]: Type.Ref(Schemas.Errors.NotHealthy),
+			},
 		},
 		handler: async (request, reply) => {
 			try {

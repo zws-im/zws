@@ -90,7 +90,7 @@ export async function visit(id: Short, track: boolean): Promise<VisitUrlData | n
 			// eslint-disable-next-line promise/prefer-await-to-then
 			.catch(error => {
 				Sentry.captureException(error);
-				visitLogger.error('Failed to create visit', error);
+				visitLogger.error('failed to create visit', error);
 			});
 	}
 

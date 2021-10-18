@@ -38,10 +38,15 @@ function logConfig() {
 		configLogger.withTag('characters').debug('no rewrites');
 	}
 
-	configLogger.withTag('sentry').debug('DSN', config.sentry.dsn === null ? 'not defined' : 'defined');
+	configLogger.withTag('sentry').debug('DSN', config.sentry.dsn ? 'defined' : 'not defined');
 
-	configLogger.withTag('google').debug('project ID:', config.google.projectId ?? 'not defined');
-	configLogger.withTag('google').debug('credentials', config.google.appCredentials === null ? 'not defined' : 'defined');
+	if (config.google.projectId) {
+		configLogger.withTag('google').debug('project ID:', config.google.projectId);
+	} else {
+		configLogger.withTag('google').debug('project ID not defined');
+	}
+
+	configLogger.withTag('google').debug('credentials', config.google.appCredentials ? 'defined' : 'not defined');
 }
 
 logConfig();
@@ -66,8 +71,9 @@ if (config.sentry.dsn) {
 	});
 }
 
+const googleCloudProfilerLogger = baseLogger.withTag('google').withTag('profiler');
 if (config.google.appCredentials && config.google.projectId) {
-	const logger = baseLogger.withTag('google').withTag('profiler');
+	googleCloudProfilerLogger.info('starting');
 
 	profiler
 		.start({
@@ -80,18 +86,20 @@ if (config.google.appCredentials && config.google.projectId) {
 		})
 		// eslint-disable-next-line promise/prefer-await-to-then
 		.then(() => {
-			logger.success('Started');
+			googleCloudProfilerLogger.success('started');
 		})
 		// eslint-disable-next-line promise/prefer-await-to-then
 		.catch(error => {
-			logger.error(error);
+			googleCloudProfilerLogger.error(error);
 		});
+} else {
+	googleCloudProfilerLogger.info('not starting because required configuration values were missing');
 }
 
 try {
 	const address = await fastify.listen({port: config.server.port, host: '0.0.0.0'});
 
-	fastifyLogger.info(`Listening at ${address}`);
+	fastifyLogger.info(`listening at ${address}`);
 } catch (error: unknown) {
 	fastifyLogger.error(error);
 	throw error;
