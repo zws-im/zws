@@ -12,7 +12,7 @@ import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../.
 import {urls} from '../../services.js';
 import {OpenApiTags, SECURED_ROUTE} from '../../../../utils/enums.js';
 
-const forbiddenHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
+const serverHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;
 
 export default function getRoute(fastify: FastifyInstance) {
@@ -46,7 +46,7 @@ export default function getRoute(fastify: FastifyInstance) {
 
 			const longUrlHostname = new URL(url).hostname;
 
-			if (forbiddenHostnames.has(longUrlHostname)) {
+			if (serverHostnames.has(longUrlHostname)) {
 				throw new AttemptedShortenHostname();
 			}
 
