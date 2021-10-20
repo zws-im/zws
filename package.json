@@ -40,7 +40,7 @@
 		"millify": "4.0.0",
 		"prisma": "3.3.0",
 		"tslib": "2.3.1",
-		"zod": "3.9.8"
+		"zod": "3.10.3"
 	},
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
