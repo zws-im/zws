@@ -1394,7 +1394,7 @@ __metadata:
     "@types/node": 16.10.3
     consola: 2.15.3
     dotenv: 10.0.0
-    fastify: 3.22.0
+    fastify: 3.22.1
     fastify-bearer-auth: 5.1.0
     fastify-swagger: 4.12.4
     millify: 4.0.0
@@ -3662,9 +3662,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.22.0":
-  version: 3.22.0
-  resolution: "fastify@npm:3.22.0"
+"fastify@npm:3.22.1":
+  version: 3.22.1
+  resolution: "fastify@npm:3.22.1"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3677,12 +3677,11 @@ __metadata:
     light-my-request: ^4.2.0
     pino: ^6.13.0
     proxy-addr: ^2.0.7
-    readable-stream: ^3.4.0
     rfdc: ^1.1.4
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: 4f06ccb4b75df5748d8683b11050920439db642a6fecf508d0e6aa58cefd874a4d9ef76e3ec29a9e87a06c373c4d1adfa0d92c092f793d1bbfd9f3207e2c1c6a
+  checksum: 057f29045629250923b962c5fbd421811378ef32c497bc02bb1c0a75294f43ca73e7041262a306b7c1d6bf243d2096d63cc4192aaa6c9053efcd4557e225d470
   languageName: node
   linkType: hard
 
