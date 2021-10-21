@@ -2,79 +2,41 @@ import type {JsonValue} from 'type-fest';
 import {z} from 'zod';
 
 /**
- * Every character matching this regular expression:
- * ```js
- * /^[a-z\d]$/i;
- * ```
+ * Zero-width characters.
  */
-const alphaNumeric: string[] = [
-	// #region alphanumeric
-	'a',
-	'b',
-	'c',
-	'd',
-	'e',
-	'f',
-	'g',
-	'h',
-	'i',
-	'j',
-	'k',
-	'l',
-	'm',
-	'n',
-	'o',
-	'p',
-	'q',
-	'r',
-	'z',
-	't',
-	'u',
-	'v',
-	'x',
-	'w',
-	'y',
-	'z',
-	'A',
-	'B',
-	'C',
-	'D',
-	'E',
-	'F',
-	'G',
-	'H',
-	'I',
-	'J',
-	'K',
-	'L',
-	'M',
-	'N',
-	'O',
-	'P',
-	'Q',
-	'R',
-	'Z',
-	'T',
-	'U',
-	'V',
-	'X',
-	'W',
-	'Y',
-	'Z',
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'0',
-	// #endregion
+const zeroWidth: string[] = [
+	'\u200C',
+	'\u200D',
+	'\uDB40\uDC61',
+	'\uDB40\uDC62',
+	'\uDB40\uDC63',
+	'\uDB40\uDC64',
+	'\uDB40\uDC65',
+	'\uDB40\uDC66',
+	'\uDB40\uDC67',
+	'\uDB40\uDC68',
+	'\uDB40\uDC69',
+	'\uDB40\uDC6A',
+	'\uDB40\uDC6B',
+	'\uDB40\uDC6C',
+	'\uDB40\uDC6D',
+	'\uDB40\uDC6E',
+	'\uDB40\uDC6F',
+	'\uDB40\uDC70',
+	'\uDB40\uDC71',
+	'\uDB40\uDC72',
+	'\uDB40\uDC73',
+	'\uDB40\uDC74',
+	'\uDB40\uDC75',
+	'\uDB40\uDC76',
+	'\uDB40\uDC77',
+	'\uDB40\uDC78',
+	'\uDB40\uDC79',
+	'\uDB40\uDC7A',
+	'\uDB40\uDC7F',
 ];
 
-const charactersSchema = z.array(z.string().min(1)).min(1).default(alphaNumeric);
+const charactersSchema = z.array(z.string().min(1)).min(1).default(zeroWidth);
 const charactersParser = z
 	.string()
 	.optional()
@@ -99,7 +61,12 @@ export default function parse(processEnv: NodeJS.ProcessEnv) {
 	const characters = charactersSchema.parse(charactersParser.parse(processEnv.SHORT_CHARS));
 
 	/** The default length of a generated short ID. */
-	const defaultShortLength = Math.round(Math.log(maxShortUrls) / Math.log(characters.length));
+	let defaultShortLength = 1;
+
+	while (characters.length ** defaultShortLength < maxShortUrls) {
+		defaultShortLength++;
+	}
+
 	const lengthSchema = z.number().int().positive().default(defaultShortLength);
 
 	/** The length of the shortened ID for a URL. */

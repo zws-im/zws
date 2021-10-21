@@ -28,7 +28,7 @@
 			"required": false
 		},
 		"SHORT_CHARS": {
-			"description": "JSON array of characters to used in shortened IDs. Default is alphanumeric (a-z, A-Z, 0-9).",
+			"description": "JSON array of characters to used in shortened IDs.",
 			"required": false
 		},
 		"SHORT_REWRITES": {
