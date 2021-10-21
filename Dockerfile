@@ -16,7 +16,7 @@ RUN apk add --no-cache \
 	# Needed to compile pprof
 	python3 make g++
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 CMD curl -X GET --fail http://localhost:3000/health || exit 0
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 CMD curl -X GET --fail http://localhost:3000/health || exit 1
 
 COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 COPY prisma ./prisma
