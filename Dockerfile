@@ -31,11 +31,9 @@ COPY types ./types
 
 RUN yarn build
 
-# Remove devDependencies manually, Yarn 2 doesn't support skipping them (see https://yarnpkg.com/configuration/manifest#devDependencies)
-RUN yarn remove @jonahsnider/prettier-config @jonahsnider/xo-config @semantic-release/exec @tsconfig/node16 @types/node prettier semantic-release ts-node type-fest typescript xo \
-	&& yarn install --immutable \
+RUN yarn workspaces focus --all --production \
 	&& yarn cache clean \
-	&& rm -rf src types tsconfig.json
+	&& rm -r src types tsconfig.json
 
 # Remove these since they are only needed to compile dependencies
 RUN apk del openssl libc6-compat python3 make g++
