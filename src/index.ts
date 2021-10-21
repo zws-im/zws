@@ -10,7 +10,7 @@ function logConfig() {
 	if (config.server.hostname) {
 		configLogger.withTag('server').debug('hostname:', config.server.hostname?.toString());
 	} else {
-		configLogger.withTag('server').warn('no hostname set, clients will be able to create circular shortened URLs');
+		configLogger.withTag('server').debug('no hostname');
 	}
 
 	configLogger.withTag('server').debug('port:', config.server.port);
@@ -27,7 +27,7 @@ function logConfig() {
 	if (config.blocklist.blockedHostnames.size > 0) {
 		configLogger.withTag('blocklist').debug('number of blocked hostnames:', config.blocklist.blockedHostnames.size);
 	} else {
-		configLogger.withTag('blocklist').debug('no blocked hostnames');
+		configLogger.withTag('blocklist').warn('no blocked hostnames, clients will be able to create circular shortened URLs');
 	}
 
 	configLogger.withTag('characters').debug('characters:', config.characters.characters);

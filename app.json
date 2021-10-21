@@ -36,11 +36,15 @@
 			"required": false
 		},
 		"HOSTNAME": {
-			"description": "The hostname of this API instance. If you leave this blank users will be allowed to shorten URLs with the same hostname as your instance.",
+			"description": "The hostname of this API instance.",
 			"required": false
 		},
 		"SHORTENED_BASE_URL": {
 			"description": "The base URL to build shortened URLs from. If you leave this blank clients will have to assemble shortened URLs themselves.",
+			"required": false
+		},
+		"BLOCKED_HOSTNAMES": {
+			"description": "JSON array of hostnames or domain names that are prevented from being shortened.",
 			"required": false
 		},
 		"SENTRY_DSN": {

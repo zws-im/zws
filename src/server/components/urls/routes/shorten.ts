@@ -8,11 +8,10 @@ import {fastifyLogger} from '../../../../logger.js';
 
 import * as Schemas from '../../../../schemas/index.js';
 
-import {AttemptedShortenBlockedHostname, AttemptedShortenHostname} from '../../../errors.js';
+import {AttemptedShortenBlockedHostname} from '../../../errors.js';
 import {urls} from '../../services.js';
 import {OpenApiTags, SECURED_ROUTE} from '../../../../utils/enums.js';
 
-const serverHostnames = new Set([config.server.shortenedBaseUrl?.hostname ?? null, config.server.hostname]);
 const domainNameRegExp = /(?:.+\.)?(.+\..+)$/i;
 
 export default function getRoute(fastify: FastifyInstance) {
@@ -33,9 +32,7 @@ export default function getRoute(fastify: FastifyInstance) {
 			response: {
 				[Http.Status.Created]: Type.Ref(Schemas.Models.ShortenedUrl),
 				[Http.Status.Unauthorized]: Type.Ref(Schemas.Errors.ApiKeyError),
-				[Http.Status.UnprocessableEntity]: Type.Ref(Schemas.Errors.GenericError),
-				// TODO: fast-json-stringify is unable to handle a oneOf/anyOf for some reason, so it serializes to {}
-				// [Http.Status.UnprocessableEntity]: Schemas.Errors.ShortenHostnameError,
+				[Http.Status.UnprocessableEntity]: Schemas.Errors.AttemptedShortenBlockedHostname,
 				[Http.Status.ServiceUnavailable]: Schemas.Errors.UniqueShortIdTimeout,
 			},
 		},
@@ -45,10 +42,6 @@ export default function getRoute(fastify: FastifyInstance) {
 			} = request;
 
 			const longUrlHostname = new URL(url).hostname;
-
-			if (serverHostnames.has(longUrlHostname)) {
-				throw new AttemptedShortenHostname();
-			}
 
 			if (
 				// Exact match

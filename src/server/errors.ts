@@ -19,13 +19,6 @@ export class UrlNotFound extends ZwsError<Schemas.Errors.UrlNotFound> {
 	}
 }
 
-/** When a user attempted to shorten a URL that had the same hostname as the app does. */
-export class AttemptedShortenHostname extends ZwsError<Schemas.Errors.AttemptedShortenHostname> {
-	constructor() {
-		super('E_SHORTEN_HOSTNAME', 'Shortening a URL with the same hostname as the server is disallowed', Http.Status.UnprocessableEntity);
-	}
-}
-
 /** The maximum number of attempts to generate a unique short ID were hit. */
 export class UniqueShortIdTimeout extends ZwsError<Schemas.Errors.UniqueShortIdTimeout> {
 	constructor(attempts: number) {
