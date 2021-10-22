@@ -79,12 +79,12 @@ jobs:
       - name: Run database migrations
         run: yarn run migrations
         env:
-          DATABASE_URL: postgres://test:password@postgres:5432/zws
+          DATABASE_URL: postgres://test:password@localhost:5432/zws
       - name: Run smoke test
         run: yarn start
         env:
           SMOKE_TEST: true
-          DATABASE_URL: postgres://test:password@postgres:5432/zws
+          DATABASE_URL: postgres://test:password@localhost:5432/zws
         timeout-minutes: 1
   build:
     name: Build
