@@ -36,6 +36,54 @@ jobs:
       - name: Build Docker image
         # run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64,linux/arm64 .
         run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64 .
+  smoke-test:
+    name: Smoke test
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: postgres:14
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: zws
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v2
+      - name: Get Yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Compile TypeScript
+        run: yarn run build
+      - name: Run database migrations
+        run: yarn run migrations
+        env:
+          DATABASE_URL: postgres://test:password@postgres:5432/zws
+      - name: Run smoke test
+        run: yarn start
+        env:
+          SMOKE_TEST: true
+          DATABASE_URL: postgres://test:password@postgres:5432/zws
+        timeout-minutes: 1
   build:
     name: Build
 
@@ -193,7 +241,7 @@ jobs:
     # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
     if: ${{ github.ref  == 'refs/heads/main' }}
 
-    needs: [build, docker-build, lint, lint-dockerfile, validate-prisma]
+    needs: [build, docker-build, smoke-test, lint, lint-dockerfile, validate-prisma]
 
     steps:
       - name: Checkout git repository

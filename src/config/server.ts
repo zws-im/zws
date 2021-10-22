@@ -1,4 +1,5 @@
 import {URL} from 'node:url';
+import yn from 'yn';
 import {z} from 'zod';
 import pkg from '../../package.json';
 
@@ -13,6 +14,11 @@ const hostnameSchema = z.string().nullable().optional().default(null);
 const shortenedBaseUrlSchema = z.string().url().optional();
 
 const apiKeySchema = z.string().nullable().optional().default(null);
+
+const smokeTestSchema = z
+	.string()
+	.nullish()
+	.transform(smokeTest => yn(smokeTest));
 
 type UserAgent = `${string}/${string} (${string})`;
 
@@ -30,5 +36,7 @@ export default function parse(processEnv: NodeJS.ProcessEnv) {
 
 	const apiKey: string | null = apiKeySchema.parse(processEnv.API_KEY);
 
-	return {port, hostname, shortenedBaseUrl, apiKey, serverString, version};
+	const isSmokeTest = smokeTestSchema.parse(processEnv.SMOKE_TEST);
+
+	return {port, hostname, shortenedBaseUrl, apiKey, serverString, version, isSmokeTest};
 }
