@@ -50,6 +50,8 @@ jobs:
           POSTGRES_USER: test
           POSTGRES_PASSWORD: password
           POSTGRES_DB: zws
+        ports:
+          - '5432:5432'
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
