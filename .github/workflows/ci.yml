@@ -8,6 +8,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 10
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
@@ -39,6 +41,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 10
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
@@ -67,6 +71,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 10
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
@@ -89,6 +95,8 @@ jobs:
     name: Validate Prisma schema
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 10
 
     steps:
       - name: Checkout git repository
@@ -115,6 +123,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 5
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
@@ -126,6 +136,8 @@ jobs:
     name: Check style
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 10
 
     steps:
       - name: Checkout git repository
@@ -150,6 +162,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 10
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
@@ -172,6 +186,8 @@ jobs:
     name: Deploy
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 30
 
     # Don't run this job if we aren't on main branch
     # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
