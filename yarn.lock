@@ -1401,7 +1401,7 @@ __metadata:
     prettier: 2.4.1
     prisma: 3.3.0
     semantic-release: 18.0.0
-    ts-node: 10.3.0
+    ts-node: 10.3.1
     tslib: 2.3.1
     type-fest: 2.5.1
     typescript: 4.4.3
@@ -8371,9 +8371,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"ts-node@npm:10.3.0":
-  version: 10.3.0
-  resolution: "ts-node@npm:10.3.0"
+"ts-node@npm:10.3.1":
+  version: 10.3.1
+  resolution: "ts-node@npm:10.3.1"
   dependencies:
     "@cspotcode/source-map-support": 0.7.0
     "@tsconfig/node10": ^1.0.7
@@ -8403,7 +8403,7 @@ resolve@~1.19.0:
     ts-node-script: dist/bin-script.js
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
-  checksum: aea1b9eac4d4c735c453a0e7efef6fd76c7b59db3be158eabe21abad9d35209d243b210a9a5ef39742ffbda542250c2e771fa387e3b4829e8cb699e82f3820c4
+  checksum: 27d700ecc973962acf4473f043be571f9a7169cfc2fae8850b26450d88a149eb329b28f01b1a2c1068fa1e8a47cfa447066f89bc481a8f64f9b512230b744efa
   languageName: node
   linkType: hard
 
