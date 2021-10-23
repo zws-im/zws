@@ -1298,7 +1298,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xo@npm:0.39.1, @types/xo@npm:^0":
+"@types/xo@npm:0.39.1":
   version: 0.39.1
   resolution: "@types/xo@npm:0.39.1"
   dependencies:
@@ -1421,7 +1421,6 @@ __metadata:
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.10.3
-    "@types/xo": ^0
     consola: 2.15.3
     dotenv: 10.0.0
     fastify: 3.22.1
