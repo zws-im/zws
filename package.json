@@ -52,7 +52,7 @@
 		"@types/xo": "^0",
 		"prettier": "2.4.1",
 		"semantic-release": "18.0.0",
-		"ts-node": "10.3.1",
+		"ts-node": "10.4.0",
 		"type-fest": "2.5.1",
 		"typescript": "4.4.4",
 		"xo": "0.45.0"
