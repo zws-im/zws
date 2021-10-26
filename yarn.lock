@@ -1249,10 +1249,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.10.3":
-  version: 16.10.3
-  resolution: "@types/node@npm:16.10.3"
-  checksum: 3fd429bce8a4acb497dcc62b536782a5e87ccf7cd91d64a78b263ae5d66cb72bf84be9eeeff6f84ae0567b065a40b267caa66d311f9e094990a5847bbd168a29
+"@types/node@npm:16.10.9":
+  version: 16.10.9
+  resolution: "@types/node@npm:16.10.9"
+  checksum: b47c3e3896ce243d3bc9e356578d4d607357d9ea0c1445a15cb564341580ac4db4f95677bf15fd354e46343edbd171ac19701740a53637234411da5b66c883a4
   languageName: node
   linkType: hard
 
@@ -1420,7 +1420,7 @@ __metadata:
     "@sentry/node": 6.13.3
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
-    "@types/node": 16.10.3
+    "@types/node": 16.10.9
     consola: 2.15.3
     dotenv: 10.0.0
     fastify: 3.22.1

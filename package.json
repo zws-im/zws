@@ -48,7 +48,7 @@
 		"@jonahsnider/xo-config": "4.1.0",
 		"@semantic-release/exec": "6.0.1",
 		"@tsconfig/node16": "1.0.2",
-		"@types/node": "16.10.3",
+		"@types/node": "16.10.9",
 		"prettier": "2.4.1",
 		"semantic-release": "18.0.0",
 		"ts-node": "10.4.0",
