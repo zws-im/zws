@@ -85,11 +85,9 @@ if (config.google.appCredentials && config.google.projectId) {
 			},
 			keyFilename: config.google.appCredentials,
 		})
-		// eslint-disable-next-line promise/prefer-await-to-then
 		.then(() => {
 			googleCloudProfilerLogger.success('started');
 		})
-		// eslint-disable-next-line promise/prefer-await-to-then
 		.catch(error => {
 			googleCloudProfilerLogger.error(error);
 		});
