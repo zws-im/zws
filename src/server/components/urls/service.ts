@@ -86,12 +86,10 @@ export async function visit(id: Short, track: boolean): Promise<VisitUrlData | n
 		db.$transaction([
 			db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}),
 			db.approximateCounts.update({where: {kind: ApproximateCountKind.VISITS}, data: {count: {increment: 1}}}),
-		])
-			// eslint-disable-next-line promise/prefer-await-to-then
-			.catch(error => {
-				Sentry.captureException(error);
-				visitLogger.error('failed to create visit', error);
-			});
+		]).catch(error => {
+			Sentry.captureException(error);
+			visitLogger.error('failed to create visit', error);
+		});
 	}
 
 	return {longUrl: shortenedUrl.url, blocked: shortenedUrl.blocked};
