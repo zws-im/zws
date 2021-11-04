@@ -1408,7 +1408,7 @@ __metadata:
     tslib: 2.3.1
     type-fest: 2.5.2
     typescript: 4.4.4
-    xo: 0.46.3
+    xo: 0.46.4
     yn: 5.0.0
     zod: 3.11.6
   languageName: unknown
@@ -8629,9 +8629,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"xo@npm:0.46.3":
-  version: 0.46.3
-  resolution: "xo@npm:0.46.3"
+"xo@npm:0.46.4":
+  version: 0.46.4
+  resolution: "xo@npm:0.46.4"
   dependencies:
     "@eslint/eslintrc": ^1.0.3
     "@typescript-eslint/eslint-plugin": "*"
@@ -8671,7 +8671,7 @@ resolve@~1.19.0:
     typescript: ^4.4.4
   bin:
     xo: cli.js
-  checksum: 0798b64771a63f51f5ef39a7c1026b415f58923ac9d155cf9261232752e60a92feaa199b9f64056243ce5735852eda2d3e46dcf4b8b566e97f0d3486d2944600
+  checksum: 167436ba16e6c45cb993438fa454c36787a6c71532e19656e42cbd6ba75006994a1b1b493bbc4f43a32a32578f04ae103b2173728341ce7c54565c21e5450a4d
   languageName: node
   linkType: hard
 
