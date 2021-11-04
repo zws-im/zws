@@ -30,7 +30,7 @@
 		"@google-cloud/profiler": "4.1.5",
 		"@jonahsnider/util": "8.4.1",
 		"@prisma/client": "3.4.0",
-		"@sentry/node": "6.13.3",
+		"@sentry/node": "6.14.0",
 		"@sinclair/typebox": "0.20.5",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
