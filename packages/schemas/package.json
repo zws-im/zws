@@ -16,8 +16,8 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"exports": "./tsc_output/src/index.js",
-	"main": "./tsc_output/src/index.js",
+	"exports": "./tsc_output/index.js",
+	"main": "./tsc_output/index.js",
 	"types": "./tsc_output/index.d.ts",
 	"files": [
 		"tsc_output"
