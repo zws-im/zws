@@ -20,9 +20,9 @@
 		"packages/*"
 	],
 	"scripts": {
-		"prebuild": "yarn workspaces foreach run prebuild",
-		"build": "yarn workspaces foreach run build",
-		"clean": "yarn workspaces foreach run clean",
+		"prebuild": "yarn workspaces foreach --parallel run prebuild",
+		"build": "yarn workspaces foreach --parallel --topological run build",
+		"clean": "yarn workspaces foreach --parallel run clean",
 		"deploy": "lerna version --yes --conventional-commits --create-release github && lerna publish from-git --yes",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
