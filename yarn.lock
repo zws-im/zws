@@ -2031,7 +2031,7 @@ __metadata:
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.6
-    "@zws.im/schemas": 1.0.0
+    "@zws.im/schemas": 1.0.0-alpha
     consola: 2.15.3
     dotenv: 10.0.0
     fastify: 3.23.0
@@ -2048,7 +2048,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zws.im/schemas@1.0.0, @zws.im/schemas@workspace:packages/schemas":
+"@zws.im/schemas@1.0.0-alpha, @zws.im/schemas@workspace:packages/schemas":
   version: 0.0.0-use.local
   resolution: "@zws.im/schemas@workspace:packages/schemas"
   dependencies:
