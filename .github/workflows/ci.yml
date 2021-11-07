@@ -62,7 +62,7 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
-      - name: Compile TypeScript
+      - name: Build
         run: yarn run build
       - name: Run database migrations
         run: yarn run migrations
