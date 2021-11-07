@@ -91,13 +91,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
-      - name: Compile TypeScript
+      - name: Build
         run: yarn run build
-      - name: Upload compiled TypeScript
-        uses: actions/upload-artifact@v2
-        with:
-          name: tsc_output
-          path: tsc_output
   lint:
     name: Lint
 
@@ -115,6 +110,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Build
+        run: yarn run build
       - name: Lint
         run: yarn run lint
   validate-prisma:
