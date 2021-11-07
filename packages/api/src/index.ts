@@ -6,6 +6,14 @@ import baseLogger, {configLogger, fastifyLogger} from './logger.js';
 import fastify from './server/index.js';
 import {Env} from './utils/enums.js';
 
+// TODO: remove this
+// TODO: remove this
+// TODO: remove this
+// TODO: remove this
+// TODO: remove this
+// TODO: remove this
+// TODO: remove this
+
 function logConfig() {
 	baseLogger.info('ZWS API version', config.server.version);
 	if (config.server.hostname) {

@@ -6,14 +6,14 @@ const config = {...base};
 
 config.overrides.push(
 	{
-		files: './src/schemas/**/*.ts',
+		files: './packages/api/src/schemas/**/*.ts',
 		rules: {
 			'new-cap': 'off',
 			'unicorn/filename-case': 'off',
 		},
 	},
 	{
-		files: './src/server/**/*.ts',
+		files: './packages/api/src/server/**/*.ts',
 		rules: {
 			'new-cap': 'off',
 		},

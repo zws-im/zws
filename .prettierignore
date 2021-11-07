@@ -195,3 +195,6 @@ tsc_output
 # Yarn
 .yarn/*
 .pnp.*
+
+# Changelogs
+packages/*/CHANGELOG.md

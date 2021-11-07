@@ -23,6 +23,8 @@ COPY prisma ./prisma
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn ./.yarn
 
+COPY packages ./packages
+
 # hadolint ignore=DL3060
 RUN yarn install --immutable \
 	&& yarn prisma generate \
@@ -30,11 +32,9 @@ RUN yarn install --immutable \
 	&& apk del openssl libc6-compat python3 make g++
 
 # Compile
-COPY tsconfig.json ./
-COPY types ./types
-COPY src ./src
 RUN yarn build \
-	&& rm -r tsconfig.json types src \
+	# Delete source files
+	&& yarn clean \
 	# Remove dev dependencies
 	&& yarn workspaces focus --all --production \
 	# Clean cache

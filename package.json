@@ -16,44 +16,28 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"main": "./tsc_output/src/index.js",
+	"workspaces": [
+		"packages/*"
+	],
 	"scripts": {
-		"prebuild": "rm -rf tsc_output",
-		"build": "tsc",
-		"deploy": "semantic-release",
+		"build": "yarn workspaces foreach run build",
+		"clean": "yarn workspaces foreach run clean",
+		"deploy": "lerna version --yes --conventional-commits --create-release github && lerna publish from-git --yes",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
-		"start": "node --experimental-json-modules .",
+		"start": "yarn run api:start",
 		"style": "prettier --check ."
 	},
+	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"@google-cloud/profiler": "4.1.5",
-		"@jonahsnider/util": "8.4.1",
 		"@prisma/client": "3.4.1",
-		"@sentry/node": "6.14.1",
-		"@sinclair/typebox": "0.20.5",
-		"consola": "2.15.3",
-		"dotenv": "10.0.0",
-		"fastify": "3.23.0",
-		"fastify-bearer-auth": "5.1.0",
-		"fastify-swagger": "4.12.6",
-		"millify": "4.0.0",
-		"prisma": "3.4.1",
-		"tslib": "2.3.1",
-		"yn": "5.0.0",
-		"zod": "3.11.6"
+		"prisma": "3.4.1"
 	},
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/xo-config": "5.0.0",
-		"@semantic-release/exec": "6.0.2",
-		"@tsconfig/node16": "1.0.2",
-		"@types/node": "16.11.6",
+		"lerna": "4.0.0",
 		"prettier": "2.4.1",
-		"semantic-release": "18.0.0",
-		"ts-node": "10.4.0",
-		"type-fest": "2.5.2",
-		"typescript": "4.4.4",
 		"xo": "0.46.4"
 	},
 	"engines": {

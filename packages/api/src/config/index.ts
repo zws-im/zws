@@ -1,4 +1,5 @@
 import process from 'node:process';
+import {fileURLToPath, URL} from 'node:url';
 import * as dotenv from 'dotenv';
 import {Env} from '../utils/enums.js';
 import parseBlocklist from './blocklist.js';
@@ -11,7 +12,9 @@ import parseServer from './server.js';
 export const env = parseEnv(process.env);
 
 if (env.env === Env.Dev) {
-	dotenv.config();
+	dotenv.config({
+		path: fileURLToPath(new URL('../../../../../.env', import.meta.url)),
+	});
 }
 
 export const blocklist = parseBlocklist(process.env);
