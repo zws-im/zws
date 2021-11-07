@@ -2,11 +2,10 @@ import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import * as Schemas from '@zws.im/schemas';
 import * as config from '../../../../config/index.js';
 
 import {fastifyLogger} from '../../../../logger.js';
-
-import * as Schemas from '../../../../schemas/index.js';
 
 import {AttemptedShortenBlockedHostname} from '../../../errors.js';
 import {urls} from '../../services.js';

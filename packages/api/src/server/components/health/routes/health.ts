@@ -1,9 +1,9 @@
 import {Http} from '@jonahsnider/util';
 import type {RouteOptions} from 'fastify';
+import * as Schemas from '@zws.im/schemas';
 import {OpenApiTags} from '../../../../utils/enums.js';
 
 import db from '../../../../db.js';
-import * as Schemas from '../../../../schemas/index.js';
 import {NotHealthy} from '../../../errors.js';
 
 export default function getRoute() {

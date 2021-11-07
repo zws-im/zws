@@ -1,8 +1,8 @@
 import type {FastifyInstance} from 'fastify';
 import bearerAuthPlugin from 'fastify-bearer-auth';
 import swaggerPlugin from 'fastify-swagger';
+import type * as Schemas from '@zws.im/schemas';
 import * as config from '../config/index.js';
-import type * as Schemas from '../schemas/index.js';
 import {IncorrectApiKey, MissingApiKey} from './errors.js';
 import openapi from './openapi.js';
 

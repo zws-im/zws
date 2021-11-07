@@ -1,6 +1,6 @@
 import type {Static} from '@sinclair/typebox';
 import type {Merge} from 'type-fest';
-import {Type} from '../../utils/typebox.js';
+import {Type} from '../utils/typebox.js';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const UrlStats = Type.Object(

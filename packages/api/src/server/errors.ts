@@ -1,8 +1,8 @@
 import {Http} from '@jonahsnider/util';
-import type {GenericError} from '../schemas/errors/GenericError.js';
-import type * as Schemas from '../schemas/index.js';
 
-class ZwsError<T extends GenericError> extends Error {
+import type * as Schemas from '@zws.im/schemas';
+
+class ZwsError<T extends Schemas.Errors.GenericError> extends Error {
 	constructor(public readonly code: NonNullable<T['code']>, public readonly message: T['message'], public readonly statusCode: T['statusCode']) {
 		super(message);
 	}

@@ -1,11 +1,10 @@
 import {Http} from '@jonahsnider/util';
 import {Type} from '@sinclair/typebox';
 import type {RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
+import * as Schemas from '@zws.im/schemas';
 import * as config from '../../../../config/index.js';
 
 import {OpenApiTags} from '../../../../utils/enums.js';
-
-import * as Schemas from '../../../../schemas/index.js';
 
 export default function getRoute() {
 	const route: RouteOptions<

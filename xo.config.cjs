@@ -6,7 +6,7 @@ const config = {...base};
 
 config.overrides.push(
 	{
-		files: './packages/api/src/schemas/**/*.ts',
+		files: './packages/schemas/src/**/*.ts',
 		rules: {
 			'new-cap': 'off',
 			'unicorn/filename-case': 'off',

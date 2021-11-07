@@ -31,6 +31,7 @@
 		"@prisma/client": "3.4.1",
 		"@sentry/node": "6.14.1",
 		"@sinclair/typebox": "0.20.5",
+		"@zws.im/schemas": "workspace:*",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
 		"fastify": "3.23.0",

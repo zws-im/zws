@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"importHelpers": true,
+		"inlineSources": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"outDir": "tsc_output",
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"sourceRoot": "/"
+	},
+	"exclude": ["node_modules"],
+	"extends": "@tsconfig/node16/tsconfig.json",
+	"include": ["src"]
+}

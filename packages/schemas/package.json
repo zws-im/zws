@@ -1,0 +1,38 @@
+{
+	"name": "@zws.im/schemas",
+	"version": "1.0.0",
+	"description": "zws.im schemas for errors, inputs, and models",
+	"bugs": {
+		"url": "https://github.com/zws-im/zws/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zws-im/zws.git"
+	},
+	"license": "Apache-2.0",
+	"author": {
+		"name": "Jonah Snider",
+		"email": "jonah@jonah.pw",
+		"url": "https://jonahsnider.com"
+	},
+	"type": "module",
+	"exports": "./tsc_output/src/index.js",
+	"main": "./tsc_output/src/index.js",
+	"types": "./tsc_output/index.d.ts",
+	"scripts": {
+		"prebuild": "rm -rf tsc_output",
+		"build": "tsc",
+		"clean": "rm -r ./src/ ./tsconfig.json"
+	},
+	"dependencies": {
+		"@sinclair/typebox": "0.20.5"
+	},
+	"devDependencies": {
+		"@tsconfig/node16": "1.0.2",
+		"typescript": "4.4.4"
+	},
+	"engines": {
+		"node": ">= 16.0.0"
+	},
+	"packageManager": "yarn@3.1.0"
+}
