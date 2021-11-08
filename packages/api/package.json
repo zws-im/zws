@@ -18,7 +18,6 @@
 	"type": "module",
 	"main": "./tsc_output/src/index.js",
 	"scripts": {
-		"api:start": "yarn start",
 		"prebuild": "rm -rf tsc_output",
 		"build": "tsc",
 		"clean": "rm -r ./src/ ./scripts/ ./tsconfig.json",
