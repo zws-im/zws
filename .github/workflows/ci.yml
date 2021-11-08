@@ -210,18 +210,13 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
-      - name: Setup Git user
+      - name: Deploy
         run: |
           git config --global user.email "ci@zws.im"
           git config --global user.name "zws.im"
-      - name: Set npm token
-        run: |
           npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
           npm whoami
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Deploy
-        run: yarn run deploy
+          yarn run deploy
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
