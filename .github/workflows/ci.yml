@@ -220,6 +220,8 @@ jobs:
           git fetch github
       - name: Configure npm
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Update versions with changesets
         run: yarn changeset version
       - name: Publish with changesets
@@ -233,7 +235,6 @@ jobs:
 
           git push --follow-tags -u github main
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          # DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          # DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
