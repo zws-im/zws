@@ -198,3 +198,6 @@ tsc_output
 
 # Changelogs
 packages/*/CHANGELOG.md
+
+# Changesets
+.changeset/*.md

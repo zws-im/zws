@@ -23,7 +23,7 @@
 		"prebuild": "yarn workspaces foreach --parallel run prebuild",
 		"build": "yarn workspaces foreach --parallel --topological run build",
 		"clean": "yarn workspaces foreach --parallel run clean",
-		"deploy": "lerna version --yes --conventional-commits --exact --create-release github && lerna publish from-git --yes --no-verify-access",
+		"deploy": "echo TODO",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
@@ -35,9 +35,9 @@
 		"prisma": "3.4.1"
 	},
 	"devDependencies": {
+		"@changesets/cli": "2.17.0",
 		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/xo-config": "5.0.0",
-		"lerna": "4.0.0",
 		"prettier": "2.4.1",
 		"xo": "0.46.4"
 	},
