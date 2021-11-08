@@ -216,8 +216,6 @@ jobs:
         run: |
           git config --global user.email "ci@zws.im"
           git config --global user.name "zws.im"
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          npm whoami
           yarn run deploy
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
