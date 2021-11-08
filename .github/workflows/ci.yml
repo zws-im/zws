@@ -210,6 +210,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Build
+        run: yarn run build
       - name: Deploy
         run: |
           git config --global user.email "ci@zws.im"
