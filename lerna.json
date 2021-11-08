@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/lerna.json",
 	"command": {
-		"version": {
-			"allowBranch": "main",
-			"message": "build: bump version"
-		},
 		"publish": {
 			"allowBranch": "main",
 			"message": "build: publish"
+		},
+		"version": {
+			"allowBranch": "main",
+			"message": "build: bump version"
 		}
 	},
 	"npmClient": "yarn",
