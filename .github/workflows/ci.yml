@@ -231,7 +231,7 @@ jobs:
           # Exit succesfully if no changes
           git commit -m "docs: update benchmark results" || exit 0
 
-          git push -u github main
+          git push --follow-tags -u github main
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
