@@ -212,12 +212,26 @@ jobs:
         run: yarn install --immutable
       - name: Build
         run: yarn run build
-      - name: Deploy
+      - name: Setup Git for committing
         run: |
           git config --global user.email "ci@zws.im"
           git config --global user.name "zws.im"
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          yarn run deploy
+          git remote add github "https://$GITHUB_ACTOR@github.com/$GITHUB_REPOSITORY.git"
+          git fetch github
+      - name: Configure npm
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - name: Update versions with changesets
+        run: yarn changeset version
+      - name: Publish with changesets
+        run: |
+          yarn changeset publish
+
+          git add -A
+
+          # Exit succesfully if no changes
+          git commit -m "docs: update benchmark results" || exit 0
+
+          git push -u github main
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

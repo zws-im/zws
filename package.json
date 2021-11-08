@@ -23,7 +23,6 @@
 		"prebuild": "yarn workspaces foreach --parallel run prebuild",
 		"build": "yarn workspaces foreach --parallel --topological run build",
 		"clean": "yarn workspaces foreach --parallel run clean",
-		"deploy": "echo TODO",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
