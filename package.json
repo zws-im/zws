@@ -23,7 +23,7 @@
 		"prebuild": "yarn workspaces foreach --parallel run prebuild",
 		"build": "yarn workspaces foreach --parallel --topological run build",
 		"clean": "yarn workspaces foreach --parallel run clean",
-		"deploy": "lerna version --yes --conventional-commits --exact --create-release github && lerna publish from-git --yes",
+		"deploy": "lerna version --yes --conventional-commits --exact --create-release github && lerna publish from-git --yes --no-verify-access",
 		"lint": "xo",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn run api:start",
