@@ -2031,7 +2031,7 @@ __metadata:
     "@sinclair/typebox": 0.20.5
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.6
-    "@zws.im/schemas": 1.0.4
+    "@zws.im/schemas": "workspace:*"
     consola: 2.15.3
     dotenv: 10.0.0
     fastify: 3.23.0
@@ -2048,16 +2048,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zws.im/schemas@npm:1.0.4":
-  version: 1.0.4
-  resolution: "@zws.im/schemas@npm:1.0.4"
-  dependencies:
-    "@sinclair/typebox": 0.20.5
-  checksum: 949e584759435a19c4019093652f6b4fd6e9accf34517db91420853babe04a344680943c8e338aadedbff119ef17ce2eef187bc0fb6472a1cab25fadc31ae0d6
-  languageName: node
-  linkType: hard
-
-"@zws.im/schemas@workspace:packages/schemas":
+"@zws.im/schemas@workspace:*, @zws.im/schemas@workspace:packages/schemas":
   version: 0.0.0-use.local
   resolution: "@zws.im/schemas@workspace:packages/schemas"
   dependencies:

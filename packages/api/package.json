@@ -24,16 +24,13 @@
 		"start": "node --experimental-json-modules .",
 		"postversion": "./scripts/postversion.bash"
 	},
-	"resolutions": {
-		"@zws.im/schemas": "workspace:*"
-	},
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.5",
 		"@jonahsnider/util": "8.4.1",
 		"@prisma/client": "3.4.1",
 		"@sentry/node": "6.14.1",
 		"@sinclair/typebox": "0.20.5",
-		"@zws.im/schemas": "1.0.4",
+		"@zws.im/schemas": "workspace:*",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
 		"fastify": "3.23.0",
