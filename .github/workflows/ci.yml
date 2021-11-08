@@ -229,7 +229,7 @@ jobs:
           git add -A
 
           # Exit succesfully if no changes
-          git commit -m "docs: update benchmark results" || exit 0
+          git commit -m "build: release" || exit 0
 
           git push --follow-tags -u github main
         env:
