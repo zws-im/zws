@@ -1,6 +1,6 @@
 {
 	"name": "@zws.im/schemas",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "zws.im schemas for errors, inputs, and models",
 	"bugs": {
 		"url": "https://github.com/zws-im/zws/issues"
