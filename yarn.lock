@@ -304,14 +304,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/apply-release-plan@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@changesets/apply-release-plan@npm:5.0.1"
+"@changesets/apply-release-plan@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@changesets/apply-release-plan@npm:5.0.2"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/config": ^1.6.1
+    "@changesets/config": ^1.6.2
     "@changesets/get-version-range-type": ^0.3.2
-    "@changesets/git": ^1.1.2
+    "@changesets/git": ^1.2.0
     "@changesets/types": ^4.0.1
     "@manypkg/get-packages": ^1.0.1
     detect-indent: ^6.0.0
@@ -321,39 +321,39 @@ __metadata:
     prettier: ^1.19.1
     resolve-from: ^5.0.0
     semver: ^5.4.1
-  checksum: 787f36d43b7ccd4557add247710e76d86edb55e8aa230ff4596179a8b3fb40758cc6800b8bb4b7f9a35bd3ff352d3a75bc84f381b5de6419cd4063d60a96501b
+  checksum: 3dbb220c75cf48211efbfb486e8295e2805966456ae4f4b366b0a6b4c27d49f5b3808c90c586d071028ac2edf3ee3f697571afea7aa989b2a6b6a582b284b50c
   languageName: node
   linkType: hard
 
-"@changesets/assemble-release-plan@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@changesets/assemble-release-plan@npm:5.0.1"
+"@changesets/assemble-release-plan@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@changesets/assemble-release-plan@npm:5.0.2"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/errors": ^0.1.4
-    "@changesets/get-dependents-graph": ^1.2.2
+    "@changesets/get-dependents-graph": ^1.2.3
     "@changesets/types": ^4.0.1
     "@manypkg/get-packages": ^1.0.1
     semver: ^5.4.1
-  checksum: 65dfdf319361251217e27faf4bda85f3ea10f85e38aaf7867dd81d71468031a3f23277994ec43f74fad59dfe54991582c6a5ff42ee6a87156abdeda713c11d79
+  checksum: e34228d29c6f19cd78e5881074ebf701be03ccafa3fba7d0d436f1df7fafa2cf582aedb440f18a3b521e2002d149a7a45bf6c78d72bfd1530f6f9f36cc58882d
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:2.17.0":
-  version: 2.17.0
-  resolution: "@changesets/cli@npm:2.17.0"
+"@changesets/cli@npm:2.18.0":
+  version: 2.18.0
+  resolution: "@changesets/cli@npm:2.18.0"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/apply-release-plan": ^5.0.1
-    "@changesets/assemble-release-plan": ^5.0.1
-    "@changesets/config": ^1.6.1
+    "@changesets/apply-release-plan": ^5.0.2
+    "@changesets/assemble-release-plan": ^5.0.2
+    "@changesets/config": ^1.6.2
     "@changesets/errors": ^0.1.4
-    "@changesets/get-dependents-graph": ^1.2.2
-    "@changesets/get-release-plan": ^3.0.1
-    "@changesets/git": ^1.1.2
+    "@changesets/get-dependents-graph": ^1.2.3
+    "@changesets/get-release-plan": ^3.0.2
+    "@changesets/git": ^1.2.0
     "@changesets/logger": ^0.0.5
     "@changesets/pre": ^1.0.7
-    "@changesets/read": ^0.5.0
+    "@changesets/read": ^0.5.1
     "@changesets/types": ^4.0.1
     "@changesets/write": ^0.1.5
     "@manypkg/get-packages": ^1.0.1
@@ -375,22 +375,22 @@ __metadata:
     tty-table: ^2.8.10
   bin:
     changeset: bin.js
-  checksum: 214a0752ccb0df059212986cf1415e10b2ae2a3416309a5990db737515ed0c914a06e078bfbc762e09009e9bb64021529778cf0a77e3509b319281586501fbcd
+  checksum: 0a20c1529071a4c64ff7d71f1d69f183bbc4bdb1ff6ff8b5cc048d4bbbc411e6887f06d21fb09d97f10aa6724366c18151b090a75334a129c304ddea87d99116
   languageName: node
   linkType: hard
 
-"@changesets/config@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "@changesets/config@npm:1.6.1"
+"@changesets/config@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "@changesets/config@npm:1.6.2"
   dependencies:
     "@changesets/errors": ^0.1.4
-    "@changesets/get-dependents-graph": ^1.2.2
+    "@changesets/get-dependents-graph": ^1.2.3
     "@changesets/logger": ^0.0.5
     "@changesets/types": ^4.0.1
     "@manypkg/get-packages": ^1.0.1
     fs-extra: ^7.0.1
     micromatch: ^4.0.2
-  checksum: 55f0e0e0394f6a484074df8d0e12947eb4d878d439f84fa412d0e2e1ff87c07d4b7d9a8f07da2dadc43953fef1c8b162822dfb383d93ba3a9c0b899a9def6a8c
+  checksum: 5ade65470e78d3eb890d4640eaa3a42840b0dba7db723239c7bbe659f2e64d6e959f7919e3d1882238d0e80e62cd1d6143595d1ff07bed1dc9e56ac65183eb5e
   languageName: node
   linkType: hard
 
@@ -403,31 +403,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-dependents-graph@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@changesets/get-dependents-graph@npm:1.2.2"
+"@changesets/get-dependents-graph@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "@changesets/get-dependents-graph@npm:1.2.3"
   dependencies:
     "@changesets/types": ^4.0.1
     "@manypkg/get-packages": ^1.0.1
     chalk: ^2.1.0
     fs-extra: ^7.0.1
     semver: ^5.4.1
-  checksum: cfe762e92ac1c5f0b1f2cbd1f95c5c63736002f81976e434d86c0da74e26a3f821b3978ac94e99ed498652be979cebb409b832e50d7c28bf1578a34a7e94dfc2
+  checksum: 76178467b0bcfbc76f9799e700a8897020072e325131735f55931b8e5361587a9afb83c891e1452c7e63a79053b42af27363672f64201242c3592c09559c4ae3
   languageName: node
   linkType: hard
 
-"@changesets/get-release-plan@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@changesets/get-release-plan@npm:3.0.1"
+"@changesets/get-release-plan@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@changesets/get-release-plan@npm:3.0.2"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/assemble-release-plan": ^5.0.1
-    "@changesets/config": ^1.6.1
+    "@changesets/assemble-release-plan": ^5.0.2
+    "@changesets/config": ^1.6.2
     "@changesets/pre": ^1.0.7
-    "@changesets/read": ^0.5.0
+    "@changesets/read": ^0.5.1
     "@changesets/types": ^4.0.1
     "@manypkg/get-packages": ^1.0.1
-  checksum: 816c05a91950af12d3c8e551205f7b6926571a41f7ab22fb1d5f21eec6fadd0e742760311e4c5e630a892036beaf3329c2b4b45a3ea3b048bf00ad111ef524ec
+  checksum: b0fa5cf378a6de9e48ad966808729cb5d4a565ce541c9c05d5f02741b6a93fe6dc953aa97b6a9f25cd2b11affb6e7103404d49f81d0dda1077441a0f19a76114
   languageName: node
   linkType: hard
 
@@ -438,9 +438,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/git@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@changesets/git@npm:1.1.2"
+"@changesets/git@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@changesets/git@npm:1.2.0"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/errors": ^0.1.4
@@ -448,7 +448,7 @@ __metadata:
     "@manypkg/get-packages": ^1.0.1
     is-subdir: ^1.1.1
     spawndamnit: ^2.0.0
-  checksum: 5677cfb7f057c7f4d0fb634e734a24ec16b12311507c3f9fec061cff9bf032778f0424e266a43afe5a514486a1e6edda50ada40a0f80c8c3b709278204efdd52
+  checksum: 1b962b7647709130a0c6e351c4d9cd2c13499aa4961102294725fa6926471ddaa7967a1e6296ab4a932a7f87c0b5a3ce1b65d179eb999cbd6e2c90e79efc6a4c
   languageName: node
   linkType: hard
 
@@ -484,19 +484,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/read@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@changesets/read@npm:0.5.0"
+"@changesets/read@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@changesets/read@npm:0.5.1"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/git": ^1.1.2
+    "@changesets/git": ^1.2.0
     "@changesets/logger": ^0.0.5
     "@changesets/parse": ^0.3.9
     "@changesets/types": ^4.0.1
     chalk: ^2.1.0
     fs-extra: ^7.0.1
     p-filter: ^2.1.0
-  checksum: 1ed41827530af51d5284e94b170c361a2fa501246531bacababb6814e141250e67891f1d01bba90da8af1ce91fde48fc15c24348f869d43e82172ddd52ffe0d8
+  checksum: d1a75bc3f8dabc40fee6556bc75ff4f839fa5603bb5ac9776eccc87d4b8662d68d4b29d5dcaa9dc7ee9192e65b800957da122b023b5cd1bd926c75cdf8a89621
   languageName: node
   linkType: hard
 
@@ -1273,7 +1273,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@changesets/cli": 2.17.0
+    "@changesets/cli": 2.18.0
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.0
     "@prisma/client": 3.4.1
