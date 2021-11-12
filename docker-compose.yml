@@ -16,7 +16,7 @@ services:
     env_file: ./.env
     command: ['yarn', 'run', 'migrations']
   db:
-    image: postgres:14.0
+    image: postgres:14.1
     env_file: ./db.env
     restart: unless-stopped
     volumes:
