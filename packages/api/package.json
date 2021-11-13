@@ -26,7 +26,7 @@
 	},
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.5",
-		"@jonahsnider/util": "8.4.1",
+		"@jonahsnider/util": "8.4.2",
 		"@prisma/client": "3.4.2",
 		"@sentry/node": "6.14.3",
 		"@sinclair/typebox": "0.20.5",
