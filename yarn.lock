@@ -1245,7 +1245,7 @@ __metadata:
     "@zws.im/schemas": "workspace:*"
     consola: 2.15.3
     dotenv: 10.0.0
-    fastify: 3.23.1
+    fastify: 3.24.0
     fastify-bearer-auth: 5.1.0
     fastify-swagger: 4.12.6
     millify: 4.0.0
@@ -3147,9 +3147,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.23.1":
-  version: 3.23.1
-  resolution: "fastify@npm:3.23.1"
+"fastify@npm:3.24.0":
+  version: 3.24.0
+  resolution: "fastify@npm:3.24.0"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3166,7 +3166,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: c1110085c9aacbc8734b3c570e14276c94d406361c1280a8a9345266eaf8218e420eaab742de171581e9d9f5195fff3d0206d582da1ab7ea4ba0f455ab9efbba
+  checksum: 206e7b74068b7a3a39d1144bd2c453141216527fd9face960d3f20d33edb86a71421afb5d1ee15633712e8b50886db625c6f2d8dfca2b97739c01fa128cb7e8d
   languageName: node
   linkType: hard
 
