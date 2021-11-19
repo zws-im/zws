@@ -955,10 +955,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinclair/typebox@npm:0.20.5":
-  version: 0.20.5
-  resolution: "@sinclair/typebox@npm:0.20.5"
-  checksum: 774160187966b0c7b2c9aab2fc4c443cc72820fa6808211d719d9b00d8272d6183668a6de73ad21ddbb2339b3012d5c0a79a8cc3ae87b578501187b4f39fd339
+"@sinclair/typebox@npm:0.20.6":
+  version: 0.20.6
+  resolution: "@sinclair/typebox@npm:0.20.6"
+  checksum: f4fa4c2066239e138dd44f92b1c7704b815c17da0f1843167fd9734aaac0d074c62abfcd29e764719fa498457c4f51c26ea922854b8d4c6f67b6541b8a2ca39e
   languageName: node
   linkType: hard
 
@@ -1239,7 +1239,7 @@ __metadata:
     "@jonahsnider/util": 8.4.3
     "@prisma/client": 3.5.0
     "@sentry/node": 6.14.3
-    "@sinclair/typebox": 0.20.5
+    "@sinclair/typebox": 0.20.6
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.7
     "@zws.im/schemas": "workspace:*"
@@ -1263,7 +1263,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/schemas@workspace:packages/schemas"
   dependencies:
-    "@sinclair/typebox": 0.20.5
+    "@sinclair/typebox": 0.20.6
     "@tsconfig/node16": 1.0.2
     typescript: 4.4.4
   languageName: unknown
