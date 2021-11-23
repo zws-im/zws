@@ -28,7 +28,7 @@
 		"clean": "rm -r ./src/ ./tsconfig.json"
 	},
 	"dependencies": {
-		"@sinclair/typebox": "0.20.6"
+		"@sinclair/typebox": "0.22.1"
 	},
 	"devDependencies": {
 		"@tsconfig/node16": "1.0.2",
