@@ -1252,7 +1252,7 @@ __metadata:
     prisma: 3.5.0
     ts-node: 10.4.0
     tslib: 2.3.1
-    type-fest: 2.5.4
+    type-fest: 2.6.0
     typescript: 4.5.2
     yn: 5.0.0
     zod: 3.11.6
@@ -6749,10 +6749,10 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"type-fest@npm:2.5.4":
-  version: 2.5.4
-  resolution: "type-fest@npm:2.5.4"
-  checksum: ced03d6d01dd1040f3c53458d333c657d1cae0bc0331e8aacedb4c880919eb3013ce0aff8afdb8ce51718d34fc98637333ea43b3bcb29c63c7f3e1c149ddb9c3
+"type-fest@npm:2.6.0":
+  version: 2.6.0
+  resolution: "type-fest@npm:2.6.0"
+  checksum: 8cb11716f3c2e02d062edc4cafab10097fdcd6de323e34f8929e0eca15c490ba877e2f400d2c322f71922dae60f1750e1733604196ba96b0748c4fe54e958b7d
   languageName: node
   linkType: hard
 
