@@ -667,14 +667,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:5.0.0":
-  version: 5.0.0
-  resolution: "@jonahsnider/xo-config@npm:5.0.0"
+"@jonahsnider/xo-config@npm:5.0.1":
+  version: 5.0.1
+  resolution: "@jonahsnider/xo-config@npm:5.0.1"
   dependencies:
-    "@types/xo": 0.39.1
-    eslint-plugin-jsdoc: 37.0.0
+    "@types/xo": 0.39.2
+    eslint-plugin-jsdoc: 37.0.3
     eslint-plugin-tsdoc: 0.2.14
-  checksum: e04e25e67c1a1492ac3b08d85141adc70db4539c60b2593fed49a4febd64dc9fed37bbe009df6b7efcdada7d513cc56f2f6baef88bb46004e8ccb88dc997d672
+  checksum: 02dd584b6c622fb2f7cb2dc727ed6105a5d442b11d1d99b66c39d680310c20f21125f0f14577d2103414a44bd11731b64168bbbbbeb06d022f94297a9b36eb25
   languageName: node
   linkType: hard
 
@@ -1129,12 +1129,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xo@npm:0.39.1":
-  version: 0.39.1
-  resolution: "@types/xo@npm:0.39.1"
+"@types/xo@npm:0.39.2":
+  version: 0.39.2
+  resolution: "@types/xo@npm:0.39.2"
   dependencies:
     "@types/eslint": "*"
-  checksum: e7af5f173375fcb70b45a9d7b6fafb8880388d0ff2554ebcf0fd049c0a704e5cd6d81923e4f81446fa51c2ddbcef3fa696e541a2e019de4e5211296031cd6561
+  checksum: a3bc56539ab1af2c0132d4b9735ac48bb95740fd6d2c8315477709d7c564deb4c4b4684bf2631961d080a4f14a28920838a9d9f031e0b21001c88619a41fcd58
   languageName: node
   linkType: hard
 
@@ -1282,7 +1282,7 @@ __metadata:
   dependencies:
     "@changesets/cli": 2.18.1
     "@jonahsnider/prettier-config": 1.1.0
-    "@jonahsnider/xo-config": 5.0.0
+    "@jonahsnider/xo-config": 5.0.1
     "@prisma/client": 3.5.0
     prettier: 2.5.0
     prisma: 3.5.0
@@ -2653,9 +2653,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:37.0.0":
-  version: 37.0.0
-  resolution: "eslint-plugin-jsdoc@npm:37.0.0"
+"eslint-plugin-jsdoc@npm:37.0.3":
+  version: 37.0.3
+  resolution: "eslint-plugin-jsdoc@npm:37.0.3"
   dependencies:
     "@es-joy/jsdoccomment": 0.12.0
     comment-parser: 1.2.4
@@ -2668,7 +2668,7 @@ __metadata:
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: 86f5ad4777b3a4343229919c6c2fb697b5bd5533d0810c15e72236db93443c5110741d7710884eba92027943a3ab7648ae3f26e7e9aae459dec5ea567f8fff43
+  checksum: 1659009bb285a728796f7a4ac69c0dc7c48f8189c4cbb26548eb7778be9a020796d8265f258c7fe0f625b83a4d95f21c28278e50deeff6c741c3fc4d62a9bfb5
   languageName: node
   linkType: hard
 
