@@ -1259,7 +1259,7 @@ __metadata:
     prisma: 3.5.0
     ts-node: 10.4.0
     tslib: 2.3.1
-    type-fest: 2.6.0
+    type-fest: 2.8.0
     typescript: 4.5.2
     yn: 5.0.0
     zod: 3.11.6
@@ -6798,10 +6798,10 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"type-fest@npm:2.6.0, type-fest@npm:^2.0.0":
-  version: 2.6.0
-  resolution: "type-fest@npm:2.6.0"
-  checksum: 8cb11716f3c2e02d062edc4cafab10097fdcd6de323e34f8929e0eca15c490ba877e2f400d2c322f71922dae60f1750e1733604196ba96b0748c4fe54e958b7d
+"type-fest@npm:2.8.0":
+  version: 2.8.0
+  resolution: "type-fest@npm:2.8.0"
+  checksum: 9f5afbe9d2ec8daeae4b9002ea320eac78487bef71f3d6937810ac6066cdaeaeec2dd1c4bb785edd12fd8b73412ab6beced2d81c5edd113e6c6bcb76bbe1c5bf
   languageName: node
   linkType: hard
 
@@ -6844,6 +6844,13 @@ resolve@~1.19.0:
   version: 1.4.0
   resolution: "type-fest@npm:1.4.0"
   checksum: b011c3388665b097ae6a109a437a04d6f61d81b7357f74cbcb02246f2f5bd72b888ae33631b99871388122ba0a87f4ff1c94078e7119ff22c70e52c0ff828201
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^2.0.0":
+  version: 2.6.0
+  resolution: "type-fest@npm:2.6.0"
+  checksum: 8cb11716f3c2e02d062edc4cafab10097fdcd6de323e34f8929e0eca15c490ba877e2f400d2c322f71922dae60f1750e1733604196ba96b0748c4fe54e958b7d
   languageName: node
   linkType: hard
 
