@@ -47,7 +47,7 @@
 		"@types/node": "16.11.12",
 		"ts-node": "10.4.0",
 		"type-fest": "2.8.0",
-		"typescript": "4.5.2"
+		"typescript": "4.5.3"
 	},
 	"engines": {
 		"node": "16.x"
