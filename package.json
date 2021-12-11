@@ -55,6 +55,7 @@
 				]
 			},
 			"clean": {
+				"outputs": [],
 				"cache": false
 			},
 			"lint": {
