@@ -17,16 +17,16 @@
 	},
 	"type": "module",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"apps/*"
 	],
 	"scripts": {
-		"prebuild": "yarn workspaces foreach --parallel run prebuild",
-		"build": "yarn workspaces foreach --parallel --topological run build",
-		"clean": "yarn workspaces foreach --parallel run clean",
-		"lint": "xo",
+		"build": "turbo run build",
+		"clean": "turbo run clean",
+		"lint": "turbo run lint",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
-		"style": "prettier --check ."
+		"style": "prettier --check . && turbo run style"
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
@@ -36,12 +36,33 @@
 	"devDependencies": {
 		"@changesets/cli": "2.18.1",
 		"@jonahsnider/prettier-config": "1.1.0",
-		"@jonahsnider/xo-config": "5.0.1",
 		"prettier": "2.5.1",
-		"xo": "0.47.0"
+		"turbo": "1.0.6"
 	},
 	"engines": {
 		"node": "16.x"
 	},
-	"packageManager": "yarn@3.1.1"
+	"packageManager": "yarn@3.1.1",
+	"turbo": {
+		"baseBranch": "origin/main",
+		"pipeline": {
+			"build": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": [
+					"dist/**"
+				]
+			},
+			"clean": {
+				"cache": false
+			},
+			"lint": {
+				"outputs": []
+			},
+			"style": {
+				"outputs": []
+			}
+		}
+	}
 }

@@ -16,23 +16,29 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"exports": "./tsc_output/index.js",
-	"main": "./tsc_output/index.js",
-	"types": "./tsc_output/index.d.ts",
+	"exports": "./dist/index.js",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"files": [
-		"tsc_output"
+		"dist"
 	],
 	"scripts": {
-		"prebuild": "rm -rf tsc_output",
 		"build": "tsc",
-		"clean": "rm -r ./src/ ./tsconfig.json"
+		"clean": "rm -r ./src/ ./tsconfig.json",
+		"lint": "xo",
+		"style": "prettier --check . --ignore-path ../../.prettierignore"
 	},
+	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"@sinclair/typebox": "0.22.1"
 	},
 	"devDependencies": {
+		"@jonahsnider/prettier-config": "1.1.0",
+		"@jonahsnider/xo-config": "5.0.1",
 		"@tsconfig/node16": "1.0.2",
-		"typescript": "4.5.3"
+		"prettier": "2.5.1",
+		"typescript": "4.5.3",
+		"xo": "0.47.0"
 	},
 	"engines": {
 		"node": ">= 16.0.0"

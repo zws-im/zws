@@ -24,6 +24,7 @@ COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn ./.yarn
 
 COPY packages ./packages
+COPY apps ./apps
 
 # hadolint ignore=DL3060
 RUN yarn install --immutable \

@@ -1,7 +1,8 @@
 .github
 .vscode
+apps/*/dist
 node_modules
-tsc_output
+packages/*/dist
 .editorconfig
 *.env
 .gitignore

@@ -16,14 +16,16 @@
 		"url": "https://jonahsnider.com"
 	},
 	"type": "module",
-	"main": "./tsc_output/src/index.js",
+	"main": "./dist/src/index.js",
 	"scripts": {
-		"prebuild": "rm -rf tsc_output",
 		"build": "tsc",
 		"clean": "rm -r ./src/ ./scripts/ ./tsconfig.json",
+		"lint": "xo",
 		"start": "node --experimental-json-modules .",
+		"style": "prettier --check . --ignore-path ../../.prettierignore",
 		"postversion": "./scripts/postversion.bash"
 	},
+	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.5",
 		"@jonahsnider/util": "8.4.3",
@@ -43,11 +45,15 @@
 		"zod": "3.11.6"
 	},
 	"devDependencies": {
+		"@jonahsnider/prettier-config": "1.1.0",
+		"@jonahsnider/xo-config": "5.0.1",
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "16.11.12",
+		"prettier": "2.5.1",
 		"ts-node": "10.4.0",
 		"type-fest": "2.8.0",
-		"typescript": "4.5.3"
+		"typescript": "4.5.3",
+		"xo": "0.47.0"
 	},
 	"engines": {
 		"node": "16.x"

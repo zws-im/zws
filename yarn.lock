@@ -1115,6 +1115,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2":
+  version: 2.4.2
+  resolution: "@types/prettier@npm:2.4.2"
+  checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
+  languageName: node
+  linkType: hard
+
 "@types/semver@npm:^6.0.0":
   version: 6.2.3
   resolution: "@types/semver@npm:6.2.3"
@@ -1238,12 +1245,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zws.im/api@workspace:packages/api":
+"@zws.im/api@workspace:apps/api":
   version: 0.0.0-use.local
-  resolution: "@zws.im/api@workspace:packages/api"
+  resolution: "@zws.im/api@workspace:apps/api"
   dependencies:
     "@google-cloud/profiler": 4.1.5
+    "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 8.4.3
+    "@jonahsnider/xo-config": 5.0.1
     "@prisma/client": 3.6.0
     "@sentry/node": 6.15.0
     "@sinclair/typebox": 0.22.1
@@ -1256,11 +1265,13 @@ __metadata:
     fastify-bearer-auth: 5.1.0
     fastify-swagger: 4.12.6
     millify: 4.0.0
+    prettier: 2.5.1
     prisma: 3.6.0
     ts-node: 10.4.0
     tslib: 2.3.1
     type-fest: 2.8.0
     typescript: 4.5.3
+    xo: 0.47.0
     yn: 5.0.0
     zod: 3.11.6
   languageName: unknown
@@ -1270,9 +1281,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/schemas@workspace:packages/schemas"
   dependencies:
+    "@jonahsnider/prettier-config": 1.1.0
+    "@jonahsnider/xo-config": 5.0.1
     "@sinclair/typebox": 0.22.1
     "@tsconfig/node16": 1.0.2
+    prettier: 2.5.1
     typescript: 4.5.3
+    xo: 0.47.0
   languageName: unknown
   linkType: soft
 
@@ -1282,11 +1297,11 @@ __metadata:
   dependencies:
     "@changesets/cli": 2.18.1
     "@jonahsnider/prettier-config": 1.1.0
-    "@jonahsnider/xo-config": 5.0.1
     "@prisma/client": 3.6.0
+    "@types/prettier": ^2
     prettier: 2.5.1
     prisma: 3.6.0
-    xo: 0.47.0
+    turbo: 1.0.6
   languageName: unknown
   linkType: soft
 
@@ -6798,6 +6813,17 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
+"turbo@npm:1.0.6":
+  version: 1.0.6
+  resolution: "turbo@npm:1.0.6"
+  dependencies:
+    zlib: ^1.0.5
+  bin:
+    turbo: bin/turbo
+  checksum: 83c5c47ebe1956d638089edf4024bd67c8346b52b8961dfe741fc4da2f29de98ca09ed187fdb7fcd26e49c792f09984594cd969bde5bcff2af1377daba6b0d17
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -7268,6 +7294,13 @@ resolve@~1.19.0:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
+  languageName: node
+  linkType: hard
+
+"zlib@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "zlib@npm:1.0.5"
+  checksum: 5ef5693a1deb70f65845424f5ecce1ee956e50320aa438126759fd28ec8a25ae876acb3b179b4f5050427e7e0dfcd9e45bdae23f055b2d732bc2fe1dbe4da169
   languageName: node
   linkType: hard
 
