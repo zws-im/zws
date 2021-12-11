@@ -1115,13 +1115,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2":
-  version: 2.4.2
-  resolution: "@types/prettier@npm:2.4.2"
-  checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
-  languageName: node
-  linkType: hard
-
 "@types/semver@npm:^6.0.0":
   version: 6.2.3
   resolution: "@types/semver@npm:6.2.3"
@@ -1298,7 +1291,6 @@ __metadata:
     "@changesets/cli": 2.18.1
     "@jonahsnider/prettier-config": 1.1.0
     "@prisma/client": 3.6.0
-    "@types/prettier": ^2
     prettier: 2.5.1
     prisma: 3.6.0
     turbo: 1.0.6
