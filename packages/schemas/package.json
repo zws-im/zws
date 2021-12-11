@@ -23,7 +23,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "tsc",
+		"build": "rm -rf ./dist/ && tsc",
 		"clean": "rm -r ./src/ ./tsconfig.json",
 		"lint": "xo",
 		"style": "prettier --check . --ignore-path ../../.prettierignore"

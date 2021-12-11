@@ -18,7 +18,7 @@
 	"type": "module",
 	"main": "./dist/src/index.js",
 	"scripts": {
-		"build": "tsc",
+		"build": "rm -rf ./dist/ && tsc",
 		"clean": "rm -r ./src/ ./scripts/ ./tsconfig.json",
 		"lint": "xo",
 		"start": "node --experimental-json-modules .",
