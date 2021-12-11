@@ -6,8 +6,7 @@
 		"moduleResolution": "Node",
 		"outDir": "dist",
 		"resolveJsonModule": true,
-		"sourceMap": true,
-		"sourceRoot": "/"
+		"inlineSourceMap": true
 	},
 	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node16/tsconfig.json",
