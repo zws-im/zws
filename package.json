@@ -26,7 +26,7 @@
 		"lint": "turbo run lint",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
-		"style": "prettier --check . && turbo run style"
+		"style": "turbo run style"
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
