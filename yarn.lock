@@ -660,10 +660,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:8.4.3":
-  version: 8.4.3
-  resolution: "@jonahsnider/util@npm:8.4.3"
-  checksum: 32fa66550382bc8b22f837e7c5dcd2f7de47e7ce76620287b9ceff965eafd831fcd1a8dbeb764ce7f6d3da63284b41a3d9385b42ef0a1a9ae4c36ee97a08f27f
+"@jonahsnider/util@npm:8.9.0":
+  version: 8.9.0
+  resolution: "@jonahsnider/util@npm:8.9.0"
+  checksum: b694acd7ee5c3fe87a08d79bb8181668b7383cb94dec87b5c4bc7a34098dc4e8f2cd5c784ec808e60f4ea49e75f03eaca30a2fcae927980118a8aefb4d872876
   languageName: node
   linkType: hard
 
@@ -1115,13 +1115,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2":
-  version: 2.4.2
-  resolution: "@types/prettier@npm:2.4.2"
-  checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
-  languageName: node
-  linkType: hard
-
 "@types/semver@npm:^6.0.0":
   version: 6.2.3
   resolution: "@types/semver@npm:6.2.3"
@@ -1251,7 +1244,7 @@ __metadata:
   dependencies:
     "@google-cloud/profiler": 4.1.5
     "@jonahsnider/prettier-config": 1.1.0
-    "@jonahsnider/util": 8.4.3
+    "@jonahsnider/util": 8.9.0
     "@jonahsnider/xo-config": 5.0.1
     "@prisma/client": 3.6.0
     "@sentry/node": 6.15.0
@@ -1298,7 +1291,6 @@ __metadata:
     "@changesets/cli": 2.18.1
     "@jonahsnider/prettier-config": 1.1.0
     "@prisma/client": 3.6.0
-    "@types/prettier": ^2
     prettier: 2.5.1
     prisma: 3.6.0
     turbo: 1.0.6
