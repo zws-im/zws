@@ -62,6 +62,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Run migrations
+        run: yarn run migrations
       - name: Run tests
         run: yarn test
         env:

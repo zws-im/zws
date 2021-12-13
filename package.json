@@ -71,8 +71,7 @@
 			},
 			"smoke-test": {
 				"dependsOn": [
-					"build",
-					"migrations"
+					"build"
 				],
 				"outputs": []
 			}
