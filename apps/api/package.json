@@ -21,6 +21,7 @@
 		"build": "rm -rf ./dist/ && tsc",
 		"clean": "rm -r ./src/ ./scripts/ ./tsconfig.json",
 		"lint": "xo",
+		"smoke-test": "SMOKE_TEST=true yarn start",
 		"start": "node --experimental-json-modules .",
 		"style": "prettier --check . --ignore-path ../../.prettierignore",
 		"postversion": "./scripts/postversion.bash"

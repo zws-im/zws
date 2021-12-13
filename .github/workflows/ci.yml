@@ -30,8 +30,8 @@ jobs:
       - name: Build Docker image
         # run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64,linux/arm64 .
         run: docker buildx build --pull --tag zwsim/zws:latest --platform linux/amd64 .
-  smoke-test:
-    name: Smoke test
+  test:
+    name: Test
 
     runs-on: ubuntu-latest
 
@@ -62,79 +62,12 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
-      - name: Build
-        run: yarn run build
-      - name: Run database migrations
-        run: yarn run migrations
-        env:
-          DATABASE_URL: postgres://test:password@localhost:5432/zws
-      - name: Run smoke test
-        run: yarn start
+      - name: Run tests
+        run: yarn test
         env:
           SMOKE_TEST: true
           DATABASE_URL: postgres://test:password@localhost:5432/zws
-        timeout-minutes: 1
-  build:
-    name: Build
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Build
-        run: yarn run build
-  lint:
-    name: Lint
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Build
-        run: yarn run build
-      - name: Lint
-        run: yarn run lint
-  validate-prisma:
-    name: Validate Prisma schema
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Validate Prisma schema
-        run: yarn run prisma validate
-        env:
-          DATABASE_URL: postgresql://user:pass@localhost:5432/db
+        timeout-minutes: 5
   lint-dockerfile:
     name: Lint Dockerfile
 
@@ -149,44 +82,6 @@ jobs:
         uses: hadolint/hadolint-action@v1.6.0
         with:
           dockerfile: Dockerfile
-  style:
-    name: Check style
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Check style
-        run: yarn run style
-  style-prisma:
-    name: Check style of Prisma schema
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 10
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Check style with Prisma CLI
-        run: yarn run prisma format && git diff --exit-code -s prisma/schema.prisma
   deploy:
     name: Deploy
 
@@ -195,10 +90,9 @@ jobs:
     timeout-minutes: 30
 
     # Don't run this job if we aren't on main branch
-    # `semantic-release` will do this automatically, but this saves us the time of building the image prior to that
     if: ${{ github.ref  == 'refs/heads/main' }}
 
-    needs: [build, docker-build, smoke-test, lint, lint-dockerfile, validate-prisma]
+    needs: [test, docker-build, lint-dockerfile]
 
     steps:
       - name: Checkout git repository

@@ -27,7 +27,9 @@
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
 		"style": "turbo run style",
-		"test": "turbo run style lint"
+		"style-prisma": "yarn run prisma format && git diff --exit-code -s prisma/schema.prisma",
+		"test": "yarn validate-prisma && yarn style-prisma && turbo run build style lint smoke-test",
+		"validate-prisma": "prisma validate"
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
@@ -63,6 +65,16 @@
 				"outputs": []
 			},
 			"style": {
+				"outputs": []
+			},
+			"migrations": {
+				"outputs": []
+			},
+			"smoke-test": {
+				"dependsOn": [
+					"build",
+					"migrations"
+				],
 				"outputs": []
 			}
 		}
