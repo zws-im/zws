@@ -1290,7 +1290,6 @@ __metadata:
   dependencies:
     "@changesets/cli": 2.18.1
     "@jonahsnider/prettier-config": 1.1.0
-    "@prisma/client": 3.6.0
     prettier: 2.5.1
     prisma: 3.6.0
     turbo: 1.0.6

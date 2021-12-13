@@ -33,7 +33,6 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"@prisma/client": "3.6.0",
 		"prisma": "3.6.0"
 	},
 	"devDependencies": {
