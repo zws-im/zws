@@ -64,6 +64,8 @@ jobs:
         run: yarn install --immutable
       - name: Run migrations
         run: yarn run migrations
+        env:
+          DATABASE_URL: postgres://test:password@localhost:5432/zws
       - name: Run tests
         run: yarn test
         env:
