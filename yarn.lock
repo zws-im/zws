@@ -1292,7 +1292,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     prettier: 2.5.1
     prisma: 3.6.0
-    turbo: 1.0.6
+    turbo: 1.0.9
   languageName: unknown
   linkType: soft
 
@@ -6804,14 +6804,14 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"turbo@npm:1.0.6":
-  version: 1.0.6
-  resolution: "turbo@npm:1.0.6"
+"turbo@npm:1.0.9":
+  version: 1.0.9
+  resolution: "turbo@npm:1.0.9"
   dependencies:
     zlib: ^1.0.5
   bin:
     turbo: bin/turbo
-  checksum: 83c5c47ebe1956d638089edf4024bd67c8346b52b8961dfe741fc4da2f29de98ca09ed187fdb7fcd26e49c792f09984594cd969bde5bcff2af1377daba6b0d17
+  checksum: 53b12d44e21ddb06df020c8579c93c92d1cea734397366688d4f078cc3301bbf5b3dbfc27b03f9134cf86f3d6881f849615d2005afcb3e415afb4e53660f5a35
   languageName: node
   linkType: hard
 
