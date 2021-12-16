@@ -1292,7 +1292,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     prettier: 2.5.1
     prisma: 3.6.0
-    turbo: 1.0.11
+    turbo: 1.0.13
   languageName: unknown
   linkType: soft
 
@@ -6804,14 +6804,12 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"turbo@npm:1.0.11":
-  version: 1.0.11
-  resolution: "turbo@npm:1.0.11"
-  dependencies:
-    zlib: ^1.0.5
+"turbo@npm:1.0.13":
+  version: 1.0.13
+  resolution: "turbo@npm:1.0.13"
   bin:
     turbo: bin/turbo
-  checksum: 40e24c0124f663dbb2b1bc9efe4d8d821a3920704d8010b07b4b82a86e3c71ea47dfe01922f60da85fbbd22569bec0d81901e3e496fabe2b6917660b98818eb4
+  checksum: 34a4b8017789cf443c3e3f6a050c212edcfa69ca581f2d6a48ae30bca6cbca10f613511f9c778a4b282d99ac23d10e0462cd26ab536ef62af08a86bc1f46133d
   languageName: node
   linkType: hard
 
@@ -7285,13 +7283,6 @@ resolve@~1.19.0:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 2cac84540f65c64ccc1683c267edce396b26b1e931aa429660aefac8fbe0188167b7aee815a3c22fa59a28a58d898d1a2b1825048f834d8d629f4c2a5d443801
-  languageName: node
-  linkType: hard
-
-"zlib@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "zlib@npm:1.0.5"
-  checksum: 5ef5693a1deb70f65845424f5ecce1ee956e50320aa438126759fd28ec8a25ae876acb3b179b4f5050427e7e0dfcd9e45bdae23f055b2d732bc2fe1dbe4da169
   languageName: node
   linkType: hard
 
