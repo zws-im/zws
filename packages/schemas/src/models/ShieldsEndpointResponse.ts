@@ -1,7 +1,6 @@
 import type {Static} from '@sinclair/typebox';
 import {Type} from '../utils/typebox.js';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const ShieldsEndpointResponse = Type.Object(
 	{
 		// Seems to be a fast-json-stringify bug https://github.com/fastify/fastify/issues/2818

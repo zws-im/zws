@@ -4,7 +4,7 @@ import {Env} from './utils/enums.js';
 import * as config from './config/index.js';
 
 // Consola doesn't have ESM support
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports, @typescript-eslint/naming-convention
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 const {BasicReporter, LogLevel} = consolaPkg as unknown as typeof import('consola');
 
 const consolaOptions: ConsolaOptions = {
