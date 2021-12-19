@@ -3,7 +3,6 @@ import {millify} from 'millify';
 
 import db from '../../../db.js';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const {ApproximateCountKind} = PrismaClientPackage;
 
 interface Stats {

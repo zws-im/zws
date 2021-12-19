@@ -1,7 +1,6 @@
 import type {Static} from '@sinclair/typebox';
 import {Type} from '../utils/typebox.js';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const IncorrectApiKey = Type.Object(
 	{
 		statusCode: Type.EnumList([401] as const),

@@ -1,7 +1,6 @@
 import type {Static} from '@sinclair/typebox';
 import {Type} from '../utils/typebox.js';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 export const GenericError = Type.Object(
 	{
 		statusCode: Type.Integer({minimum: 400, maximum: 599, example: 500}),

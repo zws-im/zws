@@ -668,14 +668,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:5.0.1":
-  version: 5.0.1
-  resolution: "@jonahsnider/xo-config@npm:5.0.1"
+"@jonahsnider/xo-config@npm:5.0.3":
+  version: 5.0.3
+  resolution: "@jonahsnider/xo-config@npm:5.0.3"
   dependencies:
     "@types/xo": 0.39.2
     eslint-plugin-jsdoc: 37.0.3
     eslint-plugin-tsdoc: 0.2.14
-  checksum: 02dd584b6c622fb2f7cb2dc727ed6105a5d442b11d1d99b66c39d680310c20f21125f0f14577d2103414a44bd11731b64168bbbbbeb06d022f94297a9b36eb25
+  checksum: 7698217838e7c117d0c612fdd789e7780c1ad36f7075fc99f3a6ee1b94f9ba4dfc13e835fc03f043c6f66b80044cfdd6c040973f3bd99f15d3f0484fba3e5de6
   languageName: node
   linkType: hard
 
@@ -1255,7 +1255,7 @@ __metadata:
     "@google-cloud/profiler": 4.1.5
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 8.9.0
-    "@jonahsnider/xo-config": 5.0.1
+    "@jonahsnider/xo-config": 5.0.3
     "@prisma/client": 3.6.0
     "@sentry/node": 6.16.1
     "@sinclair/typebox": 0.22.1
@@ -1273,7 +1273,7 @@ __metadata:
     ts-node: 10.4.0
     tslib: 2.3.1
     type-fest: 2.8.0
-    typescript: 4.5.3
+    typescript: 4.5.4
     xo: 0.47.0
     yn: 5.0.0
     zod: 3.11.6
@@ -1285,11 +1285,11 @@ __metadata:
   resolution: "@zws.im/schemas@workspace:packages/schemas"
   dependencies:
     "@jonahsnider/prettier-config": 1.1.0
-    "@jonahsnider/xo-config": 5.0.1
+    "@jonahsnider/xo-config": 5.0.3
     "@sinclair/typebox": 0.22.1
     "@tsconfig/node16": 1.0.2
     prettier: 2.5.1
-    typescript: 4.5.3
+    typescript: 4.5.4
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -6888,13 +6888,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.5.3":
-  version: 4.5.3
-  resolution: "typescript@npm:4.5.3"
+"typescript@npm:4.5.4":
+  version: 4.5.4
+  resolution: "typescript@npm:4.5.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2ac278c20418882816789ad94a5d9e7f11969db7a2a23fa09e61f2fedf3814265cbd4f89d7f5b6e1f0e7be2b5f169becf5dab913d0da255b073ea3c8c324e6d4
+  checksum: 59f3243f9cd6fe3161e6150ff6bf795fc843b4234a655dbd938a310515e0d61afd1ac942799e7415e4334255e41c2c49b7dd5d9fd38a17acd25a6779ca7e0961
   languageName: node
   linkType: hard
 
@@ -6908,13 +6908,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.5.3#~builtin<compat/typescript>":
-  version: 4.5.3
-  resolution: "typescript@patch:typescript@npm%3A4.5.3#~builtin<compat/typescript>::version=4.5.3&hash=493e53"
+"typescript@patch:typescript@4.5.4#~builtin<compat/typescript>":
+  version: 4.5.4
+  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3c3a664dfb66e7c45d3823cc1a4038dc506415041f39249ed3af1799a64b3065448549d9e9ba509c94335d1e2dfbe311a4b9e36574e87d248f9381d541cb8626
+  checksum: 2e488dde7d2c4a2fa2e79cf2470600f8ce81bc0563c276b72df8ff412d74456ae532ba824650ae936ce207440c79720ddcfaa25e3cb4477572b8534fa4e34d49
   languageName: node
   linkType: hard
 

@@ -10,7 +10,6 @@ import db from '../../../db.js';
 import baseLogger from '../../../logger.js';
 import {UniqueShortIdTimeout} from '../../errors.js';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const {ApproximateCountKind} = PrismaClientPackage;
 
 const logger = baseLogger.withTag('services').withTag('urls');
