@@ -21,12 +21,12 @@
 		"apps/*"
 	],
 	"scripts": {
-		"build": "turbo run build",
+		"build": "turbo run build --",
 		"clean": "turbo run clean",
-		"lint": "turbo run lint",
+		"lint": "turbo run lint --",
 		"migrations": "prisma migrate deploy",
 		"start": "yarn workspace @zws.im/api start",
-		"style": "turbo run style",
+		"style": "turbo run style --",
 		"style-prisma": "yarn run prisma format && git diff --exit-code -s prisma/schema.prisma",
 		"test": "yarn validate-prisma && yarn style-prisma && turbo run build style lint smoke-test",
 		"validate-prisma": "prisma validate"
