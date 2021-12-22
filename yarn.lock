@@ -1347,7 +1347,7 @@ __metadata:
     "@zws.im/schemas": "workspace:*"
     consola: 2.15.3
     dotenv: 10.0.0
-    fastify: 3.25.0
+    fastify: 3.25.1
     fastify-bearer-auth: 5.1.0
     fastify-swagger: 4.13.0
     millify: 4.0.0
@@ -3312,9 +3312,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:3.25.0":
-  version: 3.25.0
-  resolution: "fastify@npm:3.25.0"
+"fastify@npm:3.25.1":
+  version: 3.25.1
+  resolution: "fastify@npm:3.25.1"
   dependencies:
     "@fastify/ajv-compiler": ^1.0.0
     abstract-logging: ^2.0.0
@@ -3322,7 +3322,7 @@ __metadata:
     fast-json-stringify: ^2.5.2
     fastify-error: ^0.3.0
     fastify-warning: ^0.2.0
-    find-my-way: ^4.1.0
+    find-my-way: ^4.5.0
     flatstr: ^1.0.12
     light-my-request: ^4.2.0
     pino: ^6.13.0
@@ -3331,7 +3331,7 @@ __metadata:
     secure-json-parse: ^2.0.0
     semver: ^7.3.2
     tiny-lru: ^7.0.0
-  checksum: 472b720b841dd4dd0ca745782687515f144c8610184cd658d099b2a5cbb69125c196d10fc7ad6c93f9c488300ecddc669b24b2278c3f5fe9a3add60028f7df02
+  checksum: 3907f8cc0b70415ee7d03a014f4377d374fe4ea6a91535cd12b2af2fda804fd2b42d1551b6eabf5678b5e9aea78964912148ed36651b9f222c91b03376178e8b
   languageName: node
   linkType: hard
 
@@ -3380,15 +3380,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-my-way@npm:^4.1.0":
-  version: 4.3.3
-  resolution: "find-my-way@npm:4.3.3"
+"find-my-way@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "find-my-way@npm:4.5.0"
   dependencies:
     fast-decode-uri-component: ^1.0.1
     fast-deep-equal: ^3.1.3
     safe-regex2: ^2.0.0
     semver-store: ^0.3.0
-  checksum: c5f212d2d2a5e76be91a86409b2de9391a1c3cf5210d357facf0fe91d1e46608865aa2396a98a8d4772116bfae2eb0b05abe4efa725d5cf3cc9b9554bb34e048
+  checksum: 65d7d472ed2976207341c2f66cc4061e3992f799a8ff449d8ccee769013d23a539df0746f2cf553be56f1c7cd4fc14c257bc90b4e9dfd77f2066700eb5374103
   languageName: node
   linkType: hard
 
