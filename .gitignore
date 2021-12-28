@@ -203,3 +203,6 @@ $RECYCLE.BIN/
 
 # Google Cloud Service account
 service-account-key.json
+
+# Turbo
+.turbo
