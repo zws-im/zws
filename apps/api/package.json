@@ -36,7 +36,7 @@
 		"@zws.im/schemas": "workspace:*",
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
-		"fastify": "3.25.2",
+		"fastify": "3.25.3",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-swagger": "4.13.0",
 		"millify": "4.0.0",
