@@ -38,7 +38,7 @@
 		"dotenv": "10.0.0",
 		"fastify": "3.25.3",
 		"fastify-bearer-auth": "5.1.0",
-		"fastify-swagger": "4.13.0",
+		"fastify-swagger": "4.13.1",
 		"millify": "4.0.0",
 		"prisma": "3.7.0",
 		"tslib": "2.3.1",
