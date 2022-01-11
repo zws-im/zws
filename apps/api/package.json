@@ -37,7 +37,7 @@
 		"consola": "2.15.3",
 		"dotenv": "10.0.0",
 		"fastify": "3.25.3",
-		"fastify-bearer-auth": "5.1.0",
+		"fastify-bearer-auth": "6.1.0",
 		"fastify-swagger": "4.13.1",
 		"millify": "4.0.0",
 		"prisma": "3.7.0",
