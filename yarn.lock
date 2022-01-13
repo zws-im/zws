@@ -1346,7 +1346,7 @@ __metadata:
     "@types/node": 16.11.19
     "@zws.im/schemas": "workspace:*"
     consola: 2.15.3
-    dotenv: 10.0.0
+    dotenv: 11.0.0
     fastify: 3.25.3
     fastify-bearer-auth: 5.1.0
     fastify-swagger: 4.13.1
@@ -2397,10 +2397,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:10.0.0":
-  version: 10.0.0
-  resolution: "dotenv@npm:10.0.0"
-  checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
+"dotenv@npm:11.0.0":
+  version: 11.0.0
+  resolution: "dotenv@npm:11.0.0"
+  checksum: 48df9e85ea1d41b3096afc1990b9b1bd966deb6c9e056cd43f14e755f3ef1e5d477c3b05afc7ca651e31320c26a9b7dc375bc3313777352c51e6a2f539ea1ffc
   languageName: node
   linkType: hard
 
