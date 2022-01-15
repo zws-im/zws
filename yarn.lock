@@ -856,9 +856,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:3.8.0":
-  version: 3.8.0
-  resolution: "@prisma/client@npm:3.8.0"
+"@prisma/client@npm:3.8.1":
+  version: 3.8.1
+  resolution: "@prisma/client@npm:3.8.1"
   dependencies:
     "@prisma/engines-version": 3.8.0-43.34df67547cf5598f5a6cd3eb45f14ee70c3fb86f
   peerDependencies:
@@ -866,7 +866,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 9808f78085f9f4b1717dec3e46b9e48cec4d23a94e4f40e64954578cdae3972721b4848881997c9bec83c786edff29b695824abe764f73f4c5c4f672d2929ccd
+  checksum: 7139bbfad7cc1c1e235b02925e171e68370f50c1112e72ecacca0d13651ba808f1a63391dbbb11916b459a6fe9de699a4f7a8a12e390aa3ba394747890729496
   languageName: node
   linkType: hard
 
@@ -1339,7 +1339,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 8.10.0
     "@jonahsnider/xo-config": 5.0.3
-    "@prisma/client": 3.8.0
+    "@prisma/client": 3.8.1
     "@sentry/node": 6.16.1
     "@sinclair/typebox": 0.22.1
     "@tsconfig/node16": 1.0.2
@@ -1352,7 +1352,7 @@ __metadata:
     fastify-swagger: 4.13.1
     millify: 4.0.0
     prettier: 2.5.1
-    prisma: 3.8.0
+    prisma: 3.8.1
     ts-node: 10.4.0
     tslib: 2.3.1
     type-fest: 2.9.0
@@ -1384,7 +1384,7 @@ __metadata:
     "@changesets/cli": 2.19.0
     "@jonahsnider/prettier-config": 1.1.0
     prettier: 2.5.1
-    prisma: 3.8.0
+    prisma: 3.8.1
     turbo: 1.0.28
   languageName: unknown
   linkType: soft
@@ -5803,15 +5803,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:3.8.0":
-  version: 3.8.0
-  resolution: "prisma@npm:3.8.0"
+"prisma@npm:3.8.1":
+  version: 3.8.1
+  resolution: "prisma@npm:3.8.1"
   dependencies:
     "@prisma/engines": 3.8.0-43.34df67547cf5598f5a6cd3eb45f14ee70c3fb86f
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 018b667894fbb01e265566f1eb282b75da2493cd4e3cb450a0a01c40d379ada5749c420e9dd1731e9ac58094f374c90b59a19f67891c5d52c2cd17e6bef1d954
+  checksum: dfd6cefa70b953a49e5c447719d16ac6aea7ac7e7a30544c4a522c9563d2b476a09fecf420c77b6e44632cd1b7a8cb0dc59ac6247810ec78611ac3e883caec77
   languageName: node
   linkType: hard
 
