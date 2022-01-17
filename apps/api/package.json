@@ -35,7 +35,7 @@
 		"@sinclair/typebox": "0.22.1",
 		"@zws.im/schemas": "workspace:*",
 		"consola": "2.15.3",
-		"dotenv": "11.0.0",
+		"dotenv": "13.0.1",
 		"fastify": "3.25.3",
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-swagger": "4.13.1",
