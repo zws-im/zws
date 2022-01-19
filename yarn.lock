@@ -1159,10 +1159,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.20":
-  version: 16.11.20
-  resolution: "@types/node@npm:16.11.20"
-  checksum: 3ee33be142e58687ae3a158e4d542efb1e335441d81af46e115875d38c06961826fc4cca407add4540b8fd3b35eae087167b5ec792711c26aecd69debff02f56
+"@types/node@npm:16.11.21":
+  version: 16.11.21
+  resolution: "@types/node@npm:16.11.21"
+  checksum: 75b679dc6375cf09bc14a2d1b344be6f3fd8ea50f212b0d60970dc9e175cef45e44c284c716eb9e766ffa52d0c83b689adb3d1911b6dd8649c560b8f77442a22
   languageName: node
   linkType: hard
 
@@ -1343,7 +1343,7 @@ __metadata:
     "@sentry/node": 6.16.1
     "@sinclair/typebox": 0.22.1
     "@tsconfig/node16": 1.0.2
-    "@types/node": 16.11.20
+    "@types/node": 16.11.21
     "@zws.im/schemas": "workspace:*"
     consola: 2.15.3
     dotenv: 14.2.0
