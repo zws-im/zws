@@ -101,7 +101,7 @@ Afterward you can run the migration commands shown above.
 
 ## Badges
 
-ZWS instances expose two routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
+ZWS instances expose a few routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
 
 | Image                                         | Route                    | Description              | Example                                                                                               |
 | --------------------------------------------- | ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------- |
