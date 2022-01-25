@@ -14,14 +14,13 @@ You could also [host your own private instance](#Self-hosting) and use any chara
 
 ### Code Contributors
 
-This project exists thanks to all the people who contribute.
-[![Code contributors](https://opencollective.com/zws/contributors.svg?width=890&button=false)](https://github.com/zws-im/zws/graphs/contributors)
+ZWS is maintained by [Jonah Snider](https://github.com/jonahsnider) but contributions to the codebase are more than welcome!
 
 Special thanks to [Jaex](https://github.com/Jaex) for integrating ZWS into [ShareX](https://getsharex.com/).
 
 ### Financial Contributors
 
-Become a financial contributor and help us sustain our community. [[Contribute][open-collective]]
+[Help support this project as a financial contributor][open-collective].
 
 #### Individuals
 
@@ -29,7 +28,7 @@ Become a financial contributor and help us sustain our community. [[Contribute][
 
 #### Organizations
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute][open-collective]]
+[Support this project with your organization][open-collective]. Your logo will show up here with a link to your website.
 
 [![Organization avatar](https://opencollective.com/zws/organization/0/avatar.svg)](https://opencollective.com/zws/organization/0/website)
 [![Organization avatar](https://opencollective.com/zws/organization/1/avatar.svg)](https://opencollective.com/zws/organization/1/website)
