@@ -1038,10 +1038,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinclair/typebox@npm:0.22.1":
-  version: 0.22.1
-  resolution: "@sinclair/typebox@npm:0.22.1"
-  checksum: ed25f9dce447916d57036a97555cbd6e39c11d8b70b69f858eed482f62aefa042a655eb04c508b565e87b3c8f26419a36e2482e6b36ea943b3d4bb22cac6289f
+"@sinclair/typebox@npm:0.23.3":
+  version: 0.23.3
+  resolution: "@sinclair/typebox@npm:0.23.3"
+  checksum: c8d961c8af1b701e67641770376010634730076f0412dda34b01f1d6f54d98916414335b51929285ade43ab85bb14a372bbc287575ce4b1e0179d8af808ec4d7
   languageName: node
   linkType: hard
 
@@ -1340,7 +1340,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.0.3
     "@prisma/client": 3.8.1
     "@sentry/node": 6.17.1
-    "@sinclair/typebox": 0.22.1
+    "@sinclair/typebox": 0.23.3
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.21
     "@zws.im/schemas": "workspace:*"
@@ -1368,7 +1368,7 @@ __metadata:
   dependencies:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
-    "@sinclair/typebox": 0.22.1
+    "@sinclair/typebox": 0.23.3
     "@tsconfig/node16": 1.0.2
     prettier: 2.5.1
     typescript: 4.5.5

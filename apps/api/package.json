@@ -32,7 +32,7 @@
 		"@jonahsnider/util": "8.10.0",
 		"@prisma/client": "3.8.1",
 		"@sentry/node": "6.17.1",
-		"@sinclair/typebox": "0.22.1",
+		"@sinclair/typebox": "0.23.3",
 		"@zws.im/schemas": "workspace:*",
 		"consola": "2.15.3",
 		"dotenv": "14.3.0",

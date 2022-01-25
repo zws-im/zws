@@ -1,6 +1,6 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Type} from '@sinclair/typebox';
+import {Type} from '@zws.im/schemas';
 import type {FastifyInstance, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerDefault, RouteOptions} from 'fastify';
 import * as Schemas from '@zws.im/schemas';
 import * as config from '../../../../config/index.js';
