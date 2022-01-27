@@ -1,0 +1,26 @@
+{
+	"baseBranch": "origin/main",
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"]
+		},
+		"clean": {
+			"outputs": [],
+			"cache": false
+		},
+		"lint": {
+			"outputs": []
+		},
+		"style": {
+			"outputs": []
+		},
+		"migrations": {
+			"outputs": []
+		},
+		"smoke-test": {
+			"dependsOn": ["build"],
+			"outputs": []
+		}
+	}
+}
