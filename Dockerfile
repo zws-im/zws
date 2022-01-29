@@ -20,7 +20,7 @@ RUN apk add --no-cache \
 
 # Install all dependencies
 COPY prisma ./prisma
-COPY package.json yarn.lock .yarnrc.yml ./
+COPY package.json yarn.lock .yarnrc.yml turbo.json ./
 COPY .yarn ./.yarn
 
 COPY packages ./packages
