@@ -1,7 +1,20 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Body, Controller, Get, Param, Post, Query, Res, UseGuards} from '@nestjs/common';
-import {ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiSecurity, ApiTags} from '@nestjs/swagger';
+import {
+	ApiCreatedResponse,
+	ApiGoneResponse,
+	ApiNotFoundResponse,
+	ApiOkResponse,
+	ApiOperation,
+	ApiParam,
+	ApiQuery,
+	ApiResponse,
+	ApiSecurity,
+	ApiServiceUnavailableResponse,
+	ApiTags,
+	ApiUnprocessableEntityResponse,
+} from '@nestjs/swagger';
 import {Response} from 'express';
 import {AuthGuard} from '../auth/auth.guard';
 import {LongUrlDto} from './dto/long-url.dto';
@@ -24,10 +37,10 @@ export class UrlsController {
 	@UseGuards(AuthGuard)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiSecurity('bearer')
-	@ApiResponse({status: Http.Status.Created, type: ShortenedUrlDto})
+	@ApiCreatedResponse({type: ShortenedUrlDto})
 	// @ApiResponse({status: Http.Status.Unauthorized, type: ApiKeyError})
-	@ApiResponse({status: Http.Status.UnprocessableEntity, type: AttemptedShortenBlockedHostnameException})
-	@ApiResponse({status: Http.Status.ServiceUnavailable, type: UniqueShortIdTimeoutException})
+	@ApiUnprocessableEntityResponse({type: AttemptedShortenBlockedHostnameException})
+	@ApiServiceUnavailableResponse({type: UniqueShortIdTimeoutException})
 	async shorten(@Body() longUrlDto: LongUrlDto, @Res() response: Response): Promise<ShortenedUrlDto> {
 		const {url} = longUrlDto;
 
@@ -48,10 +61,10 @@ export class UrlsController {
 	@ApiOperation({operationId: 'urls-visit', summary: 'Visit shortened URL', description: 'Visit or retrieve a shortened URL.'})
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
 	@ApiQuery({name: 'visit', required: false, schema: {default: true}, description: 'Whether to redirect to the URL or return the long URL.'})
-	@ApiResponse({status: Http.Status.Ok, type: LongUrlDto})
+	@ApiOkResponse({type: LongUrlDto})
 	@ApiResponse({status: Http.Status.PermanentRedirect})
-	@ApiResponse({status: Http.Status.NotFound, type: UrlNotFoundException})
-	@ApiResponse({status: Http.Status.Gone, type: UrlBlockedException, description: "This URL has been blocked and can't be visited"})
+	@ApiNotFoundResponse({type: UrlNotFoundException})
+	@ApiGoneResponse({type: UrlBlockedException, description: "This URL has been blocked and can't be visited"})
 	async visit(@Res() response: Response, @Param('short') short: Short, @Query('visit') shouldVisit = true): Promise<void | LongUrlDto> {
 		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
 
@@ -75,8 +88,8 @@ export class UrlsController {
 	@Get('/:short/stats')
 	@ApiOperation({operationId: 'urls-stats', summary: 'URL stats', description: 'Retrieve usage statistics for a shortened URL.'})
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
-	@ApiResponse({status: Http.Status.Ok, type: UrlStatsDto})
-	@ApiResponse({status: Http.Status.NotFound, type: UrlNotFoundException})
+	@ApiOkResponse({type: UrlStatsDto})
+	@ApiNotFoundResponse({type: UrlNotFoundException})
 	async stats(@Param('short') short: Short): Promise<UrlStatsDto> {
 		const stats = await this.service.statsForUrl(this.service.normalizeShortId(short));
 
