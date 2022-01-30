@@ -1,16 +1,16 @@
-import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Body, Controller, Get, Post, Res, UseGuards} from '@nestjs/common';
-import {ApiOperation, ApiResponse, ApiSecurity, ApiTags} from '@nestjs/swagger';
+import {Body, Controller, Get, Param, Post, Query, Res} from '@nestjs/common';
+import {ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiSecurity, ApiTags} from '@nestjs/swagger';
 import {Response} from 'express';
-import {AuthGuard} from '../auth/auth.guard';
+import {URL} from 'node:url';
 import {LongUrlDto} from './dto/long-url.dto';
 import {ShortenedUrlDto} from './dto/shortened-url.dto';
-import {AttemptedShortenBlockedHostname} from './errors/attempted-shorten-blocked-hostname.error';
-import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
+import {AttemptedShortenBlockedHostnameException} from './errors/attempted-shorten-blocked-hostname.error';
+import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
+import {UrlBlockedException} from './errors/url-blocked.error.js';
+import {UrlNotFoundException} from './errors/url-not-found.error.js';
 import {UrlsConfigService} from './urls-config.service';
-import type {Short} from './urls.service';
-import {UrlsService} from './urls.service';
+import {Short, UrlsService} from './urls.service';
 
 @ApiTags('urls')
 @Controller()
@@ -19,19 +19,19 @@ export class UrlsController {
 
 	@Post()
 	// @UseGuards(AuthGuard)
-	@ApiSecurity('bearer')
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
+	@ApiSecurity('bearer')
 	@ApiResponse({status: Http.Status.Created, type: ShortenedUrlDto})
 	// @ApiResponse({status: Http.Status.Unauthorized, type: ApiKeyError})
-	@ApiResponse({status: Http.Status.UnprocessableEntity, type: AttemptedShortenBlockedHostname})
-	@ApiResponse({status: Http.Status.ServiceUnavailable, type: UniqueShortIdTimeout})
+	@ApiResponse({status: Http.Status.UnprocessableEntity, type: AttemptedShortenBlockedHostnameException})
+	@ApiResponse({status: Http.Status.ServiceUnavailable, type: UniqueShortIdTimeoutException})
 	async shorten(@Body() longUrlDto: LongUrlDto, @Res() response: Response): Promise<ShortenedUrlDto> {
 		const {url} = longUrlDto;
 
 		const longUrlHostname = new URL(url).hostname;
 
 		if (this.service.isHostnameBlocked(longUrlHostname)) {
-			throw new AttemptedShortenBlockedHostname();
+			throw new AttemptedShortenBlockedHostnameException();
 		}
 
 		const id = await this.service.shortenUrl(url);
@@ -39,6 +39,34 @@ export class UrlsController {
 		response.status(Http.Status.Created);
 
 		return this.shortIdToShortenedUrlDto(id);
+	}
+
+	@Get(':short')
+	@ApiOperation({operationId: 'urls-visit', summary: 'Visit shortened URL', description: 'Visit or load a shortened URL.'})
+	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
+	@ApiQuery({name: 'visit', required: false, schema: {default: true}, description: 'Whether to redirect to the URL or return the long URL.'})
+	@ApiResponse({status: Http.Status.Ok, type: LongUrlDto})
+	@ApiResponse({status: Http.Status.PermanentRedirect})
+	@ApiResponse({status: Http.Status.NotFound, type: UrlNotFoundException})
+	@ApiResponse({status: Http.Status.Gone, type: UrlBlockedException, description: "This URL has been blocked and can't be visited"})
+	async visit(@Res() response: Response, @Param('short') short: Short, @Query('visit') shouldVisit = true): Promise<void | LongUrlDto> {
+		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
+
+		if (url === null) {
+			throw new UrlNotFoundException();
+		}
+
+		if (shouldVisit) {
+			if (url.blocked) {
+				// Don't allow users to visit blocked URLs
+				throw new UrlBlockedException();
+			}
+
+			// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
+			response.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
+		} else {
+			return {url: url.longUrl};
+		}
 	}
 
 	private shortIdToShortenedUrlDto(short: Short): ShortenedUrlDto {
@@ -52,7 +80,4 @@ export class UrlsController {
 
 		return result;
 	}
-
-	@Get(':short')
-	async visit() {}
 }

@@ -3,7 +3,7 @@ import {IsString, IsUrl, MaxLength} from 'class-validator';
 /** A long URL. */
 export class LongUrlDto {
 	/**
-	 * The absolute URL for the shortened URL.
+	 * A long (unshortened) URL.
 	 * @example 'https://jonahsnider.com'
 	 */
 	@IsString()

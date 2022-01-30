@@ -1,10 +1,15 @@
 import {Http} from '@jonahsnider/util';
-import type * as Schemas from '@zws.im/schemas';
+import {ApiProperty} from '@nestjs/swagger';
 import {BaseException} from '../../errors/base.error';
 
+const code = 'E_SHORTEN_BLOCKED_HOSTNAME';
+
 /** You tried to shorten a blocked hostname. */
-export class AttemptedShortenBlockedHostname extends BaseException<Schemas.Errors.AttemptedShortenBlockedHostname> {
+export class AttemptedShortenBlockedHostnameException extends BaseException {
+	@ApiProperty({enum: [code]})
+	code = code;
+
 	constructor() {
-		super('E_SHORTEN_BLOCKED_HOSTNAME', 'Shortening that hostname is forbidden', Http.Status.UnprocessableEntity);
+		super('Shortening that hostname is forbidden', Http.Status.UnprocessableEntity);
 	}
 }

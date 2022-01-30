@@ -1,12 +1,18 @@
 import {HttpException} from '@nestjs/common';
-import type * as Schemas from '@zws.im/schemas';
+import {STATUS_CODES} from 'node:http';
 
-export class BaseException<T extends Schemas.Errors.GenericError = Schemas.Errors.GenericError> extends HttpException {
-	constructor(public readonly code: NonNullable<T['code']>, public readonly message: T['message'], public readonly statusCode: T['statusCode']) {
+export class BaseException extends HttpException {
+	readonly error: string;
+	readonly code: string | undefined;
+	readonly statusCode: number;
+	// This is only present for OpenAPI generation
+	// @ts-expect-error The message field is defined by the base Error class
+	readonly message: string;
+
+	constructor(message: string, statusCode: number) {
 		super(message, statusCode);
-	}
 
-	toString() {
-		return `${this.name} [${this.code}]: ${this.message}` as const;
+		this.statusCode = statusCode;
+		this.error = STATUS_CODES[statusCode] ?? BaseException.name;
 	}
 }

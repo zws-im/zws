@@ -1,12 +1,12 @@
+import {Buffer} from 'node:buffer';
 import {multiReplace, sample} from '@jonahsnider/util';
 import {Injectable, Logger} from '@nestjs/common';
 import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind} from '@prisma/client';
 import Sentry from '@sentry/node';
-import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
-import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
+import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
 import {UrlsConfigService} from './urls-config.service';
 
 /** A short ID. */
@@ -120,7 +120,7 @@ export class UrlsService {
 
 		do {
 			if (attempts++ > MAX_SHORT_ID_GENERATION_ATTEMPTS) {
-				throw new UniqueShortIdTimeout(MAX_SHORT_ID_GENERATION_ATTEMPTS);
+				throw new UniqueShortIdTimeoutException(MAX_SHORT_ID_GENERATION_ATTEMPTS);
 			}
 
 			id = this.generateShortId();
