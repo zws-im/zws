@@ -1,5 +1,5 @@
-import {HttpException} from '@nestjs/common';
 import {STATUS_CODES} from 'node:http';
+import {HttpException} from '@nestjs/common';
 
 export class BaseException extends HttpException {
 	readonly error: string;

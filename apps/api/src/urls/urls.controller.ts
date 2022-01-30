@@ -1,14 +1,15 @@
+import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Body, Controller, Get, Param, Post, Query, Res} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post, Query, Res, UseGuards} from '@nestjs/common';
 import {ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiSecurity, ApiTags} from '@nestjs/swagger';
 import {Response} from 'express';
-import {URL} from 'node:url';
+import {AuthGuard} from '../auth/auth.guard';
 import {LongUrlDto} from './dto/long-url.dto';
 import {ShortenedUrlDto} from './dto/shortened-url.dto';
 import {AttemptedShortenBlockedHostnameException} from './errors/attempted-shorten-blocked-hostname.error';
 import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
-import {UrlBlockedException} from './errors/url-blocked.error.js';
-import {UrlNotFoundException} from './errors/url-not-found.error.js';
+import {UrlBlockedException} from './errors/url-blocked.error';
+import {UrlNotFoundException} from './errors/url-not-found.error';
 import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
 
@@ -18,7 +19,7 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	// @UseGuards(AuthGuard)
+	@UseGuards(AuthGuard)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiSecurity('bearer')
 	@ApiResponse({status: Http.Status.Created, type: ShortenedUrlDto})

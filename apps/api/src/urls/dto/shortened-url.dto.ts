@@ -1,4 +1,4 @@
-import type {Short} from '../urls.service.js';
+import type {Short} from '../urls.service';
 
 /** A shortened URL. */
 export class ShortenedUrlDto {
