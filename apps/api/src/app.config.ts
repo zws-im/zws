@@ -1,19 +1,19 @@
 import {Injectable} from '@nestjs/common';
 import {ConfigService} from '@nestjs/config';
+import pkg from '../package.json';
 import type {EnvironmentVariables} from './interfaces/config.interface';
 import {Env} from './enums/env.enum';
 
 @Injectable()
 export class AppConfigService {
+	readonly version = pkg.version;
 	readonly port: number;
-	readonly apiKey: string | undefined;
 	readonly hostname: string | undefined;
 	readonly sentryDsn: string | undefined;
 	readonly env: Env;
 
 	constructor(private readonly configService: ConfigService<EnvironmentVariables>) {
 		this.port = this.getPort();
-		this.apiKey = this.getApiKey();
 		this.hostname = this.getHostname();
 		this.sentryDsn = this.getSentryDsn();
 		this.env = this.getEnv();
@@ -21,10 +21,6 @@ export class AppConfigService {
 
 	private getPort(): number {
 		return this.configService.get('PORT') ?? 3000;
-	}
-
-	private getApiKey(): string | undefined {
-		return this.configService.get('API_KEY');
 	}
 
 	private getHostname(): string | undefined {
