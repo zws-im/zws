@@ -6,6 +6,7 @@ import Sentry from '@sentry/node';
 import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
+import type {ShortenedUrlDto} from './dto/shortened-url.dto.js';
 import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
 import {UrlsConfigService} from './urls-config.service';
 
@@ -27,6 +28,9 @@ interface VisitUrlData {
 
 /** Maximum number of attempts to generate a unique ID. */
 const MAX_SHORT_ID_GENERATION_ATTEMPTS = 10;
+
+/** A regular expression for a domain name. */
+const DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
 
 @Injectable()
 export class UrlsService {
@@ -133,6 +137,15 @@ export class UrlsService {
 		} while (!created);
 
 		return id;
+	}
+
+	isHostnameBlocked(hostname: string): boolean {
+		return (
+			// Exact match
+			this.config.blockedHostnames.has(hostname) ||
+			// Domain name match
+			this.config.blockedHostnames.has(hostname.replace(DOMAIN_NAME_REG_EXP, '$1'))
+		);
 	}
 
 	/**

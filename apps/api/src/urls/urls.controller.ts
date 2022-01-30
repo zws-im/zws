@@ -9,10 +9,7 @@ import {ShortenedUrlDto} from './dto/shortened-url.dto';
 import {AttemptedShortenBlockedHostname} from './errors/attempted-shorten-blocked-hostname.error';
 import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
 import {UrlsConfigService} from './urls-config.service';
-import {UrlsService} from './urls.service';
-
-/** A regular expression for a domain name. */
-const DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
+import {Short, UrlsService} from './urls.service';
 
 @ApiTags('urls')
 @Controller()
@@ -20,7 +17,7 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	@UseGuards(AuthGuard)
+	// @UseGuards(AuthGuard)
 	@ApiSecurity('bearer')
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiResponse({status: Http.Status.Created, type: ShortenedUrlDto})
@@ -32,12 +29,7 @@ export class UrlsController {
 
 		const longUrlHostname = new URL(url).hostname;
 
-		if (
-			// Exact match
-			this.config.blockedHostnames.has(longUrlHostname) ||
-			// Domain name match
-			this.config.blockedHostnames.has(longUrlHostname.replace(DOMAIN_NAME_REG_EXP, '$1'))
-		) {
+		if (this.service.isHostnameBlocked(longUrlHostname)) {
 			throw new AttemptedShortenBlockedHostname();
 		}
 
@@ -45,13 +37,19 @@ export class UrlsController {
 
 		response.status(Http.Status.Created);
 
-		const responseBody: ShortenedUrlDto = {short: id};
+		return this.shortIdToShortenedUrlDto(id);
+	}
+
+	private shortIdToShortenedUrlDto(short: Short): ShortenedUrlDto {
+		const result: ShortenedUrlDto = {
+			short,
+		};
 
 		if (this.config.baseUrlForShortenedUrls) {
-			responseBody.url = decodeURI(new URL(id, this.config.baseUrlForShortenedUrls).toString());
+			result.url = decodeURI(new URL(short, this.config.baseUrlForShortenedUrls).toString());
 		}
 
-		return responseBody;
+		return result;
 	}
 
 	@Get(':short')

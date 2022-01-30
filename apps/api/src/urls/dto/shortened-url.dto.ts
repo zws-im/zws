@@ -1,3 +1,5 @@
+import type {Short} from '../urls.service.js';
+
 /** A shortened URL. */
 export class ShortenedUrlDto {
 	/**
@@ -5,7 +7,7 @@ export class ShortenedUrlDto {
 	 *
 	 * @example 'abcxyz'
 	 */
-	short!: string;
+	short!: Short;
 
 	/**
 	 * The absolute URL for the shortened URL.
