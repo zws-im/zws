@@ -1,0 +1,15 @@
+{
+	"collection": "@nestjs/schematics",
+	"sourceRoot": "src",
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "@nestjs/swagger",
+				"options": {
+					"introspectComments": true,
+					"dtoFileNameSuffix": [".dto.ts", ".entity.ts", ".error.ts", ".exception.ts"]
+				}
+			}
+		]
+	}
+}

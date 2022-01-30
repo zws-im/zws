@@ -5,9 +5,10 @@ const base = require('@jonahsnider/xo-config');
 const config = {...base};
 
 config.overrides.push({
-	files: './src/server/**/*.ts',
+	files: './{src,test}/**/*.ts',
 	rules: {
 		'new-cap': 'off',
+		'import/extensions': ['error', 'never'],
 	},
 });
 
