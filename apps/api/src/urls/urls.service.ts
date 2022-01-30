@@ -6,7 +6,6 @@ import Sentry from '@sentry/node';
 import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
-import type {ShortenedUrlDto} from './dto/shortened-url.dto.js';
 import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
 import {UrlsConfigService} from './urls-config.service';
 

@@ -1,7 +1,7 @@
-import {Injectable} from '@nestjs/common';
 import type {Hash} from 'node:crypto';
 import {createHash, timingSafeEqual} from 'node:crypto';
 import type {Buffer} from 'node:buffer';
+import {Injectable} from '@nestjs/common';
 import {AuthConfigService} from './auth.config';
 
 @Injectable()

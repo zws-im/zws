@@ -1,15 +1,16 @@
+import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
 import {Body, Controller, Get, Post, Res, UseGuards} from '@nestjs/common';
 import {ApiOperation, ApiResponse, ApiSecurity, ApiTags} from '@nestjs/swagger';
 import {Response} from 'express';
-import {URL} from 'node:url';
 import {AuthGuard} from '../auth/auth.guard';
 import {LongUrlDto} from './dto/long-url.dto';
 import {ShortenedUrlDto} from './dto/shortened-url.dto';
 import {AttemptedShortenBlockedHostname} from './errors/attempted-shorten-blocked-hostname.error';
 import {UniqueShortIdTimeout} from './errors/unique-short-id-timeout.error.dto';
 import {UrlsConfigService} from './urls-config.service';
-import {Short, UrlsService} from './urls.service';
+import type {Short} from './urls.service';
+import {UrlsService} from './urls.service';
 
 @ApiTags('urls')
 @Controller()
