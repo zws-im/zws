@@ -25,6 +25,8 @@ async function bootstrap() {
 		.setContact(pkg.author.name, pkg.author.url, pkg.author.email)
 		.setLicense('Apache 2.0', 'https://www.apache.org/licenses/LICENSE-2.0.html')
 
+		.addBearerAuth({type: 'http'})
+
 		.addServer('https://{host}/{basePath}', 'Custom server (HTTPS)', {
 			host: {default: config.hostname === undefined ? `localhost:${config.port}` : config.hostname},
 			basePath: {default: ''},
