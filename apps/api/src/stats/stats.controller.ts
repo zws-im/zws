@@ -1,4 +1,4 @@
-import {Controller, Get, Query} from '@nestjs/common';
+import {Controller, DefaultValuePipe, Get, ParseBoolPipe, Query} from '@nestjs/common';
 import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiQuery, ApiTags, getSchemaPath} from '@nestjs/swagger';
 import {AppConfigService} from '../app.config';
 import {FormattedStatsEntity} from './entities/formatted-stats.entity';
@@ -26,7 +26,7 @@ export class StatsController {
 			oneOf: [{$ref: getSchemaPath(FormattedStatsEntity)}, {$ref: getSchemaPath(RawStatsEntity)}],
 		},
 	})
-	async stats(@Query('format') format = false): Promise<FormattedStatsEntity | RawStatsEntity> {
+	async stats(@Query('format', new DefaultValuePipe(false), ParseBoolPipe) format: boolean): Promise<FormattedStatsEntity | RawStatsEntity> {
 		const stats = await this.service.instanceStats();
 
 		if (format) {

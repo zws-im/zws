@@ -1,6 +1,6 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Body, Controller, Get, Param, Post, Query, Res, UseGuards} from '@nestjs/common';
+import {Body, Controller, DefaultValuePipe, Get, Param, ParseBoolPipe, Post, Query, Res, UseGuards} from '@nestjs/common';
 import {
 	ApiCreatedResponse,
 	ApiGoneResponse,
@@ -65,7 +65,11 @@ export class UrlsController {
 	@ApiResponse({status: Http.Status.PermanentRedirect})
 	@ApiNotFoundResponse({type: UrlNotFoundException})
 	@ApiGoneResponse({type: UrlBlockedException, description: "This URL has been blocked and can't be visited"})
-	async visit(@Res() response: Response, @Param('short') short: Short, @Query('visit') shouldVisit = true): Promise<void | LongUrlDto> {
+	async visit(
+		@Res() response: Response,
+		@Param('short') short: Short,
+		@Query('visit', new DefaultValuePipe(false), ParseBoolPipe) shouldVisit: boolean,
+	): Promise<void | LongUrlDto> {
 		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
 
 		if (!url) {

@@ -8,5 +8,6 @@ import {StatsService} from './stats.service';
 	controllers: [StatsController],
 	providers: [StatsService, AppConfigService],
 	imports: [PrismaModule],
+	exports: [StatsService],
 })
 export class StatsModule {}

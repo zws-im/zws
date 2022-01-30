@@ -1,4 +1,5 @@
-import type {Short} from '../urls.service';
+import {IsOptional, IsString, IsUrl} from 'class-validator';
+import {Short} from '../urls.service';
 
 /** A shortened URL. */
 export class ShortenedUrlDto {
@@ -7,6 +8,7 @@ export class ShortenedUrlDto {
 	 *
 	 * @example 'abcxyz'
 	 */
+	@IsString()
 	short!: Short;
 
 	/**
@@ -15,5 +17,7 @@ export class ShortenedUrlDto {
 	 *
 	 * @example 'https://zws.im/abcxyz'
 	 */
+	@IsOptional()
+	@IsUrl()
 	url?: string;
 }

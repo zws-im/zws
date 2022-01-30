@@ -9,6 +9,7 @@ import {PrismaModule} from './prisma/prisma.module';
 import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
 import {AuthModule} from './auth/auth.module';
+import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 
 @Module({
 	imports: [
@@ -23,6 +24,7 @@ import {AuthModule} from './auth/auth.module';
 		StatsModule,
 		UrlsModule,
 		AuthModule,
+		ShieldsBadgesModule,
 	],
 	controllers: [],
 	providers: [AppConfigService, HttpExceptionFilter],

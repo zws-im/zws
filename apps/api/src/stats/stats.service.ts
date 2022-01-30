@@ -1,22 +1,10 @@
 import {Injectable} from '@nestjs/common';
 import {ApproximateCountKind} from '@prisma/client';
-import {millify} from 'millify';
 import {PrismaService} from '../prisma/prisma.service';
 import type {Stats} from './interfaces/stats.interface';
 
 @Injectable()
 export class StatsService {
-	/**
-	 * Abbreviate a number for displaying in badges.
-	 *
-	 * @param number - Number to abbreviate
-	 *
-	 * @returns The abbreviated number
-	 */
-	static abbreviateNumber(number: number): string {
-		return millify(number);
-	}
-
 	constructor(private readonly db: PrismaService) {}
 
 	/**
