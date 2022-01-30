@@ -8,22 +8,14 @@ import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
 import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
 import {UrlsConfigService} from './urls-config.service';
+import type {UrlStats} from './interfaces/url-stats.interface';
+import type {VisitUrlData} from './interfaces/visit-url-data.interface';
 
 /** A short ID. */
 export type Short = Opaque<string, 'Short'>;
 
 /** A base64 encoded string. */
 type Base64 = Opaque<string, 'Base64'>;
-
-interface Stats {
-	url: string;
-	visits: Date[];
-}
-
-interface VisitUrlData {
-	longUrl: string;
-	blocked: boolean;
-}
 
 /** Maximum number of attempts to generate a unique ID. */
 const MAX_SHORT_ID_GENERATION_ATTEMPTS = 10;
@@ -57,13 +49,13 @@ export class UrlsService {
 	 *
 	 * @returns The long URL and if it was blocked
 	 */
-	async visitUrl(id: Short, track: boolean): Promise<VisitUrlData | null> {
+	async visitUrl(id: Short, track: boolean): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.encode(id);
 
 		const shortenedUrl = await this.db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, blocked: true}});
 
 		if (shortenedUrl === null) {
-			return null;
+			return undefined;
 		}
 
 		if (track && !shortenedUrl.blocked) {
@@ -89,9 +81,9 @@ export class UrlsService {
 	 *
 	 * @param id - The ID of the shortened URL
 	 *
-	 * @returns Shortened URL information and statistics, or `null` if it couldn't be found
+	 * @returns Shortened URL information and statistics, or `undefined` if it couldn't be found
 	 */
-	async statsForUrl(id: Short): Promise<null | Stats> {
+	async statsForUrl(id: Short): Promise<UrlStats | undefined> {
 		const encodedId = UrlsService.encode(id);
 
 		const [visits, shortenedUrl] = await this.db.$transaction([
@@ -99,11 +91,11 @@ export class UrlsService {
 			this.db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true}}),
 		]);
 
-		if (!shortenedUrl) {
-			return null;
+		if (shortenedUrl) {
+			return {visits: visits.map(visit => visit.timestamp), url: shortenedUrl.url};
 		}
 
-		return {visits: visits.map(visit => visit.timestamp), url: shortenedUrl.url};
+		return undefined;
 	}
 
 	/**

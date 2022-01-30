@@ -12,6 +12,8 @@ import {UrlBlockedException} from './errors/url-blocked.error';
 import {UrlNotFoundException} from './errors/url-not-found.error';
 import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
+import {UrlStatsDto} from './dto/url-stats.dto';
+import type {UrlStats} from './interfaces/url-stats.interface';
 
 @ApiTags('urls')
 @Controller()
@@ -43,7 +45,7 @@ export class UrlsController {
 	}
 
 	@Get(':short')
-	@ApiOperation({operationId: 'urls-visit', summary: 'Visit shortened URL', description: 'Visit or load a shortened URL.'})
+	@ApiOperation({operationId: 'urls-visit', summary: 'Visit shortened URL', description: 'Visit or retrieve a shortened URL.'})
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
 	@ApiQuery({name: 'visit', required: false, schema: {default: true}, description: 'Whether to redirect to the URL or return the long URL.'})
 	@ApiResponse({status: Http.Status.Ok, type: LongUrlDto})
@@ -53,7 +55,7 @@ export class UrlsController {
 	async visit(@Res() response: Response, @Param('short') short: Short, @Query('visit') shouldVisit = true): Promise<void | LongUrlDto> {
 		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
 
-		if (url === null) {
+		if (!url) {
 			throw new UrlNotFoundException();
 		}
 
@@ -68,6 +70,28 @@ export class UrlsController {
 		} else {
 			return {url: url.longUrl};
 		}
+	}
+
+	@Get('/:short/stats')
+	@ApiOperation({operationId: 'urls-stats', summary: 'URL stats', description: 'Retrieve usage statistics for a shortened URL.'})
+	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
+	@ApiResponse({status: Http.Status.Ok, type: UrlStatsDto})
+	@ApiResponse({status: Http.Status.NotFound, type: UrlNotFoundException})
+	async stats(@Param('short') short: Short): Promise<UrlStatsDto> {
+		const stats = await this.service.statsForUrl(this.service.normalizeShortId(short));
+
+		if (!stats) {
+			throw new UrlNotFoundException();
+		}
+
+		return this.urlStatsToUrlStatsDto(stats);
+	}
+
+	private urlStatsToUrlStatsDto(stats: UrlStats): UrlStatsDto {
+		return {
+			url: stats.url,
+			visits: stats.visits.map(visit => visit.getTime()),
+		};
 	}
 
 	private shortIdToShortenedUrlDto(short: Short): ShortenedUrlDto {
