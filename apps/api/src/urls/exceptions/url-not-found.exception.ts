@@ -1,6 +1,6 @@
 import {Http} from '@jonahsnider/util';
 import {ApiProperty} from '@nestjs/swagger';
-import {BaseException} from '../../errors/base.error';
+import {BaseException} from '../../exceptions/base.exception';
 
 const code = 'E_URL_NOT_FOUND';
 

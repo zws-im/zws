@@ -5,7 +5,7 @@ import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind} from '@prisma/client';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
-import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
+import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
 import type {UrlStats} from './interfaces/url-stats.interface';
 import type {VisitUrlData} from './interfaces/visit-url-data.interface';
 import {UrlsConfigService} from './urls-config.service';
