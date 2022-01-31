@@ -1,5 +1,5 @@
 import {ApiProperty} from '@nestjs/swagger';
-import {Matches, Min} from 'class-validator';
+import {IsInt, Matches, Min} from 'class-validator';
 import type {Stats} from '../interfaces/stats.interface';
 
 const VERSION_REG_EXP = /^\d+\.\d+\.\d+(?:-.+)?$/;
@@ -16,12 +16,14 @@ export class RawStatsDto {
 	/**
 	 * @example 4321
 	 */
+	@IsInt()
 	@Min(0)
 	urls: number;
 
 	/**
 	 * @example 4321
 	 */
+	@IsInt()
 	@Min(0)
 	visits: number;
 

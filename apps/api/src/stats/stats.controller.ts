@@ -1,5 +1,5 @@
 import {Controller, Get, Query} from '@nestjs/common';
-import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiQuery, ApiTags, getSchemaPath} from '@nestjs/swagger';
+import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiTags, getSchemaPath} from '@nestjs/swagger';
 import {AppConfigService} from '../app.config';
 import {FormattedStatsDto} from './dto/formatted-stats.dto';
 import {RawStatsDto} from './dto/raw-stats.dto';
@@ -16,18 +16,8 @@ export class StatsController {
 		this.version = config.version;
 	}
 
-	async stats(query: {format: true}): Promise<FormattedStatsDto>;
-	async stats(query: {format: false}): Promise<RawStatsDto>;
-	// eslint-disable-next-line @typescript-eslint/member-ordering
 	@Get()
 	@ApiOperation({operationId: 'total-stats', summary: 'Total statistics', description: 'Total usage statistics for this instance.'})
-	@ApiQuery({
-		name: 'format',
-		required: false,
-		type: 'boolean',
-		schema: {default: false},
-		description: 'Whether to format the numbers in the response as strings.',
-	})
 	@ApiOkResponse({
 		schema: {
 			oneOf: [{$ref: getSchemaPath(FormattedStatsDto)}, {$ref: getSchemaPath(RawStatsDto)}],
