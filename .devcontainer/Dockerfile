@@ -12,3 +12,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
+
+ENV NODE_ENV=development
+ENV DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres
+ENV PORT=3000
