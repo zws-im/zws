@@ -7,7 +7,7 @@ const FORMATTED_NUMBER_REG_EXP = /^\d{1,3}(?:,\d{1,3})*$/;
 
 // TODO: Once this PR is merged remove the @ApiProperty usage https://github.com/nestjs/swagger/pull/1788
 
-export class FormattedStatsEntity {
+export class FormattedStatsDto {
 	/**
 	 * @example 'v2.0.0'
 	 */

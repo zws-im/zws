@@ -5,7 +5,7 @@ import type {Stats} from '../interfaces/stats.interface';
 const VERSION_REG_EXP = /^\d+\.\d+\.\d+(?:-.+)?$/;
 // TODO: Once this PR is merged remove the @ApiProperty usage https://github.com/nestjs/swagger/pull/1788
 
-export class RawStatsEntity {
+export class RawStatsDto {
 	/**
 	 * @example '2.0.0'
 	 */

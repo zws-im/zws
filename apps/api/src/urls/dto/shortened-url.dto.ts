@@ -9,7 +9,7 @@ export class ShortenedUrlDto {
 	 * @example 'abcxyz'
 	 */
 	@IsString()
-	short!: Short;
+	short: Short;
 
 	/**
 	 * The absolute URL for the shortened URL.
@@ -20,4 +20,12 @@ export class ShortenedUrlDto {
 	@IsOptional()
 	@IsUrl()
 	url?: string;
+
+	constructor(short: Short, url?: string) {
+		this.short = short;
+
+		if (url) {
+			this.url = decodeURI(url);
+		}
+	}
 }

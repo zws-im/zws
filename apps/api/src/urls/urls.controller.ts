@@ -1,6 +1,6 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Body, Controller, DefaultValuePipe, Get, Param, ParseBoolPipe, Post, Query, Res, UseGuards} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post, Query, Res, UseGuards} from '@nestjs/common';
 import {
 	ApiCreatedResponse,
 	ApiGoneResponse,
@@ -26,7 +26,7 @@ import {UrlNotFoundException} from './errors/url-not-found.error';
 import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
 import {UrlStatsDto} from './dto/url-stats.dto';
-import type {UrlStats} from './interfaces/url-stats.interface';
+import {VisitUrlQueryDto} from './dto/visit-url-query.dto';
 
 @ApiTags('urls')
 @Controller()
@@ -41,7 +41,7 @@ export class UrlsController {
 	// @ApiResponse({status: Http.Status.Unauthorized, type: ApiKeyError})
 	@ApiUnprocessableEntityResponse({type: AttemptedShortenBlockedHostnameException})
 	@ApiServiceUnavailableResponse({type: UniqueShortIdTimeoutException})
-	async shorten(@Body() longUrlDto: LongUrlDto, @Res() response: Response): Promise<ShortenedUrlDto> {
+	async shorten(@Res() response: Response, @Body() longUrlDto: LongUrlDto): Promise<void> {
 		const {url} = longUrlDto;
 
 		const longUrlHostname = new URL(url).hostname;
@@ -52,24 +52,20 @@ export class UrlsController {
 
 		const id = await this.service.shortenUrl(url);
 
-		response.status(Http.Status.Created);
-
-		return this.shortIdToShortenedUrlDto(id);
+		response.status(Http.Status.Created).json(this.shortIdToShortenedUrlDto(id));
 	}
 
 	@Get(':short')
-	@ApiOperation({operationId: 'urls-visit', summary: 'Visit shortened URL', description: 'Visit or retrieve a shortened URL.'})
+	@ApiOperation({operationId: 'urls-visit', summary: 'Visit or retrieve shortened URL', description: 'Visit or retrieve a shortened URL.'})
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
 	@ApiQuery({name: 'visit', required: false, schema: {default: true}, description: 'Whether to redirect to the URL or return the long URL.'})
 	@ApiOkResponse({type: LongUrlDto})
 	@ApiResponse({status: Http.Status.PermanentRedirect})
 	@ApiNotFoundResponse({type: UrlNotFoundException})
-	@ApiGoneResponse({type: UrlBlockedException, description: "This URL has been blocked and can't be visited"})
-	async visit(
-		@Res() response: Response,
-		@Param('short') short: Short,
-		@Query('visit', new DefaultValuePipe(false), ParseBoolPipe) shouldVisit: boolean,
-	): Promise<void | LongUrlDto> {
+	@ApiGoneResponse({type: UrlBlockedException, description: "This URL has been blocked and can't be accessed"})
+	async retrieveOrVisitUrl(@Res() response: Response, @Param('short') short: Short, @Query() query: VisitUrlQueryDto): Promise<void> {
+		const {visit: shouldVisit} = query;
+
 		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
 
 		if (!url) {
@@ -82,10 +78,11 @@ export class UrlsController {
 				throw new UrlBlockedException();
 			}
 
+			console.log('mashallah the the redirect is happening');
 			// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
 			response.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
 		} else {
-			return {url: url.longUrl};
+			response.json(new LongUrlDto(url.longUrl));
 		}
 	}
 
@@ -101,25 +98,14 @@ export class UrlsController {
 			throw new UrlNotFoundException();
 		}
 
-		return this.urlStatsToUrlStatsDto(stats);
-	}
-
-	private urlStatsToUrlStatsDto(stats: UrlStats): UrlStatsDto {
-		return {
-			url: stats.url,
-			visits: stats.visits.map(visit => visit.getTime()),
-		};
+		return new UrlStatsDto(stats);
 	}
 
 	private shortIdToShortenedUrlDto(short: Short): ShortenedUrlDto {
-		const result: ShortenedUrlDto = {
-			short,
-		};
-
 		if (this.config.baseUrlForShortenedUrls) {
-			result.url = decodeURI(new URL(short, this.config.baseUrlForShortenedUrls).toString());
+			return new ShortenedUrlDto(short, new URL(short, this.config.baseUrlForShortenedUrls).toString());
 		}
 
-		return result;
+		return new ShortenedUrlDto(short);
 	}
 }

@@ -1,4 +1,5 @@
 import {IsArray, IsInt} from 'class-validator';
+import type {UrlStats} from '../interfaces/url-stats.interface';
 import {LongUrlDto} from './long-url.dto';
 
 /** Usage statistics for a shortened URL. */
@@ -10,5 +11,10 @@ export class UrlStatsDto extends LongUrlDto {
 	 */
 	@IsArray()
 	@IsInt({each: true})
-	visits!: number[];
+	visits: number[];
+
+	constructor(urlStats: UrlStats) {
+		super(urlStats.url);
+		this.visits = urlStats.visits.map(visit => visit.getTime());
+	}
 }

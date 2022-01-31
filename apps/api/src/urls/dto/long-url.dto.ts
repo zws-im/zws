@@ -9,5 +9,9 @@ export class LongUrlDto {
 	@IsString()
 	@MaxLength(500)
 	@IsUrl()
-	url!: string;
+	url: string;
+
+	constructor(url: string) {
+		this.url = url;
+	}
 }

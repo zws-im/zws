@@ -49,6 +49,7 @@ export class UrlsService {
 	 *
 	 * @returns The long URL and if it was blocked
 	 */
+	// TODO: Break into retrieveUrl and trackUrlVisit methods
 	async visitUrl(id: Short, track: boolean): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.encode(id);
 

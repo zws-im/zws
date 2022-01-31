@@ -1,13 +1,14 @@
-import {Controller, DefaultValuePipe, Get, ParseBoolPipe, Query} from '@nestjs/common';
+import {Controller, Get, Query} from '@nestjs/common';
 import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiQuery, ApiTags, getSchemaPath} from '@nestjs/swagger';
 import {AppConfigService} from '../app.config';
-import {FormattedStatsEntity} from './entities/formatted-stats.entity';
-import {RawStatsEntity} from './entities/raw-stats.entity';
+import {StatsQueryDto} from './dto/stats-query.dto';
+import {FormattedStatsDto} from './dto/formatted-stats.dto';
+import {RawStatsDto} from './dto/raw-stats.dto';
 import {StatsService} from './stats.service';
 
 @ApiTags('stats')
 @Controller('stats')
-@ApiExtraModels(FormattedStatsEntity, RawStatsEntity)
+@ApiExtraModels(FormattedStatsDto, RawStatsDto)
 export class StatsController {
 	private readonly version: string;
 
@@ -15,24 +16,32 @@ export class StatsController {
 		this.version = config.version;
 	}
 
-	async stats(format: true): Promise<FormattedStatsEntity>;
-	async stats(format: false): Promise<RawStatsEntity>;
+	async stats(query: {format: true}): Promise<FormattedStatsDto>;
+	async stats(query: {format: false}): Promise<RawStatsDto>;
 	// eslint-disable-next-line @typescript-eslint/member-ordering
 	@Get()
 	@ApiOperation({operationId: 'total-stats', summary: 'Total statistics', description: 'Total usage statistics for this instance.'})
-	@ApiQuery({name: 'format', required: false, schema: {default: false}, description: 'Whether to format the numbers in the response as strings.'})
+	@ApiQuery({
+		name: 'format',
+		required: false,
+		type: 'boolean',
+		schema: {default: false},
+		description: 'Whether to format the numbers in the response as strings.',
+	})
 	@ApiOkResponse({
 		schema: {
-			oneOf: [{$ref: getSchemaPath(FormattedStatsEntity)}, {$ref: getSchemaPath(RawStatsEntity)}],
+			oneOf: [{$ref: getSchemaPath(FormattedStatsDto)}, {$ref: getSchemaPath(RawStatsDto)}],
 		},
 	})
-	async stats(@Query('format', new DefaultValuePipe(false), ParseBoolPipe) format: boolean): Promise<FormattedStatsEntity | RawStatsEntity> {
+	async stats(@Query() query: StatsQueryDto): Promise<FormattedStatsDto | RawStatsDto> {
+		const {format: shouldFormat} = query;
+
 		const stats = await this.service.instanceStats();
 
-		if (format) {
-			return new FormattedStatsEntity(this.version, stats);
+		if (shouldFormat) {
+			return new FormattedStatsDto(this.version, stats);
 		}
 
-		return new RawStatsEntity(this.version, stats);
+		return new RawStatsDto(this.version, stats);
 	}
 }
