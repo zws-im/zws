@@ -1,6 +1,6 @@
 import {URL} from 'node:url';
 import {Http} from '@jonahsnider/util';
-import {Body, Controller, Get, Param, Post, Query, Res, UseGuards} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post, Query, Res} from '@nestjs/common';
 import {
 	ApiCreatedResponse,
 	ApiGoneResponse,
@@ -8,26 +8,25 @@ import {
 	ApiOkResponse,
 	ApiOperation,
 	ApiParam,
-	ApiQuery,
 	ApiResponse,
-	ApiSecurity,
 	ApiServiceUnavailableResponse,
 	ApiTags,
 	ApiUnprocessableEntityResponse,
 } from '@nestjs/swagger';
 import {Response} from 'express';
-import {AuthGuard} from '../auth/auth.guard';
+import {MinimumRoleNeeded} from '../auth/decorators/role.decorator';
+import {Role} from '../auth/enums/roles.enum';
 import {LongUrlDto} from './dto/long-url.dto';
 import {ShortenedUrlDto} from './dto/shortened-url.dto';
+import {UrlStatsDto} from './dto/url-stats.dto';
+import {VisitUrlQueryDto} from './dto/visit-url-query.dto';
 import {AttemptedShortenBlockedHostnameException} from './exceptions/attempted-shorten-blocked-hostname.exception';
 import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
 import {UrlBlockedException} from './exceptions/url-blocked.exception';
 import {UrlNotFoundException} from './exceptions/url-not-found.exception';
+import {NormalizeShortIdPipe} from './normalize-short-id.pipe';
 import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
-import {UrlStatsDto} from './dto/url-stats.dto';
-import {VisitUrlQueryDto} from './dto/visit-url-query.dto';
-import {NormalizeShortIdPipe} from './normalize-short-id.pipe';
 
 @ApiTags('urls')
 @Controller()
@@ -35,12 +34,9 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	// TODO: Uncomment this
-	// @UseGuards(AuthGuard)
+	@MinimumRoleNeeded(Role.Admin)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
-	@ApiSecurity('bearer')
 	@ApiCreatedResponse({type: ShortenedUrlDto})
-	// @ApiResponse({status: Http.Status.Unauthorized, type: ApiKeyError})
 	@ApiUnprocessableEntityResponse({type: AttemptedShortenBlockedHostnameException})
 	@ApiServiceUnavailableResponse({type: UniqueShortIdTimeoutException})
 	async shorten(@Res() response: Response, @Body() longUrlDto: LongUrlDto): Promise<void> {

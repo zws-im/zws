@@ -1,24 +1,59 @@
-import type {ExecutionContext} from '@nestjs/common';
-import {Inject, Injectable} from '@nestjs/common';
-import {AuthGuard as BaseAuthGuard} from '@nestjs/passport';
-import type {Observable} from 'rxjs';
+import type {CanActivate, ExecutionContext} from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
+import {Reflector} from '@nestjs/core';
+import type {Request} from 'express';
 import {AuthConfigService} from './auth.config';
+import {AuthService} from './auth.service';
+import type {Role} from './enums/roles.enum';
+import {IncorrectApiKeyException} from './exceptions/incorrect-api-key.exception';
+import {MissingApiKeyException} from './exceptions/missing-api-key.exception';
+import {MissingPermissionsException} from './exceptions/missing-permissions.exception';
 
 @Injectable()
-export class AuthGuard extends BaseAuthGuard('bearer') {
-	private readonly tokenExists: boolean;
+export class AuthGuard implements CanActivate {
+	private readonly userApiKeyExists: boolean;
 
-	constructor(@Inject(AuthConfigService) config: AuthConfigService) {
-		super();
-
-		this.tokenExists = config.apiKey !== undefined;
+	constructor(private readonly reflector: Reflector, private readonly service: AuthService, config: AuthConfigService) {
+		this.userApiKeyExists = config.userApiKey !== undefined;
 	}
 
-	canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
-		if (this.tokenExists) {
-			return super.canActivate(context);
+	canActivate(context: ExecutionContext): boolean {
+		const minimumRoleNeeded = this.reflector.get<Role | undefined>('roles', context.getHandler());
+
+		if (!minimumRoleNeeded) {
+			// Route is public to everyone
+			return true;
 		}
 
-		return false;
+		const request = context.switchToHttp().getRequest<Request>();
+		const authorizationHeader = request.headers.authorization;
+
+		let role: Role | undefined = this.service.defaultRole();
+
+		if (authorizationHeader) {
+			const apiKeyHash = this.service.bearerToApiKey(authorizationHeader);
+
+			if (apiKeyHash) {
+				const calculatedRole = this.service.apiKeyToRole(apiKeyHash);
+
+				if (calculatedRole) {
+					role = calculatedRole;
+				} else {
+					// Note that if the server does not have an API key configured (so the default role is present) this will still throw if any API key is provided
+					// This is deliberately done in the implementation of AuthService.apiKeyToRole()
+					throw new IncorrectApiKeyException();
+				}
+			}
+		}
+
+		if (!role) {
+			throw new MissingApiKeyException();
+		}
+
+		if (this.service.matchRoles(role, minimumRoleNeeded)) {
+			return true;
+		}
+
+		throw new MissingPermissionsException();
 	}
 }

@@ -1,9 +1,9 @@
 import {Controller, Get, Query} from '@nestjs/common';
 import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiQuery, ApiTags, getSchemaPath} from '@nestjs/swagger';
 import {AppConfigService} from '../app.config';
-import {StatsQueryDto} from './dto/stats-query.dto';
 import {FormattedStatsDto} from './dto/formatted-stats.dto';
 import {RawStatsDto} from './dto/raw-stats.dto';
+import {StatsQueryDto} from './dto/stats-query.dto';
 import {StatsService} from './stats.service';
 
 @ApiTags('stats')

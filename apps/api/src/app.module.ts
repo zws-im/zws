@@ -1,6 +1,7 @@
 import path from 'node:path';
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
+import {APP_GUARD} from '@nestjs/core';
 import {AppConfigService} from './app.config';
 import {HealthModule} from './health/health.module';
 import {HttpExceptionFilter} from './http-exception.filter';
@@ -10,6 +11,7 @@ import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
 import {AuthModule} from './auth/auth.module';
 import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
+import {AuthGuard} from './auth/auth.guard';
 
 @Module({
 	imports: [
@@ -25,14 +27,22 @@ import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 			],
 		}),
 		LoggerModule,
+		AuthModule,
 		PrismaModule,
 		HealthModule,
 		StatsModule,
-		UrlsModule,
-		AuthModule,
 		ShieldsBadgesModule,
+		// UrlsModule goes last since its controller has a /:id route which is rather broad
+		UrlsModule,
 	],
 	controllers: [],
-	providers: [AppConfigService, HttpExceptionFilter],
+	providers: [
+		AppConfigService,
+		HttpExceptionFilter,
+		{
+			provide: APP_GUARD,
+			useClass: AuthGuard,
+		},
+	],
 })
 export class AppModule {}
