@@ -29,11 +29,11 @@ async function bootstrap() {
 
 		.addBearerAuth({type: 'http'})
 
-		.addServer('https://{host}/{basePath}', 'Custom server (HTTPS)', {
+		.addServer('http://{host}/{basePath}', 'Custom server (HTTP)', {
 			host: {default: config.hostname === undefined ? `localhost:${config.port}` : config.hostname},
 			basePath: {default: ''},
 		})
-		.addServer('http://{host}/{basePath}', 'Custom server (HTTP)', {
+		.addServer('https://{host}/{basePath}', 'Custom server (HTTPS)', {
 			host: {default: config.hostname === undefined ? `localhost:${config.port}` : config.hostname},
 			basePath: {default: ''},
 		})
