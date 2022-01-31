@@ -4,7 +4,7 @@ import {Injectable} from '@nestjs/common';
 import {UrlsConfigService} from './urls-config.service';
 import type {Short} from './urls.service';
 
-/** Applys the configured character rewrites to the short ID. */
+/** Applys the provided character rewrites to the short ID. */
 @Injectable()
 export class NormalizeShortIdPipe implements PipeTransform<Short, Short> {
 	private readonly rewrites: Readonly<Record<string, string>> | undefined;
