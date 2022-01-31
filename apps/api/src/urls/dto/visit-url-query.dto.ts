@@ -1,8 +1,9 @@
-import {Type} from 'class-transformer';
+import {Transform} from 'class-transformer';
 import {IsBoolean} from 'class-validator';
+import {transformToBoolean} from '../../utils/transform';
 
 export class VisitUrlQueryDto {
 	@IsBoolean()
-	@Type(() => Boolean)
-	visit = true;
+	@Transform(transformToBoolean)
+	visit?: boolean = true;
 }

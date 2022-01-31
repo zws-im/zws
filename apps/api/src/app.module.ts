@@ -15,8 +15,14 @@ import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 	imports: [
 		ConfigModule.forRoot({
 			isGlobal: true,
-			// eslint-disable-next-line unicorn/prefer-module
-			envFilePath: [path.join(__dirname, '..', '..', '.env')],
+			envFilePath: [
+				// .env relative to this source file
+				// eslint-disable-next-line unicorn/prefer-module
+				path.join(__dirname, '..', '..', '.env'),
+				// .env relative to this file compiled to dist/src/
+				// eslint-disable-next-line unicorn/prefer-module
+				path.join(__dirname, '..', '..', '..', '..', '.env'),
+			],
 		}),
 		LoggerModule,
 		PrismaModule,

@@ -35,7 +35,8 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	@UseGuards(AuthGuard)
+	// TODO: Uncomment this
+	// @UseGuards(AuthGuard)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiSecurity('bearer')
 	@ApiCreatedResponse({type: ShortenedUrlDto})
@@ -59,7 +60,6 @@ export class UrlsController {
 	@Get(':short')
 	@ApiOperation({operationId: 'urls-visit', summary: 'Visit or retrieve shortened URL', description: 'Visit or retrieve a shortened URL.'})
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
-	@ApiQuery({name: 'visit', required: false, schema: {default: true}, description: 'Whether to redirect to the URL or return the long URL.'})
 	@ApiOkResponse({type: LongUrlDto})
 	@ApiResponse({status: Http.Status.PermanentRedirect})
 	@ApiNotFoundResponse({type: UrlNotFoundException})
