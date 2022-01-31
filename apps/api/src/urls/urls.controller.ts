@@ -35,8 +35,7 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	// TODO: Uncomment this
-	// @UseGuards(AuthGuard)
+	@UseGuards(AuthGuard)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiSecurity('bearer')
 	@ApiCreatedResponse({type: ShortenedUrlDto})
