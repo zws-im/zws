@@ -1,8 +1,8 @@
 import {multiReplace} from '@jonahsnider/util';
 import type {PipeTransform} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
-import {UrlsConfigService} from './urls-config.service';
-import type {Short} from './urls.service';
+import {UrlsConfigService} from '../urls-config.service';
+import type {Short} from '../urls.service';
 
 /** Applys the provided character rewrites to the short ID. */
 @Injectable()

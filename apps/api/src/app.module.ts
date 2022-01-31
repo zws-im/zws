@@ -4,7 +4,7 @@ import {ConfigModule} from '@nestjs/config';
 import {APP_GUARD} from '@nestjs/core';
 import {AppConfigService} from './app.config';
 import {HealthModule} from './health/health.module';
-import {HttpExceptionFilter} from './http-exception.filter';
+import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {LoggerModule} from './logger/logger.module';
 import {PrismaModule} from './prisma/prisma.module';
 import {StatsModule} from './stats/stats.module';

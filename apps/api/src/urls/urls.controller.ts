@@ -24,7 +24,7 @@ import {AttemptedShortenBlockedHostnameException} from './exceptions/attempted-s
 import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
 import {UrlBlockedException} from './exceptions/url-blocked.exception';
 import {UrlNotFoundException} from './exceptions/url-not-found.exception';
-import {NormalizeShortIdPipe} from './normalize-short-id.pipe';
+import {NormalizeShortIdPipe} from './pipes/normalize-short-id.pipe';
 import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
 

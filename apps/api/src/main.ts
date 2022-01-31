@@ -5,7 +5,7 @@ import {paramCase} from 'change-case';
 import pkg from '../package.json';
 import {AppConfigService} from './app.config';
 import {AppModule} from './app.module';
-import {HttpExceptionFilter} from './http-exception.filter';
+import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {NestLogger} from './logger/nest-logger.service';
 
 async function bootstrap() {

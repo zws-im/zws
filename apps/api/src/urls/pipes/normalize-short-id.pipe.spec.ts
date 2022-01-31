@@ -1,6 +1,6 @@
+import type {UrlsConfigService} from '../urls-config.service';
+import type {Short} from '../urls.service';
 import {NormalizeShortIdPipe} from './normalize-short-id.pipe';
-import type {UrlsConfigService} from './urls-config.service';
-import type {Short} from './urls.service';
 
 describe('NormalizeShortIdPipe', () => {
 	it('transforms input', () => {
