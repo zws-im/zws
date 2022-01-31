@@ -1,3 +1,8 @@
 {
-	"recommendations": ["prisma.prisma", "samverschueren.linter-xo", "esbenp.prettier-vscode"]
+	"recommendations": [
+    "prisma.prisma",
+    "samverschueren.linter-xo",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig"
+  ]
 }
