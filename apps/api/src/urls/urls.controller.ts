@@ -27,6 +27,7 @@ import {UrlsConfigService} from './urls-config.service';
 import {Short, UrlsService} from './urls.service';
 import {UrlStatsDto} from './dto/url-stats.dto';
 import {VisitUrlQueryDto} from './dto/visit-url-query.dto';
+import {NormalizeShortIdPipe} from './normalize-short-id.pipe';
 
 @ApiTags('urls')
 @Controller()
@@ -63,10 +64,10 @@ export class UrlsController {
 	@ApiResponse({status: Http.Status.PermanentRedirect})
 	@ApiNotFoundResponse({type: UrlNotFoundException})
 	@ApiGoneResponse({type: UrlBlockedException, description: "This URL has been blocked and can't be accessed"})
-	async retrieveOrVisitUrl(@Res() response: Response, @Param('short') short: Short, @Query() query: VisitUrlQueryDto): Promise<void> {
+	async retrieveOrVisitUrl(@Res() response: Response, @Param('short', NormalizeShortIdPipe) short: Short, @Query() query: VisitUrlQueryDto): Promise<void> {
 		const {visit: shouldVisit} = query;
 
-		const url = await this.service.visitUrl(this.service.normalizeShortId(short), true);
+		const url = await this.service.retrieveUrl(short);
 
 		if (!url) {
 			throw new UrlNotFoundException();
@@ -78,9 +79,11 @@ export class UrlsController {
 				throw new UrlBlockedException();
 			}
 
-			console.log('mashallah the the redirect is happening');
 			// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
 			response.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
+			response.end();
+
+			await this.service.trackUrlVisit(short);
 		} else {
 			response.json(new LongUrlDto(url.longUrl));
 		}
@@ -91,8 +94,8 @@ export class UrlsController {
 	@ApiParam({name: 'short', description: 'The ID of the shortened URL.'})
 	@ApiOkResponse({type: UrlStatsDto})
 	@ApiNotFoundResponse({type: UrlNotFoundException})
-	async stats(@Param('short') short: Short): Promise<UrlStatsDto> {
-		const stats = await this.service.statsForUrl(this.service.normalizeShortId(short));
+	async stats(@Param('short', NormalizeShortIdPipe) short: Short): Promise<UrlStatsDto> {
+		const stats = await this.service.statsForUrl(short);
 
 		if (!stats) {
 			throw new UrlNotFoundException();

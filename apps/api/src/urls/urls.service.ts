@@ -1,15 +1,14 @@
 import {Buffer} from 'node:buffer';
-import {multiReplace, sample} from '@jonahsnider/util';
+import {sample} from '@jonahsnider/util';
 import {Injectable, Logger} from '@nestjs/common';
 import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind} from '@prisma/client';
-import Sentry from '@sentry/node';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
 import {UniqueShortIdTimeoutException} from './errors/unique-short-id-timeout.error';
-import {UrlsConfigService} from './urls-config.service';
 import type {UrlStats} from './interfaces/url-stats.interface';
 import type {VisitUrlData} from './interfaces/visit-url-data.interface';
+import {UrlsConfigService} from './urls-config.service';
 
 /** A short ID. */
 export type Short = Opaque<string, 'Short'>;
@@ -33,48 +32,39 @@ export class UrlsService {
 
 	constructor(private readonly config: UrlsConfigService, private readonly db: PrismaService) {}
 
-	normalizeShortId(id: Short): Short {
-		if (this.config.shortCharRewrites) {
-			return multiReplace(id, this.config.shortCharRewrites) as Short;
-		}
-
-		return id;
-	}
-
 	/**
-	 * Visit a shortened URL.
+	 * Retrieve a shortened URL.
 	 *
 	 * @param id - The ID of the shortened URL to visit
-	 * @param track - If the visit should be tracked
 	 *
 	 * @returns The long URL and if it was blocked
 	 */
-	// TODO: Break into retrieveUrl and trackUrlVisit methods
-	async visitUrl(id: Short, track: boolean): Promise<VisitUrlData | undefined> {
+	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.encode(id);
 
 		const shortenedUrl = await this.db.shortenedUrl.findUnique({where: {shortBase64: encodedId}, select: {url: true, blocked: true}});
 
-		if (shortenedUrl === null) {
+		if (!shortenedUrl) {
 			return undefined;
 		}
 
-		if (track && !shortenedUrl.blocked) {
-			// Only track URLs if they aren't blocked
-			// This is because we know that a blocked URL won't be sent to clients if they are visiting it
+		return {
+			longUrl: shortenedUrl.url,
+			blocked: shortenedUrl.blocked,
+		};
+	}
 
-			this.db
-				.$transaction([
-					this.db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}),
-					this.db.approximateCounts.update({where: {kind: ApproximateCountKind.VISITS}, data: {count: {increment: 1}}}),
-				])
-				.catch(error => {
-					Sentry.captureException(error);
-					this.logger.error('failed to create visit', error);
-				});
-		}
+	/**
+	 * Tracks a URL visit.
+	 * @param id - The ID of the shortened URL
+	 */
+	async trackUrlVisit(id: Short): Promise<void> {
+		const encodedId = UrlsService.encode(id);
 
-		return {longUrl: shortenedUrl.url, blocked: shortenedUrl.blocked};
+		await this.db.$transaction([
+			this.db.visit.create({data: {shortenedUrl: {connect: {shortBase64: encodedId}}}}),
+			this.db.approximateCounts.update({where: {kind: ApproximateCountKind.VISITS}, data: {count: {increment: 1}}}),
+		]);
 	}
 
 	/**
@@ -108,7 +98,7 @@ export class UrlsService {
 	 */
 	async shortenUrl(url: string): Promise<Short> {
 		let attempts = 0;
-		let created: ShortenedUrl | null = null;
+		let created: ShortenedUrl | undefined;
 		let id: Short;
 
 		do {
