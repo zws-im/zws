@@ -1,6 +1,6 @@
+import path from 'node:path';
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
-import path from 'node:path';
 import {AppConfigService} from './app.config';
 import {AuthModule} from './auth/auth.module';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
