@@ -34,15 +34,45 @@ export class ShieldsResponseDto {
 	constructor(options: Omit<ShieldsResponseDto, 'schemaVersion'>) {
 		this.label = options.label;
 		this.message = options.message;
-		this.color = options.color;
-		this.labelColor = options.labelColor;
-		this.isError = options.isError;
-		this.namedLogo = options.namedLogo;
-		this.logoSvg = options.logoSvg;
-		this.logoColor = options.logoColor;
-		this.logoWidth = options.logoWidth;
-		this.logoPosition = options.logoPosition;
-		this.style = options.style;
-		this.cacheSeconds = options.cacheSeconds;
+
+		if (options.color !== undefined) {
+			this.color = options.color;
+		}
+
+		if (options.labelColor !== undefined) {
+			this.labelColor = options.labelColor;
+		}
+
+		if (options.isError !== undefined) {
+			this.isError = options.isError;
+		}
+
+		if (options.namedLogo !== undefined) {
+			this.namedLogo = options.namedLogo;
+		}
+
+		if (options.logoSvg !== undefined) {
+			this.logoSvg = options.logoSvg;
+		}
+
+		if (options.logoColor !== undefined) {
+			this.logoColor = options.logoColor;
+		}
+
+		if (options.logoWidth !== undefined) {
+			this.logoWidth = options.logoWidth;
+		}
+
+		if (options.logoPosition !== undefined) {
+			this.logoPosition = options.logoPosition;
+		}
+
+		if (options.style !== undefined) {
+			this.style = options.style;
+		}
+
+		if (options.cacheSeconds !== undefined) {
+			this.cacheSeconds = options.cacheSeconds;
+		}
 	}
 }
