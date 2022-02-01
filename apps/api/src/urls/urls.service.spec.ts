@@ -2,7 +2,7 @@ import type {TestingModule} from '@nestjs/testing';
 import {Test} from '@nestjs/testing';
 import {UrlsService} from './urls.service';
 
-describe('UrlsService', () => {
+describe.skip('UrlsService', () => {
 	let service: UrlsService;
 
 	beforeEach(async () => {

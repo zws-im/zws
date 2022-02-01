@@ -2,7 +2,7 @@ import type {TestingModule} from '@nestjs/testing';
 import {Test} from '@nestjs/testing';
 import {Logger} from './logger.service';
 
-describe('Logger', () => {
+describe.skip('Logger', () => {
 	let service: Logger;
 
 	beforeEach(async () => {

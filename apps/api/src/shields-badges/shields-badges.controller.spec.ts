@@ -2,7 +2,7 @@ import type {TestingModule} from '@nestjs/testing';
 import {Test} from '@nestjs/testing';
 import {ShieldsBadgesController} from './shields-badges.controller';
 
-describe('ShieldsBadgesController', () => {
+describe.skip('ShieldsBadgesController', () => {
 	let controller: ShieldsBadgesController;
 
 	beforeEach(async () => {
