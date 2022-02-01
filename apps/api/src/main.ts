@@ -5,6 +5,7 @@ import {paramCase} from 'change-case';
 import pkg from '../package.json';
 import {AppConfigService} from './app.config';
 import {AppModule} from './app.module';
+import {AuthGuard} from './auth/auth.guard';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {NestLogger} from './logger/nest-logger.service';
 
@@ -49,6 +50,7 @@ async function bootstrap() {
 	});
 	SwaggerModule.setup('docs/api', app, openApiDocument);
 
+	app.useGlobalGuards(app.get(AuthGuard));
 	app.useGlobalFilters(new HttpExceptionFilter());
 	app.useGlobalPipes(
 		new ValidationPipe({

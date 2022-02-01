@@ -5,6 +5,6 @@ import {AuthService} from './auth.service';
 
 @Module({
 	providers: [AuthService, AuthConfigService, AuthGuard],
-	exports: [AuthService, AuthGuard, AuthConfigService],
+	exports: [AuthConfigService, AuthGuard],
 })
 export class AuthModule {}

@@ -5,6 +5,6 @@ import {NestLogger} from './nest-logger.service';
 
 @Module({
 	providers: [Logger, NestLogger, AppConfigService],
-	exports: [Logger, NestLogger],
+	exports: [Logger],
 })
 export class LoggerModule {}

@@ -1595,16 +1595,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/passport@npm:8.1.0":
-  version: 8.1.0
-  resolution: "@nestjs/passport@npm:8.1.0"
-  peerDependencies:
-    "@nestjs/common": ^6.0.0 || ^7.0.0 || ^8.0.0
-    passport: ^0.4.0 || ^0.5.0
-  checksum: eb6378c5196b3b52bd1f25484a11c83a92be1bce679fefd6fe1bc5ed52c6bffc12367d6a53da4c40a82c36e5d55f7a2271ab8b6e2fb7138d30bc0c220358ae47
-  languageName: node
-  linkType: hard
-
 "@nestjs/platform-express@npm:^8.0.0":
   version: 8.2.6
   resolution: "@nestjs/platform-express@npm:8.2.6"
@@ -2650,7 +2640,6 @@ __metadata:
     "@nestjs/common": ^8.0.0
     "@nestjs/config": 1.1.6
     "@nestjs/core": ^8.0.0
-    "@nestjs/passport": 8.1.0
     "@nestjs/platform-express": ^8.0.0
     "@nestjs/schematics": ^8.0.0
     "@nestjs/swagger": 5.2.0
