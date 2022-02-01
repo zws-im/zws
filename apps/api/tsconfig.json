@@ -2,10 +2,11 @@
 	"compilerOptions": {
 		"declaration": true,
 		"emitDecoratorMetadata": true,
+		"exactOptionalPropertyTypes": true,
 		"experimentalDecorators": true,
+		"importHelpers": true,
 		"incremental": true,
 		"inlineSourceMap": true,
-		"importHelpers": true,
 		"inlineSources": true,
 		"outDir": "dist",
 		"resolveJsonModule": true
