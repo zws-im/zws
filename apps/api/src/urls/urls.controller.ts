@@ -34,7 +34,7 @@ export class UrlsController {
 	constructor(private readonly service: UrlsService, private readonly config: UrlsConfigService) {}
 
 	@Post()
-	@MinimumRoleNeeded(Role.Admin)
+	@MinimumRoleNeeded(Role.User)
 	@ApiOperation({operationId: 'urls-shorten', summary: 'Shorten URL', description: 'Shorten a URL.'})
 	@ApiCreatedResponse({type: ShortenedUrlDto})
 	@ApiUnprocessableEntityResponse({type: AttemptedShortenBlockedHostnameException})
