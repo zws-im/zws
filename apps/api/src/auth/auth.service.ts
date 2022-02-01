@@ -15,6 +15,7 @@ export class AuthService {
 		return hash;
 	}
 
+	/** The hash for the user API key, or `undefined` if the server is not configured to use a user API key. */
 	private readonly userApiKeyHash: Buffer | undefined;
 
 	constructor(config: AuthConfigService) {

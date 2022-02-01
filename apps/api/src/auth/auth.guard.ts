@@ -2,7 +2,6 @@ import type {CanActivate, ExecutionContext} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
 import {Reflector} from '@nestjs/core';
 import type {Request} from 'express';
-import {AuthConfigService} from './auth.config';
 import {AuthService} from './auth.service';
 import type {Role} from './enums/roles.enum';
 import {IncorrectApiKeyException} from './exceptions/incorrect-api-key.exception';
@@ -11,11 +10,7 @@ import {MissingPermissionsException} from './exceptions/missing-permissions.exce
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-	private readonly userApiKeyExists: boolean;
-
-	constructor(private readonly reflector: Reflector, private readonly service: AuthService, config: AuthConfigService) {
-		this.userApiKeyExists = config.userApiKey !== undefined;
-	}
+	constructor(private readonly reflector: Reflector, private readonly service: AuthService) {}
 
 	canActivate(context: ExecutionContext): boolean {
 		const minimumRoleNeeded = this.reflector.get<Role | undefined>('roles', context.getHandler());
