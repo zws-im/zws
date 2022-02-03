@@ -30,7 +30,7 @@
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.7",
 		"@jonahsnider/util": "8.10.0",
-		"@prisma/client": "3.9.0",
+		"@prisma/client": "3.9.1",
 		"@sentry/node": "6.17.3",
 		"@sinclair/typebox": "0.23.3",
 		"@zws.im/schemas": "workspace:*",
@@ -40,7 +40,7 @@
 		"fastify-bearer-auth": "5.1.0",
 		"fastify-swagger": "4.13.1",
 		"millify": "4.0.0",
-		"prisma": "3.9.0",
+		"prisma": "3.9.1",
 		"tslib": "2.3.1",
 		"yn": "5.0.0",
 		"zod": "3.11.6"
