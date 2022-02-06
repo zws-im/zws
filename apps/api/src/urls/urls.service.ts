@@ -1,8 +1,8 @@
-import {Buffer} from 'node:buffer';
 import {sample} from '@jonahsnider/util';
-import {Injectable, Logger} from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import type {ShortenedUrl} from '@prisma/client';
-import {ApproximateCountKind} from '@prisma/client';
+import {ApproximateCountKind, Prisma} from '@prisma/client';
+import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
 import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
@@ -27,8 +27,6 @@ export class UrlsService {
 	private static encode(value: string): Base64 {
 		return Buffer.from(value).toString('base64') as Base64;
 	}
-
-	private readonly logger = new Logger(UrlsService.name);
 
 	constructor(private readonly config: UrlsConfigService, private readonly db: PrismaService) {}
 
@@ -115,7 +113,14 @@ export class UrlsService {
 					this.db.shortenedUrl.create({data: {url, shortBase64}}),
 					this.db.approximateCounts.update({where: {kind: ApproximateCountKind.SHORTENED_URLS}, data: {count: {increment: 1}}}),
 				]);
-			} catch {}
+			} catch (error) {
+				// https://www.prisma.io/docs/reference/api-reference/error-reference#p2002
+				if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+					// Ignore the expected potential duplicate ID errors
+				} else {
+					throw error;
+				}
+			}
 		} while (!created);
 
 		return id;

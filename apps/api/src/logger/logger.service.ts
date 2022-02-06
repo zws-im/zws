@@ -1,12 +1,12 @@
-import type {LoggerService} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
-import type {ConsolaOptions, Consola} from 'consola';
+import type {ConsolaOptions} from 'consola';
 import consola, {BasicReporter, LogLevel} from 'consola';
 import {AppConfig} from '../app-config/app.config';
 import {Env} from '../enums/env.enum';
+import type {Logger} from './interfaces/logger.interface';
 
 @Injectable()
-export class Logger {
+export class LoggerService {
 	private readonly consolaOptions: ConsolaOptions;
 
 	constructor(config: AppConfig) {
@@ -19,7 +19,7 @@ export class Logger {
 		}
 	}
 
-	createLogger(): Consola & LoggerService {
+	createLogger(): Logger {
 		return consola.create(this.consolaOptions);
 	}
 }

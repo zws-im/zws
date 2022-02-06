@@ -1,13 +1,13 @@
-import type {LoggerService} from '@nestjs/common';
+import type {LoggerService as BaseLoggerService} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
-import type {Consola} from 'consola';
-import {Logger} from './logger.service';
+import type {Logger} from './interfaces/logger.interface';
+import {LoggerService} from './logger.service';
 
 @Injectable()
-export class NestLogger implements LoggerService {
-	private readonly logger: Consola;
+export class NestLogger implements BaseLoggerService {
+	private readonly logger: Logger;
 
-	constructor(loggerService: Logger) {
+	constructor(loggerService: LoggerService) {
 		this.logger = loggerService.createLogger().withTag('nest');
 	}
 
