@@ -1,13 +1,5 @@
 import type {Prisma} from '@prisma/client';
-
-/**
- * @see https://github.com/prisma/prisma/issues/6353
- */
-interface BuggedPrismaLogEvent {
-	timestamp: undefined;
-	message: string;
-	target: undefined;
-}
+import type {BuggedPrismaLogEvent} from '../interfaces/bugged-prisma-log-event.interface';
 
 export class PrismaException extends Error {
 	readonly timestamp: Date;
