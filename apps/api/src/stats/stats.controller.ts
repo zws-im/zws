@@ -1,6 +1,6 @@
 import {Controller, Get, Query} from '@nestjs/common';
 import {ApiExtraModels, ApiOkResponse, ApiOperation, ApiTags, getSchemaPath} from '@nestjs/swagger';
-import {AppConfigService} from '../app.config';
+import {AppConfig} from '../app-config/app.config';
 import {FormattedStatsDto} from './dto/formatted-stats.dto';
 import {RawStatsDto} from './dto/raw-stats.dto';
 import {StatsQueryDto} from './dto/stats-query.dto';
@@ -12,7 +12,7 @@ import {StatsService} from './stats.service';
 export class StatsController {
 	private readonly version: string;
 
-	constructor(private readonly service: StatsService, config: AppConfigService) {
+	constructor(private readonly service: StatsService, config: AppConfig) {
 		this.version = config.version;
 	}
 

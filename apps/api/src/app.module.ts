@@ -1,7 +1,7 @@
-import path from 'node:path';
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
-import {AppConfigService} from './app.config';
+import path from 'node:path';
+import {AppConfigModule} from './app-config/app-config.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {HealthModule} from './health/health.module';
@@ -16,14 +16,15 @@ import {UrlsModule} from './urls/urls.module';
 		ConfigModule.forRoot({
 			isGlobal: true,
 			envFilePath: [
+				/* eslint-disable unicorn/prefer-module */
 				// .env relative to this source file
-				// eslint-disable-next-line unicorn/prefer-module
 				path.join(__dirname, '..', '..', '.env'),
 				// .env relative to this file compiled to dist/src/
-				// eslint-disable-next-line unicorn/prefer-module
 				path.join(__dirname, '..', '..', '..', '..', '.env'),
+				/* eslint-enable unicorn/prefer-module */
 			],
 		}),
+		AppConfigModule,
 		LoggerModule,
 		AuthModule,
 		PrismaModule,
@@ -33,6 +34,6 @@ import {UrlsModule} from './urls/urls.module';
 		// UrlsModule goes last since its controller has a /:id route which is rather broad
 		UrlsModule,
 	],
-	providers: [AppConfigService, HttpExceptionFilter],
+	providers: [HttpExceptionFilter],
 })
 export class AppModule {}

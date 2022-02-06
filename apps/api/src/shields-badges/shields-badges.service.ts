@@ -1,6 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {millify} from 'millify';
-import {AppConfigService} from '../app.config';
+import {AppConfig} from '../app-config/app.config';
 import {StatsService} from '../stats/stats.service';
 import {ShieldsResponseDto} from './dto/shields-response.dto';
 
@@ -19,7 +19,7 @@ export class ShieldsBadgesService {
 
 	private readonly version: string;
 
-	constructor(private readonly statsService: StatsService, config: AppConfigService) {
+	constructor(private readonly statsService: StatsService, config: AppConfig) {
 		this.version = config.version;
 	}
 

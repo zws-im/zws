@@ -1,12 +1,12 @@
 import {Module} from '@nestjs/common';
+import {AppConfigModule} from '../app-config/app-config.module';
 import {StatsModule} from '../stats/stats.module';
-import {AppConfigService} from '../app.config';
-import {ShieldsBadgesService} from './shields-badges.service';
 import {ShieldsBadgesController} from './shields-badges.controller';
+import {ShieldsBadgesService} from './shields-badges.service';
 
 @Module({
-	providers: [ShieldsBadgesService, AppConfigService],
+	imports: [AppConfigModule, StatsModule],
+	providers: [ShieldsBadgesService],
 	controllers: [ShieldsBadgesController],
-	imports: [StatsModule],
 })
 export class ShieldsBadgesModule {}

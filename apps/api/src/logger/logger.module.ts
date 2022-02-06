@@ -1,10 +1,11 @@
 import {Module} from '@nestjs/common';
-import {AppConfigService} from '../app.config';
+import {AppConfigModule} from '../app-config/app-config.module';
 import {Logger} from './logger.service';
 import {NestLogger} from './nest-logger.service';
 
 @Module({
-	providers: [Logger, NestLogger, AppConfigService],
+	imports: [AppConfigModule],
+	providers: [Logger, NestLogger],
 	exports: [Logger],
 })
 export class LoggerModule {}

@@ -1,7 +1,7 @@
 import type {TestingModule} from '@nestjs/testing';
 import {Test} from '@nestjs/testing';
 import {plainToInstance} from 'class-transformer';
-import {AppConfigService} from '../app.config';
+import {AppConfig} from '../app-config/app.config';
 import {FormattedStatsDto} from './dto/formatted-stats.dto';
 import {RawStatsDto} from './dto/raw-stats.dto';
 import {StatsQueryDto} from './dto/stats-query.dto';
@@ -25,7 +25,7 @@ describe('StatsController', () => {
 					},
 				},
 				{
-					provide: AppConfigService,
+					provide: AppConfig,
 					useValue: {
 						version: '1.0.0',
 					},

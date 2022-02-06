@@ -3,7 +3,7 @@ import {NestFactory} from '@nestjs/core';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 import {paramCase} from 'change-case';
 import pkg from '../package.json';
-import {AppConfigService} from './app.config';
+import {AppConfig} from './app-config/app.config';
 import {AppModule} from './app.module';
 import {AuthGuard} from './auth/auth.guard';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
@@ -19,7 +19,7 @@ async function bootstrap() {
 	const nestLogger = app.get(NestLogger);
 	app.useLogger(nestLogger);
 
-	const config = app.get(AppConfigService);
+	const config = app.get(AppConfig);
 
 	const openApiConfig = new DocumentBuilder()
 		.setTitle('Zero Width Shortener')

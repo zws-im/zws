@@ -2,7 +2,7 @@ import type {Hash} from 'node:crypto';
 import {createHash, timingSafeEqual} from 'node:crypto';
 import type {Buffer} from 'node:buffer';
 import {Injectable} from '@nestjs/common';
-import {AuthConfigService} from './auth.config';
+import {AuthConfig} from './auth.config';
 import {Role} from './enums/roles.enum';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class AuthService {
 	/** The hash for the user API key, or `undefined` if the server is not configured to use a user API key. */
 	private readonly userApiKeyHash: Buffer | undefined;
 
-	constructor(config: AuthConfigService) {
+	constructor(config: AuthConfig) {
 		if (config.userApiKey) {
 			this.userApiKeyHash = AuthService.hashApiKey(config.userApiKey).digest();
 		}

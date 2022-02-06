@@ -3,7 +3,7 @@ import {ConfigService} from '@nestjs/config';
 import type {EnvironmentVariables} from '../interfaces/config.interface';
 
 @Injectable()
-export class AuthConfigService {
+export class AuthConfig {
 	/**
 	 * The API key for regular users.
 	 * In the future an admin API key may also be configured, which is why there is a distinction.

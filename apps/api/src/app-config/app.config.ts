@@ -1,11 +1,11 @@
 import {Injectable} from '@nestjs/common';
 import {ConfigService} from '@nestjs/config';
-import pkg from '../package.json';
-import type {EnvironmentVariables} from './interfaces/config.interface';
-import {Env} from './enums/env.enum';
+import pkg from '../../package.json';
+import type {EnvironmentVariables} from '../interfaces/config.interface';
+import {Env} from '../enums/env.enum';
 
 @Injectable()
-export class AppConfigService {
+export class AppConfig {
 	readonly version = pkg.version;
 	readonly port: number;
 	readonly hostname: string | undefined;
