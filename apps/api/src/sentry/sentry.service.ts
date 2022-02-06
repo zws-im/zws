@@ -1,7 +1,7 @@
 import type {OnModuleInit, Provider} from '@nestjs/common';
 import {Inject, Injectable} from '@nestjs/common';
 import * as Sentry from '@sentry/node';
-import {Providers} from './enums/providers';
+import {Providers} from './enums/providers.enum';
 import {SentryConfig} from './sentry.config';
 
 type SentryNode = typeof Sentry;
