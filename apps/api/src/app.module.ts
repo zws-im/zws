@@ -16,7 +16,6 @@ import {UrlsModule} from './urls/urls.module';
 	imports: [
 		SentryModule,
 		ConfigModule.forRoot({
-			isGlobal: true,
 			envFilePath: [
 				/* eslint-disable unicorn/prefer-module */
 				// .env relative to this source file
