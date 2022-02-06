@@ -11,6 +11,7 @@ import {SentryModule} from './sentry/sentry.module';
 import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
+import {GoogleCloudModule} from './google-cloud/google-cloud.module';
 
 @Module({
 	imports: [
@@ -34,6 +35,7 @@ import {UrlsModule} from './urls/urls.module';
 		ShieldsBadgesModule,
 		// UrlsModule goes last since its controller has a /:id route which is rather broad
 		UrlsModule,
+		GoogleCloudModule,
 	],
 	providers: [HttpExceptionFilter],
 })
