@@ -8,6 +8,7 @@ import {AppModule} from './app.module';
 import {AuthGuard} from './auth/auth.guard';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {NestLogger} from './logger/nest-logger.service';
+import {PrismaService} from './prisma/prisma.service';
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule, {
@@ -18,6 +19,9 @@ async function bootstrap() {
 
 	const nestLogger = app.get(NestLogger);
 	app.useLogger(nestLogger);
+
+	const prismaService = app.get(PrismaService);
+	prismaService.enableShutdownHooks(app);
 
 	const config = app.get(AppConfig);
 
