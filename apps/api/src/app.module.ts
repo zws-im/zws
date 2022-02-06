@@ -7,12 +7,14 @@ import {HttpExceptionFilter} from './filters/http-exception.filter';
 import {HealthModule} from './health/health.module';
 import {LoggerModule} from './logger/logger.module';
 import {PrismaModule} from './prisma/prisma.module';
+import {SentryModule} from './sentry/sentry.module';
 import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
 
 @Module({
 	imports: [
+		SentryModule,
 		ConfigModule.forRoot({
 			isGlobal: true,
 			envFilePath: [
