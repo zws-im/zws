@@ -1,8 +1,8 @@
+import {Buffer} from 'node:buffer';
 import {sample} from '@jonahsnider/util';
 import {Injectable} from '@nestjs/common';
 import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind, Prisma} from '@prisma/client';
-import {Buffer} from 'node:buffer';
 import type {Opaque} from 'type-fest';
 import {PrismaService} from '../prisma/prisma.service';
 import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
