@@ -1,7 +1,7 @@
-import { SentryInterceptor } from './sentry.interceptor';
+import {SentryInterceptor} from './sentry.interceptor';
 
 describe('SentryInterceptor', () => {
-  it('should be defined', () => {
-    expect(new SentryInterceptor()).toBeDefined();
-  });
+	it('should be defined', () => {
+		expect(new SentryInterceptor()).toBeDefined();
+	});
 });
