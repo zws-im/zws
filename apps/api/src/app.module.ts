@@ -1,7 +1,7 @@
 import {Module} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
 import path from 'node:path';
-import {APP_FILTER} from '@nestjs/core';
+import {APP_FILTER, APP_GUARD, APP_INTERCEPTOR} from '@nestjs/core';
 import {AppConfigModule} from './app-config/app-config.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
@@ -13,6 +13,9 @@ import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
 import {GoogleCloudModule} from './google-cloud/google-cloud.module';
+import {SentryInterceptor} from './sentry/sentry.interceptor';
+import {SentryFilter} from './sentry/sentry.filter';
+import {AuthGuard} from './auth/auth.guard';
 
 @Module({
 	imports: [
@@ -32,24 +35,38 @@ import {GoogleCloudModule} from './google-cloud/google-cloud.module';
 			],
 		}),
 
-		// Modules with controllers
-		StatsModule,
-		ShieldsBadgesModule,
-		// UrlsModule goes last since its controller has a /:id route which is rather broad
-		UrlsModule,
-
 		// Other modules
 		AppConfigModule,
 		LoggerModule,
 		AuthModule,
 		PrismaModule,
+
+		// Modules with controllers
 		HealthModule,
+		StatsModule,
+		ShieldsBadgesModule,
+		// UrlsModule goes last since its controller has a /:id route which is rather broad
+		UrlsModule,
 	],
 	providers: [
 		HttpExceptionFilter,
 		{
+			provide: APP_INTERCEPTOR,
+			useClass: SentryInterceptor,
+		},
+
+		{
 			provide: APP_FILTER,
 			useClass: HttpExceptionFilter,
+		},
+		{
+			provide: APP_FILTER,
+			useClass: SentryFilter,
+		},
+
+		{
+			provide: APP_GUARD,
+			useClass: AuthGuard,
 		},
 	],
 })

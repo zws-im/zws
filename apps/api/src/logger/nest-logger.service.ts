@@ -15,7 +15,8 @@ export class NestLogger implements BaseLoggerService {
 		const context = this.extractContext(args);
 
 		if (context) {
-			this.logger.debug(context, ...args.slice(0, -1));
+			// @ts-expect-error Consola typings are bad
+			this.logger.withTag(context).debug(...args.slice(0, -1));
 		} else {
 			// @ts-expect-error Consola typings are bad
 			this.logger.debug(...args);
@@ -26,7 +27,8 @@ export class NestLogger implements BaseLoggerService {
 		const context = this.extractContext(args);
 
 		if (context) {
-			this.logger.error(context, ...args.slice(0, -1));
+			// @ts-expect-error Consola typings are bad
+			this.logger.withTag(context).error(...args.slice(0, -1));
 		} else {
 			// @ts-expect-error Consola typings are bad
 			this.logger.error(...args);
@@ -37,20 +39,23 @@ export class NestLogger implements BaseLoggerService {
 		const context = this.extractContext(args);
 
 		if (context) {
-			this.logger.warn(context, ...args.slice(0, -1));
+			// @ts-expect-error Consola typings are bad
+			this.logger.withTag(context).warn(...args.slice(0, -1));
 		} else {
 			// @ts-expect-error Consola typings are bad
 			this.logger.warn(...args);
 		}
 	}
 
-	log(message: unknown, ...args: unknown[]) {
+	log(...args: unknown[]) {
 		const context = this.extractContext(args);
 
 		if (context) {
-			this.logger.withTag(context).log(message, ...args.slice(0, -1));
+			// @ts-expect-error Consola typings are bad
+			this.logger.withTag(context).log(...args.slice(0, -1));
 		} else {
-			this.logger.log(message, ...args);
+			// @ts-expect-error Consola typings are bad
+			this.logger.log(...args);
 		}
 	}
 

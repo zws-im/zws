@@ -1,5 +1,6 @@
 import {Controller, Get} from '@nestjs/common';
 import {ApiTags} from '@nestjs/swagger';
+import type {HealthCheckResult} from '@nestjs/terminus';
 import {HealthCheck, HealthCheckService} from '@nestjs/terminus';
 import {PrismaHealthIndicator} from '../prisma/prisma.health';
 
@@ -10,7 +11,7 @@ export class HealthController {
 
 	@Get()
 	@HealthCheck()
-	async check() {
+	async check(): Promise<HealthCheckResult> {
 		return this.health.check([async () => this.prismaHealthIndicator.isHealthy('database')]);
 	}
 }

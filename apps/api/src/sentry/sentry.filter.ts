@@ -1,17 +1,17 @@
-import type {ExceptionFilter} from '@nestjs/common';
+import type {ArgumentsHost} from '@nestjs/common';
 import {Catch} from '@nestjs/common';
+import {BaseExceptionFilter} from '@nestjs/core';
 import * as Sentry from '@sentry/node';
-import type {Logger} from '../logger/interfaces/logger.interface';
-import {LoggerService} from '../logger/logger.service';
 
 @Catch()
-export class SentryFilter implements ExceptionFilter {
-	logger: Logger;
-	constructor(loggerService: LoggerService) {
-		this.logger = loggerService.createLogger();
+export class SentryFilter extends BaseExceptionFilter {
+	constructor() {
+		super();
 	}
 
-	catch(exception: unknown): void {
+	catch(exception: unknown, host: ArgumentsHost): void {
 		Sentry.captureException(exception);
+
+		super.catch(exception, host);
 	}
 }
