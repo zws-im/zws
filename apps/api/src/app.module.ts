@@ -12,6 +12,7 @@ import {ShieldsBadgesModule} from './shields-badges/shields-badges.module';
 import {StatsModule} from './stats/stats.module';
 import {UrlsModule} from './urls/urls.module';
 import {GoogleCloudModule} from './google-cloud/google-cloud.module';
+import {APP_FILTER} from '@nestjs/core';
 
 @Module({
 	imports: [
@@ -37,6 +38,12 @@ import {GoogleCloudModule} from './google-cloud/google-cloud.module';
 		UrlsModule,
 		GoogleCloudModule,
 	],
-	providers: [HttpExceptionFilter],
+	providers: [
+		HttpExceptionFilter,
+		{
+			provide: APP_FILTER,
+			useClass: HttpExceptionFilter,
+		},
+	],
 })
 export class AppModule {}
