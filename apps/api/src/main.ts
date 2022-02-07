@@ -1,11 +1,11 @@
 import {HttpStatus, ValidationPipe} from '@nestjs/common';
 import {NestFactory} from '@nestjs/core';
-import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
+import {SwaggerModule} from '@nestjs/swagger';
 import {paramCase} from 'change-case';
-import pkg from '../package.json';
 import {AppConfig} from './app-config/app.config';
 import {AppModule} from './app.module';
 import {NestLogger} from './logger/nest-logger.service';
+import {OpenApiService} from './openapi/openapi.service';
 import {PrismaService} from './prisma/prisma.service';
 
 async function bootstrap() {
@@ -21,32 +21,8 @@ async function bootstrap() {
 	const prismaService = app.get(PrismaService);
 	prismaService.enableShutdownHooks(app);
 
-	const config = app.get(AppConfig);
-
-	const openApiConfig = new DocumentBuilder()
-		.setTitle('Zero Width Shortener')
-		.setVersion(pkg.version)
-		.setDescription('Shorten URLs with invisible spaces.')
-		.setContact(pkg.author.name, pkg.author.url, pkg.author.email)
-		.setLicense('Apache 2.0', 'https://www.apache.org/licenses/LICENSE-2.0.html')
-
-		.addBearerAuth({type: 'http'})
-
-		.addServer('http://{host}/{basePath}', 'Custom server (HTTP)', {
-			host: {default: config.hostname === undefined ? `localhost:${config.port}` : config.hostname},
-			basePath: {default: ''},
-		})
-		.addServer('https://{host}/{basePath}', 'Custom server (HTTPS)', {
-			host: {default: config.hostname === undefined ? `localhost:${config.port}` : config.hostname},
-			basePath: {default: ''},
-		})
-		.addServer('https://api.zws.im', 'zws.im production')
-
-		.addTag('urls', 'Shortened URLs')
-		.addTag('stats', 'Usage statistics')
-		.addTag('shields', 'Shields endpoint badges')
-		.addTag('health', 'Health checks')
-		.build();
+	const openApiService = app.get(OpenApiService);
+	const openApiConfig = openApiService.getConfig();
 	const openApiDocument = SwaggerModule.createDocument(app, openApiConfig, {
 		operationIdFactory: (controllerKey, methodKey) => `${paramCase(controllerKey.replace(/Controller$/, ''))}-${paramCase(methodKey)}`,
 	});
@@ -64,6 +40,7 @@ async function bootstrap() {
 		}),
 	);
 
+	const config = app.get(AppConfig);
 	await app.listen(config.port);
 }
 

@@ -16,6 +16,7 @@ import {GoogleCloudModule} from './google-cloud/google-cloud.module';
 import {SentryInterceptor} from './sentry/sentry.interceptor';
 import {SentryFilter} from './sentry/sentry.filter';
 import {AuthGuard} from './auth/auth.guard';
+import {OpenApiModule} from './openapi/openapi.module';
 
 @Module({
 	imports: [
@@ -40,6 +41,7 @@ import {AuthGuard} from './auth/auth.guard';
 		LoggerModule,
 		AuthModule,
 		PrismaModule,
+		OpenApiModule,
 
 		// Modules with controllers
 		HealthModule,
