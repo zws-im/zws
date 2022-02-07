@@ -1,10 +1,12 @@
 import type {OnModuleInit, Provider} from '@nestjs/common';
 import {Inject, Injectable} from '@nestjs/common';
 import * as ProfilerMod from '@google-cloud/profiler';
-import {Providers} from './enums/providers.enum';
+
 import {GoogleCloudConfig} from './google-cloud.config';
 
 type Profiler = typeof ProfilerMod;
+
+const PROFILER_PROVIDER = Symbol('@google-cloud/profiler');
 
 @Injectable()
 export class GoogleCloudService implements OnModuleInit {
@@ -15,11 +17,11 @@ export class GoogleCloudService implements OnModuleInit {
 		// Stderr: https://cloud.google.com/docs/authentication/getting-started
 		// See https://github.com/googleapis/cloud-profiler-nodejs/issues/800
 
-		provide: Providers.Profiler,
+		provide: PROFILER_PROVIDER,
 		useValue: ProfilerMod,
 	};
 
-	constructor(private readonly config: GoogleCloudConfig, @Inject(Providers.Profiler) public readonly profiler: Profiler) {}
+	constructor(private readonly config: GoogleCloudConfig, @Inject(PROFILER_PROVIDER) public readonly profiler: Profiler) {}
 
 	/**
 	 * Starts the Google Cloud Profiler.
