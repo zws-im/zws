@@ -1,11 +1,16 @@
+import type {OnApplicationBootstrap} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
 import {ApproximateCountKind} from '@prisma/client';
 import {PrismaService} from '../prisma/prisma.service';
 import type {Stats} from './interfaces/stats.interface';
 
 @Injectable()
-export class StatsService {
+export class StatsService implements OnApplicationBootstrap {
 	constructor(private readonly db: PrismaService) {}
+
+	async onApplicationBootstrap(): Promise<void> {
+		await this.savePreciseInstanceStats();
+	}
 
 	/**
 	 * Get statistics for this instance.
