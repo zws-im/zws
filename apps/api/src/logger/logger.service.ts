@@ -11,7 +11,7 @@ export class LoggerService {
 
 	constructor(config: AppConfig) {
 		this.consolaOptions = {
-			level: LogLevel.Debug,
+			level: LogLevel.Verbose,
 		};
 
 		if (config.env === Env.Production) {
