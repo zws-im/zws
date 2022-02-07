@@ -30,7 +30,7 @@ export class PrismaService
 			],
 		});
 
-		this.logger = logger.createLogger().withTag('database');
+		this.logger = logger.createLogger().withTag('prisma');
 
 		this.$on('error', this.onError.bind(this));
 		this.$on('warn', this.onWarn.bind(this));
