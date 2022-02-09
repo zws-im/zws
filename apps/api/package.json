@@ -52,7 +52,7 @@
 		"@types/node": "16.11.22",
 		"prettier": "2.5.1",
 		"ts-node": "10.5.0",
-		"type-fest": "2.11.1",
+		"type-fest": "2.11.2",
 		"typescript": "4.5.5",
 		"xo": "0.47.0"
 	},
