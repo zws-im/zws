@@ -28,7 +28,7 @@ export default function getRoute() {
 				[Http.Status.NotFound]: Type.Ref(Schemas.Errors.UrlNotFound),
 			},
 		},
-		handler: async request => {
+		async handler(request) {
 			const {
 				params: {short},
 			} = request;

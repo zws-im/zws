@@ -35,7 +35,7 @@ export default function getRoute(fastify: FastifyInstance) {
 				[Http.Status.ServiceUnavailable]: Schemas.Errors.UniqueShortIdTimeout,
 			},
 		},
-		handler: async (request, reply) => {
+		async handler(request, reply) {
 			const {
 				body: {url},
 			} = request;

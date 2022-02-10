@@ -27,7 +27,7 @@ export default function getRoute() {
 				[Http.Status.Gone]: Schemas.Errors.UrlBlocked,
 			},
 		},
-		handler: async (request, reply) => {
+		async handler(request, reply) {
 			const {
 				query: {visit: shouldVisit},
 				params: {short},
