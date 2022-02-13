@@ -1,10 +1,15 @@
 import {Injectable} from '@nestjs/common';
 import {DocumentBuilder} from '@nestjs/swagger';
+import {paramCase} from 'change-case';
 import {AppConfig} from '../app-config/app.config';
 import pkg from '../../package.json';
 
 @Injectable()
 export class OpenApiService {
+	static operationIdFactory(controllerKey: string, methodKey: string) {
+		return `${paramCase(controllerKey.replace(/Controller$/, ''))}-${paramCase(methodKey)}`;
+	}
+
 	private readonly hostname: string | undefined;
 	private readonly port: number;
 

@@ -41,13 +41,6 @@ export class PrismaService
 		await this.$connect();
 	}
 
-	/**
-	 * @see https://docs.nestjs.com/recipes/prisma#issues-with-enableshutdownhooks
-	 */
-	enableShutdownHooks(app: INestApplication): void {
-		this.$on('beforeExit', async (): Promise<void> => app.close());
-	}
-
 	private async onError(event: Prisma.LogEvent | BuggedPrismaLogEvent) {
 		const logger = this.createLoggerForEvent(event);
 

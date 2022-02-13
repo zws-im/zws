@@ -1,7 +1,7 @@
 import path from 'node:path';
-import {Module} from '@nestjs/common';
+import {HttpStatus, Module, ValidationPipe} from '@nestjs/common';
 import {ConfigModule} from '@nestjs/config';
-import {APP_FILTER, APP_GUARD, APP_INTERCEPTOR} from '@nestjs/core';
+import {APP_FILTER, APP_GUARD, APP_INTERCEPTOR, APP_PIPE} from '@nestjs/core';
 import {AppConfigModule} from './app-config/app-config.module';
 import {AuthModule} from './auth/auth.module';
 import {HttpExceptionFilter} from './filters/http-exception.filter';
@@ -17,6 +17,7 @@ import {SentryInterceptor} from './sentry/sentry.interceptor';
 import {SentryFilter} from './sentry/sentry.filter';
 import {AuthGuard} from './auth/auth.guard';
 import {OpenApiModule} from './openapi/openapi.module';
+import {SentryService} from './sentry/sentry.service';
 
 @Module({
 	imports: [
@@ -61,6 +62,7 @@ import {OpenApiModule} from './openapi/openapi.module';
 			provide: APP_FILTER,
 			useClass: HttpExceptionFilter,
 		},
+		SentryService.sentryProvider,
 		{
 			provide: APP_FILTER,
 			useClass: SentryFilter,
@@ -69,6 +71,19 @@ import {OpenApiModule} from './openapi/openapi.module';
 		{
 			provide: APP_GUARD,
 			useClass: AuthGuard,
+		},
+
+		{
+			provide: APP_PIPE,
+			useValue: new ValidationPipe({
+				transform: true,
+
+				errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
+
+				whitelist: true,
+				forbidNonWhitelisted: true,
+				forbidUnknownValues: true,
+			}),
 		},
 	],
 })
