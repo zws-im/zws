@@ -28,7 +28,7 @@
 		"start": "yarn workspace @zws.im/api start",
 		"style": "turbo run style --",
 		"style-prisma": "yarn run prisma format && git diff --exit-code -s prisma/schema.prisma",
-		"test": "yarn validate-prisma && yarn style-prisma && turbo run build style lint smoke-test",
+		"test": "yarn validate-prisma && yarn style-prisma && turbo run build style lint test test:e2e",
 		"validate-prisma": "prisma validate"
 	},
 	"prettier": "@jonahsnider/prettier-config",
