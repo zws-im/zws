@@ -1,5 +1,5 @@
 import type {ArgumentsHost} from '@nestjs/common';
-import {Catch, Inject} from '@nestjs/common';
+import {HttpException, Catch, Inject} from '@nestjs/common';
 import {BaseExceptionFilter} from '@nestjs/core';
 import {SentryNode, SENTRY_PROVIDER} from './sentry.service';
 
@@ -10,7 +10,10 @@ export class SentryFilter extends BaseExceptionFilter {
 	}
 
 	catch(exception: unknown, host: ArgumentsHost): void {
-		this.Sentry.captureException(exception);
+		if (exception instanceof HttpException && exception.getStatus() >= 500) {
+			// Only report exceptions that are server errors
+			this.Sentry.captureException(exception);
+		}
 
 		super.catch(exception, host);
 	}
