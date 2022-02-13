@@ -6,7 +6,7 @@ import {GoogleCloudConfig} from './google-cloud.config';
 
 type Profiler = typeof ProfilerMod;
 
-const PROFILER_PROVIDER = Symbol('@google-cloud/profiler');
+export const PROFILER_PROVIDER = Symbol('@google-cloud/profiler');
 
 @Injectable()
 export class GoogleCloudService implements OnModuleInit {
