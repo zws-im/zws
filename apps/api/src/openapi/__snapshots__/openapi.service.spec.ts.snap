@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OpenApiService getConfig generates a config: config 1`] = `
+Object {
+  "components": Object {
+    "securitySchemes": Object {
+      "bearer": Object {
+        "bearerFormat": "JWT",
+        "scheme": "bearer",
+        "type": "http",
+      },
+    },
+  },
+  "info": Object {
+    "contact": Object {
+      "email": "jonah@jonah.pw",
+      "name": "Jonah Snider",
+      "url": "https://jonahsnider.com",
+    },
+    "description": "Shorten URLs with invisible spaces.",
+    "license": Object {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
+    },
+    "title": "Zero Width Shortener",
+    "version": "VERSION",
+  },
+  "openapi": "3.0.0",
+  "servers": Array [
+    Object {
+      "description": "Custom server (HTTP)",
+      "url": "http://{host}/{basePath}",
+      "variables": Object {
+        "basePath": Object {
+          "default": "",
+        },
+        "host": Object {
+          "default": "hostname",
+        },
+      },
+    },
+    Object {
+      "description": "Custom server (HTTPS)",
+      "url": "https://{host}/{basePath}",
+      "variables": Object {
+        "basePath": Object {
+          "default": "",
+        },
+        "host": Object {
+          "default": "hostname",
+        },
+      },
+    },
+    Object {
+      "description": "zws.im production",
+      "url": "https://api.zws.im",
+      "variables": undefined,
+    },
+  ],
+  "tags": Array [
+    Object {
+      "description": "Shortened URLs",
+      "name": "urls",
+    },
+    Object {
+      "description": "Usage statistics",
+      "name": "stats",
+    },
+    Object {
+      "description": "Shields endpoint badges",
+      "name": "shields",
+    },
+    Object {
+      "description": "Health checks",
+      "name": "health",
+    },
+  ],
+}
+`;
