@@ -1,5 +1,3 @@
-import {AuthGuard} from './auth.guard';
-
 describe('AuthGuard', () => {
 	describe('canActivate', () => {
 		it.todo('should not require auth for routes without roles configured');
