@@ -1348,7 +1348,7 @@ __metadata:
     dotenv: 16.0.0
     fastify: 3.27.1
     fastify-bearer-auth: 5.1.0
-    fastify-swagger: 4.14.0
+    fastify-swagger: 4.15.0
     millify: 4.0.0
     prettier: 2.5.1
     prisma: 3.9.2
@@ -3238,16 +3238,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify-swagger@npm:4.14.0":
-  version: 4.14.0
-  resolution: "fastify-swagger@npm:4.14.0"
+"fastify-swagger@npm:4.15.0":
+  version: 4.15.0
+  resolution: "fastify-swagger@npm:4.15.0"
   dependencies:
     fastify-plugin: ^3.0.0
     fastify-static: ^4.0.0
     js-yaml: ^4.0.0
     json-schema-resolver: ^1.3.0
     openapi-types: ^10.0.0
-  checksum: 2d230ccdc8f89fb4d4da9b62b2cd5481b9e553db7029dc29eb25de044b03a7c062cce5de4af1e03a0dab505c0646feb62cae92a16efff023a4efb52fd768472b
+  checksum: 996100deb7da041dc5a734124f7898e61a715f38537f88ed0acd6557ae0154a6da48c424957bbdaeb609d5f198e15ca77ad91203126a8c0f0eb03b37d09c9a27
   languageName: node
   linkType: hard
 
