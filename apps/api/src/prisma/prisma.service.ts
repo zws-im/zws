@@ -1,4 +1,4 @@
-import type {INestApplication, OnModuleInit} from '@nestjs/common';
+import type {OnModuleInit} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
 import type {Prisma} from '@prisma/client';
 import {PrismaClient} from '@prisma/client';
