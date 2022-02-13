@@ -1,23 +1,21 @@
 import type {CallHandler, ExecutionContext, NestInterceptor} from '@nestjs/common';
-import {Injectable} from '@nestjs/common';
-import * as Sentry from '@sentry/node';
+import {Inject, Injectable} from '@nestjs/common';
 import type {Observable} from 'rxjs';
 import type {UnsafeRequest} from '../interfaces/unsafe-request.interface';
+import {SentryNode, SentryService, SENTRY_PROVIDER} from './sentry.service';
 
 @Injectable()
 export class SentryInterceptor implements NestInterceptor<unknown, unknown> {
+	constructor(@Inject(SENTRY_PROVIDER) private readonly Sentry: SentryNode) {}
+
 	intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
 		const request = context.switchToHttp().getRequest<UnsafeRequest>();
 
-		const transactionName = `${request.method} ${String(request.route.path)}`;
+		const transactionName = SentryService.getTransactionName(request);
 
-		const requestContext = {
-			body: request.body,
-			params: request.params,
-			query: request.query,
-		};
+		const requestContext = SentryService.getRequestContext(request);
 
-		Sentry.configureScope(scope => {
+		this.Sentry.configureScope(scope => {
 			scope.setTransactionName(transactionName);
 
 			scope.setContext('request', requestContext);
