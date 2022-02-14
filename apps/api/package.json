@@ -21,10 +21,9 @@
 		"build": "rm -rf ./dist/ && nest build",
 		"clean": "rm -r ./src/ ./scripts/ ./tsconfig.json",
 		"lint": "xo",
-		"start": "nest start",
+		"start": "node .",
 		"start:debug": "nest start --debug --watch",
 		"start:dev": "nest start --watch",
-		"start:prod": "node .",
 		"style": "prettier --check . --ignore-path ../../.prettierignore",
 		"test": "jest",
 		"test:coverage": "jest --coverage",
@@ -37,7 +36,6 @@
 	"dependencies": {
 		"@google-cloud/profiler": "4.1.7",
 		"@jonahsnider/util": "8.10.0",
-		"@nestjs/cli": "^8.0.0",
 		"@nestjs/common": "^8.0.0",
 		"@nestjs/config": "1.1.6",
 		"@nestjs/core": "^8.0.0",
@@ -64,6 +62,7 @@
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/xo-config": "5.0.3",
+		"@nestjs/cli": "^8.0.0",
 		"@nestjs/schematics": "^8.0.0",
 		"@nestjs/testing": "^8.0.0",
 		"@tsconfig/node16": "1.0.2",
