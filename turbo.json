@@ -6,20 +6,25 @@
 			"outputs": ["dist/**"]
 		},
 		"clean": {
-			"outputs": [],
-			"cache": false
-		},
-		"lint": {
+			"cache": false,
 			"outputs": []
 		},
-		"style": {
+		"lint": {
 			"outputs": []
 		},
 		"migrations": {
 			"outputs": []
 		},
-		"smoke-test": {
-			"dependsOn": ["build"],
+		"style": {
+			"outputs": []
+		},
+		"test": {
+			"outputs": []
+		},
+		"test:coverage": {
+			"outputs": []
+		},
+		"test:e2e": {
 			"outputs": []
 		}
 	}

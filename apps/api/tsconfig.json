@@ -1,14 +1,16 @@
 {
 	"compilerOptions": {
+		"declaration": true,
+		"emitDecoratorMetadata": true,
+		"exactOptionalPropertyTypes": true,
+		"experimentalDecorators": true,
 		"importHelpers": true,
+		"incremental": true,
+		"inlineSourceMap": true,
 		"inlineSources": true,
-		"module": "ESNext",
-		"moduleResolution": "Node",
 		"outDir": "dist",
-		"resolveJsonModule": true,
-		"inlineSourceMap": true
+		"resolveJsonModule": true
 	},
-	"exclude": ["node_modules"],
 	"extends": "@tsconfig/node16/tsconfig.json",
 	"include": ["src"]
 }

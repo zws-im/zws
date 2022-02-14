@@ -1,0 +1,35 @@
+diff --git a/build/src/logger.js b/build/src/logger.js
+index 62f0c09e20140aa05a46b79ad71f38039f8b0887..f56f43ab416652c9cbc48fdaa3e9c2b3336f0d80 100644
+--- a/build/src/logger.js
++++ b/build/src/logger.js
+@@ -21,12 +21,6 @@ const logging = new logging_min_1.Logging();
+ // migrating from 'console-log-level' package we keep
+ // min and max log levels numeric interface used there
+ const [MIN_LEVEL, MAX_LEVEL] = [0, 4];
+-logging.setProjectId().catch(err => {
+-    console.error(`failed to set logging project id ${err}`);
+-});
+-logging.setDetectedResource().catch(err => {
+-    console.error(`failed to discover resource metadata ${err}`);
+-});
+ // eslint-disable-next-line @typescript-eslint/no-var-requires
+ const pjson = require('../../package.json');
+ class Logger {
+@@ -70,7 +64,17 @@ class Logger {
+     }
+ }
+ exports.Logger = Logger;
++let didLoggingInit = false;
+ function createLogger(level) {
++    if (!didLoggingInit) {
++        logging.setProjectId().catch(err => {
++            console.error(`failed to set logging project id ${err}`);
++        });
++        logging.setDetectedResource().catch(err => {
++            console.error(`failed to discover resource metadata ${err}`);
++        });
++        didLoggingInit = true;
++    }
+     return new Logger(level);
+ }
+ exports.createLogger = createLogger;
