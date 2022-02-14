@@ -17,7 +17,7 @@ export default async function registerPlugins(fastify: FastifyInstance): Promise
 		await fastify.register(bearerAuthPlugin, {
 			addHook: false,
 			keys: new Set([config.server.apiKey]),
-			errorResponse: (error: Error): Schemas.Errors.ApiKeyError => {
+			errorResponse(error: Error): Schemas.Errors.ApiKeyError {
 				switch (error.message) {
 					case 'missing authorization header': {
 						const {statusCode, code, message} = new MissingApiKey();

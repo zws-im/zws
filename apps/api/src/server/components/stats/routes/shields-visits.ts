@@ -26,7 +26,7 @@ export default function getRoute() {
 				[Http.Status.Ok]: Type.Ref(Schemas.Models.ShieldsEndpointResponse),
 			},
 		},
-		handler: async () => {
+		async handler() {
 			const instanceStats = await stats.instanceStats();
 
 			return {color: 'informational', label: 'visits', message: stats.abbreviateNumber(instanceStats.visits), schemaVersion: 1};

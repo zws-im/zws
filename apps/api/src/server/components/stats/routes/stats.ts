@@ -26,7 +26,7 @@ export default function getRoute() {
 				[Http.Status.Ok]: Type.Ref(Schemas.Models.Stats),
 			},
 		},
-		handler: async request => {
+		async handler(request) {
 			const instanceStats = await stats.instanceStats();
 
 			if (request.query.format) {

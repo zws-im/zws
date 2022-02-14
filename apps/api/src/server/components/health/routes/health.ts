@@ -20,7 +20,7 @@ export default function getRoute() {
 				[Http.Status.InternalServerError]: Schemas.Errors.NotHealthy,
 			},
 		},
-		handler: async (request, reply) => {
+		async handler(request, reply) {
 			try {
 				// Pick any URL to check database
 				await db.shortenedUrl.findFirst();
