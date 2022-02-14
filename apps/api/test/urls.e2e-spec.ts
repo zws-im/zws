@@ -23,6 +23,6 @@ describe('UrlsController (e2e)', () => {
 
 		await request(app.getHttpServer())
 			.get(`/${encodeURIComponent(url.short)}`)
-			.expect(200);
+			.expect(308);
 	});
 });
