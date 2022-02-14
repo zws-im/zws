@@ -2453,7 +2453,7 @@ __metadata:
     type-fest: 2.11.1
     typescript: 4.5.5
     xo: 0.48.0
-    yn: 4.0.0
+    yn: 5.0.0
     zod: 3.11.6
   languageName: unknown
   linkType: soft
@@ -11166,10 +11166,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yn@npm:4.0.0":
-  version: 4.0.0
-  resolution: "yn@npm:4.0.0"
-  checksum: 2d60113b6f43f7c29a0a97719d8da4f626b755f5bb2fd19b00d1fe732db1900ad3f1785811a86d941cbe2800f02773af00d0ed99201333eeb3618db8502f7e96
+"yn@npm:5.0.0":
+  version: 5.0.0
+  resolution: "yn@npm:5.0.0"
+  checksum: f0ec7710d3d697e88a67a46e8072542448f04677a7e6580c56b1b78da202fa5cd73fabba94957d58ee306e4ce6366c5c38c1a9fb7fd76d07ad77a4d1908b66b0
   languageName: node
   linkType: hard
 
