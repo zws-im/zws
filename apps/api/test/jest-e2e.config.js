@@ -8,7 +8,7 @@ module.exports = {
 	testEnvironment: 'node',
 	testRegex: '.e2e-spec.ts$',
 	transform: {
-		'^.+\\.(t|j)s$': 'ts-jest',
+		'^.+\\.ts$': 'ts-jest',
 	},
 	globals: {
 		'ts-jest': {
@@ -17,4 +17,5 @@ module.exports = {
 			},
 		},
 	},
+	setupFiles: ['./jest-dotenv.js'],
 };
