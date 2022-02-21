@@ -1,8 +1,11 @@
+import type {OnModuleInit} from '@nestjs/common';
 import {Injectable} from '@nestjs/common';
 import {ConfigService} from '@nestjs/config';
 import type {JsonValue} from 'type-fest';
 import {z} from 'zod';
 import type {EnvironmentVariables} from '../interfaces/config.interface';
+import type {Logger} from '../logger/interfaces/logger.interface';
+import {LoggerService} from '../logger/logger.service';
 
 const DEFAULT_SHORT_CHARS: readonly string[] = [
 	'\u200C',
@@ -40,19 +43,31 @@ const DEFAULT_SHORT_CHARS: readonly string[] = [
 const MAX_SHORT_URLS = 1e9;
 
 @Injectable()
-export class UrlsConfigService {
+export class UrlsConfigService implements OnModuleInit {
 	readonly shortenedLength: number;
 	readonly characters: readonly string[];
 	readonly shortCharRewrites: Readonly<Record<string, string>> | undefined;
 	readonly baseUrlForShortenedUrls: string | undefined;
 	readonly blockedHostnames: ReadonlySet<string>;
 
-	constructor(private readonly configService: ConfigService<EnvironmentVariables>) {
+	private readonly logger: Logger;
+
+	constructor(private readonly configService: ConfigService<EnvironmentVariables>, logger: LoggerService) {
 		this.characters = this.getShortChars();
 		this.shortenedLength = this.getShortLength(this.characters.length);
 		this.shortCharRewrites = this.getShortRewrites();
 		this.baseUrlForShortenedUrls = this.getShortenedBaseUrl();
 		this.blockedHostnames = this.getBlockedHostnames();
+
+		this.logger = logger.createLogger().withTag('config').withTag('urls');
+	}
+
+	onModuleInit(): void {
+		this.logger.info('characters:', this.characters);
+		this.logger.info('length:', this.shortenedLength);
+		this.logger.info('rewrites:', this.shortCharRewrites);
+		this.logger.info('base URL:', this.baseUrlForShortenedUrls);
+		this.logger.info('number of blocked hostnames:', this.blockedHostnames.size);
 	}
 
 	private getShortLength(characterSetSize: number): number {

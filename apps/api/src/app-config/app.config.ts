@@ -1,8 +1,8 @@
 import {Injectable} from '@nestjs/common';
 import {ConfigService} from '@nestjs/config';
 import pkg from '../../package.json';
-import type {EnvironmentVariables} from '../interfaces/config.interface';
 import {Env} from '../enums/env.enum';
+import type {EnvironmentVariables} from '../interfaces/config.interface';
 
 @Injectable()
 export class AppConfig {
