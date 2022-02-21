@@ -144,8 +144,7 @@ export class UrlsService {
 	private generateShortId(): Short {
 		let shortId = '' as Short;
 
-		// eslint-disable-next-line @typescript-eslint/prefer-for-of
-		for (let i = 0; i < this.config.characters.length; i++) {
+		for (let i = 0; i < this.config.shortenedLength; i++) {
 			// @ts-expect-error String concatenation forces string type
 			shortId += sample(this.config.characters) as Short;
 		}
