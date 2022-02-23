@@ -77,8 +77,7 @@ export class UrlsController {
 				throw new UrlBlockedException();
 			}
 
-			// If you don't encode `url` the node http library may crash with TypeError [ERR_INVALID_CHAR]: Invalid character in header content ["location"]
-			response.redirect(Http.Status.PermanentRedirect, encodeURI(url.longUrl));
+			response.redirect(Http.Status.PermanentRedirect, url.longUrl);
 			response.end();
 
 			await this.service.trackUrlVisit(short);
