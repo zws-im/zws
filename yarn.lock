@@ -798,14 +798,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:0.12.0":
-  version: 0.12.0
-  resolution: "@es-joy/jsdoccomment@npm:0.12.0"
+"@es-joy/jsdoccomment@npm:~0.20.1":
+  version: 0.20.1
+  resolution: "@es-joy/jsdoccomment@npm:0.20.1"
   dependencies:
-    comment-parser: 1.2.4
+    comment-parser: 1.3.0
     esquery: ^1.4.0
-    jsdoc-type-pratt-parser: 2.0.0
-  checksum: 24e1cda9004d64259466bfe10448c58bcc57392a7eeb29ff32d157e0aaa15b14425e7a4b9490234fbaeca23a62f8d151970943501882aee70caca4384a3560fa
+    jsdoc-type-pratt-parser: ~2.2.3
+  checksum: b64afeaddccbc8da185c640e608496f6d6f8ee564c6255cdb44b16e00fe441e1f0552b5748033df2baf42187cfbfa9f31c46716982945d4343f8eaf44e253087
   languageName: node
   linkType: hard
 
@@ -1222,14 +1222,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:5.0.3":
-  version: 5.0.3
-  resolution: "@jonahsnider/xo-config@npm:5.0.3"
+"@jonahsnider/xo-config@npm:5.0.4":
+  version: 5.0.4
+  resolution: "@jonahsnider/xo-config@npm:5.0.4"
   dependencies:
     "@types/xo": 0.39.2
-    eslint-plugin-jsdoc: 37.0.3
+    eslint-plugin-jsdoc: 37.9.5
     eslint-plugin-tsdoc: 0.2.14
-  checksum: 7698217838e7c117d0c612fdd789e7780c1ad36f7075fc99f3a6ee1b94f9ba4dfc13e835fc03f043c6f66b80044cfdd6c040973f3bd99f15d3f0484fba3e5de6
+  checksum: f15538d59c2c5b39f062a3dea77c897895ef79e366812682f8032fb182aa1771112ac148d2a30923c80e44a4d170f634b818b444f3d57a463d6ed39a4164b3ae
   languageName: node
   linkType: hard
 
@@ -2501,7 +2501,7 @@ __metadata:
     "@google-cloud/profiler": 4.1.7
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 9.0.0
-    "@jonahsnider/xo-config": 5.0.3
+    "@jonahsnider/xo-config": 5.0.4
     "@nestjs/cli": 8.2.1
     "@nestjs/common": 8.3.1
     "@nestjs/config": 1.2.0
@@ -3668,10 +3668,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"comment-parser@npm:1.2.4":
-  version: 1.2.4
-  resolution: "comment-parser@npm:1.2.4"
-  checksum: 36ac280bce4c472fac22b3ec4d8aebb4d3d7c22c6808c70174f4deabee3b82144db66f8bd61eca9c514a6d0f12f6087ddab99e7d531e660d0da793b4730fd445
+"comment-parser@npm:1.3.0":
+  version: 1.3.0
+  resolution: "comment-parser@npm:1.3.0"
+  checksum: e7b41b8a5f3d8b974e5b4bd8796acd41ec6635989f2a402bbf13098ad459c0598275a7b75b98d29c48d8f0b340a828d1a5d6948c8cf65ab41ae7e00040fb082a
   languageName: node
   linkType: hard
 
@@ -4634,22 +4634,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:37.0.3":
-  version: 37.0.3
-  resolution: "eslint-plugin-jsdoc@npm:37.0.3"
+"eslint-plugin-jsdoc@npm:37.9.5":
+  version: 37.9.5
+  resolution: "eslint-plugin-jsdoc@npm:37.9.5"
   dependencies:
-    "@es-joy/jsdoccomment": 0.12.0
-    comment-parser: 1.2.4
-    debug: ^4.3.2
+    "@es-joy/jsdoccomment": ~0.20.1
+    comment-parser: 1.3.0
+    debug: ^4.3.3
+    escape-string-regexp: ^4.0.0
     esquery: ^1.4.0
-    jsdoc-type-pratt-parser: ^2.0.0
-    lodash: ^4.17.21
     regextras: ^0.8.0
     semver: ^7.3.5
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: 1659009bb285a728796f7a4ac69c0dc7c48f8189c4cbb26548eb7778be9a020796d8265f258c7fe0f625b83a4d95f21c28278e50deeff6c741c3fc4d62a9bfb5
+  checksum: 9a5cc587e4896a5f20115bc2ef26fd9b1f914963f92c99b4a75d2476b687bca8b0c0ff4acec1ec5d58cf9835a7c8065a08595a9524596b91875c602af74738cf
   languageName: node
   linkType: hard
 
@@ -7181,14 +7180,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-type-pratt-parser@npm:2.0.0":
-  version: 2.0.0
-  resolution: "jsdoc-type-pratt-parser@npm:2.0.0"
-  checksum: 0e49e7e10a1ef047aa2cfcce9b5102214b9f8b5294593beba09bf825b115345c9efba153c422a6a649bbe0dca9aa5b4c8d34dca21e74ad42bd2252d7ecbda92d
-  languageName: node
-  linkType: hard
-
-"jsdoc-type-pratt-parser@npm:^2.0.0":
+"jsdoc-type-pratt-parser@npm:~2.2.3":
   version: 2.2.3
   resolution: "jsdoc-type-pratt-parser@npm:2.2.3"
   checksum: 202a6c1f884234f0927fea82648f2401c24477231e127f28cdf4f5e169ca37535e694379eb440c627f7032504b5225155d8113a67499bec07cf8ce131265f1ed
