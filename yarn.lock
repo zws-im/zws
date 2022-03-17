@@ -1508,17 +1508,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:8.0.4":
-  version: 8.0.4
-  resolution: "@nestjs/terminus@npm:8.0.4"
+"@nestjs/terminus@npm:8.0.6":
+  version: 8.0.6
+  resolution: "@nestjs/terminus@npm:8.0.6"
   dependencies:
-    check-disk-space: 3.1.0
+    check-disk-space: 3.3.0
   peerDependencies:
     "@nestjs/common": 8.x
     "@nestjs/core": 8.x
     reflect-metadata: 0.1.x
     rxjs: 7.x
-  checksum: 641cf0f0e09f68e08e2cc600c5fef099834029474a49854d99313dd5a813c5da903d0f7ff972bdf4d83bb293a19d88cbec848ed4f0680fd7e6e2fd85c5b46e0a
+  checksum: 15e759c223789e199481e042856492cf7299202e22f0c846554dba6682180eb8ac7cceb8393a81bf908b3435132738ce37d484373ac04c6740004a6a934bcf8b
   languageName: node
   linkType: hard
 
@@ -2488,7 +2488,7 @@ __metadata:
     "@nestjs/platform-express": 8.4.1
     "@nestjs/schematics": 8.0.8
     "@nestjs/swagger": 5.2.0
-    "@nestjs/terminus": 8.0.4
+    "@nestjs/terminus": 8.0.6
     "@nestjs/testing": 8.4.1
     "@prisma/client": 3.11.0
     "@sentry/node": 6.18.2
@@ -3382,10 +3382,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-disk-space@npm:3.1.0":
-  version: 3.1.0
-  resolution: "check-disk-space@npm:3.1.0"
-  checksum: 6744f1046742956f6d3ccb57f278572a6048be439e02ebbeb978e3a80091c612c8e1e9bd936aaf462a97a91dcf306d81ab4f1b8eadf7a0b0bfa437330df1e879
+"check-disk-space@npm:3.3.0":
+  version: 3.3.0
+  resolution: "check-disk-space@npm:3.3.0"
+  checksum: a4f5e06ed1b5b949b8a96c87263102b73683afd3da29434c11395d51ec73502455c32fdf62970fe981e72b933f7bfc47df596ed0375171295239487ea714a8b7
   languageName: node
   linkType: hard
 
