@@ -21,7 +21,8 @@
 		"apps/*"
 	],
 	"scripts": {
-		"build": "turbo run build --",
+		"build": "npm run build_site && npm run migrations",
+		"build_site": "turbo run build --",
 		"clean": "turbo run clean",
 		"lint": "turbo run lint --",
 		"migrations": "prisma migrate deploy",
