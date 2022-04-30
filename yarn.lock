@@ -2471,7 +2471,7 @@ __metadata:
     class-validator: 0.13.2
     consola: 2.15.3
     dotenv: 16.0.0
-    express: 4.18.0
+    express: 4.18.1
     jest: 27.5.1
     millify: 4.0.0
     prettier: 2.6.2
@@ -5014,9 +5014,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:4.18.0":
-  version: 4.18.0
-  resolution: "express@npm:4.18.0"
+"express@npm:4.18.1":
+  version: 4.18.1
+  resolution: "express@npm:4.18.1"
   dependencies:
     accepts: ~1.3.8
     array-flatten: 1.1.1
@@ -5049,7 +5049,7 @@ __metadata:
     type-is: ~1.6.18
     utils-merge: 1.0.1
     vary: ~1.1.2
-  checksum: 2d83ccb02aedfc68ae99ff13b97f65896f4e0866a92f34e041fa3de858ce862bcb5ecd0cf43f266514eda777b8e0d55627a2430894a6ce17e30febf78da40c60
+  checksum: c3d44c92e48226ef32ec978becfedb0ecf0ca21316bfd33674b3c5d20459840584f2325726a4f17f33d9c99f769636f728982d1c5433a5b6fe6eb95b8cf0c854
   languageName: node
   linkType: hard
 
