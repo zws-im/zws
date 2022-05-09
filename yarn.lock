@@ -2722,7 +2722,7 @@ __metadata:
     rxjs: 7.5.5
     supertest: 6.2.3
     swagger-ui-express: 4.3.0
-    ts-jest: 28.0.1
+    ts-jest: 28.0.2
     ts-node: 10.7.0
     tslib: 2.4.0
     type-fest: 2.12.2
@@ -10374,9 +10374,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:28.0.1":
-  version: 28.0.1
-  resolution: "ts-jest@npm:28.0.1"
+"ts-jest@npm:28.0.2":
+  version: 28.0.2
+  resolution: "ts-jest@npm:28.0.2"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
@@ -10403,7 +10403,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: d6827b5eb9838b63c694a49a6d85020f62e6eed1e8aae935fdb3fabdccc0ed7207b41c812c0de793a8e5ba1b7818cddfc4d51dc29ed6054f3a08cafbedbef26e
+  checksum: bb244015f947cf9a77c892691a8131116a86f4f1cc7a1ff045cd72f78c16485c07ac582b31117f8d722a0ebb9d51c27468c28e2f8eec8bbae6e2a09ee41066f2
   languageName: node
   linkType: hard
 
