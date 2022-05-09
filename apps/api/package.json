@@ -70,7 +70,7 @@
 		"@types/jest": "27.5.0",
 		"@types/node": "16.11.33",
 		"@types/supertest": "2.0.12",
-		"jest": "28.0.3",
+		"jest": "28.1.0",
 		"prettier": "2.6.2",
 		"supertest": "6.2.3",
 		"ts-jest": "28.0.2",
