@@ -40,7 +40,7 @@
 		"@changesets/cli": "2.22.0",
 		"@jonahsnider/prettier-config": "1.1.1",
 		"prettier": "2.6.2",
-		"turbo": "1.2.8"
+		"turbo": "1.2.9"
 	},
 	"engines": {
 		"node": "16.x"
