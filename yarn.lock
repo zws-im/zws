@@ -2744,7 +2744,7 @@ __metadata:
     typescript: 4.6.4
     xo: 0.48.0
     yn: 4.0.0
-    zod: 3.15.1
+    zod: 3.16.0
   languageName: unknown
   linkType: soft
 
@@ -11426,9 +11426,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.15.1":
-  version: 3.15.1
-  resolution: "zod@npm:3.15.1"
-  checksum: d1ceec91b1b19fe26233c2e6be7625c6d5937c6c667ce23ff7d59948eb1239a24819227c615096a5e6a6377a17fc2df3720e8d613d2176dc482c0a1e8d02e1e2
+"zod@npm:3.16.0":
+  version: 3.16.0
+  resolution: "zod@npm:3.16.0"
+  checksum: 2879a18e090ee67206375408eb0e506d32f3d6658634aa7f253250c4c223ebaef64dd0d76634a0b0bbd0ea64d26d512d8817a584a0490030b3b308fc62f83d1c
   languageName: node
   linkType: hard
