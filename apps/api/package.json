@@ -54,7 +54,7 @@
 		"prisma": "3.14.0",
 		"reflect-metadata": "0.1.13",
 		"rxjs": "7.5.5",
-		"swagger-ui-express": "4.3.0",
+		"swagger-ui-express": "4.4.0",
 		"tslib": "2.4.0",
 		"yn": "4.0.0",
 		"zod": "3.15.1"
