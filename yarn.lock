@@ -1032,9 +1032,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/profiler@npm:4.1.7":
-  version: 4.1.7
-  resolution: "@google-cloud/profiler@npm:4.1.7"
+"@google-cloud/profiler@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@google-cloud/profiler@npm:4.2.0"
   dependencies:
     "@google-cloud/common": ^3.0.0
     "@google-cloud/logging-min": ^9.6.3
@@ -1050,29 +1050,7 @@ __metadata:
     protobufjs: ~6.11.0
     semver: ^7.0.0
     teeny-request: ^7.0.0
-  checksum: 5bdde9adbeb613ac130dfe644d13f0e886d3707b204eeeaaf33f54bfdcd945d58a4d2279706490cb02e8cceaf88ab94ec7202756ceb647fe30df78c27576bfaa
-  languageName: node
-  linkType: hard
-
-"@google-cloud/profiler@patch:@google-cloud/profiler@npm:4.1.7#.yarn/patches/@google-cloud-profiler-npm-4.1.7-9788bcfd72::locator=%40zws.im%2Fzws%40workspace%3A.":
-  version: 4.1.7
-  resolution: "@google-cloud/profiler@patch:@google-cloud/profiler@npm%3A4.1.7#.yarn/patches/@google-cloud-profiler-npm-4.1.7-9788bcfd72::version=4.1.7&hash=c050d1&locator=%40zws.im%2Fzws%40workspace%3A."
-  dependencies:
-    "@google-cloud/common": ^3.0.0
-    "@google-cloud/logging-min": ^9.6.3
-    "@types/console-log-level": ^1.4.0
-    "@types/semver": ^7.0.0
-    console-log-level: ^1.4.0
-    delay: ^5.0.0
-    extend: ^3.0.2
-    gcp-metadata: ^4.0.0
-    parse-duration: ^1.0.0
-    pprof: 3.2.0
-    pretty-ms: ^7.0.0
-    protobufjs: ~6.11.0
-    semver: ^7.0.0
-    teeny-request: ^7.0.0
-  checksum: ad915274dc61d39a7ce0157925216431af7aa10e4b8cf8f6ffaaac5625d823c365fb773e0ed941191de69515e12969f92ce6a1dd1465cb0eaa7944a6ef2c60dc
+  checksum: b2187ca3d03fe9f0f139259ae90c2b9881246289d98a7adf12609a742e87586c892ab0c0cd68c142e084e9a6ff7e3e78cbf836aed1f7d5946b2989c3742db4c7
   languageName: node
   linkType: hard
 
@@ -2703,7 +2681,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/api@workspace:apps/api"
   dependencies:
-    "@google-cloud/profiler": 4.1.7
+    "@google-cloud/profiler": 4.2.0
     "@jonahsnider/prettier-config": 1.1.1
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
