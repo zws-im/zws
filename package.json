@@ -47,6 +47,6 @@
 	},
 	"packageManager": "yarn@3.2.1",
 	"resolutions": {
-		"@google-cloud/profiler@4.1.7": "patch:@google-cloud/profiler@npm:4.1.7#.yarn/patches/@google-cloud-profiler-npm-4.1.7-9788bcfd72"
+		"@google-cloud/profiler@4.2.0": "patch:@google-cloud/profiler@npm:4.2.0#.yarn/patches/@google-cloud-profiler-npm-4.2.0-184d89f421.patch"
 	}
 }
