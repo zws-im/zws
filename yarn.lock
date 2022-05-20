@@ -1054,6 +1054,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@google-cloud/profiler@patch:@google-cloud/profiler@npm:4.2.0#.yarn/patches/@google-cloud-profiler-npm-4.2.0-184d89f421.patch::locator=%40zws.im%2Fzws%40workspace%3A.":
+  version: 4.2.0
+  resolution: "@google-cloud/profiler@patch:@google-cloud/profiler@npm%3A4.2.0#.yarn/patches/@google-cloud-profiler-npm-4.2.0-184d89f421.patch::version=4.2.0&hash=c050d1&locator=%40zws.im%2Fzws%40workspace%3A."
+  dependencies:
+    "@google-cloud/common": ^3.0.0
+    "@google-cloud/logging-min": ^9.6.3
+    "@types/console-log-level": ^1.4.0
+    "@types/semver": ^7.0.0
+    console-log-level: ^1.4.0
+    delay: ^5.0.0
+    extend: ^3.0.2
+    gcp-metadata: ^4.0.0
+    parse-duration: ^1.0.0
+    pprof: 3.2.0
+    pretty-ms: ^7.0.0
+    protobufjs: ~6.11.0
+    semver: ^7.0.0
+    teeny-request: ^7.0.0
+  checksum: cec2eb9fc10e5775408725cf408ac89d7548b6d28cb4bad9fc85857cd3212ea37cab6a2bf331251aab150f29639988d03b08fe8a19723eeb584d795cff664bf7
+  languageName: node
+  linkType: hard
+
 "@google-cloud/projectify@npm:^2.0.0":
   version: 2.1.1
   resolution: "@google-cloud/projectify@npm:2.1.1"
