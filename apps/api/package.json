@@ -57,7 +57,7 @@
 		"swagger-ui-express": "4.4.0",
 		"tslib": "2.4.0",
 		"yn": "4.0.0",
-		"zod": "3.16.1"
+		"zod": "3.17.2"
 	},
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.1",
