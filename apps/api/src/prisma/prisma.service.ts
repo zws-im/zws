@@ -57,7 +57,7 @@ export class PrismaService
 		logger.warn(warning);
 		Sentry.addBreadcrumb({
 			category: 'prisma.warning',
-			level: Sentry.Severity.Warning,
+			level: 'warning',
 			message: warning.message,
 			timestamp: warning.timestamp.getTime() * 1000,
 			data: {
@@ -72,7 +72,7 @@ export class PrismaService
 		logger.info(event.message);
 		Sentry.addBreadcrumb({
 			category: 'prisma.info',
-			level: Sentry.Severity.Info,
+			level: 'info',
 			message: event.message,
 			timestamp: (event.timestamp?.getTime() ?? Date.now()) * 1000,
 			data: {
