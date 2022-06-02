@@ -76,7 +76,7 @@
 		"ts-jest": "28.0.3",
 		"ts-node": "10.8.0",
 		"type-fest": "2.13.0",
-		"typescript": "4.6.4",
+		"typescript": "4.7.2",
 		"xo": "0.49.0"
 	},
 	"engines": {
