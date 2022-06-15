@@ -1790,9 +1790,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:3.15.1":
-  version: 3.15.1
-  resolution: "@prisma/client@npm:3.15.1"
+"@prisma/client@npm:3.15.2":
+  version: 3.15.2
+  resolution: "@prisma/client@npm:3.15.2"
   dependencies:
     "@prisma/engines-version": 3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e
   peerDependencies:
@@ -1800,7 +1800,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: ade441292ff19b9559521680b6d72998dae24914a85a4136c43c85f763e47ef7c4a0c2c68d20e4698a2f7dda31d244c28cbcaccaf52a26a312631cf88233aa02
+  checksum: ef7eaeba6c9b85b0c4ebd95ce87083ca0deb0a588b46a8fac1f9769228e550785c53eb991be774746a7e6bf36c4bcb199bffa20795737aa59384216273d981be
   languageName: node
   linkType: hard
 
@@ -2680,7 +2680,7 @@ __metadata:
     "@nestjs/swagger": 5.2.1
     "@nestjs/terminus": 8.0.6
     "@nestjs/testing": 8.4.7
-    "@prisma/client": 3.15.1
+    "@prisma/client": 3.15.2
     "@sentry/node": 7.1.1
     "@tsconfig/node16": 1.0.3
     "@types/express": 4.17.13
@@ -2696,7 +2696,7 @@ __metadata:
     jest: 28.1.1
     millify: 4.0.0
     prettier: 2.7.0
-    prisma: 3.15.1
+    prisma: 3.15.2
     reflect-metadata: 0.1.13
     rxjs: 7.5.5
     supertest: 6.2.3
@@ -2720,7 +2720,7 @@ __metadata:
     "@changesets/cli": 2.23.0
     "@jonahsnider/prettier-config": 1.1.1
     prettier: 2.7.0
-    prisma: 3.15.1
+    prisma: 3.15.2
     turbo: 1.2.16
   languageName: unknown
   linkType: soft
@@ -8916,15 +8916,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:3.15.1":
-  version: 3.15.1
-  resolution: "prisma@npm:3.15.1"
+"prisma@npm:3.15.2":
+  version: 3.15.2
+  resolution: "prisma@npm:3.15.2"
   dependencies:
     "@prisma/engines": 3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 75f74ff1134115aa3094d8ae5aae5154ccb8834f55da59297d88c393013db202ba1e4dc798ad3f487ef68d588e5130284b467da414be95424e368725731fcf69
+  checksum: 2efdd77cadad51c7c2ff6fcfe0b594849733dffee73755b0e48cefd426e75f0cb5dbe134360a92e47865d331b11308878be91c009acf9f51ca57f86212492118
   languageName: node
   linkType: hard
 
