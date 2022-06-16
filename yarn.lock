@@ -2695,7 +2695,7 @@ __metadata:
     express: 4.18.1
     jest: 28.1.1
     millify: 4.0.0
-    prettier: 2.7.0
+    prettier: 2.7.1
     prisma: 3.15.2
     reflect-metadata: 0.1.13
     rxjs: 7.5.5
@@ -2719,7 +2719,7 @@ __metadata:
     "@changesets/changelog-github": 0.4.5
     "@changesets/cli": 2.23.0
     "@jonahsnider/prettier-config": 1.1.1
-    prettier: 2.7.0
+    prettier: 2.7.1
     prisma: 3.15.2
     turbo: 1.2.16
   languageName: unknown
@@ -8857,12 +8857,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.7.0":
-  version: 2.7.0
-  resolution: "prettier@npm:2.7.0"
+"prettier@npm:2.7.1":
+  version: 2.7.1
+  resolution: "prettier@npm:2.7.1"
   bin:
     prettier: bin-prettier.js
-  checksum: 5b55bb1dced9d16635b83229df8e670d150890fdb343f19e8a66e610094a108e960c0f57352b3e5cdbc4eff4ef00a834406047ffcd9f20bd22a6497ba143c81f
+  checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
   languageName: node
   linkType: hard
 
