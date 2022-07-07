@@ -676,12 +676,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/apply-release-plan@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "@changesets/apply-release-plan@npm:6.0.0"
+"@changesets/apply-release-plan@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@changesets/apply-release-plan@npm:6.0.1"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/config": ^2.0.0
+    "@changesets/config": ^2.0.1
     "@changesets/get-version-range-type": ^0.3.2
     "@changesets/git": ^1.3.2
     "@changesets/types": ^5.0.0
@@ -693,7 +693,7 @@ __metadata:
     prettier: ^1.19.1
     resolve-from: ^5.0.0
     semver: ^5.4.1
-  checksum: 3ea25890da276ac249aa11a7ccc45d65100a02ccf483df2bc6dc8272a5d100723e8a3b1a391c8ca57f6cd02492e9614b84ac1075a370903cc737f3b398a12b36
+  checksum: e3af76eeecd0b211c13bdade73cc2c06c373bb343d19e0a1b95f6a31c4b9328f1e36ff09970cda131ecc5267f7c4eff1719744a4fa666c0c7920d19b2ec5f937
   languageName: node
   linkType: hard
 
@@ -731,18 +731,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:2.23.0":
-  version: 2.23.0
-  resolution: "@changesets/cli@npm:2.23.0"
+"@changesets/cli@npm:2.23.1":
+  version: 2.23.1
+  resolution: "@changesets/cli@npm:2.23.1"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/apply-release-plan": ^6.0.0
+    "@changesets/apply-release-plan": ^6.0.1
     "@changesets/assemble-release-plan": ^5.1.3
     "@changesets/changelog-git": ^0.1.11
-    "@changesets/config": ^2.0.0
+    "@changesets/config": ^2.0.1
     "@changesets/errors": ^0.1.4
     "@changesets/get-dependents-graph": ^1.3.2
-    "@changesets/get-release-plan": ^3.0.9
+    "@changesets/get-release-plan": ^3.0.10
     "@changesets/git": ^1.3.2
     "@changesets/logger": ^0.0.5
     "@changesets/pre": ^1.0.11
@@ -770,13 +770,13 @@ __metadata:
     tty-table: ^4.1.5
   bin:
     changeset: bin.js
-  checksum: 86cad96c141f92d63a498f65548e860d4911307f47d36e26508a6dc25b1c8efc013ccb11fc6ad10b35625e6bb7d34d7c6312e54311c8f65a4ca9ca724b50a099
+  checksum: f0770936af0bffefe9dd49da2ecccc5777655b06a7960374ec65c641ad5c3e20c3cf3535bac1c87dbbdde698e9c6dd5da0e6b82424542f1727a7fb44bfa526cc
   languageName: node
   linkType: hard
 
-"@changesets/config@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@changesets/config@npm:2.0.0"
+"@changesets/config@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@changesets/config@npm:2.0.1"
   dependencies:
     "@changesets/errors": ^0.1.4
     "@changesets/get-dependents-graph": ^1.3.2
@@ -785,7 +785,7 @@ __metadata:
     "@manypkg/get-packages": ^1.1.3
     fs-extra: ^7.0.1
     micromatch: ^4.0.2
-  checksum: da923957e2c60a035405a42827afc4d51deade12d016896cefdd5559e8c5a4f144b8812c524432dfe9f38c6d8f2603ff8b3a9bd5ce9ea322212dd4f8e1e0b67e
+  checksum: d00942f40506d1b98aae832147d78e7a81f5800a193f94c9d98eb6c22ab8dcee946cb820de61d342f55d181e6efeca6610e4866207cd05ede46bdd2fb79bf12b
   languageName: node
   linkType: hard
 
@@ -821,18 +821,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-release-plan@npm:^3.0.9":
-  version: 3.0.9
-  resolution: "@changesets/get-release-plan@npm:3.0.9"
+"@changesets/get-release-plan@npm:^3.0.10":
+  version: 3.0.10
+  resolution: "@changesets/get-release-plan@npm:3.0.10"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/assemble-release-plan": ^5.1.3
-    "@changesets/config": ^2.0.0
+    "@changesets/config": ^2.0.1
     "@changesets/pre": ^1.0.11
     "@changesets/read": ^0.5.5
     "@changesets/types": ^5.0.0
     "@manypkg/get-packages": ^1.1.3
-  checksum: 1eeafeee345534d7d2fc93122cbdd213c0490f1cdfaf674df830555cdd56c0f6013f4be6a8a9891bd080b68fe8d3d352ccbaa69518d69c870bd0c423bfbdaf5f
+  checksum: f58066bdf8e03b654c0989051d60a3945c029dfe8dbb559c2684edea45943edea3c7e4297e5e920e138a286899752327f7eff0a6828cf5737ac33f7452aac618
   languageName: node
   linkType: hard
 
@@ -2759,7 +2759,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@changesets/changelog-github": 0.4.5
-    "@changesets/cli": 2.23.0
+    "@changesets/cli": 2.23.1
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     prisma: 4.0.0
