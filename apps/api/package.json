@@ -37,7 +37,7 @@
 		"@google-cloud/profiler": "4.2.0",
 		"@jonahsnider/util": "9.0.0",
 		"@nestjs/common": "8.4.7",
-		"@nestjs/config": "2.1.0",
+		"@nestjs/config": "2.2.0",
 		"@nestjs/core": "8.4.7",
 		"@nestjs/platform-express": "8.4.7",
 		"@nestjs/swagger": "5.2.1",

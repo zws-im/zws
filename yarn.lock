@@ -1609,19 +1609,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/config@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@nestjs/config@npm:2.1.0"
+"@nestjs/config@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@nestjs/config@npm:2.2.0"
   dependencies:
     dotenv: 16.0.1
     dotenv-expand: 8.0.3
     lodash: 4.17.21
     uuid: 8.3.2
   peerDependencies:
-    "@nestjs/common": ^7.0.0 || ^8.0.0
+    "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0
     reflect-metadata: ^0.1.13
     rxjs: ^6.0.0 || ^7.2.0
-  checksum: 6e7af8a981d315f0ada49b7d9b833e6e716eb84e5a087810042bb05dd560b4aba1b3c92a177fde9b073f1865bee13dc00c7903ebee0a390bfda0dd41c1fa3575
+  checksum: 42b9d8014da51ee76621f705d3783d10fbcaa8362881ecd591b8c9542e8067d3e61258bb01556694c355471ea6af8485c05ba85d1326f54f810bff19bfefef2e
   languageName: node
   linkType: hard
 
@@ -2715,7 +2715,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.1.0
     "@nestjs/cli": 8.2.8
     "@nestjs/common": 8.4.7
-    "@nestjs/config": 2.1.0
+    "@nestjs/config": 2.2.0
     "@nestjs/core": 8.4.7
     "@nestjs/platform-express": 8.4.7
     "@nestjs/schematics": 8.0.11
