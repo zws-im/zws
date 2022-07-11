@@ -53,7 +53,7 @@
 		"millify": "4.0.0",
 		"prisma": "4.0.0",
 		"reflect-metadata": "0.1.13",
-		"rxjs": "7.5.5",
+		"rxjs": "7.5.6",
 		"swagger-ui-express": "4.4.0",
 		"tslib": "2.4.0",
 		"yn": "4.0.0",
