@@ -1636,9 +1636,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/swagger@npm:6.0.1":
-  version: 6.0.1
-  resolution: "@nestjs/swagger@npm:6.0.1"
+"@nestjs/swagger@npm:6.0.2":
+  version: 6.0.2
+  resolution: "@nestjs/swagger@npm:6.0.2"
   dependencies:
     "@nestjs/mapped-types": 1.1.0
     js-yaml: 4.1.0
@@ -1653,7 +1653,7 @@ __metadata:
   peerDependenciesMeta:
     "@fastify/static":
       optional: true
-  checksum: 960fbba73a1103258de89f07533520de3ee190c9a1e82e7cc35fb7224517f32b8b1bc490b2e38e1303578ddf1501eb0f69f0a085cbced8c302db5b8755041312
+  checksum: 2920b5ab8498302894a4d6dbdb3143b531b400b3f1a6e46f5f91afe593e08f3f87c3aa9f35dbc0d192634d13ee57a9edb12120c36fc418a42494cfe62b2ae850
   languageName: node
   linkType: hard
 
@@ -2637,7 +2637,7 @@ __metadata:
     "@nestjs/core": 9.0.2
     "@nestjs/platform-express": 9.0.2
     "@nestjs/schematics": 9.0.1
-    "@nestjs/swagger": 6.0.1
+    "@nestjs/swagger": 6.0.2
     "@nestjs/terminus": 9.0.0
     "@nestjs/testing": 9.0.2
     "@prisma/client": 4.0.0
