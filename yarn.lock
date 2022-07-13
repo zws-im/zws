@@ -2676,7 +2676,7 @@ __metadata:
     reflect-metadata: 0.1.13
     rxjs: 7.5.6
     supertest: 6.2.4
-    swagger-ui-express: 4.4.0
+    swagger-ui-express: 4.5.0
     ts-jest: 28.0.5
     ts-node: 10.8.2
     tslib: 2.4.0
@@ -10088,14 +10088,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-ui-express@npm:4.4.0":
-  version: 4.4.0
-  resolution: "swagger-ui-express@npm:4.4.0"
+"swagger-ui-express@npm:4.5.0":
+  version: 4.5.0
+  resolution: "swagger-ui-express@npm:4.5.0"
   dependencies:
     swagger-ui-dist: ">=4.11.0"
   peerDependencies:
     express: ">=4.0.0"
-  checksum: bdd707bd6db5bd82afede351af7a04adad7de3becb9e4408c770d34d719861d00d79d1ded96b7ae1192dbd1ddd7dc6bea26dffc1d297bf52bbf21b9ec4809d5f
+  checksum: 67f1725bceea2142554f57b50e7ac03acb55f20f893da5a68bc806d4fec6b5dffa1b59e3aba09ac0e50f049f3719f71290afee556a0957e11ee13a27e652816d
   languageName: node
   linkType: hard
 
