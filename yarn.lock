@@ -666,9 +666,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:2.23.1":
-  version: 2.23.1
-  resolution: "@changesets/cli@npm:2.23.1"
+"@changesets/cli@npm:2.23.2":
+  version: 2.23.2
+  resolution: "@changesets/cli@npm:2.23.2"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/apply-release-plan": ^6.0.1
@@ -705,7 +705,7 @@ __metadata:
     tty-table: ^4.1.5
   bin:
     changeset: bin.js
-  checksum: f0770936af0bffefe9dd49da2ecccc5777655b06a7960374ec65c641ad5c3e20c3cf3535bac1c87dbbdde698e9c6dd5da0e6b82424542f1727a7fb44bfa526cc
+  checksum: c29cc940b460dae08b24490e9b3b80828e911b05ff2eba19305013a4ec1350c24af39f651171f691c1c78bffe166c2bfe44573f8937b87e1a2e4ee1e6cd13296
   languageName: node
   linkType: hard
 
@@ -2693,7 +2693,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@changesets/changelog-github": 0.4.5
-    "@changesets/cli": 2.23.1
+    "@changesets/cli": 2.23.2
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     prisma: 4.0.0
