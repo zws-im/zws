@@ -37,8 +37,8 @@ model Visit {
 }
 
 enum ApproximateCountKind {
-  SHORTENED_URLS  @map("shortened_urls")
-  VISITS          @map("visits")
+  SHORTENED_URLS @map("shortened_urls")
+  VISITS         @map("visits")
 }
 
 model ApproximateCounts {
