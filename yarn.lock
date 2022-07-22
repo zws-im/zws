@@ -655,14 +655,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/changelog-github@npm:0.4.5":
-  version: 0.4.5
-  resolution: "@changesets/changelog-github@npm:0.4.5"
+"@changesets/changelog-github@npm:0.4.6":
+  version: 0.4.6
+  resolution: "@changesets/changelog-github@npm:0.4.6"
   dependencies:
     "@changesets/get-github-info": ^0.5.1
-    "@changesets/types": ^5.0.0
+    "@changesets/types": ^5.1.0
     dotenv: ^8.1.0
-  checksum: 9c1643e08307cb1f3d3b3d75b120c7416cf886bfa00813bbb2de8a76fd588f73a4df816cdff1bc698e369bfdfb93bd3548ac75903e6ac9d3dffff29daec8d35c
+  checksum: f2f729028c08b8950eec1ca871e910eca528ff803d9c5dd31b314b79d06b7972e6af892139c6f02e7d85288e8d371e1729c9b1ccb7f7194387c16751697bcd20
   languageName: node
   linkType: hard
 
@@ -851,6 +851,13 @@ __metadata:
   version: 5.0.0
   resolution: "@changesets/types@npm:5.0.0"
   checksum: b494cd3d6508ecff8903afdbc0bb4a001df7c6bf5657c8c78f97b974cf48ee790d64d2381321de6b8fb961217ebe12d600b786a634d0c91073369ddbb410bb4d
+  languageName: node
+  linkType: hard
+
+"@changesets/types@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "@changesets/types@npm:5.1.0"
+  checksum: fa903b53d5cc0ce1bd6054fd6c0053af54f604ade2c6436e735a7a66e4f31f7757ec324ceed3355ccd7f0653174fe8b51e1b3850a0b0d80315d13d92a45185b2
   languageName: node
   linkType: hard
 
@@ -2692,7 +2699,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@changesets/changelog-github": 0.4.5
+    "@changesets/changelog-github": 0.4.6
     "@changesets/cli": 2.23.2
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
