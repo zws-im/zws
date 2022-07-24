@@ -2670,7 +2670,7 @@ __metadata:
     dotenv: 16.0.1
     express: 4.18.1
     jest: 28.1.3
-    millify: 4.0.0
+    millify: 4.0.1
     prettier: 2.7.1
     prisma: 4.1.0
     reflect-metadata: 0.1.13
@@ -7806,14 +7806,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"millify@npm:4.0.0":
-  version: 4.0.0
-  resolution: "millify@npm:4.0.0"
+"millify@npm:4.0.1":
+  version: 4.0.1
+  resolution: "millify@npm:4.0.1"
   dependencies:
     yargs: ^17.0.1
   bin:
     millify: bin/millify
-  checksum: 748488a990a0d52c035738691194f08087a606fe8d7d4d0dd57bc72a077805b79a173afbfd5511720b8b1ac2dadc7f8696f768568ab77ae63dd476d0c3117c41
+  checksum: 165497e31235157c356297e7166aff074372daaefdac8fa64973970113858bcab7da959c8e2fa3b045ab28c897178f5b9470ec60d9f5245e0b80c6cbefca55fd
   languageName: node
   linkType: hard
 
