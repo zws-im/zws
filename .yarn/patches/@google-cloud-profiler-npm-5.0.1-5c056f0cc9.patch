@@ -1,5 +1,5 @@
 diff --git a/build/src/logger.js b/build/src/logger.js
-index 62f0c09e20140aa05a46b79ad71f38039f8b0887..f56f43ab416652c9cbc48fdaa3e9c2b3336f0d80 100644
+index 62f0c09e20140aa05a46b79ad71f38039f8b0887..5c9b05b530db3af3087812af7eb3c3376972ce10 100644
 --- a/build/src/logger.js
 +++ b/build/src/logger.js
 @@ -21,12 +21,6 @@ const logging = new logging_min_1.Logging();
