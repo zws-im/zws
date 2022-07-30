@@ -1675,17 +1675,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@nestjs/terminus@npm:9.0.0"
+"@nestjs/terminus@npm:9.1.0":
+  version: 9.1.0
+  resolution: "@nestjs/terminus@npm:9.1.0"
   dependencies:
-    check-disk-space: 3.3.0
+    boxen: 5.1.2
+    check-disk-space: 3.3.1
   peerDependencies:
     "@nestjs/common": 9.x
     "@nestjs/core": 9.x
     reflect-metadata: 0.1.x
     rxjs: 7.x
-  checksum: 661f1bd618d6adcfaf3e4bd16ac8f540a4d631e1b985fbe40bb35f416ab163c0f8d09873e7980f7eedd4e5f39e4b75d66b83b9a369893ba6e550a413c74a7623
+  checksum: 63b31328c1025db7b9375dc7e1b1a1ced1340acb51becc569c3de12cb8729a3d8b8f768cc408d72fffd93b88e7c15e33e9c195008d952863a9fa7eeb00fc3a22
   languageName: node
   linkType: hard
 
@@ -2687,7 +2688,7 @@ __metadata:
     "@nestjs/platform-express": 9.0.7
     "@nestjs/schematics": 9.0.1
     "@nestjs/swagger": 6.0.4
-    "@nestjs/terminus": 9.0.0
+    "@nestjs/terminus": 9.1.0
     "@nestjs/testing": 9.0.7
     "@prisma/client": 4.1.1
     "@sentry/node": 7.8.0
@@ -2898,6 +2899,15 @@ __metadata:
     require-from-string: ^2.0.2
     uri-js: ^4.2.2
   checksum: 3594728ef1e31219ef97bfacb203d0d72db8ad5c35d6d0578e38ee453e4537c2bf927dad144bb84b0c893f661d71b58337d4643e8ee2f2a6e1d63b041c92fe82
+  languageName: node
+  linkType: hard
+
+"ansi-align@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "ansi-align@npm:3.0.1"
+  dependencies:
+    string-width: ^4.1.0
+  checksum: 6abfa08f2141d231c257162b15292467081fa49a208593e055c866aa0455b57f3a86b5a678c190c618faa79b4c59e254493099cb700dd9cf2293c6be2c8f5d8d
   languageName: node
   linkType: hard
 
@@ -3275,6 +3285,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"boxen@npm:5.1.2":
+  version: 5.1.2
+  resolution: "boxen@npm:5.1.2"
+  dependencies:
+    ansi-align: ^3.0.0
+    camelcase: ^6.2.0
+    chalk: ^4.1.0
+    cli-boxes: ^2.2.1
+    string-width: ^4.2.2
+    type-fest: ^0.20.2
+    widest-line: ^3.1.0
+    wrap-ansi: ^7.0.0
+  checksum: 82d03e42a72576ff235123f17b7c505372fe05c83f75f61e7d4fa4bcb393897ec95ce766fecb8f26b915f0f7a7227d66e5ec7cef43f5b2bd9d3aeed47ec55877
+  languageName: node
+  linkType: hard
+
 "brace-expansion@npm:^1.1.7":
   version: 1.1.11
   resolution: "brace-expansion@npm:1.1.11"
@@ -3614,10 +3640,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-disk-space@npm:3.3.0":
-  version: 3.3.0
-  resolution: "check-disk-space@npm:3.3.0"
-  checksum: a4f5e06ed1b5b949b8a96c87263102b73683afd3da29434c11395d51ec73502455c32fdf62970fe981e72b933f7bfc47df596ed0375171295239487ea714a8b7
+"check-disk-space@npm:3.3.1":
+  version: 3.3.1
+  resolution: "check-disk-space@npm:3.3.1"
+  checksum: 90b7b77ab932be0c0a24c5f68778d3c0e9179686282b04d84b1272a511a1c55b9f184c98f12b1a1628b832934971d66e63acaa9e3c82f14d9d221a4848b4cf8b
   languageName: node
   linkType: hard
 
@@ -3705,6 +3731,13 @@ __metadata:
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
   checksum: 2ac8cd2b2f5ec986a3c743935ec85b07bc174d5421a5efc8017e1f146a1cf5f781ae962618f416352103b32c9cd7e203276e8c28241bbe946160cab16149fb68
+  languageName: node
+  linkType: hard
+
+"cli-boxes@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "cli-boxes@npm:2.2.1"
+  checksum: be79f8ec23a558b49e01311b39a1ea01243ecee30539c880cf14bf518a12e223ef40c57ead0cb44f509bffdffc5c129c746cd50d863ab879385370112af4f585
   languageName: node
   linkType: hard
 
@@ -10181,7 +10214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-width@npm:^1.0.2 || 2 || 3 || 4, string-width@npm:^4.1.0, string-width@npm:^4.2.0, string-width@npm:^4.2.3":
+"string-width@npm:^1.0.2 || 2 || 3 || 4, string-width@npm:^4.0.0, string-width@npm:^4.1.0, string-width@npm:^4.2.0, string-width@npm:^4.2.2, string-width@npm:^4.2.3":
   version: 4.2.3
   resolution: "string-width@npm:4.2.3"
   dependencies:
@@ -11434,6 +11467,15 @@ __metadata:
   dependencies:
     string-width: ^1.0.2 || 2 || 3 || 4
   checksum: d5fc37cd561f9daee3c80e03b92ed3e84d80dde3365a8767263d03dacfc8fa06b065ffe1df00d8c2a09f731482fcacae745abfbb478d4af36d0a891fad4834d3
+  languageName: node
+  linkType: hard
+
+"widest-line@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "widest-line@npm:3.1.0"
+  dependencies:
+    string-width: ^4.0.0
+  checksum: 03db6c9d0af9329c37d74378ff1d91972b12553c7d72a6f4e8525fe61563fa7adb0b9d6e8d546b7e059688712ea874edd5ded475999abdeedf708de9849310e0
   languageName: node
   linkType: hard
 
