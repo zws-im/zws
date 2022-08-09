@@ -33,7 +33,7 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"prisma": "4.1.1"
+		"prisma": "4.2.0"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "0.4.6",
