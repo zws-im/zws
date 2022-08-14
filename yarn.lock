@@ -641,9 +641,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/assemble-release-plan@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "@changesets/assemble-release-plan@npm:5.2.0"
+"@changesets/assemble-release-plan@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "@changesets/assemble-release-plan@npm:5.2.1"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/errors": ^0.1.4
@@ -651,7 +651,7 @@ __metadata:
     "@changesets/types": ^5.1.0
     "@manypkg/get-packages": ^1.1.3
     semver: ^5.4.1
-  checksum: 1f26617c00656203e6324fcda135103e7b023427cdb92bbc8b7defb01820d74d62efe19dec6173cfefb68b6bc0898b91abdc8e96dd312eff3ddf9e58268f70a7
+  checksum: 34e00f9ac98163cd81338962ce5cf27e7a8ecbd60a5040e245976fba87336aa7efdd6c54cc2112db0cda2099fefc3ad37bd24d29307a30e49a515a3279022d74
   languageName: node
   linkType: hard
 
@@ -675,18 +675,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:2.24.2":
-  version: 2.24.2
-  resolution: "@changesets/cli@npm:2.24.2"
+"@changesets/cli@npm:2.24.3":
+  version: 2.24.3
+  resolution: "@changesets/cli@npm:2.24.3"
   dependencies:
     "@babel/runtime": ^7.10.4
     "@changesets/apply-release-plan": ^6.0.4
-    "@changesets/assemble-release-plan": ^5.2.0
+    "@changesets/assemble-release-plan": ^5.2.1
     "@changesets/changelog-git": ^0.1.12
     "@changesets/config": ^2.1.1
     "@changesets/errors": ^0.1.4
     "@changesets/get-dependents-graph": ^1.3.3
-    "@changesets/get-release-plan": ^3.0.13
+    "@changesets/get-release-plan": ^3.0.14
     "@changesets/git": ^1.4.1
     "@changesets/logger": ^0.0.5
     "@changesets/pre": ^1.0.12
@@ -714,7 +714,7 @@ __metadata:
     tty-table: ^4.1.5
   bin:
     changeset: bin.js
-  checksum: ac0d29bd67b1107d6b8600b3b42c8041fd754378ed2424f60c97e4b84a29ef7b779f4f57d8728e4e164e2cd6756b9f60bf8036784f306a368cc736d34740cb3d
+  checksum: 85aefb97ba5514c6d07a236aae7049a013ec50a69a81c9d451a928ec9df5567171ffe71d8469e303567123c4fa5db2c1b891ff03e1578860b9b5fe3fa32776c3
   languageName: node
   linkType: hard
 
@@ -765,18 +765,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-release-plan@npm:^3.0.13":
-  version: 3.0.13
-  resolution: "@changesets/get-release-plan@npm:3.0.13"
+"@changesets/get-release-plan@npm:^3.0.14":
+  version: 3.0.14
+  resolution: "@changesets/get-release-plan@npm:3.0.14"
   dependencies:
     "@babel/runtime": ^7.10.4
-    "@changesets/assemble-release-plan": ^5.2.0
+    "@changesets/assemble-release-plan": ^5.2.1
     "@changesets/config": ^2.1.1
     "@changesets/pre": ^1.0.12
     "@changesets/read": ^0.5.7
     "@changesets/types": ^5.1.0
     "@manypkg/get-packages": ^1.1.3
-  checksum: 0e07169f9f83aa3aec072e0b3f96ef60dbb6d878d496fbbf312cfb0fe953953887a2d69008cee991c22b9fea4a2feebc9c1d783c10829be32cf19fde05e85c9d
+  checksum: 32ea990b58b9c138ec0e335b0ee69e4c4e7ef802adcf28a5b843d25cb1155d68d7621063fbb18ea200bcc20112575df902722792b6428431b8ee30b8bb6b8b77
   languageName: node
   linkType: hard
 
@@ -2727,7 +2727,7 @@ __metadata:
   resolution: "@zws.im/zws@workspace:."
   dependencies:
     "@changesets/changelog-github": 0.4.6
-    "@changesets/cli": 2.24.2
+    "@changesets/cli": 2.24.3
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     prisma: 4.2.1
