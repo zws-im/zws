@@ -45,7 +45,7 @@
 	"engines": {
 		"node": "16.x"
 	},
-	"packageManager": "yarn@3.2.2",
+	"packageManager": "yarn@3.2.3",
 	"resolutions": {
 		"@google-cloud/profiler@5.0.2": "patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch"
 	}
