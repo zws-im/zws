@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`OpenApiService getConfig generates a config: config 1`] = `
-Object {
-  "components": Object {
-    "securitySchemes": Object {
-      "bearer": Object {
+{
+  "components": {
+    "securitySchemes": {
+      "bearer": {
         "bearerFormat": "JWT",
         "scheme": "bearer",
         "type": "http",
       },
     },
   },
-  "info": Object {
-    "contact": Object {
+  "info": {
+    "contact": {
       "email": "jonah@jonah.pw",
       "name": "Jonah Snider",
       "url": "https://jonahsnider.com",
     },
     "description": "Shorten URLs with invisible spaces.",
-    "license": Object {
+    "license": {
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
     },
@@ -26,51 +26,51 @@ Object {
     "version": "VERSION",
   },
   "openapi": "3.0.0",
-  "servers": Array [
-    Object {
+  "servers": [
+    {
       "description": "Custom server (HTTP)",
       "url": "http://{host}/{basePath}",
-      "variables": Object {
-        "basePath": Object {
+      "variables": {
+        "basePath": {
           "default": "",
         },
-        "host": Object {
+        "host": {
           "default": "hostname",
         },
       },
     },
-    Object {
+    {
       "description": "Custom server (HTTPS)",
       "url": "https://{host}/{basePath}",
-      "variables": Object {
-        "basePath": Object {
+      "variables": {
+        "basePath": {
           "default": "",
         },
-        "host": Object {
+        "host": {
           "default": "hostname",
         },
       },
     },
-    Object {
+    {
       "description": "zws.im production",
       "url": "https://api.zws.im",
       "variables": undefined,
     },
   ],
-  "tags": Array [
-    Object {
+  "tags": [
+    {
       "description": "Shortened URLs",
       "name": "urls",
     },
-    Object {
+    {
       "description": "Usage statistics",
       "name": "stats",
     },
-    Object {
+    {
       "description": "Shields endpoint badges",
       "name": "shields",
     },
-    Object {
+    {
       "description": "Health checks",
       "name": "health",
     },
