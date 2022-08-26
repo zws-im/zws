@@ -51,10 +51,7 @@ A status page for the official zws.im instance of ZWS is available at **[status.
 
 [![Deploy to Heroku][deploy-to-heroku-image]][deploy-to-heroku]
 
-Running an instance of ZWS on Heroku is the easiest way to self-host.
-You can also stay totally within the free limits of both the [`web` process](https://devcenter.heroku.com/articles/procfile) and the [Heroku Postgres][heroku-postgres] database.
-Note that the Hobby Dev (free) plan of [Heroku Postgres][heroku-postgres] has a row limit of 10,000, which might not be enough for your use case.
-Consider using the API key feature of ZWS to restrict access to your instance.
+Running an instance of ZWS on Heroku is an easy way to self-host thanks to our `app.json` & `Procfile`.
 
 ### DigitalOcean
 
