@@ -40,7 +40,7 @@
 		"@nestjs/config": "2.2.0",
 		"@nestjs/core": "9.0.11",
 		"@nestjs/platform-express": "9.0.11",
-		"@nestjs/swagger": "6.0.5",
+		"@nestjs/swagger": "6.1.0",
 		"@nestjs/terminus": "9.1.1",
 		"@prisma/client": "4.2.1",
 		"@sentry/node": "7.11.1",
@@ -62,7 +62,7 @@
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.1.0",
-		"@nestjs/cli": "9.0.0",
+		"@nestjs/cli": "9.1.1",
 		"@nestjs/schematics": "9.0.1",
 		"@nestjs/testing": "9.0.11",
 		"@tsconfig/node16": "1.0.3",
