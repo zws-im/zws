@@ -941,14 +941,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:~0.22.1":
-  version: 0.22.1
-  resolution: "@es-joy/jsdoccomment@npm:0.22.1"
+"@es-joy/jsdoccomment@npm:~0.31.0":
+  version: 0.31.0
+  resolution: "@es-joy/jsdoccomment@npm:0.31.0"
   dependencies:
     comment-parser: 1.3.1
     esquery: ^1.4.0
-    jsdoc-type-pratt-parser: ~2.2.5
-  checksum: c12963d60e197914edb33fc81011d3183259b9510d07f0f402d8b4bf1cc7220555be433d1f61c6c43f0fa79c6138dfb614c2a7bed61ecdb541d793e2648869fe
+    jsdoc-type-pratt-parser: ~3.1.0
+  checksum: 1691ff501559f45593e5f080d2c08dea4fadba5f48e526b9ff2943c050fbb40408f5e83968542e5b6bf47219c7573796d00bfe80dacfd1ba8187904cc475cefb
   languageName: node
   linkType: hard
 
@@ -1425,14 +1425,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:5.1.0":
-  version: 5.1.0
-  resolution: "@jonahsnider/xo-config@npm:5.1.0"
+"@jonahsnider/xo-config@npm:5.2.0":
+  version: 5.2.0
+  resolution: "@jonahsnider/xo-config@npm:5.2.0"
   dependencies:
-    "@types/xo": 0.39.2
-    eslint-plugin-jsdoc: 38.0.7
-    eslint-plugin-tsdoc: 0.2.14
-  checksum: c032d5f5df1ae2b92483c046616673c0b211fa6161f347164b4581e4944b7c6f07c6794723eb6f46d49a222c4af6089bd20b7ca1f20bda7a21f773ef2978fd20
+    "@types/xo": 0.39.3
+    eslint-plugin-jsdoc: 39.3.6
+    eslint-plugin-tsdoc: 0.2.16
+  checksum: 8c6686016e730cd26ebedc5860e26cecf99cfa215bf3a82399d98b500809bfb0f62aa1ae76f289fcd445bb67dad78e575bdbf83cdfe4002c90c1d63c35d7da6a
   languageName: node
   linkType: hard
 
@@ -1552,22 +1552,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/tsdoc-config@npm:0.15.2":
-  version: 0.15.2
-  resolution: "@microsoft/tsdoc-config@npm:0.15.2"
+"@microsoft/tsdoc-config@npm:0.16.1":
+  version: 0.16.1
+  resolution: "@microsoft/tsdoc-config@npm:0.16.1"
   dependencies:
-    "@microsoft/tsdoc": 0.13.2
+    "@microsoft/tsdoc": 0.14.1
     ajv: ~6.12.6
     jju: ~1.4.0
     resolve: ~1.19.0
-  checksum: 85eb7808d4e4541199437f39e6aed235aaece0a6d0fd05c0b923067d494d20baca483fc6871880d09630f6d4e62b8bb99af0fde503eb2b2ded1b7ae5f74dfaf3
+  checksum: 2b2121803caf6584fe0264ad16f8fa10de68438c0b82bd25f918606052af5312050f38b6abd4bcf3d40f120713aab144762a7a280fa22dd12e5571cd08e348e1
   languageName: node
   linkType: hard
 
-"@microsoft/tsdoc@npm:0.13.2":
-  version: 0.13.2
-  resolution: "@microsoft/tsdoc@npm:0.13.2"
-  checksum: 70948c5647495ef99752ff500e0f612c1fcf3476ea663ace19937e4d2f86fd78f0ad92ea5876d67e06b421f347d571b3d9e49c444935dc267768d5afd15581f8
+"@microsoft/tsdoc@npm:0.14.1":
+  version: 0.14.1
+  resolution: "@microsoft/tsdoc@npm:0.14.1"
+  checksum: e4ad038ccff2cd96e0d53ee42e2136f0f5a925b16cfda14261f1c2eb55ba0088a0e3b08ff819b476ddc69b2242a391925fab7f6ae2afabb19b96f87e19c114fc
   languageName: node
   linkType: hard
 
@@ -2432,12 +2432,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/xo@npm:0.39.2":
-  version: 0.39.2
-  resolution: "@types/xo@npm:0.39.2"
+"@types/xo@npm:0.39.3":
+  version: 0.39.3
+  resolution: "@types/xo@npm:0.39.3"
   dependencies:
     "@types/eslint": "*"
-  checksum: a3bc56539ab1af2c0132d4b9735ac48bb95740fd6d2c8315477709d7c564deb4c4b4684bf2631961d080a4f14a28920838a9d9f031e0b21001c88619a41fcd58
+  checksum: 084b0d5e7ff7b50a5e6004a8dc349c7d1b43f125aa79b412a96ae385ee741df88baffaf5cfdbd094787f1fbc27ead1dc72fd46e20213d527e4e3761b0e059865
   languageName: node
   linkType: hard
 
@@ -2746,7 +2746,7 @@ __metadata:
     "@google-cloud/profiler": 5.0.2
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.1
-    "@jonahsnider/xo-config": 5.1.0
+    "@jonahsnider/xo-config": 5.2.0
     "@nestjs/cli": 9.1.1
     "@nestjs/common": 9.0.11
     "@nestjs/config": 2.2.0
@@ -4936,21 +4936,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:38.0.7":
-  version: 38.0.7
-  resolution: "eslint-plugin-jsdoc@npm:38.0.7"
+"eslint-plugin-jsdoc@npm:39.3.6":
+  version: 39.3.6
+  resolution: "eslint-plugin-jsdoc@npm:39.3.6"
   dependencies:
-    "@es-joy/jsdoccomment": ~0.22.1
+    "@es-joy/jsdoccomment": ~0.31.0
     comment-parser: 1.3.1
     debug: ^4.3.4
     escape-string-regexp: ^4.0.0
     esquery: ^1.4.0
-    regextras: ^0.8.0
-    semver: ^7.3.5
+    semver: ^7.3.7
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
-  checksum: ca69853291fa63e559f4349bb24015a32a6d10e1e74b67b3885fa7df6142d6d2fd3ea2f972dc50fe0c825bd612f2b5af258c61d8ce81afb755330401d808cc73
+  checksum: 0825a5eba6cdcb250e45cd5ad488bd234da346f324a11160ad4b8c9fb3c76d8e1457d462fa91c24f11bdff5ef0013375d65c366b648202254c4bcc79eed89060
   languageName: node
   linkType: hard
 
@@ -4999,13 +4998,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tsdoc@npm:0.2.14":
-  version: 0.2.14
-  resolution: "eslint-plugin-tsdoc@npm:0.2.14"
+"eslint-plugin-tsdoc@npm:0.2.16":
+  version: 0.2.16
+  resolution: "eslint-plugin-tsdoc@npm:0.2.16"
   dependencies:
-    "@microsoft/tsdoc": 0.13.2
-    "@microsoft/tsdoc-config": 0.15.2
-  checksum: cb00835ac74de031a01415b2595dd055808de65fcfbd2582ab52cba191e63d41f0d19f83f767b842e437c54204e063f9d9044409bd66a2c58a333873352a0d14
+    "@microsoft/tsdoc": 0.14.1
+    "@microsoft/tsdoc-config": 0.16.1
+  checksum: 37ca88b060b90223aa938656d267eead4291d5859e790f95eb8271eb8f315c16010e500fac4ef535710350e36d7394cecb7e61fbb3635568066008e3425dcac7
   languageName: node
   linkType: hard
 
@@ -7490,10 +7489,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-type-pratt-parser@npm:~2.2.5":
-  version: 2.2.5
-  resolution: "jsdoc-type-pratt-parser@npm:2.2.5"
-  checksum: 47d68147fae7fe4343e0c1d47cbf55d2d963696e0583a1d398846be06df2df8e149e34a6304e04b6c148839600234e99a860bc712af829fac557fe7e5cd82141
+"jsdoc-type-pratt-parser@npm:~3.1.0":
+  version: 3.1.0
+  resolution: "jsdoc-type-pratt-parser@npm:3.1.0"
+  checksum: 2f437b57621f1e481918165f6cf0e48256628a9e510d8b3f88a2ab667bf2128bf8b94c628b57c43e78f555ca61983e9c282814703840dc091d2623992214a061
   languageName: node
   linkType: hard
 
@@ -9616,13 +9615,6 @@ __metadata:
   version: 3.2.0
   resolution: "regexpp@npm:3.2.0"
   checksum: a78dc5c7158ad9ddcfe01aa9144f46e192ddbfa7b263895a70a5c6c73edd9ce85faf7c0430e59ac38839e1734e275b9c3de5c57ee3ab6edc0e0b1bdebefccef8
-  languageName: node
-  linkType: hard
-
-"regextras@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "regextras@npm:0.8.0"
-  checksum: b7ec5b32a2b98b4b27048d44f8ab90009873c1307f2cf89321aa8c4cbb8147f1bee07863f4dadf585546ca0b91a234ad9804954dea5fc029421f6c25a4523798
   languageName: node
   linkType: hard
 
