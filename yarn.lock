@@ -2835,7 +2835,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     prisma: 4.3.1
-    turbo: 1.4.5
+    turbo: 1.4.6
   languageName: unknown
   linkType: soft
 
@@ -11047,122 +11047,122 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-android-arm64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-android-arm64@npm:1.4.5"
+"turbo-android-arm64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-android-arm64@npm:1.4.6"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-darwin-64@npm:1.4.5"
+"turbo-darwin-64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-darwin-64@npm:1.4.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-darwin-arm64@npm:1.4.5"
+"turbo-darwin-arm64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-darwin-arm64@npm:1.4.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-freebsd-64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-freebsd-64@npm:1.4.5"
+"turbo-freebsd-64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-freebsd-64@npm:1.4.6"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-freebsd-arm64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-freebsd-arm64@npm:1.4.5"
+"turbo-freebsd-arm64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-freebsd-arm64@npm:1.4.6"
   conditions: os=freebsd & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-32@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-32@npm:1.4.5"
+"turbo-linux-32@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-32@npm:1.4.6"
   conditions: os=linux & cpu=ia32
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-64@npm:1.4.5"
+"turbo-linux-64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-64@npm:1.4.6"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-arm64@npm:1.4.5"
+"turbo-linux-arm64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-arm64@npm:1.4.6"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-arm@npm:1.4.5"
+"turbo-linux-arm@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-arm@npm:1.4.6"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"turbo-linux-mips64le@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-mips64le@npm:1.4.5"
+"turbo-linux-mips64le@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-mips64le@npm:1.4.6"
   conditions: os=linux & cpu=mipsel
   languageName: node
   linkType: hard
 
-"turbo-linux-ppc64le@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-linux-ppc64le@npm:1.4.5"
+"turbo-linux-ppc64le@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-linux-ppc64le@npm:1.4.6"
   conditions: os=linux & cpu=ppc64
   languageName: node
   linkType: hard
 
-"turbo-windows-32@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-windows-32@npm:1.4.5"
+"turbo-windows-32@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-windows-32@npm:1.4.6"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-windows-64@npm:1.4.5"
+"turbo-windows-64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-windows-64@npm:1.4.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo-windows-arm64@npm:1.4.5"
+"turbo-windows-arm64@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo-windows-arm64@npm:1.4.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:1.4.5":
-  version: 1.4.5
-  resolution: "turbo@npm:1.4.5"
+"turbo@npm:1.4.6":
+  version: 1.4.6
+  resolution: "turbo@npm:1.4.6"
   dependencies:
-    turbo-android-arm64: 1.4.5
-    turbo-darwin-64: 1.4.5
-    turbo-darwin-arm64: 1.4.5
-    turbo-freebsd-64: 1.4.5
-    turbo-freebsd-arm64: 1.4.5
-    turbo-linux-32: 1.4.5
-    turbo-linux-64: 1.4.5
-    turbo-linux-arm: 1.4.5
-    turbo-linux-arm64: 1.4.5
-    turbo-linux-mips64le: 1.4.5
-    turbo-linux-ppc64le: 1.4.5
-    turbo-windows-32: 1.4.5
-    turbo-windows-64: 1.4.5
-    turbo-windows-arm64: 1.4.5
+    turbo-android-arm64: 1.4.6
+    turbo-darwin-64: 1.4.6
+    turbo-darwin-arm64: 1.4.6
+    turbo-freebsd-64: 1.4.6
+    turbo-freebsd-arm64: 1.4.6
+    turbo-linux-32: 1.4.6
+    turbo-linux-64: 1.4.6
+    turbo-linux-arm: 1.4.6
+    turbo-linux-arm64: 1.4.6
+    turbo-linux-mips64le: 1.4.6
+    turbo-linux-ppc64le: 1.4.6
+    turbo-windows-32: 1.4.6
+    turbo-windows-64: 1.4.6
+    turbo-windows-arm64: 1.4.6
   dependenciesMeta:
     turbo-android-arm64:
       optional: true
@@ -11194,7 +11194,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 31ce43e825606abf1346ae379d7367ec9f0c76d1aca1c167708a149a89da735effaeb50e92ee8c358fbe4e64ec49d2388b4e5b250167036e700901401b3a76c5
+  checksum: f7191f36e0abddf6dc88eb9a83a007a8616ebed1edd44c37f9b19e0451f3ce90c4406699f6166a99c0a6f8d39cc1f24d96513b7ef16b21747863827538b9c966
   languageName: node
   linkType: hard
 
