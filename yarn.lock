@@ -2289,13 +2289,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.0.1":
-  version: 29.0.1
-  resolution: "@types/jest@npm:29.0.1"
+"@types/jest@npm:29.0.2":
+  version: 29.0.2
+  resolution: "@types/jest@npm:29.0.2"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: efd30357c290b5d385382302fae927885f2a9bde0aa45d4c7f970fa6e6d750df83edef73f16d1e9a005e08a5bcd7c6ff56a43f5ac2534a517df9ad1e44dd30c4
+  checksum: 27c46b58fad9791adf88167ba2c14ae3513cb1fe5df038faafe7fc4513ebb230dd8029a1dd0acd1abeb82aa014839ac10e0dcf1bfae9fcc0e69bc1eb1e5204f0
   languageName: node
   linkType: hard
 
@@ -2799,7 +2799,7 @@ __metadata:
     "@sentry/node": 7.12.1
     "@tsconfig/node16": 1.0.3
     "@types/express": 4.17.14
-    "@types/jest": 29.0.1
+    "@types/jest": 29.0.2
     "@types/node": 16.11.59
     "@types/supertest": 2.0.12
     change-case: 4.1.2
@@ -2816,7 +2816,7 @@ __metadata:
     rxjs: 7.5.6
     supertest: 6.2.4
     swagger-ui-express: 4.5.0
-    ts-jest: 29.0.0
+    ts-jest: 29.0.1
     ts-node: 10.9.1
     tslib: 2.4.0
     type-fest: 2.19.0
@@ -10880,9 +10880,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.0.0":
-  version: 29.0.0
-  resolution: "ts-jest@npm:29.0.0"
+"ts-jest@npm:29.0.1":
+  version: 29.0.1
+  resolution: "ts-jest@npm:29.0.1"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
@@ -10909,7 +10909,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: f4e811aa910b7cd2ef6a9269700dda17ccf253ebdb6ba9e596982d238292d6482973e670e7a6875209e7d246cdf575d79590fc503e12e9368e9105d1d74f09fc
+  checksum: f126675beb0d103d440b0297dc331ce37ba0f1e1a8002f4e97bfeb9043cf21b4de03deebf11ac1f08b7e4978d87f6a1c71e398b1c2f8535df3b684338786408e
   languageName: node
   linkType: hard
 
