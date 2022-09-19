@@ -1634,13 +1634,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:9.0.11":
-  version: 9.0.11
-  resolution: "@nestjs/common@npm:9.0.11"
+"@nestjs/common@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@nestjs/common@npm:9.1.1"
   dependencies:
     iterare: 1.2.1
     tslib: 2.4.0
-    uuid: 8.3.2
+    uuid: 9.0.0
   peerDependencies:
     cache-manager: "*"
     class-transformer: "*"
@@ -1654,7 +1654,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 57c6618f13e3c9d16665ba0f10318bd1fea9d46eb5b609c8d79ccf4f41ed2dd97668fa51142aeaed4da5a4cd9388aee9cad5730916f4831b6ea23ded6f0265ce
+  checksum: a118a524fc51344c8bd930d4982701211f1e1a4d67b691b488ac9f72da085d36622a20e12a522adf4f35f40b609f209e349de4e5467a9ec4dd9484ecb2809300
   languageName: node
   linkType: hard
 
@@ -1674,9 +1674,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:9.0.11":
-  version: 9.0.11
-  resolution: "@nestjs/core@npm:9.0.11"
+"@nestjs/core@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@nestjs/core@npm:9.1.1"
   dependencies:
     "@nuxtjs/opencollective": 0.3.2
     fast-safe-stringify: 2.1.1
@@ -1684,7 +1684,7 @@ __metadata:
     object-hash: 3.0.0
     path-to-regexp: 3.2.0
     tslib: 2.4.0
-    uuid: 8.3.2
+    uuid: 9.0.0
   peerDependencies:
     "@nestjs/common": ^9.0.0
     "@nestjs/microservices": ^9.0.0
@@ -1699,7 +1699,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 645081107b3cacbbb6318ca64ccc388bea4b3e3e407183af568d57c05d2f15b4284736efd634b205088ddbedaf55e891096dc7af6b1e07858eb470559f3378d1
+  checksum: f2b8065616904f8f4f0490f2f6a91c8bc32dbf880585daa1a588a7fd3f93a1e73693b6b3a65c30108fa8dfebe0d29ca6c65a37ecdceac8f1294ca3fd323eabde
   languageName: node
   linkType: hard
 
@@ -1720,9 +1720,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:9.0.11":
-  version: 9.0.11
-  resolution: "@nestjs/platform-express@npm:9.0.11"
+"@nestjs/platform-express@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@nestjs/platform-express@npm:9.1.1"
   dependencies:
     body-parser: 1.20.0
     cors: 2.8.5
@@ -1732,7 +1732,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^9.0.0
     "@nestjs/core": ^9.0.0
-  checksum: 64c7da4c754dac92f753274740fc23618c2efee40b6195429f4e6633c73826de1fe03fcf386bb7612fdd2fa720077ad117b79a7d289336dc062bc0a94d1cf9b3
+  checksum: 3ac9798e6e5619916ca71e843a4dae6662e936678d0c43e4ba24708b437a1599e84ba5ecdd4f8bd3ec92b0805cc659d6d9d506230777d67324bf18852bde6261
   languageName: node
   linkType: hard
 
@@ -1802,9 +1802,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:9.0.11":
-  version: 9.0.11
-  resolution: "@nestjs/testing@npm:9.0.11"
+"@nestjs/testing@npm:9.1.1":
+  version: 9.1.1
+  resolution: "@nestjs/testing@npm:9.1.1"
   dependencies:
     tslib: 2.4.0
   peerDependencies:
@@ -1817,7 +1817,7 @@ __metadata:
       optional: true
     "@nestjs/platform-express":
       optional: true
-  checksum: 8343529a878869d2b5cbc51a63c4517cce6f38e88a39fd4a527f566878638669faf3c10ca1e89b8b1a137c2f21437718d2004d22b02e1df57318995c733ed0bb
+  checksum: 68b20c088ace8f80fe1af9326e79fd8a5576bcfdf58bfe42da53753dc70a8a6cc5f99a06ccc0e26e057fa7073ca3d6cd6013f942f6c9e0bc3013ea7995be82e8
   languageName: node
   linkType: hard
 
@@ -2787,14 +2787,14 @@ __metadata:
     "@jonahsnider/util": 9.0.1
     "@jonahsnider/xo-config": 5.2.0
     "@nestjs/cli": 9.1.3
-    "@nestjs/common": 9.0.11
+    "@nestjs/common": 9.1.1
     "@nestjs/config": 2.2.0
-    "@nestjs/core": 9.0.11
-    "@nestjs/platform-express": 9.0.11
+    "@nestjs/core": 9.1.1
+    "@nestjs/platform-express": 9.1.1
     "@nestjs/schematics": 9.0.3
     "@nestjs/swagger": 6.1.2
     "@nestjs/terminus": 9.1.1
-    "@nestjs/testing": 9.0.11
+    "@nestjs/testing": 9.1.1
     "@prisma/client": 4.3.1
     "@sentry/node": 7.13.0
     "@tsconfig/node16": 1.0.3
@@ -11470,6 +11470,15 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"uuid@npm:9.0.0":
+  version: 9.0.0
+  resolution: "uuid@npm:9.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
   languageName: node
   linkType: hard
 
