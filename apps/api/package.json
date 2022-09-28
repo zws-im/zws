@@ -62,7 +62,7 @@
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.2.0",
-		"@nestjs/cli": "9.1.3",
+		"@nestjs/cli": "9.1.4",
 		"@nestjs/schematics": "9.0.3",
 		"@nestjs/testing": "9.1.2",
 		"@tsconfig/node16": "1.0.3",
