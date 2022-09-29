@@ -2850,7 +2850,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     prisma: 4.4.0
-    turbo: 1.5.4
+    turbo: 1.5.5
   languageName: unknown
   linkType: soft
 
@@ -11063,58 +11063,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-darwin-64@npm:1.5.4"
+"turbo-darwin-64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-darwin-64@npm:1.5.5"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-darwin-arm64@npm:1.5.4"
+"turbo-darwin-arm64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-darwin-arm64@npm:1.5.5"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-linux-64@npm:1.5.4"
+"turbo-linux-64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-linux-64@npm:1.5.5"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-linux-arm64@npm:1.5.4"
+"turbo-linux-arm64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-linux-arm64@npm:1.5.5"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-windows-64@npm:1.5.4"
+"turbo-windows-64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-windows-64@npm:1.5.5"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo-windows-arm64@npm:1.5.4"
+"turbo-windows-arm64@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo-windows-arm64@npm:1.5.5"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:1.5.4":
-  version: 1.5.4
-  resolution: "turbo@npm:1.5.4"
+"turbo@npm:1.5.5":
+  version: 1.5.5
+  resolution: "turbo@npm:1.5.5"
   dependencies:
-    turbo-darwin-64: 1.5.4
-    turbo-darwin-arm64: 1.5.4
-    turbo-linux-64: 1.5.4
-    turbo-linux-arm64: 1.5.4
-    turbo-windows-64: 1.5.4
-    turbo-windows-arm64: 1.5.4
+    turbo-darwin-64: 1.5.5
+    turbo-darwin-arm64: 1.5.5
+    turbo-linux-64: 1.5.5
+    turbo-linux-arm64: 1.5.5
+    turbo-windows-64: 1.5.5
+    turbo-windows-arm64: 1.5.5
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -11130,7 +11130,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 37f16e8a3e30c032d3fe250fff4a3c781702b3cd9e634855196a97aca2b4c7d3efeffbbd305affc0a4f677e1dfe3007a7d1953781f31f767f1a2a3ff71cf134d
+  checksum: d804a624ea07277bbd0e9fb5af20538f184a1beefe8d6a9483b24dabc784d3a4ce526430d2ff47cfcc7cd1cfc66f80eef89ea289889c95036c3669c171ffee14
   languageName: node
   linkType: hard
 
