@@ -53,6 +53,12 @@ A status page for the official zws.im instance of ZWS is available at **[status.
 
 Running an instance of ZWS on Heroku is an easy way to self-host thanks to our `app.json` & `Procfile`.
 
+### Railway
+
+[![Deploy on Railway][deploy-to-railway-image]][deploy-to-railway]
+
+You can also easily deploy an instance of ZWS on Railway.
+
 ### DigitalOcean
 
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/zws-im/zws/tree/main)
@@ -108,6 +114,8 @@ ZWS instances expose a few routes that implement the [Shields endpoint schema](h
 
 [deploy-to-heroku]: https://dashboard.heroku.com/new?template=https://github.com/zws-im/zws
 [deploy-to-heroku-image]: https://www.herokucdn.com/deploy/button.svg
+[deploy-to-railway]: https://railway.app/new/template/WDYF-d
+[deploy-to-railway-image]: https://railway.app/button.svg
 [heroku-postgres]: https://www.heroku.com/postgres
 [docker-compose]: https://docs.docker.com/compose/
 [open-collective]: https://opencollective.com/zws/contribute
