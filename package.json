@@ -43,7 +43,7 @@
 		"turbo": "1.5.5"
 	},
 	"engines": {
-		"node": "16.x"
+		"node": "18.x"
 	},
 	"packageManager": "yarn@3.2.4",
 	"resolutions": {
