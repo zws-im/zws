@@ -1716,9 +1716,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/mapped-types@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@nestjs/mapped-types@npm:1.1.0"
+"@nestjs/mapped-types@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@nestjs/mapped-types@npm:1.2.0"
   peerDependencies:
     "@nestjs/common": ^7.0.8 || ^8.0.0 || ^9.0.0
     class-transformer: ^0.2.0 || ^0.3.0 || ^0.4.0 || ^0.5.0
@@ -1729,7 +1729,7 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 22deac62c44a4c8a491aa2d9e94385092ef4644d6299ddf9b545b87858d4be861479c6e19de860550489f38699bf7cdc28fdedc9b09f5770ea35d347f9743c28
+  checksum: cc625310873c5caf69521bc03c75a6780467f662fd4c8b2402f6e65228268eec1244c131dbf65c81c985680feacee50dae7d3c1f2b7bced7bad79922389aa38f
   languageName: node
   linkType: hard
 
@@ -1779,15 +1779,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/swagger@npm:6.1.2":
-  version: 6.1.2
-  resolution: "@nestjs/swagger@npm:6.1.2"
+"@nestjs/swagger@npm:6.1.3":
+  version: 6.1.3
+  resolution: "@nestjs/swagger@npm:6.1.3"
   dependencies:
-    "@nestjs/mapped-types": 1.1.0
+    "@nestjs/mapped-types": 1.2.0
     js-yaml: 4.1.0
     lodash: 4.17.21
     path-to-regexp: 3.2.0
-    swagger-ui-dist: 4.14.0
+    swagger-ui-dist: 4.15.1
   peerDependencies:
     "@fastify/static": ^6.0.0
     "@nestjs/common": ^9.0.0
@@ -1796,7 +1796,7 @@ __metadata:
   peerDependenciesMeta:
     "@fastify/static":
       optional: true
-  checksum: 1acfddac35f3c41298da30c865e1bd61a979c6d3fdba3056f71474f65aca51d001c5eff8775615d3459ee41e578ffbb577ee529409f4f7baaf9466b8e12626de
+  checksum: 9957a3b8b9dedb814b2e096035a0e28bbe38bdb72f8547a0f807c3b754271a167da109fdf87da6f8cb01e98deea494a27d16d98d98eaae0c48933212e9e6306e
   languageName: node
   linkType: hard
 
@@ -2792,7 +2792,7 @@ __metadata:
     "@nestjs/core": 9.1.6
     "@nestjs/platform-express": 9.1.6
     "@nestjs/schematics": 9.0.3
-    "@nestjs/swagger": 6.1.2
+    "@nestjs/swagger": 6.1.3
     "@nestjs/terminus": 9.1.2
     "@nestjs/testing": 9.1.6
     "@prisma/client": 4.5.0
@@ -10670,10 +10670,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-ui-dist@npm:4.14.0":
-  version: 4.14.0
-  resolution: "swagger-ui-dist@npm:4.14.0"
-  checksum: 8670e230ae841b16c983bf8420a3c52073fc3e6590cd1c700342ee788e6c46e329daeeff7e5dcfa59ffe58d2efce40cf51377b7f29ce36af9134b4112cd5c97e
+"swagger-ui-dist@npm:4.15.1":
+  version: 4.15.1
+  resolution: "swagger-ui-dist@npm:4.15.1"
+  checksum: 2c78650be81999266e433adbc1ea5737fa4fe7a008c5b6552c7ec06c96abb2616a798c9b6863f8405ce52bbde9e5846749b254794f25b00b5fed5dc56897a52d
   languageName: node
   linkType: hard
 
