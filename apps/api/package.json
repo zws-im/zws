@@ -55,7 +55,7 @@
 		"reflect-metadata": "0.1.13",
 		"rxjs": "7.5.7",
 		"swagger-ui-express": "4.5.0",
-		"tslib": "2.4.0",
+		"tslib": "2.4.1",
 		"yn": "4.0.0",
 		"zod": "3.19.1"
 	},
