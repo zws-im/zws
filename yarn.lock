@@ -1800,18 +1800,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:9.1.2":
-  version: 9.1.2
-  resolution: "@nestjs/terminus@npm:9.1.2"
+"@nestjs/terminus@npm:9.1.3":
+  version: 9.1.3
+  resolution: "@nestjs/terminus@npm:9.1.3"
   dependencies:
     boxen: 5.1.2
     check-disk-space: 3.3.1
   peerDependencies:
+    "@grpc/grpc-js": "*"
+    "@grpc/proto-loader": "*"
+    "@mikro-orm/core": "*"
+    "@mikro-orm/nestjs": "*"
+    "@nestjs/axios": "*"
     "@nestjs/common": 9.x
     "@nestjs/core": 9.x
+    "@nestjs/microservices": "*"
+    "@nestjs/mongoose": "*"
+    "@nestjs/sequelize": "*"
+    "@nestjs/typeorm": "*"
+    mongoose: "*"
     reflect-metadata: 0.1.x
     rxjs: 7.x
-  checksum: 9337b4fb1b01b477ccdb5b982477bed12939b9ce159ff90873c4b8be582c50214cef03dd9037e6b6033c56c4e2635897a9cbd1d26638d3468d7911fe41249d29
+    sequelize: "*"
+    typeorm: "*"
+  peerDependenciesMeta:
+    "@grpc/grpc-js":
+      optional: true
+    "@grpc/proto-loader":
+      optional: true
+    "@mikro-orm/core":
+      optional: true
+    "@mikro-orm/nestjs":
+      optional: true
+    "@nestjs/axios":
+      optional: true
+    "@nestjs/microservices":
+      optional: true
+    "@nestjs/mongoose":
+      optional: true
+    "@nestjs/sequelize":
+      optional: true
+    "@nestjs/typeorm":
+      optional: true
+    mongoose:
+      optional: true
+    sequelize:
+      optional: true
+    typeorm:
+      optional: true
+  checksum: d337c2d8325dfe059936130bac0b3e1f801e4aee958aa1d215bf9e403a36dea3b915687d9ae9cc93beac9252befe8cc4f3d7dcbc0c342618205e51f5c8e80d1a
   languageName: node
   linkType: hard
 
@@ -2793,7 +2830,7 @@ __metadata:
     "@nestjs/platform-express": 9.2.0
     "@nestjs/schematics": 9.0.3
     "@nestjs/swagger": 6.1.3
-    "@nestjs/terminus": 9.1.2
+    "@nestjs/terminus": 9.1.3
     "@nestjs/testing": 9.2.0
     "@prisma/client": 4.6.1
     "@sentry/node": 7.19.0
