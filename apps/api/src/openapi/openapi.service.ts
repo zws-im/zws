@@ -29,11 +29,11 @@ export class OpenApiService {
 			.addBearerAuth({type: 'http'})
 
 			.addServer('http://{host}/{basePath}', 'Custom server (HTTP)', {
-				host: {default: this.hostname === undefined ? `localhost:${this.port}` : this.hostname},
+				host: {default: this.hostname ?? `localhost:${this.port}`},
 				basePath: {default: ''},
 			})
 			.addServer('https://{host}/{basePath}', 'Custom server (HTTPS)', {
-				host: {default: this.hostname === undefined ? `localhost:${this.port}` : this.hostname},
+				host: {default: this.hostname ?? `localhost:${this.port}`},
 				basePath: {default: ''},
 			})
 			.addServer('https://api.zws.im', 'zws.im production')

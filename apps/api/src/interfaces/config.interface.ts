@@ -1,4 +1,4 @@
-export interface EnvironmentVariables {
+export type EnvironmentVariables = {
 	PORT?: string;
 	NODE_ENV?: string;
 
@@ -19,4 +19,4 @@ export interface EnvironmentVariables {
 
 	GOOGLE_APPLICATION_CREDENTIALS?: string;
 	GOOGLE_PROJECT_ID?: string;
-}
+};

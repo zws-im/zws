@@ -6,6 +6,7 @@ export class LongUrlDto {
 	 * A long (unshortened) URL.
 	 * @example 'https://jonahsnider.com'
 	 */
+	// eslint-disable-next-line @typescript-eslint/parameter-properties
 	@IsString()
 	@MaxLength(500)
 	@IsUrl()

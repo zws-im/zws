@@ -1,4 +1,4 @@
-export interface Credentials {
+export type Credentials = {
 	projectId: string;
 	keyFilename: string;
-}
+};

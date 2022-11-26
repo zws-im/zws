@@ -26,4 +26,5 @@ async function bootstrap() {
 	await app.listen(config.port);
 }
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 void bootstrap();
