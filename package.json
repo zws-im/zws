@@ -39,7 +39,7 @@
 		"@changesets/changelog-github": "0.4.7",
 		"@changesets/cli": "2.25.2",
 		"@jonahsnider/prettier-config": "1.1.2",
-		"prettier": "2.7.1",
+		"prettier": "2.8.0",
 		"turbo": "1.5.5"
 	},
 	"engines": {

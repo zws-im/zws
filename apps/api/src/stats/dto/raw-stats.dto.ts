@@ -9,6 +9,7 @@ export class RawStatsDto {
 	/**
 	 * @example '2.0.0'
 	 */
+	// eslint-disable-next-line @typescript-eslint/parameter-properties
 	@ApiProperty({pattern: VERSION_REG_EXP.source})
 	@Matches(VERSION_REG_EXP)
 	version: string;

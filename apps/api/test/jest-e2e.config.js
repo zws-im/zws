@@ -1,6 +1,6 @@
 /* eslint-disable unicorn/prefer-module */
 
-const path = require('path');
+const path = require('node:path');
 
 module.exports = {
 	moduleFileExtensions: ['js', 'json', 'ts'],

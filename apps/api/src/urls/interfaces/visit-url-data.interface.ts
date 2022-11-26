@@ -1,4 +1,4 @@
-export interface VisitUrlData {
+export type VisitUrlData = {
 	longUrl: string;
 	blocked: boolean;
-}
+};

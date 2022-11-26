@@ -29,12 +29,17 @@ export class AppConfig {
 		const raw = this.configService.get<string>('NODE_ENV');
 
 		switch (raw) {
-			case Env.Development:
+			case Env.Development: {
 				return Env.Development;
-			case Env.Test:
+			}
+
+			case Env.Test: {
 				return Env.Test;
-			default:
+			}
+
+			default: {
 				return Env.Production;
+			}
 		}
 	}
 }

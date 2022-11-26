@@ -8,6 +8,7 @@ export class ShortenedUrlDto {
 	 *
 	 * @example 'abcxyz'
 	 */
+	// eslint-disable-next-line @typescript-eslint/parameter-properties
 	@IsString()
 	short: Short;
 

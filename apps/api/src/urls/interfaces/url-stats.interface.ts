@@ -1,4 +1,4 @@
-export interface UrlStats {
+export type UrlStats = {
 	url: string;
 	visits: Date[];
-}
+};
