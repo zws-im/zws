@@ -2894,7 +2894,7 @@ __metadata:
     ts-jest: 29.0.3
     ts-node: 10.9.1
     tslib: 2.4.1
-    type-fest: 3.2.0
+    type-fest: 3.3.0
     typescript: 4.9.3
     xo: 0.53.1
     yn: 4.0.0
@@ -11305,10 +11305,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:3.2.0, type-fest@npm:^3.1.0":
-  version: 3.2.0
-  resolution: "type-fest@npm:3.2.0"
-  checksum: 2668b62e8df6ae39074c93cb1e2c267c5f8a16d0d1bb693e71f2ea0b80da14eca5442edbcc5609d1099c49a4aaecda960d7fede3d3253b4126d2c6dfeb41b8c3
+"type-fest@npm:3.3.0":
+  version: 3.3.0
+  resolution: "type-fest@npm:3.3.0"
+  checksum: 6f260466dd1847048bca4481412f39c32fbb69abbe6daf1ead67e682529adfe8ab8f150a9937eddd065fa544eaf92c15e35ebad0f45f46feadcfbd3a87ae5a2d
   languageName: node
   linkType: hard
 
@@ -11358,6 +11358,13 @@ __metadata:
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
   checksum: a4ef07ece297c9fba78fc1bd6d85dff4472fe043ede98bd4710d2615d15776902b595abf62bd78339ed6278f021235fb28a96361f8be86ed754f778973a0d278
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^3.1.0":
+  version: 3.2.0
+  resolution: "type-fest@npm:3.2.0"
+  checksum: 2668b62e8df6ae39074c93cb1e2c267c5f8a16d0d1bb693e71f2ea0b80da14eca5442edbcc5609d1099c49a4aaecda960d7fede3d3253b4126d2c6dfeb41b8c3
   languageName: node
   linkType: hard
 
