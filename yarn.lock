@@ -1462,10 +1462,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:9.0.1":
-  version: 9.0.1
-  resolution: "@jonahsnider/util@npm:9.0.1"
-  checksum: ad382d20b3235e629a8c166deddb46856466c3fb6a0e33ef43586f5c3b31428f5136910b8643eaf73281ec2539fd3469c1e0d87c75600e5a22ff00e302edd486
+"@jonahsnider/util@npm:10.0.0":
+  version: 10.0.0
+  resolution: "@jonahsnider/util@npm:10.0.0"
+  checksum: cc78a7991d3743aac05cca75ca59f756c491fd45ce979dd8e3976e4d33d07c8d97ce804a7dc8ae0cbbec1113539308cef875b80b721bdf3c3f2cc2a5c7a6d760
   languageName: node
   linkType: hard
 
@@ -2859,7 +2859,7 @@ __metadata:
   dependencies:
     "@google-cloud/profiler": 5.0.2
     "@jonahsnider/prettier-config": 1.1.2
-    "@jonahsnider/util": 9.0.1
+    "@jonahsnider/util": 10.0.0
     "@jonahsnider/xo-config": 5.3.0
     "@nestjs/cli": 9.1.5
     "@nestjs/common": 9.2.1
