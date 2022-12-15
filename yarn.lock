@@ -2901,7 +2901,7 @@ __metadata:
     prettier: 2.8.1
     prisma: 4.7.1
     reflect-metadata: 0.1.13
-    rxjs: 7.6.0
+    rxjs: 7.8.0
     supertest: 6.3.3
     swagger-ui-express: 4.6.0
     ts-jest: 29.0.3
@@ -10117,12 +10117,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:7.6.0":
-  version: 7.6.0
-  resolution: "rxjs@npm:7.6.0"
+"rxjs@npm:7.8.0":
+  version: 7.8.0
+  resolution: "rxjs@npm:7.8.0"
   dependencies:
     tslib: ^2.1.0
-  checksum: b3abbbfe1ddfd06fca9314b83cbd13bcddc3320429218136f75c79a4802ac430dd13873364aac1ded54fd457f8c77df332d205a92d8a1c61656565bb718c50af
+  checksum: 61b4d4fd323c1043d8d6ceb91f24183b28bcf5def4f01ca111511d5c6b66755bc5578587fe714ef5d67cf4c9f2e26f4490d4e1d8cabf9bd5967687835e9866a2
   languageName: node
   linkType: hard
 
