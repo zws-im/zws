@@ -43,7 +43,7 @@ export class UrlsController {
 
 		const longUrlHostname = new URL(url).hostname;
 
-		if (this.service.isHostnameBlocked(longUrlHostname)) {
+		if (await this.service.isHostnameBlocked(longUrlHostname)) {
 			throw new AttemptedShortenBlockedHostnameException();
 		}
 
@@ -71,7 +71,7 @@ export class UrlsController {
 		if (shouldVisit) {
 			const longUrlHostname = new URL(url.longUrl).hostname;
 
-			if (url.blocked || this.service.isHostnameBlocked(longUrlHostname)) {
+			if (url.blocked || (await this.service.isHostnameBlocked(longUrlHostname))) {
 				// Don't allow users to visit blocked URLs
 				throw new UrlBlockedException();
 			}

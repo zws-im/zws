@@ -36,6 +36,15 @@ model Visit {
   @@map("visits")
 }
 
+model BlockedHostname {
+  /// The hostname to block
+  hostname  String   @id
+  /// The datetime the hostname was blocked
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("blocked_hostnames")
+}
+
 enum ApproximateCountKind {
   SHORTENED_URLS @map("shortened_urls")
   VISITS         @map("visits")

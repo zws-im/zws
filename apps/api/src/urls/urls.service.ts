@@ -1,10 +1,13 @@
 import {Buffer} from 'node:buffer';
 import {sample} from '@jonahsnider/util';
-import {Injectable} from '@nestjs/common';
+import {Injectable, type OnModuleInit} from '@nestjs/common';
 import type {ShortenedUrl} from '@prisma/client';
 import {ApproximateCountKind, Prisma} from '@prisma/client';
+import convert from 'convert';
 import type {Opaque} from 'type-fest';
+import type {Logger} from '../logger/interfaces/logger.interface';
 import {PrismaService} from '../prisma/prisma.service';
+import {LoggerService} from '../logger/logger.service';
 import {UniqueShortIdTimeoutException} from './exceptions/unique-short-id-timeout.exception';
 import type {UrlStats} from './interfaces/url-stats.interface';
 import type {VisitUrlData} from './interfaces/visit-url-data.interface';
@@ -22,13 +25,28 @@ const MAX_SHORT_ID_GENERATION_ATTEMPTS = 10;
 /** A regular expression for a domain name. */
 const DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
 
+/** The number of milliseconds to cache private blocked hostnames from the database for. */
+const BLOCKED_HOSTNAMES_CACHE_DURATION = convert(1, 'hour').to('ms');
+
 @Injectable()
-export class UrlsService {
+export class UrlsService implements OnModuleInit {
 	private static encode(value: string): Base64 {
 		return Buffer.from(value).toString('base64') as Base64;
 	}
 
-	constructor(private readonly config: UrlsConfigService, private readonly db: PrismaService) {}
+	private readonly blockedHostnames: Set<string>;
+
+	private readonly logger: Logger;
+	private blockedHostnamesLoadedFromDbAt = Number.NEGATIVE_INFINITY;
+
+	constructor(private readonly config: UrlsConfigService, private readonly db: PrismaService, logger: LoggerService) {
+		this.blockedHostnames = new Set(this.config.blockedHostnames);
+		this.logger = logger.createLogger().withTag('app').withTag('urls');
+	}
+
+	async onModuleInit(): Promise<void> {
+		await this.loadBlockedHostnamesFromDb();
+	}
 
 	/**
 	 * Retrieve a shortened URL.
@@ -126,12 +144,14 @@ export class UrlsService {
 		return id;
 	}
 
-	isHostnameBlocked(hostname: string): boolean {
+	async isHostnameBlocked(hostname: string): Promise<boolean> {
+		await this.loadBlockedHostnamesFromDb();
+
 		return (
 			// Exact match
-			this.config.blockedHostnames.has(hostname) ||
+			this.blockedHostnames.has(hostname) ||
 			// Domain name match
-			this.config.blockedHostnames.has(hostname.replace(DOMAIN_NAME_REG_EXP, '$1'))
+			this.blockedHostnames.has(hostname.replace(DOMAIN_NAME_REG_EXP, '$1'))
 		);
 	}
 
@@ -150,5 +170,27 @@ export class UrlsService {
 		}
 
 		return shortId;
+	}
+
+	private async loadBlockedHostnamesFromDb(): Promise<void> {
+		if (Date.now() - this.blockedHostnamesLoadedFromDbAt < BLOCKED_HOSTNAMES_CACHE_DURATION) {
+			return;
+		}
+
+		const initialSize = this.blockedHostnames.size;
+
+		this.logger.debug('Loading blocked hostnames from DB');
+		const blockedHostnames = await this.db.blockedHostname.findMany({select: {hostname: true}});
+
+		for (const blockedHostname of blockedHostnames) {
+			this.blockedHostnames.add(blockedHostname.hostname);
+		}
+
+		const newSize = this.blockedHostnames.size;
+
+		this.logger.info(`Loaded ${blockedHostnames.length} blocked hostnames from DB`);
+		this.logger.info(`Blocked hostnames cache size: ${newSize} (added ${newSize - initialSize})`);
+
+		this.blockedHostnamesLoadedFromDbAt = Date.now();
 	}
 }
