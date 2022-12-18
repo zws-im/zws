@@ -744,14 +744,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/changelog-github@npm:0.4.7":
-  version: 0.4.7
-  resolution: "@changesets/changelog-github@npm:0.4.7"
+"@changesets/changelog-github@npm:0.4.8":
+  version: 0.4.8
+  resolution: "@changesets/changelog-github@npm:0.4.8"
   dependencies:
-    "@changesets/get-github-info": ^0.5.1
-    "@changesets/types": ^5.2.0
+    "@changesets/get-github-info": ^0.5.2
+    "@changesets/types": ^5.2.1
     dotenv: ^8.1.0
-  checksum: 911b2ca3fc52d9f883001d2aa6122208ca9daa884201eae77d2a5f4cce34df685e443ee49aa88f89a913bf8ac6b0129a12d18f36517b118962f18ba9c5163173
+  checksum: 8a357cc08757e0eeca267ee05141f68bef936582abef8b78a5d30d99f5a86e41b7d3debba70992b73b2f57b0fc6201ec1cc3c65116930167ee3197b427b865c5
   languageName: node
   linkType: hard
 
@@ -835,13 +835,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-github-info@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "@changesets/get-github-info@npm:0.5.1"
+"@changesets/get-github-info@npm:^0.5.2":
+  version: 0.5.2
+  resolution: "@changesets/get-github-info@npm:0.5.2"
   dependencies:
     dataloader: ^1.4.0
     node-fetch: ^2.5.0
-  checksum: e995274c4f5c021e5a7df0867816b86abeff136746dd91f33feb3368b175c1d1513db81282dc4d89a33cad61cfcc835f676cfa9d694a9c1631af35dad3057c69
+  checksum: 067e07eeaecdbedbd1c715513c4aa6206a941bd1d3af292d067792808c6fa6644caad2b35fba614a44892559c031c234df8028f8d2abd4cb2682d48080ef5df3
   languageName: node
   linkType: hard
 
@@ -940,6 +940,13 @@ __metadata:
   version: 5.2.0
   resolution: "@changesets/types@npm:5.2.0"
   checksum: 579cf8bd2d3a03f293871976d8641531667527f248dc29310a70928d6400cef5df3d09e75beeb2ccf5d384fa1f294f0a2db243c6ebf53913d1f67e283e826f91
+  languageName: node
+  linkType: hard
+
+"@changesets/types@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "@changesets/types@npm:5.2.1"
+  checksum: 527dc1aa41b040fe35bcd55f7d07bec710320b179b000c429723e25b87aac18be487daf5047d4fecf2781aad78f73abff111e76e411b652f7a2e812a464c69f2
   languageName: node
   linkType: hard
 
@@ -2920,7 +2927,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
-    "@changesets/changelog-github": 0.4.7
+    "@changesets/changelog-github": 0.4.8
     "@changesets/cli": 2.25.2
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.8.1
