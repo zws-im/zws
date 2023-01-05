@@ -1944,9 +1944,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:4.8.0":
-  version: 4.8.0
-  resolution: "@prisma/client@npm:4.8.0"
+"@prisma/client@npm:4.8.1":
+  version: 4.8.1
+  resolution: "@prisma/client@npm:4.8.1"
   dependencies:
     "@prisma/engines-version": 4.8.0-61.d6e67a83f971b175a593ccc12e15c4a757f93ffe
   peerDependencies:
@@ -1954,7 +1954,7 @@ __metadata:
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: c0256721bd4e07fb1fdf4d0857489379769af1eaac0aec79387e32092e63e1246a95fef634f6c07bf1bdddc7c11f3e073c78e5c92b9a708f559773a3f656f94a
+  checksum: 93dc263e56f473478c8b7e051b7bad09893eac4fe0e2ba93af56e8394fb21e7e23a8fff0fde39f4aaaf85c3bfb0b51f3f50cc1cab3a585fdb94687f08e1c385a
   languageName: node
   linkType: hard
 
@@ -1965,10 +1965,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/engines@npm:4.8.0":
-  version: 4.8.0
-  resolution: "@prisma/engines@npm:4.8.0"
-  checksum: 5c1198905d7bf850c02cd59f244055003fc2a03ce99e715a0a872f568fb024aa4b347804829c8630964ff41b64cf8fa3e08c8cd2a444ad29c215c4b1dd9701b0
+"@prisma/engines@npm:4.8.1":
+  version: 4.8.1
+  resolution: "@prisma/engines@npm:4.8.1"
+  checksum: 7ddddf5dcecbf2dd74e061fcf60c4ceef8a1c18e55aec3773ebcefb0edf0f8cf3b3e62eb7ad46fb82a85546ace5c626e1cc29b5d600ddf51989c8f07140600ca
   languageName: node
   linkType: hard
 
@@ -2862,7 +2862,7 @@ __metadata:
     "@nestjs/swagger": 6.1.4
     "@nestjs/terminus": 9.1.4
     "@nestjs/testing": 9.2.1
-    "@prisma/client": 4.8.0
+    "@prisma/client": 4.8.1
     "@sentry/node": 7.29.0
     "@tsconfig/node16": 1.0.3
     "@types/express": 4.17.15
@@ -2879,7 +2879,7 @@ __metadata:
     jest: 29.3.1
     millify: 5.0.1
     prettier: 2.8.1
-    prisma: 4.8.0
+    prisma: 4.8.1
     reflect-metadata: 0.1.13
     rxjs: 7.8.0
     supertest: 6.3.3
@@ -2903,7 +2903,7 @@ __metadata:
     "@changesets/cli": 2.26.0
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.8.1
-    prisma: 4.8.0
+    prisma: 4.8.1
     turbo: 1.5.5
   languageName: unknown
   linkType: soft
@@ -9503,15 +9503,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prisma@npm:4.8.0":
-  version: 4.8.0
-  resolution: "prisma@npm:4.8.0"
+"prisma@npm:4.8.1":
+  version: 4.8.1
+  resolution: "prisma@npm:4.8.1"
   dependencies:
-    "@prisma/engines": 4.8.0
+    "@prisma/engines": 4.8.1
   bin:
     prisma: build/index.js
     prisma2: build/index.js
-  checksum: 22ebaa32c51fb2938626d742d9ae68be5ad49a44dad2046bfe40439a64d06e8f84d4915f66100554d7840c3c5228c6b5c4216d9f5a698d5dd11a46ab528654cf
+  checksum: 6f09e9add231c1f38cc01051037c0abb5ff4db6773d5543ce8917beee76b15351474e97b0c06eaa25267f0a65e7596a8428292317c53d1868e9aaa09cd6e0705
   languageName: node
   linkType: hard
 
