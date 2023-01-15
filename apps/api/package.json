@@ -76,7 +76,7 @@
 		"supertest": "6.3.3",
 		"ts-jest": "29.0.5",
 		"ts-node": "10.9.1",
-		"type-fest": "3.5.1",
+		"type-fest": "3.5.2",
 		"typescript": "4.9.4",
 		"xo": "0.53.1"
 	},
