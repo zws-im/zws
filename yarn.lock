@@ -1567,6 +1567,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lukeed/csprng@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@lukeed/csprng@npm:1.0.1"
+  checksum: fd84d6832775052d6bff3e78b0bc7f4b29b2fafa71b04826b0713f55d9a447a0b273d4eb70d02d89bb879e9d768cd9716da818dafa32ba6f7ecb639cbdc6806d
+  languageName: node
+  linkType: hard
+
 "@manypkg/find-root@npm:^1.1.0":
   version: 1.1.0
   resolution: "@manypkg/find-root@npm:1.1.0"
@@ -1663,13 +1670,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@nestjs/common@npm:9.2.1"
+"@nestjs/common@npm:9.3.1":
+  version: 9.3.1
+  resolution: "@nestjs/common@npm:9.3.1"
   dependencies:
     iterare: 1.2.1
     tslib: 2.4.1
-    uuid: 9.0.0
+    uid: 2.0.1
   peerDependencies:
     cache-manager: <=5
     class-transformer: "*"
@@ -1683,29 +1690,29 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 82acae70df519f1f217f5b11354c29e1f3b9e5ddd5f73385bd76705c235507230bb19c6c0eb696938565ce70c33cecb487d539c829d1c8d39121fcf3468b4d55
+  checksum: 440b1bd249eb92408eae0a144f3bc472cb7d3d6306f1ba01a4277010087cc1b2671a892cbc58709d78cdae8104c11b22dce309c2adeee1c90c3c76b6270c3962
   languageName: node
   linkType: hard
 
-"@nestjs/config@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@nestjs/config@npm:2.2.0"
+"@nestjs/config@npm:2.3.0":
+  version: 2.3.0
+  resolution: "@nestjs/config@npm:2.3.0"
   dependencies:
-    dotenv: 16.0.1
-    dotenv-expand: 8.0.3
+    dotenv: 16.0.3
+    dotenv-expand: 10.0.0
     lodash: 4.17.21
-    uuid: 8.3.2
+    uuid: 9.0.0
   peerDependencies:
     "@nestjs/common": ^7.0.0 || ^8.0.0 || ^9.0.0
     reflect-metadata: ^0.1.13
     rxjs: ^6.0.0 || ^7.2.0
-  checksum: 42b9d8014da51ee76621f705d3783d10fbcaa8362881ecd591b8c9542e8067d3e61258bb01556694c355471ea6af8485c05ba85d1326f54f810bff19bfefef2e
+  checksum: 7fc2a8e16586c4d19c47e3f43a41cb526ab90c218547c9cb909ade4582ba9f24c1c5408fb7e7f38ea449d3a5005adc85c3b420b300eee6746c1944385f07ed4c
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@nestjs/core@npm:9.2.1"
+"@nestjs/core@npm:9.3.1":
+  version: 9.3.1
+  resolution: "@nestjs/core@npm:9.3.1"
   dependencies:
     "@nuxtjs/opencollective": 0.3.2
     fast-safe-stringify: 2.1.1
@@ -1728,7 +1735,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 006edefb175840f7706e3ae755dfd984e112d40fe3ce26bd75ee019652c38b5225c751617efaf6054b07ddb1f7e044f49015520889f0003aa9aab33111d59172
+  checksum: ec7c9b5c7e00b64787f77c03632185a090ebc13136b8a05e4efb8f4497ef190bbbbe5644ffce696abb33461ecee250b32a72e2013b307540010922bba9864546
   languageName: node
   linkType: hard
 
@@ -1749,9 +1756,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@nestjs/platform-express@npm:9.2.1"
+"@nestjs/platform-express@npm:9.3.1":
+  version: 9.3.1
+  resolution: "@nestjs/platform-express@npm:9.3.1"
   dependencies:
     body-parser: 1.20.1
     cors: 2.8.5
@@ -1761,7 +1768,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^9.0.0
     "@nestjs/core": ^9.0.0
-  checksum: a20d5471b1dcc56f056af14593d94ed8e155208338359e72519ed052ffdc741c5b27a75726c46277dc8baadd99615b369c6874353e73c95133b90a05b79810e9
+  checksum: b7db5a3ea7ab3037d15dada2c08bd2af30730b6f10c48d10143a48c34c7dc2a3258d150711973226d4927be8c16ea8438a705453d61465ba8894d6898a4e077b
   languageName: node
   linkType: hard
 
@@ -1874,9 +1881,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:9.2.1":
-  version: 9.2.1
-  resolution: "@nestjs/testing@npm:9.2.1"
+"@nestjs/testing@npm:9.3.1":
+  version: 9.3.1
+  resolution: "@nestjs/testing@npm:9.3.1"
   dependencies:
     tslib: 2.4.1
   peerDependencies:
@@ -1889,7 +1896,7 @@ __metadata:
       optional: true
     "@nestjs/platform-express":
       optional: true
-  checksum: 69fbe0535bbc6b8f90f90a02efb33b390d5aa7ce1f309452b1fcedd9304f7466871842f27d042587fce8532892abe58c769465eca13dde80860e002ffa83570b
+  checksum: d5933671a95e6a7aae752c69935a12d88e3393c423730c4955b6eaf76516ee66b70eb1781b97b662ee90e68bafec024ea8a06997ce5c85504dca1c0917216594
   languageName: node
   linkType: hard
 
@@ -2870,14 +2877,14 @@ __metadata:
     "@jonahsnider/util": 10.0.0
     "@jonahsnider/xo-config": 5.3.0
     "@nestjs/cli": 9.1.9
-    "@nestjs/common": 9.2.1
-    "@nestjs/config": 2.2.0
-    "@nestjs/core": 9.2.1
-    "@nestjs/platform-express": 9.2.1
+    "@nestjs/common": 9.3.1
+    "@nestjs/config": 2.3.0
+    "@nestjs/core": 9.3.1
+    "@nestjs/platform-express": 9.3.1
     "@nestjs/schematics": 9.0.4
     "@nestjs/swagger": 6.1.4
     "@nestjs/terminus": 9.1.4
-    "@nestjs/testing": 9.2.1
+    "@nestjs/testing": 9.3.1
     "@prisma/client": 4.9.0
     "@sentry/node": 7.35.0
     "@tsconfig/node16": 1.0.3
@@ -4617,17 +4624,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-expand@npm:8.0.3":
-  version: 8.0.3
-  resolution: "dotenv-expand@npm:8.0.3"
-  checksum: 128ce90ac825b543de3ece0154a51b056ab0dc36bb26d97a68cd0b8707327ecd3c182fb6ac63b26a0fcdfa85064419906a1065cb634f1f9dc08ad311375f1fc0
-  languageName: node
-  linkType: hard
-
-"dotenv@npm:16.0.1":
-  version: 16.0.1
-  resolution: "dotenv@npm:16.0.1"
-  checksum: f459ffce07b977b7f15d8cc4ee69cdff77d4dd8c5dc8c85d2d485ee84655352c2415f9dd09d42b5b5985ced3be186130871b34e2f3e2569ebc72fbc2e8096792
+"dotenv-expand@npm:10.0.0":
+  version: 10.0.0
+  resolution: "dotenv-expand@npm:10.0.0"
+  checksum: 2a38b470efe0abcb1ac8490421a55e1d764dc9440fd220942bce40965074f3fb00b585f4346020cb0f0f219966ee6b4ee5023458b3e2953fe5b3214de1b314ee
   languageName: node
   linkType: hard
 
@@ -11510,6 +11510,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"uid@npm:2.0.1":
+  version: 2.0.1
+  resolution: "uid@npm:2.0.1"
+  dependencies:
+    "@lukeed/csprng": ^1.0.0
+  checksum: 0a3c697d8dd1f3b647afa35c411b11fd8fa2fb6dbd8a49fe109a4aa5214068c2c58781aa6e4516dfd16f0fc524fb7bba0833e9c1dc1ed3f1965b520349be9ad5
+  languageName: node
+  linkType: hard
+
 "unbox-primitive@npm:^1.0.1":
   version: 1.0.1
   resolution: "unbox-primitive@npm:1.0.1"
@@ -11635,21 +11644,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:8.3.2, uuid@npm:^8.0.0":
-  version: 8.3.2
-  resolution: "uuid@npm:8.3.2"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
-  languageName: node
-  linkType: hard
-
 "uuid@npm:9.0.0":
   version: 9.0.0
   resolution: "uuid@npm:9.0.0"
   bin:
     uuid: dist/bin/uuid
   checksum: 8dd2c83c43ddc7e1c71e36b60aea40030a6505139af6bee0f382ebcd1a56f6cd3028f7f06ffb07f8cf6ced320b76aea275284b224b002b289f89fe89c389b028
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.0.0":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
   languageName: node
   linkType: hard
 
