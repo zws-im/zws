@@ -1866,9 +1866,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/terminus@npm:9.2.0":
-  version: 9.2.0
-  resolution: "@nestjs/terminus@npm:9.2.0"
+"@nestjs/terminus@npm:9.2.1":
+  version: 9.2.1
+  resolution: "@nestjs/terminus@npm:9.2.1"
   dependencies:
     boxen: 5.1.2
     check-disk-space: 3.3.1
@@ -1914,7 +1914,7 @@ __metadata:
       optional: true
     typeorm:
       optional: true
-  checksum: 915fa54cf4a4f887966bf8b5bb99e0a4d75876cfc58e83d2d0f2ebb58c2c7a68808352a7f81de7b4cf3fb1f126a177559ea35a34f40e39de705996eda1c31407
+  checksum: ac09b7fced4bc712fc1e7b974a73b905f9fea670589477cf7e8b8c98df27f114747cc0f5b660adf327e7a6670a892a2c749e03c2b1a5d5af9cb6ea4d0300da94
   languageName: node
   linkType: hard
 
@@ -2920,7 +2920,7 @@ __metadata:
     "@nestjs/platform-express": 9.3.9
     "@nestjs/schematics": 9.0.4
     "@nestjs/swagger": 6.2.1
-    "@nestjs/terminus": 9.2.0
+    "@nestjs/terminus": 9.2.1
     "@nestjs/testing": 9.3.9
     "@prisma/client": 4.10.1
     "@sentry/node": 7.37.2
