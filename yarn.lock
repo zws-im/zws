@@ -2892,7 +2892,7 @@ __metadata:
     express: 4.18.2
     jest: 29.5.0
     millify: 6.1.0
-    prettier: 2.8.5
+    prettier: 2.8.6
     prisma: 4.11.0
     reflect-metadata: 0.1.13
     rxjs: 7.8.0
@@ -2916,7 +2916,7 @@ __metadata:
     "@changesets/changelog-github": 0.4.8
     "@changesets/cli": 2.26.0
     "@jonahsnider/prettier-config": 1.1.2
-    prettier: 2.8.5
+    prettier: 2.8.6
     prisma: 4.11.0
     turbo: 1.8.4
   languageName: unknown
@@ -9504,12 +9504,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.5":
-  version: 2.8.5
-  resolution: "prettier@npm:2.8.5"
+"prettier@npm:2.8.6":
+  version: 2.8.6
+  resolution: "prettier@npm:2.8.6"
   bin:
     prettier: bin-prettier.js
-  checksum: b7f8d30e14061e0478bc5a59d4d889688d804c173a0daa91b1b85dc08eef5eb6956d1b59f4037770776fda5b967f6c9ca3b7a8a43c50bedb4c7b182029f865aa
+  checksum: 8ac94fa67aec0e65743ea15ebf954ef2f1e52638abd129dc04e8b49e8bb3224c0233c98df6b5c98efd31bd2a43866590486559438ee4ead09dc81be389068572
   languageName: node
   linkType: hard
 
@@ -11512,11 +11512,11 @@ __metadata:
 
 "typescript@patch:typescript@5.0.2#~builtin<compat/typescript>":
   version: 5.0.2
-  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=1f5320"
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bdbf3d0aac0d6cf010fbe0536753dc19f278eb4aba88140dcd25487dfe1c56ca8b33abc0dcd42078790a939b08ebc4046f3e9bb961d77d3d2c3cfa9829da4d53
+  checksum: b63cb742fbb9aeb3085e002ad8f10d5fd963606aa4d6b3b65b4e76c396ff09739f03b5dbae08e1698c3bce9d5619d3f67aeb7ee470ed4016bd345b3cfe37b54a
   languageName: node
   linkType: hard
 
