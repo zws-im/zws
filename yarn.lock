@@ -2914,7 +2914,7 @@ __metadata:
     ts-jest: 29.0.5
     ts-node: 10.9.1
     tslib: 2.5.0
-    type-fest: 3.7.1
+    type-fest: 3.7.2
     typescript: 5.0.2
     xo: 0.53.1
     yn: 4.0.0
@@ -11403,10 +11403,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:3.7.1":
-  version: 3.7.1
-  resolution: "type-fest@npm:3.7.1"
-  checksum: a694e0d62a06a60dec0f57e2e681d2e8d301992a3abd515fcc2f8f135ca12aa4f7d4aab24532ee781e4fb7735d6cfbd127ff0337b13cdbca6ff32b74d091c403
+"type-fest@npm:3.7.2":
+  version: 3.7.2
+  resolution: "type-fest@npm:3.7.2"
+  checksum: 28f5c6eca67f01825308e19792425d1643d6f7589aa278d3a8e34caa07d9502aa54016df6b9f65bd3d51a3f2d9c002d3a739bb391d11ef2505df73e374a10b79
   languageName: node
   linkType: hard
 
