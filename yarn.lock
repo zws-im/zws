@@ -2938,7 +2938,7 @@ __metadata:
     class-transformer: 0.5.1
     class-validator: 0.14.0
     consola: 2.15.3
-    convert: 4.12.0
+    convert: 4.13.0
     dotenv: 16.0.3
     express: 4.18.2
     jest: 29.5.0
@@ -4277,10 +4277,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert@npm:4.12.0":
-  version: 4.12.0
-  resolution: "convert@npm:4.12.0"
-  checksum: b2ce0c1b3a66ad4fa7546e44e4829231cca128f4b624fdd6f732db621dd777b55c96eabb2c164bd305fe17dc3416078370ff9a7e37ef74a9ed15a438679e3328
+"convert@npm:4.13.0":
+  version: 4.13.0
+  resolution: "convert@npm:4.13.0"
+  checksum: b47de33645f3eb77cef16b1f578839590aaacbc04f970d2b206d8314300e033325d48a313cabf11c11982e976403f49f4fe5657e65a9e758f068f9d95f987d3f
   languageName: node
   linkType: hard
 
