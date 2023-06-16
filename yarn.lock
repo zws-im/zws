@@ -2939,7 +2939,7 @@ __metadata:
     class-validator: 0.14.0
     consola: 2.15.3
     convert: 4.13.0
-    dotenv: 16.1.4
+    dotenv: 16.2.0
     express: 4.18.2
     jest: 29.5.0
     millify: 6.1.0
@@ -4706,6 +4706,13 @@ __metadata:
   version: 16.1.4
   resolution: "dotenv@npm:16.1.4"
   checksum: c1b2e13df4d374a6a29e134c56c7b040ba20500677fe8b9939ea654f3b3badb9aaa0b172e40e4dfa1233a4177dbb8fb79d84cc79a50ac9c9641fe2ad98c14876
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:16.2.0":
+  version: 16.2.0
+  resolution: "dotenv@npm:16.2.0"
+  checksum: 07ff2c3bccf3f0a7bd5e991f53cc97d8d093748154f2f74d7c2c7fdf669728234670a116b37dc38458951e61ab28ed8a92050d91461a8992117aa7605c688b1d
   languageName: node
   linkType: hard
 
