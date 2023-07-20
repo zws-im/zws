@@ -40,7 +40,7 @@
 		"@nestjs/config": "3.0.0",
 		"@nestjs/core": "10.1.0",
 		"@nestjs/platform-express": "10.1.0",
-		"@nestjs/swagger": "7.1.1",
+		"@nestjs/swagger": "7.1.2",
 		"@nestjs/terminus": "10.0.1",
 		"@prisma/client": "4.16.2",
 		"@sentry/node": "7.59.3",
