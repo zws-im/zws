@@ -2920,7 +2920,7 @@ __metadata:
     change-case: 4.1.2
     class-transformer: 0.5.1
     class-validator: 0.14.0
-    consola: 2.15.3
+    consola: 3.2.3
     convert: 4.13.1
     dotenv: 16.3.1
     express: 4.18.2
@@ -4197,7 +4197,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"consola@npm:2.15.3, consola@npm:^2.15.0":
+"consola@npm:3.2.3":
+  version: 3.2.3
+  resolution: "consola@npm:3.2.3"
+  checksum: 32ec70e177dd2385c42e38078958cc7397be91db21af90c6f9faa0b16168b49b1c61d689338604bbb2d64370b9347a35f42a9197663a913d3a405bb0ce728499
+  languageName: node
+  linkType: hard
+
+"consola@npm:^2.15.0":
   version: 2.15.3
   resolution: "consola@npm:2.15.3"
   checksum: 8ef7a09b703ec67ac5c389a372a33b6dc97eda6c9876443a60d76a3076eea0259e7f67a4e54fd5a52f97df73690822d090cf8b7e102b5761348afef7c6d03e28
