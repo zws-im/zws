@@ -2952,7 +2952,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.8.7
     prisma: 4.16.2
-    turbo: 1.10.10
+    turbo: 1.10.11
   languageName: unknown
   linkType: soft
 
@@ -11360,58 +11360,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-darwin-64@npm:1.10.10"
+"turbo-darwin-64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-darwin-64@npm:1.10.11"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-darwin-arm64@npm:1.10.10"
+"turbo-darwin-arm64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-darwin-arm64@npm:1.10.11"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-linux-64@npm:1.10.10"
+"turbo-linux-64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-linux-64@npm:1.10.11"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-linux-arm64@npm:1.10.10"
+"turbo-linux-arm64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-linux-arm64@npm:1.10.11"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-windows-64@npm:1.10.10"
+"turbo-windows-64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-windows-64@npm:1.10.11"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo-windows-arm64@npm:1.10.10"
+"turbo-windows-arm64@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo-windows-arm64@npm:1.10.11"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:1.10.10":
-  version: 1.10.10
-  resolution: "turbo@npm:1.10.10"
+"turbo@npm:1.10.11":
+  version: 1.10.11
+  resolution: "turbo@npm:1.10.11"
   dependencies:
-    turbo-darwin-64: 1.10.10
-    turbo-darwin-arm64: 1.10.10
-    turbo-linux-64: 1.10.10
-    turbo-linux-arm64: 1.10.10
-    turbo-windows-64: 1.10.10
-    turbo-windows-arm64: 1.10.10
+    turbo-darwin-64: 1.10.11
+    turbo-darwin-arm64: 1.10.11
+    turbo-linux-64: 1.10.11
+    turbo-linux-arm64: 1.10.11
+    turbo-windows-64: 1.10.11
+    turbo-windows-arm64: 1.10.11
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -11427,7 +11427,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: b11665b90d1f79616c9472f0d767c6e19b3fa0f4dca9a55292ba21582f2f855def7b99e02ed90d79e5b498e5c2fa6e4c322163278db2ddc7ef0a9be9bdcbc4b9
+  checksum: caa5f4e6e6f9b340e8b44424d83b5e9b1ad478ae646d3a5cb6784dc68c420e0237a7e293e6ac7ab5776fad9d08bf886bcecb898a69f7bfb151d3446fa885ec3f
   languageName: node
   linkType: hard
 
