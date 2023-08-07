@@ -11,7 +11,7 @@ import {
 	BlockedHostnamesService,
 	blockedHostnamesService,
 } from '../blocked-hostnames/blocked-hostnames.service';
-import { configService } from '../config/config.service';
+import { ConfigService, configService } from '../config/config.service';
 import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
 import { AttemptedShortenBlockedHostnameException } from './attempted-shorten-blocked-hostname.exception';
 import { sample } from '@jonahsnider/util';
@@ -27,6 +27,7 @@ export class UrlsService {
 	constructor(
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
+		private readonly configService: ConfigService,
 	) {}
 
 	/**
@@ -93,11 +94,9 @@ export class UrlsService {
 		url: string,
 	): Promise<
 		| Short
-		| AttemptedShortenBlockedHostnameException
-		| UniqueShortIdTimeoutException
 	> {
 		if (await this.blockedHostnamesService.isHostnameBlocked(url)) {
-			return new AttemptedShortenBlockedHostnameException();
+			throw new AttemptedShortenBlockedHostnameException();
 		}
 
 		let attempts = 0;
@@ -106,7 +105,7 @@ export class UrlsService {
 
 		do {
 			if (attempts++ > UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS) {
-				return new UniqueShortIdTimeoutException(
+				throw new UniqueShortIdTimeoutException(
 					UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS,
 				);
 			}
@@ -148,12 +147,12 @@ export class UrlsService {
 	private generateShortId(): Short {
 		let shortId = '';
 
-		for (let i = 0; i < configService.shortenedLength; i++) {
-			shortId += sample(configService.characters);
+		for (let i = 0; i < this.configService.shortenedLength; i++) {
+			shortId += sample(this.configService.characters);
 		}
 
 		return shortId as Short;
 	}
 }
 
-export const urlsService = new UrlsService(prisma, blockedHostnamesService);
+export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);

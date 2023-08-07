@@ -1,4 +1,4 @@
-import { ApproximateCountKind } from '@prisma/client';
+import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { prisma } from '../prisma';
 import { StatsSchema } from './dtos/stats.dto';
 
@@ -7,13 +7,15 @@ import { StatsSchema } from './dtos/stats.dto';
 // Set some expiry date (7 days or something) and then recalculate the stats if the date is older than the expiry date
 
 export class StatsService {
+	constructor(private readonly prisma: PrismaClient) {}
+
 	async getInstanceStats(): Promise<StatsSchema> {
-		const [urls, visits] = await prisma.$transaction([
-			prisma.approximateCounts.findUnique({
+		const [urls, visits] = await this.prisma.$transaction([
+			this.prisma.approximateCounts.findUnique({
 				where: { kind: ApproximateCountKind.SHORTENED_URLS },
 				select: { count: true },
 			}),
-			prisma.approximateCounts.findUnique({
+			this.prisma.approximateCounts.findUnique({
 				where: { kind: ApproximateCountKind.VISITS },
 				select: { count: true },
 			}),
@@ -32,18 +34,18 @@ export class StatsService {
 	 * @returns The precise instant stats
 	 */
 	private async savePreciseInstanceStats(): Promise<StatsSchema> {
-		const [urls, visits] = await prisma.$transaction([
-			prisma.shortenedUrl.count({ where: { blocked: false } }),
-			prisma.visit.count({ where: { shortenedUrl: { blocked: false } } }),
+		const [urls, visits] = await this.prisma.$transaction([
+			this.prisma.shortenedUrl.count({ where: { blocked: false } }),
+			this.prisma.visit.count({ where: { shortenedUrl: { blocked: false } } }),
 		]);
 
-		await prisma.$transaction([
-			prisma.approximateCounts.upsert({
+		await this.prisma.$transaction([
+			this.prisma.approximateCounts.upsert({
 				where: { kind: ApproximateCountKind.SHORTENED_URLS },
 				update: { count: urls },
 				create: { kind: ApproximateCountKind.SHORTENED_URLS, count: urls },
 			}),
-			prisma.approximateCounts.upsert({
+			this.prisma.approximateCounts.upsert({
 				where: { kind: ApproximateCountKind.VISITS },
 				update: { count: visits },
 				create: { kind: ApproximateCountKind.VISITS, count: visits },
@@ -54,4 +56,4 @@ export class StatsService {
 	}
 }
 
-export const statsService = new StatsService();
+export const statsService = new StatsService(prisma);

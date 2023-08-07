@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { VercelKV, kv } from '@vercel/kv';
 import convert from 'convert';
-import { configService } from '../config/config.service';
+import { ConfigService, configService } from '../config/config.service';
 import { prisma } from '../prisma';
 
 export class BlockedHostnamesService {
@@ -16,11 +16,12 @@ export class BlockedHostnamesService {
 	/** A regular expression for a domain name. */
 	private static readonly DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
 
-	private readonly blockedHostnames = new Set(configService.blockedHostnames);
+	private readonly blockedHostnames = new Set(this.configService.blockedHostnames);
 
 	constructor(
 		private readonly kv: VercelKV,
 		private readonly prisma: PrismaClient,
+		private readonly configService: ConfigService,
 	) {}
 
 	async isHostnameBlocked(hostname: string): Promise<boolean> {
@@ -59,7 +60,7 @@ export class BlockedHostnamesService {
 				[hostname, domainName],
 			);
 
-			return result.some((c) => c > 0);
+			return result.some((count) => count > 0);
 		}
 
 		await this.refreshRedisCache();
@@ -94,4 +95,4 @@ export class BlockedHostnamesService {
 	}
 }
 
-export const blockedHostnamesService = new BlockedHostnamesService(kv, prisma);
+export const blockedHostnamesService = new BlockedHostnamesService(kv, prisma, configService);
