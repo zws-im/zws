@@ -52,11 +52,7 @@ export class ConfigService {
 				z
 					.string()
 					.optional()
-					.transform((characters) =>
-						characters === undefined
-							? undefined
-							: (JSON.parse(characters) as JsonValue),
-					)
+					.transform((characters) => (characters === undefined ? undefined : (JSON.parse(characters) as JsonValue)))
 					.parse(source.SHORT_CHARS),
 			);
 
@@ -85,16 +81,11 @@ export class ConfigService {
 				z
 					.string()
 					.optional()
-					.transform((rewrites) =>
-						rewrites === undefined ? {} : (JSON.parse(rewrites) as JsonValue),
-					)
+					.transform((rewrites) => (rewrites === undefined ? {} : (JSON.parse(rewrites) as JsonValue)))
 					.parse(source.SHORT_REWRITES),
 			);
 
-		this.shortenedBaseUrl = z
-			.string()
-			.optional()
-			.parse(source.SHORTENED_BASE_URL);
+		this.shortenedBaseUrl = z.string().optional().parse(source.SHORTENED_BASE_URL);
 
 		this.blockedHostnames = new Set(
 			z
@@ -104,11 +95,7 @@ export class ConfigService {
 					z
 						.string()
 						.optional()
-						.transform((hostnames) =>
-							hostnames === undefined
-								? []
-								: (JSON.parse(hostnames) as JsonValue),
-						)
+						.transform((hostnames) => (hostnames === undefined ? [] : (JSON.parse(hostnames) as JsonValue)))
 						.parse(source.BLOCKED_HOSTNAMES),
 				),
 		);

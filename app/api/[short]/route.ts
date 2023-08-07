@@ -20,10 +20,7 @@ export async function GET(
 		return params;
 	}
 	const short = params.short;
-	const query = validateQuery(
-		request,
-		z.object({ visit: QueryBooleanSchema.optional() }),
-	);
+	const query = validateQuery(request, z.object({ visit: QueryBooleanSchema.optional() }));
 	if (query instanceof NextResponse) {
 		return query;
 	}

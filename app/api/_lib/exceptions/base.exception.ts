@@ -8,11 +8,7 @@ export class BaseHttpException extends Error {
 	readonly code: ExceptionCode | undefined;
 	readonly statusCode: number;
 
-	constructor(
-		message: string,
-		statusCode: number,
-		code: ExceptionCode | undefined,
-	) {
+	constructor(message: string, statusCode: number, code: ExceptionCode | undefined) {
 		super(message);
 
 		this.code = code;

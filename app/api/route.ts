@@ -21,19 +21,14 @@ function shortIdToShortenedUrlDto(short: Short): ShortenedUrlSchema {
 	return { short };
 }
 
-export async function POST(
-	request: NextRequest,
-): Promise<NextResponse<ShortenedUrlSchema | ExceptionSchema>> {
+export async function POST(request: NextRequest): Promise<NextResponse<ShortenedUrlSchema | ExceptionSchema>> {
 	const longUrl = await validateBody(request, LongUrlSchema);
 
 	let id: Short;
 	try {
 		id = await urlsService.shortenUrl(longUrl.url);
 	} catch (error) {
-		if (
-			error instanceof UniqueShortIdTimeoutException ||
-			error instanceof AttemptedShortenBlockedHostnameException
-		) {
+		if (error instanceof UniqueShortIdTimeoutException || error instanceof AttemptedShortenBlockedHostnameException) {
 			return error.toResponse();
 		}
 

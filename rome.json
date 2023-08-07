@@ -3,6 +3,9 @@
 	"organizeImports": {
 		"enabled": false
 	},
+	"formatter": {
+		"lineWidth": 120
+	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single"

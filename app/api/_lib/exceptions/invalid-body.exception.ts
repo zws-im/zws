@@ -7,10 +7,6 @@ import { ExceptionCode } from './enums/exceptions.enum';
 
 export class InvalidBodyException extends BaseHttpException {
 	constructor(zodError: z.ZodError<unknown>) {
-		super(
-			fromZodError(zodError).message,
-			Http.Status.UnprocessableEntity,
-			ExceptionCode.InvalidPathParams,
-		);
+		super(fromZodError(zodError).message, Http.Status.UnprocessableEntity, ExceptionCode.InvalidPathParams);
 	}
 }

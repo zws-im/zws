@@ -1,16 +1,8 @@
-import {
-	ApproximateCountKind,
-	Prisma,
-	PrismaClient,
-	ShortenedUrl,
-} from '@prisma/client';
+import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
 import { prisma } from '../prisma';
 import { Base64, Short } from './interfaces/urls.interface';
 import { VisitUrlData } from './interfaces/visit-url-data.interface';
-import {
-	BlockedHostnamesService,
-	blockedHostnamesService,
-} from '../blocked-hostnames/blocked-hostnames.service';
+import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
 import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
 import { AttemptedShortenBlockedHostnameException } from './attempted-shorten-blocked-hostname.exception';
@@ -49,10 +41,7 @@ export class UrlsService {
 			return undefined;
 		}
 
-		if (
-			shortenedUrl.blocked ||
-			(await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))
-		) {
+		if (shortenedUrl.blocked || (await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))) {
 			return {
 				longUrl: undefined,
 				blocked: true,
@@ -83,9 +72,7 @@ export class UrlsService {
 
 		do {
 			if (attempts++ > UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS) {
-				throw new UniqueShortIdTimeoutException(
-					UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS,
-				);
+				throw new UniqueShortIdTimeoutException(UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS);
 			}
 
 			id = this.generateShortId();
@@ -102,10 +89,7 @@ export class UrlsService {
 				]);
 			} catch (error) {
 				// https://www.prisma.io/docs/reference/api-reference/error-reference#p2002
-				if (
-					error instanceof Prisma.PrismaClientKnownRequestError &&
-					error.code === 'P2002'
-				) {
+				if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
 					// Ignore the expected potential duplicate ID errors
 				} else {
 					throw error;
@@ -133,8 +117,4 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(
-	prisma,
-	blockedHostnamesService,
-	configService,
-);
+export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);

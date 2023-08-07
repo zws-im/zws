@@ -7,10 +7,6 @@ import { ExceptionCode } from './enums/exceptions.enum';
 
 export class InvalidQueryParamsException extends BaseHttpException {
 	constructor(zodError: z.ZodError<unknown>) {
-		super(
-			fromZodError(zodError).message,
-			Http.Status.UnprocessableEntity,
-			ExceptionCode.InvalidQueryParams,
-		);
+		super(fromZodError(zodError).message, Http.Status.UnprocessableEntity, ExceptionCode.InvalidQueryParams);
 	}
 }
