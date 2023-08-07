@@ -9,6 +9,7 @@ import { UrlNotFoundException } from '../_lib/urls/exceptions/url-not-found.exce
 import { urlsService } from '../_lib/urls/urls.service';
 import { QueryBooleanSchema } from '../_lib/util/dtos/query-boolean.dto';
 import { validateParams, validateQuery } from '../_lib/util/validate-request';
+import { urlStatsService } from '../_lib/url-stats/url-stats.service';
 
 export async function GET(
 	request: NextRequest,
@@ -38,7 +39,7 @@ export async function GET(
 	}
 
 	if (query.visit) {
-		await urlsService.trackUrlVisit(short);
+		await urlStatsService.trackUrlVisit(short);
 
 		redirect(url.longUrl);
 	}

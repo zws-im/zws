@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { prisma } from '../prisma';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
@@ -37,6 +37,24 @@ export class UrlStatsService {
 		}
 
 		return undefined;
+	}
+
+	/**
+	 * Tracks a URL visit.
+	 * @param id - The ID of the shortened URL
+	 */
+	async trackUrlVisit(id: Short): Promise<void> {
+		const encodedId = UrlsService.encode(id);
+
+		await this.prisma.$transaction([
+			this.prisma.visit.create({
+				data: { shortenedUrl: { connect: { shortBase64: encodedId } } },
+			}),
+			this.prisma.approximateCounts.update({
+				where: { kind: ApproximateCountKind.VISITS },
+				data: { count: { increment: 1 } },
+			}),
+		]);
 	}
 }
 

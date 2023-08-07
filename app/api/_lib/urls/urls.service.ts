@@ -66,24 +66,6 @@ export class UrlsService {
 	}
 
 	/**
-	 * Tracks a URL visit.
-	 * @param id - The ID of the shortened URL
-	 */
-	async trackUrlVisit(id: Short): Promise<void> {
-		const encodedId = UrlsService.encode(id);
-
-		await this.prisma.$transaction([
-			this.prisma.visit.create({
-				data: { shortenedUrl: { connect: { shortBase64: encodedId } } },
-			}),
-			this.prisma.approximateCounts.update({
-				where: { kind: ApproximateCountKind.VISITS },
-				data: { count: { increment: 1 } },
-			}),
-		]);
-	}
-
-	/**
 	 * Shorten a long URL.
 	 *
 	 * @param url - The long URL to shorten
