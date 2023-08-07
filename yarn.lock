@@ -26,6 +26,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/util@npm:10.0.1":
+  version: 10.0.1
+  resolution: "@jonahsnider/util@npm:10.0.1"
+  checksum: ff61e52e0c9dcf06cfdb0b9c431647cc1ac7e1aa1411cbdf2bb8300634f2d7189009ff89d4cd750babc37c89cb5485dede8b0fd9d74016d1ccbdbdd0f9a2375d
+  languageName: node
+  linkType: hard
+
 "@jridgewell/gen-mapping@npm:^0.3.2":
   version: 0.3.3
   resolution: "@jridgewell/gen-mapping@npm:0.3.3"
@@ -319,6 +326,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/zws@workspace:."
   dependencies:
+    "@jonahsnider/util": 10.0.1
     "@prisma/client": 5.1.1
     "@types/node": 20.4.8
     "@types/react": 18.2.18
@@ -331,6 +339,7 @@ __metadata:
     react-dom: 18.2.0
     rome: 12.1.3
     tailwindcss: 3.3.3
+    type-fest: 4.1.0
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -2158,6 +2167,13 @@ __metadata:
   version: 2.6.1
   resolution: "tslib@npm:2.6.1"
   checksum: b0d176d176487905b66ae4d5856647df50e37beea7571c53b8d10ba9222c074b81f1410fb91da13debaf2cbc970663609068bdebafa844ea9d69b146527c38fe
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:4.1.0":
+  version: 4.1.0
+  resolution: "type-fest@npm:4.1.0"
+  checksum: a9cfa9b70abaa96d7e80709aeb2197a372c2caa54d134afdb8ae955de9457aba04a71d17d68dccbb745c96f4c5bfd372da1222d8b44d70f4809074620016507c
   languageName: node
   linkType: hard
 
