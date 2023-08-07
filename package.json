@@ -15,38 +15,32 @@
 		"email": "jonah@jonah.pw",
 		"url": "https://jonahsnider.com"
 	},
-	"type": "module",
-	"workspaces": [
-		"packages/*",
-		"apps/*"
-	],
 	"scripts": {
-		"build": "turbo run build --",
-		"clean": "turbo run clean",
-		"lint": "turbo run lint --",
-		"migrations": "prisma migrate deploy",
-		"start": "yarn workspace @zws.im/api start",
-		"style": "turbo run style --",
-		"style-prisma": "yarn run prisma format && git diff --exit-code -s prisma/schema.prisma",
-		"test": "yarn validate-prisma && yarn style-prisma && turbo run build style lint test test:e2e",
+		"build": "next build",
+		"dev": "next dev",
+		"lint": "next lint",
+		"start": "next start",
 		"validate-prisma": "prisma validate"
 	},
-	"prettier": "@jonahsnider/prettier-config",
-	"dependencies": {
-		"prisma": "4.16.2"
+	"resolutions": {
+		"@google-cloud/profiler@5.0.2": "patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch"
 	},
-	"devDependencies": {
-		"@changesets/changelog-github": "0.4.8",
-		"@changesets/cli": "2.26.2",
-		"@jonahsnider/prettier-config": "1.1.2",
-		"prettier": "2.8.7",
-		"turbo": "1.10.12"
+	"dependencies": {
+		"@prisma/client": "4.16.2",
+		"@types/node": "20.4.8",
+		"@types/react": "18.2.18",
+		"@types/react-dom": "18.2.7",
+		"autoprefixer": "10.4.14",
+		"next": "13.4.13",
+		"postcss": "8.4.27",
+		"prisma": "4.16.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"tailwindcss": "3.3.3",
+		"typescript": "5.1.6"
 	},
 	"engines": {
 		"node": "18.x"
 	},
-	"packageManager": "yarn@3.6.1",
-	"resolutions": {
-		"@google-cloud/profiler@5.0.2": "patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch"
-	}
+	"packageManager": "yarn@3.6.1"
 }
