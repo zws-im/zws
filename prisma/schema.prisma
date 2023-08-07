@@ -3,9 +3,9 @@
 
 datasource db {
   provider          = "postgresql"
-  url               = env("DATABASE_PRISMA_URL")
-  directUrl         = env("DATABASE_URL_NON_POOLING")
-  shadowDatabaseUrl = env("DATABASE_URL_NON_POOLING")
+  url               = env("POSTGRES_PRISMA_URL")
+  directUrl         = env("POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 generator client {
