@@ -1,9 +1,12 @@
+import { PrismaClient } from '@prisma/client';
 import { prisma } from '../../prisma';
 import { Short } from '../interfaces/urls.interface';
 import { UrlsService } from '../urls.service';
 import { UrlStats } from './dtos/url-stats.dto';
 
 export class UrlStatsService {
+	constructor(private readonly prisma: PrismaClient) {}
+
 	/**
 	 * Retrieve usage statistics for a shortened URL.
 	 *
@@ -14,13 +17,13 @@ export class UrlStatsService {
 	async statsForUrl(id: Short): Promise<UrlStats | undefined> {
 		const encodedId = UrlsService.encode(id);
 
-		const [visits, shortenedUrl] = await prisma.$transaction([
-			prisma.visit.findMany({
+		const [visits, shortenedUrl] = await this.prisma.$transaction([
+			this.prisma.visit.findMany({
 				where: { shortenedUrlId: encodedId },
 				select: { timestamp: true },
 				orderBy: { timestamp: 'asc' },
 			}),
-			prisma.shortenedUrl.findUnique({
+			this.prisma.shortenedUrl.findUnique({
 				where: { shortBase64: encodedId },
 				select: { url: true },
 			}),
@@ -37,4 +40,4 @@ export class UrlStatsService {
 	}
 }
 
-export const urlStatsService = new UrlStatsService();
+export const urlStatsService = new UrlStatsService(prisma);
