@@ -1,0 +1,3 @@
+{
+	"buildCommand": "prisma generate && prisma db push && yarn build"
+}
