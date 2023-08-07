@@ -1,9 +1,9 @@
 import { Http } from '@jonahsnider/util';
-import { BaseException } from './base.exception';
-import { ExceptionCode } from './enums/exceptions.enum';
+import { BaseHttpException } from '../exceptions/base.exception';
+import { ExceptionCode } from '../exceptions/enums/exceptions.enum';
 
 /** You tried to shorten a blocked hostname. */
-export class AttemptedShortenBlockedHostnameException extends BaseException {
+export class AttemptedShortenBlockedHostnameException extends BaseHttpException {
 	constructor() {
 		super(
 			"Shortening that hostname is forbidden",

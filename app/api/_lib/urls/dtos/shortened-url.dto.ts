@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ShortSchema } from '../[short]/dtos/short.dto';
+import { ShortSchema } from './short.dto';
 
 export const ShortenedUrlSchema = z.object({
 	short: ShortSchema,

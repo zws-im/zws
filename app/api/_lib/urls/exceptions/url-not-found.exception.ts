@@ -1,9 +1,9 @@
-import { BaseException } from '@/app/api/exceptions/base.exception';
-import { ExceptionCode } from '@/app/api/exceptions/enums/exceptions.enum';
 import { Http } from '@jonahsnider/util';
+import { BaseHttpException } from '../../exceptions/base.exception';
+import { ExceptionCode } from '../../exceptions/enums/exceptions.enum';
 
 /** Shortened URL not found in database. */
-export class UrlNotFoundException extends BaseException {
+export class UrlNotFoundException extends BaseHttpException {
 	constructor() {
 		super(
 			'Shortened URL not found in database',

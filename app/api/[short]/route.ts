@@ -1,14 +1,14 @@
 import { redirect } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { ExceptionSchema } from '../dtos/exception.dto';
-import { QueryBooleanSchema } from '../util/dtos/query-boolean.dto';
-import { validateParams, validateQuery } from '../util/validate-request';
-import { LongUrlSchema } from './dtos/long-url-dto';
-import { ShortSchema } from './dtos/short.dto';
-import { UrlBlockedException } from './exceptions/url-blocked.exception';
-import { UrlNotFoundException } from './exceptions/url-not-found.exception';
-import { urlsService } from '../urls.service';
+import { ExceptionSchema } from '../_lib/dtos/exception.dto';
+import { LongUrlSchema } from '../_lib/urls/dtos/long-url-dto';
+import { ShortSchema } from '../_lib/urls/dtos/short.dto';
+import { UrlBlockedException } from '../_lib/urls/exceptions/url-blocked.exception';
+import { UrlNotFoundException } from '../_lib/urls/exceptions/url-not-found.exception';
+import { urlsService } from '../_lib/urls/urls.service';
+import { QueryBooleanSchema } from '../_lib/util/dtos/query-boolean.dto';
+import { validateParams, validateQuery } from '../_lib/util/validate-request';
 
 export async function GET(
 	request: NextRequest,

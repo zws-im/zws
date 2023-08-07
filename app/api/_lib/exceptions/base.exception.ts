@@ -3,7 +3,7 @@ import { STATUS_CODES } from 'node:http';
 import { ExceptionSchema } from '../dtos/exception.dto';
 import { ExceptionCode } from './enums/exceptions.enum';
 
-export class BaseException extends Error {
+export class BaseHttpException extends Error {
 	readonly error: string;
 	readonly code: ExceptionCode | undefined;
 	readonly statusCode: number;
@@ -17,7 +17,7 @@ export class BaseException extends Error {
 
 		this.code = code;
 		this.statusCode = statusCode;
-		this.error = STATUS_CODES[statusCode] ?? BaseException.name;
+		this.error = STATUS_CODES[statusCode] ?? BaseHttpException.name;
 	}
 
 	toResponse(): NextResponse<ExceptionSchema> {

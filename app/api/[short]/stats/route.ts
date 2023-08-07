@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { validateParams } from '../../util/validate-request';
-import { ShortSchema } from '../dtos/short.dto';
-import { UrlNotFoundException } from '../exceptions/url-not-found.exception';
-import { UrlStats } from './dtos/url-stats.dto';
-import { urlStatsService } from './url-stats.service';
-import { ExceptionSchema } from '../../dtos/exception.dto';
 import { z } from 'zod';
+import { ExceptionSchema } from '../../_lib/dtos/exception.dto';
+import { UrlStats } from '../../_lib/url-stats/dtos/url-stats.dto';
+import { urlStatsService } from '../../_lib/url-stats/url-stats.service';
+import { ShortSchema } from '../../_lib/urls/dtos/short.dto';
+import { UrlNotFoundException } from '../../_lib/urls/exceptions/url-not-found.exception';
+import { validateParams } from '../../_lib/util/validate-request';
 
 export async function GET(
 	request: NextRequest,

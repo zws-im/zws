@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { LongUrlSchema } from '../../dtos/long-url-dto';
+import { LongUrlSchema } from '../../urls/dtos/long-url-dto';
 
 export const UrlStats = z.object({
 	url: LongUrlSchema.shape.url,

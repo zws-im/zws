@@ -4,16 +4,16 @@ import {
 	PrismaClient,
 	ShortenedUrl,
 } from '@prisma/client';
-import { prisma } from './prisma';
-import { Base64, Short } from './[short]/interfaces/urls.interface';
-import { VisitUrlData } from './[short]/interfaces/visit-url-data.interface';
+import { prisma } from '../prisma';
+import { Base64, Short } from './interfaces/urls.interface';
+import { VisitUrlData } from './interfaces/visit-url-data.interface';
 import {
 	BlockedHostnamesService,
 	blockedHostnamesService,
-} from './[short]/blocked-hostnames.service';
-import { configService } from './config/config.service';
-import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
-import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
+} from '../blocked-hostnames/blocked-hostnames.service';
+import { configService } from '../config/config.service';
+import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
+import { AttemptedShortenBlockedHostnameException } from './attempted-shorten-blocked-hostname.exception';
 import { sample } from '@jonahsnider/util';
 
 export class UrlsService {
@@ -89,9 +89,15 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
-	async shortenUrl(url: string): Promise<Short> {
+	async shortenUrl(
+		url: string,
+	): Promise<
+		| Short
+		| AttemptedShortenBlockedHostnameException
+		| UniqueShortIdTimeoutException
+	> {
 		if (await this.blockedHostnamesService.isHostnameBlocked(url)) {
-			throw new AttemptedShortenBlockedHostnameException();
+			return new AttemptedShortenBlockedHostnameException();
 		}
 
 		let attempts = 0;
@@ -100,7 +106,7 @@ export class UrlsService {
 
 		do {
 			if (attempts++ > UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS) {
-				throw new UniqueShortIdTimeoutException(
+				return new UniqueShortIdTimeoutException(
 					UrlsService.MAX_SHORT_ID_GENERATION_ATTEMPTS,
 				);
 			}

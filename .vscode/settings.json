@@ -7,6 +7,7 @@
 		"**/*.code-search": true,
 		".yarn/**": true
 	},
+	"typescript.preferences.importModuleSpecifier": "shortest",
 	"editor.defaultFormatter": "rome.rome",
 	"[javascript]": {
 		"editor.defaultFormatter": "rome.rome"

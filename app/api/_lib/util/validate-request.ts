@@ -3,6 +3,7 @@ import { Schema, z } from 'zod';
 import { ExceptionSchema } from '../dtos/exception.dto';
 import { InvalidPathParamException } from '../exceptions/invalid-path-param.exception';
 import { InvalidQueryParamsException } from '../exceptions/invalid-query-param.exception';
+import { InvalidBodyException } from '../exceptions/invalid-body.exception';
 
 export function validateQuery<T extends Schema>(
 	request: NextRequest,
@@ -44,5 +45,5 @@ export async function validateBody<T extends Schema>(
 		return result.data;
 	}
 
-	return new InvalidQueryParamsException(result.error).toResponse();
+	return new InvalidBodyException(result.error).toResponse();
 }

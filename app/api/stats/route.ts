@@ -1,8 +1,8 @@
+import { StatsSchema } from '@/app/api/_lib/stats/dtos/stats.dto';
+import { statsService } from '@/app/api/_lib/stats/stats.service';
 import { NextResponse } from 'next/server';
-import { Stats } from './interfaces/stats.interface';
-import { statsService } from './stats.service';
 
-export async function GET(): Promise<NextResponse<Stats>> {
+export async function GET(): Promise<NextResponse<StatsSchema>> {
 	const stats = await statsService.getInstanceStats();
 
 	return NextResponse.json(stats);
