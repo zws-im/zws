@@ -6,7 +6,7 @@ import { ExceptionCode } from '../exceptions/enums/exceptions.enum';
 export class AttemptedShortenBlockedHostnameException extends BaseHttpException {
 	constructor() {
 		super(
-			"Shortening that hostname is forbidden",
+			'Shortening that hostname is forbidden',
 			Http.Status.UnprocessableEntity,
 			ExceptionCode.ShortenBlockedHostname,
 		);

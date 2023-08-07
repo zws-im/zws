@@ -16,7 +16,9 @@ export class BlockedHostnamesService {
 	/** A regular expression for a domain name. */
 	private static readonly DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
 
-	private readonly blockedHostnames = new Set(this.configService.blockedHostnames);
+	private readonly blockedHostnames = new Set(
+		this.configService.blockedHostnames,
+	);
 
 	constructor(
 		private readonly kv: VercelKV,
@@ -95,4 +97,8 @@ export class BlockedHostnamesService {
 	}
 }
 
-export const blockedHostnamesService = new BlockedHostnamesService(kv, prisma, configService);
+export const blockedHostnamesService = new BlockedHostnamesService(
+	kv,
+	prisma,
+	configService,
+);

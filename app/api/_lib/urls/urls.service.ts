@@ -72,11 +72,7 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
-	async shortenUrl(
-		url: string,
-	): Promise<
-		| Short
-	> {
+	async shortenUrl(url: string): Promise<Short> {
 		if (await this.blockedHostnamesService.isHostnameBlocked(url)) {
 			throw new AttemptedShortenBlockedHostnameException();
 		}
@@ -137,4 +133,8 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);
+export const urlsService = new UrlsService(
+	prisma,
+	blockedHostnamesService,
+	configService,
+);
