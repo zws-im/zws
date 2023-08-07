@@ -26,18 +26,20 @@
 		"@google-cloud/profiler@5.0.2": "patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch"
 	},
 	"dependencies": {
-		"@prisma/client": "4.16.2",
+		"@prisma/client": "5.1.1",
 		"@types/node": "20.4.8",
 		"@types/react": "18.2.18",
 		"@types/react-dom": "18.2.7",
 		"autoprefixer": "10.4.14",
 		"next": "13.4.13",
 		"postcss": "8.4.27",
-		"prisma": "4.16.2",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"tailwindcss": "3.3.3",
 		"typescript": "5.1.6"
+	},
+	"devDependencies": {
+		"prisma": "5.1.1"
 	},
 	"engines": {
 		"node": "18.x"
