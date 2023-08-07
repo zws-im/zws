@@ -35,7 +35,7 @@ export async function GET(
 		return new UrlBlockedException().toResponse();
 	}
 
-	if (query.visit) {
+	if (query.visit !== false) {
 		await urlStatsService.trackUrlVisit(short);
 
 		redirect(url.longUrl);
