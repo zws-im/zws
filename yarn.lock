@@ -1067,9 +1067,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/profiler@npm:5.0.2":
-  version: 5.0.2
-  resolution: "@google-cloud/profiler@npm:5.0.2"
+"@google-cloud/profiler@npm:5.0.5":
+  version: 5.0.5
+  resolution: "@google-cloud/profiler@npm:5.0.5"
   dependencies:
     "@google-cloud/common": ^4.0.0
     "@google-cloud/logging-min": ^10.0.0
@@ -1080,34 +1080,12 @@ __metadata:
     extend: ^3.0.2
     gcp-metadata: ^4.0.0
     parse-duration: ^1.0.0
-    pprof: 3.2.0
+    pprof: 3.2.1
     pretty-ms: ^7.0.0
-    protobufjs: ~7.0.0
+    protobufjs: ~7.2.4
     semver: ^7.0.0
     teeny-request: ^8.0.0
-  checksum: e266895f3735001ed6213de091964f45afb117e47b34cfb2a35932e2eeea89542fac2d42104c88fb961d2a79bbc9f6501e34fca6ec07fd4eb39e2fbc602c3e5e
-  languageName: node
-  linkType: hard
-
-"@google-cloud/profiler@patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch::locator=%40zws.im%2Fzws%40workspace%3A.":
-  version: 5.0.2
-  resolution: "@google-cloud/profiler@patch:@google-cloud/profiler@npm%3A5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch::version=5.0.2&hash=58c059&locator=%40zws.im%2Fzws%40workspace%3A."
-  dependencies:
-    "@google-cloud/common": ^4.0.0
-    "@google-cloud/logging-min": ^10.0.0
-    "@types/console-log-level": ^1.4.0
-    "@types/semver": ^7.0.0
-    console-log-level: ^1.4.0
-    delay: ^5.0.0
-    extend: ^3.0.2
-    gcp-metadata: ^4.0.0
-    parse-duration: ^1.0.0
-    pprof: 3.2.0
-    pretty-ms: ^7.0.0
-    protobufjs: ~7.0.0
-    semver: ^7.0.0
-    teeny-request: ^8.0.0
-  checksum: 06de5d5645a56fbc904ce3fe3c294c31f1d1336f6fa8de3486db59ecdf7a89f620f33c50359c285f33cdc34cfc5b77a790f261547056543f6810f2c0448031f0
+  checksum: d825423b9bd81dad157102dfe702730016a61ee1d148d409ad78b5f8a3224ec59e5abe5f0c9358f93ee6def468a9a24fd849866545a62c2adf742dc754e82cbd
   languageName: node
   linkType: hard
 
@@ -2936,7 +2914,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/api@workspace:apps/api"
   dependencies:
-    "@google-cloud/profiler": 5.0.2
+    "@google-cloud/profiler": 5.0.5
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 10.0.1
     "@jonahsnider/xo-config": 5.3.0
@@ -9521,9 +9499,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pprof@npm:3.2.0":
-  version: 3.2.0
-  resolution: "pprof@npm:3.2.0"
+"pprof@npm:3.2.1":
+  version: 3.2.1
+  resolution: "pprof@npm:3.2.1"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.0
     bindings: ^1.2.1
@@ -9533,10 +9511,10 @@ __metadata:
     node-gyp: latest
     p-limit: ^3.0.0
     pify: ^5.0.0
-    protobufjs: ~6.11.0
+    protobufjs: ~7.2.4
     source-map: ^0.7.3
     split: ^1.0.1
-  checksum: 91c3304c94f0ebabf9bedda0d397f5cbc4068302b73bc00c59f304ab368a16a79abd77179f8f8d4ffd7b39f128e9c46f0a269bcbe73b0f6044d0f4b6d0189bc3
+  checksum: 2b7c9b16840bfc5c1673266588af0ac63bc28cf7022016994dd18d0d5013499f1299cd082bf30232d391113dfc8011e374ffd470129dd302a4c8388b2dfed5f4
   languageName: node
   linkType: hard
 
@@ -9716,7 +9694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:7.0.0, protobufjs@npm:^7.0.0, protobufjs@npm:~7.0.0":
+"protobufjs@npm:7.0.0, protobufjs@npm:^7.0.0":
   version: 7.0.0
   resolution: "protobufjs@npm:7.0.0"
   dependencies:
@@ -9737,9 +9715,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobufjs@npm:~6.11.0":
-  version: 6.11.3
-  resolution: "protobufjs@npm:6.11.3"
+"protobufjs@npm:~7.2.4":
+  version: 7.2.4
+  resolution: "protobufjs@npm:7.2.4"
   dependencies:
     "@protobufjs/aspromise": ^1.1.2
     "@protobufjs/base64": ^1.1.2
@@ -9751,13 +9729,9 @@ __metadata:
     "@protobufjs/path": ^1.1.2
     "@protobufjs/pool": ^1.1.0
     "@protobufjs/utf8": ^1.1.0
-    "@types/long": ^4.0.1
     "@types/node": ">=13.7.0"
-    long: ^4.0.0
-  bin:
-    pbjs: bin/pbjs
-    pbts: bin/pbts
-  checksum: 4a6ce1964167e4c45c53fd8a312d7646415c777dd31b4ba346719947b88e61654912326101f927da387d6b6473ab52a7ea4f54d6f15d63b31130ce28e2e15070
+    long: ^5.0.0
+  checksum: a952cdf2a5e5250c16ae651b570849b6f5b20a5475c3eef63ffb290ad239aa2916adfc1cc676f7fc93c69f48113df268761c0c246f7f023118c85bdd1a170044
   languageName: node
   linkType: hard
 
