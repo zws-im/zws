@@ -2,13 +2,17 @@ import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { prisma } from '../prisma';
 import { Base64, Short } from './interfaces/urls.interface';
 import { VisitUrlData } from './interfaces/visit-url-data.interface';
+import { BlockedHostnamesService, blockedHostnamesService } from './blocked-hostnames.service';
 
 export class UrlsService {
 	static encode(value: string): Base64 {
 		return Buffer.from(value).toString('base64') as Base64;
 	}
 
-	constructor(private readonly prisma: PrismaClient) {}
+	constructor(
+		private readonly prisma: PrismaClient,
+		private readonly blockedHostnamesService: BlockedHostnamesService,
+	) {}
 
 	/**
 	 * Retrieve a shortened URL.
@@ -29,7 +33,10 @@ export class UrlsService {
 			return undefined;
 		}
 
-		if (shortenedUrl.blocked) {
+		if (
+			shortenedUrl.blocked ||
+			(await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))
+		) {
 			return {
 				longUrl: undefined,
 				blocked: true,
@@ -61,4 +68,4 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(prisma);
+export const urlsService = new UrlsService(prisma, blockedHostnamesService);
