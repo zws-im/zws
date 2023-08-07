@@ -1,16 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { UrlStats } from './interfaces/url-stats.interface';
+
+import { validateParams } from '../../util/validate-request';
+import { ShortSchema } from '../dtos/short.dto';
+import { UrlNotFoundException } from '../exceptions/url-not-found.exception';
+import { UrlStats } from './dtos/url-stats.dto';
 import { urlStatsService } from './url-stats.service';
-import { Short } from '../interfaces/urls.interface';
-import { UrlNotFoundException } from './exceptions/url-not-found.exception';
-import { ExceptionBody } from '../../exceptions/interfaces/exception.interface';
+import { ExceptionSchema } from '../../dtos/exception.dto';
+import { z } from 'zod';
 
 export async function GET(
 	request: NextRequest,
-	{ params }: { params: { short: Short } },
-): Promise<NextResponse<UrlStats | ExceptionBody>> {
-	const short = params.short;
-	const stats = await urlStatsService.statsForUrl(short);
+	context: { params: { short: string } },
+): Promise<NextResponse<UrlStats | ExceptionSchema>> {
+	const params = validateParams(context, z.object({ short: ShortSchema }));
+	if (params instanceof NextResponse) {
+		return params;
+	}
+	const stats = await urlStatsService.statsForUrl(params.short);
 
 	if (!stats) {
 		return new UrlNotFoundException().toResponse();

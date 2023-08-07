@@ -1,14 +1,18 @@
 import { NextResponse } from 'next/server';
 import { STATUS_CODES } from 'node:http';
+import { ExceptionSchema } from '../dtos/exception.dto';
 import { ExceptionCode } from './enums/exceptions.enum';
-import { ExceptionBody } from './interfaces/exception.interface';
 
 export class BaseException extends Error {
 	readonly error: string;
 	readonly code: ExceptionCode | undefined;
 	readonly statusCode: number;
 
-	constructor(message: string, statusCode: number, code: T | undefined) {
+	constructor(
+		message: string,
+		statusCode: number,
+		code: ExceptionCode | undefined,
+	) {
 		super(message);
 
 		this.code = code;
@@ -16,7 +20,7 @@ export class BaseException extends Error {
 		this.error = STATUS_CODES[statusCode] ?? BaseException.name;
 	}
 
-	toResponse(): NextResponse<ExceptionBody> {
+	toResponse(): NextResponse<ExceptionSchema> {
 		return NextResponse.json(
 			{
 				statusCode: this.statusCode,

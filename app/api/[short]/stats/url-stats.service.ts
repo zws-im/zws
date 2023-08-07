@@ -1,7 +1,7 @@
 import { prisma } from '../../prisma';
 import { Short } from '../interfaces/urls.interface';
 import { UrlsService } from '../urls.service';
-import { UrlStats } from './interfaces/url-stats.interface';
+import { UrlStats } from './dtos/url-stats.dto';
 
 export class UrlStatsService {
 	/**
