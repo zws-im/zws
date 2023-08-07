@@ -252,3 +252,6 @@ service-account-key.json
 
 # Turbo
 .turbo
+
+# Vercel
+.vercel
