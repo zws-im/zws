@@ -31,3 +31,18 @@ export function validateParams<T extends Schema>(
 
 	return new InvalidQueryParamsException(result.error).toResponse();
 }
+
+export async function validateBody<T extends Schema>(
+	request: NextRequest,
+	schema: T,
+): Promise<NextResponse<ExceptionSchema> | z.infer<T>> {
+	const body = await request.json();
+
+	const result = schema.safeParse(body);
+
+	if (result.success) {
+		return result.data;
+	}
+
+	return new InvalidQueryParamsException(result.error).toResponse();
+}

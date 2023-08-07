@@ -8,7 +8,7 @@ import { LongUrlSchema } from './dtos/long-url-dto';
 import { ShortSchema } from './dtos/short.dto';
 import { UrlBlockedException } from './exceptions/url-blocked.exception';
 import { UrlNotFoundException } from './exceptions/url-not-found.exception';
-import { urlsService } from './urls.service';
+import { urlsService } from '../urls.service';
 
 export async function GET(
 	request: NextRequest,
