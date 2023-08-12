@@ -1,14 +1,16 @@
 import { Http } from '@jonahsnider/util';
 import { NextRequest, NextResponse } from 'next/server';
+import { authorizationService } from './_lib/authorization/authorization.service';
+import { Action } from './_lib/authorization/enums/action.enum';
 import { configService } from './_lib/config/config.service';
 import { ExceptionSchema } from './_lib/dtos/exception.dto';
+import { AttemptedShortenBlockedHostnameException } from './_lib/urls/attempted-shorten-blocked-hostname.exception';
 import { LongUrlSchema } from './_lib/urls/dtos/long-url-dto';
 import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
 import { Short } from './_lib/urls/interfaces/urls.interface';
+import { UniqueShortIdTimeoutException } from './_lib/urls/unique-short-id-timeout.exception';
 import { urlsService } from './_lib/urls/urls.service';
 import { validateBody } from './_lib/util/validate-request';
-import { UniqueShortIdTimeoutException } from './_lib/urls/unique-short-id-timeout.exception';
-import { AttemptedShortenBlockedHostnameException } from './_lib/urls/attempted-shorten-blocked-hostname.exception';
 
 function shortIdToShortenedUrlDto(short: Short): ShortenedUrlSchema {
 	if (configService.shortenedBaseUrl) {
@@ -22,6 +24,11 @@ function shortIdToShortenedUrlDto(short: Short): ShortenedUrlSchema {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<ShortenedUrlSchema | ExceptionSchema>> {
+	const authError = authorizationService.assertPermissions(request, Action.ShortenUrl);
+	if (authError) {
+		return authError;
+	}
+
 	const longUrl = await validateBody(request, LongUrlSchema);
 
 	let id: Short;

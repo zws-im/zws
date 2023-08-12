@@ -42,6 +42,11 @@ export class ConfigService {
 	public readonly shortCharRewrites: Readonly<Record<string, string>>;
 	public readonly shortenedBaseUrl: string | undefined;
 	public readonly blockedHostnames: ReadonlySet<string>;
+	/**
+	 * The API key for regular users.
+	 * In the future an admin API key may also be configured, which is why there is a distinction.
+	 */
+	public readonly userApiKey: string | undefined;
 
 	constructor(source: Readonly<Record<string, unknown>>) {
 		this.characters = z
@@ -99,6 +104,8 @@ export class ConfigService {
 						.parse(source.BLOCKED_HOSTNAMES),
 				),
 		);
+
+		this.userApiKey = z.string().min(1).optional().parse(source.API_KEY);
 	}
 }
 
