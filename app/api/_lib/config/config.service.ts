@@ -1,5 +1,6 @@
 import { JsonValue } from 'type-fest';
 import { z } from 'zod';
+import pkg from '../../../../package.json';
 
 const DEFAULT_SHORT_CHARS: readonly string[] = [
 	'\u200C',
@@ -47,6 +48,7 @@ export class ConfigService {
 	 * In the future an admin API key may also be configured, which is why there is a distinction.
 	 */
 	public readonly userApiKey: string | undefined;
+	public readonly version: string = pkg.version;
 
 	constructor(source: Readonly<Record<string, unknown>>) {
 		this.characters = z
