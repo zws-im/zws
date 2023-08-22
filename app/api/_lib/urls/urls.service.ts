@@ -7,6 +7,7 @@ import { ConfigService, configService } from '../config/config.service';
 import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
 import { AttemptedShortenBlockedHostnameException } from './attempted-shorten-blocked-hostname.exception';
 import { sample } from '@jonahsnider/util';
+import { ShortenedUrlData } from './interfaces/shortened-url.interface';
 
 export class UrlsService {
 	/** Maximum number of attempts to generate a unique ID. */
@@ -61,7 +62,7 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
-	async shortenUrl(url: string): Promise<Short> {
+	async shortenUrl(url: string): Promise<ShortenedUrlData> {
 		if (await this.blockedHostnamesService.isHostnameBlocked(url)) {
 			throw new AttemptedShortenBlockedHostnameException();
 		}
@@ -97,7 +98,10 @@ export class UrlsService {
 			}
 		} while (!created);
 
-		return id;
+		return {
+			short: id,
+			url: this.configService.shortenedBaseUrl ? new URL(id, configService.shortenedBaseUrl) : undefined,
+		};
 	}
 
 	/**

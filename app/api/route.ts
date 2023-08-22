@@ -2,25 +2,20 @@ import { Http } from '@jonahsnider/util';
 import { NextRequest, NextResponse } from 'next/server';
 import { authorizationService } from './_lib/authorization/authorization.service';
 import { Action } from './_lib/authorization/enums/action.enum';
-import { configService } from './_lib/config/config.service';
 import { ExceptionSchema } from './_lib/dtos/exception.dto';
 import { AttemptedShortenBlockedHostnameException } from './_lib/urls/attempted-shorten-blocked-hostname.exception';
 import { LongUrlSchema } from './_lib/urls/dtos/long-url-dto';
 import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
-import { Short } from './_lib/urls/interfaces/urls.interface';
+import { ShortenedUrlData } from './_lib/urls/interfaces/shortened-url.interface';
 import { UniqueShortIdTimeoutException } from './_lib/urls/unique-short-id-timeout.exception';
 import { urlsService } from './_lib/urls/urls.service';
 import { validateBody } from './_lib/util/validate-request';
 
-function shortIdToShortenedUrlDto(short: Short): ShortenedUrlSchema {
-	if (configService.shortenedBaseUrl) {
-		return {
-			short,
-			url: new URL(short, configService.shortenedBaseUrl).toString(),
-		};
-	}
-
-	return { short };
+function shortIdToShortenedUrlDto(url: ShortenedUrlData): ShortenedUrlSchema {
+	return {
+		short: url.short,
+		url: url.url?.toString(),
+	};
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<ShortenedUrlSchema | ExceptionSchema>> {
@@ -31,9 +26,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<Shortened
 
 	const longUrl = await validateBody(request, LongUrlSchema);
 
-	let id: Short;
+	let url: ShortenedUrlData;
 	try {
-		id = await urlsService.shortenUrl(longUrl.url);
+		url = await urlsService.shortenUrl(longUrl.url);
 	} catch (error) {
 		if (error instanceof UniqueShortIdTimeoutException || error instanceof AttemptedShortenBlockedHostnameException) {
 			return error.toResponse();
@@ -42,7 +37,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<Shortened
 		throw error;
 	}
 
-	return NextResponse.json(shortIdToShortenedUrlDto(id), {
+	return NextResponse.json(shortIdToShortenedUrlDto(url), {
 		status: Http.Status.Created,
 	});
 }

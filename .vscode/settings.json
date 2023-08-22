@@ -20,5 +20,8 @@
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "rome.rome"
-	}
+	},
+	"tailwindCSS.experimental.classRegex": [
+		["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	]
 }

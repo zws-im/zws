@@ -6,7 +6,7 @@ import { InvalidQueryParamsException } from '../exceptions/invalid-query-param.e
 import { InvalidBodyException } from '../exceptions/invalid-body.exception';
 
 export function validateQuery<T extends Schema>(
-	request: NextRequest,
+	request: { nextUrl: { searchParams: URLSearchParams } },
 	schema: T,
 ): NextResponse<ExceptionSchema> | z.infer<T> {
 	const query = Object.fromEntries(request.nextUrl.searchParams.entries());
@@ -34,7 +34,7 @@ export function validateParams<T extends Schema>(
 }
 
 export async function validateBody<T extends Schema>(
-	request: NextRequest,
+	request: Pick<NextRequest, 'json'>,
 	schema: T,
 ): Promise<NextResponse<ExceptionSchema> | z.infer<T>> {
 	const body = await request.json();
