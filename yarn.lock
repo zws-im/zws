@@ -351,6 +351,7 @@ __metadata:
     "@types/react-dom": 18.2.7
     "@vercel/kv": 0.2.2
     autoprefixer: 10.4.14
+    clsx: 2.0.0
     convert: 4.13.1
     millify: 6.1.0
     next: 13.4.19
@@ -639,6 +640,13 @@ __metadata:
     strip-ansi: ^6.0.1
     wrap-ansi: ^7.0.0
   checksum: 79648b3b0045f2e285b76fb2e24e207c6db44323581e421c3acbd0e86454cba1b37aea976ab50195a49e7384b871e6dfb2247ad7dec53c02454ac6497394cb56
+  languageName: node
+  linkType: hard
+
+"clsx@npm:2.0.0":
+  version: 2.0.0
+  resolution: "clsx@npm:2.0.0"
+  checksum: a2cfb2351b254611acf92faa0daf15220f4cd648bdf96ce369d729813b85336993871a4bf6978ddea2b81b5a130478339c20d9d0b5c6fc287e5147f0c059276e
   languageName: node
   linkType: hard
 
