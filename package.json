@@ -22,9 +22,6 @@
 		"start": "next start",
 		"validate-prisma": "prisma validate"
 	},
-	"resolutions": {
-		"@google-cloud/profiler@5.0.2": "patch:@google-cloud/profiler@npm:5.0.2#.yarn/patches/@google-cloud-profiler-npm-5.0.2-f2d85fda64.patch"
-	},
 	"dependencies": {
 		"@jonahsnider/util": "10.0.2",
 		"@prisma/client": "5.1.1",
