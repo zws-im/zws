@@ -15,6 +15,10 @@ async function getGitHubStars(): Promise<number> {
 		},
 	});
 
+	if (!response.ok) {
+		return 0;
+	}
+
 	const data = (await response.json()) as {
 		items: Array<{
 			full_name: string;
