@@ -34,8 +34,6 @@ export default function ShortenUrlForm() {
 		}
 	};
 
-	// TODO: Show a little tooltip popup that the URL was copied to the clipboard
-
 	return (
 		<div>
 			<form className='w-full h-14 bg-white rounded flex items-center ju.stify-between' onSubmit={handleSubmit}>
