@@ -29,8 +29,11 @@ export default function Navbar() {
 	return (
 		<nav className='px-4 py-8 w-100 sticky top-0 bg-[#140A2E]/50 backdrop-blur'>
 			<div className='container mx-auto flex justify-between'>
-				<Link className='w-16 max-md:w-12' href='/'>
-					<Logo />
+				<Link className='transition-opacity hover:opacity-80 active:opacity-60 md:flex md:space-x-4' href='/'>
+					<div className='w-16 max-md:w-12'>
+						<Logo />
+					</div>
+					<p className='font-bold text-lg max-md:hidden'>Zero Width Shortener</p>
 				</Link>
 
 				<ul className='flex justify-end space-x-6 lg:space-x-12'>
