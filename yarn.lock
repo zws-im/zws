@@ -2509,10 +2509,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.17.3":
-  version: 18.17.3
-  resolution: "@types/node@npm:18.17.3"
-  checksum: 884fb68936b2b0ff90863fcf80610dd2f3d9fe1947897248b0138df05fe41ee6ce62941b37b565e3b3fd77601cd3977a64de858654c6ab9064413b171740d6ba
+"@types/node@npm:18.17.12":
+  version: 18.17.12
+  resolution: "@types/node@npm:18.17.12"
+  checksum: 79f8bcca3067a3c529f30e172df8d14f25ab9e4cd6a05ed897a924ab1dec774e8ea172ef5c4a67ffec433d423a0c81778f17db22606d574bc83871b60aab298e
   languageName: node
   linkType: hard
 
@@ -2954,7 +2954,7 @@ __metadata:
     "@tsconfig/node16": 1.0.4
     "@types/express": 4.17.17
     "@types/jest": 29.5.3
-    "@types/node": 18.17.3
+    "@types/node": 18.17.12
     "@types/supertest": 2.0.12
     change-case: 4.1.2
     class-transformer: 0.5.1
