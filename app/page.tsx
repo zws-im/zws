@@ -3,6 +3,7 @@ import DividerLine from './components/divider-line';
 import Faq from './components/faq/faq';
 import H1 from './components/headings/h1';
 import H2 from './components/headings/h2';
+import RandomText from './components/random-text';
 import ShortenUrlForm from './components/shorten-url/shorten-url-form';
 import Stats from './components/stats/stats';
 
@@ -14,7 +15,7 @@ export default function HomePage() {
 					<div className='mb-16 text-center'>
 						<H1>Zero Width Shortener</H1>
 						<p className='text-[#DCD5F0] text-lg'>
-							Shorten your URLs with invisible spaces today. There's no more need for ugly XyGa7z endings.
+							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
 						</p>
 					</div>
 
