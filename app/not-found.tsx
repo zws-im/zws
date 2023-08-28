@@ -1,6 +1,17 @@
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import H1 from './components/headings/h1';
+import { siteName } from './shared-metadata';
+
+export const metadata: Metadata = {
+	title: `Not found - ${siteName}`,
+	openGraph: {
+		siteName,
+		title: 'Not found',
+		url: 'https://zws.im',
+	},
+};
 
 export default function NotFound() {
 	return (
