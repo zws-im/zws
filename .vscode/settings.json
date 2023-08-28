@@ -8,7 +8,7 @@
 		".yarn/**": true
 	},
 	"typescript.preferences.importModuleSpecifier": "shortest",
-	"editor.defaultFormatter": "rome.rome",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "rome.rome"
 	},
