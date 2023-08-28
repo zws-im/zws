@@ -23,12 +23,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={clsx(inter.className, 'min-h-screen')}>
+			<body className={inter.className}>
 				<Navbar />
 				<Wave />
 				<DotGrid height={1} className='max-xl:top-[550px] xl:top-[787px] left-0 max-md:invisible' />
 				<DotGrid height={2} className='top-[145px] right-0' />
-				<div className='container mx-auto px-4 max-w-screen-xl'>
+				<div className='container mx-auto px-4 max-w-screen-xl min-h-screen'>
 					<LightSpot className='transform translate-x-[-250px] translate-y-[-200px] -z-50 max-md:w-0 max-md:h-0' />
 
 					{children}
