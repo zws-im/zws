@@ -4,12 +4,12 @@ import H1 from './components/headings/h1';
 import H2 from './components/headings/h2';
 import ShortenUrlForm from './components/shorten-url/shorten-url-form';
 
-export default function Home() {
+export default function HomePage() {
 	return (
-		<main>
-			<section id='shorten' className='flex flex-col items-center justify-center h-screen text-center'>
+		<main className='space-y-48'>
+			<section id='shorten' className='flex flex-col items-center justify-center mt-72'>
 				<div className='max-w-xl'>
-					<div className='mb-16'>
+					<div className='mb-16 text-center'>
 						<H1>Zero Width Shortener</H1>
 						<p className='text-[#DCD5F0] text-lg'>
 							Shorten your URLs with invisible spaces today. There's no more need for ugly XyGa7z endings.
@@ -20,13 +20,13 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id='faq'>
+			<section id='faq' className='flex flex-col items-center'>
 				<H2>Frequently Asked Questions</H2>
 				<DividerLine />
 				<Faq />
 			</section>
 
-			<section id='about-us'>
+			<section id='about-us' className='flex flex-col space-y-5 max-w-xl'>
 				<H2>About us</H2>
 
 				<p>
