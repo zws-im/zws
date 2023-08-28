@@ -2,7 +2,7 @@ import { Http } from '@jonahsnider/util';
 import { NextRequest, NextResponse } from 'next/server';
 import { authorizationService } from './_lib/authorization/authorization.service';
 import { Action } from './_lib/authorization/enums/action.enum';
-import { ExceptionSchema } from './_lib/dtos/exception.dto';
+import { ExceptionSchema } from './_lib/exceptions/dtos/exception.dto';
 import { AttemptedShortenBlockedHostnameException } from './_lib/urls/attempted-shorten-blocked-hostname.exception';
 import { LongUrlSchema } from './_lib/urls/dtos/long-url-dto';
 import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';

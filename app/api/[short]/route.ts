@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { ExceptionSchema } from '../_lib/dtos/exception.dto';
+import { ExceptionSchema } from '../_lib/exceptions/dtos/exception.dto';
 import { LongUrlSchema } from '../_lib/urls/dtos/long-url-dto';
 import { ShortSchema } from '../_lib/urls/dtos/short.dto';
 import { UrlBlockedException } from '../_lib/urls/exceptions/url-blocked.exception';

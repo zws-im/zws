@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { z } from 'zod';
-import { ExceptionSchema } from '../../_lib/dtos/exception.dto';
+import { ExceptionSchema } from '../../_lib/exceptions/dtos/exception.dto';
 import { UrlStats } from '../../_lib/url-stats/dtos/url-stats.dto';
 import { urlStatsService } from '../../_lib/url-stats/url-stats.service';
 import { ShortSchema } from '../../_lib/urls/dtos/short.dto';

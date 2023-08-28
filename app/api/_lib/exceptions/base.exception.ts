@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { STATUS_CODES } from 'node:http';
-import { ExceptionSchema } from '../dtos/exception.dto';
+import { ExceptionSchema } from './dtos/exception.dto';
 import { ExceptionCode } from './enums/exceptions.enum';
 
 export class BaseHttpException extends Error {

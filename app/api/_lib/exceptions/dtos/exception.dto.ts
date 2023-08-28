@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ExceptionCode } from '../exceptions/enums/exceptions.enum';
+import { ExceptionCode } from '../enums/exceptions.enum';
 
 export const ExceptionSchema = z.object({
 	message: z.string(),
