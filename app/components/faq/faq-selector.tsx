@@ -1,22 +1,30 @@
-import { ReactNode } from 'react';
+'use client';
 
-type FaqOption = {
-	content: ReactNode;
-};
+import { useState } from 'react';
+import { FaqOption } from './types';
+import FaqButton from './faq-button';
 
 type Props = {
-	children: FaqOption[];
+	options: Array<Pick<FaqOption, 'title' | 'id'>>;
+	initialSelected: string;
+	onSelect: (id: string) => void;
 };
 
-export default function FaqSelector(props: Props) {
+export default function FaqSelector({ options, onSelect, initialSelected }: Props) {
+	const [selected, setSelected] = useState(initialSelected);
+
+	const onClickFactory = (id: string) => () => {
+		setSelected(id);
+		onSelect(id);
+	};
+
 	return (
-		<div>
-			<select>
-				{props.children.map((option, index) => {
-					// eslint-disable-next-line lint/suspicious/noArrayIndexKey
-					return <option key={index}>{option.content}</option>;
-				})}
-			</select>
+		<div className='flex flex-col justify-start'>
+			{options.map((option) => (
+				<FaqButton key={option.id} onClick={onClickFactory(option.id)} selected={selected === option.id}>
+					{option.title}
+				</FaqButton>
+			))}
 		</div>
 	);
 }

@@ -1,7 +1,8 @@
 'use client';
 
 import { delayMinimum } from '@/app/util/delay';
-import { useState } from 'react';
+import { ArrowPathIcon, CheckIcon } from '@heroicons/react/24/solid';
+import { useEffect, useState } from 'react';
 import { shortenUrlAction } from './action';
 import clsx from 'clsx';
 
@@ -9,14 +10,28 @@ export default function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');
 	const [shortenedUrl, setShortenedUrl] = useState<string | undefined>(undefined);
 	const [loading, setLoading] = useState(false);
+	const [finishedAt, setFinishedAt] = useState<number | undefined>(undefined);
+	const justFinished = Date.now() - (finishedAt ?? 0) < 1.5e3;
+
+	useEffect(() => {
+		if (finishedAt) {
+			const timer = setTimeout(() => {
+				setFinishedAt(undefined);
+			}, 1.5e3);
+
+			return () => clearTimeout(timer);
+		}
+	}, [finishedAt]);
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
 		setLoading(true);
+		setFinishedAt(undefined);
 		setShortenedUrl(undefined);
 		const shortened = await delayMinimum(shortenUrlAction(longUrl), 100);
 		setLoading(false);
+		setFinishedAt(Date.now());
 
 		if ('url' in shortened) {
 			setShortenedUrl(shortened.url);
@@ -35,8 +50,8 @@ export default function ShortenUrlForm() {
 	};
 
 	return (
-		<div>
-			<form className='w-full h-14 bg-white rounded flex items-center ju.stify-between' onSubmit={handleSubmit}>
+		<>
+			<form className='w-full h-14 bg-white rounded flex' onSubmit={handleSubmit}>
 				<input
 					className='w-full p-4 rounded-l outline-none h-full text-black placeholder-[rgba(10, 0, 37, 0.6)]'
 					placeholder='https://github.com/zws-im/zws'
@@ -47,26 +62,33 @@ export default function ShortenUrlForm() {
 					required
 				/>
 				<button
-					className='h-full p-4 rounded-r transition-colors text-[#4413CB] font-bold hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 disabled:text-opacity-50'
+					className={clsx('w-28 h-full p-4 rounded-r transition-colors font-bold flex justify-center items-center', {
+						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-[#4413CB]': !justFinished,
+						'bg-green-400 text-stone-900': justFinished,
+					})}
 					disabled={loading}
 					type='submit'
 				>
-					Shorten
+					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
+					{!loading && !justFinished && <>Shorten</>}
+					{justFinished && <CheckIcon className='w-6 h-6' />}
 				</button>
 			</form>
 
-			<div
-				className={clsx('pt-4 text-[#DCD5F0]', {
-					visible: shortenedUrl && !loading,
-					invisible: !shortenedUrl || loading,
-				})}
-			>
-				<button type='button' onClick={copy}>
-					<p className='underline decoration-dotted underline-offset-2 hover:opacity-80 active:opacity-60 transition-all'>
+			<div className='pt-4 text-center'>
+				{shortenedUrl && !loading ? (
+					<button
+						type='button'
+						className='text-[#DCD5F0] underline decoration-dotted underline-offset-2 hover:opacity-80 active:opacity-60 transition-opacity'
+						onClick={copy}
+					>
 						{shortenedUrl} (click to copy)
-					</p>
-				</button>
+					</button>
+				) : (
+					// Used to prevent layout shift when hiding the button
+					<div className='h-6' />
+				)}
 			</div>
-		</div>
+		</>
 	);
 }

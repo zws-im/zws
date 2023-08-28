@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import NavbarLogo from './navbar-logo';
+import Logo from '../logo';
 
 type NavbarItem = {
 	content: string;
@@ -28,7 +28,9 @@ const items: NavbarItem[] = [
 export default function Navbar() {
 	return (
 		<nav className='py-8 w-full flex justify-between sticky top-0 bg-[#140A2E]/50 backdrop-blur'>
-			<NavbarLogo />
+			<Link className='w-16 max-md:w-12' href='/'>
+				<Logo />
+			</Link>
 
 			<ul className='flex justify-end space-x-6 lg:space-x-12'>
 				{items.map((item, index) => {
