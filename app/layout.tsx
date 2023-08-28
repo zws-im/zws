@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
-import './globals.css';
-import Navbar from './components/navbar/navbar';
 import Footer from './components/footer';
+import Navbar from './components/navbar/navbar';
+import './globals.css';
+import GlobalDecorations from './components/background-decorations/global-decorations';
+import clsx from 'clsx';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -18,9 +20,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
+			<body className={clsx(inter.className, 'min-h-screen')}>
+				<Navbar />
 				<div className='container mx-auto px-4 max-w-screen-xl'>
-					<Navbar />
+					<GlobalDecorations />
 					{children}
 					<Footer />
 				</div>

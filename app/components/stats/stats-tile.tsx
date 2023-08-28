@@ -8,8 +8,13 @@ type Props = {
 };
 
 export default function StatsTile({ value, name, wide = false, href }: Props) {
-	const tile = (
-		<div className='rounded-md h-32 bg-[#301B66] py-6 flex flex-col w-full justify-center items-center'>
+	const containerStyles = clsx('h-32 rounded-md bg-[#301B66] flex flex-col justify-center items-center', {
+		'col-span-1 max-md:w-full md:w-32': !wide,
+		'col-span-2': wide,
+	});
+
+	const tileContents = (
+		<>
 			<p
 				className={clsx({
 					'text-xl max-md:text-3xl': !wide,
@@ -25,7 +30,7 @@ export default function StatsTile({ value, name, wide = false, href }: Props) {
 			>
 				{name}
 			</p>
-		</div>
+		</>
 	);
 
 	if (href) {
@@ -34,12 +39,12 @@ export default function StatsTile({ value, name, wide = false, href }: Props) {
 				href={href}
 				target='blank'
 				rel='noreferrer'
-				className='hover:opacity-90 active:opacity-80 transition-opacity w-full'
+				className={clsx(containerStyles, 'hover:opacity-90 active:opacity-80 transition-opacity')}
 			>
-				{tile}
+				{tileContents}
 			</a>
 		);
 	}
 
-	return tile;
+	return <div className={containerStyles}>{tileContents}</div>;
 }

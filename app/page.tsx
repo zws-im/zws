@@ -1,3 +1,4 @@
+import LightSpot from './components/background-decorations/light-spot';
 import DividerLine from './components/divider-line';
 import Faq from './components/faq/faq';
 import H1 from './components/headings/h1';
@@ -28,10 +29,11 @@ export default function HomePage() {
 			</section>
 
 			<section id='about-us'>
+				<LightSpot className='transform max-lg:w-0 max-lg:h-0 max-lg:-translate-x-[200px] xl:translate-x-[200px] 2xl:translate-x-[370px] -translate-y-[145px]' />
 				<H2>About us</H2>
 
-				<div className='flex mt-5 max-md:flex-col max-md:space-y-5 md:justify-between md:space-x-40'>
-					<div className='flex flex-col space-y-5 max-w-2xl'>
+				<div className='flex mt-5 max-md:flex-col max-md:space-y-5 md:justify-between md:space-x-20 lg:space-x-40'>
+					<div className='flex flex-col space-y-5'>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua.

@@ -31,11 +31,9 @@ export default async function Stats() {
 	const [stats, stars] = await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
 
 	return (
-		<div className='flex flex-col space-y-6 max-md:w-full md:w-72'>
-			<div className='flex space-x-6'>
-				<StatsTile name='Visits' value={millify(stats.visits).toLocaleString()} />
-				<StatsTile name='GitHub stars' value={millify(stars).toLocaleString()} href='https://github.com/zws-im/zws' />
-			</div>
+		<div className='min-w-max grid gap-6 md:grid-cols-2 max-md:grid-cols-4 max-md:w-full'>
+			<StatsTile name='Visits' value={millify(stats.visits).toLocaleString()} />
+			<StatsTile name='GitHub stars' value={millify(stars).toLocaleString()} href='https://github.com/zws-im/zws' />
 
 			<StatsTile wide name='URLs shortened' value={millify(stats.urls).toLocaleString()} />
 		</div>
