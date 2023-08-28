@@ -27,16 +27,19 @@ const items: NavbarItem[] = [
 
 export default function Navbar() {
 	return (
-		<nav className='py-8 px-16 w-full flex justify-between top-0 fixed bg-[#140A2E]/50 backdrop-blur'>
+		<nav className='py-8 w-full flex justify-between sticky top-0 bg-[#140A2E]/50 backdrop-blur'>
 			<NavbarLogo />
 
-			<ul className='flex justify-end space-x-12'>
+			<ul className='flex justify-end space-x-6 lg:space-x-12'>
 				{items.map((item, index) => {
 					return (
 						// eslint-disable-next-line lint/suspicious/noArrayIndexKey
 						<li key={index}>
-							<Link href={item.href}>
-								<p className='font-bold transition text-[#EDE7FF] hover:text-opacity-80 active:text-opacity-60'>{item.content}</p>
+							<Link
+								href={item.href}
+								className='font-bold transition text-[#EDE7FF] hover:text-opacity-80 active:text-opacity-60'
+							>
+								{item.content}
 							</Link>
 						</li>
 					);
