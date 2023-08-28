@@ -49,8 +49,9 @@ export class ConfigService {
 	 */
 	public readonly userApiKey: string | undefined;
 	public readonly version: string = pkg.version;
+	public readonly nodeEnv;
 
-	constructor(source: Readonly<Record<string, unknown>>) {
+	constructor(source: Readonly<NodeJS.ProcessEnv>) {
 		this.characters = z
 			.array(z.string().min(1))
 			.min(1)
@@ -108,6 +109,8 @@ export class ConfigService {
 		);
 
 		this.userApiKey = z.string().min(1).optional().parse(source.API_KEY);
+
+		this.nodeEnv = source.NODE_ENV;
 	}
 }
 

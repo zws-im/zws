@@ -1,7 +1,8 @@
 import { statsService } from '@/app/api/_lib/stats/stats.service';
-import StatsTile from './stats-tile';
 import convert from 'convert';
 import millify from 'millify';
+import StatsTile from './stats-tile';
+import { configService } from '@/app/api/_lib/config/config.service';
 
 async function getGitHubStars(): Promise<number> {
 	const query = new URLSearchParams({ q: 'zws-im/zws' });
@@ -32,7 +33,10 @@ async function getGitHubStars(): Promise<number> {
 }
 
 export default async function Stats() {
-	const [stats, stars] = await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
+	const [stats, stars] =
+		configService.nodeEnv === 'development'
+			? [{ visits: 3e6, urls: 2e3 }, 1.5e3]
+			: await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
 
 	return (
 		<div className='min-w-max grid gap-6 grid-cols-2 max-md:w-full'>
