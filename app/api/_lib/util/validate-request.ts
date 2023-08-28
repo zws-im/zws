@@ -1,15 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Schema, z } from 'zod';
-import { ExceptionSchema } from '../dtos/exception.dto';
+import { ExceptionSchema } from '../exceptions/dtos/exception.dto';
 import { InvalidPathParamException } from '../exceptions/invalid-path-param.exception';
 import { InvalidQueryParamsException } from '../exceptions/invalid-query-param.exception';
 import { InvalidBodyException } from '../exceptions/invalid-body.exception';
+import querystring from 'querystring';
 
 export function validateQuery<T extends Schema>(
-	request: { nextUrl: { searchParams: URLSearchParams } },
+	request: { url: string },
 	schema: T,
 ): NextResponse<ExceptionSchema> | z.infer<T> {
-	const query = Object.fromEntries(request.nextUrl.searchParams.entries());
+	const query = querystring.parse(new URL(request.url).search.slice('?'.length));
 
 	const result = schema.safeParse(query);
 
