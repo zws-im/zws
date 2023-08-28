@@ -32,7 +32,7 @@ async function getGitHubStars(): Promise<number> {
 }
 
 export default async function Stats() {
-	const [stats, stars] = [{ visits: 1, urls: 2 }, 3]; // await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
+	const [stats, stars] = await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
 
 	return (
 		<div className='min-w-max grid gap-6 grid-cols-2 max-md:w-full'>
