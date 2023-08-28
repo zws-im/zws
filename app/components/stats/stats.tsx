@@ -28,10 +28,10 @@ async function getGitHubStars(): Promise<number> {
 }
 
 export default async function Stats() {
-	const [stats, stars] = await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
+	const [stats, stars] = [{ visits: 1, urls: 2 }, 3]; // await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
 
 	return (
-		<div className='min-w-max grid gap-6 md:grid-cols-2 max-md:grid-cols-4 max-md:w-full'>
+		<div className='min-w-max grid gap-6 grid-cols-2 max-md:w-full'>
 			<StatsTile name='Visits' value={millify(stats.visits).toLocaleString()} />
 			<StatsTile name='GitHub stars' value={millify(stars).toLocaleString()} href='https://github.com/zws-im/zws' />
 
