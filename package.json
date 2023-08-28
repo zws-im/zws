@@ -19,6 +19,7 @@
 		"build": "next build",
 		"dev": "next dev",
 		"lint": "rome check .",
+		"lint:fix": "rome check . --apply",
 		"start": "next start",
 		"validate-prisma": "prisma validate"
 	},
