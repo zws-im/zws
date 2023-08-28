@@ -60,6 +60,8 @@ export default function ShortenUrlForm() {
 					value={longUrl}
 					onChange={(event) => setLongUrl(event.target.value)}
 					required
+					// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
+					autoFocus
 				/>
 				<button
 					className={clsx('w-28 h-full p-4 rounded-r transition-colors font-bold flex justify-center items-center', {
