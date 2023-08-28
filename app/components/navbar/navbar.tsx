@@ -33,8 +33,7 @@ export default function Navbar() {
 			<ul className='flex justify-end space-x-6 lg:space-x-12'>
 				{items.map((item, index) => {
 					return (
-						// eslint-disable-next-line lint/suspicious/noArrayIndexKey
-						<li key={index}>
+						<li key={item.content}>
 							<Link
 								href={item.href}
 								className='font-bold transition text-[#EDE7FF] hover:text-opacity-80 active:text-opacity-60'
