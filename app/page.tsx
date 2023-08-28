@@ -1,3 +1,4 @@
+import AboutUs from './components/about-us/about-us';
 import LightSpot from './components/background-decorations/light-spot';
 import DividerLine from './components/divider-line';
 import Faq from './components/faq/faq';
@@ -5,7 +6,6 @@ import H1 from './components/headings/h1';
 import H2 from './components/headings/h2';
 import RandomText from './components/random-text';
 import ShortenUrlForm from './components/shorten-url/shorten-url-form';
-import Stats from './components/stats/stats';
 
 export default function HomePage() {
 	return (
@@ -33,22 +33,7 @@ export default function HomePage() {
 				<LightSpot className='transform max-lg:w-0 max-lg:h-0 max-lg:-translate-x-[200px] xl:translate-x-[200px] 2xl:translate-x-[370px] -translate-y-[145px]' />
 				<H2>About us</H2>
 
-				<div className='flex mt-5 max-md:flex-col max-md:space-y-5 md:justify-between md:space-x-20 lg:space-x-40'>
-					<div className='flex flex-col space-y-5'>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua.
-						</p>
-						<p>
-							Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Adipiscing at in tellus integer
-							feugiat. Ultrices tincidunt arcu non sodales neque sodales. Quisque sagittis purus sit amet volutpat
-							consequat mauris nunc. A pellentesque sit amet porttitor eget dolor. Tempor orci dapibus ultrices in
-							iaculis nunc. At auctor urna nunc id cursus metus aliquam.
-						</p>
-					</div>
-
-					<Stats />
-				</div>
+				<AboutUs />
 			</section>
 		</main>
 	);
