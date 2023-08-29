@@ -1,7 +1,3 @@
 {
-	"recommendations": [
-		"prisma.prisma",
-		"rome.rome",
-		"editorconfig.editorconfig"
-	]
+	"recommendations": ["prisma.prisma", "biomejs.biome", "editorconfig.editorconfig"]
 }

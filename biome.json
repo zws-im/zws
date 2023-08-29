@@ -1,5 +1,5 @@
 {
-	"$schema": "https://docs.rome.tools/schemas/12.1.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
 	"organizeImports": {
 		"enabled": false
 	},
@@ -8,6 +8,7 @@
 	},
 	"javascript": {
 		"formatter": {
+			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
 		}
 	},

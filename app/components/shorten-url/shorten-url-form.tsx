@@ -75,7 +75,7 @@ export default function ShortenUrlForm() {
 					type='submit'
 				>
 					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
-					{!loading && !justFinished && <>Shorten</>}
+					{!loading && !justFinished && 'Shorten'}
 					{justFinished && <CheckIcon className='w-6 h-6' />}
 				</button>
 			</form>
