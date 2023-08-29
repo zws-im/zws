@@ -2,6 +2,7 @@ import { RedirectType } from 'next/dist/client/components/redirect';
 import { notFound, redirect } from 'next/navigation';
 import { NextRequest } from 'next/server';
 import * as route from '../api/[short]/route';
+import { HttpError } from '../swr';
 
 export default async function UrlSubpathPage({
 	params: rawParams,
@@ -32,16 +33,16 @@ export default async function UrlSubpathPage({
 		notFound();
 	}
 
-	if (response.ok) {
-		const redirectTo = response.headers.get('Location');
-
-		if (redirectTo) {
-			redirect(redirectTo);
-		}
-
-		// Return JSON body otherwise
-		redirect(`/api/${rawShort}?${searchParams}`, RedirectType.replace);
+	if (!response.ok) {
+		throw await HttpError.create(response);
 	}
 
-	throw new Error('Unreachable');
+	const redirectTo = response.headers.get('Location');
+
+	if (redirectTo) {
+		redirect(redirectTo);
+	}
+
+	// Return JSON body otherwise
+	redirect(`/api/${rawShort}?${searchParams}`, RedirectType.replace);
 }
