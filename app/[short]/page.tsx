@@ -21,10 +21,12 @@ export default async function UrlSubpathPage({
 		}),
 	);
 
-	const request = new NextRequest(`http://localhost:3000/api/${rawParams.short}?${searchParams}`, {
+	const rawShort = decodeURIComponent(rawParams.short);
+
+	const request = new NextRequest(`http://localhost:3000/api/${rawShort}?${searchParams}`, {
 		redirect: 'manual',
 	});
-	const response = await route.GET(request, { params: { short: rawParams.short } });
+	const response = await route.GET(request, { params: { short: rawShort } });
 
 	if (response.status === 404) {
 		notFound();
@@ -38,7 +40,7 @@ export default async function UrlSubpathPage({
 		}
 
 		// Return JSON body otherwise
-		redirect(`/api/${rawParams.short}?${searchParams}`, RedirectType.replace);
+		redirect(`/api/${rawShort}?${searchParams}`, RedirectType.replace);
 	}
 
 	throw new Error('Unreachable');
