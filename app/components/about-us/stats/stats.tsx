@@ -40,10 +40,10 @@ export default async function Stats() {
 
 	return (
 		<div className='min-w-max grid gap-6 grid-cols-2 max-md:w-full'>
+			<StatsTile wide name='URLs shortened' value={millify(stats.urls).toLocaleString()} />
+
 			<StatsTile name='Visits' value={millify(stats.visits).toLocaleString()} />
 			<StatsTile name='GitHub stars' value={millify(stars).toLocaleString()} href='https://github.com/zws-im/zws' />
-
-			<StatsTile wide name='URLs shortened' value={millify(stats.urls).toLocaleString()} />
 		</div>
 	);
 }
