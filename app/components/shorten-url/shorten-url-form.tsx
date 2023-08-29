@@ -4,6 +4,8 @@ import { delayMinimum } from '@/app/util/delay';
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
 import { useEffect, useState } from 'react';
 import { shortenUrlAction } from './action';
+import va from '@vercel/analytics';
+
 import clsx from 'clsx';
 
 export default function ShortenUrlForm() {
@@ -30,6 +32,7 @@ export default function ShortenUrlForm() {
 		setFinishedAt(undefined);
 		setShortenedUrl(undefined);
 		const shortened = await delayMinimum(shortenUrlAction(longUrl), 100);
+		va.track('Shorten URL');
 		setLoading(false);
 		setFinishedAt(Date.now());
 
