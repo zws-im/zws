@@ -2,10 +2,6 @@ import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { prisma } from '../prisma';
 import { StatsSchema } from './dtos/stats.dto';
 
-// TODO: Previously, on application boot this value would be calculated using savePreciseInstanceStats()
-// That behavior no longer exists. Instead, we should create a migration to add a createdAt date to the approximateCounts table
-// Set some expiry date (7 days or something) and then recalculate the stats if the date is older than the expiry date
-
 export class StatsService {
 	constructor(private readonly prisma: PrismaClient) {}
 
@@ -33,7 +29,7 @@ export class StatsService {
 	 *
 	 * @returns The precise instant stats
 	 */
-	private async savePreciseInstanceStats(): Promise<StatsSchema> {
+	public async savePreciseInstanceStats(): Promise<StatsSchema> {
 		const [urls, visits] = await this.prisma.$transaction([
 			this.prisma.shortenedUrl.count({ where: { blocked: false } }),
 			this.prisma.visit.count({ where: { shortenedUrl: { blocked: false } } }),
