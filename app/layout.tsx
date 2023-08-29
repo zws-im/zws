@@ -7,12 +7,13 @@ import './globals.css';
 import DotGrid from './components/background-decorations/dot-grid';
 import LightSpot from './components/background-decorations/light-spot';
 import Wave from './components/background-decorations/wave';
-import { description, siteName } from './shared-metadata';
+import { description, metadataBase, siteName } from './shared-metadata';
 import clsx from 'clsx';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
+	metadataBase,
 	title: siteName,
 	description,
 	openGraph: {
