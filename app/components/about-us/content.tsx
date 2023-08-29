@@ -13,7 +13,12 @@ export const aboutUsContent = (
 		<p>
 			Over time, ZWS has gone through a lot of design iterations, on both the frontend and backend. If you're curious
 			about how ZWS works internally, feel free to look at{' '}
-			<a className='underline text-zws-purple-400' href='https://github.com/zws-im/zws' target='_blank' rel='noreferrer'>
+			<a
+				className='underline text-zws-purple-400'
+				href='https://github.com/zws-im/zws'
+				target='_blank'
+				rel='noreferrer'
+			>
 				the source code on GitHub
 			</a>
 			.
