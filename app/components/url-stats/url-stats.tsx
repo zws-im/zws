@@ -3,7 +3,7 @@
 import { ExceptionCode } from '@/app/api/_lib/exceptions/enums/exceptions.enum';
 import { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
 import { HttpError, fetcher } from '@/app/swr';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import useSWR from 'swr';
 import UrlStatsChart from './url-stats-chart';
 import UrlStatsInput from './url-stats-input';
@@ -40,8 +40,15 @@ export default function UrlStats() {
 		<div className='w-full space-y-8'>
 			<UrlStatsInput error={errorText} isLoading={isLoading && !stats && !errorText} setShortUrl={setUrl} />
 
-			<div className='max-md:w-full md:w-[36rem]'>
-				<UrlStatsChart stats={errorText ? undefined : stats} />
+			<div className='max-md:w-full md:w-[36rem] min-h-max h-48 max-lg:h-72 lg:h-96'>
+				<Suspense
+					fallback={
+						// Prevent layout shift
+						<div className='h-full w-full' />
+					}
+				>
+					<UrlStatsChart stats={errorText ? undefined : stats} />
+				</Suspense>
 			</div>
 		</div>
 	);
