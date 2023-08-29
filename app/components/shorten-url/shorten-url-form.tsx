@@ -2,7 +2,7 @@
 
 import { delayMinimum } from '@/app/util/delay';
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { shortenUrlAction } from './action';
 import va from '@vercel/analytics';
 
@@ -12,8 +12,9 @@ export default function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');
 	const [shortenedUrl, setShortenedUrl] = useState<string | undefined>(undefined);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | undefined>(undefined);
 	const [finishedAt, setFinishedAt] = useState<number | undefined>(undefined);
-	const justFinished = Date.now() - (finishedAt ?? 0) < 1.5e3;
+	const justSucceeded = !error && Date.now() - (finishedAt ?? 0) < 1.5e3;
 
 	useEffect(() => {
 		if (finishedAt) {
@@ -31,16 +32,21 @@ export default function ShortenUrlForm() {
 		setLoading(true);
 		setFinishedAt(undefined);
 		setShortenedUrl(undefined);
-		const shortened = await delayMinimum(shortenUrlAction(longUrl), 100);
+		setError(undefined);
+		const result = await delayMinimum(shortenUrlAction(longUrl), 100);
 		va.track('Shorten URL');
 		setLoading(false);
 		setFinishedAt(Date.now());
 
-		if ('url' in shortened) {
-			setShortenedUrl(shortened.url);
-		} else {
-			// Get base url of this page
-			setShortenedUrl(new URL(shortened.short, window.location.href).toString());
+		if (result.error) {
+			setError(result.error);
+		} else if (result.shortened) {
+			if ('url' in result.shortened) {
+				setShortenedUrl(result.shortened.url);
+			} else if ('short' in result) {
+				// Get base url of this page
+				setShortenedUrl(new URL(result.shortened.short, window.location.href).toString());
+			}
 		}
 	};
 
@@ -52,6 +58,11 @@ export default function ShortenUrlForm() {
 		}
 	};
 
+	const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+		setLongUrl(event.target.value);
+		setError(undefined);
+	};
+
 	return (
 		<>
 			<form className='w-full h-14 bg-white rounded flex' onSubmit={handleSubmit}>
@@ -61,22 +72,25 @@ export default function ShortenUrlForm() {
 					type='url'
 					name='url'
 					value={longUrl}
-					onChange={(event) => setLongUrl(event.target.value)}
+					onChange={onChange}
 					required
 					// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
 					autoFocus
 				/>
 				<button
-					className={clsx('w-28 h-full p-4 rounded-r transition-colors font-bold flex justify-center items-center', {
-						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500': !justFinished,
-						'bg-green-400 text-stone-900': justFinished,
+					className={clsx('min-w-max h-full p-4 rounded-r transition-colors flex justify-center items-center', {
+						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500 font-bold':
+							!justSucceeded && !error,
+						'bg-green-400 text-stone-900': justSucceeded,
+						'bg-red-500 text-white': error,
 					})}
 					disabled={loading}
 					type='submit'
 				>
 					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
-					{!loading && !justFinished && 'Shorten'}
-					{justFinished && <CheckIcon className='w-6 h-6' />}
+					{!loading && !justSucceeded && 'Shorten'}
+					{error}
+					{justSucceeded && <CheckIcon className='w-6 h-6' />}
 				</button>
 			</form>
 
