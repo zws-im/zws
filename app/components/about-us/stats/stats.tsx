@@ -35,7 +35,7 @@ async function getGitHubStars(): Promise<number> {
 export default async function Stats() {
 	const [stats, stars] =
 		configService.nodeEnv === 'development'
-			? [{ visits: 3e6, urls: 2e3 }, 1.5e3]
+			? [{ visits: 3e6, urls: 2e5 }, 1.5e3]
 			: await Promise.all([statsService.getInstanceStats(), getGitHubStars()]);
 
 	return (
