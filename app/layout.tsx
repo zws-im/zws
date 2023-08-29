@@ -9,6 +9,7 @@ import LightSpot from './components/background-decorations/light-spot';
 import Wave from './components/background-decorations/wave';
 import { description, metadataBase, siteName } from './shared-metadata';
 import clsx from 'clsx';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({
 						<Footer />
 					</div>
 				</div>
+				<Analytics />
 			</body>
 		</html>
 	);

@@ -340,6 +340,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@vercel/analytics@npm:1.0.2"
+  checksum: 5f596db6ed3c959057927985ffc6394ab12f9a5e9e9c65d00a33f1ffb3a7ced95d63f33b31e746939e50c0284d7999b90e9ed5d3d1e8b0d37a135219fd93a6e4
+  languageName: node
+  linkType: hard
+
 "@vercel/kv@npm:0.2.2":
   version: 0.2.2
   resolution: "@vercel/kv@npm:0.2.2"
@@ -366,6 +373,7 @@ __metadata:
     "@types/node": 20.4.8
     "@types/react": 18.2.18
     "@types/react-dom": 18.2.7
+    "@vercel/analytics": 1.0.2
     "@vercel/kv": 0.2.2
     apexcharts: 3.42.0
     autoprefixer: 10.4.14
