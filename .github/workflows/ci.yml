@@ -3,62 +3,14 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build
 
     runs-on: ubuntu-latest
-
-    timeout-minutes: 15
-
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: test
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: zws
-        ports:
-          - "5432:5432"
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    timeout-minutes: 5
 
     steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: "yarn"
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Run migrations
-        run: yarn run migrations
-        env:
-          DATABASE_URL: postgres://test:password@localhost:5432/zws
-      - name: Run tests
-        run: yarn test
-        env:
-          SMOKE_TEST: true
-          DATABASE_URL: postgres://test:password@localhost:5432/zws
-        timeout-minutes: 5
-  deploy:
-    name: Deploy
-
-    runs-on: ubuntu-latest
-
-    timeout-minutes: 30
-
-    # Don't run this job if we aren't on main branch
-    if: ${{ github.ref  == 'refs/heads/main' }}
-
-    needs: [test]
-
-    steps:
-      - name: Checkout git repository
+      - name: Checkout Git repository
         uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -67,6 +19,35 @@ jobs:
           cache: "yarn"
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Cache Next.js
+        uses: actions/cache@v3
+        with:
+          # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Build
         run: yarn run build
-        # TODO: Release
+  lint:
+    name: Lint
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Lint
+        run: yarn run lint
