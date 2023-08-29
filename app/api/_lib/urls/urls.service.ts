@@ -63,7 +63,9 @@ export class UrlsService {
 	 * @returns The ID of the shortened URL
 	 */
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
-		if (await this.blockedHostnamesService.isHostnameBlocked(url)) {
+		const hostname = new URL(url).hostname;
+
+		if (await this.blockedHostnamesService.isHostnameBlocked(hostname)) {
 			throw new AttemptedShortenBlockedHostnameException();
 		}
 
