@@ -1,15 +1,17 @@
 import H1 from '../components/headings/h1';
+import UrlStats from '../components/url-stats/url-stats';
 
 export default function StatsPage() {
 	return (
-		<main className='space-y-48'>
-			<section id='shorten' className='flex flex-col items-center justify-center mt-96'>
-				<div className='max-w-xl'>
+		<main>
+			<section id='stats' className='flex flex-col items-center justify-center mt-48'>
+				<div className='w-full max-w-xl'>
 					<div className='mb-16 text-center'>
-						<H1>Zero Width Shortener</H1>
-						<p className='text-[#DCD5F0] text-lg'>
-							Shorten your URLs with invisible spaces today. There's no more need for ugly XyGa7z endings.
-						</p>
+						<H1>Stats</H1>
+					</div>
+
+					<div className='w-full'>
+						<UrlStats />
 					</div>
 				</div>
 			</section>
