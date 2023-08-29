@@ -247,11 +247,5 @@ $RECYCLE.BIN/
 *.env
 !*example.env
 
-# Google Cloud Service account
-service-account-key.json
-
-# Turbo
-.turbo
-
 # Vercel
 .vercel
