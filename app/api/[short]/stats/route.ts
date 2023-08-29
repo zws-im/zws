@@ -7,6 +7,7 @@ import { urlStatsService } from '../../_lib/url-stats/url-stats.service';
 import { ShortSchema } from '../../_lib/urls/dtos/short.dto';
 import { UrlNotFoundException } from '../../_lib/urls/exceptions/url-not-found.exception';
 import { validateParams } from '../../_lib/util/validate-request';
+import { Short } from '../../_lib/urls/interfaces/urls.interface';
 
 export async function GET(
 	request: NextRequest,
@@ -16,7 +17,10 @@ export async function GET(
 	if (params instanceof NextResponse) {
 		return params;
 	}
-	const stats = await urlStatsService.statsForUrl(params.short);
+
+	const short = decodeURIComponent(params.short) as Short;
+
+	const stats = await urlStatsService.statsForUrl(short);
 
 	if (!stats) {
 		return new UrlNotFoundException().toResponse();
