@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function StatsTile({ value, name, wide = false, href }: Props) {
-	const containerStyles = clsx('h-32 rounded-md bg-[#301B66] flex flex-col justify-center items-center', {
+	const containerStyles = clsx('h-32 rounded-md bg-zws-purple-800 flex flex-col justify-center items-center', {
 		'col-span-1 max-md:w-full md:w-32': !wide,
 		'col-span-2': wide,
 	});
@@ -24,7 +24,7 @@ export default function StatsTile({ value, name, wide = false, href }: Props) {
 				{value}
 			</p>
 			<p
-				className={clsx('text-[#B69EF6] max-md:text-xl', {
+				className={clsx('text-zws-purple-400 max-md:text-xl', {
 					'text-xl': wide,
 				})}
 			>

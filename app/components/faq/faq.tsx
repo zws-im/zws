@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { faqObject, faq, firstFaqOption } from './content';
-import FaqEntry from './faq-entry';
+import { faq, faqObject, firstFaqOption } from './content';
 import FaqSelector from './faq-selector';
 
 export default function Faq() {
@@ -15,9 +14,7 @@ export default function Faq() {
 				<FaqSelector initialSelected={firstFaqOption.id} onSelect={setSelectedId} options={faq} />
 			</div>
 
-			<div className='max-lg:w-full'>
-				<FaqEntry>{selected.content}</FaqEntry>
-			</div>
+			<div className='max-lg:w-full'>{selected.content}</div>
 		</div>
 	);
 }

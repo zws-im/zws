@@ -30,7 +30,7 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 	return (
 		<div
 			className={clsx('w-full h-14 rounded flex bg-white transition', {
-				'border-4 border-rose-500': !valid,
+				'border-4 border-red-500': !valid,
 			})}
 		>
 			<input
@@ -46,10 +46,10 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 			/>
 			<div
 				className={clsx('min-w-max h-full p-4 rounded-r transition-colors', {
-					'bg-rose-500 text-white': valid && error,
+					'bg-red-500 text-white': valid && error,
 				})}
 			>
-				{valid && isLoading && <ArrowPathIcon className='w-6 h-6 animate-spin text-[#4413CB]' />}
+				{valid && isLoading && <ArrowPathIcon className='w-6 h-6 animate-spin text-zws-purple-500' />}
 				{valid && error && (
 					<p className='align-middle'>
 						<ExclamationCircleIcon className='w-6 h-6 inline mr-2' />

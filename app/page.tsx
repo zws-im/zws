@@ -14,7 +14,7 @@ export default function HomePage() {
 				<div className='max-w-xl'>
 					<div className='mb-16 text-center'>
 						<H1>Zero Width Shortener</H1>
-						<p className='text-[#DCD5F0] text-lg'>
+						<p className='text-zws-purple-100 text-lg'>
 							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
 						</p>
 					</div>

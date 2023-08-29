@@ -53,7 +53,7 @@ export default function ShortenUrlForm() {
 		<>
 			<form className='w-full h-14 bg-white rounded flex' onSubmit={handleSubmit}>
 				<input
-					className='w-full p-4 rounded-l outline-none h-full text-black placeholder-[rgba(10, 0, 37, 0.6)]'
+					className='w-full p-4 rounded-l outline-none h-full text-black placeholder-[rgba(10, 0, 37, 0.6)] bg-transparent'
 					placeholder='https://github.com/zws-im/zws'
 					type='url'
 					name='url'
@@ -65,7 +65,7 @@ export default function ShortenUrlForm() {
 				/>
 				<button
 					className={clsx('w-28 h-full p-4 rounded-r transition-colors font-bold flex justify-center items-center', {
-						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-[#4413CB]': !justFinished,
+						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500': !justFinished,
 						'bg-green-400 text-stone-900': justFinished,
 					})}
 					disabled={loading}
@@ -81,7 +81,7 @@ export default function ShortenUrlForm() {
 				{shortenedUrl && !loading ? (
 					<button
 						type='button'
-						className='text-[#DCD5F0] underline decoration-dotted underline-offset-2 hover:opacity-80 active:opacity-60 transition-opacity'
+						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 hover:opacity-80 active:opacity-60 transition-opacity'
 						onClick={copy}
 					>
 						{shortenedUrl} (click to copy)

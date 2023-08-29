@@ -27,7 +27,7 @@ const items: NavbarItem[] = [
 
 export default function Navbar() {
 	return (
-		<nav className='px-4 py-8 w-100 sticky top-0 bg-[#140A2E]/50 backdrop-blur'>
+		<nav className='px-4 py-8 w-100 sticky top-0 bg-zws-purple-900/50 backdrop-blur'>
 			<div className='container mx-auto flex justify-between'>
 				<Link className='transition-opacity hover:opacity-80 active:opacity-60 md:flex md:space-x-4' href='/'>
 					<div className='w-16 max-md:w-12'>
@@ -42,7 +42,7 @@ export default function Navbar() {
 							<li key={item.content}>
 								<Link
 									href={item.href}
-									className='font-bold transition text-[#EDE7FF] hover:text-opacity-80 active:text-opacity-60'
+									className='font-bold transition text-zws-purple-50 hover:text-opacity-80 active:text-opacity-60'
 								>
 									{item.content}
 								</Link>

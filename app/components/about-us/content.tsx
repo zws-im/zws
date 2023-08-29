@@ -2,7 +2,7 @@ export const aboutUsContent = (
 	<>
 		<p>
 			Hi, I'm{' '}
-			<a className='underline text-[#9B77FF]' href='https://jonahsnider.com' target='_blank' rel='noreferrer'>
+			<a className='underline text-zws-purple-400' href='https://jonahsnider.com' target='_blank' rel='noreferrer'>
 				Jonah
 			</a>
 			, the creator of ZWS. I hacked together the first version of ZWS back in 2019, mostly just to see if the concept
@@ -13,7 +13,7 @@ export const aboutUsContent = (
 		<p>
 			Over time, ZWS has gone through a lot of design iterations, on both the frontend and backend. If you're curious
 			about how ZWS works internally, feel free to look at{' '}
-			<a className='underline text-[#9B77FF]' href='https://github.com/zws-im/zws' target='_blank' rel='noreferrer'>
+			<a className='underline text-zws-purple-400' href='https://github.com/zws-im/zws' target='_blank' rel='noreferrer'>
 				the source code on GitHub
 			</a>
 			.

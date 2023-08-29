@@ -21,7 +21,7 @@ export const faq: FaqOption[] = [
 					We try to only use characters which don't render as anything, but some devices might render them as boxes. If
 					you see this, please{' '}
 					<a
-						className='underline text-[#9B77FF]'
+						className='underline text-zws-purple-400'
 						href='https://github.com/zws-im/zws/issues/new'
 						target='_blank'
 						rel='noreferrer'
@@ -37,7 +37,7 @@ export const faq: FaqOption[] = [
 		id: '2',
 		title: (
 			<p>
-				Why doesn't ZWS work on <span className='text-[#B094FF]'>[chat service]</span>?
+				Why doesn't ZWS work on <span className='text-zws-purple-400'>[chat service]</span>?
 			</p>
 		),
 		content: (
