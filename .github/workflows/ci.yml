@@ -19,6 +19,8 @@ jobs:
           cache: "yarn"
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Pull environment variables
+        run: yarn vercel env pull --environment developemnt .env
       - name: Cache Next.js
         uses: actions/cache@v3
         with:

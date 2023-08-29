@@ -54,7 +54,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.0.0",
 		"prisma": "5.1.1",
-		"type-fest": "4.1.0"
+		"type-fest": "4.1.0",
+		"vercel": "32.1.0"
 	},
 	"engines": {
 		"node": "18.x"
