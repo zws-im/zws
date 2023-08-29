@@ -21,7 +21,9 @@
 		"lint": "rome check .",
 		"lint:fix": "rome check . --apply",
 		"start": "next start",
-		"validate-prisma": "prisma validate"
+		"validate-prisma": "prisma validate",
+		"migrations": "prisma migrate deploy",
+		"build:nixpack": "nixpacks build . --name zws-im/zws"
 	},
 	"dependencies": {
 		"@heroicons/react": "2.0.18",
