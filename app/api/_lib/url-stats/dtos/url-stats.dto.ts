@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import { LongUrlSchema } from '../../urls/dtos/long-url-dto';
 
-export const UrlStats = z.object({
+export const UrlStatsSchema = z.object({
 	url: LongUrlSchema.shape.url,
-	visits: z.array(z.date()),
+	visits: z.array(z.string().datetime()),
 });
-export type UrlStats = z.infer<typeof UrlStats>;
+export type UrlStatsSchema = z.infer<typeof UrlStatsSchema>;

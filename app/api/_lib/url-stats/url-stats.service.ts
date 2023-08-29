@@ -2,7 +2,7 @@ import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { prisma } from '../prisma';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
-import { UrlStats } from './dtos/url-stats.dto';
+import { UrlStatsSchema } from './dtos/url-stats.dto';
 
 export class UrlStatsService {
 	constructor(private readonly prisma: PrismaClient) {}
@@ -14,7 +14,7 @@ export class UrlStatsService {
 	 *
 	 * @returns Shortened URL information and statistics, or `undefined` if it couldn't be found
 	 */
-	async statsForUrl(id: Short): Promise<UrlStats | undefined> {
+	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
 		const encodedId = UrlsService.encode(id);
 
 		const [visits, shortenedUrl] = await this.prisma.$transaction([
@@ -31,7 +31,7 @@ export class UrlStatsService {
 
 		if (shortenedUrl) {
 			return {
-				visits: visits.map((visit) => visit.timestamp),
+				visits: visits.map((visit) => visit.timestamp.toISOString()),
 				url: shortenedUrl.url,
 			};
 		}
