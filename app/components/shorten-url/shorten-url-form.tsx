@@ -1,7 +1,7 @@
 'use client';
 
 import { delayMinimum } from '@/app/util/delay';
-import { ArrowPathIcon, CheckIcon } from '@heroicons/react/24/solid';
+import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
 import { useEffect, useState } from 'react';
 import { shortenUrlAction } from './action';
 import clsx from 'clsx';
