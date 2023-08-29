@@ -21,6 +21,8 @@ jobs:
         run: yarn install --immutable
       - name: Pull environment variables
         run: yarn vercel env pull --environment developemnt .env
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       - name: Cache Next.js
         uses: actions/cache@v3
         with:
