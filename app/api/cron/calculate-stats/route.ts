@@ -4,5 +4,5 @@ import { statsService } from '../../_lib/stats/stats.service';
 export async function GET(): Promise<NextResponse> {
 	await statsService.savePreciseInstanceStats();
 
-	return new NextResponse(undefined, { status: 204 });
+	return new NextResponse();
 }
