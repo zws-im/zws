@@ -1,0 +1,24 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
+	"formatter": {
+		"lineWidth": 120
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "single",
+			"quoteStyle": "single"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"files": {
+		"ignore": [".next"]
+	}
+}
