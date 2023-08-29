@@ -14,7 +14,7 @@ import { validateBody } from './_lib/util/validate-request';
 function shortIdToShortenedUrlDto(url: ShortenedUrlData): ShortenedUrlSchema {
 	return {
 		short: url.short,
-		url: url.url?.toString(),
+		url: url.url ? decodeURI(url.url.toString()) : undefined,
 	};
 }
 
