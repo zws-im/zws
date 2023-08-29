@@ -35,7 +35,7 @@
 		"@vercel/analytics": "1.0.2",
 		"@vercel/kv": "0.2.2",
 		"apexcharts": "3.42.0",
-		"autoprefixer": "10.4.14",
+		"autoprefixer": "10.4.15",
 		"clsx": "2.0.0",
 		"convert": "4.13.1",
 		"millify": "6.1.0",
