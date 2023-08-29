@@ -4,17 +4,15 @@ import Footer from './components/footer/footer';
 import Navbar from './components/navbar/navbar';
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
+import clsx from 'clsx';
+import PlausibleProvider from 'next-plausible';
 import DotGrid from './components/background-decorations/dot-grid';
 import LightSpot from './components/background-decorations/light-spot';
 import Wave from './components/background-decorations/wave';
 import { description, metadataBase, siteName } from './shared-metadata';
-import clsx from 'clsx';
-import { Analytics } from '@vercel/analytics/react';
-import Script from 'next/script';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
-
-const GOOGLE_ANALYTICS_ID = 'G-09ZP8E0ZQ6';
 
 export const metadata: Metadata = {
 	metadataBase,
@@ -35,6 +33,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
+			<head>
+				<PlausibleProvider enabled selfHosted domain='zws.im' />
+			</head>
 			<body className={clsx(inter.className)}>
 				<Wave />
 
@@ -50,17 +51,6 @@ export default function RootLayout({
 					</div>
 				</div>
 				<Analytics />
-
-				<Script src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`} />
-				<Script id='google-analytics'>
-					{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', '${GOOGLE_ANALYTICS_ID}');
-        `}
-				</Script>
 			</body>
 		</html>
 	);

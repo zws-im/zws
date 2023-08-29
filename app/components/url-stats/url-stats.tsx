@@ -7,6 +7,8 @@ import { Suspense, useState } from 'react';
 import useSWR from 'swr';
 import UrlStatsChart from './url-stats-chart';
 import UrlStatsInput from './url-stats-input';
+import { usePlausible } from '@/app/hooks/plausible';
+import va from '@vercel/analytics';
 
 function extractShort(url: string): string | undefined {
 	try {
@@ -19,6 +21,7 @@ function extractShort(url: string): string | undefined {
 export default function UrlStats() {
 	const [url, setUrl] = useState('');
 	const short = extractShort(url);
+	const plausible = usePlausible();
 
 	const {
 		data: stats,
@@ -26,6 +29,10 @@ export default function UrlStats() {
 		isLoading,
 	} = useSWR<UrlStatsSchema, HttpError>(short ? `/api/${encodeURIComponent(short)}/stats` : undefined, {
 		fetcher,
+		onSuccess: () => {
+			va.track('Check URL stats');
+			plausible('Check URL stats');
+		},
 	});
 
 	let errorText = error?.exception?.message ?? error?.message;

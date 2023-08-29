@@ -7,6 +7,7 @@ import { shortenUrlAction } from './action';
 import va from '@vercel/analytics';
 
 import clsx from 'clsx';
+import { usePlausible } from '@/app/hooks/plausible';
 
 export default function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');
@@ -15,6 +16,7 @@ export default function ShortenUrlForm() {
 	const [error, setError] = useState<string | undefined>(undefined);
 	const [finishedAt, setFinishedAt] = useState<number | undefined>(undefined);
 	const justSucceeded = !error && Date.now() - (finishedAt ?? 0) < 1.5e3;
+	const plausible = usePlausible();
 
 	useEffect(() => {
 		if (finishedAt) {
@@ -35,6 +37,7 @@ export default function ShortenUrlForm() {
 		setError(undefined);
 		const result = await delayMinimum(shortenUrlAction(longUrl), 100);
 		va.track('Shorten URL');
+		plausible('Shorten URL');
 		setLoading(false);
 		setFinishedAt(Date.now());
 

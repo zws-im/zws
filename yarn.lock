@@ -755,6 +755,7 @@ __metadata:
     convert: 4.13.1
     millify: 6.1.0
     next: 13.4.19
+    next-plausible: 3.11.1
     postcss: 8.4.27
     prisma: 5.1.1
     react: 18.2.0
@@ -2380,6 +2381,17 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
+  languageName: node
+  linkType: hard
+
+"next-plausible@npm:3.11.1":
+  version: 3.11.1
+  resolution: "next-plausible@npm:3.11.1"
+  peerDependencies:
+    next: ^11.1.0 || ^12.0.0 || ^13.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: f4aae3635b98109cdccd2fc0c56a37a91c33ae65fdac89fdf1382d6d9602fb735aa26cce11e9550cc3020e114b5fc04b0d179b1f7ad6653228acc08f9f2ff3df
   languageName: node
   linkType: hard
 
