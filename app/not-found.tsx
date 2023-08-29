@@ -19,7 +19,7 @@ export default function NotFound() {
 			<H1>404 - Page not found</H1>
 			<Link
 				href='/'
-				className='w-28 h-full p-4 rounded transition-opacity font-bold flex justify-center items-center bg-[#4413CB] hover:opacity-90 active:opacity-80'
+				className='w-28 h-full p-4 rounded transition-opacity font-bold flex justify-center items-center bg-zws-purple-500 hover:opacity-90 active:opacity-80'
 			>
 				Home <ArrowRightIcon className='ml-2 h-6 w-6' />
 			</Link>
