@@ -22,49 +22,47 @@ export default function UrlStatsChart({ stats }: Props) {
 	const chartData = useMemo(() => (stats ? createChartData(stats) : []), [stats]);
 
 	return (
-		<div>
-			<Chart
-				type='area'
-				options={{
-					theme: { mode: 'dark' },
-					chart: {
-						id: 'visits',
-						background: 'transparent',
+		<Chart
+			type='area'
+			options={{
+				theme: { mode: 'dark' },
+				chart: {
+					id: 'visits',
+					background: 'transparent',
+				},
+				xaxis: {
+					type: 'datetime',
+				},
+				yaxis: {
+					labels: {
+						formatter: (value) => value.toFixed(0),
 					},
-					xaxis: {
-						type: 'datetime',
+				},
+				fill: {
+					gradient: {
+						shade: 'dark',
+						opacityFrom: 0.6,
+						opacityTo: 0,
+						stops: [0, 90],
 					},
+				},
+				dataLabels: { enabled: false },
+				grid: {
 					yaxis: {
-						labels: {
-							formatter: (value) => value.toFixed(0),
+						lines: {
+							show: true,
 						},
 					},
-					fill: {
-						gradient: {
-							shade: 'dark',
-							opacityFrom: 0.6,
-							opacityTo: 0,
-							stops: [0, 90],
-						},
-					},
-					dataLabels: { enabled: false },
-					grid: {
-						yaxis: {
-							lines: {
-								show: true,
-							},
-						},
-						strokeDashArray: 4,
-					},
-				}}
-				series={[
-					{
-						name: 'Visits',
-						data: chartData,
-						color: '#9B77FF',
-					},
-				]}
-			/>
-		</div>
+					strokeDashArray: 4,
+				},
+			}}
+			series={[
+				{
+					name: 'Visits',
+					data: chartData,
+					color: '#9B77FF',
+				},
+			]}
+		/>
 	);
 }
