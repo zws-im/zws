@@ -29,7 +29,7 @@
 		"@heroicons/react": "2.0.18",
 		"@jonahsnider/util": "10.0.2",
 		"@prisma/client": "5.1.1",
-		"@types/node": "20.4.8",
+		"@types/node": "20.5.7",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
 		"@vercel/analytics": "1.0.2",
