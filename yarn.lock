@@ -774,7 +774,7 @@ __metadata:
     react-dom: 18.2.0
     swr: 2.2.2
     tailwindcss: 3.3.3
-    type-fest: 4.1.0
+    type-fest: 4.3.1
     typescript: 5.1.6
     vercel: 32.1.0
     yn: 5.0.0
@@ -3541,10 +3541,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:4.1.0":
-  version: 4.1.0
-  resolution: "type-fest@npm:4.1.0"
-  checksum: a9cfa9b70abaa96d7e80709aeb2197a372c2caa54d134afdb8ae955de9457aba04a71d17d68dccbb745c96f4c5bfd372da1222d8b44d70f4809074620016507c
+"type-fest@npm:4.3.1":
+  version: 4.3.1
+  resolution: "type-fest@npm:4.3.1"
+  checksum: 04e0f073dcc31c113c1b8856c089b388e7e9f4383a9ed72cc1466a89ec50d9d67678844eeec342b5a1ce71b21e817764d4f067aa148f6bcb5df9005ff3803382
   languageName: node
   linkType: hard
 
