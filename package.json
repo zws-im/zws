@@ -28,7 +28,7 @@
 	"dependencies": {
 		"@heroicons/react": "2.0.18",
 		"@jonahsnider/util": "10.0.2",
-		"@prisma/client": "5.1.1",
+		"@prisma/client": "5.2.0",
 		"@types/node": "20.5.7",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
@@ -54,7 +54,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.0.0",
-		"prisma": "5.1.1",
+		"prisma": "5.2.0",
 		"type-fest": "4.3.1",
 		"vercel": "32.1.0"
 	},
