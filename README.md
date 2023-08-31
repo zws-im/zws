@@ -39,11 +39,6 @@ Special thanks to [Jaex](https://github.com/Jaex) for integrating ZWS into [Shar
 [![Organization avatar](https://opencollective.com/zws/organization/8/avatar.svg)](https://opencollective.com/zws/organization/8/website)
 [![Organization avatar](https://opencollective.com/zws/organization/9/avatar.svg)](https://opencollective.com/zws/organization/9/website)
 
-## [Status page][status-page]
-
-A status page for the official zws.im instance of ZWS is available at **[status.zws.im][status-page]**.
-
-
 ## Badges
 
 ZWS instances expose a few routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
