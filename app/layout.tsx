@@ -11,6 +11,7 @@ import DotGrid from './components/background-decorations/dot-grid';
 import LightSpot from './components/background-decorations/light-spot';
 import Wave from './components/background-decorations/wave';
 import { description, metadataBase, siteName } from './shared-metadata';
+import { HighlightInit } from '@highlight-run/next/client';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -32,26 +33,38 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
-			<head>
-				<PlausibleProvider enabled selfHosted domain='zws.im' />
-			</head>
-			<body className={clsx(inter.className)}>
-				<Wave />
+		<>
+			<HighlightInit
+				projectId={process.env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
+				tracingOrigins
+				excludedHostnames={['localhost']}
+				networkRecording={{
+					enabled: true,
+					recordHeadersAndBody: true,
+				}}
+			/>
 
-				<div className='min-h-screen'>
-					<Navbar />
-					<DotGrid height={1} className='max-xl:top-[550px] xl:top-[787px] left-0 max-md:invisible' />
-					<DotGrid height={2} className='top-[145px] right-0' />
-					<div className='container mx-auto px-4 max-w-screen-xl'>
-						<LightSpot className='transform translate-x-[-250px] translate-y-[-200px] -z-50 max-md:w-0 max-md:h-0' />
+			<html lang='en'>
+				<head>
+					<PlausibleProvider enabled selfHosted domain='zws.im' />
+				</head>
+				<body className={clsx(inter.className)}>
+					<Wave />
 
-						{children}
-						<Footer />
+					<div className='min-h-screen'>
+						<Navbar />
+						<DotGrid height={1} className='max-xl:top-[550px] xl:top-[787px] left-0 max-md:invisible' />
+						<DotGrid height={2} className='top-[145px] right-0' />
+						<div className='container mx-auto px-4 max-w-screen-xl'>
+							<LightSpot className='transform translate-x-[-250px] translate-y-[-200px] -z-50 max-md:w-0 max-md:h-0' />
+
+							{children}
+							<Footer />
+						</div>
 					</div>
-				</div>
-				<Analytics />
-			</body>
-		</html>
+					<Analytics />
+				</body>
+			</html>
+		</>
 	);
 }
