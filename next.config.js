@@ -6,6 +6,7 @@ const nextConfig = withPlausibleProxy()({
 	env: {
 		NEXT_PUBLIC_SHORTENED_BASE_URL: process.env.SHORTENED_BASE_URL,
 	},
+	productionBrowserSourceMaps: true,
 });
 
 module.exports = nextConfig;
