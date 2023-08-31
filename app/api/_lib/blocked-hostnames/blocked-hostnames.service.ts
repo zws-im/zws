@@ -38,20 +38,24 @@ export class BlockedHostnamesService {
 	}
 
 	private async isHostnameBlockedInDB(hostname: string, domainName: string): Promise<boolean> {
-		const redisCacheExists = await this.kv.exists(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY);
+		const result = await this.kv.smismember(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, [
+			hostname,
+			domainName,
+		]);
 
-		if (redisCacheExists) {
-			const result = await this.kv.smismember(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, [
-				hostname,
-				domainName,
-			]);
+		const blockedInCache = result.some((count) => count > 0);
 
-			return result.some((count) => count > 0);
+		if (!blockedInCache) {
+			const redisCacheExists = await this.kv.exists(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY);
+
+			if (redisCacheExists) {
+				await this.refreshRedisCache();
+
+				return this.blockedHostnames.has(hostname) || this.blockedHostnames.has(domainName);
+			}
 		}
 
-		await this.refreshRedisCache();
-
-		return this.blockedHostnames.has(hostname) || this.blockedHostnames.has(domainName);
+		return blockedInCache;
 	}
 
 	private async refreshRedisCache(): Promise<void> {
