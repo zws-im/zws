@@ -23,7 +23,7 @@ const motionVariants: Variants = {
 export default function HomePage() {
 	return (
 		<main className='max-lg:space-y-16 max-xl:space-y-32 xl:space-y-48'>
-			<section id='shorten' className='flex flex-col items-center justify-center max-sm:mt-32 max-md:mt-48 md:mt-72'>
+			<section id='shorten' className='flex flex-col items-center justify-center max-md:mt-24 md:mt-36'>
 				<div className='max-w-xl'>
 					<motion.div
 						className='text-center'
