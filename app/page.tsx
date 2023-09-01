@@ -1,3 +1,4 @@
+import { Variants } from 'framer-motion';
 import AboutUs from './components/about-us/about-us';
 import LightSpot from './components/background-decorations/light-spot';
 import DividerLine from './components/divider-line';
@@ -6,20 +7,46 @@ import H1 from './components/headings/h1';
 import H2 from './components/headings/h2';
 import RandomText from './components/random-text';
 import ShortenUrlForm from './components/shorten-url/shorten-url-form';
+import * as motion from './motion';
+
+const motionVariants: Variants = {
+	visible: {
+		opacity: 1,
+		y: 0,
+	},
+	hidden: {
+		opacity: 0,
+		y: '5%',
+	},
+};
 
 export default function HomePage() {
 	return (
 		<main className='max-lg:space-y-16 max-xl:space-y-32 xl:space-y-48'>
 			<section id='shorten' className='flex flex-col items-center justify-center max-sm:mt-32 max-md:mt-48 md:mt-72'>
 				<div className='max-w-xl'>
-					<div className='mb-16 text-center'>
-						<H1>Zero Width Shortener</H1>
-						<p className='text-zws-purple-100 text-lg'>
-							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
-						</p>
-					</div>
+					<motion.div
+						className='text-center'
+						initial='hidden'
+						animate='visible'
+						transition={{
+							staggerChildren: 0.15,
+						}}
+					>
+						<motion.div variants={motionVariants}>
+							<H1>Zero Width Shortener</H1>
+						</motion.div>
 
-					<ShortenUrlForm />
+						<motion.div variants={motionVariants}>
+							<p className='text-zws-purple-100 text-lg'>
+								Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
+							</p>
+						</motion.div>
+
+						<motion.div className='mt-16' variants={motionVariants}>
+							<ShortenUrlForm />
+						</motion.div>
+					</motion.div>
 				</div>
 			</section>
 
