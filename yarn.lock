@@ -140,6 +140,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:^0.8.2":
+  version: 0.8.8
+  resolution: "@emotion/is-prop-valid@npm:0.8.8"
+  dependencies:
+    "@emotion/memoize": 0.7.4
+  checksum: bb7ec6d48c572c540e24e47cc94fc2f8dec2d6a342ae97bc9c8b6388d9b8d283862672172a1bb62d335c02662afe6291e10c71e9b8642664a8b43416cdceffac
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:0.7.4":
+  version: 0.7.4
+  resolution: "@emotion/memoize@npm:0.7.4"
+  checksum: 4e3920d4ec95995657a37beb43d3f4b7d89fed6caa2b173a4c04d10482d089d5c3ea50bbc96618d918b020f26ed6e9c4026bbd45433566576c1f7b056c3271dc
+  languageName: node
+  linkType: hard
+
 "@grpc/grpc-js@npm:^1.7.1":
   version: 1.9.1
   resolution: "@grpc/grpc-js@npm:1.9.1"
@@ -2279,6 +2295,7 @@ __metadata:
     autoprefixer: 10.4.15
     clsx: 2.0.0
     convert: 4.13.1
+    framer-motion: 10.16.2
     millify: 6.1.0
     next: 13.4.19
     next-plausible: 3.11.1
@@ -3309,6 +3326,27 @@ __metadata:
   version: 4.2.0
   resolution: "fraction.js@npm:4.2.0"
   checksum: 8c76a6e21dedea87109d6171a0ac77afa14205794a565d71cb10d2925f629a3922da61bf45ea52dbc30bce4d8636dc0a27213a88cbd600eab047d82f9a3a94c5
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:10.16.2":
+  version: 10.16.2
+  resolution: "framer-motion@npm:10.16.2"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    tslib: ^2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 341de9ed9ad26e67306d6467a17f5260ce0e8a034f936f2af22f03a7fe4087de487a8aebcbc396ab591de7fe181926d0cd6a79ec1dca6172e85f7fdf5103484f
   languageName: node
   linkType: hard
 

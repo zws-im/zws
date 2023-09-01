@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { faq, faqObject, firstFaqOption } from './content';
 import FaqSelector from './faq-selector';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Faq() {
 	const [selectedId, setSelectedId] = useState(firstFaqOption.id);
@@ -14,7 +15,17 @@ export default function Faq() {
 				<FaqSelector initialSelected={firstFaqOption.id} onSelect={setSelectedId} options={faq} />
 			</div>
 
-			<div className='max-lg:w-full'>{selected.content}</div>
+			<AnimatePresence initial={false} mode='wait'>
+				<motion.div
+					className='max-lg:w-full'
+					key={selected.id}
+					initial={{ opacity: 0, y: '5%' }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: '-5%' }}
+				>
+					{selected.content}
+				</motion.div>
+			</AnimatePresence>
 		</div>
 	);
 }
