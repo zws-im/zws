@@ -4,7 +4,7 @@ import UrlStats from '../components/url-stats/url-stats';
 export default function StatsPage() {
 	return (
 		<main>
-			<section id='stats' className='flex flex-col items-center justify-center mt-48'>
+			<section id='stats' className='flex flex-col items-center justify-center'>
 				<div className='w-full max-w-xl'>
 					<div className='mb-16 text-center'>
 						<H1>Stats</H1>
