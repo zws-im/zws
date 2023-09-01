@@ -26,9 +26,9 @@ export default function Navbar() {
 	return (
 		<nav className='px-4 py-8 w-100 sticky top-0 bg-zws-purple-900/50 backdrop-blur'>
 			<div className='container mx-auto flex justify-between'>
-				<Link href='/'>
+				<Link className='transition-opacity hover:opacity-80 active:opacity-60' href='/'>
 					<motion.div
-						className='transition-opacity hover:opacity-80 active:opacity-60 md:flex md:space-x-4'
+						className='md:flex md:space-x-4'
 						initial={{
 							opacity: 0,
 							x: -5,
@@ -37,7 +37,7 @@ export default function Navbar() {
 							opacity: 1,
 							x: 0,
 						}}
-						transition={{ delay: 0.5 }}
+						transition={{ delay: 1 }}
 					>
 						<div className='w-16 max-md:w-12'>
 							<Logo />
@@ -56,7 +56,7 @@ export default function Navbar() {
 						opacity: 1,
 						x: 0,
 					}}
-					transition={{ delay: 0.5 }}
+					transition={{ delay: 1 }}
 				>
 					{items.map((item) => {
 						return (
