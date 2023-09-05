@@ -7,13 +7,13 @@ import {
 import { redirect } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import { exceptionRouteWrapper } from '../_lib/exception-route-wrapper';
 import { urlStatsService } from '../_lib/url-stats/url-stats.service';
 import { LongUrlSchema } from '../_lib/urls/dtos/long-url.dto';
 import { ShortSchema } from '../_lib/urls/dtos/short.dto';
 import { UrlBlockedException } from '../_lib/urls/exceptions/url-blocked.exception';
 import { UrlNotFoundException } from '../_lib/urls/exceptions/url-not-found.exception';
 import { urlsService } from '../_lib/urls/urls.service';
-import { exceptionRouteWrapper } from '../exception-route-wrapper';
 
 export const GET = exceptionRouteWrapper.wrapRoute<LongUrlSchema, NextRouteHandlerContext<{ short: string }>>(
 	async (request, context) => {
