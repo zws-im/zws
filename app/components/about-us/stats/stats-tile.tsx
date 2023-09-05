@@ -1,16 +1,13 @@
 import clsx from 'clsx';
-import { Variants } from 'framer-motion';
-import * as motion from '../../../motion';
 
 type Props = {
 	value: string;
 	name: string;
 	wide?: boolean;
 	href?: string;
-	motionVariants: Variants;
 };
 
-export default function StatsTile({ value, name, wide = false, href, motionVariants }: Props) {
+export default function StatsTile({ value, name, wide = false, href }: Props) {
 	const containerStyles = clsx('h-32 rounded-md bg-zws-purple-800 flex flex-col justify-center items-center', {
 		'col-span-1 max-md:w-full md:w-32': !wide,
 		'col-span-2': wide,
@@ -38,21 +35,16 @@ export default function StatsTile({ value, name, wide = false, href, motionVaria
 
 	if (href) {
 		return (
-			<motion.a
+			<a
 				href={href}
 				target='blank'
 				rel='noreferrer'
 				className={clsx(containerStyles, 'hover:opacity-90 active:opacity-80 transition-opacity')}
-				variants={motionVariants}
 			>
 				{tileContents}
-			</motion.a>
+			</a>
 		);
 	}
 
-	return (
-		<motion.div className={containerStyles} variants={motionVariants}>
-			{tileContents}
-		</motion.div>
-	);
+	return <div className={containerStyles}>{tileContents}</div>;
 }
