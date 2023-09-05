@@ -6,21 +6,28 @@ import PlausibleProvider from 'next-plausible';
 import { Lato } from 'next/font/google';
 import { DotGrid, Footer, LightSpot, Navbar, Wave } from './components';
 import './globals.css';
-import { description, metadataBase, siteName } from './shared-metadata';
+import { metadataBase, siteName } from './shared-metadata';
 
-const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
+const canonical = '/';
+const description = 'ZWS is a URL shortener which uses zero width characters to shorten URLs.';
 
 export const metadata: Metadata = {
 	metadataBase,
-	title: siteName,
+	title: { default: siteName, absolute: siteName, template: `%s | ${siteName}` },
 	description,
+	alternates: {
+		canonical: canonical,
+	},
 	openGraph: {
+		type: 'website',
 		siteName,
 		title: siteName,
-		url: 'https://zws.im',
+		url: canonical,
 		description,
 	},
 };
+
+const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
 export default function RootLayout({
 	children,

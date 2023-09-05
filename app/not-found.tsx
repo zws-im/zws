@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { H1 } from './components';
 import { siteName } from './shared-metadata';
 
+const title = 'Not Found';
 export const metadata: Metadata = {
-	title: `Not found - ${siteName}`,
+	title,
 	openGraph: {
 		siteName,
-		title: 'Not found',
-		url: 'https://zws.im',
+		title,
 	},
 };
 

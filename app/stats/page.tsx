@@ -1,4 +1,25 @@
+import { Metadata } from 'next';
 import { H1, UrlStats } from '../components';
+import { metadataBase, siteName } from '../shared-metadata';
+
+const description = "View usage statistics for URLs you've shortened with zws.im.";
+const title = 'Stats';
+
+const canonical = '/stats';
+export const metadata: Metadata = {
+	metadataBase,
+	title,
+	description,
+	alternates: {
+		canonical,
+	},
+	openGraph: {
+		siteName,
+		title,
+		url: canonical,
+		description,
+	},
+};
 
 export default function StatsPage() {
 	return (
