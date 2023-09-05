@@ -1,13 +1,13 @@
 'use client';
 
+import { usePlausible } from '@/app/hooks/plausible';
 import { delayMinimum } from '@/app/util/delay';
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
 import va from '@vercel/analytics';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { shortenUrlAction } from './action';
-
-import { usePlausible } from '@/app/hooks/plausible';
 import clsx from 'clsx';
+import { ChangeEvent, useEffect, useState } from 'react';
+import * as motion from '../../motion';
+import { shortenUrlAction } from './action';
 
 export default function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');
@@ -35,7 +35,7 @@ export default function ShortenUrlForm() {
 		setFinishedAt(undefined);
 		setShortenedUrl(undefined);
 		setError(undefined);
-		const result = await delayMinimum(shortenUrlAction(longUrl), 100);
+		const result = await delayMinimum(shortenUrlAction(longUrl), 200);
 		va.track('Shorten URL');
 		plausible('Shorten URL');
 		setLoading(false);
@@ -80,7 +80,7 @@ export default function ShortenUrlForm() {
 					// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
 					autoFocus={true}
 				/>
-				<button
+				<motion.button
 					className={clsx('min-w-max h-full p-4 rounded-r transition-colors flex justify-center items-center', {
 						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500 font-bold': !(
 							justSucceeded || error
@@ -90,12 +90,13 @@ export default function ShortenUrlForm() {
 					})}
 					disabled={loading}
 					type='submit'
+					layout={true}
 				>
 					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
 					{!(loading || justSucceeded || error) && 'Shorten'}
 					{error}
 					{justSucceeded && <CheckIcon className='w-6 h-6' />}
-				</button>
+				</motion.button>
 			</form>
 
 			<div className='pt-4 text-center'>
