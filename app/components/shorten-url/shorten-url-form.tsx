@@ -15,7 +15,7 @@ export default function ShortenUrlForm() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<string | undefined>(undefined);
 	const [finishedAt, setFinishedAt] = useState<number | undefined>(undefined);
-	const justSucceeded = !error && Date.now() - (finishedAt ?? 0) < 1.5e3;
+	const justSucceeded = Boolean(shortenedUrl) && !loading && !error && Date.now() - (finishedAt ?? 0) < 1.5e3;
 	const plausible = usePlausible();
 
 	useEffect(() => {
