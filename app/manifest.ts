@@ -1,12 +1,12 @@
 import { MetadataRoute } from 'next';
-import { description, siteName } from './shared-metadata';
+import { siteDescription, siteName } from './shared-metadata';
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
 		name: siteName,
 		// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 		short_name: 'ZWS',
-		description: description,
+		description: siteDescription,
 		// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 		start_url: '/',
 		display: 'standalone',

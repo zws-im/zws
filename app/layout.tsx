@@ -6,15 +6,14 @@ import PlausibleProvider from 'next-plausible';
 import { Lato } from 'next/font/google';
 import { DotGrid, Footer, LightSpot, Navbar, Wave } from './components';
 import './globals.css';
-import { metadataBase, siteName } from './shared-metadata';
+import { metadataBase, siteDescription, siteName } from './shared-metadata';
 
 const canonical = '/';
-const description = 'ZWS is a URL shortener which uses zero width characters to shorten URLs.';
 
 export const metadata: Metadata = {
 	metadataBase,
 	title: { default: siteName, absolute: siteName, template: `%s | ${siteName}` },
-	description,
+	description: siteDescription,
 	alternates: {
 		canonical: canonical,
 	},
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 		siteName,
 		title: siteName,
 		url: canonical,
-		description,
+		description: siteDescription,
 	},
 };
 
