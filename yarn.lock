@@ -280,20 +280,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@highlight-run/next@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@highlight-run/next@npm:4.1.0"
+"@highlight-run/next@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@highlight-run/next@npm:4.2.0"
   dependencies:
     "@highlight-run/node": 3.2.0
     "@highlight-run/react": 3.2.1
     "@highlight-run/sourcemap-uploader": 0.5.2
-    highlight.run: 7.4.3
+    highlight.run: 7.5.0
   peerDependencies:
     "@highlight-run/node": ^3.2.0
-    highlight.run: ^7.4.3
+    highlight.run: ^7.5.0
     next: ">=12"
     react: ">=17"
-  checksum: cca44e52c9fc3f736f63cbfa35b48d2cd1929d9d0363c79ac5c96013b6cde66b465c9e95e957a1e433ac554627f2a592c7081cc7f9056264c365425078725e0a
+  checksum: 3b9dcda54f00b4cab944dcbff1da5bc393cadb7e11b71dc4dd45d6170bf0108f20ec98ac8d931c78f99ed59d8c0d97ec6fb86e70b7cadf6b95e9d5958434c93b
   languageName: node
   linkType: hard
 
@@ -2300,7 +2300,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": 1.0.0
     "@heroicons/react": 2.0.18
-    "@highlight-run/next": 4.1.0
+    "@highlight-run/next": 4.2.0
     "@jonahsnider/nextjs-api-utils": 1.0.4
     "@jonahsnider/util": 10.0.2
     "@prisma/client": 5.2.0
@@ -3612,6 +3612,13 @@ __metadata:
   version: 7.4.3
   resolution: "highlight.run@npm:7.4.3"
   checksum: e6568ad739252b89e9f906cd52b395b888e415cb8fb680e7ad11b3db42a5b2213e9c47650390eaf7a729c25984f9c1997786c62d12994750fbe2b1704494fd7b
+  languageName: node
+  linkType: hard
+
+"highlight.run@npm:7.5.0":
+  version: 7.5.0
+  resolution: "highlight.run@npm:7.5.0"
+  checksum: e1936af548f4a5fe9f0fe22cfb7eec9ef3db19b6c2b18fc790e4c3adc331f51f4c3690613bb41966bf98a266e75d9e8459d24e98f67d757e373c089ac6f2a50d
   languageName: node
   linkType: hard
 
