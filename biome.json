@@ -1,7 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
-	"organizeImports": {
-		"enabled": false
+	"files": {
+		"ignore": [".next", "node_modules"]
 	},
 	"formatter": {
 		"lineWidth": 120
@@ -10,15 +10,25 @@
 		"formatter": {
 			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
+		},
+		"globals": ["React"]
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
 		}
 	},
 	"linter": {
-		"enabled": true,
 		"rules": {
-			"recommended": true
+			"all": true,
+			"nursery": {
+				"all": true,
+				"useImportRestrictions": "off"
+			},
+			"style": {
+				"all": true,
+				"noParameterProperties": "off"
+			}
 		}
-	},
-	"files": {
-		"ignore": [".next"]
 	}
 }

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import * as motion from '../../../motion';
 import { Variants } from 'framer-motion';
+import * as motion from '../../../motion';
 
 type Props = {
 	value: string;

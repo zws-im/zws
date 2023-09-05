@@ -1,16 +1,16 @@
+import { configService } from '@/app/api/_lib/config/config.service';
 import { statsService } from '@/app/api/_lib/stats/stats.service';
 import convert from 'convert';
-import millify from 'millify';
-import StatsTile from './stats-tile';
-import { configService } from '@/app/api/_lib/config/config.service';
-import * as motion from '../../../motion';
 import { Variants } from 'framer-motion';
+import millify from 'millify';
+import * as motion from '../../../motion';
+import StatsTile from './stats-tile';
 
 async function getGitHubStars(): Promise<number> {
 	const query = new URLSearchParams({ q: 'zws-im/zws' });
 	const response = await fetch(`https://api.github.com/search/repositories?${query}`, {
 		headers: {
-			Accept: 'application/vnd.github+json',
+			accept: 'application/vnd.github+json',
 			'X-GitHub-Api-Version': '2022-11-28',
 		},
 		next: {
@@ -24,7 +24,9 @@ async function getGitHubStars(): Promise<number> {
 
 	const data = (await response.json()) as {
 		items: Array<{
+			// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 			full_name: string;
+			// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 			stargazers_count: number;
 		}>;
 	};
@@ -64,7 +66,7 @@ export default async function Stats() {
 			}}
 		>
 			<StatsTile
-				wide
+				wide={true}
 				name='URLs shortened'
 				value={millify(stats.urls).toLocaleString()}
 				motionVariants={motionVariants}

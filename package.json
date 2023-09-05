@@ -19,7 +19,7 @@
 		"build": "next build",
 		"dev": "next dev",
 		"lint": "biome check .",
-		"lint:fix": "biome check . --apply",
+		"lint:fix": "biome check . --apply-unsafe",
 		"start": "next start",
 		"validate-prisma": "prisma validate",
 		"migrations": "prisma migrate deploy",

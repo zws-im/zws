@@ -2,13 +2,13 @@
 
 import { ExceptionCode } from '@/app/api/_lib/exceptions/enums/exceptions.enum';
 import { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
+import { usePlausible } from '@/app/hooks/plausible';
 import { HttpError, fetcher } from '@/app/swr';
+import va from '@vercel/analytics';
 import { Suspense, useState } from 'react';
-import useSWR from 'swr';
+import useSwr from 'swr';
 import UrlStatsChart from './url-stats-chart';
 import UrlStatsInput from './url-stats-input';
-import { usePlausible } from '@/app/hooks/plausible';
-import va from '@vercel/analytics';
 
 function extractShort(url: string): string | undefined {
 	try {
@@ -27,7 +27,7 @@ export default function UrlStats() {
 		data: stats,
 		error,
 		isLoading,
-	} = useSWR<UrlStatsSchema, HttpError>(short ? `/api/${encodeURIComponent(short)}/stats` : undefined, {
+	} = useSwr<UrlStatsSchema, HttpError>(short ? `/api/${encodeURIComponent(short)}/stats` : undefined, {
 		fetcher,
 		onSuccess: () => {
 			va.track('Check URL stats');

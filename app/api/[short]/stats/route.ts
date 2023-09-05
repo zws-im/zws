@@ -6,11 +6,12 @@ import { UrlStatsSchema } from '../../_lib/url-stats/dtos/url-stats.dto';
 import { urlStatsService } from '../../_lib/url-stats/url-stats.service';
 import { ShortSchema } from '../../_lib/urls/dtos/short.dto';
 import { UrlNotFoundException } from '../../_lib/urls/exceptions/url-not-found.exception';
-import { validateParams } from '../../_lib/util/validate-request';
 import { Short } from '../../_lib/urls/interfaces/urls.interface';
+import { validateParams } from '../../_lib/util/validate-request';
 
+// rome-ignore lint/nursery/useNamingConvention: Function name is required for Next.js
 export async function GET(
-	request: NextRequest,
+	_request: NextRequest,
 	context: { params: { short: string } },
 ): Promise<NextResponse<UrlStatsSchema | ExceptionSchema>> {
 	const params = validateParams(context, z.object({ short: ShortSchema }));

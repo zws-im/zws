@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Logo from '../logo';
-import * as motion from '../../motion';
+import * as motion from '../motion';
+import Logo from './logo';
 
 type NavbarItem = {
 	content: string;

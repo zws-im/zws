@@ -1,13 +1,13 @@
+import { sample } from '@jonahsnider/util';
 import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
-import { prisma } from '../prisma';
-import { Base64, Short } from './interfaces/urls.interface';
-import { VisitUrlData } from './interfaces/visit-url-data.interface';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
-import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
+import { prisma } from '../prisma';
 import { AttemptedShortenBlockedHostnameException } from './attempted-shorten-blocked-hostname.exception';
-import { sample } from '@jonahsnider/util';
 import { ShortenedUrlData } from './interfaces/shortened-url.interface';
+import { Base64, Short } from './interfaces/urls.interface';
+import { VisitUrlData } from './interfaces/visit-url-data.interface';
+import { UniqueShortIdTimeoutException } from './unique-short-id-timeout.exception';
 
 export class UrlsService {
 	/** Maximum number of attempts to generate a unique ID. */
@@ -62,6 +62,7 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
+	// rome-ignore lint/nursery/noExcessiveComplexity: Doesn't really make sense to split this logic out, it would be messier
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
 		const hostname = new URL(url).hostname;
 

@@ -1,5 +1,4 @@
-import H1 from '../components/headings/h1';
-import UrlStats from '../components/url-stats/url-stats';
+import { H1, UrlStats } from '../components';
 
 export default function StatsPage() {
 	return (

@@ -1,9 +1,9 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { faq, faqObject, firstFaqOption } from './content';
 import FaqSelector from './faq-selector';
-import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Faq() {
 	const [selectedId, setSelectedId] = useState(firstFaqOption.id);

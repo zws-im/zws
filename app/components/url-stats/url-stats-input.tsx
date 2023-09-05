@@ -25,7 +25,7 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 		if (valid) {
 			setShortUrl(shortUrl);
 		}
-	}, [shortUrl, valid]);
+	}, [shortUrl, valid, setShortUrl]);
 
 	return (
 		<div
@@ -40,9 +40,9 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 				name='url'
 				value={shortUrl}
 				onChange={onChange}
-				required
+				required={true}
 				// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
-				autoFocus
+				autoFocus={true}
 			/>
 			<div
 				className={clsx('min-w-max h-full p-4 rounded-r transition-colors', {

@@ -1,17 +1,12 @@
-import type { Metadata } from 'next';
-import { Lato } from 'next/font/google';
-import Footer from './components/footer/footer';
-import Navbar from './components/navbar/navbar';
-import './globals.css';
-
+import { HighlightInit } from '@highlight-run/next/client';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
-import DotGrid from './components/background-decorations/dot-grid';
-import LightSpot from './components/background-decorations/light-spot';
-import Wave from './components/background-decorations/wave';
+import { Lato } from 'next/font/google';
+import { DotGrid, Footer, LightSpot, Navbar, Wave } from './components';
+import './globals.css';
 import { description, metadataBase, siteName } from './shared-metadata';
-import { HighlightInit } from '@highlight-run/next/client';
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -36,7 +31,7 @@ export default function RootLayout({
 		<>
 			<HighlightInit
 				projectId={process.env.NEXT_PUBLIC_HIGHLIGHT_PROJECT_ID}
-				tracingOrigins
+				tracingOrigins={true}
 				excludedHostnames={['localhost']}
 				networkRecording={{
 					enabled: true,
@@ -46,7 +41,7 @@ export default function RootLayout({
 
 			<html lang='en'>
 				<head>
-					<PlausibleProvider enabled selfHosted domain='zws.im' />
+					<PlausibleProvider enabled={true} selfHosted={true} domain='zws.im' />
 				</head>
 				<body className={clsx(inter.className)}>
 					<Wave />

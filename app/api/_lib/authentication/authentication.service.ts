@@ -1,9 +1,9 @@
+import type { Buffer } from 'node:buffer';
 import type { Hash } from 'node:crypto';
 import { createHash, timingSafeEqual } from 'node:crypto';
-import type { Buffer } from 'node:buffer';
+import { NextRequest } from 'next/server';
 import { Role } from '../authorization/enums/role.enum';
 import { ConfigService, configService } from '../config/config.service';
-import { NextRequest } from 'next/server';
 import { IncorrectApiKeyException } from './exceptions/incorrect-api-key.exception';
 
 export class AuthenticationService {

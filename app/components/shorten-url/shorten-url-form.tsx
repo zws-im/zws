@@ -2,12 +2,12 @@
 
 import { delayMinimum } from '@/app/util/delay';
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
+import va from '@vercel/analytics';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { shortenUrlAction } from './action';
-import va from '@vercel/analytics';
 
-import clsx from 'clsx';
 import { usePlausible } from '@/app/hooks/plausible';
+import clsx from 'clsx';
 
 export default function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');
@@ -76,14 +76,15 @@ export default function ShortenUrlForm() {
 					name='url'
 					value={longUrl}
 					onChange={onChange}
-					required
+					required={true}
 					// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
-					autoFocus
+					autoFocus={true}
 				/>
 				<button
 					className={clsx('min-w-max h-full p-4 rounded-r transition-colors flex justify-center items-center', {
-						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500 font-bold':
-							!justSucceeded && !error,
+						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500 font-bold': !(
+							justSucceeded || error
+						),
 						'bg-green-400 text-stone-900': justSucceeded,
 						'bg-red-500 text-white': error,
 					})}
@@ -91,7 +92,7 @@ export default function ShortenUrlForm() {
 					type='submit'
 				>
 					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
-					{!loading && !justSucceeded && !error && 'Shorten'}
+					{!(loading || justSucceeded || error) && 'Shorten'}
 					{error}
 					{justSucceeded && <CheckIcon className='w-6 h-6' />}
 				</button>

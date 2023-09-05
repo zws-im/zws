@@ -30,14 +30,14 @@ export class BlockedHostnamesService {
 		}
 
 		// Otherwise, check Redis or the DB
-		if (await this.isHostnameBlockedInDB(hostname, domainName)) {
+		if (await this.isHostnameBlockedInDb(hostname, domainName)) {
 			return true;
 		}
 
 		return false;
 	}
 
-	private async isHostnameBlockedInDB(hostname: string, domainName: string): Promise<boolean> {
+	private async isHostnameBlockedInDb(hostname: string, domainName: string): Promise<boolean> {
 		const result = await this.kv.smismember(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, [
 			hostname,
 			domainName,

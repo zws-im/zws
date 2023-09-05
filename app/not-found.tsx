@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import H1 from './components/headings/h1';
+import { H1 } from './components';
 import { siteName } from './shared-metadata';
 
 export const metadata: Metadata = {

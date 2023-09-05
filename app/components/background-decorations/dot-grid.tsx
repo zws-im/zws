@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import dots from './dot-grid.svg';
-import clsx from 'clsx';
 
 type Props = {
 	height: 1 | 2;

@@ -1,10 +1,10 @@
+import querystring from 'querystring';
 import { NextRequest, NextResponse } from 'next/server';
 import { Schema, z } from 'zod';
 import { ExceptionSchema } from '../exceptions/dtos/exception.dto';
+import { InvalidBodyException } from '../exceptions/invalid-body.exception';
 import { InvalidPathParamException } from '../exceptions/invalid-path-param.exception';
 import { InvalidQueryParamsException } from '../exceptions/invalid-query-param.exception';
-import { InvalidBodyException } from '../exceptions/invalid-body.exception';
-import querystring from 'querystring';
 
 export function validateQuery<T extends Schema>(
 	request: { url: string },

@@ -1,12 +1,5 @@
 import { Variants } from 'framer-motion';
-import AboutUs from './components/about-us/about-us';
-import LightSpot from './components/background-decorations/light-spot';
-import DividerLine from './components/divider-line';
-import Faq from './components/faq/faq';
-import H1 from './components/headings/h1';
-import H2 from './components/headings/h2';
-import RandomText from './components/random-text';
-import ShortenUrlForm from './components/shorten-url/shorten-url-form';
+import { AboutUs, DividerLine, Faq, H1, H2, LightSpot, RandomText, ShortenUrlForm } from './components';
 import * as motion from './motion';
 
 const motionVariants: Variants = {

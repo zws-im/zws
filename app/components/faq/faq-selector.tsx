@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { FaqOption } from './types';
 import FaqButton from './faq-button';
+import { FaqOption } from './types';
 
 type Props = {
-	options: Array<Pick<FaqOption, 'title' | 'id'>>;
+	options: Pick<FaqOption, 'title' | 'id'>[];
 	initialSelected: string;
 	onSelect: (id: string) => void;
 };

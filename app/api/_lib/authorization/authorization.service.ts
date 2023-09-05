@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { AuthenticationService, authenticationService } from '../authentication/authentication.service';
+import { IncorrectApiKeyException } from '../authentication/exceptions/incorrect-api-key.exception';
+import { ExceptionSchema } from '../exceptions/dtos/exception.dto';
 import { Action } from './enums/action.enum';
 import { Role } from './enums/role.enum';
 import { MissingApiKeyException } from './exceptions/missing-api-key.exception';
 import { MissingPermissionsException } from './exceptions/missing-permissions.exception';
-import { IncorrectApiKeyException } from '../authentication/exceptions/incorrect-api-key.exception';
-import { ExceptionSchema } from '../exceptions/dtos/exception.dto';
 
 export class AuthorizationService {
 	private static readonly policies: Readonly<Record<Role, ReadonlySet<Action>>> = {

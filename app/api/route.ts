@@ -4,7 +4,7 @@ import { authorizationService } from './_lib/authorization/authorization.service
 import { Action } from './_lib/authorization/enums/action.enum';
 import { ExceptionSchema } from './_lib/exceptions/dtos/exception.dto';
 import { AttemptedShortenBlockedHostnameException } from './_lib/urls/attempted-shorten-blocked-hostname.exception';
-import { LongUrlSchema } from './_lib/urls/dtos/long-url-dto';
+import { LongUrlSchema } from './_lib/urls/dtos/long-url.dto';
 import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
 import { ShortenedUrlData } from './_lib/urls/interfaces/shortened-url.interface';
 import { UniqueShortIdTimeoutException } from './_lib/urls/unique-short-id-timeout.exception';
@@ -18,6 +18,7 @@ function shortIdToShortenedUrlDto(url: ShortenedUrlData): ShortenedUrlSchema {
 	};
 }
 
+// rome-ignore lint/nursery/useNamingConvention: Function name is required for Next.js
 export async function POST(request: NextRequest): Promise<NextResponse<ShortenedUrlSchema | ExceptionSchema>> {
 	const authError = authorizationService.assertPermissions(request, Action.ShortenUrl);
 	if (authError) {
