@@ -12,7 +12,7 @@ async function getGitHubStars(): Promise<number> {
 			'X-GitHub-Api-Version': '2022-11-28',
 		},
 		next: {
-			revalidate: convert(1, 'hour').to('seconds'),
+			revalidate: convert(24, 'hour').to('seconds'),
 		},
 	});
 
