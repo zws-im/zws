@@ -1,4 +1,5 @@
 import { STATUS_CODES } from 'node:http';
+import { TO_RESPONSE } from '@jonahsnider/nextjs-api-utils';
 import { NextResponse } from 'next/server';
 import { ExceptionSchema } from './dtos/exception.dto';
 import { ExceptionCode } from './enums/exceptions.enum';
@@ -16,7 +17,7 @@ export class BaseHttpException extends Error {
 		this.error = STATUS_CODES[statusCode] ?? BaseHttpException.name;
 	}
 
-	toResponse(): NextResponse<ExceptionSchema> {
+	[TO_RESPONSE](): NextResponse<ExceptionSchema> {
 		return NextResponse.json(
 			{
 				statusCode: this.statusCode,

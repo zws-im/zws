@@ -351,6 +351,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/nextjs-api-utils@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@jonahsnider/nextjs-api-utils@npm:1.0.2"
+  dependencies:
+    "@jonahsnider/util": 10.0.2
+    yn: 4.0.0
+    zod: ^3.22.2
+    zod-validation-error: ^1.5.0
+  peerDependencies:
+    next: ^13
+  peerDependenciesMeta:
+    next:
+      optional: false
+  checksum: bd856d2ff08a6f0dcbbb8cace5baf07425d30f174a32f7be8736ee3c059f9ed1ec587522b630cc14d8fecbfbc27a3d6efe8bbf1bf0d8517588d3d8ebf8e7e3b3
+  languageName: node
+  linkType: hard
+
 "@jonahsnider/util@npm:10.0.2":
   version: 10.0.2
   resolution: "@jonahsnider/util@npm:10.0.2"
@@ -2284,6 +2301,7 @@ __metadata:
     "@biomejs/biome": 1.0.0
     "@heroicons/react": 2.0.18
     "@highlight-run/next": 4.1.0
+    "@jonahsnider/nextjs-api-utils": 1.0.2
     "@jonahsnider/util": 10.0.2
     "@prisma/client": 5.2.0
     "@types/node": 20.5.9
@@ -5865,6 +5883,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"yn@npm:4.0.0":
+  version: 4.0.0
+  resolution: "yn@npm:4.0.0"
+  checksum: 2d60113b6f43f7c29a0a97719d8da4f626b755f5bb2fd19b00d1fe732db1900ad3f1785811a86d941cbe2800f02773af00d0ed99201333eeb3618db8502f7e96
+  languageName: node
+  linkType: hard
+
 "yn@npm:5.0.0":
   version: 5.0.0
   resolution: "yn@npm:5.0.0"
@@ -5872,7 +5897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod-validation-error@npm:1.5.0":
+"zod-validation-error@npm:1.5.0, zod-validation-error@npm:^1.5.0":
   version: 1.5.0
   resolution: "zod-validation-error@npm:1.5.0"
   peerDependencies:
@@ -5888,7 +5913,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.22.2":
+"zod@npm:3.22.2, zod@npm:^3.22.2":
   version: 3.22.2
   resolution: "zod@npm:3.22.2"
   checksum: 231e2180c8eabb56e88680d80baff5cf6cbe6d64df3c44c50ebe52f73081ecd0229b1c7215b9552537f537a36d9e36afac2737ddd86dc14e3519bdbc777e82b9

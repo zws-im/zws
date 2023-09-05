@@ -1,7 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { AuthenticationService, authenticationService } from '../authentication/authentication.service';
-import { IncorrectApiKeyException } from '../authentication/exceptions/incorrect-api-key.exception';
-import { ExceptionSchema } from '../exceptions/dtos/exception.dto';
 import { Action } from './enums/action.enum';
 import { Role } from './enums/role.enum';
 import { MissingApiKeyException } from './exceptions/missing-api-key.exception';
@@ -32,22 +30,10 @@ export class AuthorizationService {
 
 	constructor(private readonly authenticationService: AuthenticationService) {}
 
-	assertPermissions(request: NextRequest, ...actions: readonly Action[]): void | NextResponse<ExceptionSchema> {
-		try {
-			const role = this.authenticationService.getRole(request);
+	assertPermissions(request: NextRequest, ...actions: readonly Action[]): void {
+		const role = this.authenticationService.getRole(request);
 
-			return AuthorizationService.assertPermissions(role, actions);
-		} catch (error) {
-			if (
-				error instanceof IncorrectApiKeyException ||
-				error instanceof MissingApiKeyException ||
-				error instanceof MissingPermissionsException
-			) {
-				return error.toResponse();
-			}
-
-			throw error;
-		}
+		AuthorizationService.assertPermissions(role, actions);
 	}
 }
 

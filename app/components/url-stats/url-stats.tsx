@@ -4,6 +4,7 @@ import { ExceptionCode } from '@/app/api/_lib/exceptions/enums/exceptions.enum';
 import { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
 import { usePlausible } from '@/app/hooks/plausible';
 import { HttpError, fetcher } from '@/app/swr';
+import { _ExceptionCode as ValidationExceptionCode } from '@jonahsnider/nextjs-api-utils/client';
 import va from '@vercel/analytics';
 import { Suspense, useState } from 'react';
 import useSwr from 'swr';
@@ -39,7 +40,7 @@ export default function UrlStats() {
 
 	if (error?.exception?.code === ExceptionCode.UrlNotFound) {
 		errorText = 'URL not found';
-	} else if (error?.exception?.code === ExceptionCode.InvalidPathParams) {
+	} else if (error?.exception?.code === ValidationExceptionCode.InvalidPathParameters) {
 		errorText = 'Invalid URL';
 	}
 
