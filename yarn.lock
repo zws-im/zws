@@ -375,6 +375,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/util@npm:10.1.0":
+  version: 10.1.0
+  resolution: "@jonahsnider/util@npm:10.1.0"
+  checksum: d413d7378cb8ed5d60be0235b4e2953cfe5a2b43b59e86945343e189f4c18d99ce69c6bd5ef64b36201699a466de99843d385e7091b52a64beb9a8fa8fb83ff2
+  languageName: node
+  linkType: hard
+
 "@jridgewell/gen-mapping@npm:^0.3.2":
   version: 0.3.3
   resolution: "@jridgewell/gen-mapping@npm:0.3.3"
@@ -2302,7 +2309,7 @@ __metadata:
     "@heroicons/react": 2.0.18
     "@highlight-run/next": 4.2.0
     "@jonahsnider/nextjs-api-utils": 1.0.4
-    "@jonahsnider/util": 10.0.2
+    "@jonahsnider/util": 10.1.0
     "@prisma/client": 5.2.0
     "@types/node": 20.5.9
     "@types/react": 18.2.21

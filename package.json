@@ -29,7 +29,7 @@
 		"@heroicons/react": "2.0.18",
 		"@highlight-run/next": "4.2.0",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
-		"@jonahsnider/util": "10.0.2",
+		"@jonahsnider/util": "10.1.0",
 		"@prisma/client": "5.2.0",
 		"@types/node": "20.5.9",
 		"@types/react": "18.2.21",
