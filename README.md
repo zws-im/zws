@@ -2,7 +2,6 @@
 
 [![Number of shortened URLs][stats-urls-image]](#Badges)
 [![Number of visited URLs][stats-visits-image]](#Badges)
-[![ZWS version][stats-version-image]](#Badges)
 
 Shorten URLs with invisible spaces.
 
@@ -47,9 +46,7 @@ ZWS instances expose a few routes that implement the [Shields endpoint schema](h
 | --------------------------------------------- | ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------- |
 | ![Number of shortened URLs][stats-urls-image] | `/stats/shields/urls`    | Number of shortened URLs | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]       |
 | ![Number of visited URLs][stats-visits-image] | `/stats/shields/visits`  | Number of visited URLs   | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image]   |
-| ![ZWS version][stats-version-image]           | `/stats/shields/version` | ZWS version              | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version`][stats-version-image] |
 
 [open-collective]: https://opencollective.com/zws/contribute
 [stats-urls-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls
 [stats-visits-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits
-[stats-version-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/version
