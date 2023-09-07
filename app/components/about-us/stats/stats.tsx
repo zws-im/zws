@@ -22,9 +22,9 @@ async function getGitHubStars(): Promise<number> {
 
 	const data = (await response.json()) as {
 		items: Array<{
-			// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+			// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 			full_name: string;
-			// rome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+			// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
 			stargazers_count: number;
 		}>;
 	};

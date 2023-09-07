@@ -77,7 +77,7 @@ export default function ShortenUrlForm() {
 					value={longUrl}
 					onChange={onChange}
 					required={true}
-					// rome-ignore lint/a11y/noAutofocus: Autofocus is essential here
+					// biome-ignore lint/a11y/noAutofocus: Autofocus is essential here
 					autoFocus={true}
 				/>
 				<motion.button
