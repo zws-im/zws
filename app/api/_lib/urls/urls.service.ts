@@ -62,7 +62,7 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
-	// rome-ignore lint/nursery/noExcessiveComplexity: Doesn't really make sense to split this logic out, it would be messier
+	// biome-ignore lint/nursery/noExcessiveComplexity: Doesn't really make sense to split this logic out, it would be messier
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
 		const hostname = new URL(url).hostname;
 

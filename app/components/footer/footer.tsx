@@ -22,7 +22,7 @@ export default function Footer() {
 				</a>
 			</p>
 
-			{/* rome-ignore lint/a11y/useValidAnchor: The click event here is not important for user interaction */}
+			{/* biome-ignore lint/a11y/useValidAnchor: The click event here is not important for user interaction */}
 			<a href='https://vercel.com/?utm_source=zws-im&utm_campaign=oss' onClick={trackVercelClick}>
 				<Image src={poweredByVercel} alt='Powered by Vercel' className='h-8' />
 			</a>
