@@ -55,7 +55,7 @@
 		"zod-validation-error": "1.5.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.1.1",
+		"@biomejs/biome": "1.1.2",
 		"prisma": "5.2.0",
 		"type-fest": "4.3.1",
 		"vercel": "32.1.0"
