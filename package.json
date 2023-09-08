@@ -27,7 +27,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "2.0.18",
-		"@highlight-run/next": "4.2.0",
+		"@highlight-run/next": "4.3.0",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
 		"@jonahsnider/util": "10.1.0",
 		"@prisma/client": "5.2.0",

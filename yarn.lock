@@ -280,26 +280,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@highlight-run/next@npm:4.2.0":
-  version: 4.2.0
-  resolution: "@highlight-run/next@npm:4.2.0"
+"@highlight-run/next@npm:4.3.0":
+  version: 4.3.0
+  resolution: "@highlight-run/next@npm:4.3.0"
   dependencies:
-    "@highlight-run/node": 3.2.0
+    "@highlight-run/node": 3.3.0
     "@highlight-run/react": 3.2.1
     "@highlight-run/sourcemap-uploader": 0.5.2
-    highlight.run: 7.5.0
+    highlight.run: 7.5.1
   peerDependencies:
-    "@highlight-run/node": ^3.2.0
-    highlight.run: ^7.5.0
+    "@highlight-run/node": ^3.3.0
+    highlight.run: ^7.5.1
     next: ">=12"
     react: ">=17"
-  checksum: 3b9dcda54f00b4cab944dcbff1da5bc393cadb7e11b71dc4dd45d6170bf0108f20ec98ac8d931c78f99ed59d8c0d97ec6fb86e70b7cadf6b95e9d5958434c93b
+  checksum: 3dd5dcbc2bf58952033ff973a322fcc9891de75e040ebe0e0d04f979a43171dc53e192e0848517defaaab444024bf914420135e0fdf373d15111eb17c438d5ee
   languageName: node
   linkType: hard
 
-"@highlight-run/node@npm:3.2.0":
-  version: 3.2.0
-  resolution: "@highlight-run/node@npm:3.2.0"
+"@highlight-run/node@npm:3.3.0":
+  version: 3.3.0
+  resolution: "@highlight-run/node@npm:3.3.0"
   dependencies:
     "@opentelemetry/api": 1.4.1
     "@opentelemetry/auto-instrumentations-node": 0.38.0
@@ -309,8 +309,8 @@ __metadata:
     "@opentelemetry/sdk-node": 0.41.2
     "@opentelemetry/sdk-trace-base": 1.15.2
     "@opentelemetry/semantic-conventions": 1.15.2
-    highlight.run: 7.4.3
-  checksum: 98ffe29663aa11eac1a56a1825d59f3db9d957507fc6d83ecaf166da4c15e2e32eeb5a0b738fee0287e290fb926b50f0bf3e937b112ba4b852c60ace939b7cec
+    highlight.run: 7.5.1
+  checksum: 08fffaf5cf90f8de7590f51230e84f4b6591e5878bb12aa8aa1b87c4232ce550d31693ab55f15ff3b564f1dfd7a8bc3969447ea10c3813e0f4a057ebd1d5b56f
   languageName: node
   linkType: hard
 
@@ -2307,7 +2307,7 @@ __metadata:
   dependencies:
     "@biomejs/biome": 1.1.2
     "@heroicons/react": 2.0.18
-    "@highlight-run/next": 4.2.0
+    "@highlight-run/next": 4.3.0
     "@jonahsnider/nextjs-api-utils": 1.0.4
     "@jonahsnider/util": 10.1.0
     "@prisma/client": 5.2.0
@@ -3615,17 +3615,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.run@npm:7.4.3":
-  version: 7.4.3
-  resolution: "highlight.run@npm:7.4.3"
-  checksum: e6568ad739252b89e9f906cd52b395b888e415cb8fb680e7ad11b3db42a5b2213e9c47650390eaf7a729c25984f9c1997786c62d12994750fbe2b1704494fd7b
-  languageName: node
-  linkType: hard
-
-"highlight.run@npm:7.5.0":
-  version: 7.5.0
-  resolution: "highlight.run@npm:7.5.0"
-  checksum: e1936af548f4a5fe9f0fe22cfb7eec9ef3db19b6c2b18fc790e4c3adc331f51f4c3690613bb41966bf98a266e75d9e8459d24e98f67d757e373c089ac6f2a50d
+"highlight.run@npm:7.5.1":
+  version: 7.5.1
+  resolution: "highlight.run@npm:7.5.1"
+  checksum: 701a6866438a1e811c48b39ee0a2ffa7e37558621e1d987c1f185373ca47b99d1784a05e80f681a660618fccdd99d4376f869ac7c0d077e673488fc2c7fe8c33
   languageName: node
   linkType: hard
 
