@@ -31,7 +31,7 @@
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
 		"@jonahsnider/util": "10.1.0",
 		"@prisma/client": "5.2.0",
-		"@types/node": "20.5.9",
+		"@types/node": "20.6.0",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
 		"@vercel/analytics": "1.0.2",
