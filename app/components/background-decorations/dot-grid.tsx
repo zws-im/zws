@@ -8,7 +8,7 @@ type Props = {
 };
 
 function SingleDotGrid() {
-	return <Image src={dots} alt='A grid of dots' />;
+	return <Image priority={true} src={dots} alt='A grid of dots' />;
 }
 
 export default function DotGrid({ height, className }: Props) {
