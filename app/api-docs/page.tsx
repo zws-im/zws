@@ -1,7 +1,6 @@
 import { openapiService } from '@/app/api/_lib/openapi/openapi.service';
 import Link from 'next/link';
-import { H1 } from '../components/index';
-import SwaggerUi from '../components/swagger-ui';
+import { H1, SwaggerUi } from '../components';
 
 const schema = openapiService.getOpenapi();
 

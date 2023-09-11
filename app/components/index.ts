@@ -9,3 +9,4 @@ export { default as DividerLine } from './divider-line';
 export { default as Logo } from './logo';
 export { default as RandomText } from './random-text';
 export * from './faq';
+export { default as SwaggerUi } from './swagger-ui';
