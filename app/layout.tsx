@@ -4,7 +4,11 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
 import { Lato } from 'next/font/google';
-import { DotGrid, Footer, LightSpot, Navbar, Wave } from './components';
+import DotGrid from './components/background-decorations/dot-grid';
+import LightSpot from './components/background-decorations/light-spot';
+import Wave from './components/background-decorations/wave';
+import Footer from './components/footer/footer';
+import Navbar from './components/navbar';
 import './globals.css';
 import { metadataBase, siteDescription, siteName } from './shared-metadata';
 

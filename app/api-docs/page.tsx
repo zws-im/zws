@@ -1,12 +1,13 @@
 import { openapiService } from '@/app/api/_lib/openapi/openapi.service';
 import Link from 'next/link';
-import { H1, SwaggerUi } from '../components';
-
-const schema = openapiService.getOpenapi();
+import H1 from '../components/headings/h1';
+import SwaggerUi from '../components/swagger-ui';
 
 const openapiSchemaPath = '/api/openapi.json';
 
 export default function ApiSchemaPage() {
+	const schema = openapiService.getOpenapi();
+
 	return (
 		<main className='flex flex-col gap-y-4 items-center justify-center'>
 			<div className='text-center'>

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { H1, UrlStats } from '../components';
+import H1 from '../components/headings/h1';
+import UrlStats from '../components/url-stats/url-stats';
 import { metadataBase, siteName } from '../shared-metadata';
 
 const description = "View usage statistics for URLs you've shortened with zws.im.";
