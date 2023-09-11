@@ -4,6 +4,7 @@
 		"ignore": [".next", "node_modules"]
 	},
 	"formatter": {
+		"formatWithErrors": true,
 		"lineWidth": 120
 	},
 	"javascript": {
