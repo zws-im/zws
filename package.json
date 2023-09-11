@@ -65,7 +65,7 @@
 		"vercel": "32.2.0"
 	},
 	"engines": {
-		"node": "18.x"
+		"node": "20.x"
 	},
 	"packageManager": "yarn@3.6.3"
 }
