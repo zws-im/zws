@@ -1,6 +1,9 @@
+import { extendZodWithOpenApi } from '@asteasolutions/zod-to-openapi';
 import { ValidationExceptionSchema } from '@jonahsnider/nextjs-api-utils/client';
 import { z } from 'zod';
 import { ExceptionCode } from '../enums/exceptions.enum';
+
+extendZodWithOpenApi(z);
 
 export const ExceptionSchema = z
 	.object({
@@ -9,5 +12,6 @@ export const ExceptionSchema = z
 		statusCode: z.number(),
 		error: z.string(),
 	})
-	.or(ValidationExceptionSchema);
+	.or(ValidationExceptionSchema)
+	.openapi('Exception');
 export type ExceptionSchema = z.infer<typeof ExceptionSchema>;

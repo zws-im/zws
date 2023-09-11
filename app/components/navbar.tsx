@@ -16,6 +16,10 @@ const items: NavbarItem[] = [
 		href: '/#faq',
 	},
 	{
+		content: 'API Docs',
+		href: '/api-docs',
+	},
+	{
 		content: 'GitHub',
 		href: 'https://github.com/zws-im/zws',
 	},

@@ -7,6 +7,10 @@ Shorten URLs with invisible spaces.
 
 [Try it out online: zws.im](https://zws.im) (or with our [CLI](https://github.com/zws-im/cli#readme)).
 
+## API Documentation
+
+An OpenAPI schema and API documentation is available here: [zws.im/api-docs](https://zws.im/api-docs).
+
 ## Contributors
 
 ### Code Contributors
@@ -42,10 +46,10 @@ Special thanks to [Jaex](https://github.com/Jaex) for integrating ZWS into [Shar
 
 ZWS instances expose a few routes that implement the [Shields endpoint schema](https://shields.io/endpoint):
 
-| Image                                         | Route                    | Description              | Example                                                                                               |
-| --------------------------------------------- | ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------- |
-| ![Number of shortened URLs][stats-urls-image] | `/stats/shields/urls`    | Number of shortened URLs | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]       |
-| ![Number of visited URLs][stats-visits-image] | `/stats/shields/visits`  | Number of visited URLs   | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image]   |
+| Image                                         | Route                   | Description              | Example                                                                                             |
+| --------------------------------------------- | ----------------------- | ------------------------ | --------------------------------------------------------------------------------------------------- |
+| ![Number of shortened URLs][stats-urls-image] | `/stats/shields/urls`   | Number of shortened URLs | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls`][stats-urls-image]     |
+| ![Number of visited URLs][stats-visits-image] | `/stats/shields/visits` | Number of visited URLs   | [`https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/visits`][stats-visits-image] |
 
 [open-collective]: https://opencollective.com/zws/contribute
 [stats-urls-image]: https://img.shields.io/endpoint?url=https://api.zws.im/stats/shields/urls

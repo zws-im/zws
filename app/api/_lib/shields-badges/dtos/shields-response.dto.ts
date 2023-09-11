@@ -1,28 +1,27 @@
+import { extendZodWithOpenApi } from '@asteasolutions/zod-to-openapi';
 import { z } from 'zod';
 
-export const ShieldsResponseSchema = z.object({
-	schemaVersion: z.literal(1),
+extendZodWithOpenApi(z);
 
-	cacheSeconds: z.number().min(300).optional(),
+export const ShieldsResponseSchema = z
+	.object({
+		schemaVersion: z.literal(1),
 
-	/**
-	 * @example 'urls'
-	 */
-	label: z.string(),
+		cacheSeconds: z.number().min(300).optional(),
 
-	/**
-	 * @example '3.4M'
-	 */
-	message: z.string(),
+		label: z.string().openapi({ example: 'urls' }),
 
-	color: z.string().optional(),
-	labelColor: z.string().optional(),
-	isError: z.string().optional(),
-	namedLogo: z.string().optional(),
-	logoSvg: z.string().optional(),
-	logoColor: z.string().optional(),
-	logoWidth: z.string().optional(),
-	logoPosition: z.string().optional(),
-	style: z.string().optional(),
-});
+		message: z.string().openapi({ example: '3.4M' }),
+
+		color: z.string().optional(),
+		labelColor: z.string().optional(),
+		isError: z.string().optional(),
+		namedLogo: z.string().optional(),
+		logoSvg: z.string().optional(),
+		logoColor: z.string().optional(),
+		logoWidth: z.string().optional(),
+		logoPosition: z.string().optional(),
+		style: z.string().optional(),
+	})
+	.openapi('ShieldsResponse');
 export type ShieldsResponseSchema = z.infer<typeof ShieldsResponseSchema>;

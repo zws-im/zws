@@ -1,6 +1,6 @@
 import { Http } from '@jonahsnider/util';
-import { BaseHttpException } from '../exceptions/base.exception';
-import { ExceptionCode } from '../exceptions/enums/exceptions.enum';
+import { BaseHttpException } from '../../exceptions/base.exception';
+import { ExceptionCode } from '../../exceptions/enums/exceptions.enum';
 
 /** The maximum number of attempts to generate a unique short ID were exceeded. */
 export class UniqueShortIdTimeoutException extends BaseHttpException {
