@@ -17,13 +17,13 @@
 	},
 	"scripts": {
 		"build": "next build",
+		"build:nixpack": "nixpacks build . --name zws-im/zws",
 		"dev": "next dev",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"start": "next start",
-		"validate-prisma": "prisma validate",
 		"migrations": "prisma migrate deploy",
-		"build:nixpack": "nixpacks build . --name zws-im/zws"
+		"start": "next start",
+		"validate-prisma": "prisma validate"
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "5.5.0",
@@ -64,8 +64,8 @@
 		"type-fest": "4.3.1",
 		"vercel": "32.2.0"
 	},
+	"packageManager": "yarn@3.6.3",
 	"engines": {
 		"node": "20.x"
-	},
-	"packageManager": "yarn@3.6.3"
+	}
 }
