@@ -1,5 +1,5 @@
 {
-	"buildCommand": "prisma generate && prisma db push && yarn build",
+	"buildCommand": "prisma generate && prisma db push && bun run build",
 	"cleanUrls": true,
 	"crons": [
 		{

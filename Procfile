@@ -1,2 +1,2 @@
-web: yarn start
-release: yarn run migrations
+web: bun start
+release: bun run migrations
