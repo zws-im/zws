@@ -21,7 +21,7 @@ jobs:
         with:
           bun-version: "1.0.0"
       - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile && bun run postinstall
       - name: Pull environment variables
         run: bun vercel env pull --environment development .env --token ${{ secrets.VERCEL_TOKEN }}
       - name: Cache Next.js
@@ -50,7 +50,7 @@ jobs:
         with:
           bun-version: "1.0.0"
       - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile && bun run postinstall
       - name: Lint
         run: bun run lint
   lint-openapi:
@@ -67,7 +67,7 @@ jobs:
         with:
           bun-version: "1.0.0"
       - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile && bun run postinstall
       - name: Start local server and download OpenAPI schema
         run: bun run openapi:download
       - name: Lint
@@ -86,6 +86,6 @@ jobs:
         with:
           bun-version: "1.0.0"
       - name: Install dependencies with Bun
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile && bun run postinstall
       - name: Lint
         run: bun run lint:exports
