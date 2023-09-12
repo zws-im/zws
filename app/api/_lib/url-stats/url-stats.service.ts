@@ -1,11 +1,16 @@
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
+import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { prisma } from '../prisma';
+import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
 import { UrlStatsSchema } from './dtos/url-stats.dto';
 
 export class UrlStatsService {
-	constructor(private readonly prisma: PrismaClient) {}
+	constructor(
+		private readonly prisma: PrismaClient,
+		private readonly blockedHostnamesService: BlockedHostnamesService,
+	) {}
 
 	/**
 	 * Retrieve usage statistics for a shortened URL.
@@ -25,11 +30,15 @@ export class UrlStatsService {
 			}),
 			this.prisma.shortenedUrl.findUnique({
 				where: { shortBase64: encodedId },
-				select: { url: true },
+				select: { url: true, blocked: true },
 			}),
 		]);
 
 		if (shortenedUrl) {
+			if (shortenedUrl.blocked || (await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))) {
+				throw new UrlBlockedException();
+			}
+
 			return {
 				visits: visits.map((visit) => visit.timestamp.toISOString()),
 				url: shortenedUrl.url,
@@ -58,4 +67,4 @@ export class UrlStatsService {
 	}
 }
 
-export const urlStatsService = new UrlStatsService(prisma);
+export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService);
