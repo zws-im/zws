@@ -42,7 +42,7 @@ export class UrlsService {
 			return undefined;
 		}
 
-		if (shortenedUrl.blocked || (await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))) {
+		if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
 			return {
 				longUrl: undefined,
 				blocked: true,

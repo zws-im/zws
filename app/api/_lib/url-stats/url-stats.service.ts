@@ -35,7 +35,7 @@ export class UrlStatsService {
 		]);
 
 		if (shortenedUrl) {
-			if (shortenedUrl.blocked || (await this.blockedHostnamesService.isHostnameBlocked(shortenedUrl.url))) {
+			if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
 				throw new UrlBlockedException();
 			}
 

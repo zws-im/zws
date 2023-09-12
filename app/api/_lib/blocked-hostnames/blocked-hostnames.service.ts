@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, ShortenedUrl } from '@prisma/client';
 import { VercelKV, kv } from '@vercel/kv';
 import convert from 'convert';
 import { ConfigService, configService } from '../config/config.service';
@@ -20,6 +20,10 @@ export class BlockedHostnamesService {
 		private readonly prisma: PrismaClient,
 		private readonly configService: ConfigService,
 	) {}
+
+	async isUrlBlocked(url: Pick<ShortenedUrl, 'blocked' | 'url'>): Promise<boolean> {
+		return url.blocked || (await this.isHostnameBlocked(url.url));
+	}
 
 	async isHostnameBlocked(hostname: string): Promise<boolean> {
 		const domainName = hostname.replace(BlockedHostnamesService.DOMAIN_NAME_REG_EXP, '$1');
