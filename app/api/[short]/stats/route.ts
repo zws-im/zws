@@ -33,7 +33,7 @@ export const GET = exceptionRouteWrapper.wrapRoute<UrlStatsSchema, NextRouteHand
 export function openapi(oas: OpenapiService): void {
 	oas.addPath({
 		method: 'get',
-		path: '/:short/stats',
+		path: '/{short}/stats',
 		tags: [OpenapiTag.ShortenedUrls],
 		summary: 'Get statistics for a shortened URL',
 		parameters: [

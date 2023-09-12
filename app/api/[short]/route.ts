@@ -49,7 +49,7 @@ export const GET = exceptionRouteWrapper.wrapRoute<LongUrlSchema, NextRouteHandl
 export function openapi(oas: OpenapiService): void {
 	oas.addPath({
 		method: 'get',
-		path: '/:short',
+		path: '/{short}',
 		tags: [OpenapiTag.ShortenedUrls],
 		summary: 'Visit or retrieve a shortened URL',
 		parameters: [
