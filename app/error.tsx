@@ -2,8 +2,8 @@
 
 import { H } from '@highlight-run/next/client';
 import { useEffect } from 'react';
-import H1 from './components/headings/h1';
 import Button from './components/button';
+import H1 from './components/headings/h1';
 
 const SHOULD_REPORT_ERROR = process.env.NODE_ENV !== 'development';
 
