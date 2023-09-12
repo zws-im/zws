@@ -6,7 +6,7 @@ import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
 import { UrlStatsSchema } from './dtos/url-stats.dto';
 
-export class UrlStatsService {
+class UrlStatsService {
 	constructor(
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,

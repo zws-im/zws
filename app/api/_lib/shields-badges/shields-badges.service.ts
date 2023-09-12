@@ -4,7 +4,7 @@ import { StatsService, statsService } from '../stats/stats.service';
 import { ConfigService, configService } from '../config/config.service';
 import { ShieldsResponseSchema } from './dtos/shields-response.dto';
 
-export class ShieldsBadgesService {
+class ShieldsBadgesService {
 	/**
 	 * Abbreviate a number for displaying in badges.
 	 *

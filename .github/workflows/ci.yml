@@ -72,3 +72,20 @@ jobs:
         run: bun run openapi:download
       - name: Lint
         run: bun run openapi:lint
+  lint-exports:
+    name: Lint exports and dependencies
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: "1.0.0"
+      - name: Install dependencies with Bun
+        run: bun install --frozen-lockfile
+      - name: Lint
+        run: bun run lint:exports

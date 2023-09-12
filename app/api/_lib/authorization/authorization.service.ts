@@ -5,7 +5,7 @@ import { Role } from './enums/role.enum';
 import { MissingApiKeyException } from './exceptions/missing-api-key.exception';
 import { MissingPermissionsException } from './exceptions/missing-permissions.exception';
 
-export class AuthorizationService {
+class AuthorizationService {
 	private static readonly policies: Readonly<Record<Role, ReadonlySet<Action>>> = {
 		[Role.Admin]: new Set([Action.ShortenUrl]),
 		[Role.User]: new Set([Action.ShortenUrl]),
