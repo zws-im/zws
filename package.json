@@ -19,6 +19,7 @@
 		"build": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next build",
 		"build:nixpack": "nixpacks build . --name zws-im/zws",
 		"dev": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next dev",
+		"postinstall": "prisma generate",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrations": "prisma migrate deploy",
@@ -64,7 +65,7 @@
 		"type-fest": "4.3.1",
 		"vercel": "32.2.1"
 	},
-	"packageManager": "yarn@3.6.3",
+	"packageManager": "bun@1.0.0",
 	"engines": {
 		"node": "18.x || 20.x"
 	}

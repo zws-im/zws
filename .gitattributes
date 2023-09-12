@@ -1,2 +1,1 @@
-/.yarn/releases/** binary
-/.yarn/plugins/** binary
+*.lockb diff=lockb
