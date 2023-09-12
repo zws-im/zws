@@ -54,10 +54,6 @@ export class OpenapiService {
 		});
 	}
 
-	addSchema(...parameters: Parameters<OpenAPIRegistry['register']>): void {
-		this.registry.register(...parameters);
-	}
-
 	addPath(...parameters: Parameters<OpenAPIRegistry['registerPath']>): void {
 		this.registry.registerPath(...parameters);
 	}
