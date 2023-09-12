@@ -240,3 +240,6 @@ $RECYCLE.BIN/
 
 # Vercel
 .vercel
+
+# Downloaded OpenAPI spec for linting
+openapi.json

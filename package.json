@@ -23,6 +23,9 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrations": "prisma migrate deploy",
+		"preopenapi:download": "bun run build",
+		"openapi:download": "bun scripts/openapi-download.ts",
+		"openapi:lint": "bunx @stoplight/spectral-cli lint openapi.json",
 		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start",
 		"validate-prisma": "prisma validate"
 	},
@@ -60,7 +63,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.1.2",
+		"@tsconfig/bun": "1.0.0",
+		"@tsconfig/strictest": "2.0.2",
 		"@types/swagger-ui-react": "4.18.0",
+		"bun-types": "1.0.1",
 		"prisma": "5.2.0",
 		"type-fest": "4.3.1",
 		"vercel": "32.2.1"

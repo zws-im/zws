@@ -12,7 +12,7 @@
 			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
 		},
-		"globals": ["React"]
+		"globals": ["React", "Bun"]
 	},
 	"json": {
 		"parser": {

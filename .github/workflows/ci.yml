@@ -53,3 +53,22 @@ jobs:
         run: bun install --frozen-lockfile
       - name: Lint
         run: bun run lint
+  lint-openapi:
+    name: Lint OpenAPI
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: "1.0.0"
+      - name: Install dependencies with Bun
+        run: bun install --frozen-lockfile
+      - name: Start local server and download OpenAPI schema
+        run: bun run openapi:download
+      - name: Lint
+        run: bun run openapi:lint
