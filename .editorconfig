@@ -17,3 +17,6 @@ indent_size = 4
 
 [openapi.json]
 indent_style = space
+
+[*.alt.txt]
+insert_final_newline = false
