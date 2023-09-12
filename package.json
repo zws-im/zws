@@ -16,14 +16,14 @@
 		"url": "https://jonahsnider.com"
 	},
 	"scripts": {
-		"build": "next build",
+		"build": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next build",
 		"build:nixpack": "nixpacks build . --name zws-im/zws",
-		"dev": "next dev",
+		"dev": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next dev",
 		"postinstall": "prisma generate",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrations": "prisma migrate deploy",
-		"start": "next start",
+		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start",
 		"validate-prisma": "prisma validate"
 	},
 	"dependencies": {
