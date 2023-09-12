@@ -44,6 +44,7 @@ class NextServer {
 
 		await stdout.read().then(
 			// biome-ignore lint/suspicious/noExplicitAny: This is a recursive type which can't easily be expressed
+			// biome-ignore lint/correctness/noUndeclaredVariables: This is a global type
 			async function xd(this: NextServer, result: ReadableStreamDefaultReadResult<Uint8Array>): Promise<any> {
 				const state = this.processText(result);
 
