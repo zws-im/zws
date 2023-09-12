@@ -9,9 +9,9 @@ export const ShieldsResponseSchema = z
 
 		cacheSeconds: z.number().min(300).optional(),
 
-		label: z.string().openapi({ example: 'urls' }),
+		label: z.string().openapi({ examples: ['urls'] }),
 
-		message: z.string().openapi({ example: '3.4M' }),
+		message: z.string().openapi({ examples: ['3.4M'] }),
 
 		color: z.string().optional(),
 		labelColor: z.string().optional(),
