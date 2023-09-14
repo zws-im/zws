@@ -36,7 +36,7 @@
 		"@highlight-run/next": "4.3.0",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
 		"@jonahsnider/util": "10.1.0",
-		"@prisma/client": "5.2.0",
+		"@prisma/client": "5.3.0",
 		"@types/node": "20.6.0",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
@@ -69,7 +69,7 @@
 		"@vercel/edge": "1.0.2",
 		"bun-types": "1.0.1",
 		"knip": "2.24.1",
-		"prisma": "5.2.0",
+		"prisma": "5.3.0",
 		"type-fest": "4.3.1",
 		"vercel": "32.2.1"
 	},
