@@ -1,12 +1,12 @@
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
+import { VisitModel } from '../mongodb/models/visit.model';
 import { prisma } from '../prisma';
 import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
 import { UrlStatsSchema } from './dtos/url-stats.dto';
-import { VisitModel } from '../mongodb/models/visit.model';
-import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 
 class UrlStatsService {
 	constructor(
@@ -24,7 +24,10 @@ class UrlStatsService {
 	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
 		const encodedId = UrlsService.encode(id);
 
-		const shortenedUrl = await ShortenedUrlModel.findOne({ shortBase64: encodedId }, { projection: { url: 1, blocked: 1 } });
+		const shortenedUrl = await ShortenedUrlModel.findOne(
+			{ shortBase64: encodedId },
+			{ projection: { url: 1, blocked: 1 } },
+		);
 
 		if (!shortenedUrl) {
 			return undefined;

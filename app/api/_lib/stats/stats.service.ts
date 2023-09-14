@@ -1,8 +1,8 @@
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
-import { prisma } from '../prisma';
-import { StatsSchema } from './dtos/stats.dto';
 import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { VisitModel } from '../mongodb/models/visit.model';
+import { prisma } from '../prisma';
+import { StatsSchema } from './dtos/stats.dto';
 
 export class StatsService {
 	constructor(private readonly prisma: PrismaClient) {}

@@ -2,13 +2,13 @@ import { sample } from '@jonahsnider/util';
 import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
+import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { prisma } from '../prisma';
 import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
 import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
 import { ShortenedUrlData } from './interfaces/shortened-url.interface';
 import { Base64, Short } from './interfaces/urls.interface';
 import { VisitUrlData } from './interfaces/visit-url-data.interface';
-import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 
 export class UrlsService {
 	/** Maximum number of attempts to generate a unique ID. */
