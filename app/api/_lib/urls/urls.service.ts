@@ -2,6 +2,7 @@ import { sample } from '@jonahsnider/util';
 import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
+import { Mongodb, mongodb } from '../mongodb/mongodb';
 import { prisma } from '../prisma';
 import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
 import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
@@ -21,6 +22,7 @@ export class UrlsService {
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
 		private readonly configService: ConfigService,
+		private readonly mongodb: Mongodb,
 	) {}
 
 	/**
@@ -101,6 +103,13 @@ export class UrlsService {
 			}
 		} while (!created);
 
+		await this.mongodb.shortenedUrls.insertOne({
+			blocked: created.blocked,
+			createdAt: created.createdAt,
+			shortBase64: created.shortBase64,
+			url: created.url,
+		});
+
 		return {
 			short: id,
 			url: this.configService.shortenedBaseUrl ? new URL(id, configService.shortenedBaseUrl) : undefined,
@@ -124,4 +133,4 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);
+export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService, mongodb);

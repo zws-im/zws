@@ -1,5 +1,6 @@
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import { Mongodb, mongodb } from '../mongodb/mongodb';
 import { prisma } from '../prisma';
 import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
 import { Short } from '../urls/interfaces/urls.interface';
@@ -10,6 +11,7 @@ class UrlStatsService {
 	constructor(
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
+		private readonly mongodb: Mongodb,
 	) {}
 
 	/**
@@ -54,7 +56,7 @@ class UrlStatsService {
 	async trackUrlVisit(id: Short): Promise<void> {
 		const encodedId = UrlsService.encode(id);
 
-		await this.prisma.$transaction([
+		const [visit] = await this.prisma.$transaction([
 			this.prisma.visit.create({
 				data: { shortenedUrl: { connect: { shortBase64: encodedId } } },
 			}),
@@ -63,7 +65,13 @@ class UrlStatsService {
 				data: { count: { increment: 1 } },
 			}),
 		]);
+
+		await this.mongodb.visits.insertOne({
+			id: visit.id,
+			timestamp: visit.timestamp,
+			shortenedUrlBase64: visit.shortenedUrlId,
+		});
 	}
 }
 
-export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService);
+export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService, mongodb);
