@@ -50,6 +50,10 @@ export class ConfigService {
 	public readonly userApiKey: string | undefined;
 	public readonly version: string = pkg.version;
 	public readonly nodeEnv;
+	public readonly mongodb: Readonly<{
+		uri: string;
+		database: string;
+	}>;
 
 	constructor(source: Readonly<NodeJS.ProcessEnv>) {
 		this.characters = z
@@ -111,6 +115,11 @@ export class ConfigService {
 		this.userApiKey = z.string().min(1).optional().parse(source.API_KEY);
 
 		this.nodeEnv = source.NODE_ENV;
+
+		this.mongodb = {
+			uri: z.string().min(1).parse(source.MONGODB_URI),
+			database: z.string().min(1).parse(source.MONGODB_DATABASE),
+		};
 	}
 }
 
