@@ -68,9 +68,7 @@ class UrlStatsService {
 		assert(shortenedUrl);
 
 		await VisitModel.insertOne({
-			id: visit.id,
 			timestamp: visit.timestamp,
-			shortenedUrlBase64: visit.shortenedUrlId,
 			shortenedUrl: shortenedUrl._id,
 		});
 	}
