@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"exactOptionalPropertyTypes": false,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"resolveJsonModule": true
+	},
+	"include": ["./**/*.ts"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/bun"]
+}

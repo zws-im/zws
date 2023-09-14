@@ -23,7 +23,8 @@
 		"lint": "biome check .",
 		"lint:exports": "knip",
 		"lint:fix": "biome check . --apply-unsafe",
-		"migrations": "prisma migrate deploy",
+		"migrations": "prisma migrate deploy && bun umzug up",
+		"umzug": "bun ./umzug/migrator.ts",
 		"preopenapi:download": "bun run build",
 		"openapi:download": "bun scripts/openapi-download.ts",
 		"openapi:lint": "bunx @stoplight/spectral-cli lint openapi.json",
@@ -72,6 +73,7 @@
 		"knip": "2.24.1",
 		"prisma": "5.3.0",
 		"type-fest": "4.3.1",
+		"umzug": "3.3.1",
 		"vercel": "32.2.1"
 	},
 	"peerDependencies": {
