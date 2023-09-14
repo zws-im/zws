@@ -52,5 +52,5 @@ export default async function UrlSubpathPage({
 	}
 
 	// Return JSON body otherwise
-	redirect(`/api/${rawShort}?${searchParams}`, RedirectType.replace);
+	redirect(encodeURIComponent(`/api/${encodeURIComponent(rawShort)}?${searchParams}`), RedirectType.replace);
 }
