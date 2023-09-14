@@ -2,6 +2,7 @@ import { PrismaClient, ShortenedUrl } from '@prisma/client';
 import { VercelKV, kv } from '@vercel/kv';
 import convert from 'convert';
 import { ConfigService, configService } from '../config/config.service';
+import { BlockedHostnameModel } from '../mongodb/models/blocked-hostname.model';
 import { prisma } from '../prisma';
 
 export class BlockedHostnamesService {
@@ -73,9 +74,7 @@ export class BlockedHostnamesService {
 	}
 
 	private async getBlockedHostnamesFromDatabase(): Promise<void> {
-		const dbBlockedHostnames = await this.prisma.blockedHostname.findMany({
-			select: { hostname: true },
-		});
+		const dbBlockedHostnames = await BlockedHostnameModel.find({}, { projection: { hostname: 1 } });
 
 		for (const row of dbBlockedHostnames) {
 			this.blockedHostnames.add(row.hostname);
