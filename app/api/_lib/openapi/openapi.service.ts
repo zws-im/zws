@@ -1,7 +1,7 @@
 import { OpenAPIRegistry, OpenApiGeneratorV31 } from '@asteasolutions/zod-to-openapi';
 import { oas31 } from 'openapi3-ts';
-import * as allRoutes from '../../all-routes';
-import { openapi } from '../../stats/shields/version/route';
+import * as allRoutes from '../../all-openapi';
+import { openapi } from '../../stats/shields/version/openapi';
 import { ConfigService, configService } from '../config/config.service';
 import { OpenapiTag } from './enums/openapi-tag.enum';
 
