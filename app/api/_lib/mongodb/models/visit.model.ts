@@ -7,5 +7,4 @@ const visitSchema = schema({
 	id: types.number({ required: true }),
 });
 
-export type VisitDocument = typeof visitSchema[0];
 export const VisitModel = papr.model('visits', visitSchema);
