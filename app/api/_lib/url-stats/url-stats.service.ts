@@ -1,17 +1,17 @@
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
-import { Mongodb, mongodb } from '../mongodb/mongodb';
 import { prisma } from '../prisma';
 import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
 import { UrlStatsSchema } from './dtos/url-stats.dto';
+import { VisitModel } from '../mongodb/models/visit.model';
+import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 
 class UrlStatsService {
 	constructor(
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
-		private readonly mongodb: Mongodb,
 	) {}
 
 	/**
@@ -24,10 +24,7 @@ class UrlStatsService {
 	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
 		const encodedId = UrlsService.encode(id);
 
-		const shortenedUrl = await this.prisma.shortenedUrl.findUnique({
-			where: { shortBase64: encodedId },
-			select: { url: true, blocked: true },
-		});
+		const shortenedUrl = await ShortenedUrlModel.findOne({ shortBase64: encodedId }, { projection: { url: 1, blocked: 1 } });
 
 		if (!shortenedUrl) {
 			return undefined;
@@ -37,11 +34,7 @@ class UrlStatsService {
 			throw new UrlBlockedException();
 		}
 
-		const visits = await this.prisma.visit.findMany({
-			where: { shortenedUrlId: encodedId },
-			select: { timestamp: true },
-			orderBy: { timestamp: 'asc' },
-		});
+		const visits = await VisitModel.find({ shortenedUrlBase64: encodedId }, { projection: { timestamp: 1 } });
 
 		return {
 			visits: visits.map((visit) => visit.timestamp.toISOString()),
@@ -66,7 +59,7 @@ class UrlStatsService {
 			}),
 		]);
 
-		await this.mongodb.visits.insertOne({
+		await VisitModel.insertOne({
 			id: visit.id,
 			timestamp: visit.timestamp,
 			shortenedUrlBase64: visit.shortenedUrlId,
@@ -74,4 +67,4 @@ class UrlStatsService {
 	}
 }
 
-export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService, mongodb);
+export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService);

@@ -2,13 +2,13 @@ import { sample } from '@jonahsnider/util';
 import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
-import { Mongodb, mongodb } from '../mongodb/mongodb';
 import { prisma } from '../prisma';
 import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
 import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
 import { ShortenedUrlData } from './interfaces/shortened-url.interface';
 import { Base64, Short } from './interfaces/urls.interface';
 import { VisitUrlData } from './interfaces/visit-url-data.interface';
+import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 
 export class UrlsService {
 	/** Maximum number of attempts to generate a unique ID. */
@@ -22,7 +22,6 @@ export class UrlsService {
 		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
 		private readonly configService: ConfigService,
-		private readonly mongodb: Mongodb,
 	) {}
 
 	/**
@@ -35,10 +34,10 @@ export class UrlsService {
 	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.encode(id);
 
-		const shortenedUrl = await this.prisma.shortenedUrl.findUnique({
-			where: { shortBase64: encodedId },
-			select: { url: true, blocked: true },
-		});
+		const shortenedUrl = await ShortenedUrlModel.findOne(
+			{ shortBase64: encodedId },
+			{ projection: { url: 1, blocked: 1 } },
+		);
 
 		if (!shortenedUrl) {
 			return undefined;
@@ -103,7 +102,7 @@ export class UrlsService {
 			}
 		} while (!created);
 
-		await this.mongodb.shortenedUrls.insertOne({
+		await ShortenedUrlModel.insertOne({
 			blocked: created.blocked,
 			createdAt: created.createdAt,
 			shortBase64: created.shortBase64,
@@ -133,4 +132,4 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService, mongodb);
+export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);
