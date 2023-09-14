@@ -5,7 +5,7 @@ import { Visit } from './interfaces/visit';
 
 const client = new MongoClient(configService.mongodb.uri);
 
-await client.connect();
+client.connect();
 
 const db = client.db(configService.mongodb.database);
 
