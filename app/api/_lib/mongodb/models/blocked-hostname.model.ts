@@ -6,4 +6,4 @@ const blockedHostnameSchema = schema({
 	createdAt: types.date({ required: true }),
 });
 
-export const VisitModel = papr.model('blockedHostnames', blockedHostnameSchema);
+export const BlockedHostnameModel = papr.model('blockedHostnames', blockedHostnameSchema);
