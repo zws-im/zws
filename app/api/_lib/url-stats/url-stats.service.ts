@@ -27,7 +27,7 @@ class UrlStatsService {
 
 		const shortenedUrl = await ShortenedUrlModel.findOne(
 			{ shortBase64: encodedId },
-			{ projection: { url: 1, blocked: 1 } },
+			{ projection: { url: 1, blocked: 1, _id: 1 } },
 		);
 
 		if (!shortenedUrl) {
@@ -38,7 +38,7 @@ class UrlStatsService {
 			throw new UrlBlockedException();
 		}
 
-		const visits = await VisitModel.find({ shortenedUrlBase64: encodedId }, { projection: { timestamp: 1 } });
+		const visits = await VisitModel.find({ shortenedUrl: shortenedUrl._id }, { projection: { timestamp: 1 } });
 
 		return {
 			visits: visits.map((visit) => visit.timestamp.toISOString()),
