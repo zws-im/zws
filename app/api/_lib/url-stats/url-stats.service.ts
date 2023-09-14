@@ -22,30 +22,29 @@ class UrlStatsService {
 	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
 		const encodedId = UrlsService.encode(id);
 
-		const [visits, shortenedUrl] = await this.prisma.$transaction([
-			this.prisma.visit.findMany({
-				where: { shortenedUrlId: encodedId },
-				select: { timestamp: true },
-				orderBy: { timestamp: 'asc' },
-			}),
-			this.prisma.shortenedUrl.findUnique({
-				where: { shortBase64: encodedId },
-				select: { url: true, blocked: true },
-			}),
-		]);
+		const shortenedUrl = await this.prisma.shortenedUrl.findUnique({
+			where: { shortBase64: encodedId },
+			select: { url: true, blocked: true },
+		});
 
-		if (shortenedUrl) {
-			if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
-				throw new UrlBlockedException();
-			}
-
-			return {
-				visits: visits.map((visit) => visit.timestamp.toISOString()),
-				url: shortenedUrl.url,
-			};
+		if (!shortenedUrl) {
+			return undefined;
 		}
 
-		return undefined;
+		if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
+			throw new UrlBlockedException();
+		}
+
+		const visits = await this.prisma.visit.findMany({
+			where: { shortenedUrlId: encodedId },
+			select: { timestamp: true },
+			orderBy: { timestamp: 'asc' },
+		});
+
+		return {
+			visits: visits.map((visit) => visit.timestamp.toISOString()),
+			url: shortenedUrl.url,
+		};
 	}
 
 	/**
