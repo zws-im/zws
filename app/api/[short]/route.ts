@@ -39,7 +39,7 @@ export const GET = exceptionRouteWrapper.wrapRoute<LongUrlSchema, NextRouteHandl
 		if (query.visit !== false) {
 			await urlStatsService.trackUrlVisit(short);
 
-			redirect(url.longUrl);
+			redirect(encodeURI(url.longUrl));
 		}
 
 		return NextResponse.json({ url: url.longUrl });
