@@ -1,3 +1,4 @@
+import assert from 'node:assert';
 import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
@@ -62,10 +63,15 @@ class UrlStatsService {
 			}),
 		]);
 
+		const shortenedUrl = await ShortenedUrlModel.findOne({ shortBase64: encodedId }, { projection: { _id: 1 } });
+
+		assert(shortenedUrl);
+
 		await VisitModel.insertOne({
 			id: visit.id,
 			timestamp: visit.timestamp,
 			shortenedUrlBase64: visit.shortenedUrlId,
+			shortenedUrl: shortenedUrl._id,
 		});
 	}
 }
