@@ -1,12 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { next, rewrite } from '@vercel/edge';
+import { NextRequest } from 'next/server';
 
 const CORS_REQUEST_BASE = {
 	headers: {
 		'Access-Control-Allow-Origin': '*',
 	},
-} satisfies RequestInit;
+} as const satisfies RequestInit;
 
-export default async function middleware(request: NextRequest): Promise<NextResponse> {
+export default function middleware(request: NextRequest): Response {
 	const host = request.headers.get('host');
 
 	if (host === 'api.zws.im') {
@@ -15,12 +16,12 @@ export default async function middleware(request: NextRequest): Promise<NextResp
 		url.hostname = 'zws.im';
 		url.pathname = `/api${url.pathname}`;
 
-		return NextResponse.redirect(url, CORS_REQUEST_BASE);
+		return rewrite(url, CORS_REQUEST_BASE);
 	}
 
 	if (request.nextUrl.pathname.startsWith('/api')) {
-		return NextResponse.next(CORS_REQUEST_BASE);
+		return next(CORS_REQUEST_BASE);
 	}
 
-	return NextResponse.next();
+	return next();
 }
