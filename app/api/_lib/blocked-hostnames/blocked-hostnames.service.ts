@@ -20,10 +20,11 @@ export class BlockedHostnamesService {
 	constructor(private readonly kv: VercelKV, private readonly configService: ConfigService) {}
 
 	async isUrlBlocked(url: Pick<ShortenedUrl, 'blocked' | 'url'>): Promise<boolean> {
-		return url.blocked || (await this.isHostnameBlocked(url.url));
+		return url.blocked || (await this.isHostnameBlocked(new URL(url.url)));
 	}
 
-	async isHostnameBlocked(hostname: string): Promise<boolean> {
+	async isHostnameBlocked(url: URL): Promise<boolean> {
+		const { hostname } = url;
 		const domainName = hostname.replace(BlockedHostnamesService.DOMAIN_NAME_REG_EXP, '$1');
 		const hostnames = { hostname, domainName };
 

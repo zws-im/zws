@@ -63,9 +63,7 @@ export class UrlsService {
 	 */
 	// biome-ignore lint/nursery/noExcessiveComplexity: Doesn't really make sense to split this logic out, it would be messier
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
-		const hostname = new URL(url).hostname;
-
-		if (await this.blockedHostnamesService.isHostnameBlocked(hostname)) {
+		if (await this.blockedHostnamesService.isHostnameBlocked(new URL(url))) {
 			throw new AttemptedShortenBlockedHostnameException();
 		}
 
