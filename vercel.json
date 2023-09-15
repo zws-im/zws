@@ -1,11 +1,5 @@
 {
 	"buildCommand": "bun migrations && bun run build",
 	"cleanUrls": true,
-	"crons": [
-		{
-			"schedule": "0 0,12 * * *",
-			"path": "/api/cron/calculate-stats"
-		}
-	],
 	"$schema": "https://openapi.vercel.sh/vercel.json"
 }
