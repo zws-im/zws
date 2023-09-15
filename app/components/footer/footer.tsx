@@ -14,7 +14,7 @@ export default function Footer() {
 	};
 
 	return (
-		<footer className='text-center py-5 mt-24 flex flex-col items-center space-y-4'>
+		<footer className='text-center py-5 mt-24 flex flex-col items-center gap-y-4'>
 			<p className='text-zws-purple-50'>
 				ZWS is licensed under{' '}
 				<a className='underline text-zws-purple-400' href='https://www.apache.org/licenses/LICENSE-2.0'>

@@ -10,7 +10,7 @@ import ShortenUrlForm from './components/shorten-url/shorten-url-form';
 export default function HomePage() {
 	return (
 		<main className='max-lg:space-y-16 max-xl:space-y-32 xl:space-y-48'>
-			<section id='shorten' className='flex flex-col items-center justify-center max-md:mt-24 md:mt-36'>
+			<section id='shorten' className='flex flex-col items-center justify-center max-md:pt-24 md:pt-36'>
 				<div className='max-w-xl'>
 					<div className='text-center'>
 						<H1>Zero Width Shortener</H1>
@@ -19,7 +19,7 @@ export default function HomePage() {
 							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
 						</p>
 
-						<div className='mt-16'>
+						<div className='pt-16'>
 							<ShortenUrlForm />
 						</div>
 					</div>

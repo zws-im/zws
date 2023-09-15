@@ -60,9 +60,8 @@ export default function RootLayout({
 						<Navbar />
 						<DotGrid height={1} className='max-xl:top-[550px] xl:top-[787px] left-0 max-md:invisible' />
 						<DotGrid height={2} className='top-[145px] right-0' />
+						<LightSpot className='transform translate-x-[-75px] translate-y-[25px] -z-50 max-md:w-0 max-md:h-0' />
 						<div className='container mx-auto px-4 max-w-screen-xl'>
-							<LightSpot className='transform translate-x-[-250px] translate-y-[-200px] -z-50 max-md:w-0 max-md:h-0' />
-
 							{children}
 							<Footer />
 						</div>
