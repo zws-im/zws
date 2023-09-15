@@ -34,7 +34,7 @@
 		"@heroicons/react": "2.0.18",
 		"@highlight-run/next": "4.3.0",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
-		"@jonahsnider/util": "10.1.0",
+		"@jonahsnider/util": "10.2.0",
 		"@types/node": "20.6.0",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
