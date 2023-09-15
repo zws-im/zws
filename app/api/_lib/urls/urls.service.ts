@@ -42,6 +42,12 @@ export class UrlsService {
 		}
 
 		if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
+			if (!shortenedUrl.blocked) {
+				// The URL hostname is blocked, but the entry in the database isn't
+				// So, we should update the entry in the DB to mark it as blocked
+				await ShortenedUrlModel.updateOne({ shortBase64: encodedId }, { $set: { blocked: true } });
+			}
+
 			return {
 				longUrl: undefined,
 				blocked: true,
