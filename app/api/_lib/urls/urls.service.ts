@@ -1,9 +1,8 @@
 import { sample } from '@jonahsnider/util';
-import { ApproximateCountKind, Prisma, PrismaClient, ShortenedUrl } from '@prisma/client';
+import { MongoServerError } from 'mongodb';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService, configService } from '../config/config.service';
-import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
-import { prisma } from '../prisma';
+import { ShortenedUrl, ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
 import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
 import { ShortenedUrlData } from './interfaces/shortened-url.interface';
@@ -19,7 +18,6 @@ export class UrlsService {
 	}
 
 	constructor(
-		private readonly prisma: PrismaClient,
 		private readonly blockedHostnamesService: BlockedHostnamesService,
 		private readonly configService: ConfigService,
 	) {}
@@ -84,30 +82,15 @@ export class UrlsService {
 			const shortBase64 = UrlsService.encode(id);
 
 			try {
-				// eslint-disable-next-line no-await-in-loop
-				[created] = await this.prisma.$transaction([
-					this.prisma.shortenedUrl.create({ data: { url, shortBase64 } }),
-					this.prisma.approximateCounts.update({
-						where: { kind: ApproximateCountKind.SHORTENED_URLS },
-						data: { count: { increment: 1 } },
-					}),
-				]);
+				created = await ShortenedUrlModel.insertOne({ url, shortBase64, blocked: false, createdAt: new Date() });
 			} catch (error) {
-				// https://www.prisma.io/docs/reference/api-reference/error-reference#p2002
-				if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+				if (error instanceof MongoServerError && error.code === 11000) {
 					// Ignore the expected potential duplicate ID errors
 				} else {
 					throw error;
 				}
 			}
 		} while (!created);
-
-		await ShortenedUrlModel.insertOne({
-			blocked: created.blocked,
-			createdAt: created.createdAt,
-			shortBase64: created.shortBase64,
-			url: created.url,
-		});
 
 		return {
 			short: id,
@@ -132,4 +115,4 @@ export class UrlsService {
 	}
 }
 
-export const urlsService = new UrlsService(prisma, blockedHostnamesService, configService);
+export const urlsService = new UrlsService(blockedHostnamesService, configService);

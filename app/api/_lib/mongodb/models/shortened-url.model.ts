@@ -8,4 +8,5 @@ const shortenedUrlSchema = schema({
 	createdAt: types.date({ required: true }),
 });
 
+export type ShortenedUrl = typeof shortenedUrlSchema[0];
 export const ShortenedUrlModel = papr.model('shortenedUrls', shortenedUrlSchema);

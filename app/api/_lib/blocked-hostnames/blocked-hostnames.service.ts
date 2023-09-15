@@ -1,9 +1,8 @@
-import { PrismaClient, ShortenedUrl } from '@prisma/client';
 import { VercelKV, kv } from '@vercel/kv';
 import convert from 'convert';
 import { ConfigService, configService } from '../config/config.service';
 import { BlockedHostnameModel } from '../mongodb/models/blocked-hostname.model';
-import { prisma } from '../prisma';
+import { ShortenedUrl } from '../mongodb/models/shortened-url.model';
 
 export class BlockedHostnamesService {
 	/** The number of seconds to cache private blocked hostnames from the database for. */
@@ -16,11 +15,7 @@ export class BlockedHostnamesService {
 
 	private readonly blockedHostnames = new Set(this.configService.blockedHostnames);
 
-	constructor(
-		private readonly kv: VercelKV,
-		private readonly prisma: PrismaClient,
-		private readonly configService: ConfigService,
-	) {}
+	constructor(private readonly kv: VercelKV, private readonly configService: ConfigService) {}
 
 	async isUrlBlocked(url: Pick<ShortenedUrl, 'blocked' | 'url'>): Promise<boolean> {
 		return url.blocked || (await this.isHostnameBlocked(url.url));
@@ -82,4 +77,4 @@ export class BlockedHostnamesService {
 	}
 }
 
-export const blockedHostnamesService = new BlockedHostnamesService(kv, prisma, configService);
+export const blockedHostnamesService = new BlockedHostnamesService(kv, configService);

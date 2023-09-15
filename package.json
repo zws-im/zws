@@ -19,17 +19,15 @@
 		"build": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next build",
 		"build:nixpack": "nixpacks build . --name zws-im/zws",
 		"dev": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next dev",
-		"postinstall": "prisma generate",
 		"lint": "biome check .",
 		"lint:exports": "knip",
 		"lint:fix": "biome check . --apply-unsafe",
-		"migrations": "prisma migrate deploy && bun umzug up",
+		"migrations": "bun umzug up",
 		"umzug": "bun ./umzug/migrator.ts",
 		"preopenapi:download": "bun run build",
 		"openapi:download": "bun scripts/openapi-download.ts",
 		"openapi:lint": "bunx @stoplight/spectral-cli lint openapi.json",
-		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start",
-		"validate-prisma": "prisma validate"
+		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start"
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "5.5.0",
@@ -37,7 +35,6 @@
 		"@highlight-run/next": "4.3.0",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
 		"@jonahsnider/util": "10.1.0",
-		"@prisma/client": "5.3.0",
 		"@types/node": "20.6.0",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
@@ -72,7 +69,6 @@
 		"@vercel/edge": "1.0.2",
 		"bun-types": "1.0.1",
 		"knip": "2.24.1",
-		"prisma": "5.3.0",
 		"type-fest": "4.3.1",
 		"umzug": "3.3.1",
 		"vercel": "32.2.1"

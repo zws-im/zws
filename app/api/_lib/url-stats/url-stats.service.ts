@@ -1,19 +1,14 @@
 import assert from 'node:assert';
-import { ApproximateCountKind, PrismaClient } from '@prisma/client';
 import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { VisitModel } from '../mongodb/models/visit.model';
-import { prisma } from '../prisma';
 import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
 import { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
 import { UrlStatsSchema } from './dtos/url-stats.dto';
 
 class UrlStatsService {
-	constructor(
-		private readonly prisma: PrismaClient,
-		private readonly blockedHostnamesService: BlockedHostnamesService,
-	) {}
+	constructor(private readonly blockedHostnamesService: BlockedHostnamesService) {}
 
 	/**
 	 * Retrieve usage statistics for a shortened URL.
@@ -53,25 +48,15 @@ class UrlStatsService {
 	async trackUrlVisit(id: Short): Promise<void> {
 		const encodedId = UrlsService.encode(id);
 
-		const [visit] = await this.prisma.$transaction([
-			this.prisma.visit.create({
-				data: { shortenedUrl: { connect: { shortBase64: encodedId } } },
-			}),
-			this.prisma.approximateCounts.update({
-				where: { kind: ApproximateCountKind.VISITS },
-				data: { count: { increment: 1 } },
-			}),
-		]);
-
 		const shortenedUrl = await ShortenedUrlModel.findOne({ shortBase64: encodedId }, { projection: { _id: 1 } });
 
 		assert(shortenedUrl);
 
 		await VisitModel.insertOne({
-			timestamp: visit.timestamp,
+			timestamp: new Date(),
 			shortenedUrl: shortenedUrl._id,
 		});
 	}
 }
 
-export const urlStatsService = new UrlStatsService(prisma, blockedHostnamesService);
+export const urlStatsService = new UrlStatsService(blockedHostnamesService);
