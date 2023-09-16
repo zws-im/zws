@@ -62,7 +62,7 @@
 		"zod-to-json-schema": "3.21.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.1.2",
+		"@biomejs/biome": "1.2.2",
 		"@tsconfig/bun": "1.0.0",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/swagger-ui-react": "4.18.0",
