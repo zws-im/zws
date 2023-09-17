@@ -5,6 +5,7 @@ import { openapi } from '../../stats/shields/version/openapi';
 import { ConfigService, configService } from '../config/config.service';
 import { OpenapiTag } from './enums/openapi-tag.enum';
 
+// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 type RegisterOpenapiFn = (oas: OpenapiService) => void;
 
 export class OpenapiService {

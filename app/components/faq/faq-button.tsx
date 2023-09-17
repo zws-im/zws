@@ -5,6 +5,7 @@ import { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<{
 	selected: boolean;
+	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	onClick: () => void;
 }>;
 

@@ -7,6 +7,7 @@ import { FaqOption } from './types';
 type Props = {
 	options: Pick<FaqOption, 'title' | 'id'>[];
 	initialSelected: string;
+	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	onSelect: (id: string) => void;
 };
 

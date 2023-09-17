@@ -12,6 +12,7 @@ export default function ErrorPage({
 	reset,
 }: {
 	error: Error;
+	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	reset: () => void;
 }) {
 	if (SHOULD_REPORT_ERROR) {

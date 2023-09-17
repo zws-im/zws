@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<
 	{
+		// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 		onClick?: () => void;
 	} & (
 		| {

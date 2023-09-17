@@ -32,10 +32,10 @@
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "5.5.0",
 		"@heroicons/react": "2.0.18",
-		"@highlight-run/next": "4.3.0",
+		"@highlight-run/next": "4.3.1",
 		"@jonahsnider/nextjs-api-utils": "1.0.4",
-		"@jonahsnider/util": "10.1.0",
-		"@types/node": "20.6.0",
+		"@jonahsnider/util": "10.2.0",
+		"@types/node": "20.6.2",
 		"@types/react": "18.2.21",
 		"@types/react-dom": "18.2.7",
 		"@vercel/analytics": "1.0.2",
@@ -46,7 +46,7 @@
 		"convert": "4.13.2",
 		"framer-motion": "10.16.4",
 		"millify": "6.1.0",
-		"mongodb": "6.0.0",
+		"mongodb": "6.1.0",
 		"next": "13.4.19",
 		"next-plausible": "3.11.1",
 		"papr": "15.0.0",
@@ -54,7 +54,7 @@
 		"react": "18.2.0",
 		"react-apexcharts": "1.4.1",
 		"react-dom": "18.2.0",
-		"swagger-ui-react": "5.6.2",
+		"swagger-ui-react": "5.7.1",
 		"swr": "2.2.2",
 		"tailwindcss": "3.3.3",
 		"typescript": "5.2.2",
@@ -62,21 +62,21 @@
 		"zod-to-json-schema": "3.21.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.1.2",
-		"@tsconfig/bun": "1.0.0",
+		"@biomejs/biome": "1.2.2",
+		"@tsconfig/bun": "1.0.1",
 		"@tsconfig/strictest": "2.0.2",
 		"@types/swagger-ui-react": "4.18.0",
 		"@vercel/edge": "1.0.2",
-		"bun-types": "1.0.1",
+		"bun-types": "1.0.2",
 		"knip": "2.24.1",
 		"type-fest": "4.3.1",
 		"umzug": "3.3.1",
-		"vercel": "32.2.1"
+		"vercel": "32.2.4"
 	},
 	"peerDependencies": {
 		"openapi3-ts": "^4"
 	},
-	"packageManager": "bun@1.0.0",
+	"packageManager": "bun@1.0.2",
 	"engines": {
 		"node": "18.x || 20.x"
 	}

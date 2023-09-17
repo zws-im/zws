@@ -62,7 +62,7 @@ export const up: MigrationFn<MigrationContext> = async (params) => {
 				},
 			},
 		],
-		// biome-ignore lint/nursery/useNamingConvention: Can't rename this field
+		// biome-ignore lint/style/useNamingConvention: Can't rename this field
 		{ maxTimeMS: timeout, maxAwaitTimeMS: timeout },
 	);
 

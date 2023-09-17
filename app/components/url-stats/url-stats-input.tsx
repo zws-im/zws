@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 type Props = {
+	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	setShortUrl: (shortUrl: string) => void;
 	isLoading: boolean;
 	error: string | undefined;

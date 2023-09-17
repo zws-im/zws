@@ -4,15 +4,15 @@ import { siteDescription, siteName } from './shared-metadata';
 export default function manifest(): MetadataRoute.Manifest {
 	return {
 		name: siteName,
-		// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
 		short_name: 'ZWS',
 		description: siteDescription,
-		// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
 		start_url: '/',
 		display: 'standalone',
-		// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
 		background_color: '#140a2e',
-		// biome-ignore lint/nursery/useNamingConvention: Can't use camelcase here
+		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
 		theme_color: '#ffffff',
 		icons: [
 			{
