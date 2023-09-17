@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 export default function StatsPage() {
 	return (
 		<main>
-			<section id='stats' className='flex justify-center w-full'>
-				<div className='flex flex-col items-center justify-center space-y-16 max-w-xl'>
+			<section id='stats' className='flex w-full justify-center'>
+				<div className='flex max-w-xl flex-col items-center justify-center space-y-16'>
 					<div className='text-center'>
 						<H1>Stats</H1>
 					</div>

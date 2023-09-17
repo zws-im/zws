@@ -27,7 +27,8 @@
 		"preopenapi:download": "bun run build",
 		"openapi:download": "bun scripts/openapi-download.ts",
 		"openapi:lint": "bunx @stoplight/spectral-cli lint openapi.json",
-		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start"
+		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start",
+		"style": "prettier --config ./prettier.config.js --check ."
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "5.5.0",
@@ -69,6 +70,9 @@
 		"@vercel/edge": "1.0.2",
 		"bun-types": "1.0.2",
 		"knip": "2.24.1",
+		"prettier": "3.0.3",
+		"prettier-plugin-packagejson": "2.4.5",
+		"prettier-plugin-tailwindcss": "0.5.4",
 		"type-fest": "4.3.1",
 		"umzug": "3.3.1",
 		"vercel": "32.2.4"

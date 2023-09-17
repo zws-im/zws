@@ -21,7 +21,7 @@ export const faq: FaqOption[] = [
 					We try to only use characters which don't render as anything, but some devices might render them as boxes. If
 					you see this, please{' '}
 					<a
-						className='underline text-zws-purple-400'
+						className='text-zws-purple-400 underline'
 						href='https://github.com/zws-im/zws/issues/new'
 						target='_blank'
 						rel='noreferrer'

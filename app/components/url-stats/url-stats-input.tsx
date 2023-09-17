@@ -30,12 +30,12 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 
 	return (
 		<div
-			className={clsx('w-full h-14 rounded flex bg-white transition', {
+			className={clsx('flex h-14 w-full rounded bg-white transition', {
 				'border-4 border-red-500': !valid,
 			})}
 		>
 			<input
-				className={'w-full p-4 rounded-l outline-none h-full text-black placeholder-[rgba(10, 0, 37, 0.6)]'}
+				className={'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l p-4 text-black outline-none'}
 				placeholder={baseUrl}
 				type='url'
 				name='url'
@@ -46,14 +46,14 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 				autoFocus={true}
 			/>
 			<div
-				className={clsx('min-w-max h-full p-4 rounded-r transition-colors', {
+				className={clsx('h-full min-w-max rounded-r p-4 transition-colors', {
 					'bg-red-500 text-white': valid && error,
 				})}
 			>
-				{valid && isLoading && <ArrowPathIcon className='w-6 h-6 animate-spin text-zws-purple-500' />}
+				{valid && isLoading && <ArrowPathIcon className='h-6 w-6 animate-spin text-zws-purple-500' />}
 				{valid && error && (
 					<p className='align-middle'>
-						<ExclamationCircleIcon className='w-6 h-6 inline mr-2' />
+						<ExclamationCircleIcon className='mr-2 inline h-6 w-6' />
 						{error}
 					</p>
 				)}

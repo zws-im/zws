@@ -68,9 +68,9 @@ export default function ShortenUrlForm() {
 
 	return (
 		<>
-			<form className='w-full h-14 bg-white rounded flex' onSubmit={handleSubmit}>
+			<form className='flex h-14 w-full rounded bg-white' onSubmit={handleSubmit}>
 				<input
-					className='w-full p-4 rounded-l outline-none h-full text-black placeholder-[rgba(10, 0, 37, 0.6)] bg-transparent'
+					className='placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-none'
 					placeholder='https://github.com/zws-im/zws'
 					type='url'
 					name='url'
@@ -81,21 +81,21 @@ export default function ShortenUrlForm() {
 					autoFocus={true}
 				/>
 				<motion.button
-					className={clsx('min-w-max h-full p-4 rounded-r transition-colors flex justify-center items-center', {
-						'hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200 text-zws-purple-500 font-bold': !(
+					className={clsx('flex h-full min-w-max items-center justify-center rounded-r p-4 transition-colors', {
+						'font-bold text-zws-purple-500 hover:bg-purple-100 active:bg-purple-200 disabled:bg-purple-200': !(
 							justSucceeded || error
 						),
-						'bg-green-400 text-stone-900': justSucceeded,
+						'bg-green-400 text-zws-purple-900': justSucceeded,
 						'bg-red-500 text-white': error,
 					})}
 					disabled={loading}
 					type='submit'
 					layout={true}
 				>
-					{loading && <ArrowPathIcon className='w-6 h-6 animate-spin opacity-50' />}
+					{loading && <ArrowPathIcon className='h-6 w-6 animate-spin opacity-50' />}
 					{!(loading || justSucceeded || error) && 'Shorten'}
 					{error}
-					{justSucceeded && <CheckIcon className='w-6 h-6' />}
+					{justSucceeded && <CheckIcon className='h-6 w-6' />}
 				</motion.button>
 			</form>
 
@@ -103,7 +103,7 @@ export default function ShortenUrlForm() {
 				{shortenedUrl && !loading ? (
 					<button
 						type='button'
-						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 hover:opacity-80 active:opacity-60 transition-opacity'
+						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 transition-opacity hover:opacity-80 active:opacity-60'
 						onClick={copy}
 					>
 						{shortenedUrl} (click to copy)

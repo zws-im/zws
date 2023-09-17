@@ -10,7 +10,7 @@ type Props = {
 
 export default function SwaggerUi({ schema }: Props) {
 	return (
-		<div className='bg-purple-50 rounded p-4 w-full'>
+		<div className='w-full rounded bg-purple-50 p-4'>
 			<SwaggerUI spec={schema} />
 		</div>
 	);

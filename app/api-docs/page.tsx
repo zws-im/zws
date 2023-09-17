@@ -9,7 +9,7 @@ export default function ApiSchemaPage() {
 	const schema = openapiService.getOpenapi();
 
 	return (
-		<main className='flex flex-col gap-y-4 items-center justify-center'>
+		<main className='flex flex-col items-center justify-center gap-y-4'>
 			<div className='text-center'>
 				<H1>API Docs</H1>
 			</div>

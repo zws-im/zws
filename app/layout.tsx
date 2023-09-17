@@ -16,7 +16,11 @@ const canonical = '/';
 
 export const metadata: Metadata = {
 	metadataBase,
-	title: { default: siteName, absolute: siteName, template: `%s | ${siteName}` },
+	title: {
+		default: siteName,
+		absolute: siteName,
+		template: `%s | ${siteName}`,
+	},
 	description: siteDescription,
 	alternates: {
 		canonical: canonical,
@@ -32,11 +36,7 @@ export const metadata: Metadata = {
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
 			<HighlightInit
@@ -58,10 +58,10 @@ export default function RootLayout({
 
 					<div className='min-h-screen'>
 						<Navbar />
-						<DotGrid height={1} className='max-xl:top-[550px] xl:top-[787px] left-0 max-md:invisible' />
-						<DotGrid height={2} className='top-[145px] right-0' />
-						<LightSpot className='transform max-2xl:translate-x-[50px] 2xl:translate-x-[300px] translate-y-[25px] -z-50 max-md:w-0 max-md:h-0' />
-						<div className='container mx-auto px-4 max-w-screen-xl'>
+						<DotGrid height={1} className='left-0 max-xl:top-[550px] max-md:invisible xl:top-[787px]' />
+						<DotGrid height={2} className='right-0 top-[145px]' />
+						<LightSpot className='-z-50 translate-y-[25px] transform max-2xl:translate-x-[50px] max-md:h-0 max-md:w-0 2xl:translate-x-[300px]' />
+						<div className='container mx-auto max-w-screen-xl px-4'>
 							{children}
 							<Footer />
 						</div>

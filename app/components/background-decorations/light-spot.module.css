@@ -1,7 +1,3 @@
 .light-spot {
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		rgba(126, 79, 255, 0.08) 22.4%,
-		rgba(126, 79, 255, 0) 100%
-	);
+	background: radial-gradient(50% 50% at 50% 50%, rgba(126, 79, 255, 0.08) 22.4%, rgba(126, 79, 255, 0) 100%);
 }

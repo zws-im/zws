@@ -15,7 +15,7 @@ export default function DotGrid({ height, className }: Props) {
 	return (
 		<div
 			className={clsx(
-				'absolute pointer-events-none -z-50',
+				'pointer-events-none absolute -z-50',
 				{
 					'space-y-[7.95px]': height === 2,
 				},

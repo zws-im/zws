@@ -6,5 +6,5 @@ type Props = {
 };
 
 export default function LightSpot({ className }: Props) {
-	return <div className={clsx(styles['light-spot'], 'absolute w-[1010px] h-[630px] pointer-events-none', className)} />;
+	return <div className={clsx(styles['light-spot'], 'pointer-events-none absolute h-[630px] w-[1010px]', className)} />;
 }

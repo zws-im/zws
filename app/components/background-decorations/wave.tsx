@@ -7,7 +7,7 @@ export default function Wave() {
 			priority={true}
 			src={wave}
 			alt='A wave pattern'
-			className='absolute top-0 w-screen max-h-screen pointer-events-none z-50 object-cover'
+			className='pointer-events-none absolute top-0 z-50 max-h-screen w-screen object-cover'
 		/>
 	);
 }

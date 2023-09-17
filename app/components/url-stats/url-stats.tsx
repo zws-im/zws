@@ -48,7 +48,7 @@ export default function UrlStats() {
 		<div className='w-full space-y-8'>
 			<UrlStatsInput error={errorText} isLoading={isLoading && !stats && !errorText} setShortUrl={setUrl} />
 
-			<div className='max-md:w-full md:w-[36rem] min-h-max h-48 max-lg:h-72 lg:h-96'>
+			<div className='h-48 min-h-max max-lg:h-72 max-md:w-full md:w-[36rem] lg:h-96'>
 				<Suspense
 					fallback={
 						// Prevent layout shift

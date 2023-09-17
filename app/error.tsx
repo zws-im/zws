@@ -23,7 +23,7 @@ export default function ErrorPage({
 	}
 
 	return (
-		<main className='flex flex-col items-center justify-center gap-y-4 max-sm:pt-32 max-md:pt-48 md:pt-72'>
+		<main className='flex flex-col items-center justify-center gap-y-4 max-md:pt-48 max-sm:pt-32 md:pt-72'>
 			<H1>An unexpected error occurred</H1>
 			<Button onClick={reset}>Try again</Button>
 		</main>

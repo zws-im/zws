@@ -9,7 +9,10 @@ import UrlBlockedPage from './url-blocked-page';
 export default async function UrlSubpathPage({
 	params: rawParams,
 	searchParams: rawSearchParams,
-}: { params: { short: string }; searchParams: { [key: string]: string | string[] | undefined } }) {
+}: {
+	params: { short: string };
+	searchParams: { [key: string]: string | string[] | undefined };
+}) {
 	const searchParams = new URLSearchParams(
 		Object.entries(rawSearchParams).flatMap(([key, valueOrValues]) => {
 			if (Array.isArray(valueOrValues)) {
