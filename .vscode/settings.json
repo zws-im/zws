@@ -1,12 +1,14 @@
 {
-	"typescript.preferences.importModuleSpecifierEnding": "index",
-	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.preferences.importModuleSpecifier": "shortest",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[javascript]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[typescript]": {
@@ -15,5 +17,9 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]]
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"tailwindCSS.experimental.classRegex": [["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]],
+	"typescript.preferences.importModuleSpecifier": "shortest",
+	"typescript.preferences.importModuleSpecifierEnding": "index",
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
