@@ -1,5 +1,5 @@
 import { extendZodWithOpenApi } from '@asteasolutions/zod-to-openapi';
-import { ValidationExceptionSchema } from '@jonahsnider/nextjs-api-utils/client';
+import { ValidationExceptionSchema } from 'next-api-utils/client';
 import { z } from 'zod';
 import { ExceptionCode } from '../enums/exceptions.enum';
 

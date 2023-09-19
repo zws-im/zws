@@ -23,18 +23,17 @@
 		"lint:exports": "knip",
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrations": "bun umzug up",
-		"umzug": "bun ./umzug/migrator.ts",
 		"preopenapi:download": "bun run build",
 		"openapi:download": "bun scripts/openapi-download.ts",
 		"openapi:lint": "bunx @stoplight/spectral-cli lint openapi.json",
 		"start": "node --require ./ss-polyfills/File.js ./node_modules/.bin/next start",
-		"style": "prettier --config ./prettier.config.js --check ."
+		"style": "prettier --config ./prettier.config.js --check .",
+		"umzug": "bun ./umzug/migrator.ts"
 	},
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "5.5.0",
 		"@heroicons/react": "2.0.18",
 		"@highlight-run/next": "4.3.1",
-		"@jonahsnider/nextjs-api-utils": "1.0.4",
 		"@jonahsnider/util": "10.2.0",
 		"@types/node": "20.6.2",
 		"@types/react": "18.2.21",
@@ -49,6 +48,7 @@
 		"millify": "6.1.0",
 		"mongodb": "6.1.0",
 		"next": "13.4.19",
+		"next-api-utils": "1.0.1",
 		"next-plausible": "3.11.1",
 		"papr": "15.0.0",
 		"postcss": "8.4.29",

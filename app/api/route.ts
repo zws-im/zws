@@ -1,5 +1,5 @@
-import { validateBody } from '@jonahsnider/nextjs-api-utils';
 import { Http } from '@jonahsnider/util';
+import { validateBody } from 'next-api-utils';
 import { NextResponse } from 'next/server';
 import { authorizationService } from './_lib/authorization/authorization.service';
 import { Action } from './_lib/authorization/enums/action.enum';

@@ -1,9 +1,4 @@
-import {
-	NextRouteHandlerContext,
-	QueryBooleanSchema,
-	validateParams,
-	validateQuery,
-} from '@jonahsnider/nextjs-api-utils';
+import { NextRouteHandlerContext, QueryBooleanSchema, validateParams, validateQuery } from 'next-api-utils';
 import { redirect } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';

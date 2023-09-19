@@ -1,4 +1,4 @@
-import { ExceptionWrapper } from '@jonahsnider/nextjs-api-utils';
+import { ExceptionWrapper } from 'next-api-utils';
 import { BaseHttpException } from './exceptions/base.exception';
 
 function isException(maybeException: unknown): maybeException is BaseHttpException {

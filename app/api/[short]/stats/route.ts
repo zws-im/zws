@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { NextRouteHandlerContext, validateParams } from '@jonahsnider/nextjs-api-utils';
+import { NextRouteHandlerContext, validateParams } from 'next-api-utils';
 import { z } from 'zod';
 import { exceptionRouteWrapper } from '../../_lib/exception-route-wrapper';
 import { UrlStatsSchema } from '../../_lib/url-stats/dtos/url-stats.dto';

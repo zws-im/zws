@@ -1,5 +1,5 @@
 import { STATUS_CODES } from 'node:http';
-import { TO_RESPONSE } from '@jonahsnider/nextjs-api-utils';
+import { TO_RESPONSE } from 'next-api-utils';
 import { NextResponse } from 'next/server';
 import { ExceptionSchema } from './dtos/exception.dto';
 import { ExceptionCode } from './enums/exceptions.enum';
