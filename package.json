@@ -36,7 +36,7 @@
 		"@highlight-run/next": "4.3.1",
 		"@jonahsnider/util": "10.2.0",
 		"@types/node": "20.6.2",
-		"@types/react": "18.2.21",
+		"@types/react": "18.2.22",
 		"@types/react-dom": "18.2.7",
 		"@vercel/analytics": "1.0.2",
 		"@vercel/kv": "0.2.3",
