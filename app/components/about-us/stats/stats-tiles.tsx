@@ -3,9 +3,14 @@ import convert from 'convert';
 import millify from 'millify';
 import StatsTile from './stats-tile';
 
+const GITHUB_STARGAZERS_LINK_HEADER_REGEXP = /^.+,.+page=(?<stars>\d+).+$/;
+
 async function getGitHubStars(): Promise<number> {
-	const query = new URLSearchParams({ q: 'zws-im/zws' });
-	const response = await fetch(`https://api.github.com/search/repositories?${query}`, {
+	const query = new URLSearchParams({
+		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
+		per_page: (1).toString(),
+	});
+	const response = await fetch(`https://api.github.com/repos/zws-im/zws/stargazers?${query}`, {
 		headers: {
 			accept: 'application/vnd.github+json',
 			'X-GitHub-Api-Version': '2022-11-28',
@@ -19,18 +24,9 @@ async function getGitHubStars(): Promise<number> {
 		return 0;
 	}
 
-	const data = (await response.json()) as {
-		items: Array<{
-			// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
-			full_name: string;
-			// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
-			stargazers_count: number;
-		}>;
-	};
+	const linkHeader = response.headers.get('link');
 
-	const zws = data.items.find((item) => item.full_name === 'zws-im/zws');
-
-	return zws?.stargazers_count ?? 0;
+	return Number(linkHeader?.match(GITHUB_STARGAZERS_LINK_HEADER_REGEXP)?.groups?.stars ?? 0);
 }
 
 type Props = {
