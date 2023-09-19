@@ -1,4 +1,4 @@
-# Zero Width Shortener (ZWS) [<img src="https://images.ctfassets.net/e5382hct74si/78Olo8EZRdUlcDUFQvnzG7/fa4cdb6dc04c40fceac194134788a0e2/1618983297-powered-by-vercel.svg" align="right" />](https://vercel.com/?utm_source=zws-im&utm_campaign=oss)
+# Zero Width Shortener (ZWS) [<img src="https://images.ctfassets.net/e5382hct74si/78Olo8EZRdUlcDUFQvnzG7/fa4cdb6dc04c40fceac194134788a0e2/1618983297-powered-by-vercel.svg" align="right" />](https://vercel.com/?utm_source=jonah-snider&utm_campaign=oss)
 
 [![Number of shortened URLs][stats-urls-image]](#Badges)
 [![Number of visited URLs][stats-visits-image]](#Badges)
