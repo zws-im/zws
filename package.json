@@ -56,7 +56,7 @@
 		"react-apexcharts": "1.4.1",
 		"react-dom": "18.2.0",
 		"swagger-ui-react": "5.7.2",
-		"swr": "2.2.2",
+		"swr": "2.2.3",
 		"tailwindcss": "3.3.3",
 		"typescript": "5.2.2",
 		"zod": "3.22.2",
