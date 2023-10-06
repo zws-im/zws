@@ -33,7 +33,7 @@
 	"dependencies": {
 		"@asteasolutions/zod-to-openapi": "6.1.0",
 		"@heroicons/react": "2.0.18",
-		"@highlight-run/next": "5.0.0",
+		"@highlight-run/next": "5.0.5",
 		"@jonahsnider/util": "10.2.0",
 		"@types/node": "20.8.2",
 		"@types/react": "18.2.23",
