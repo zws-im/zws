@@ -35,7 +35,7 @@
 		"@heroicons/react": "2.0.18",
 		"@highlight-run/next": "5.0.5",
 		"@jonahsnider/util": "10.2.0",
-		"@types/node": "20.8.6",
+		"@types/node": "20.8.7",
 		"@types/react": "18.2.23",
 		"@types/react-dom": "18.2.8",
 		"@vercel/analytics": "1.1.1",
