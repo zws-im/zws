@@ -49,7 +49,7 @@
 		"mongodb": "6.3.0",
 		"next": "13.4.19",
 		"next-api-utils": "1.0.2",
-		"next-plausible": "3.11.2",
+		"next-plausible": "3.11.3",
 		"papr": "15.0.0",
 		"postcss": "8.4.31",
 		"react": "18.2.0",
