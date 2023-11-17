@@ -80,7 +80,7 @@
 	"peerDependencies": {
 		"openapi3-ts": "^4"
 	},
-	"packageManager": "bun@1.0.3",
+	"packageManager": "bun@1.0.12",
 	"engines": {
 		"node": "18.x || 20.x"
 	}
