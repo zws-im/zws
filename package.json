@@ -75,7 +75,7 @@
 		"prettier-plugin-tailwindcss": "0.5.7",
 		"type-fest": "4.8.2",
 		"umzug": "3.4.0",
-		"vercel": "32.6.0"
+		"vercel": "32.6.1"
 	},
 	"peerDependencies": {
 		"openapi3-ts": "^4"
