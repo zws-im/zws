@@ -57,7 +57,7 @@
 		"react-dom": "18.2.0",
 		"swagger-ui-react": "5.10.5",
 		"swr": "2.2.4",
-		"tailwindcss": "3.3.7",
+		"tailwindcss": "3.4.0",
 		"typescript": "5.3.3",
 		"zod": "3.22.2",
 		"zod-to-json-schema": "3.21.4"
