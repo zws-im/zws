@@ -70,7 +70,7 @@
 		"@vercel/edge": "1.1.1",
 		"bun-types": "1.0.23",
 		"knip": "3.13.2",
-		"prettier": "3.2.2",
+		"prettier": "3.2.3",
 		"prettier-plugin-packagejson": "2.4.9",
 		"prettier-plugin-tailwindcss": "0.5.11",
 		"type-fest": "4.9.0",
