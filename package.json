@@ -38,7 +38,7 @@
 		"@types/node": "20.8.7",
 		"@types/react": "18.2.56",
 		"@types/react-dom": "18.2.19",
-		"@vercel/analytics": "1.2.0",
+		"@vercel/analytics": "1.2.1",
 		"@vercel/kv": "0.2.4",
 		"apexcharts": "3.46.0",
 		"autoprefixer": "10.4.17",
