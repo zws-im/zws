@@ -64,7 +64,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.2.2",
-		"@tsconfig/bun": "1.0.3",
+		"@tsconfig/bun": "1.0.4",
 		"@tsconfig/strictest": "2.0.3",
 		"@types/swagger-ui-react": "4.18.3",
 		"@vercel/edge": "1.1.1",
