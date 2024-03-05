@@ -37,7 +37,7 @@
 		"@jonahsnider/util": "10.3.0",
 		"@types/node": "20.8.7",
 		"@types/react": "18.2.63",
-		"@types/react-dom": "18.2.19",
+		"@types/react-dom": "18.2.20",
 		"@vercel/analytics": "1.2.2",
 		"@vercel/kv": "0.2.4",
 		"apexcharts": "3.46.0",
