@@ -25,7 +25,7 @@ jobs:
       - name: Pull environment variables
         run: bun vercel env pull --environment development .env --token ${{ secrets.VERCEL_TOKEN }}
       - name: Cache Next.js
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/.next/cache
@@ -71,7 +71,7 @@ jobs:
       - name: Pull environment variables
         run: bun vercel env pull --environment development .env --token ${{ secrets.VERCEL_TOKEN }}
       - name: Cache Next.js
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ github.workspace }}/.next/cache
