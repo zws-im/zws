@@ -7,8 +7,8 @@ const config: KnipConfig = {
 		//  The [TO_RESPONSE] method is required by an external library, we don't use it directly
 		'app/api/_lib/exceptions/base.exception.ts',
 	],
-	ignoreBinaries: ['bunx', 'nixpacks'],
-	ignoreDependencies: ['vercel', 'bun-types', '@tsconfig/bun', '@tsconfig/strictest'],
+	ignoreBinaries: ['nixpacks'],
+	ignoreDependencies: ['vercel', '@types/bun', '@tsconfig/bun', '@tsconfig/strictest'],
 };
 
 // biome-ignore lint/style/noDefaultExport: This must be a default export
