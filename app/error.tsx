@@ -8,13 +8,7 @@ import { H1 } from './components/headings/h1';
 const SHOULD_REPORT_ERROR = process.env.NODE_ENV !== 'development';
 
 // biome-ignore lint/style/noDefaultExport: This must be a default export
-export default function ErrorPage({
-	error,
-	reset,
-}: {
-	error: Error;
-	reset: () => void;
-}) {
+export default function ErrorPage({ error, reset }: { error: Error; reset: () => void }) {
 	useEffect(() => {
 		if (SHOULD_REPORT_ERROR) {
 			H.consumeError(error);

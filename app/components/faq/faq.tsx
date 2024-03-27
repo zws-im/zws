@@ -10,7 +10,7 @@ export function Faq() {
 	const selected = faqObject[selectedId];
 
 	return (
-		<div className='flex w-full justify-between max-lg:flex-col lg:space-x-28 max-lg:space-y-4'>
+		<div className='flex w-full justify-between max-lg:flex-col max-lg:space-y-4 lg:space-x-28'>
 			<div className='max-lg:w-full lg:min-w-fit'>
 				<FaqSelector initialSelected={firstFaqOption.id} onSelect={setSelectedId} options={faq} />
 			</div>

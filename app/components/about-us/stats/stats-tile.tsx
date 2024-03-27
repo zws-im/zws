@@ -39,7 +39,7 @@ export function StatsTile({ value, name, wide = false, href }: Props) {
 				href={href}
 				target='blank'
 				rel='noreferrer'
-				className={clsx(containerStyles, 'transition-opacity active:opacity-80 hover:opacity-90')}
+				className={clsx(containerStyles, 'transition-opacity hover:opacity-90 active:opacity-80')}
 			>
 				{tileContents}
 			</a>

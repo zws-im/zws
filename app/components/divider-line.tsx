@@ -1,3 +1,3 @@
 export function DividerLine() {
-	return <hr className='mt-5 mb-14 w-32 border-2 border-zws-purple-400' />;
+	return <hr className='mb-14 mt-5 w-32 border-2 border-zws-purple-400' />;
 }

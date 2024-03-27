@@ -72,7 +72,7 @@ export function ShortenUrlForm() {
 		<>
 			<form className='flex h-14 w-full rounded bg-white' onSubmit={handleSubmit}>
 				<input
-					className='0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black placeholder-[rgba(10, outline-none'
+					className='0, 37, 0.6)] placeholder-[rgba(10, h-full w-full rounded-l bg-transparent p-4 text-black outline-none'
 					placeholder='https://github.com/zws-im/zws'
 					type='url'
 					name='url'
@@ -105,7 +105,7 @@ export function ShortenUrlForm() {
 				{shortenedUrl && !loading ? (
 					<button
 						type='button'
-						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 transition-opacity active:opacity-60 hover:opacity-80'
+						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 transition-opacity hover:opacity-80 active:opacity-60'
 						onClick={copy}
 					>
 						{shortenedUrl} (click to copy)

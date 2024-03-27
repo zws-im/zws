@@ -59,9 +59,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 					<div className='min-h-screen'>
 						<Navbar />
-						<DotGrid height={1} className='left-0 max-md:invisible max-xl:top-[550px] xl:top-[787px]' />
-						<DotGrid height={2} className='top-[145px] right-0' />
-						<LightSpot className='-z-50 translate-y-[25px] transform max-md:h-0 max-md:w-0 2xl:translate-x-[300px] max-2xl:translate-x-[50px]' />
+						<DotGrid height={1} className='left-0 max-xl:top-[550px] max-md:invisible xl:top-[787px]' />
+						<DotGrid height={2} className='right-0 top-[145px]' />
+						<LightSpot className='-z-50 translate-y-[25px] transform max-2xl:translate-x-[50px] max-md:h-0 max-md:w-0 2xl:translate-x-[300px]' />
 						<div className='container mx-auto max-w-screen-xl px-4'>
 							{children}
 							<Footer />
