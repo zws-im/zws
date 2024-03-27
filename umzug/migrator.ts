@@ -2,13 +2,19 @@ import assert from 'assert';
 import path from 'path';
 import { MongoClient } from 'mongodb';
 import { MongoDBStorage, Umzug } from 'umzug';
-import { MigrationContext } from './types';
+import type { MigrationContext } from './types';
 
 const pathToThisFile = path.resolve(import.meta.path);
-const pathPassedToNode = path.resolve(process.argv[1]);
+const dirArg = process.argv[1];
 
-assert(process.env.MONGODB_URI, 'MONGODB_URI is not set');
-const mongo = new MongoClient(process.env.MONGODB_URI);
+assert(dirArg, 'No directory argument passed to node');
+
+const pathPassedToNode = path.resolve(dirArg);
+
+// biome-ignore lint/complexity/useLiteralKeys: This is a TypeScript rule
+assert(process.env['MONGODB_URI'], 'MONGODB_URI is not set');
+// biome-ignore lint/complexity/useLiteralKeys: This is a TypeScript rule
+const mongo = new MongoClient(process.env['MONGODB_URI']);
 await mongo.connect();
 
 export const umzug = new Umzug({
