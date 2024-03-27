@@ -1,11 +1,13 @@
+import path from 'node:path';
+import type { ReadableStreamDefaultReadResult } from 'node:stream/web';
+
 type NextServerState = 'starting' | 'started' | 'stopped';
 
-const OUTPUT_FILE = Bun.file(new URL('../openapi.json', import.meta.url));
+const OUTPUT_FILE = Bun.file(path.join(__dirname, '..', 'openapi.json'));
 
 class NextServer {
 	private currentLog = '';
 
-	// biome-ignore lint/correctness/noUndeclaredVariables: This is a global type
 	private processText({ done, value }: ReadableStreamDefaultReadResult<Uint8Array>): NextServerState {
 		if (done) {
 			return 'stopped';
@@ -45,7 +47,8 @@ class NextServer {
 		await stdout.read().then(
 			// biome-ignore lint/suspicious/noExplicitAny: This is a recursive type which can't easily be expressed
 			// biome-ignore lint/correctness/noUndeclaredVariables: This is a global type
-			async function xd(this: NextServer, result: ReadableStreamDefaultReadResult<Uint8Array>): Promise<any> {
+			// biome-ignore lint/suspicious/useAwait: This needs to return a Promise
+			async function inner(this: NextServer, result: ReadableStreamDefaultReadResult<Uint8Array>): Promise<any> {
 				const state = this.processText(result);
 
 				if (state === 'starting') {
@@ -56,7 +59,7 @@ class NextServer {
 					return undefined;
 				}
 
-				return stdout.read().then(xd);
+				return stdout.read().then(inner);
 			}.bind(this),
 		);
 	}

@@ -5,8 +5,8 @@ import { authorizationService } from './_lib/authorization/authorization.service
 import { Action } from './_lib/authorization/enums/action.enum';
 import { exceptionRouteWrapper } from './_lib/exception-route-wrapper';
 import { LongUrlSchema } from './_lib/urls/dtos/long-url.dto';
-import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
-import { ShortenedUrlData } from './_lib/urls/interfaces/shortened-url.interface';
+import type { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
+import type { ShortenedUrlData } from './_lib/urls/interfaces/shortened-url.interface';
 import { urlsService } from './_lib/urls/urls.service';
 
 function shortIdToShortenedUrlDto(url: ShortenedUrlData): ShortenedUrlSchema {

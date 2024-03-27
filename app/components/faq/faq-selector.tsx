@@ -1,17 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import FaqButton from './faq-button';
-import { FaqOption } from './types';
+import { FaqButton } from './faq-button';
+import type { FaqOption } from './types';
 
 type Props = {
 	options: Pick<FaqOption, 'title' | 'id'>[];
 	initialSelected: string;
-	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	onSelect: (id: string) => void;
 };
 
-export default function FaqSelector({ options, onSelect, initialSelected }: Props) {
+export function FaqSelector({ options, onSelect, initialSelected }: Props) {
 	const [selected, setSelected] = useState(initialSelected);
 
 	const onClickFactory = (id: string) => () => {

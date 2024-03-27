@@ -1,15 +1,14 @@
 'use client';
 
 import clsx from 'clsx';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<{
 	selected: boolean;
-	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	onClick: () => void;
 }>;
 
-export default function FaqButton({ onClick, selected, children }: Props) {
+export function FaqButton({ onClick, selected, children }: Props) {
 	return (
 		<div
 			className={clsx('h-full transition', {

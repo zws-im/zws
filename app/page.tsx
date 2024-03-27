@@ -1,15 +1,16 @@
-import AboutUs from './components/about-us/about-us';
-import LightSpot from './components/background-decorations/light-spot';
-import DividerLine from './components/divider-line';
-import Faq from './components/faq/faq';
-import H1 from './components/headings/h1';
-import H2 from './components/headings/h2';
-import RandomText from './components/random-text';
-import ShortenUrlForm from './components/shorten-url/shorten-url-form';
+import { AboutUs } from './components/about-us/about-us';
+import { LightSpot } from './components/background-decorations/light-spot';
+import { DividerLine } from './components/divider-line';
+import { Faq } from './components/faq/faq';
+import { H1 } from './components/headings/h1';
+import { H2 } from './components/headings/h2';
+import { RandomText } from './components/random-text';
+import { ShortenUrlForm } from './components/shorten-url/shorten-url-form';
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function HomePage() {
 	return (
-		<main className='max-xl:space-y-32 max-lg:space-y-16 xl:space-y-48'>
+		<main className='max-lg:space-y-16 max-xl:space-y-32 xl:space-y-48'>
 			<section id='shorten' className='flex flex-col items-center justify-center max-md:pt-24 md:pt-36'>
 				<div className='max-w-xl'>
 					<div className='text-center'>
@@ -33,7 +34,7 @@ export default function HomePage() {
 			</section>
 
 			<section id='about-us'>
-				<LightSpot className='-translate-y-[145px] transform max-lg:h-0 max-lg:w-0 max-lg:-translate-x-[200px] xl:translate-x-[200px] 2xl:translate-x-[370px]' />
+				<LightSpot className='-translate-y-[145px] max-lg:-translate-x-[200px] transform max-lg:h-0 max-lg:w-0 2xl:translate-x-[370px] xl:translate-x-[200px]' />
 				<H2>About us</H2>
 
 				<AboutUs />

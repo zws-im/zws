@@ -7,7 +7,7 @@ type Props = {
 	href?: string;
 };
 
-export default function StatsTile({ value, name, wide = false, href }: Props) {
+export function StatsTile({ value, name, wide = false, href }: Props) {
 	const containerStyles = clsx('h-32 rounded-md bg-zws-purple-800 flex flex-col justify-center items-center', {
 		'col-span-1 max-md:w-full md:w-32': !wide,
 		'col-span-2': wide,
@@ -39,7 +39,7 @@ export default function StatsTile({ value, name, wide = false, href }: Props) {
 				href={href}
 				target='blank'
 				rel='noreferrer'
-				className={clsx(containerStyles, 'transition-opacity hover:opacity-90 active:opacity-80')}
+				className={clsx(containerStyles, 'transition-opacity active:opacity-80 hover:opacity-90')}
 			>
 				{tileContents}
 			</a>

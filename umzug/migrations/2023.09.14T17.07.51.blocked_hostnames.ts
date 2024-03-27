@@ -1,5 +1,5 @@
 import type { MigrationFn } from 'umzug';
-import { MigrationContext } from '../types';
+import type { MigrationContext } from '../types';
 
 export const up: MigrationFn<MigrationContext> = async (params) => {
 	const { mongo } = params.context;

@@ -1,6 +1,6 @@
-import { Metadata } from 'next';
-import H1 from '../components/headings/h1';
-import UrlStats from '../components/url-stats/url-stats';
+import type { Metadata } from 'next';
+import { H1 } from '../components/headings/h1';
+import { UrlStats } from '../components/url-stats/url-stats';
 import { metadataBase, siteName } from '../shared-metadata';
 
 const description = "View usage statistics for URLs you've shortened with zws.im.";
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 	},
 };
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function StatsPage() {
 	return (
 		<main>

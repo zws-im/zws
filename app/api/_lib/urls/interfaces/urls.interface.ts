@@ -1,4 +1,4 @@
-import { Opaque } from 'type-fest';
+import type { Opaque } from 'type-fest';
 
 /** A short ID. */
 export type Short = Opaque<string, 'Short'>;

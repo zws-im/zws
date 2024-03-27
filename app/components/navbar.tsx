@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from './logo/logo';
+import { Logo } from './logo/logo';
 
 type NavbarItem = {
 	content: string;
@@ -25,15 +25,15 @@ const items: NavbarItem[] = [
 	},
 ];
 
-export default function Navbar() {
+export function Navbar() {
 	return (
-		<nav className='w-100 sticky top-0 bg-zws-purple-900/50 px-4 py-8 backdrop-blur'>
+		<nav className='sticky top-0 w-100 bg-zws-purple-900/50 px-4 py-8 backdrop-blur'>
 			<div className='container mx-auto flex justify-between'>
-				<Link className='transition-opacity hover:opacity-80 active:opacity-60 md:flex md:space-x-4' href='/'>
+				<Link className='transition-opacity md:flex md:space-x-4 active:opacity-60 hover:opacity-80' href='/'>
 					<div className='w-16 max-md:w-12'>
 						<Logo />
 					</div>
-					<p className='text-lg font-bold max-md:hidden'>Zero Width Shortener</p>
+					<p className='font-bold text-lg max-md:hidden'>Zero Width Shortener</p>
 				</Link>
 
 				<ul className='flex justify-end space-x-6 lg:space-x-12'>
@@ -42,7 +42,7 @@ export default function Navbar() {
 							<li key={item.content}>
 								<Link
 									href={item.href}
-									className='font-bold text-zws-purple-50 transition hover:text-opacity-80 active:text-opacity-60'
+									className='font-bold text-zws-purple-50 transition active:text-opacity-60 hover:text-opacity-80'
 								>
 									{item.content}
 								</Link>

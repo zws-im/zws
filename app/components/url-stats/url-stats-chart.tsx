@@ -1,6 +1,6 @@
 'use client';
 
-import { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
+import type { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
@@ -18,7 +18,7 @@ type Props = {
 	stats?: UrlStatsSchema;
 };
 
-export default function UrlStatsChart({ stats }: Props) {
+export function UrlStatsChart({ stats }: Props) {
 	const chartData = useMemo(() => (stats ? createChartData(stats) : []), [stats]);
 
 	return (

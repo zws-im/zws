@@ -1,13 +1,13 @@
 import { sample } from '@jonahsnider/util';
 import { MongoServerError } from 'mongodb';
-import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
-import { ConfigService, configService } from '../config/config.service';
-import { ShortenedUrl, ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
+import { type BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import { type ConfigService, configService } from '../config/config.service';
+import { type ShortenedUrl, ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { AttemptedShortenBlockedHostnameException } from './exceptions/attempted-shorten-blocked-hostname.exception';
 import { UniqueShortIdTimeoutException } from './exceptions/unique-short-id-timeout.exception';
-import { ShortenedUrlData } from './interfaces/shortened-url.interface';
-import { Base64, Short } from './interfaces/urls.interface';
-import { VisitUrlData } from './interfaces/visit-url-data.interface';
+import type { ShortenedUrlData } from './interfaces/shortened-url.interface';
+import type { Base64, Short } from './interfaces/urls.interface';
+import type { VisitUrlData } from './interfaces/visit-url-data.interface';
 
 export class UrlsService {
 	/** Maximum number of attempts to generate a unique ID. */
@@ -20,6 +20,7 @@ export class UrlsService {
 	constructor(
 		private readonly blockedHostnamesService: BlockedHostnamesService,
 		private readonly configService: ConfigService,
+		// biome-ignore lint/suspicious/noEmptyBlockStatements: This is a class field
 	) {}
 
 	/**
@@ -67,7 +68,6 @@ export class UrlsService {
 	 *
 	 * @returns The ID of the shortened URL
 	 */
-	// biome-ignore lint/nursery/noExcessiveComplexity: Doesn't really make sense to split this logic out, it would be messier
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
 		if (await this.blockedHostnamesService.isHostnameBlocked(new URL(url))) {
 			throw new AttemptedShortenBlockedHostnameException();

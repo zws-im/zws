@@ -2,7 +2,7 @@
 
 import { ExceptionSchema } from '@/app/api/_lib/exceptions/dtos/exception.dto';
 import { ShortenedUrlSchema } from '@/app/api/_lib/urls/dtos/shortened-url.dto';
-import { Short } from '@/app/api/_lib/urls/interfaces/urls.interface';
+import type { Short } from '@/app/api/_lib/urls/interfaces/urls.interface';
 import * as route from '@/app/api/route';
 import { NextRequest } from 'next/server';
 

@@ -6,7 +6,9 @@ export class HttpError extends Error {
 		let json: Record<string, unknown> | undefined;
 		try {
 			json = JSON.parse(text);
-		} catch {}
+		} catch {
+			// Ignore errors from parsing JSON
+		}
 
 		return new HttpError(json, text, response.status, response.statusText);
 	}

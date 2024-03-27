@@ -1,5 +1,5 @@
-import { NextRequest } from 'next/server';
-import { AuthenticationService, authenticationService } from '../authentication/authentication.service';
+import type { NextRequest } from 'next/server';
+import { type AuthenticationService, authenticationService } from '../authentication/authentication.service';
 import { Action } from './enums/action.enum';
 import { Role } from './enums/role.enum';
 import { MissingApiKeyException } from './exceptions/missing-api-key.exception';
@@ -14,7 +14,7 @@ class AuthorizationService {
 
 	private static assertPermissions(role: Role, actions: readonly Action[]): void {
 		for (const action of actions) {
-			if (!this.hasPermission(role, action)) {
+			if (!AuthorizationService.hasPermission(role, action)) {
 				if (role === Role.None) {
 					throw new MissingApiKeyException();
 				}
@@ -25,9 +25,10 @@ class AuthorizationService {
 	}
 
 	private static hasPermission(role: Role, action: Action): boolean {
-		return this.policies[role].has(action);
+		return AuthorizationService.policies[role].has(action);
 	}
 
+	// biome-ignore lint/suspicious/noEmptyBlockStatements: This is a class field
 	constructor(private readonly authenticationService: AuthenticationService) {}
 
 	assertPermissions(request: NextRequest, ...actions: readonly Action[]): void {

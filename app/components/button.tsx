@@ -1,10 +1,9 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
 
 type Props = PropsWithChildren<
 	{
-		// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 		onClick?: () => void;
 	} & (
 		| {
@@ -18,7 +17,7 @@ type Props = PropsWithChildren<
 	)
 >;
 
-export default function Button({ children, href, onClick, type }: Props) {
+export function Button({ children, href, onClick, type }: Props) {
 	const className = clsx(
 		'w-28 h-full p-4 rounded transition-opacity font-bold flex justify-center items-center bg-zws-purple-500 hover:opacity-90 active:opacity-80',
 	);

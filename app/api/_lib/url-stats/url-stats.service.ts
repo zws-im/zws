@@ -1,13 +1,14 @@
-import assert from 'node:assert';
-import { BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import assert from 'node:assert/strict';
+import { type BlockedHostnamesService, blockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ShortenedUrlModel } from '../mongodb/models/shortened-url.model';
 import { VisitModel } from '../mongodb/models/visit.model';
 import { UrlBlockedException } from '../urls/exceptions/url-blocked.exception';
-import { Short } from '../urls/interfaces/urls.interface';
+import type { Short } from '../urls/interfaces/urls.interface';
 import { UrlsService } from '../urls/urls.service';
-import { UrlStatsSchema } from './dtos/url-stats.dto';
+import type { UrlStatsSchema } from './dtos/url-stats.dto';
 
 class UrlStatsService {
+	// biome-ignore lint/suspicious/noEmptyBlockStatements: This is a class field
 	constructor(private readonly blockedHostnamesService: BlockedHostnamesService) {}
 
 	/**

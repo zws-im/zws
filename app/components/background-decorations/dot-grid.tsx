@@ -11,11 +11,11 @@ function SingleDotGrid() {
 	return <Image priority={true} src={dots} alt='A grid of dots' />;
 }
 
-export default function DotGrid({ height, className }: Props) {
+export function DotGrid({ height, className }: Props) {
 	return (
 		<div
 			className={clsx(
-				'pointer-events-none absolute -z-50',
+				'-z-50 pointer-events-none absolute',
 				{
 					'space-y-[7.95px]': height === 2,
 				},

@@ -8,7 +8,7 @@ type Props = {
 	schema: oas31.OpenAPIObject;
 };
 
-export default function SwaggerUi({ schema }: Props) {
+export function SwaggerUi({ schema }: Props) {
 	return (
 		<div className='w-full rounded bg-purple-50 p-4'>
 			<SwaggerUI spec={schema} />

@@ -5,7 +5,7 @@ import va from '@vercel/analytics';
 import Image from 'next/image';
 import poweredByVercel from './powered-by-vercel.svg';
 
-export default function Footer() {
+export function Footer() {
 	const plausible = usePlausible();
 
 	const trackVercelClick = () => {
@@ -22,7 +22,6 @@ export default function Footer() {
 				</a>
 			</p>
 
-			{/* biome-ignore lint/a11y/useValidAnchor: The click event here is not important for user interaction */}
 			<a href='https://vercel.com/?utm_source=jonah-snider&utm_campaign=oss' onClick={trackVercelClick}>
 				<Image src={poweredByVercel} alt='Powered by Vercel' height={32} />
 			</a>

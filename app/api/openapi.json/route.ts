@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { oas31 } from 'openapi3-ts';
+import type { oas31 } from 'openapi3-ts';
 import { exceptionRouteWrapper } from '../_lib/exception-route-wrapper';
 import { openapiService } from '../_lib/openapi/openapi.service';
 

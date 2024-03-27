@@ -19,7 +19,7 @@ function generateText(length: number) {
 	return text;
 }
 
-export default function RandomText({ length, initial }: Props) {
+export function RandomText({ length, initial }: Props) {
 	const [text, setText] = useState(initial ?? generateText(length));
 
 	const onClick = () => {

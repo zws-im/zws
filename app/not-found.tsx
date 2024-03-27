@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Metadata } from 'next';
-import Button from './components/button';
-import H1 from './components/headings/h1';
+import type { Metadata } from 'next';
+import { Button } from './components/button';
+import { H1 } from './components/headings/h1';
 import { siteName } from './shared-metadata';
 
 const title = 'Not Found';
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 	},
 };
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function NotFound() {
 	return (
 		<main className='flex flex-col items-center justify-center space-y-4 max-md:pt-48 max-sm:pt-32 md:pt-72'>

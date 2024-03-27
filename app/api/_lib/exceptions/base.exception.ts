@@ -1,8 +1,8 @@
 import { STATUS_CODES } from 'node:http';
 import { TO_RESPONSE } from 'next-api-utils';
 import { NextResponse } from 'next/server';
-import { ExceptionSchema } from './dtos/exception.dto';
-import { ExceptionCode } from './enums/exceptions.enum';
+import type { ExceptionSchema } from './dtos/exception.dto';
+import type { ExceptionCode } from './enums/exceptions.enum';
 
 export class BaseHttpException extends Error {
 	readonly error: string;

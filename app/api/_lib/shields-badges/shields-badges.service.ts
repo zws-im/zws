@@ -1,8 +1,8 @@
 import { millify } from 'millify';
-import { StatsService, statsService } from '../stats/stats.service';
+import { type StatsService, statsService } from '../stats/stats.service';
 
-import { ConfigService, configService } from '../config/config.service';
-import { ShieldsResponseSchema } from './dtos/shields-response.dto';
+import { type ConfigService, configService } from '../config/config.service';
+import type { ShieldsResponseSchema } from './dtos/shields-response.dto';
 
 class ShieldsBadgesService {
 	/**
@@ -18,7 +18,10 @@ class ShieldsBadgesService {
 
 	private readonly version: string;
 
-	constructor(private readonly statsService: StatsService, config: ConfigService) {
+	constructor(
+		private readonly statsService: StatsService,
+		config: ConfigService,
+	) {
 		this.version = config.version;
 	}
 

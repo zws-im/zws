@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
 	"files": {
 		"ignore": [".next", "node_modules"]
 	},
@@ -22,13 +22,10 @@
 	"linter": {
 		"rules": {
 			"all": true,
-			"nursery": {
-				"all": true,
-				"useImportRestrictions": "off"
-			},
 			"style": {
 				"all": true,
-				"noParameterProperties": "off"
+				"noParameterProperties": "off",
+				"useFilenamingConvention": "off"
 			}
 		}
 	}

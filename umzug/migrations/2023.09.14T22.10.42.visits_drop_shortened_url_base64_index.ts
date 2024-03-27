@@ -1,5 +1,5 @@
 import type { MigrationFn } from 'umzug';
-import { MigrationContext } from '../types';
+import type { MigrationContext } from '../types';
 
 export const up: MigrationFn<MigrationContext> = async (params) => {
 	const { mongo } = params.context;
@@ -11,4 +11,6 @@ export const up: MigrationFn<MigrationContext> = async (params) => {
 		await visits.dropIndex('shortenedUrlBase64_1');
 	}
 };
-export const down: MigrationFn<MigrationContext> = async (_params) => {};
+export const down: MigrationFn<MigrationContext> = async (_params) => {
+	// No down migration
+};

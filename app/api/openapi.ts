@@ -1,8 +1,8 @@
-import { SchemaObject } from 'openapi3-ts/oas31';
+import type { SchemaObject } from 'openapi3-ts/oas31';
 import zodToJsonSchema from 'zod-to-json-schema';
 import { ExceptionSchema } from './_lib/exceptions/dtos/exception.dto';
 import { OpenapiTag } from './_lib/openapi/enums/openapi-tag.enum';
-import { OpenapiService } from './_lib/openapi/openapi.service';
+import type { OpenapiService } from './_lib/openapi/openapi.service';
 import { LongUrlSchema } from './_lib/urls/dtos/long-url.dto';
 import { ShortenedUrlSchema } from './_lib/urls/dtos/shortened-url.dto';
 

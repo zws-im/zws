@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
 type Props = {
-	// biome-ignore lint/nursery/noConfusingVoidType: This is a return type
 	setShortUrl: (shortUrl: string) => void;
 	isLoading: boolean;
 	error: string | undefined;
@@ -14,7 +13,7 @@ type Props = {
 const baseUrl = (process.env.NEXT_PUBLIC_SHORTENED_BASE_URL ?? 'https://zws.im').replace(/\/?$/, '/');
 const VALID_URL_EXPRESSION = new RegExp(`^${baseUrl}.+$`);
 
-export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
+export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 	const [shortUrl, setShortUrlLocal] = useState('');
 	const valid = shortUrl === '' || VALID_URL_EXPRESSION.test(shortUrl);
 
@@ -35,7 +34,7 @@ export default function UrlStatsInput({ setShortUrl, isLoading, error }: Props) 
 			})}
 		>
 			<input
-				className={'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l p-4 text-black outline-none'}
+				className={'0, 37, 0.6)] h-full w-full rounded-l p-4 text-black placeholder-[rgba(10, outline-none'}
 				placeholder={baseUrl}
 				type='url'
 				name='url'

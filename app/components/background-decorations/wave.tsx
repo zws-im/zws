@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import wave from './wave.svg';
 
-export default function Wave() {
+export function Wave() {
 	return (
 		<Image
 			priority={true}

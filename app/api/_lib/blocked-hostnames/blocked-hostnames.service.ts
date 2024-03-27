@@ -1,8 +1,8 @@
-import { VercelKV, kv } from '@vercel/kv';
+import { type VercelKV, kv } from '@vercel/kv';
 import convert from 'convert';
-import { ConfigService, configService } from '../config/config.service';
+import { type ConfigService, configService } from '../config/config.service';
 import { BlockedHostnameModel } from '../mongodb/models/blocked-hostname.model';
-import { ShortenedUrl } from '../mongodb/models/shortened-url.model';
+import type { ShortenedUrl } from '../mongodb/models/shortened-url.model';
 
 type HostnameDomainNamePair = { hostname: string; domainName: string };
 
@@ -17,7 +17,11 @@ export class BlockedHostnamesService {
 
 	private readonly blockedHostnames = new Set(this.configService.blockedHostnames);
 
-	constructor(private readonly kv: VercelKV, private readonly configService: ConfigService) {}
+	constructor(
+		private readonly kv: VercelKV,
+		private readonly configService: ConfigService,
+		// biome-ignore lint/suspicious/noEmptyBlockStatements: This is a class field
+	) {}
 
 	async isUrlBlocked(url: Pick<ShortenedUrl, 'blocked' | 'url'>): Promise<boolean> {
 		return url.blocked || (await this.isHostnameBlocked(new URL(url.url)));
@@ -64,7 +68,7 @@ export class BlockedHostnamesService {
 		);
 	}
 
-	private async databaseContainsHostnames(hostnames: HostnameDomainNamePair): Promise<boolean> {
+	private databaseContainsHostnames(hostnames: HostnameDomainNamePair): Promise<boolean> {
 		return BlockedHostnameModel.exists({ hostname: { $in: [hostnames.hostname, hostnames.domainName] } });
 	}
 

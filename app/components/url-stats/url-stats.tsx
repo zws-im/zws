@@ -1,15 +1,15 @@
 'use client';
 
 import { ExceptionCode } from '@/app/api/_lib/exceptions/enums/exceptions.enum';
-import { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
+import type { UrlStatsSchema } from '@/app/api/_lib/url-stats/dtos/url-stats.dto';
 import { usePlausible } from '@/app/hooks/plausible';
-import { HttpError, fetcher } from '@/app/swr';
+import { type HttpError, fetcher } from '@/app/swr';
 import va from '@vercel/analytics';
 import { _ExceptionCode as ValidationExceptionCode } from 'next-api-utils/client';
 import { Suspense, useState } from 'react';
 import useSwr from 'swr';
-import UrlStatsChart from './url-stats-chart';
-import UrlStatsInput from './url-stats-input';
+import { UrlStatsChart } from './url-stats-chart';
+import { UrlStatsInput } from './url-stats-input';
 
 function extractShort(url: string): string | undefined {
 	try {
@@ -19,7 +19,7 @@ function extractShort(url: string): string | undefined {
 	}
 }
 
-export default function UrlStats() {
+export function UrlStats() {
 	const [url, setUrl] = useState('');
 	const short = extractShort(url);
 	const plausible = usePlausible();
@@ -48,7 +48,7 @@ export default function UrlStats() {
 		<div className='w-full space-y-8'>
 			<UrlStatsInput error={errorText} isLoading={isLoading && !stats && !errorText} setShortUrl={setUrl} />
 
-			<div className='h-48 min-h-max max-lg:h-72 max-md:w-full md:w-[36rem] lg:h-96'>
+			<div className='h-48 min-h-max lg:h-96 max-lg:h-72 max-md:w-full md:w-[36rem]'>
 				<Suspense
 					fallback={
 						// Prevent layout shift

@@ -1,7 +1,7 @@
 import { statsService } from '@/app/api/_lib/stats/stats.service';
 import convert from 'convert';
 import millify from 'millify';
-import StatsTile from './stats-tile';
+import { StatsTile } from './stats-tile';
 
 const GITHUB_STARGAZERS_LINK_HEADER_REGEXP = /^.+,.+page=(?<stars>\d+).+$/;
 

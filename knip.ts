@@ -11,4 +11,5 @@ const config: KnipConfig = {
 	ignoreDependencies: ['vercel', 'bun-types', '@tsconfig/bun', '@tsconfig/strictest'],
 };
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default config;

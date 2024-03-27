@@ -1,5 +1,5 @@
-import assert from 'assert';
-import path from 'path';
+import assert from 'node:assert/strict';
+import path from 'node:path';
 import { MongoClient } from 'mongodb';
 import { MongoDBStorage, Umzug } from 'umzug';
 import type { MigrationContext } from './types';
@@ -23,7 +23,7 @@ export const umzug = new Umzug({
 	create: {
 		folder: path.join(import.meta.dir, 'migrations'),
 	},
-	context: async (): Promise<MigrationContext> => {
+	context: (): MigrationContext => {
 		return { mongo };
 	},
 	storage: new MongoDBStorage({ connection: mongo.db('zws') }),

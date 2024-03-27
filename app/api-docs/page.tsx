@@ -1,10 +1,11 @@
 import { openapiService } from '@/app/api/_lib/openapi/openapi.service';
 import Link from 'next/link';
-import H1 from '../components/headings/h1';
-import SwaggerUi from '../components/swagger-ui';
+import { H1 } from '../components/headings/h1';
+import { SwaggerUi } from '../components/swagger-ui';
 
 const openapiSchemaPath = '/api/openapi.json';
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function ApiSchemaPage() {
 	const schema = openapiService.getOpenapi();
 

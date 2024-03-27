@@ -1,4 +1,4 @@
-import { JsonValue } from 'type-fest';
+import type { JsonValue } from 'type-fest';
 import { z } from 'zod';
 import pkg from '../../../../package.json';
 

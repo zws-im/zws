@@ -4,11 +4,11 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import PlausibleProvider from 'next-plausible';
 import { Lato } from 'next/font/google';
-import DotGrid from './components/background-decorations/dot-grid';
-import LightSpot from './components/background-decorations/light-spot';
-import Wave from './components/background-decorations/wave';
-import Footer from './components/footer/footer';
-import Navbar from './components/navbar';
+import { DotGrid } from './components/background-decorations/dot-grid';
+import { LightSpot } from './components/background-decorations/light-spot';
+import { Wave } from './components/background-decorations/wave';
+import { Footer } from './components/footer/footer';
+import { Navbar } from './components/navbar';
 import './globals.css';
 import { metadataBase, siteDescription, siteName } from './shared-metadata';
 
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
@@ -58,9 +59,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 					<div className='min-h-screen'>
 						<Navbar />
-						<DotGrid height={1} className='left-0 max-xl:top-[550px] max-md:invisible xl:top-[787px]' />
-						<DotGrid height={2} className='right-0 top-[145px]' />
-						<LightSpot className='-z-50 translate-y-[25px] transform max-2xl:translate-x-[50px] max-md:h-0 max-md:w-0 2xl:translate-x-[300px]' />
+						<DotGrid height={1} className='left-0 max-md:invisible max-xl:top-[550px] xl:top-[787px]' />
+						<DotGrid height={2} className='top-[145px] right-0' />
+						<LightSpot className='-z-50 translate-y-[25px] transform max-md:h-0 max-md:w-0 2xl:translate-x-[300px] max-2xl:translate-x-[50px]' />
 						<div className='container mx-auto max-w-screen-xl px-4'>
 							{children}
 							<Footer />

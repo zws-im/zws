@@ -1,10 +1,10 @@
-import { NextRouteHandlerContext, QueryBooleanSchema, validateParams, validateQuery } from 'next-api-utils';
+import { type NextRouteHandlerContext, QueryBooleanSchema, validateParams, validateQuery } from 'next-api-utils';
 import { redirect } from 'next/navigation';
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { exceptionRouteWrapper } from '../_lib/exception-route-wrapper';
 import { urlStatsService } from '../_lib/url-stats/url-stats.service';
-import { LongUrlSchema } from '../_lib/urls/dtos/long-url.dto';
+import type { LongUrlSchema } from '../_lib/urls/dtos/long-url.dto';
 import { ShortSchema } from '../_lib/urls/dtos/short.dto';
 import { UrlBlockedException } from '../_lib/urls/exceptions/url-blocked.exception';
 import { UrlNotFoundException } from '../_lib/urls/exceptions/url-not-found.exception';

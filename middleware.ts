@@ -1,5 +1,5 @@
 import { next, rewrite } from '@vercel/edge';
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 const CORS_REQUEST_BASE = {
 	headers: {
@@ -7,6 +7,7 @@ const CORS_REQUEST_BASE = {
 	},
 } as const satisfies RequestInit;
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function middleware(request: NextRequest): Response {
 	const host = request.headers.get('host');
 

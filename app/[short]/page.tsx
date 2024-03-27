@@ -6,6 +6,7 @@ import { ExceptionCode } from '../api/_lib/exceptions/enums/exceptions.enum';
 import { HttpError } from '../swr';
 import UrlBlockedPage from './url-blocked-page';
 
+// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default async function UrlSubpathPage({
 	params: rawParams,
 	searchParams: rawSearchParams,
@@ -43,9 +44,8 @@ export default async function UrlSubpathPage({
 
 		if (error.exception?.code === ExceptionCode.UrlBlocked) {
 			return <UrlBlockedPage />;
-		} else {
-			throw error;
 		}
+		throw error;
 	}
 
 	const redirectTo = response.headers.get('Location');
