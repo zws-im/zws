@@ -63,7 +63,7 @@
 		"zod-to-json-schema": "3.22.5"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.2.2",
+		"@biomejs/biome": "1.6.3",
 		"@tsconfig/bun": "1.0.5",
 		"@tsconfig/strictest": "2.0.5",
 		"@types/bun": "1.0.11",
