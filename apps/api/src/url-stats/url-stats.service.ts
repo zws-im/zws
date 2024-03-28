@@ -65,7 +65,6 @@ export class UrlStatsService {
 	async trackUrlVisit(id: Short): Promise<void> {
 		const encodedId = UrlsService.toBase64(id);
 
-		// const shortenedUrl = await ShortenedUrlModel.findOne({ shortBase64: encodedId }, { projection: { _id: 1 } });
 		const [shortenedUrl] = await this.db
 			.select({ shortBase64: Schema.urls.shortBase64 })
 			.from(Schema.urls)
