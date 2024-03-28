@@ -1,5 +1,5 @@
 import { type INestApplication, Injectable } from '@nestjs/common';
-import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
+import { DocumentBuilder, type OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
 import { OpenapiTag } from './openapi-tag.enum';
 
 @Injectable()

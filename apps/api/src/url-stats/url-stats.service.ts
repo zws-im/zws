@@ -5,7 +5,7 @@ import { BlockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.
 import { Schema } from '../db/index';
 import type { Db } from '../db/interfaces/db.interface';
 import { DB_PROVIDER } from '../db/providers';
-import type { Short } from '../urls/interfaces/urls.interface';
+import type { Short } from '../urls/dtos/short.dto';
 import { UrlsService } from '../urls/urls.service';
 import type { UrlStatsSchema } from './dtos/url-stats.dto';
 

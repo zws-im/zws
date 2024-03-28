@@ -1,4 +1,4 @@
-import type { Short } from './urls.interface';
+import type { Short } from '../dtos/short.dto';
 
 export type ShortenedUrlData = {
 	short: Short;
