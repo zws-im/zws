@@ -69,7 +69,7 @@
 		"@types/bun": "1.0.11",
 		"@types/swagger-ui-react": "4.18.3",
 		"@vercel/edge": "1.1.1",
-		"knip": "3.13.2",
+		"knip": "5.7.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-packagejson": "2.4.12",
 		"prettier-plugin-tailwindcss": "0.5.12",
