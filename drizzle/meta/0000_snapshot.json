@@ -1,0 +1,135 @@
+{
+	"id": "a1a9d125-cfb1-4769-baca-2f88b80c8dc9",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"version": "5",
+	"dialect": "pg",
+	"tables": {
+		"blocked_hostnames": {
+			"name": "blocked_hostnames",
+			"schema": "",
+			"columns": {
+				"hostname": {
+					"name": "hostname",
+					"type": "text",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp with time zone",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		},
+		"urls": {
+			"name": "urls",
+			"schema": "",
+			"columns": {
+				"blocked": {
+					"name": "blocked",
+					"type": "boolean",
+					"primaryKey": false,
+					"notNull": true,
+					"default": false
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp with time zone",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				},
+				"short_base64": {
+					"name": "short_base64",
+					"type": "text",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"url": {
+					"name": "url",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true
+				}
+			},
+			"indexes": {
+				"urls_blocked_index": {
+					"name": "urls_blocked_index",
+					"columns": ["blocked"],
+					"isUnique": false
+				},
+				"urls_url_index": {
+					"name": "urls_url_index",
+					"columns": ["url"],
+					"isUnique": false
+				}
+			},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		},
+		"visits": {
+			"name": "visits",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "serial",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"timestamp": {
+					"name": "timestamp",
+					"type": "timestamp with time zone",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				},
+				"url_short_base64": {
+					"name": "url_short_base64",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true
+				}
+			},
+			"indexes": {
+				"visits_url_short_base64_index": {
+					"name": "visits_url_short_base64_index",
+					"columns": ["url_short_base64"],
+					"isUnique": false
+				},
+				"visits_timestamp_index": {
+					"name": "visits_timestamp_index",
+					"columns": ["timestamp"],
+					"isUnique": false
+				}
+			},
+			"foreignKeys": {
+				"visits_url_short_base64_urls_short_base64_fk": {
+					"name": "visits_url_short_base64_urls_short_base64_fk",
+					"tableFrom": "visits",
+					"tableTo": "urls",
+					"columnsFrom": ["url_short_base64"],
+					"columnsTo": ["short_base64"],
+					"onDelete": "cascade",
+					"onUpdate": "cascade"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
+}
