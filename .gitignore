@@ -45,6 +45,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
 ### Node ###
 # Logs
 logs
@@ -204,8 +208,6 @@ dist
 .history
 .ionide
 
-# Support for Project snippet scope
-
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -234,12 +236,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows,visualstudiocode
 
-# Dotenv files
-*.env
-!*example.env
-
 # Vercel
 .vercel
 
-# Downloaded OpenAPI spec for linting
-./openapi.json
+# Turbo
+.turbo
