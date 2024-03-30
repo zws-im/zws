@@ -16,15 +16,15 @@
 		"type-check": "turbo run type-check"
 	},
 	"dependencies": {
-		"pg": "8.11.3"
+		"drizzle-kit": "0.20.14",
+		"envalid": "8.0.0",
+		"pg": "8.11.3",
+		"pino": "8.19.0",
+		"pino-pretty": "10.3.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.6.3",
 		"@types/pg": "8.11.4",
-		"drizzle-kit": "0.20.14",
-		"envalid": "8.0.0",
-		"pino": "8.19.0",
-		"pino-pretty": "10.3.1",
 		"prettier": "3.2.5",
 		"prettier-plugin-packagejson": "2.4.12",
 		"prettier-plugin-tailwindcss": "0.5.13",
