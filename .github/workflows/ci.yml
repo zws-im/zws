@@ -16,6 +16,10 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
