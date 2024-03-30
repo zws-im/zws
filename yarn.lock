@@ -12,9 +12,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@anatine/zod-nestjs@npm:2.0.7":
-  version: 2.0.7
-  resolution: "@anatine/zod-nestjs@npm:2.0.7"
+"@anatine/zod-nestjs@npm:2.0.8":
+  version: 2.0.8
+  resolution: "@anatine/zod-nestjs@npm:2.0.8"
   dependencies:
     ts-deepmerge: "npm:^6.1.0"
   peerDependencies:
@@ -23,7 +23,7 @@ __metadata:
     "@nestjs/swagger": ^6.0.0 || ^7.0.0
     openapi3-ts: ^4.1.2
     zod: ^3.20.0
-  checksum: 10c0/0394bdafabb3627c84b0e4d2b82da78245bc9cd01ffa6bbcc73f05b86685ec1e3ab6ef994d9dafd35927bf0ce37c1b7cd9c29bca9d1b91ea6d2d1f002c7b30fd
+  checksum: 10c0/6809c738380d2fc5f0b106f4b3bae7e26280dc070dda215e4e9b8fae8f2ec5a4025ff22422621cfe23785b477645dfe7d7a3b01941c302dd1530eae41abd23bb
   languageName: node
   linkType: hard
 
@@ -3025,7 +3025,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zws.im/api@workspace:apps/api"
   dependencies:
-    "@anatine/zod-nestjs": "npm:2.0.7"
+    "@anatine/zod-nestjs": "npm:2.0.8"
     "@anatine/zod-openapi": "npm:2.2.5"
     "@bull-board/api": "npm:5.15.1"
     "@bull-board/express": "npm:5.15.1"

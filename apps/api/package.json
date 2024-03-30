@@ -11,7 +11,7 @@
 		"type-check": "tsc"
 	},
 	"dependencies": {
-		"@anatine/zod-nestjs": "2.0.7",
+		"@anatine/zod-nestjs": "2.0.8",
 		"@anatine/zod-openapi": "2.2.5",
 		"@bull-board/api": "5.15.1",
 		"@bull-board/express": "5.15.1",
