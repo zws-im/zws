@@ -2944,6 +2944,7 @@ __metadata:
     cors: "npm:2.8.5"
     devalue: "npm:4.3.2"
     drizzle-orm: "npm:0.30.2"
+    envalid: "npm:8.0.0"
     ioredis: "npm:5.3.2"
     ky: "npm:1.2.2"
     next-api-utils: "npm:1.1.0"
