@@ -3083,7 +3083,7 @@ __metadata:
     apexcharts: "npm:3.48.0"
     autoprefixer: "npm:10.4.19"
     clsx: "npm:2.1.0"
-    convert: "npm:4.14.1"
+    convert: "npm:5.0.0"
     dotenv: "npm:16.4.5"
     framer-motion: "npm:10.18.0"
     millify: "npm:6.1.0"
@@ -4197,10 +4197,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert@npm:4.14.1":
-  version: 4.14.1
-  resolution: "convert@npm:4.14.1"
-  checksum: 10c0/6c50a71f9d3b8f6a605cc6ad935871737a314603e0c917676179725532d7a5ab875e94764d9f8c3fb045730ff44ab9c9edea910568d969766bf81bf428cc496c
+"convert@npm:5.0.0":
+  version: 5.0.0
+  resolution: "convert@npm:5.0.0"
+  checksum: 10c0/9e06393a5c4526d87ae02c97ef3dcd41725f5e2129c1693ffab87d5b43584df2fcfc03040c17c978bbf8f539bb975ab3ab13257015acd5707f1eb146a9200c1f
   languageName: node
   linkType: hard
 
