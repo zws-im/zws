@@ -7,8 +7,7 @@
 			"phases": {
 				"install": {
 					"aptPkgs": ["unzip"],
-					"nixPkgs": ["bun"],
-					"cmds": ["bun upgrade"]
+					"cmds": ["bun upgrade", "bun install --frozen-lockfile"]
 				}
 			}
 		}

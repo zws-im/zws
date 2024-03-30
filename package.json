@@ -12,7 +12,7 @@
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrate": "bun ./migrate.ts",
 		"migrate:create": "drizzle-kit generate:pg",
-		"test": "yarn run lint && yarn run format && turbo run build type-check",
+		"test": "bun run lint && bun run format && turbo run build type-check",
 		"type-check": "turbo run type-check"
 	},
 	"dependencies": {
@@ -31,7 +31,7 @@
 		"turbo": "1.13.0",
 		"vercel": "33.6.1"
 	},
-	"packageManager": "yarn@4.1.1",
+	"packageManager": "bun@1.0.33",
 	"trustedDependencies": [
 		"@biomejs/biome"
 	]
