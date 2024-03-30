@@ -26,7 +26,7 @@
 		"@biomejs/biome": "1.6.3",
 		"@types/pg": "8.11.4",
 		"prettier": "3.2.5",
-		"prettier-plugin-packagejson": "2.4.12",
+		"prettier-plugin-packagejson": "2.4.13",
 		"prettier-plugin-tailwindcss": "0.5.13",
 		"turbo": "1.13.0",
 		"vercel": "33.6.1"
