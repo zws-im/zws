@@ -47,10 +47,6 @@ export const env = cleanEnv(process.env, {
 	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	REDIS_URL: url({ desc: 'Redis URL' }),
 	// biome-ignore lint/style/useNamingConvention: This is an environment variable
-	ADMIN_USERNAME: str({ desc: 'Admin username' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
-	ADMIN_API_TOKEN: str({ desc: 'Admin API token' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	WEBSITE_URL: url({ desc: 'Website URL' }),
 	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	SHORT_LENGTH: num({ desc: 'Number of characters to generate in a shortened URL', default: 7 }),
@@ -73,8 +69,6 @@ export class ConfigService {
 	public readonly databaseUrl: string;
 	public readonly sentryDsn: string;
 	public readonly redisUrl: string;
-	public readonly adminUsername: string;
-	public readonly adminApiToken: string;
 	public readonly websiteUrl: string;
 	public readonly shortenedLength: number;
 	public readonly characters: readonly string[];
@@ -85,8 +79,6 @@ export class ConfigService {
 		this.port = env.PORT;
 		this.databaseUrl = env.DATABASE_URL;
 		this.sentryDsn = env.SENTRY_DSN;
-		this.adminUsername = env.ADMIN_USERNAME;
-		this.adminApiToken = env.ADMIN_API_TOKEN;
 		this.websiteUrl = env.WEBSITE_URL;
 		this.redisUrl = env.REDIS_URL;
 		this.shortenedLength = env.SHORT_LENGTH;
