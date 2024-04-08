@@ -17,6 +17,7 @@ import { UrlsModule } from './urls/urls.module';
 
 @Module({
 	imports: [
+		HealthModule,
 		OpenapiModule,
 		ConfigModule,
 		SentryModule.forRootAsync({
@@ -30,7 +31,6 @@ import { UrlsModule } from './urls/urls.module';
 		DbModule,
 		RedisModule,
 		TrpcModule,
-		HealthModule,
 		BlockedHostnamesModule,
 		StatsModule,
 		UrlStatsModule,
