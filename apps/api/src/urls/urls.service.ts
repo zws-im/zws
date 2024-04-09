@@ -9,7 +9,7 @@ import {
 import { eq } from 'drizzle-orm';
 import { MongoClient } from 'mongodb';
 import { DatabaseError } from 'pg';
-import { BlockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service';
 import { ConfigService } from '../config/config.service';
 import { Schema } from '../db/index';
 import type { Db } from '../db/interfaces/db.interface';
@@ -31,7 +31,7 @@ export class UrlsService implements OnModuleInit {
 	private readonly mongo: MongoClient;
 
 	constructor(
-		@Inject(BlockedHostnamesService) private readonly blockedHostnamesService: BlockedHostnamesService,
+		@Inject(BlockedUrlsService) private readonly blockedUrlsService: BlockedUrlsService,
 		@Inject(ConfigService) private readonly configService: ConfigService,
 		@Inject(DB_PROVIDER) private readonly db: Db,
 	) {
@@ -64,7 +64,7 @@ export class UrlsService implements OnModuleInit {
 			return undefined;
 		}
 
-		if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
+		if (await this.blockedUrlsService.isUrlBlocked(new URL(shortenedUrl.url))) {
 			if (!shortenedUrl.blocked) {
 				// The URL hostname is blocked, but the entry in the database isn't
 				// So, we should update the entry in the DB to mark it as blocked
@@ -120,7 +120,7 @@ export class UrlsService implements OnModuleInit {
 	 * @returns The ID of the shortened URL
 	 */
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
-		if (await this.blockedHostnamesService.isHostnameBlocked(new URL(url))) {
+		if (await this.blockedUrlsService.isUrlBlocked(new URL(url))) {
 			throw new UnprocessableEntityException('That URL hostname is blocked');
 		}
 

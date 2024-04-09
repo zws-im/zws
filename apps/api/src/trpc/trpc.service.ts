@@ -1,4 +1,4 @@
-import { type INestApplication, Inject, Injectable, Logger } from '@nestjs/common';
+import { HttpException, type INestApplication, Inject, Injectable, Logger } from '@nestjs/common';
 import { captureException } from '@sentry/bun';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from 'cors';
@@ -23,7 +23,14 @@ export class TrpcService {
 			trpcExpress.createExpressMiddleware({
 				router: this.appRouter.createRouter(),
 				onError: (options) => {
-					if (options.error.code === 'INTERNAL_SERVER_ERROR') {
+					if (options.error.cause instanceof HttpException) {
+						if (options.error.cause.getStatus() < 500) {
+							// Client side error, expose this to the user
+
+							options.error.message = options.error.cause.message;
+							options.error.stack = undefined;
+						}
+					} else if (options.error.code === 'INTERNAL_SERVER_ERROR') {
 						// Log error and have tRPC respond like normal
 						this.logger.error(options.error);
 						captureException(options.error);

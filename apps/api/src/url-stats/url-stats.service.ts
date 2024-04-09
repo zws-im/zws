@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { asc, eq } from 'drizzle-orm';
-import { BlockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
+import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service';
 import { Schema } from '../db/index';
 import type { Db } from '../db/interfaces/db.interface';
 import { DB_PROVIDER } from '../db/providers';
@@ -12,8 +12,8 @@ import type { UrlStatsSchema } from './dtos/url-stats.dto';
 @Injectable()
 export class UrlStatsService {
 	constructor(
-		@Inject(BlockedHostnamesService)
-		private readonly blockedHostnamesService: BlockedHostnamesService,
+		@Inject(BlockedUrlsService)
+		private readonly blockedUrlsService: BlockedUrlsService,
 		@Inject(DB_PROVIDER) private readonly db: Db,
 	) {}
 
@@ -40,7 +40,7 @@ export class UrlStatsService {
 			return undefined;
 		}
 
-		if (await this.blockedHostnamesService.isUrlBlocked(shortenedUrl)) {
+		if (await this.blockedUrlsService.isUrlBlocked(new URL(shortenedUrl.url))) {
 			throw new UnprocessableEntityException('That URL is blocked');
 		}
 

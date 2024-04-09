@@ -3,12 +3,14 @@ import { Module } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
 import { SentryModule } from '@ntegral/nestjs-sentry';
 import { BlockedHostnamesModule } from './blocked-hostnames/blocked-hostnames.module';
+import { BlockedUrlsModule } from './blocked-urls/blocked-urls.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { DbModule } from './db/db.module';
 import { HealthModule } from './health/health.module';
 import { OpenapiModule } from './openapi/openapi.module';
 import { RedisModule } from './redis/redis.module';
+import { SafeBrowsingModule } from './safe-browsing/safe-browsing.module';
 import { ShieldsBadgesModule } from './shields-badges/shields-badges.module';
 import { StatsModule } from './stats/stats.module';
 import { TrpcModule } from './trpc/trpc.module';
@@ -36,6 +38,8 @@ import { UrlsModule } from './urls/urls.module';
 		UrlStatsModule,
 		UrlsModule,
 		ShieldsBadgesModule,
+		SafeBrowsingModule,
+		BlockedUrlsModule,
 	],
 	providers: [
 		{
