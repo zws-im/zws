@@ -1,6 +1,13 @@
 import { sample } from '@jonahsnider/util';
-import { Inject, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
+import {
+	Inject,
+	Injectable,
+	InternalServerErrorException,
+	type OnModuleInit,
+	UnprocessableEntityException,
+} from '@nestjs/common';
 import { eq } from 'drizzle-orm';
+import { MongoClient } from 'mongodb';
 import { DatabaseError } from 'pg';
 import { BlockedHostnamesService } from '../blocked-hostnames/blocked-hostnames.service';
 import { ConfigService } from '../config/config.service';
@@ -13,7 +20,7 @@ import type { Base64 } from './interfaces/urls.interface';
 import type { VisitUrlData } from './interfaces/visit-url-data.interface';
 
 @Injectable()
-export class UrlsService {
+export class UrlsService implements OnModuleInit {
 	/** Maximum number of attempts to generate a unique ID. */
 	private static readonly MAX_SHORT_ID_GENERATION_ATTEMPTS = 10;
 
@@ -21,11 +28,15 @@ export class UrlsService {
 		return Buffer.from(value).toString('base64') as Base64;
 	}
 
+	private readonly mongo: MongoClient;
+
 	constructor(
 		@Inject(BlockedHostnamesService) private readonly blockedHostnamesService: BlockedHostnamesService,
 		@Inject(ConfigService) private readonly configService: ConfigService,
 		@Inject(DB_PROVIDER) private readonly db: Db,
-	) {}
+	) {
+		this.mongo = new MongoClient(configService.mongodbUrl);
+	}
 
 	/**
 	 * Retrieve a shortened URL.
@@ -37,13 +48,15 @@ export class UrlsService {
 	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.toBase64(id);
 
-		const [shortenedUrl] = await this.db
+		let [shortenedUrl] = await this.db
 			.select({
 				url: Schema.urls.url,
 				blocked: Schema.urls.blocked,
 			})
 			.from(Schema.urls)
 			.where(eq(Schema.urls.shortBase64, encodedId));
+
+		shortenedUrl ??= await this.retrieveUrlMongodb(id);
 
 		if (!shortenedUrl) {
 			return undefined;
@@ -66,6 +79,35 @@ export class UrlsService {
 			longUrl: shortenedUrl.url,
 			blocked: false,
 		};
+	}
+
+	private async retrieveUrlMongodb(id: Short): Promise<{ url: string; blocked: boolean } | undefined> {
+		const document = await this.mongo
+			.db('zws')
+			.collection<{
+				blocked: boolean;
+				createdAt: Date;
+				shortBase64: Base64;
+				url: string;
+			}>('shortenedUrls')
+			.findOne({
+				shortBase64: {
+					$eq: UrlsService.toBase64(id),
+				},
+			});
+
+		if (!document) {
+			return undefined;
+		}
+
+		return {
+			url: document.url,
+			blocked: document.blocked,
+		};
+	}
+
+	async onModuleInit(): Promise<void> {
+		await this.mongo.connect();
 	}
 
 	/**

@@ -60,6 +60,8 @@ export const env = cleanEnv(process.env, {
 		desc: 'A mapping of characters to apply to short IDs before they are used',
 		default: {},
 	}),
+	// biome-ignore lint/style/useNamingConvention: This is an environment variable
+	MONGODB_URL: url({ desc: 'MongoDB URL' }),
 });
 
 @Injectable()
@@ -73,6 +75,7 @@ export class ConfigService {
 	public readonly shortenedLength: number;
 	public readonly characters: readonly string[];
 	public readonly version = '3.0.0';
+	public readonly mongodbUrl: string;
 
 	constructor() {
 		this.nodeEnv = env.NODE_ENV;
@@ -83,5 +86,6 @@ export class ConfigService {
 		this.redisUrl = env.REDIS_URL;
 		this.shortenedLength = env.SHORT_LENGTH;
 		this.characters = env.SHORT_CHARS;
+		this.mongodbUrl = env.MONGODB_URL;
 	}
 }
