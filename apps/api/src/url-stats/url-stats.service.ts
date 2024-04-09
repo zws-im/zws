@@ -70,14 +70,11 @@ export class UrlStatsService {
 			.from(Schema.urls)
 			.where(eq(Schema.urls.shortBase64, encodedId));
 
-		// TODO: Remove after MongoDB migration finished
-		if (shortenedUrl) {
-			assert(shortenedUrl, "URL not found, can't track visit");
+		assert(shortenedUrl, "URL not found, can't track visit");
 
-			await this.db.insert(Schema.visits).values({
-				timestamp: new Date(),
-				urlShortBase64: shortenedUrl.shortBase64,
-			});
-		}
+		await this.db.insert(Schema.visits).values({
+			timestamp: new Date(),
+			urlShortBase64: shortenedUrl.shortBase64,
+		});
 	}
 }

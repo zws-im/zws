@@ -61,8 +61,6 @@ export const env = cleanEnv(process.env, {
 		default: {},
 	}),
 	// biome-ignore lint/style/useNamingConvention: This is an environment variable
-	MONGODB_URL: url({ desc: 'MongoDB URL' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	GOOGLE_API_KEY: str({ desc: 'Google API Key' }),
 });
 
@@ -77,7 +75,6 @@ export class ConfigService {
 	public readonly shortenedLength: number;
 	public readonly characters: readonly string[];
 	public readonly version = '3.0.0';
-	public readonly mongodbUrl: string;
 	public readonly googleApiKey: string;
 
 	constructor() {
@@ -89,7 +86,6 @@ export class ConfigService {
 		this.redisUrl = env.REDIS_URL;
 		this.shortenedLength = env.SHORT_LENGTH;
 		this.characters = env.SHORT_CHARS;
-		this.mongodbUrl = env.MONGODB_URL;
 		this.googleApiKey = env.GOOGLE_API_KEY;
 	}
 }
