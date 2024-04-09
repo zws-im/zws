@@ -48,13 +48,15 @@ export class UrlsService implements OnModuleInit {
 	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.toBase64(id);
 
-		let [shortenedUrl] = await this.db
-			.select({
-				url: Schema.urls.url,
-				blocked: Schema.urls.blocked,
-			})
-			.from(Schema.urls)
-			.where(eq(Schema.urls.shortBase64, encodedId));
+		let shortenedUrl: { url: string; blocked: boolean } | undefined = (
+			await this.db
+				.select({
+					url: Schema.urls.url,
+					blocked: Schema.urls.blocked,
+				})
+				.from(Schema.urls)
+				.where(eq(Schema.urls.shortBase64, encodedId))
+		)[0];
 
 		shortenedUrl ??= await this.retrieveUrlMongodb(id);
 
