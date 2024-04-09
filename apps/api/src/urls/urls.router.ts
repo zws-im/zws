@@ -16,7 +16,7 @@ export class UrlsRouter {
 				.mutation(async ({ input }) => {
 					const shortened = await this.urlsService.shortenUrl(input.url);
 
-					return shortened.url.toString();
+					return decodeURI(shortened.url.toString());
 				}),
 		});
 	}
