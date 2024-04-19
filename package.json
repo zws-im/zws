@@ -16,7 +16,7 @@
 		"type-check": "turbo run type-check"
 	},
 	"dependencies": {
-		"drizzle-kit": "0.20.14",
+		"drizzle-kit": "0.20.16",
 		"envalid": "8.0.0",
 		"pg": "8.11.3",
 		"pino": "8.20.0",
