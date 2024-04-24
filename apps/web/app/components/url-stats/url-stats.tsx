@@ -10,7 +10,7 @@ import { UrlStatsInput } from './url-stats-input';
 
 function extractShort(url: string): string | undefined {
 	try {
-		return new URL(url).pathname.slice(1);
+		return decodeURIComponent(new URL(url).pathname).slice(1);
 	} catch {
 		return undefined;
 	}
