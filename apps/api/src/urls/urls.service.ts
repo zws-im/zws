@@ -76,8 +76,13 @@ export class UrlsService {
 	 * @returns The ID of the shortened URL
 	 */
 	async shortenUrl(url: string): Promise<ShortenedUrlData> {
-		if (await this.blockedUrlsService.isUrlBlocked(new URL(url))) {
-			throw new UnprocessableEntityException('That URL hostname is blocked');
+		const urlObject = new URL(url);
+		const matches = this.blockedUrlsService.matchesCaptchaPhishHeuristic(urlObject);
+
+		if (await this.blockedUrlsService.isUrlBlocked(urlObject)) {
+			if (!matches) {
+				throw new UnprocessableEntityException('That URL hostname is blocked');
+			}
 		}
 
 		let attempts = 0;
@@ -101,6 +106,7 @@ export class UrlsService {
 						url,
 						shortBase64,
 						createdAt: new Date(),
+						blocked: matches,
 					})
 					.returning();
 			} catch (error) {

@@ -32,7 +32,7 @@ export class BlockedUrlsService {
 	}
 
 	// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: I don't want to make this a separate function
-	private matchesCaptchaPhishHeuristic(url: URL): boolean {
+	public matchesCaptchaPhishHeuristic(url: URL): boolean {
 		let score = 0;
 
 		if (url.host.endsWith('.xyz') || url.host.endsWith('.top') || url.host.endsWith('.online')) {
