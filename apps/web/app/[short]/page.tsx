@@ -1,4 +1,4 @@
-import assert from 'node:assert';
+import assert from 'node:assert/strict';
 import { RedirectType } from 'next/dist/client/components/redirect';
 import { notFound, redirect } from 'next/navigation';
 import UrlBlockedPage from './url-blocked-page';

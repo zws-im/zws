@@ -5,6 +5,7 @@ import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
 import va from '@vercel/analytics';
 import clsx from 'clsx';
 import { type ChangeEvent, FormEvent, useEffect, useState } from 'react';
+// biome-ignore lint/style/noNamespaceImport: Importing this as a namespace is fine and more readable
 import * as motion from '../../motion';
 
 import { trpc } from '@/app/trpc';

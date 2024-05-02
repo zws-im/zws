@@ -1,4 +1,4 @@
-import assert from 'node:assert';
+import assert from 'node:assert/strict';
 import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { asc, eq } from 'drizzle-orm';
 import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service';
