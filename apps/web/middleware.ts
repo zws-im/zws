@@ -9,15 +9,17 @@ if (!API_URL) {
 
 const apiUrl = new URL(API_URL);
 
+const API_PATH_PREFIX = '/api/';
+
 // biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function middleware(request: NextRequest): Response {
-	if (request.nextUrl.pathname.startsWith('/api')) {
+	if (request.nextUrl.pathname.startsWith(API_PATH_PREFIX)) {
 		// Redirect to API subdomain
 		const url = new URL(request.url);
 
 		url.hostname = apiUrl.hostname;
 		url.port = apiUrl.port;
-		url.pathname = request.nextUrl.pathname.slice('/api'.length);
+		url.pathname = request.nextUrl.pathname.slice(API_PATH_PREFIX.length);
 
 		return next({ headers: { location: url.toString() }, status: 301 });
 	}
