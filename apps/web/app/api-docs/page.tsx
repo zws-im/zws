@@ -15,7 +15,7 @@ export default function ApiSchemaPage() {
 			<p>
 				You can access the OpenAPI schema directly at{' '}
 				<code className='underline'>
-					<Link href={openapiSchemaPath}>{openapiSchemaPath.toString()}</Link>
+					<Link href={openapiSchemaPath.toString()}>{openapiSchemaPath.toString()}</Link>
 				</code>
 				.
 			</p>
