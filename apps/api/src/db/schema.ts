@@ -1,9 +1,14 @@
+import { sql } from 'drizzle-orm';
 import { boolean, index, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const blockedHostnames = pgTable('blocked_hostnames', {
 	hostname: text('hostname').primaryKey().notNull(),
 	createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });
+
+// As of writing, Drizzle doesn't honor the `.using()` method for indexes (https://github.com/drizzle-team/drizzle-orm/issues/1349)
+// It will just ignore it and use the default (BTREE) every time
+// At some point they will fix this, and trying to create a migration will suddenly include those index changes
 
 export const urls = pgTable(
 	'urls',
@@ -14,8 +19,8 @@ export const urls = pgTable(
 		url: text('url').notNull(),
 	},
 	(urls) => ({
-		blockedIdx: index().on(urls.blocked),
-		urlIdx: index().on(urls.url),
+		blockedIdx: index().on(urls.blocked).using(sql`hash`),
+		urlIdx: index().on(urls.url).using(sql`hash`),
 	}),
 );
 
@@ -29,7 +34,7 @@ export const visits = pgTable(
 			.notNull(),
 	},
 	(visits) => ({
-		urlShortBase64Idx: index().on(visits.urlShortBase64),
+		urlShortBase64Idx: index().on(visits.urlShortBase64).using(sql`hash`),
 		timestampIdx: index().on(visits.timestamp),
 	}),
 );
