@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 // biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function NotFound() {
 	return (
-		<main className='flex flex-col items-center justify-center space-y-4 max-md:pt-48 max-sm:pt-32 md:pt-72'>
+		<main className='flex flex-col items-center justify-center gap-4 sm:pt-16 md:pt-36'>
 			<H1>404 - Page not found</H1>
 			<Button href='/'>
 				Home <ArrowRightIcon className='ml-2 h-6 w-6' />

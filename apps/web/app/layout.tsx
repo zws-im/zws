@@ -1,7 +1,7 @@
 import { HighlightInit } from '@highlight-run/next/client';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import PlausibleProvider from 'next-plausible';
 import { Lato } from 'next/font/google';
 import { DotGrid } from './components/background-decorations/dot-grid';

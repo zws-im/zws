@@ -27,7 +27,7 @@ export default function StatsPage() {
 	return (
 		<main>
 			<section id='stats' className='flex w-full justify-center'>
-				<div className='flex max-w-xl flex-col items-center justify-center space-y-16'>
+				<div className='flex max-w-xl flex-col items-center justify-center gap-8 md:gap-16'>
 					<div className='text-center'>
 						<H1>Stats</H1>
 					</div>
