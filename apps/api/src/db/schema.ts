@@ -19,7 +19,9 @@ export const urls = pgTable(
 		url: text('url').notNull(),
 	},
 	(urls) => ({
+		// prettier-ignore
 		blockedIdx: index().on(urls.blocked).using(sql`hash`),
+		// prettier-ignore
 		urlIdx: index().on(urls.url).using(sql`hash`),
 	}),
 );
@@ -34,6 +36,7 @@ export const visits = pgTable(
 			.notNull(),
 	},
 	(visits) => ({
+		// prettier-ignore
 		urlShortBase64Idx: index().on(visits.urlShortBase64).using(sql`hash`),
 		timestampIdx: index().on(visits.timestamp),
 	}),
