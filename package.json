@@ -23,7 +23,7 @@
 		"pino-pretty": "10.3.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.2",
+		"@biomejs/biome": "1.7.3",
 		"@types/pg": "8.11.4",
 		"prettier": "3.2.5",
 		"prettier-plugin-packagejson": "2.5.0",
