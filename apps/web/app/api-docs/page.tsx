@@ -1,8 +1,17 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { H1 } from '../components/headings/h1';
 import { SwaggerUi } from '../components/swagger-ui';
 
 const openapiSchemaPath = new URL('/openapi.json', process.env.NEXT_PUBLIC_API_URL);
+
+export const metadata: Metadata = {
+	title: 'API Docs',
+	description: 'API documentation for the zws.im API.',
+	alternates: {
+		canonical: '/api-docs',
+	},
+};
 
 // biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function ApiSchemaPage() {

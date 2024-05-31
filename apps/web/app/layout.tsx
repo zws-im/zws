@@ -13,8 +13,6 @@ import { TrpcProvider } from './components/trpc/trpc-provider';
 import './globals.css';
 import { metadataBase, siteDescription, siteName } from './shared-metadata';
 
-const canonical = '/';
-
 export const metadata: Metadata = {
 	metadataBase,
 	title: {
@@ -23,14 +21,10 @@ export const metadata: Metadata = {
 		template: `%s | ${siteName}`,
 	},
 	description: siteDescription,
-	alternates: {
-		canonical: canonical,
-	},
 	openGraph: {
 		type: 'website',
 		siteName,
 		title: siteName,
-		url: canonical,
 		description: siteDescription,
 	},
 };

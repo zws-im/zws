@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { AboutUs } from './components/about-us/about-us';
 import { LightSpot } from './components/background-decorations/light-spot';
 import { DividerLine } from './components/divider-line';
@@ -6,6 +7,12 @@ import { H1 } from './components/headings/h1';
 import { H2 } from './components/headings/h2';
 import { RandomText } from './components/random-text';
 import { ShortenUrlForm } from './components/shorten-url/shorten-url-form';
+
+export const metadata: Metadata = {
+	alternates: {
+		canonical: '/',
+	},
+};
 
 // biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function HomePage() {
