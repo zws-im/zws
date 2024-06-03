@@ -36,7 +36,7 @@ export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 		>
 			<input
 				className={
-					'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l p-4 text-black outline-none bg-transparent'
+					'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-none'
 				}
 				placeholder={baseUrl}
 				type='url'
