@@ -1,4 +1,3 @@
-import { sql } from 'drizzle-orm';
 import { boolean, index, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const blockedHostnames = pgTable('blocked_hostnames', {
@@ -20,9 +19,9 @@ export const urls = pgTable(
 	},
 	(urls) => ({
 		// prettier-ignore
-		blockedIdx: index().on(urls.blocked).using(sql`hash`),
+		blockedIdx: index().using('hash', urls.blocked),
 		// prettier-ignore
-		urlIdx: index().on(urls.url).using(sql`hash`),
+		urlIdx: index().using('hash', urls.url),
 	}),
 );
 
@@ -37,7 +36,7 @@ export const visits = pgTable(
 	},
 	(visits) => ({
 		// prettier-ignore
-		urlShortBase64Idx: index().on(visits.urlShortBase64).using(sql`hash`),
+		urlShortBase64Idx: index().using('hash', visits.urlShortBase64),
 		timestampIdx: index().on(visits.timestamp),
 	}),
 );

@@ -1,13 +1,20 @@
 {
-	"version": "5",
-	"dialect": "pg",
-	"entries": [
-		{
-			"idx": 0,
-			"version": "5",
-			"when": 1711606474248,
-			"tag": "0000_sweet_marvel_apes",
-			"breakpoints": true
-		}
-	]
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1711606474248,
+      "tag": "0000_sweet_marvel_apes",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1717462907814,
+      "tag": "0001_flawless_maria_hill",
+      "breakpoints": true
+    }
+  ]
 }

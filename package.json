@@ -11,12 +11,12 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
 		"migrate": "bun ./migrate.ts",
-		"migrate:create": "drizzle-kit generate:pg",
+		"migrate:create": "drizzle-kit generate",
 		"test": "bun run lint && bun run format && turbo run build type-check",
 		"type-check": "turbo run type-check"
 	},
 	"dependencies": {
-		"drizzle-kit": "0.21.4",
+		"drizzle-kit": "0.22.1",
 		"envalid": "8.0.0",
 		"pg": "8.11.3",
 		"pino": "9.1.0",

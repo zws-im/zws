@@ -1,10 +1,8 @@
 {
-	"id": "a1a9d125-cfb1-4769-baca-2f88b80c8dc9",
-	"prevId": "00000000-0000-0000-0000-000000000000",
-	"version": "5",
-	"dialect": "pg",
+	"version": "7",
+	"dialect": "postgresql",
 	"tables": {
-		"blocked_hostnames": {
+		"public.blocked_hostnames": {
 			"name": "blocked_hostnames",
 			"schema": "",
 			"columns": {
@@ -27,7 +25,7 @@
 			"compositePrimaryKeys": {},
 			"uniqueConstraints": {}
 		},
-		"urls": {
+		"public.urls": {
 			"name": "urls",
 			"schema": "",
 			"columns": {
@@ -60,21 +58,39 @@
 			},
 			"indexes": {
 				"urls_blocked_index": {
+					"columns": [
+						{
+							"expression": "blocked",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
 					"name": "urls_blocked_index",
-					"columns": ["blocked"],
-					"isUnique": false
+					"isUnique": false,
+					"method": "btree",
+					"concurrently": false
 				},
 				"urls_url_index": {
+					"columns": [
+						{
+							"expression": "url",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
 					"name": "urls_url_index",
-					"columns": ["url"],
-					"isUnique": false
+					"isUnique": false,
+					"method": "btree",
+					"concurrently": false
 				}
 			},
 			"foreignKeys": {},
 			"compositePrimaryKeys": {},
 			"uniqueConstraints": {}
 		},
-		"visits": {
+		"public.visits": {
 			"name": "visits",
 			"schema": "",
 			"columns": {
@@ -100,25 +116,43 @@
 			},
 			"indexes": {
 				"visits_url_short_base64_index": {
+					"columns": [
+						{
+							"expression": "url_short_base64",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
 					"name": "visits_url_short_base64_index",
-					"columns": ["url_short_base64"],
-					"isUnique": false
+					"isUnique": false,
+					"method": "btree",
+					"concurrently": false
 				},
 				"visits_timestamp_index": {
+					"columns": [
+						{
+							"expression": "timestamp",
+							"isExpression": false,
+							"asc": true,
+							"nulls": "last"
+						}
+					],
 					"name": "visits_timestamp_index",
-					"columns": ["timestamp"],
-					"isUnique": false
+					"isUnique": false,
+					"method": "btree",
+					"concurrently": false
 				}
 			},
 			"foreignKeys": {
 				"visits_url_short_base64_urls_short_base64_fk": {
 					"name": "visits_url_short_base64_urls_short_base64_fk",
 					"tableFrom": "visits",
-					"tableTo": "urls",
 					"columnsFrom": ["url_short_base64"],
+					"tableTo": "urls",
 					"columnsTo": ["short_base64"],
-					"onDelete": "cascade",
-					"onUpdate": "cascade"
+					"onUpdate": "cascade",
+					"onDelete": "cascade"
 				}
 			},
 			"compositePrimaryKeys": {},
@@ -128,8 +162,10 @@
 	"enums": {},
 	"schemas": {},
 	"_meta": {
-		"columns": {},
 		"schemas": {},
-		"tables": {}
-	}
+		"tables": {},
+		"columns": {}
+	},
+	"id": "a1a9d125-cfb1-4769-baca-2f88b80c8dc9",
+	"prevId": "00000000-0000-0000-0000-000000000000"
 }
