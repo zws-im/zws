@@ -10,21 +10,17 @@
 		"format:write": "bun run format --write",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --apply-unsafe",
-		"migrate": "bun ./migrate.ts",
+		"migrate": "drizzle-kit migrate",
 		"migrate:create": "drizzle-kit generate",
 		"test": "bun run lint && bun run format && turbo run build type-check",
 		"type-check": "turbo run type-check"
 	},
 	"dependencies": {
 		"drizzle-kit": "0.22.1",
-		"envalid": "8.0.0",
-		"pg": "8.11.3",
-		"pino": "9.1.0",
-		"pino-pretty": "10.3.1"
+		"envalid": "8.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
-		"@types/pg": "8.11.4",
 		"prettier": "3.2.5",
 		"prettier-plugin-packagejson": "2.5.0",
 		"prettier-plugin-tailwindcss": "0.6.1",
