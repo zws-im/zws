@@ -1,0 +1,2 @@
+CREATE INDEX IF NOT EXISTS "visits_url_short_base64_index" ON "visits" USING hash (url_short_base64);--> statement-breakpoint
+CREATE INDEX IF NOT EXISTS "visits_timestamp_index" ON "visits" USING btree (timestamp);

@@ -9,21 +9,12 @@ export const blockedHostnames = pgTable('blocked_hostnames', {
 // It will just ignore it and use the default (BTREE) every time
 // At some point they will fix this, and trying to create a migration will suddenly include those index changes
 
-export const urls = pgTable(
-	'urls',
-	{
-		blocked: boolean('blocked').default(false).notNull(),
-		createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
-		shortBase64: text('short_base64').notNull().primaryKey(),
-		url: text('url').notNull(),
-	},
-	(urls) => ({
-		// prettier-ignore
-		blockedIdx: index().using('hash', urls.blocked),
-		// prettier-ignore
-		urlIdx: index().using('hash', urls.url),
-	}),
-);
+export const urls = pgTable('urls', {
+	blocked: boolean('blocked').default(false).notNull(),
+	createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+	shortBase64: text('short_base64').notNull().primaryKey(),
+	url: text('url').notNull(),
+});
 
 export const visits = pgTable(
 	'visits',
