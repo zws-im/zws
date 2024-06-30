@@ -27,7 +27,8 @@ const items: NavbarItem[] = [
 
 export function Navbar() {
 	return (
-		<nav className='w-100 bg-zws-purple-900/50 sticky top-0 px-4 py-8 backdrop-blur'>
+		// z-index is needed because of Swagger UI being insane https://github.com/zws-im/zws/issues/742
+		<nav className='bg-zws-purple-900/50 sticky top-0 z-[1] w-full px-4 py-8 backdrop-blur'>
 			<div className='container mx-auto flex justify-between'>
 				<Link className='transition-opacity hover:opacity-80 active:opacity-60 md:flex md:space-x-4' href='/'>
 					<div className='w-16 max-md:w-12'>
