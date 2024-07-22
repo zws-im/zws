@@ -22,7 +22,7 @@
 		"@sentry/bun": "7.107.0",
 		"@trpc/server": "next",
 		"cors": "2.8.5",
-		"devalue": "4.3.2",
+		"devalue": "5.0.0",
 		"drizzle-orm": "0.31.0",
 		"envalid": "8.0.0",
 		"googleapis": "134.0.0",
