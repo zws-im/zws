@@ -1,4 +1,5 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
+import { captureException } from '@sentry/bun';
 import convert from 'convert';
 import { google, safebrowsing_v4 } from 'googleapis';
 import type Ioredis from 'ioredis';
@@ -18,6 +19,7 @@ export class SafeBrowsingService {
 
 	private readonly safebrowsing: safebrowsing_v4.Safebrowsing;
 	private readonly apiKey: string;
+	private readonly logger = new Logger(SafeBrowsingService.name);
 
 	constructor(
 		@Inject(ConfigService) configService: ConfigService,
@@ -30,7 +32,21 @@ export class SafeBrowsingService {
 		this.apiKey = configService.googleApiKey;
 	}
 
-	async hasThreatMatches(url: URL): Promise<boolean> {
+	/** This method doesn't throw, and instead returns `undefined` if there's an error with Google's API. */
+	async hasThreatMatches(url: URL): Promise<boolean | undefined> {
+		try {
+			return await this.hasThreatMatchesThrowable(url);
+		} catch (error) {
+			// Log + report the error
+			captureException(error);
+			this.logger.error(error);
+
+			// If Google is having an outage, just ignore it
+			return undefined;
+		}
+	}
+
+	private async hasThreatMatchesThrowable(url: URL): Promise<boolean> {
 		const normalizedUrl = SafeBrowsingService.normalizeUrl(url);
 
 		const cached = await this.redis.get(SafeBrowsingService.REDIS_PREFIX + normalizedUrl);
