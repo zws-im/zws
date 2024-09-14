@@ -15,7 +15,7 @@
 	"deploy": {
 		"healthcheckPath": "/health",
 		"healthcheckTimeout": 10,
-		"numReplicas": 1,
+		"numReplicas": 2,
 		"restartPolicyMaxRetries": 3,
 		"restartPolicyType": "ALWAYS",
 		"startCommand": "bun --cwd ./apps/api start"
