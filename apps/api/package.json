@@ -41,7 +41,7 @@
 		"@tsconfig/bun": "1.0.4",
 		"@tsconfig/strictest": "2.0.3",
 		"@types/cors": "2.8.17",
-		"@types/express": "^4.17.17",
+		"@types/express": "^5.0.0",
 		"@types/pg": "8.11.6",
 		"type-fest": "4.14.0",
 		"typescript": "5.4.2"
