@@ -20,7 +20,7 @@
       "name": "@zws.im/api",
       "version": "0.0.1",
       "dependencies": {
-        "@anatine/zod-nestjs": "2.0.8",
+        "@anatine/zod-nestjs": "2.0.12",
         "@anatine/zod-openapi": "2.2.5",
         "@jonahsnider/util": "10.3.0",
         "@nestjs/common": "10.3.5",
@@ -101,7 +101,7 @@
   "packages": {
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
-    "@anatine/zod-nestjs": ["@anatine/zod-nestjs@2.0.8", "", { "dependencies": { "ts-deepmerge": "^6.1.0" }, "peerDependencies": { "@anatine/zod-openapi": "^2.0.1", "@nestjs/common": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0", "@nestjs/swagger": "^6.0.0 || ^7.0.0", "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-EhBCUO6d45LM26gHgRNW27ra6gcY1mD5E4QL0AhrsSjwoiye/rBaKkpIGssrYDi38eVawhQZlafUb4UsfajpxQ=="],
+    "@anatine/zod-nestjs": ["@anatine/zod-nestjs@2.0.12", "", { "dependencies": { "ts-deepmerge": "^6.1.0" }, "peerDependencies": { "@anatine/zod-openapi": "^2.0.1", "@nestjs/common": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0", "@nestjs/swagger": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0", "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-jCZ4eNlPfurMDJW3Y+RRO8j66kVeKXR5VHB5AK7APEkb5ekmXoRgKhHybO02IrPgTInzc58wZvUSUoLNvbyL9A=="],
 
     "@anatine/zod-openapi": ["@anatine/zod-openapi@2.2.5", "", { "dependencies": { "ts-deepmerge": "^6.0.3" }, "peerDependencies": { "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-XxkMjGDmFUHtU8a/owM9dXQ38Ie0bSCMOZMzzrzmgS3M52oX93jzxf9at7NvVRKJAFMCUzIE+4ayZShu4ReMPw=="],
 
