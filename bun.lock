@@ -80,7 +80,7 @@
         "millify": "6.1.0",
         "next": "14.1.4",
         "next-api-utils": "1.0.2",
-        "next-plausible": "3.12.0",
+        "next-plausible": "3.12.4",
         "postcss": "8.4.38",
         "react": "18.2.0",
         "react-apexcharts": "1.7.0",
@@ -1389,7 +1389,7 @@
 
     "next-api-utils": ["next-api-utils@1.1.0", "", { "dependencies": { "@jonahsnider/util": "^10.1.0", "yn": "^5.0.0", "zod": "^3.22.2", "zod-validation-error": "^3.0.0" }, "peerDependencies": { "next": "^14 || ^13" } }, "sha512-kiwfTwtuw43cDZAPNrZwkJtC5Tu3LNWhY5wq1G10zNCWd6LPbo7FeKeJDRZlG1NmKPXBVn6SLetHsHV59jUKPw=="],
 
-    "next-plausible": ["next-plausible@3.12.0", "", { "peerDependencies": { "next": "^11.1.0 || ^12.0.0 || ^13.0.0 || ^14.0.0", "react": "^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0" } }, "sha512-SSkEqKQ6PgR8fx3sYfIAT69k2xuCUXO5ngkSS19CjxY97lAoZxsfZpYednxB4zo0mHYv87JzhPynrdBPlCBVHg=="],
+    "next-plausible": ["next-plausible@3.12.4", "", { "peerDependencies": { "next": "^11.1.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 ", "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-cD3+ixJxf8yBYvsideTxqli3fvrB7R4BXcvsNJz8Sm2X1QN039WfiXjCyNWkub4h5++rRs6fHhchUMnOuJokcg=="],
 
     "node-abi": ["node-abi@3.57.0", "", { "dependencies": { "semver": "^7.3.5" } }, "sha512-Dp+A9JWxRaKuHP35H77I4kCKesDy5HUDEmScia2FyncMTOXASMyg251F5PhFoDA5uqBrDDffiLpbqnrZmNXW+g=="],
 
