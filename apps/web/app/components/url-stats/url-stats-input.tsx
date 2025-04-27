@@ -30,13 +30,13 @@ export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 
 	return (
 		<div
-			className={clsx('flex h-14 w-full rounded bg-white transition', {
+			className={clsx('flex h-14 w-full rounded-sm bg-white transition', {
 				'border-4 border-red-500': !valid,
 			})}
 		>
 			<input
 				className={
-					'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-none'
+					'placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-hidden'
 				}
 				placeholder={baseUrl}
 				type='url'

@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+	--color-zws-purple-50: #ede7ff;
+	--color-zws-purple-100: #dcd5f0;
+	--color-zws-purple-400: #9b77ff;
+	--color-zws-purple-500: #4413cb;
+	--color-zws-purple-700: #483775;
+	--color-zws-purple-800: #301b66;
+	--color-zws-purple-900: #140a2e;
+}
 
 body {
 	color: #f8f5ff;

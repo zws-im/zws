@@ -19,7 +19,7 @@ type Props = PropsWithChildren<
 
 export function Button({ children, href, onClick, type }: Props) {
 	const className = clsx(
-		'w-28 h-full p-4 rounded transition-opacity font-bold flex justify-center items-center bg-zws-purple-500 hover:opacity-90 active:opacity-80',
+		'w-28 h-full p-4 rounded-sm transition-opacity font-bold flex justify-center items-center bg-zws-purple-500 hover:opacity-90 active:opacity-80',
 	);
 
 	if (href) {

@@ -8,7 +8,7 @@ type Props = {
 
 export function SwaggerUi({ schemaUrl }: Props) {
 	return (
-		<div className='w-full rounded bg-purple-50 p-4'>
+		<div className='w-full rounded-sm bg-purple-50 p-4'>
 			<SwaggerUI url={schemaUrl} />
 		</div>
 	);

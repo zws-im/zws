@@ -60,9 +60,9 @@ export function ShortenUrlForm() {
 
 	return (
 		<>
-			<form className='flex h-14 w-full rounded bg-white' onSubmit={handleSubmit}>
+			<form className='flex h-14 w-full rounded-sm bg-white' onSubmit={handleSubmit}>
 				<input
-					className='placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-none'
+					className='placeholder-[rgba(10, 0, 37, 0.6)] h-full w-full rounded-l bg-transparent p-4 text-black outline-hidden'
 					placeholder='https://github.com/zws-im/zws'
 					type='url'
 					name='url'
