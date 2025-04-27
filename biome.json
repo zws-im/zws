@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 	"files": {
 		"ignore": [".next", "node_modules", ".vercel", "**/package.json"]
 	},
@@ -24,22 +24,15 @@
 	},
 	"linter": {
 		"rules": {
-			"all": true,
 			"complexity": {
-				"all": true,
 				"noStaticOnlyClass": "off",
 				"useLiteralKeys": "off"
 			},
-			"nursery": {
-				"all": false
-			},
 			"style": {
-				"all": true,
 				"noParameterProperties": "off",
 				"useImportType": "off"
 			},
 			"suspicious": {
-				"all": true,
 				"noEmptyBlockStatements": "off"
 			}
 		}

@@ -1,6 +1,5 @@
 import { HttpException, type INestApplication, Inject, Injectable, Logger } from '@nestjs/common';
 import { captureException } from '@sentry/bun';
-// biome-ignore lint/style/noNamespaceImport: This is not a frontend app
 import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from 'cors';
 import { ConfigService } from '../config/config.service';

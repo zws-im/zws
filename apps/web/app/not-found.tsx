@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 	},
 };
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function NotFound() {
 	return (
 		<main className='flex flex-col items-center justify-center gap-4 sm:pt-16 md:pt-36'>

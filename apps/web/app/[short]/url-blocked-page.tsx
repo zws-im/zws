@@ -2,7 +2,6 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from '../components/button';
 import { H1 } from '../components/headings/h1';
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function UrlBlockedPage() {
 	return (
 		<main className='flex flex-col items-center justify-center gap-y-4 max-md:pt-48 max-sm:pt-32 md:pt-72'>

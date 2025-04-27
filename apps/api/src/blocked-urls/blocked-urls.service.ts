@@ -31,7 +31,6 @@ export class BlockedUrlsService {
 		return results.some(Boolean);
 	}
 
-	// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: I don't want to make this a separate function
 	public matchesCaptchaPhishHeuristic(url: URL): boolean {
 		let score = 0;
 

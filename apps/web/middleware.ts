@@ -11,7 +11,6 @@ const apiUrl = new URL(API_URL);
 
 const API_PATH_PREFIX = '/api/';
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function middleware(request: NextRequest): Response {
 	if (request.nextUrl.pathname.startsWith(API_PATH_PREFIX)) {
 		// Redirect to API subdomain

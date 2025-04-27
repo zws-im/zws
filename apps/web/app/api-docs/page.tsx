@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 	},
 };
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function ApiSchemaPage() {
 	return (
 		<main className='flex flex-col items-center justify-center gap-y-4'>

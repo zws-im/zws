@@ -7,7 +7,6 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 assert(API_URL, 'Missing NEXT_PUBLIC_API_URL env var');
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default async function UrlSubpathPage({
 	params: rawParams,
 	searchParams: rawSearchParams,

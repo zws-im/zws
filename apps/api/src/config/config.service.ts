@@ -36,31 +36,21 @@ const DEFAULT_SHORT_CHARS: readonly string[] = [
 ];
 
 export const env = cleanEnv(process.env, {
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	NODE_ENV: str({ default: 'production', choices: ['production', 'development', 'staging'] }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	PORT: port({ default: 3000 }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	DATABASE_URL: url({ desc: 'PostgreSQL URL' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	SENTRY_DSN: url({ desc: 'Sentry DSN' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	REDIS_URL: url({ desc: 'Redis URL' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	WEBSITE_URL: url({ desc: 'Website URL' }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	SHORT_LENGTH: num({ desc: 'Number of characters to generate in a shortened URL', default: 7 }),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	SHORT_CHARS: json<readonly string[]>({
 		desc: 'Characters to use in shortened URLs',
 		default: DEFAULT_SHORT_CHARS,
 	}),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	SHORT_REWRITES: json<Record<string, string>>({
 		desc: 'A mapping of characters to apply to short IDs before they are used',
 		default: {},
 	}),
-	// biome-ignore lint/style/useNamingConvention: This is an environment variable
 	GOOGLE_API_KEY: str({ desc: 'Google API Key' }),
 });
 

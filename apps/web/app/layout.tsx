@@ -35,7 +35,6 @@ export const viewport: Viewport = {
 
 const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<>

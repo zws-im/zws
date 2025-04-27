@@ -1,5 +1,4 @@
 'use client';
-// biome-ignore lint/style/useNamingConvention: This is a React component
 import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
 

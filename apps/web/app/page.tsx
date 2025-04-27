@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 	},
 };
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export
 export default function HomePage() {
 	return (
 		<main className='flex flex-col gap-8 md:gap-16 lg:gap-24'>

@@ -10,7 +10,6 @@ const GITHUB_STARGAZERS_LINK_HEADER_REGEXP = /^.+,.+page=(?<stars>\d+).+$/;
 
 async function getGitHubStars(): Promise<number> {
 	const query = new URLSearchParams({
-		// biome-ignore lint/style/useNamingConvention: Can't use camelcase here
 		per_page: (1).toString(),
 	});
 	const response = await fetch(`https://api.github.com/repos/zws-im/zws/stargazers?${query}`, {

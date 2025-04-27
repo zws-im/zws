@@ -9,7 +9,7 @@
 		"format": "prettier --check .",
 		"format:write": "bun run format --write",
 		"lint": "biome check .",
-		"lint:fix": "biome check . --apply-unsafe",
+		"lint:fix": "biome check . --write --unsafe",
 		"migrate": "drizzle-kit migrate",
 		"migrate:create": "drizzle-kit generate",
 		"test": "bun run lint && bun run format && turbo run build type-check",
