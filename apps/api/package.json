@@ -31,7 +31,7 @@
 		"next-api-utils": "1.1.0",
 		"pg": "8.11.3",
 		"reflect-metadata": "0.2.1",
-		"rxjs": "7.8.1",
+		"rxjs": "7.8.2",
 		"superjson": "2.2.2",
 		"zod": "3.22.4"
 	},
