@@ -71,7 +71,7 @@
         "@types/react": "18.2.72",
         "@types/react-dom": "18.2.22",
         "@vercel/analytics": "1.2.2",
-        "apexcharts": "3.48.0",
+        "apexcharts": "3.54.1",
         "autoprefixer": "10.4.19",
         "clsx": "2.1.0",
         "convert": "5.11.0",
@@ -633,7 +633,7 @@
 
     "anymatch": ["anymatch@3.1.3", "", { "dependencies": { "normalize-path": "^3.0.0", "picomatch": "^2.0.4" } }, "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw=="],
 
-    "apexcharts": ["apexcharts@3.48.0", "", { "dependencies": { "@yr/monotone-cubic-spline": "^1.0.3", "svg.draggable.js": "^2.2.2", "svg.easing.js": "^2.0.0", "svg.filter.js": "^2.0.2", "svg.pathmorphing.js": "^0.1.3", "svg.resize.js": "^1.4.3", "svg.select.js": "^3.0.1" } }, "sha512-Lhpj1Ij6lKlrUke8gf+P+SE6uGUn+Pe1TnCJ+zqrY0YMvbqM3LMb1lY+eybbTczUyk0RmMZomlTa2NgX2EUs4Q=="],
+    "apexcharts": ["apexcharts@3.54.1", "", { "dependencies": { "@yr/monotone-cubic-spline": "^1.0.3", "svg.draggable.js": "^2.2.2", "svg.easing.js": "^2.0.0", "svg.filter.js": "^2.0.2", "svg.pathmorphing.js": "^0.1.3", "svg.resize.js": "^1.4.3", "svg.select.js": "^3.0.1" } }, "sha512-E4et0h/J1U3r3EwS/WlqJCQIbepKbp6wGUmaAwJOMjHUP4Ci0gxanLa7FR3okx6p9coi4st6J853/Cb1NP0vpA=="],
 
     "append-field": ["append-field@1.0.0", "", {}, "sha512-klpgFSWLW1ZEs8svjfb7g4qWY0YS5imI82dTg+QahUvJ8YqAY0P10Uk8tTyh9ZGuYEZEMaeJYCF5BFuX552hsw=="],
 
@@ -2302,6 +2302,8 @@
     "postcss-load-config/lilconfig": ["lilconfig@3.1.1", "", {}, "sha512-O18pf7nyvHTckunPWCV1XUNXU1piu01y2b7ATJ0ppkUkk8ocqVWBrYjJBCwHDjD/ZWcfyrA0P4gKhzWGi5EINQ=="],
 
     "pump/end-of-stream": ["end-of-stream@1.4.4", "", { "dependencies": { "once": "^1.4.0" } }, "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q=="],
+
+    "react-apexcharts/apexcharts": ["apexcharts@3.48.0", "", { "dependencies": { "@yr/monotone-cubic-spline": "^1.0.3", "svg.draggable.js": "^2.2.2", "svg.easing.js": "^2.0.0", "svg.filter.js": "^2.0.2", "svg.pathmorphing.js": "^0.1.3", "svg.resize.js": "^1.4.3", "svg.select.js": "^3.0.1" } }, "sha512-Lhpj1Ij6lKlrUke8gf+P+SE6uGUn+Pe1TnCJ+zqrY0YMvbqM3LMb1lY+eybbTczUyk0RmMZomlTa2NgX2EUs4Q=="],
 
     "readdirp/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
 
