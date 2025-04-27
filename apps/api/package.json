@@ -30,7 +30,7 @@
 		"ky": "1.8.1",
 		"next-api-utils": "1.1.0",
 		"pg": "8.11.3",
-		"reflect-metadata": "0.2.1",
+		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.1",
 		"superjson": "2.2.2",
 		"zod": "3.22.4"
