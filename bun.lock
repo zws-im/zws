@@ -90,7 +90,7 @@
         "typescript": "5.4.3",
       },
       "devDependencies": {
-        "@types/swagger-ui-react": "4.18.3",
+        "@types/swagger-ui-react": "4.19.0",
         "@vercel/edge": "1.1.1",
       },
     },
@@ -515,7 +515,7 @@
 
     "@types/shimmer": ["@types/shimmer@1.2.0", "", {}, "sha512-UE7oxhQLLd9gub6JKIAhDq06T0F6FnztwMNRvYgjeQSBeMc1ZG/tA47EwfduvkuQS8apbkM/lpLpWsaCeYsXVg=="],
 
-    "@types/swagger-ui-react": ["@types/swagger-ui-react@4.18.3", "", { "dependencies": { "@types/react": "*" } }, "sha512-Mo/R7IjDVwtiFPs84pWvh5pI9iyNGBjmfielxqbOh2Jv+8WVSDVe8Nu25kb5BOuV2xmGS3o33jr6nwDJMBcX+Q=="],
+    "@types/swagger-ui-react": ["@types/swagger-ui-react@4.19.0", "", { "dependencies": { "@types/react": "*" } }, "sha512-uScp1xkLZJej0bt3/lO4U11ywWEBnI5CFCR0tqp+5Rvxl1Mj1v6VkGED0W70jJwqlBvbD+/a6bDiK8rjepCr8g=="],
 
     "@types/unist": ["@types/unist@2.0.10", "", {}, "sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA=="],
 
