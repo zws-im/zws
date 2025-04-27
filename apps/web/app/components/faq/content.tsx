@@ -3,7 +3,7 @@ import type { FaqOption } from './types';
 export const faq: FaqOption[] = [
 	{
 		id: '0',
-		title: <p>How does this tool work?</p>,
+		title: 'How does this tool work?',
 		content: (
 			<p>
 				ZWS uses zero width characters instead of the typical alphanumeric ones that URL shorteners use. When rendered,
@@ -14,7 +14,7 @@ export const faq: FaqOption[] = [
 	},
 	{
 		id: '1',
-		title: <p>Why can I see some characters at the end of the link?</p>,
+		title: 'Why can I see some characters at the end of the link?',
 		content: (
 			<>
 				<p>
@@ -36,9 +36,9 @@ export const faq: FaqOption[] = [
 	{
 		id: '2',
 		title: (
-			<p>
+			<>
 				Why doesn't ZWS work on <span className='text-zws-purple-400'>[chat service]</span>?
-			</p>
+			</>
 		),
 		content: (
 			<p>
