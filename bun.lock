@@ -21,7 +21,7 @@
       "version": "0.0.1",
       "dependencies": {
         "@anatine/zod-nestjs": "2.0.12",
-        "@anatine/zod-openapi": "2.2.5",
+        "@anatine/zod-openapi": "2.2.8",
         "@jonahsnider/util": "10.3.0",
         "@nestjs/common": "10.3.5",
         "@nestjs/core": "10.3.5",
@@ -103,7 +103,7 @@
 
     "@anatine/zod-nestjs": ["@anatine/zod-nestjs@2.0.12", "", { "dependencies": { "ts-deepmerge": "^6.1.0" }, "peerDependencies": { "@anatine/zod-openapi": "^2.0.1", "@nestjs/common": "^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0", "@nestjs/swagger": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0", "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-jCZ4eNlPfurMDJW3Y+RRO8j66kVeKXR5VHB5AK7APEkb5ekmXoRgKhHybO02IrPgTInzc58wZvUSUoLNvbyL9A=="],
 
-    "@anatine/zod-openapi": ["@anatine/zod-openapi@2.2.5", "", { "dependencies": { "ts-deepmerge": "^6.0.3" }, "peerDependencies": { "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-XxkMjGDmFUHtU8a/owM9dXQ38Ie0bSCMOZMzzrzmgS3M52oX93jzxf9at7NvVRKJAFMCUzIE+4ayZShu4ReMPw=="],
+    "@anatine/zod-openapi": ["@anatine/zod-openapi@2.2.8", "", { "dependencies": { "ts-deepmerge": "^6.0.3" }, "peerDependencies": { "openapi3-ts": "^4.1.2", "zod": "^3.20.0" } }, "sha512-iyM8mB556KdiZ6a1GTZ67ACLnJakU1hrzzXoh7PLaReldAdMq88MlZn/Ir/U56/TBuQctBhh/4seo0b0B343uw=="],
 
     "@angular-devkit/core": ["@angular-devkit/core@17.1.2", "", { "dependencies": { "ajv": "8.12.0", "ajv-formats": "2.1.1", "jsonc-parser": "3.2.0", "picomatch": "3.0.1", "rxjs": "7.8.1", "source-map": "0.7.4" }, "peerDependencies": { "chokidar": "^3.5.2" }, "optionalPeers": ["chokidar"] }, "sha512-ku+/W/HMCBacSWFppenr9y6Lx8mDuTuQvn1IkTyBLiJOpWnzgVbx9kHDeaDchGa1PwLlJUBBrv27t3qgJOIDPw=="],
 
