@@ -91,7 +91,7 @@
       },
       "devDependencies": {
         "@types/swagger-ui-react": "4.18.3",
-        "@vercel/edge": "1.1.1",
+        "@vercel/edge": "1.2.1",
       },
     },
   },
@@ -525,7 +525,7 @@
 
     "@vercel/build-utils": ["@vercel/build-utils@8.3.6", "", {}, "sha512-EPwr8tXu41aoXg9QBiF98clu5AHbKtwbp3SeX/W6c8L0fhLwiT+H/s3WDuOL/UMz0TT3B8JAdY4PZioWNEAf6g=="],
 
-    "@vercel/edge": ["@vercel/edge@1.1.1", "", {}, "sha512-NtKiIbn9Cq6HWGy+qRudz28mz5nxfOJWls5Pnckjw1yCfSX8rhXdvY/il3Sy3Zd5n/sKCM2h7VSCCpJF/oaDrQ=="],
+    "@vercel/edge": ["@vercel/edge@1.2.1", "", {}, "sha512-1++yncEyIAi68D3UEOlytYb1IUcIulMWdoSzX2h9LuSeeyR7JtaIgR8DcTQ6+DmYOQn+5MCh6LY+UmK6QBByNA=="],
 
     "@vercel/error-utils": ["@vercel/error-utils@2.0.2", "", {}, "sha512-Sj0LFafGpYr6pfCqrQ82X6ukRl5qpmVrHM/191kNYFqkkB9YkjlMAj6QcEsvCG259x4QZ7Tya++0AB85NDPbKQ=="],
 
