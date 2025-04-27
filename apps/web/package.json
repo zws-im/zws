@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@heroicons/react": "2.1.3",
 		"@highlight-run/next": "7.9.6",
-		"@jonahsnider/util": "10.3.0",
+		"@jonahsnider/util": "11.0.0",
 		"@tanstack/react-query": "5.74.7",
 		"@trpc/client": "11.0.4",
 		"@trpc/next": "11.0.4",
