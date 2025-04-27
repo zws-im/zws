@@ -34,7 +34,7 @@
 		"@vercel/analytics": "1.2.2",
 		"apexcharts": "3.48.0",
 		"autoprefixer": "10.4.19",
-		"clsx": "2.1.0",
+		"clsx": "2.1.1",
 		"convert": "5.11.0",
 		"dotenv": "16.4.5",
 		"framer-motion": "12.9.1",
