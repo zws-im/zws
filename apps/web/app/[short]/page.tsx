@@ -7,13 +7,12 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 assert(API_URL, 'Missing NEXT_PUBLIC_API_URL env var');
 
-export default async function UrlSubpathPage({
-	params: rawParams,
-	searchParams: rawSearchParams,
-}: {
-	params: { short: string };
-	searchParams: { [key: string]: string | string[] | undefined };
+export default async function UrlSubpathPage(props: {
+	params: Promise<{ short: string }>;
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+	const rawSearchParams = await props.searchParams;
+	const rawParams = await props.params;
 	const searchParams = new URLSearchParams(
 		Object.entries(rawSearchParams).flatMap(([key, valueOrValues]) => {
 			if (Array.isArray(valueOrValues)) {
