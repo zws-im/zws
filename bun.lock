@@ -79,7 +79,7 @@
         "framer-motion": "12.9.1",
         "millify": "6.1.0",
         "next": "14.1.4",
-        "next-api-utils": "1.0.2",
+        "next-api-utils": "1.1.0",
         "next-plausible": "3.12.0",
         "postcss": "8.4.38",
         "react": "18.2.0",
@@ -2193,8 +2193,6 @@
 
     "@vercel/static-config/ajv": ["ajv@8.6.3", "", { "dependencies": { "fast-deep-equal": "^3.1.1", "json-schema-traverse": "^1.0.0", "require-from-string": "^2.0.2", "uri-js": "^4.2.2" } }, "sha512-SMJOdDP6LqTkD0Uq8qLi+gMwSt0imXLSV080qFVwJCpH9U6Mb+SUGHAXM0KNbcBPguytWyvFxcHgMLe2D2XSpw=="],
 
-    "@zws.im/web/next-api-utils": ["next-api-utils@1.0.2", "", { "dependencies": { "@jonahsnider/util": "^10.1.0", "yn": "^5.0.0", "zod": "^3.22.2", "zod-validation-error": "^1.5.0" }, "peerDependencies": { "next": "^13" } }, "sha512-RqQ2vPM5aH4aH5tmeELVUFHa8d01KhHbOqKXYEy8CbMlThbLkBxdOR0S3RJs3O7YtnaPi1KAfdAmNgjmT2KHDw=="],
-
     "@zws.im/web/typescript": ["typescript@5.4.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg=="],
 
     "ajv-keywords/ajv": ["ajv@6.12.6", "", { "dependencies": { "fast-deep-equal": "^3.1.1", "fast-json-stable-stringify": "^2.0.0", "json-schema-traverse": "^0.4.1", "uri-js": "^4.2.2" } }, "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="],
@@ -2496,8 +2494,6 @@
     "@vercel/nft/micromatch/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
 
     "@vercel/routing-utils/ajv/json-schema-traverse": ["json-schema-traverse@0.4.1", "", {}, "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="],
-
-    "@zws.im/web/next-api-utils/zod-validation-error": ["zod-validation-error@1.5.0", "", { "peerDependencies": { "zod": "^3.18.0" } }, "sha512-/7eFkAI4qV0tcxMBB/3+d2c1P6jzzZYdYSlBuAklzMuCrJu5bzJfHS0yVAS87dRHVlhftd6RFJDIvv03JgkSbw=="],
 
     "ajv-keywords/ajv/json-schema-traverse": ["json-schema-traverse@0.4.1", "", {}, "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="],
 
