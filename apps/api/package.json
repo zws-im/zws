@@ -19,7 +19,7 @@
 		"@nestjs/platform-express": "10.3.5",
 		"@nestjs/swagger": "7.3.0",
 		"@ntegral/nestjs-sentry": "4.0.1",
-		"@sentry/bun": "7.107.0",
+		"@sentry/bun": "9.14.0",
 		"@trpc/server": "11.0.4",
 		"cors": "2.8.5",
 		"devalue": "4.3.2",
