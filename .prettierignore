@@ -252,5 +252,6 @@ $RECYCLE.BIN/
 **/*.mjs
 **/*.cjs
 **/*.json
+!package.json
 **/*.jsonc
 **/*.css
