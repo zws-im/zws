@@ -24,6 +24,7 @@
 		"@heroicons/react": "2.2.0",
 		"@highlight-run/next": "7.9.6",
 		"@jonahsnider/util": "11.0.0",
+		"@tailwindcss/postcss": "4.1.4",
 		"@tanstack/react-query": "5.74.11",
 		"@trpc/client": "11.1.1",
 		"@trpc/next": "11.1.1",
