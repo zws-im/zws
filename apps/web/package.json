@@ -39,7 +39,7 @@
 		"dotenv": "16.5.0",
 		"framer-motion": "12.9.7",
 		"millify": "6.1.0",
-		"next": "15.3.1",
+		"next": "15.3.2",
 		"next-api-utils": "2.0.2",
 		"next-plausible": "3.12.4",
 		"react": "19.1.0",
