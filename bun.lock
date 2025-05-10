@@ -74,7 +74,7 @@
         "@vercel/analytics": "1.5.0",
         "apexcharts": "4.7.0",
         "clsx": "2.1.1",
-        "convert": "5.11.0",
+        "convert": "5.12.0",
         "dotenv": "16.5.0",
         "framer-motion": "12.10.5",
         "millify": "6.1.0",
@@ -942,7 +942,7 @@
 
     "content-type": ["content-type@1.0.5", "", {}, "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA=="],
 
-    "convert": ["convert@5.11.0", "", { "dependencies": { "wireit": "0.14.12" } }, "sha512-TjczQ4Q9N2rr6zvbd0I2l6PtV/irjg1seUXUBedAEVcT/VVbS7AsOZgP/17/1vy/t6TPRqIkbZ5n7F1yBPpcrg=="],
+    "convert": ["convert@5.12.0", "", { "dependencies": { "wireit": "0.14.12" } }, "sha512-gwi1eN0dZsVI//Z+VHPgosbV0u3vxCgPT5p9H3pK5RyGrHrKaQSUNKxoGTYFbkJWv+qYaGY4w394gDNNaXer/g=="],
 
     "convert-hrtime": ["convert-hrtime@3.0.0", "", {}, "sha512-7V+KqSvMiHp8yWDuwfww06XleMWVVB9b9tURBx+G7UTADuo5hYPuowKloz4OzOqbPezxgo+fdQ1522WzPG4OeA=="],
 

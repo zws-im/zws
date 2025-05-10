@@ -35,7 +35,7 @@
 		"@vercel/analytics": "1.5.0",
 		"apexcharts": "4.7.0",
 		"clsx": "2.1.1",
-		"convert": "5.11.0",
+		"convert": "5.12.0",
 		"dotenv": "16.5.0",
 		"framer-motion": "12.10.5",
 		"millify": "6.1.0",
