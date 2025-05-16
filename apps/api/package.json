@@ -29,7 +29,7 @@
 		"ioredis": "5.6.1",
 		"ky": "1.8.1",
 		"next-api-utils": "2.0.2",
-		"pg": "8.15.6",
+		"pg": "8.16.0",
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
 		"superjson": "2.2.2",
@@ -42,7 +42,7 @@
 		"@tsconfig/strictest": "2.0.5",
 		"@types/cors": "2.8.18",
 		"@types/express": "5.0.1",
-		"@types/pg": "8.15.1",
+		"@types/pg": "8.15.2",
 		"type-fest": "4.41.0",
 		"typescript": "5.8.3"
 	}
