@@ -68,7 +68,7 @@
         "@trpc/client": "11.1.3",
         "@trpc/next": "11.1.3",
         "@trpc/react-query": "11.1.3",
-        "@types/node": "22.15.21",
+        "@types/node": "22.15.23",
         "@types/react": "19.1.6",
         "@types/react-dom": "19.1.5",
         "@vercel/analytics": "1.5.0",
@@ -674,7 +674,7 @@
 
     "@types/mysql": ["@types/mysql@2.15.26", "", { "dependencies": { "@types/node": "*" } }, "sha512-DSLCOXhkvfS5WNNPbfn2KdICAmk8lLc+/PNvnPnF7gOdMZCxopXduqv0OQ13y/yA/zXTSikZZqVgybUxOEg6YQ=="],
 
-    "@types/node": ["@types/node@22.15.21", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ=="],
+    "@types/node": ["@types/node@22.15.23", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-7Ec1zaFPF4RJ0eXu1YT/xgiebqwqoJz8rYPDi/O2BcZ++Wpt0Kq9cl0eg6NN6bYbPnR67ZLo7St5Q3UK0SnARw=="],
 
     "@types/pg": ["@types/pg@8.15.2", "", { "dependencies": { "@types/node": "*", "pg-protocol": "*", "pg-types": "^4.0.1" } }, "sha512-+BKxo5mM6+/A1soSHBI7ufUglqYXntChLDyTbvcAn1Lawi9J7J9Ok3jt6w7I0+T/UDJ4CyhHk66+GZbwmkYxSg=="],
 
