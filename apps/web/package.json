@@ -51,7 +51,7 @@
 	},
 	"devDependencies": {
 		"@types/swagger-ui-react": "5.18.0",
-		"@vercel/edge": "1.2.1"
+		"@vercel/edge": "1.2.2"
 	},
 	"engines": {
 		"node": "22.x"
