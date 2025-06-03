@@ -76,7 +76,7 @@
         "clsx": "2.1.1",
         "convert": "5.12.0",
         "dotenv": "16.5.0",
-        "framer-motion": "12.15.0",
+        "framer-motion": "12.16.0",
         "millify": "6.1.0",
         "next": "15.3.3",
         "next-api-utils": "2.0.2",
@@ -1172,7 +1172,7 @@
 
     "forwarded-parse": ["forwarded-parse@2.1.2", "", {}, "sha512-alTFZZQDKMporBH77856pXgzhEzaUVmLCDk+egLgIgHst3Tpndzz8MnKe+GzRJRfvVdn69HhpW7cmXzvtLvJAw=="],
 
-    "framer-motion": ["framer-motion@12.15.0", "", { "dependencies": { "motion-dom": "^12.15.0", "motion-utils": "^12.12.1", "tslib": "^2.4.0" }, "peerDependencies": { "@emotion/is-prop-valid": "*", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@emotion/is-prop-valid", "react", "react-dom"] }, "sha512-XKg/LnKExdLGugZrDILV7jZjI599785lDIJZLxMiiIFidCsy0a4R2ZEf+Izm67zyOuJgQYTHOmodi7igQsw3vg=="],
+    "framer-motion": ["framer-motion@12.16.0", "", { "dependencies": { "motion-dom": "^12.16.0", "motion-utils": "^12.12.1", "tslib": "^2.4.0" }, "peerDependencies": { "@emotion/is-prop-valid": "*", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@emotion/is-prop-valid", "react", "react-dom"] }, "sha512-xryrmD4jSBQrS2IkMdcTmiS4aSKckbS7kLDCuhUn9110SQKG1w3zlq1RTqCblewg+ZYe+m3sdtzQA6cRwo5g8Q=="],
 
     "fresh": ["fresh@2.0.0", "", {}, "sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A=="],
 
@@ -1444,7 +1444,7 @@
 
     "module-details-from-path": ["module-details-from-path@1.0.3", "", {}, "sha512-ySViT69/76t8VhE1xXHK6Ch4NcDd26gx0MzKXLO+F7NOtnqH68d9zF94nT8ZWSxXh8ELOERsnJO/sWt1xZYw5A=="],
 
-    "motion-dom": ["motion-dom@12.15.0", "", { "dependencies": { "motion-utils": "^12.12.1" } }, "sha512-D2ldJgor+2vdcrDtKJw48k3OddXiZN1dDLLWrS8kiHzQdYVruh0IoTwbJBslrnTXIPgFED7PBN2Zbwl7rNqnhA=="],
+    "motion-dom": ["motion-dom@12.16.0", "", { "dependencies": { "motion-utils": "^12.12.1" } }, "sha512-Z2nGwWrrdH4egLEtgYMCEN4V2qQt1qxlKy/uV7w691ztyA41Q5Rbn0KNGbsNVDZr9E8PD2IOQ3hSccRnB6xWzw=="],
 
     "motion-utils": ["motion-utils@12.12.1", "", {}, "sha512-f9qiqUHm7hWSLlNW8gS9pisnsN7CRFRD58vNjptKdsqFLpkVnX00TNeD6Q0d27V9KzT7ySFyK1TZ/DShfVOv6w=="],
 
