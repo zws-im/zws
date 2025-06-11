@@ -30,7 +30,7 @@
 		"@trpc/next": "11.3.1",
 		"@trpc/react-query": "11.3.1",
 		"@types/node": "22.15.31",
-		"@types/react": "19.1.7",
+		"@types/react": "19.1.8",
 		"@types/react-dom": "19.1.6",
 		"@vercel/analytics": "1.5.0",
 		"apexcharts": "4.7.0",
