@@ -42,7 +42,7 @@
         "reflect-metadata": "0.2.2",
         "rxjs": "7.8.2",
         "superjson": "2.2.2",
-        "zod": "3.25.62",
+        "zod": "3.25.64",
       },
       "devDependencies": {
         "@nestjs/cli": "11.0.7",
@@ -2000,7 +2000,7 @@
 
     "zenscroll": ["zenscroll@4.0.2", "", {}, "sha512-jEA1znR7b4C/NnaycInCU6h/d15ZzCd1jmsruqOKnZP6WXQSMH3W2GL+OXbkruslU4h+Tzuos0HdswzRUk/Vgg=="],
 
-    "zod": ["zod@3.25.62", "", {}, "sha512-YCxsr4DmhPcrKPC9R1oBHQNlQzlJEyPAId//qTau/vBee9uO8K6prmRq4eMkOyxvBfH4wDPIPdLx9HVMWIY3xA=="],
+    "zod": ["zod@3.25.64", "", {}, "sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g=="],
 
     "zod-validation-error": ["zod-validation-error@3.4.0", "", { "peerDependencies": { "zod": "^3.18.0" } }, "sha512-ZOPR9SVY6Pb2qqO5XHt+MkkTRxGXb4EVtnjc9JpXUOtUB1T9Ru7mZOT361AN3MsetVe7R0a1KZshJDZdgp9miQ=="],
 
