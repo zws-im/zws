@@ -37,7 +37,7 @@
 		"clsx": "2.1.1",
 		"convert": "5.12.0",
 		"dotenv": "17.0.1",
-		"framer-motion": "12.20.1",
+		"framer-motion": "12.23.0",
 		"millify": "6.1.0",
 		"next": "15.3.4",
 		"next-api-utils": "2.0.2",
