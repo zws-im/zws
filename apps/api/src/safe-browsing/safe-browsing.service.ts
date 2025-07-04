@@ -1,7 +1,7 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { captureException } from '@sentry/bun';
 import convert from 'convert';
-import { google, safebrowsing_v4 } from 'googleapis';
+import { google, type safebrowsing_v4 } from 'googleapis';
 import type Ioredis from 'ioredis';
 import { ConfigService } from '../config/config.service';
 import { REDIS_PROVIDER } from '../redis/providers';

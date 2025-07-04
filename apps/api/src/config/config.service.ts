@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { url, cleanEnv, json, num, port, str } from 'envalid';
+import { cleanEnv, json, num, port, str, url } from 'envalid';
 
 type NodeEnv = 'production' | 'development' | 'staging';
 

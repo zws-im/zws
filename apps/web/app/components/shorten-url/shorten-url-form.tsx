@@ -1,13 +1,12 @@
 'use client';
 
-import { usePlausible } from '@/app/hooks/plausible';
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
 import va from '@vercel/analytics';
 import clsx from 'clsx';
-import { type ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import * as motion from '../../motion';
-
+import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
+import { usePlausible } from '@/app/hooks/plausible';
 import { trpc } from '@/app/trpc';
+import * as motion from '../../motion';
 
 export function ShortenUrlForm() {
 	const [longUrl, setLongUrl] = useState('');

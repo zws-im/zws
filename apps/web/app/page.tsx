@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { AboutUs } from './components/about-us/about-us';
 import { LightSpot } from './components/background-decorations/light-spot';
 import { DividerLine } from './components/divider-line';

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { H1 } from '../components/headings/h1';
 import { SwaggerUi } from '../components/swagger-ui';

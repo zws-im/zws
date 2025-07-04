@@ -1,8 +1,8 @@
 'use client';
 
-import { usePlausible } from '@/app/hooks/plausible';
 import va from '@vercel/analytics';
 import { Suspense, useEffect, useState } from 'react';
+import { usePlausible } from '@/app/hooks/plausible';
 
 import { trpc } from '@/app/trpc';
 import { UrlStatsChart } from './url-stats-chart';

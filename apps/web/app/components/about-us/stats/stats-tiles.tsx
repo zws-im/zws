@@ -1,9 +1,9 @@
 'use client';
 
-import { trpc } from '@/app/trpc';
 import convert from 'convert';
 import millify from 'millify';
 import { useEffect, useState } from 'react';
+import { trpc } from '@/app/trpc';
 import { StatsTile } from './stats-tile';
 
 const GITHUB_STARGAZERS_LINK_HEADER_REGEXP = /^.+,.+page=(?<stars>\d+).+$/;

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { RedirectType, notFound, redirect } from 'next/navigation';
+import { notFound, RedirectType, redirect } from 'next/navigation';
 import UrlBlockedPage from './url-blocked-page';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;

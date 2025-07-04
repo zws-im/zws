@@ -3,6 +3,7 @@
 import type { UrlStatsSchema } from '@zws.im/api/src/url-stats/dtos/url-stats.dto';
 import dynamic from 'next/dynamic';
 import { useMemo } from 'react';
+
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 type ChartData = Array<{

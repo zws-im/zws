@@ -19,7 +19,7 @@ import { UrlStatsService } from '../url-stats/url-stats.service';
 import { LongUrlDto } from './dtos/long-url.dto';
 import { Short } from './dtos/short.dto';
 import { ShortenedUrlDto } from './dtos/shortened-url.dto';
-import { VisitShortUrlQueryDto } from './dtos/visit-short-url-query.dto';
+import type { VisitShortUrlQueryDto } from './dtos/visit-short-url-query.dto';
 import { UrlsService } from './urls.service';
 
 @Controller('/')

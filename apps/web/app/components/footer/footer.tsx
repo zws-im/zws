@@ -1,8 +1,8 @@
 'use client';
 
-import { usePlausible } from '@/app/hooks/plausible';
 import va from '@vercel/analytics';
 import Image from 'next/image';
+import { usePlausible } from '@/app/hooks/plausible';
 import poweredByVercel from './powered-by-vercel.svg';
 
 export function Footer() {
