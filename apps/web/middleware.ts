@@ -22,7 +22,5 @@ export default function middleware(request: NextRequest): Response {
 
 // Configure matcher to only run middleware on API routes
 export const config = {
-	matcher: [
-		'/api/:path*',
-	],
+	matcher: ['/api/:path*'],
 };
