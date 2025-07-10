@@ -25,7 +25,7 @@
 		"devalue": "5.1.1",
 		"drizzle-orm": "0.44.2",
 		"envalid": "8.0.0",
-		"googleapis": "150.0.1",
+		"googleapis": "152.0.0",
 		"ioredis": "5.6.1",
 		"ky": "1.8.1",
 		"next-api-utils": "2.0.2",
