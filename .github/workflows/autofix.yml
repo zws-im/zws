@@ -1,0 +1,28 @@
+name: autofix.ci # needed to securely identify the workflow
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    name: Autofix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Format with Prettier
+        run: bun run format:write
+      - name: Format with Biome
+        run: bun run lint:fix
+      - name: Run autofix.ci
+        uses: autofix-ci/action@v1
+        with:
+          commit-message: 'style: apply automatic fixes'
