@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "2.2.0",
-		"@highlight-run/next": "7.9.31",
+		"@highlight-run/next": "7.9.32",
 		"@jonahsnider/util": "11.0.0",
 		"@tailwindcss/postcss": "4.1.11",
 		"@tanstack/react-query": "5.81.5",
