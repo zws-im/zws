@@ -9,19 +9,18 @@ if (!API_URL) {
 
 const apiUrl = new URL(API_URL);
 
-const API_PATH_PREFIX = '/api/';
-
 export default function middleware(request: NextRequest): Response {
-	if (request.nextUrl.pathname.startsWith(API_PATH_PREFIX)) {
-		// Redirect to API subdomain
-		const url = new URL(request.url);
+	// Redirect to API subdomain
+	const url = new URL(request.url);
 
-		url.hostname = apiUrl.hostname;
-		url.port = apiUrl.port;
-		url.pathname = request.nextUrl.pathname.slice(API_PATH_PREFIX.length);
+	url.hostname = apiUrl.hostname;
+	url.port = apiUrl.port;
+	url.pathname = request.nextUrl.pathname.slice('/api/'.length);
 
-		return next({ headers: { location: url.toString() }, status: 301 });
-	}
-
-	return next();
+	return next({ headers: { location: url.toString() }, status: 301 });
 }
+
+// Configure matcher to only run middleware on API routes
+export const config = {
+	matcher: ['/api/:path*'],
+};
