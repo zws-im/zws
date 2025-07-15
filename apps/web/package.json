@@ -40,7 +40,7 @@
 		"framer-motion": "12.23.5",
 		"millify": "6.1.0",
 		"next": "15.4.1",
-		"next-api-utils": "2.0.2",
+		"next-api-utils": "3.0.1",
 		"next-plausible": "3.12.4",
 		"react": "19.1.0",
 		"react-apexcharts": "1.7.0",
