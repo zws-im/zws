@@ -27,7 +27,7 @@
 		"envalid": "8.1.0",
 		"googleapis": "153.0.0",
 		"ioredis": "5.6.1",
-		"ky": "1.8.1",
+		"ky": "1.8.2",
 		"next-api-utils": "3.0.1",
 		"pg": "8.16.3",
 		"reflect-metadata": "0.2.2",
