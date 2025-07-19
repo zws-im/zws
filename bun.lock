@@ -22,7 +22,7 @@
       "dependencies": {
         "@anatine/zod-nestjs": "2.0.12",
         "@anatine/zod-openapi": "2.2.8",
-        "@jonahsnider/util": "11.0.0",
+        "@jonahsnider/util": "12.0.0",
         "@nestjs/common": "11.1.5",
         "@nestjs/core": "11.1.5",
         "@nestjs/platform-express": "11.1.5",
@@ -62,7 +62,7 @@
       "dependencies": {
         "@heroicons/react": "2.2.0",
         "@highlight-run/next": "7.9.34",
-        "@jonahsnider/util": "11.0.0",
+        "@jonahsnider/util": "12.0.0",
         "@tailwindcss/postcss": "4.1.11",
         "@tanstack/react-query": "5.83.0",
         "@trpc/client": "11.4.3",
@@ -312,7 +312,7 @@
 
     "@isaacs/fs-minipass": ["@isaacs/fs-minipass@4.0.1", "", { "dependencies": { "minipass": "^7.0.4" } }, "sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w=="],
 
-    "@jonahsnider/util": ["@jonahsnider/util@11.0.0", "", {}, "sha512-PlH3+YwibBfsqSi1n6JekZMNOkQtr1hlgjDPu8qE/UY/56C3AAUfbUV3ExGFSa3mbwg0UB7g+3WvybM99leDmQ=="],
+    "@jonahsnider/util": ["@jonahsnider/util@12.0.0", "", {}, "sha512-83YFLqiIGEkLSOWgb+DXgNOBB6I5Bha3815CIjyJ6++b5EgRoTfGpHK/NEMWzzqZ695NZWetZ/WFTy2OuUxzww=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.5", "", { "dependencies": { "@jridgewell/set-array": "^1.2.1", "@jridgewell/sourcemap-codec": "^1.4.10", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg=="],
 
@@ -2339,6 +2339,8 @@
     "multer/type-is": ["type-is@1.6.18", "", { "dependencies": { "media-typer": "0.3.0", "mime-types": "~2.1.24" } }, "sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g=="],
 
     "next/postcss": ["postcss@8.4.31", "", { "dependencies": { "nanoid": "^3.3.6", "picocolors": "^1.0.0", "source-map-js": "^1.0.2" } }, "sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ=="],
+
+    "next-api-utils/@jonahsnider/util": ["@jonahsnider/util@11.0.0", "", {}, "sha512-PlH3+YwibBfsqSi1n6JekZMNOkQtr1hlgjDPu8qE/UY/56C3AAUfbUV3ExGFSa3mbwg0UB7g+3WvybM99leDmQ=="],
 
     "path-match/http-errors": ["http-errors@1.4.0", "", { "dependencies": { "inherits": "2.0.1", "statuses": ">= 1.2.1 < 2" } }, "sha512-oLjPqve1tuOl5aRhv8GK5eHpqP1C9fb+Ol+XTLjKfLltE44zdDbEdjPSbU7Ch5rSNsVFqZn97SrMmZLdu1/YMw=="],
 
