@@ -13,7 +13,7 @@
 	"dependencies": {
 		"@anatine/zod-nestjs": "2.0.12",
 		"@anatine/zod-openapi": "2.2.8",
-		"@jonahsnider/util": "11.0.0",
+		"@jonahsnider/util": "12.0.0",
 		"@nestjs/common": "11.1.5",
 		"@nestjs/core": "11.1.5",
 		"@nestjs/platform-express": "11.1.5",
