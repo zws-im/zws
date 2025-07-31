@@ -36,8 +36,8 @@
 		"zod": "3.25.76"
 	},
 	"devDependencies": {
-		"@nestjs/cli": "11.0.9",
-		"@nestjs/schematics": "11.0.6",
+		"@nestjs/cli": "11.0.10",
+		"@nestjs/schematics": "11.0.7",
 		"@tsconfig/bun": "1.0.8",
 		"@tsconfig/strictest": "2.0.5",
 		"@types/cors": "2.8.19",
