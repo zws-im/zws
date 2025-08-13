@@ -34,7 +34,7 @@
         "devalue": "5.1.1",
         "drizzle-orm": "0.44.4",
         "envalid": "8.1.0",
-        "googleapis": "155.0.1",
+        "googleapis": "156.0.0",
         "ioredis": "5.7.0",
         "ky": "1.8.2",
         "next-api-utils": "3.0.1",
@@ -1236,7 +1236,7 @@
 
     "google-logging-utils": ["google-logging-utils@1.1.1", "", {}, "sha512-rcX58I7nqpu4mbKztFeOAObbomBbHU2oIb/d3tJfF3dizGSApqtSwYJigGCooHdnMyQBIw8BrWyK96w3YXgr6A=="],
 
-    "googleapis": ["googleapis@155.0.1", "", { "dependencies": { "google-auth-library": "^10.2.0", "googleapis-common": "^8.0.0" } }, "sha512-8FRHMufEkXqoLeqxF6CTezxIupvHuAGWHfBz3KzRgBrha6R8nf1ed1TPmk3/N8GYkCxueRmUziLPiqpshBlSxQ=="],
+    "googleapis": ["googleapis@156.0.0", "", { "dependencies": { "google-auth-library": "^10.2.0", "googleapis-common": "^8.0.0" } }, "sha512-Th401jKVdtrIaAc/b5iv8dfNVN2O7EgU/32Zvb2zxK3hiRrBU8hNbF7wMmOAEsvqnEKssq6XlXMaCBKazrvakw=="],
 
     "googleapis-common": ["googleapis-common@8.0.0", "", { "dependencies": { "extend": "^3.0.2", "gaxios": "^7.0.0-rc.4", "google-auth-library": "^10.1.0", "qs": "^6.7.0", "url-template": "^2.0.8" } }, "sha512-66if47It7y+Sab3HMkwEXx1kCq9qUC9px8ZXoj1CMrmLmUw81GpbnsNlXnlyZyGbGPGcj+tDD9XsZ23m7GLaJQ=="],
 
