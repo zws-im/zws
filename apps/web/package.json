@@ -24,7 +24,7 @@
 		"@heroicons/react": "2.2.0",
 		"@highlight-run/next": "7.9.37",
 		"@jonahsnider/util": "12.0.0",
-		"@tailwindcss/postcss": "4.1.11",
+		"@tailwindcss/postcss": "4.1.12",
 		"@tanstack/react-query": "5.85.3",
 		"@trpc/client": "11.4.4",
 		"@trpc/next": "11.4.4",
@@ -46,7 +46,7 @@
 		"react-apexcharts": "1.7.0",
 		"react-dom": "19.1.1",
 		"swagger-ui-react": "5.27.1",
-		"tailwindcss": "4.1.11",
+		"tailwindcss": "4.1.12",
 		"typescript": "5.9.2"
 	},
 	"devDependencies": {
