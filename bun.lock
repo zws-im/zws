@@ -13,7 +13,7 @@
         "prettier-plugin-packagejson": "2.5.19",
         "prettier-plugin-tailwindcss": "0.6.14",
         "turbo": "2.5.6",
-        "vercel": "46.0.0",
+        "vercel": "46.0.1",
       },
     },
     "apps/api": {
@@ -1960,7 +1960,7 @@
 
     "vary": ["vary@1.1.2", "", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
 
-    "vercel": ["vercel@46.0.0", "", { "dependencies": { "@vercel/blob": "1.0.2", "@vercel/build-utils": "11.0.1", "@vercel/express": "0.0.6", "@vercel/fun": "1.1.6", "@vercel/go": "3.2.3", "@vercel/hono": "0.0.14", "@vercel/hydrogen": "1.2.3", "@vercel/next": "4.11.2", "@vercel/node": "5.3.13", "@vercel/python": "5.0.0", "@vercel/redwood": "2.3.4", "@vercel/remix-builder": "5.4.10", "@vercel/ruby": "2.2.1", "@vercel/static-build": "2.7.18", "chokidar": "4.0.0", "jose": "5.9.6" }, "bin": { "vc": "dist/vc.js", "vercel": "dist/vc.js" } }, "sha512-qayrscNvM6U0+4fPwdx0Eg29DPpo7KRQu9gTHlpZdDw0HYYv2RXK69dw6EQ2SoEEbeb4/SGamJ1LfqJz3BXV7w=="],
+    "vercel": ["vercel@46.0.1", "", { "dependencies": { "@vercel/blob": "1.0.2", "@vercel/build-utils": "11.0.1", "@vercel/express": "0.0.6", "@vercel/fun": "1.1.6", "@vercel/go": "3.2.3", "@vercel/hono": "0.0.14", "@vercel/hydrogen": "1.2.3", "@vercel/next": "4.11.2", "@vercel/node": "5.3.13", "@vercel/python": "5.0.0", "@vercel/redwood": "2.3.4", "@vercel/remix-builder": "5.4.10", "@vercel/ruby": "2.2.1", "@vercel/static-build": "2.7.18", "chokidar": "4.0.0", "jose": "5.9.6" }, "bin": { "vc": "dist/vc.js", "vercel": "dist/vc.js" } }, "sha512-zKF1cvUhkTtin0qKcs/qUQvN8jsUhuJ052oznAKQc+fW1Ft/fA7e5EHQW+/qqawTXlhKCakBUdB3K/6YwjO27Q=="],
 
     "watchpack": ["watchpack@2.4.1", "", { "dependencies": { "glob-to-regexp": "^0.4.1", "graceful-fs": "^4.1.2" } }, "sha512-8wrBCMtVhqcXP2Sup1ctSkga6uc2Bx0IIvKyT7yTFier5AXHooSI+QyQQAtTb7+E0IUCCKyTFmXqdqgum2XWGg=="],
 
