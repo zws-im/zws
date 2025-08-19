@@ -25,7 +25,7 @@
 		"@highlight-run/next": "7.9.37",
 		"@jonahsnider/util": "12.0.0",
 		"@tailwindcss/postcss": "4.1.12",
-		"@tanstack/react-query": "5.85.3",
+		"@tanstack/react-query": "5.85.5",
 		"@trpc/client": "11.4.4",
 		"@trpc/next": "11.4.4",
 		"@trpc/react-query": "11.4.4",
