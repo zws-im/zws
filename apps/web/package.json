@@ -31,7 +31,7 @@
 		"@trpc/react-query": "11.5.0",
 		"@types/node": "24.3.0",
 		"@types/react": "19.1.12",
-		"@types/react-dom": "19.1.8",
+		"@types/react-dom": "19.1.9",
 		"@vercel/analytics": "1.5.0",
 		"apexcharts": "5.3.4",
 		"clsx": "2.1.1",
