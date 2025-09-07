@@ -20,7 +20,7 @@
 		"@nestjs/swagger": "11.2.0",
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.8.0",
-		"@trpc/server": "11.5.0",
+		"@trpc/server": "11.5.1",
 		"cors": "2.8.5",
 		"devalue": "5.3.2",
 		"drizzle-orm": "0.44.5",
