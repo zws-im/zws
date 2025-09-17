@@ -20,6 +20,8 @@ jobs:
         run: bun install --frozen-lockfile
       - name: Format with Prettier
         run: bun run format:write
+      - name: Migrate Biome config
+        run: bun run biome migrate --write
       - name: Format with Biome
         run: bun run lint:fix
       - name: Run autofix.ci
