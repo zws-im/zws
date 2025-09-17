@@ -1,7 +1,7 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.1.1/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
 	"files": {
-		"includes": ["**", "!**/.next", "!**/node_modules", "!**/.vercel", "!**/package.json", "!.turbo/**"]
+		"includes": ["**", "!**/.next", "!**/node_modules", "!**/.vercel", "!**/package.json", "!.turbo"]
 	},
 	"formatter": {
 		"formatWithErrors": true,
@@ -33,14 +33,14 @@
 				"noStaticOnlyClass": "off",
 				"useLiteralKeys": "off"
 			},
-			"nursery": {
-				"useUniqueElementIds": "off"
-			},
 			"style": {
 				"noParameterProperties": "off"
 			},
 			"suspicious": {
 				"noEmptyBlockStatements": "off"
+			},
+			"correctness": {
+				"useUniqueElementIds": "off"
 			}
 		}
 	}
