@@ -1,6 +1,5 @@
 'use client';
 
-import convert from 'convert';
 import millify from 'millify';
 import { useEffect, useState } from 'react';
 import { trpc } from '@/app/trpc';
@@ -16,9 +15,6 @@ async function getGitHubStars(): Promise<number> {
 		headers: {
 			accept: 'application/vnd.github+json',
 			'X-GitHub-Api-Version': '2022-11-28',
-		},
-		next: {
-			revalidate: convert(24, 'hour').to('seconds'),
 		},
 	});
 
@@ -49,16 +45,32 @@ function StatsTilesBase({ githubStars, shortenedUrls, visits }: Props) {
 }
 
 export function StatsTiles() {
-	const [stars, setStars] = useState(1.6e3);
+	const [stars, setStars] = useState(1.8e3);
 
 	useEffect(() => {
-		getGitHubStars().then(setStars);
+		let isMounted = true;
+
+		getGitHubStars()
+			.then((latestStars) => {
+				if (!isMounted || !Number.isFinite(latestStars)) {
+					return;
+				}
+
+				setStars(latestStars);
+			})
+			.catch(() => {
+				// Ignore network errors; the component will keep the fallback value.
+			});
+
+		return () => {
+			isMounted = false;
+		};
 	}, []);
 
 	const stats = trpc.stats.getInstanceStats.useQuery(undefined, {
 		initialData: {
-			urls: 2e5,
-			visits: 3e6,
+			urls: 7.6e6,
+			visits: 15.6e6,
 		},
 	});
 
