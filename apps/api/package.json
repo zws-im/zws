@@ -27,7 +27,7 @@
 		"drizzle-orm": "0.44.6",
 		"envalid": "8.1.0",
 		"googleapis": "160.0.0",
-		"ioredis": "5.8.0",
+		"ioredis": "5.8.1",
 		"ky": "1.10.0",
 		"next-api-utils": "3.0.1",
 		"pg": "8.16.3",
