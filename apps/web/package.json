@@ -33,6 +33,7 @@
 		"@types/react": "19.2.2",
 		"@types/react-dom": "19.2.1",
 		"@vercel/analytics": "1.5.0",
+		"@zws.im/api": "workspace:*",
 		"apexcharts": "5.3.5",
 		"clsx": "2.1.1",
 		"dotenv": "17.2.3",
@@ -49,6 +50,7 @@
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
+		"@trpc/server": "11.7.1",
 		"@types/swagger-ui-react": "5.18.0",
 		"@vercel/edge": "1.2.2"
 	},
