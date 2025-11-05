@@ -50,6 +50,7 @@
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
+		"@trpc/server": "11.7.1",
 		"@types/swagger-ui-react": "5.18.0",
 		"@vercel/edge": "1.2.2"
 	},
