@@ -31,7 +31,7 @@
 		"@trpc/react-query": "11.6.0",
 		"@types/node": "24.7.1",
 		"@types/react": "19.2.2",
-		"@types/react-dom": "19.2.1",
+		"@types/react-dom": "19.2.2",
 		"@vercel/analytics": "1.5.0",
 		"@zws.im/api": "workspace:*",
 		"apexcharts": "5.3.5",
