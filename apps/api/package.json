@@ -41,7 +41,7 @@
 		"@nestjs/cli": "11.0.10",
 		"@nestjs/schematics": "11.0.9",
 		"@tsconfig/bun": "1.0.9",
-		"@tsconfig/strictest": "2.0.6",
+		"@tsconfig/strictest": "2.0.7",
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.3",
 		"@types/pg": "8.15.5",
