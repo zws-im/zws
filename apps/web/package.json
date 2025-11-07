@@ -43,7 +43,7 @@
 		"next-api-utils": "3.0.1",
 		"next-plausible": "3.12.4",
 		"react": "19.2.0",
-		"react-apexcharts": "1.7.0",
+		"react-apexcharts": "1.8.0",
 		"react-dom": "19.2.0",
 		"swagger-ui-react": "5.29.3",
 		"tailwindcss": "4.1.14",
