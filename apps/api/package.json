@@ -24,7 +24,7 @@
 		"convert": "5.12.0",
 		"cors": "2.8.5",
 		"devalue": "5.4.2",
-		"drizzle-orm": "0.44.6",
+		"drizzle-orm": "0.44.7",
 		"envalid": "8.1.1",
 		"googleapis": "160.0.0",
 		"ioredis": "5.8.2",
