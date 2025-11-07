@@ -45,7 +45,7 @@
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.5",
 		"@types/pg": "8.15.6",
-		"type-fest": "5.0.1",
+		"type-fest": "5.2.0",
 		"typescript": "5.9.3"
 	}
 }
