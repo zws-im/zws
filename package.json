@@ -17,7 +17,7 @@
 	},
 	"dependencies": {
 		"drizzle-kit": "0.31.5",
-		"envalid": "8.1.0"
+		"envalid": "8.1.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4",
