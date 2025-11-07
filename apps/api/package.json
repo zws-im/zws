@@ -28,7 +28,7 @@
 		"envalid": "8.1.1",
 		"googleapis": "160.0.0",
 		"ioredis": "5.8.2",
-		"ky": "1.11.0",
+		"ky": "1.14.0",
 		"millify": "^6.1.0",
 		"next-api-utils": "3.0.1",
 		"pg": "8.16.3",
