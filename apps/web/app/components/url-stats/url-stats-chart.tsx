@@ -61,7 +61,7 @@ export function UrlStatsChart({ stats }: Props) {
 			}}
 			series={[
 				{
-					name: 'Visits',
+					name: 'بازدیدها',
 					data: chartData,
 					color: '#9B77FF',
 				},

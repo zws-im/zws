@@ -84,7 +84,7 @@ export function ShortenUrlForm() {
 					layout={true}
 				>
 					{mutation.isPending && <ArrowPathIcon className='h-6 w-6 animate-spin opacity-50' />}
-					{!(mutation.isPending || justSucceeded || mutation.isError) && 'Shorten'}
+					{!(mutation.isPending || justSucceeded || mutation.isError) && 'کوتاه کن'}
 					{mutation.isError && mutation.error.message}
 					{justSucceeded && <CheckIcon className='h-6 w-6' />}
 				</motion.button>
@@ -97,7 +97,7 @@ export function ShortenUrlForm() {
 						className='text-zws-purple-100 underline decoration-dotted underline-offset-2 transition-opacity hover:opacity-80 active:opacity-60'
 						onClick={copy}
 					>
-						{mutation.data} (click to copy)
+						{mutation.data} (برای کپی کلیک کنید)
 					</button>
 				) : (
 					// Used to prevent layout shift when hiding the button

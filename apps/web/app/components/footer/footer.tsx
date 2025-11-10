@@ -17,12 +17,12 @@ export function Footer() {
 		<footer className='mt-24 flex flex-col items-center gap-4 py-5 text-center'>
 			<p className='text-zws-purple-50'>
 				<a className='text-zws-purple-400 underline' href='mailto:jonah@jonahsnider.com'>
-					Contact
+					تماس
 				</a>
 			</p>
 
 			<a href='https://vercel.com/?utm_source=jonah-snider&utm_campaign=oss' onClick={trackVercelClick}>
-				<Image src={poweredByVercel} alt='Powered by Vercel' height={32} />
+				<Image src={poweredByVercel} alt='قدرت‌گرفته از Vercel' height={32} />
 			</a>
 		</footer>
 	);

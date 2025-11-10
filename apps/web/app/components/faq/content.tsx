@@ -3,32 +3,32 @@ import type { FaqOption } from './types';
 export const faq: FaqOption[] = [
 	{
 		id: '0',
-		title: 'How does this tool work?',
+		title: 'این ابزار چگونه کار می‌کند؟',
 		content: (
 			<p>
-				ZWS uses zero width characters instead of the typical alphanumeric ones that URL shorteners use. When rendered,
-				these characters appear invisible, but they're still there, which means that ZWS is able to use them to encode
-				information about your URL.
+				ZWS به جای کاراکترهای معمولی که کوتاه‌کننده‌های لینک استفاده می‌کنند، از کاراکترهای صفرعرض استفاده می‌کند. هنگام
+				نمایش، این کاراکترها نامرئی هستند اما همچنان وجود دارند؛ بنابراین ZWS می‌تواند از آن‌ها برای کدگذاری اطلاعات لینک شما
+				استفاده کند.
 			</p>
 		),
 	},
 	{
 		id: '1',
-		title: 'Why can I see some characters at the end of the link?',
+		title: 'چرا انتهای لینک چند کاراکتر می‌بینم؟',
 		content: (
 			<>
 				<p>
-					We try to only use characters which don't render as anything, but some devices might render them as boxes. If
-					you see this, please{' '}
+					ما تلاش می‌کنیم فقط از کاراکترهایی استفاده کنیم که نمایش داده نمی‌شوند، اما برخی دستگاه‌ها ممکن است آن‌ها را به صورت
+					جعبه نشان دهند. اگر چنین چیزی می‌بینید، لطفاً{' '}
 					<a
 						className='text-zws-purple-400 underline'
 						href='https://github.com/zws-im/zws/issues/new'
 						target='_blank'
 						rel='noreferrer'
 					>
-						open a bug report
+						یک گزارش باگ باز کنید
 					</a>{' '}
-					so we can address it!
+					تا بتوانیم بررسی و برطرفش کنیم!
 				</p>
 			</>
 		),
@@ -37,16 +37,17 @@ export const faq: FaqOption[] = [
 		id: '2',
 		title: (
 			<>
-				Why doesn't ZWS work on <span className='text-zws-purple-400'>[chat service]</span>?
+				چرا ZWS در <span className='text-zws-purple-400'>[سرویس چت]</span> کار نمی‌کند؟
 			</>
 		),
 		content: (
 			<p>
-				Because zero width characters aren't commonly used, some chat services or social media platforms will strip them
-				out. Which, unfortunately, prevents you from being able to share zws.im URLs on those platforms.
+				از آنجا که کاراکترهای صفرعرض رایج نیستند، برخی سرویس‌های چت یا شبکه‌های اجتماعی آن‌ها را حذف می‌کنند که متأسفانه
+				باعث می‌شود نتوانید لینک‌های zws.im را در آن پلتفرم‌ها به اشتراک بگذارید.
 			</p>
 		),
 	},
 ];
 export const faqObject = Object.fromEntries(faq.map((option) => [option.id, option]));
 export const firstFaqOption = faq[0];
+

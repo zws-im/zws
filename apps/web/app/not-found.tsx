@@ -4,7 +4,7 @@ import { Button } from './components/button';
 import { H1 } from './components/headings/h1';
 import { siteName } from './shared-metadata';
 
-const title = 'Not Found';
+const title = 'پیدا نشد';
 export const metadata: Metadata = {
 	title,
 	openGraph: {
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 export default function NotFound() {
 	return (
 		<main className='flex flex-col items-center justify-center gap-4 sm:pt-16 md:pt-36'>
-			<H1>404 - Page not found</H1>
+			<H1>۴۰۴ - صفحه پیدا نشد</H1>
 			<Button href='/'>
-				Home <ArrowRightIcon className='ml-2 h-6 w-6' />
+				خانه <ArrowRightIcon className='ms-2 h-6 w-6' />
 			</Button>
 		</main>
 	);

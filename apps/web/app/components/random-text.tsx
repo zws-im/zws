@@ -27,7 +27,7 @@ export function RandomText({ length, initial }: Props) {
 	};
 
 	return (
-		<button className='pl-1 font-mono underline decoration-dotted' type='button' onClick={onClick}>
+		<button className='ps-1 font-mono underline decoration-dotted' type='button' onClick={onClick}>
 			{text}
 		</button>
 	);

@@ -2,7 +2,7 @@ import { HighlightInit } from '@highlight-run/next/client';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
-import { Lato } from 'next/font/google';
+import { Vazirmatn } from 'next/font/google';
 import PlausibleProvider from 'next-plausible';
 import { DotGrid } from './components/background-decorations/dot-grid';
 import { LightSpot } from './components/background-decorations/light-spot';
@@ -33,7 +33,7 @@ export const viewport: Viewport = {
 	colorScheme: 'dark',
 };
 
-const inter = Lato({ weight: ['400', '700'], subsets: ['latin'] });
+const vazirmatn = Vazirmatn({ weight: ['400', '700'], subsets: ['arabic'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -48,11 +48,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				}}
 			/>
 
-			<html lang='en'>
+			<html lang='fa' dir='rtl'>
 				<head>
 					<PlausibleProvider enabled={true} selfHosted={true} domain='zws.im' />
 				</head>
-				<body className={clsx(inter.className)}>
+				<body className={clsx(vazirmatn.className)}>
 					<TrpcProvider>
 						<Wave />
 
