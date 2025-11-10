@@ -1,7 +1,7 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
 	"background_color": "#140a2e",
-	"description": "ZWS is a URL shortener which uses zero width characters to shorten URLs.",
+	"description": "ZWS یک کوتاه‌کنندهٔ لینک است که از کاراکترهای صفرعرض برای کوتاه کردن لینک‌ها استفاده می‌کند.",
 	"display": "standalone",
 	"icons": [
 		{
@@ -23,7 +23,7 @@
 			"type": "image/svg"
 		}
 	],
-	"name": "Zero Width Shortener",
+	"name": "کوتاه‌کنندهٔ لینک با کاراکترهای صفرعرض",
 	"short_name": "ZWS",
 	"start_url": "/",
 	"theme_color": "#ffffff"

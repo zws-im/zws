@@ -16,8 +16,8 @@ export default function ErrorPage({ error, reset }: { error: Error; reset: () =>
 
 	return (
 		<main className='flex flex-col items-center justify-center gap-4 sm:pt-16 md:pt-36'>
-			<H1>An unexpected error occurred</H1>
-			<Button onClick={reset}>Try again</Button>
+			<H1>خطای غیرمنتظره‌ای رخ داد</H1>
+			<Button onClick={reset}>تلاش دوباره</Button>
 		</main>
 	);
 }

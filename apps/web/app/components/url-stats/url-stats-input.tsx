@@ -55,7 +55,7 @@ export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 				{valid && isLoading && <ArrowPathIcon className='text-zws-purple-500 h-6 w-6 animate-spin' />}
 				{valid && error && (
 					<p className='align-middle'>
-						<ExclamationCircleIcon className='mr-2 inline h-6 w-6' />
+						<ExclamationCircleIcon className='me-2 inline h-6 w-6' />
 						{error}
 					</p>
 				)}

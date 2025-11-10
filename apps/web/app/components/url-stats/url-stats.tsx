@@ -33,11 +33,11 @@ export function UrlStats() {
 
 	return (
 		<div className='w-full space-y-8'>
-			<UrlStatsInput
-				error={short && stats.data === null ? 'URL not found' : stats.error?.message}
-				isLoading={stats.isPending}
-				setShortUrl={setUrl}
-			/>
+				<UrlStatsInput
+					error={short && stats.data === null ? 'نشانی پیدا نشد' : stats.error?.message}
+					isLoading={stats.isPending}
+					setShortUrl={setUrl}
+				/>
 
 			<div className='h-48 min-h-max max-lg:h-72 max-md:w-full md:w-[36rem] lg:h-96'>
 				<Suspense

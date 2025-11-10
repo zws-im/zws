@@ -36,10 +36,10 @@ type Props = {
 function StatsTilesBase({ githubStars, shortenedUrls, visits }: Props) {
 	return (
 		<>
-			<StatsTile wide={true} name='URLs shortened' value={millify(shortenedUrls)} />
+			<StatsTile wide={true} name='لینک‌های کوتاه‌شده' value={millify(shortenedUrls)} />
 
-			<StatsTile name='Visits' value={millify(visits).toLocaleString()} />
-			<StatsTile name='GitHub stars' value={millify(githubStars)} href='https://github.com/zws-im/zws' />
+			<StatsTile name='بازدیدها' value={millify(visits).toLocaleString()} />
+			<StatsTile name='ستاره‌های GitHub' value={millify(githubStars)} href='https://github.com/zws-im/zws' />
 		</>
 	);
 }

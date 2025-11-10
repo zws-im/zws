@@ -12,13 +12,13 @@ export function FaqButton({ onClick, selected, children }: Props) {
 	return (
 		<div
 			className={clsx('h-full transition', {
-				'border-zws-purple-400 border-l-4': selected,
-				'border-zws-purple-700 border-l-2 pl-0.5': !selected,
+				'border-zws-purple-400 border-s-4': selected,
+				'border-zws-purple-700 border-s-2 ps-0.5': !selected,
 			})}
 		>
 			<button
 				type='button'
-				className={clsx('py-3 pl-6 text-left', {
+				className={clsx('py-3 ps-6 text-start', {
 					'font-bold': selected,
 				})}
 				onClick={onClick}

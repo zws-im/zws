@@ -20,10 +20,11 @@ export default function HomePage() {
 			<section id='shorten' className='flex flex-col items-center justify-center sm:pt-16 md:pt-36'>
 				<div className='max-w-xl'>
 					<div className='text-center'>
-						<H1>Zero Width Shortener</H1>
+						<H1>کوتاه‌کنندهٔ لینک با کاراکترهای صفرعرض</H1>
 
 						<p className='text-zws-purple-100 text-lg'>
-							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
+							لینک‌ها را با کاراکترهای صفرعرض کوتاه کنید؛ به‌جای کاراکترهای معمولی مانند
+							<RandomText length={6} initial='XyGa7z' />.
 						</p>
 
 						<div className='pt-16'>
@@ -34,17 +35,18 @@ export default function HomePage() {
 			</section>
 
 			<section id='faq' className='flex flex-col lg:items-center'>
-				<H2>Frequently Asked Questions</H2>
+				<H2>سوالات متداول</H2>
 				<DividerLine />
 				<Faq />
 			</section>
 
 			<section id='about-us'>
 				<LightSpot className='-translate-y-[145px] transform max-lg:h-0 max-lg:w-0 max-lg:-translate-x-[200px] xl:translate-x-[200px] 2xl:translate-x-[370px]' />
-				<H2>About us</H2>
+				<H2>درباره ما</H2>
 
 				<AboutUs />
 			</section>
 		</main>
 	);
 }
+

@@ -8,15 +8,15 @@ type NavbarItem = {
 
 const items: NavbarItem[] = [
 	{
-		content: 'Stats',
+		content: 'آمار',
 		href: '/stats',
 	},
 	{
-		content: 'Questions',
+		content: 'سوالات',
 		href: '/#faq',
 	},
 	{
-		content: 'API Docs',
+		content: 'مستندات API',
 		href: '/api-docs',
 	},
 	{
@@ -34,7 +34,7 @@ export function Navbar() {
 					<div className='w-16 max-md:w-12'>
 						<Logo />
 					</div>
-					<p className='text-lg font-bold max-md:hidden'>Zero Width Shortener</p>
+					<p className='text-lg font-bold max-md:hidden'>کوتاه‌کنندهٔ لینک با کاراکترهای صفرعرض</p>
 				</Link>
 
 				<ul className='flex justify-end space-x-6 lg:space-x-12'>

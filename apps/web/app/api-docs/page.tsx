@@ -6,8 +6,8 @@ import { SwaggerUi } from '../components/swagger-ui';
 const openapiSchemaPath = new URL('/openapi.json', process.env.NEXT_PUBLIC_API_URL);
 
 export const metadata: Metadata = {
-	title: 'API Docs',
-	description: 'API documentation for the zws.im API.',
+	title: 'مستندات API',
+	description: 'مستندات API برای zws.im.',
 	alternates: {
 		canonical: '/api-docs',
 	},
@@ -17,11 +17,11 @@ export default function ApiSchemaPage() {
 	return (
 		<main className='flex flex-col items-center justify-center gap-y-4'>
 			<div className='text-center'>
-				<H1>API Docs</H1>
+				<H1>مستندات API</H1>
 			</div>
 
 			<p>
-				You can access the OpenAPI schema directly at{' '}
+				می‌توانید به شمای OpenAPI از این آدرس دسترسی داشته باشید:{' '}
 				<code className='underline'>
 					<Link href={openapiSchemaPath.toString()}>{openapiSchemaPath.toString()}</Link>
 				</code>
