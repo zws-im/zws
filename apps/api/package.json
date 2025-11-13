@@ -23,7 +23,7 @@
 		"@trpc/server": "11.7.1",
 		"convert": "5.13.1",
 		"cors": "2.8.5",
-		"devalue": "5.4.2",
+		"devalue": "5.5.0",
 		"drizzle-orm": "0.44.7",
 		"envalid": "8.1.1",
 		"googleapis": "160.0.0",
