@@ -32,7 +32,7 @@
 		"@types/node": "24.7.1",
 		"@types/react": "19.2.7",
 		"@types/react-dom": "19.2.3",
-		"@vercel/analytics": "1.6.0",
+		"@vercel/analytics": "1.6.1",
 		"@zws.im/api": "workspace:*",
 		"apexcharts": "5.3.6",
 		"clsx": "2.1.1",
