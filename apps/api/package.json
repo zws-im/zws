@@ -44,7 +44,7 @@
 		"@tsconfig/strictest": "2.0.8",
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.6",
-		"@types/pg": "8.15.6",
+		"@types/pg": "8.16.0",
 		"type-fest": "5.3.1",
 		"typescript": "5.9.3"
 	}
