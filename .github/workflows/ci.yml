@@ -29,7 +29,7 @@ jobs:
       - name: Pull environment variables
         run: bun vercel env pull --environment development .env --token ${{ secrets.VERCEL_TOKEN }}
       - name: Cache Next.js
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
