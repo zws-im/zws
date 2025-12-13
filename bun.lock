@@ -30,7 +30,7 @@
         "@nestjs/swagger": "11.2.3",
         "@ntegral/nestjs-sentry": "4.0.1",
         "@sentry/bun": "10.30.0",
-        "@trpc/server": "11.7.2",
+        "@trpc/server": "11.8.0",
         "convert": "5.13.1",
         "cors": "2.8.5",
         "devalue": "5.6.1",
@@ -68,9 +68,9 @@
         "@jonahsnider/util": "12.0.0",
         "@tailwindcss/postcss": "4.1.18",
         "@tanstack/react-query": "5.90.12",
-        "@trpc/client": "11.7.2",
-        "@trpc/next": "11.7.2",
-        "@trpc/react-query": "11.7.2",
+        "@trpc/client": "11.8.0",
+        "@trpc/next": "11.8.0",
+        "@trpc/react-query": "11.8.0",
         "@types/node": "24.7.1",
         "@types/react": "19.2.7",
         "@types/react-dom": "19.2.3",
@@ -92,7 +92,7 @@
         "typescript": "5.9.3",
       },
       "devDependencies": {
-        "@trpc/server": "11.7.2",
+        "@trpc/server": "11.8.0",
         "@types/swagger-ui-react": "5.18.0",
         "@vercel/edge": "1.2.2",
       },
@@ -730,13 +730,13 @@
 
     "@tree-sitter-grammars/tree-sitter-yaml": ["@tree-sitter-grammars/tree-sitter-yaml@0.7.1", "", { "dependencies": { "node-addon-api": "^8.3.1", "node-gyp-build": "^4.8.4" }, "peerDependencies": { "tree-sitter": "^0.22.4" }, "optionalPeers": ["tree-sitter"] }, "sha512-AynBwkIoQCTgjDR33bDUp9Mqq+YTco0is3n5hRApMqG9of/6A4eQsfC1/uSEeHSUyMQSYawcAWamsexnVpIP4Q=="],
 
-    "@trpc/client": ["@trpc/client@11.7.2", "", { "peerDependencies": { "@trpc/server": "11.7.2", "typescript": ">=5.7.2" } }, "sha512-OQxqUMfpDvjcszo9dbnqWQXnW2L5IbrKSz2H7l8s+mVM3EvYw7ztQ/gjFIN3iy0NcamiQfd4eE6qjcb9Lm+63A=="],
+    "@trpc/client": ["@trpc/client@11.8.0", "", { "peerDependencies": { "@trpc/server": "11.8.0", "typescript": ">=5.7.2" } }, "sha512-imJQeESX1hAapDaC4JB91yvXg41AZfBuTh/scnEiN/hAubZa5s/ikp0n+w29q2GCf+hREkr3WptUFKFJoDAIug=="],
 
-    "@trpc/next": ["@trpc/next@11.7.2", "", { "peerDependencies": { "@tanstack/react-query": "^5.59.15", "@trpc/client": "11.7.2", "@trpc/react-query": "11.7.2", "@trpc/server": "11.7.2", "next": "*", "react": ">=16.8.0", "react-dom": ">=16.8.0", "typescript": ">=5.7.2" }, "optionalPeers": ["@tanstack/react-query", "@trpc/react-query"] }, "sha512-eZQeZag+/aJMxV6ucfyVdcgE7I6o88tldyBi+AFVCD8fPUjssRT7qOqR/THSaTLHjDl20Ok9gN0Sn1bmMEa+1w=="],
+    "@trpc/next": ["@trpc/next@11.8.0", "", { "peerDependencies": { "@tanstack/react-query": "^5.59.15", "@trpc/client": "11.8.0", "@trpc/react-query": "11.8.0", "@trpc/server": "11.8.0", "next": "*", "react": ">=16.8.0", "react-dom": ">=16.8.0", "typescript": ">=5.7.2" }, "optionalPeers": ["@tanstack/react-query", "@trpc/react-query"] }, "sha512-aMS1itkddKCeZEmd4fV9jm9+HMob4R684FfNqXdnGkw0acfdeUpk4hihs8gml+fMqgPRv6LcgsZlOb4YpOOjbg=="],
 
-    "@trpc/react-query": ["@trpc/react-query@11.7.2", "", { "peerDependencies": { "@tanstack/react-query": "^5.80.3", "@trpc/client": "11.7.2", "@trpc/server": "11.7.2", "react": ">=18.2.0", "react-dom": ">=18.2.0", "typescript": ">=5.7.2" } }, "sha512-IcLDMqx2mvlGRxkr0/m37TtPvRQ8nonITH3EwYv436x0Igx8eduR9z4tdgGBsjJY9e5W1G7cZ4zKCwrizSimFQ=="],
+    "@trpc/react-query": ["@trpc/react-query@11.8.0", "", { "peerDependencies": { "@tanstack/react-query": "^5.80.3", "@trpc/client": "11.8.0", "@trpc/server": "11.8.0", "react": ">=18.2.0", "react-dom": ">=18.2.0", "typescript": ">=5.7.2" } }, "sha512-zJG22PqhGUBq6ke58McGxRBGWGDTHlmsgpxp/rQx8iT2yi0Ja1H2/UcSsjZ/MG65DhCfpKvMVH0OVivTn9FWwA=="],
 
-    "@trpc/server": ["@trpc/server@11.7.2", "", { "peerDependencies": { "typescript": ">=5.7.2" } }, "sha512-AgB26PXY69sckherIhCacKLY49rxE2XP5h38vr/KMZTbLCL1p8IuIoKPjALTcugC2kbyQ7Lbqo2JDVfRSmPmfQ=="],
+    "@trpc/server": ["@trpc/server@11.8.0", "", { "peerDependencies": { "typescript": ">=5.7.2" } }, "sha512-DphyQnLuyX2nwJCQGWQ9zYz4hZGvRhSBqDhQ0SH3tDhQ3PU4u68xofA0pJ741Ir4InEAFD+TtJVLAQy+wVOkiQ=="],
 
     "@ts-morph/common": ["@ts-morph/common@0.11.1", "", { "dependencies": { "fast-glob": "^3.2.7", "minimatch": "^3.0.4", "mkdirp": "^1.0.4", "path-browserify": "^1.0.1" } }, "sha512-7hWZS0NRpEsNV8vWJzg7FEz6V8MaLNeJOmwmghqUXTpzk16V1LLZhdo+4QvE/+zv4cVci0OviuJFnqhEfoV3+g=="],
 

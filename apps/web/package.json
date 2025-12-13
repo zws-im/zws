@@ -26,9 +26,9 @@
 		"@jonahsnider/util": "12.0.0",
 		"@tailwindcss/postcss": "4.1.18",
 		"@tanstack/react-query": "5.90.12",
-		"@trpc/client": "11.7.2",
-		"@trpc/next": "11.7.2",
-		"@trpc/react-query": "11.7.2",
+		"@trpc/client": "11.8.0",
+		"@trpc/next": "11.8.0",
+		"@trpc/react-query": "11.8.0",
 		"@types/node": "24.7.1",
 		"@types/react": "19.2.7",
 		"@types/react-dom": "19.2.3",
@@ -50,7 +50,7 @@
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
-		"@trpc/server": "11.7.2",
+		"@trpc/server": "11.8.0",
 		"@types/swagger-ui-react": "5.18.0",
 		"@vercel/edge": "1.2.2"
 	},
