@@ -29,7 +29,7 @@
 		"@trpc/client": "11.8.0",
 		"@trpc/next": "11.8.0",
 		"@trpc/react-query": "11.8.0",
-		"@types/node": "24.7.1",
+		"@types/node": "24.10.4",
 		"@types/react": "19.2.7",
 		"@types/react-dom": "19.2.3",
 		"@vercel/analytics": "1.6.1",
@@ -55,6 +55,6 @@
 		"@vercel/edge": "1.2.2"
 	},
 	"engines": {
-		"node": "22.x"
+		"node": "24.x"
 	}
 }
