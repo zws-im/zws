@@ -21,7 +21,7 @@
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.30.0",
 		"@trpc/server": "11.8.0",
-		"convert": "5.13.1",
+		"convert": "5.14.1",
 		"cors": "2.8.5",
 		"devalue": "5.6.1",
 		"drizzle-orm": "0.45.1",
