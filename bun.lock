@@ -14,7 +14,7 @@
         "prettier-plugin-packagejson": "2.5.20",
         "prettier-plugin-tailwindcss": "0.7.2",
         "turbo": "2.6.3",
-        "vercel": "50.1.1",
+        "vercel": "50.1.2",
       },
     },
     "apps/api": {
@@ -2112,7 +2112,7 @@
 
     "vary": ["vary@1.1.2", "", {}, "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg=="],
 
-    "vercel": ["vercel@50.1.1", "", { "dependencies": { "@vercel/backends": "0.0.17", "@vercel/blob": "1.0.2", "@vercel/build-utils": "13.2.3", "@vercel/detect-agent": "1.0.0", "@vercel/elysia": "0.1.14", "@vercel/express": "0.1.20", "@vercel/fastify": "0.1.17", "@vercel/fun": "1.2.0", "@vercel/go": "3.2.4", "@vercel/h3": "0.1.23", "@vercel/hono": "0.2.17", "@vercel/hydrogen": "1.3.3", "@vercel/nestjs": "0.2.18", "@vercel/next": "4.15.9", "@vercel/node": "5.5.15", "@vercel/python": "6.1.4", "@vercel/redwood": "2.4.6", "@vercel/remix-builder": "5.5.6", "@vercel/ruby": "2.2.3", "@vercel/rust": "1.0.4", "@vercel/static-build": "2.8.14", "chokidar": "4.0.0", "esbuild": "0.27.0", "form-data": "^4.0.0", "jose": "5.9.6" }, "bin": { "vc": "dist/vc.js", "vercel": "dist/vc.js" } }, "sha512-OxjK8j3EOtSHDX/KOHlQ2p0GKUgRe2BSZBZuvfqU+MFgbyyPZFrDnquQpA38XNPtK5SFUu2tH4VDmr6GgvF+rw=="],
+    "vercel": ["vercel@50.1.2", "", { "dependencies": { "@vercel/backends": "0.0.17", "@vercel/blob": "1.0.2", "@vercel/build-utils": "13.2.3", "@vercel/detect-agent": "1.0.0", "@vercel/elysia": "0.1.14", "@vercel/express": "0.1.20", "@vercel/fastify": "0.1.17", "@vercel/fun": "1.2.0", "@vercel/go": "3.2.4", "@vercel/h3": "0.1.23", "@vercel/hono": "0.2.17", "@vercel/hydrogen": "1.3.3", "@vercel/nestjs": "0.2.18", "@vercel/next": "4.15.9", "@vercel/node": "5.5.15", "@vercel/python": "6.1.4", "@vercel/redwood": "2.4.6", "@vercel/remix-builder": "5.5.6", "@vercel/ruby": "2.2.3", "@vercel/rust": "1.0.4", "@vercel/static-build": "2.8.14", "chokidar": "4.0.0", "esbuild": "0.27.0", "form-data": "^4.0.0", "jose": "5.9.6" }, "bin": { "vc": "dist/vc.js", "vercel": "dist/vc.js" } }, "sha512-4xxcLsa7bbg+1NWZAwVsJSRwcedO5mH6pP84V6R53fnrMKODPKBgkprUP35Y2v8iFRWKPJ0HiYuWqj9dFEr8Pg=="],
 
     "watchpack": ["watchpack@2.4.4", "", { "dependencies": { "glob-to-regexp": "^0.4.1", "graceful-fs": "^4.1.2" } }, "sha512-c5EGNOiyxxV5qmTtAB7rbiXxi1ooX1pQKMLX/MIabJjRA0SJBQOjKF+KSVfHkr9U1cADPon0mRiVe/riyaiDUA=="],
 
