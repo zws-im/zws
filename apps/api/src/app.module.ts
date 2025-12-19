@@ -1,7 +1,7 @@
-import { ZodValidationPipe } from '@anatine/zod-nestjs';
 import { Module } from '@nestjs/common';
 import { APP_PIPE } from '@nestjs/core';
 import { SentryModule } from '@ntegral/nestjs-sentry';
+import { ZodValidationPipe } from 'nestjs-zod';
 import { BlockedHostnamesModule } from './blocked-hostnames/blocked-hostnames.module';
 import { BlockedUrlsModule } from './blocked-urls/blocked-urls.module';
 import { ConfigModule } from './config/config.module';
@@ -44,7 +44,7 @@ import { UrlsModule } from './urls/urls.module';
 	providers: [
 		{
 			provide: APP_PIPE,
-			useValue: new ZodValidationPipe({ errorHttpStatusCode: 422 }),
+			useValue: new ZodValidationPipe(),
 		},
 	],
 })

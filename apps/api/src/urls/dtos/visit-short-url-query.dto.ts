@@ -1,4 +1,4 @@
-import { createZodDto } from '@anatine/zod-nestjs';
+import { createZodDto } from 'nestjs-zod';
 import { QueryBooleanSchema } from 'next-api-utils';
 import { z } from 'zod';
 
