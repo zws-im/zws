@@ -1,9 +1,8 @@
 import { createZodDto } from 'nestjs-zod';
-import { QueryBooleanSchema } from 'next-api-utils';
 import { z } from 'zod';
 
 export const VisitShortUrlQuery = z.object({
-	visit: QueryBooleanSchema.optional().default(true),
+	visit: z.stringbool().optional().default(true),
 });
 export type VisitShortUrlQuery = z.infer<typeof VisitShortUrlQuery>;
 

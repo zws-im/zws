@@ -1,5 +1,6 @@
 import { type INestApplication, Injectable } from '@nestjs/common';
 import { DocumentBuilder, type OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
+import { cleanupOpenApiDoc } from 'nestjs-zod';
 import { OpenapiTag } from './openapi-tag.enum';
 
 @Injectable()
@@ -23,7 +24,8 @@ export class OpenapiService {
 	}
 
 	createSpec(app: INestApplication): OpenAPIObject {
-		const spec = SwaggerModule.createDocument(app, this.createDocument().build());
+		const document = SwaggerModule.createDocument(app, this.createDocument().build());
+		const spec = cleanupOpenApiDoc(document);
 
 		this.spec = spec;
 
