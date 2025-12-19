@@ -7,15 +7,9 @@ export const ShieldsResponseSchema = z
 
 		cacheSeconds: z.number().min(300).optional(),
 
-		label: z
-			.string()
-			.describe('Label for the badge')
-			.meta({ examples: ['urls'] }),
+		label: z.string().meta({ examples: ['urls'] }),
 
-		message: z
-			.string()
-			.describe('Message to display')
-			.meta({ examples: ['3.4M'] }),
+		message: z.string().meta({ examples: ['3.4M'] }),
 
 		color: z.string().optional(),
 		labelColor: z.string().optional(),
