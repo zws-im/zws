@@ -42,10 +42,6 @@ import { UrlsModule } from './urls/urls.module';
 	providers: [
 		{
 			provide: APP_PIPE,
-			useValue: new ZodValidationPipe(),
-		},
-		{
-			provide: APP_PIPE,
 			useClass: ZodValidationPipe,
 		},
 		{
