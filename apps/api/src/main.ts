@@ -13,6 +13,7 @@ const app = await NestFactory.create(AppModule, {
 
 const openApiConfig = new DocumentBuilder()
 	.setTitle('Zero Width Shortener')
+	.setOpenAPIVersion('3.1.1')
 	.setDescription('A URL shortener that uses zero width characters to shorten URLs.')
 	.setVersion('2.0.0')
 	.addServer('https://zws.im/api')
