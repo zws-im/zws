@@ -1,17 +1,13 @@
-import { createZodDto } from '@anatine/zod-nestjs';
-import { extendApi } from '@anatine/zod-openapi';
+import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 import { LongUrl } from '../../urls/dtos/long-url.dto';
 
-export const UrlStatsSchema = extendApi(
-	z.object({
+export const UrlStatsSchema = z
+	.object({
 		url: LongUrl.shape.url,
 		visits: z.array(z.string().datetime()),
-	}),
-	{
-		title: 'UrlStats',
-	},
-);
+	})
+	.meta({ title: 'UrlStats' });
 
 export type UrlStatsSchema = z.infer<typeof UrlStatsSchema>;
 

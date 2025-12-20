@@ -1,8 +1,5 @@
-import { createZodDto } from '@anatine/zod-nestjs';
-import { extendZodWithOpenApi } from '@anatine/zod-openapi';
+import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
-
-extendZodWithOpenApi(z);
 
 export const ShieldsResponseSchema = z
 	.object({
@@ -10,9 +7,9 @@ export const ShieldsResponseSchema = z
 
 		cacheSeconds: z.number().min(300).optional(),
 
-		label: z.string().openapi({ examples: ['urls'] }),
+		label: z.string().meta({ examples: ['urls'] }),
 
-		message: z.string().openapi({ examples: ['3.4M'] }),
+		message: z.string().meta({ examples: ['3.4M'] }),
 
 		color: z.string().optional(),
 		labelColor: z.string().optional(),
@@ -24,9 +21,7 @@ export const ShieldsResponseSchema = z
 		logoPosition: z.string().optional(),
 		style: z.string().optional(),
 	})
-	.openapi({
-		title: 'ShieldsResponse',
-	});
+	.meta({ title: 'ShieldsResponse' });
 
 export type ShieldsResponseSchema = z.infer<typeof ShieldsResponseSchema>;
 
