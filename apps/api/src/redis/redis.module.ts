@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import Ioredis from 'ioredis';
+import { createClient } from 'redis';
 import { ConfigService } from '../config/config.service';
 import { REDIS_PROVIDER } from './providers';
 
@@ -9,7 +9,12 @@ import { REDIS_PROVIDER } from './providers';
 		{
 			provide: REDIS_PROVIDER,
 			inject: [ConfigService],
-			useFactory: (configService: ConfigService) => new Ioredis(configService.redisUrl),
+			useFactory: async (configService: ConfigService) => {
+				const client = createClient({
+					url: configService.redisUrl,
+				});
+				return client.connect();
+			},
 		},
 	],
 	exports: [REDIS_PROVIDER],
