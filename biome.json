@@ -7,6 +7,9 @@
 		"formatWithErrors": true,
 		"lineWidth": 120
 	},
+	"assist": {
+		"enabled": true
+	},
 	"javascript": {
 		"formatter": {
 			"jsxQuoteStyle": "single",
