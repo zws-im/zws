@@ -11,6 +11,10 @@ const app = await NestFactory.create(AppModule, {
 	cors: true,
 });
 
+const trpcService = app.get(TrpcService);
+
+trpcService.register(app);
+
 const openApiConfig = new DocumentBuilder()
 	.setTitle('Zero Width Shortener')
 	.setOpenAPIVersion('3.1.1')
@@ -34,10 +38,6 @@ SwaggerModule.setup('api', app, cleanupOpenApiDoc(openApiDoc), {
 	yamlDocumentUrl: '/openapi.yaml',
 	ui: false,
 });
-
-const trpcService = app.get(TrpcService);
-
-trpcService.register(app);
 
 const configService = app.get(ConfigService);
 
