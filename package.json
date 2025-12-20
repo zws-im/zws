@@ -6,6 +6,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
+		"dev": "bun --workspaces dev",
 		"format": "prettier --check .",
 		"format:write": "bun run format --write",
 		"lint": "biome check .",
