@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import convert from 'convert';
 import { inArray } from 'drizzle-orm';
-import type Ioredis from 'ioredis';
+import type { RedisClientType } from 'redis';
 import { Schema } from '../db/index';
 import type { Db } from '../db/interfaces/db.interface';
 import { DB_PROVIDER } from '../db/providers';
@@ -20,7 +20,7 @@ export class BlockedHostnamesService {
 	private static readonly DOMAIN_NAME_REG_EXP = /(?:.+\.)?(.+\..+)$/i;
 
 	constructor(
-		@Inject(REDIS_PROVIDER) private readonly redis: Ioredis,
+		@Inject(REDIS_PROVIDER) private readonly redis: RedisClientType,
 		@Inject(DB_PROVIDER) private readonly db: Db,
 	) {}
 
@@ -67,7 +67,7 @@ export class BlockedHostnamesService {
 			return;
 		}
 
-		await this.redis.sadd(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, hostnames);
+		await this.redis.sAdd(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, hostnames);
 		await this.redis.expire(
 			BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY,
 			BlockedHostnamesService.BLOCKED_HOSTNAMES_CACHE_DURATION,
@@ -87,12 +87,12 @@ export class BlockedHostnamesService {
 
 	/** @returns Whether the hostnames were blocked in Redis, or `undefined` if they were missing. */
 	private async redisContainsHostnames(hostnames: HostnameDomainNamePair): Promise<boolean | undefined> {
-		const result = await this.redis.smismember(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, [
+		const result = await this.redis.smIsMember(BlockedHostnamesService.BLOCKED_HOSTNAMES_REDIS_KEY, [
 			hostnames.hostname,
 			hostnames.domainName,
 		]);
 
-		const blockedInCache = result.some((count) => count > 0);
+		const blockedInCache = result.some((isMember) => isMember);
 
 		if (blockedInCache) {
 			return true;

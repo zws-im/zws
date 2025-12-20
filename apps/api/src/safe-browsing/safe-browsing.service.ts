@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { captureException } from '@sentry/bun';
 import convert from 'convert';
 import { google, type safebrowsing_v4 } from 'googleapis';
-import type Ioredis from 'ioredis';
+import type { RedisClientType } from 'redis';
 import { ConfigService } from '../config/config.service';
 import { REDIS_PROVIDER } from '../redis/providers';
 
@@ -23,7 +23,7 @@ export class SafeBrowsingService {
 
 	constructor(
 		@Inject(ConfigService) configService: ConfigService,
-		@Inject(REDIS_PROVIDER) private readonly redis: Ioredis,
+		@Inject(REDIS_PROVIDER) private readonly redis: RedisClientType,
 	) {
 		this.safebrowsing = google.safebrowsing({
 			version: 'v4',
@@ -80,7 +80,7 @@ export class SafeBrowsingService {
 		});
 
 		if (!response.data.matches || response.data.matches.length === 0) {
-			await this.redis.set(SafeBrowsingService.REDIS_PREFIX + normalizedUrl, '0', 'EX', convert(5, 'min').to('s'));
+			await this.redis.set(SafeBrowsingService.REDIS_PREFIX + normalizedUrl, '0', { EX: convert(5, 'min').to('s') });
 			return false;
 		}
 
@@ -90,7 +90,7 @@ export class SafeBrowsingService {
 				: convert(5, 'min').to('s');
 			const threatUrl = match.threat?.url ? SafeBrowsingService.normalizeUrl(new URL(match.threat.url)) : normalizedUrl;
 
-			await this.redis.set(SafeBrowsingService.REDIS_PREFIX + threatUrl, '1', 'EX', cacheDurationSeconds);
+			await this.redis.set(SafeBrowsingService.REDIS_PREFIX + threatUrl, '1', { EX: cacheDurationSeconds });
 		}
 
 		return true;
