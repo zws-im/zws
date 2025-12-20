@@ -7,7 +7,7 @@ export const UrlStatsSchema = z
 		url: LongUrl.shape.url,
 		visits: z.array(z.string().datetime()),
 	})
-	.meta({ id: 'UrlStats' });
+	.meta({ title: 'UrlStats' });
 
 export type UrlStatsSchema = z.infer<typeof UrlStatsSchema>;
 

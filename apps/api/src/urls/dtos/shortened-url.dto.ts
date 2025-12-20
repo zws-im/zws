@@ -7,7 +7,7 @@ export const ShortenedUrl = z
 		short: Short,
 		url: z.string().url(),
 	})
-	.meta({ id: 'ShortenedUrl' });
+	.meta({ title: 'ShortenedUrl' });
 
 export type ShortenedUrl = z.infer<typeof ShortenedUrl>;
 

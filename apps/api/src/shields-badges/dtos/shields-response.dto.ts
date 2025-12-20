@@ -21,7 +21,7 @@ export const ShieldsResponseSchema = z
 		logoPosition: z.string().optional(),
 		style: z.string().optional(),
 	})
-	.meta({ id: 'ShieldsResponse' });
+	.meta({ title: 'ShieldsResponse' });
 
 export type ShieldsResponseSchema = z.infer<typeof ShieldsResponseSchema>;
 

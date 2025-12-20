@@ -6,7 +6,7 @@ export const InstanceStats = z
 		urls: z.number().int().nonnegative(),
 		visits: z.number().int().nonnegative(),
 	})
-	.meta({ id: 'Stats' });
+	.meta({ title: 'Stats' });
 
 export type InstanceStats = z.infer<typeof InstanceStats>;
 
