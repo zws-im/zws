@@ -13,8 +13,7 @@ import { REDIS_PROVIDER } from './providers';
 				const client = createClient({
 					url: configService.redisUrl,
 				});
-				await client.connect();
-				return client;
+				return client.connect();
 			},
 		},
 	],
