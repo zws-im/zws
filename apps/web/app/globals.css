@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind adds this */
 @theme {
 	--color-zws-purple-50: #ede7ff;
 	--color-zws-purple-100: #dcd5f0;
