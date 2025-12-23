@@ -21,7 +21,7 @@
       "name": "@zws.im/api",
       "version": "0.0.1",
       "dependencies": {
-        "@jonahsnider/util": "12.0.0",
+        "@jonahsnider/util": "13.0.0",
         "@nestjs/common": "11.1.10",
         "@nestjs/core": "11.1.10",
         "@nestjs/platform-express": "11.1.10",
@@ -63,7 +63,7 @@
       "dependencies": {
         "@heroicons/react": "2.2.0",
         "@highlight-run/next": "7.9.38",
-        "@jonahsnider/util": "12.0.0",
+        "@jonahsnider/util": "13.0.0",
         "@tailwindcss/postcss": "4.1.18",
         "@tanstack/react-query": "5.90.12",
         "@trpc/client": "11.8.1",
@@ -326,7 +326,7 @@
 
     "@isaacs/fs-minipass": ["@isaacs/fs-minipass@4.0.1", "", { "dependencies": { "minipass": "^7.0.4" } }, "sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w=="],
 
-    "@jonahsnider/util": ["@jonahsnider/util@12.0.0", "", {}, "sha512-83YFLqiIGEkLSOWgb+DXgNOBB6I5Bha3815CIjyJ6++b5EgRoTfGpHK/NEMWzzqZ695NZWetZ/WFTy2OuUxzww=="],
+    "@jonahsnider/util": ["@jonahsnider/util@13.0.0", "", {}, "sha512-YqwYSSmrVvUPJfg4CeqJ1wO2guc8aHKKNEAUMwu1OR8w2MUKqZi70jyjD98WN/6Vu1JEQDBoAPpkbkpCCmuV4Q=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.5", "", { "dependencies": { "@jridgewell/set-array": "^1.2.1", "@jridgewell/sourcemap-codec": "^1.4.10", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg=="],
 
