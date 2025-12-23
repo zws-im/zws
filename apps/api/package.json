@@ -11,7 +11,7 @@
 		"type-check": "tsc"
 	},
 	"dependencies": {
-		"@jonahsnider/util": "12.0.0",
+		"@jonahsnider/util": "13.0.0",
 		"@nestjs/common": "11.1.10",
 		"@nestjs/core": "11.1.10",
 		"@nestjs/platform-express": "11.1.10",
