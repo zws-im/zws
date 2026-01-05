@@ -27,7 +27,7 @@
 		"googleapis": "169.0.0",
 		"ky": "1.14.2",
 		"millify": "^6.1.0",
-		"nestjs-zod": "5.0.1",
+		"nestjs-zod": "5.1.0",
 		"pg": "8.16.3",
 		"redis": "5.10.0",
 		"reflect-metadata": "0.2.2",
