@@ -1,5 +1,9 @@
 {
 	"$schema": "https://railway.app/railway.schema.json",
+	"build": {
+		"buildCommand": "bun turbo run --filter @zws.im/api build",
+		"builder": "RAILPACK"
+	},
 	"deploy": {
 		"healthcheckPath": "/health",
 		"healthcheckTimeout": 10,
