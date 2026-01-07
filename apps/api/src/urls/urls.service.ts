@@ -2,15 +2,15 @@ import { sample } from '@jonahsnider/util';
 import { Inject, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
 import { eq } from 'drizzle-orm';
 import { DatabaseError } from 'pg';
-import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service';
-import { ConfigService } from '../config/config.service';
-import { Schema } from '../db/index';
-import type { Db } from '../db/interfaces/db.interface';
-import { DB_PROVIDER } from '../db/providers';
-import type { Short } from './dtos/short.dto';
-import type { ShortenedUrlData } from './interfaces/shortened-url.interface';
-import type { Base64 } from './interfaces/urls.interface';
-import type { VisitUrlData } from './interfaces/visit-url-data.interface';
+import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
+import { ConfigService } from '../config/config.service.js';
+import { Schema } from '../db/index.js';
+import type { Db } from '../db/interfaces/db.interface.js';
+import { DB_PROVIDER } from '../db/providers.js';
+import type { Short } from './dtos/short.dto.js';
+import type { ShortenedUrlData } from './interfaces/shortened-url.interface.js';
+import type { Base64 } from './interfaces/urls.interface.js';
+import type { VisitUrlData } from './interfaces/visit-url-data.interface.js';
 
 @Injectable()
 export class UrlsService {

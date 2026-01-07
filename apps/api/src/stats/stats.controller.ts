@@ -1,8 +1,8 @@
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { OpenapiTag } from '../openapi/openapi-tag.enum';
-import { InstanceStatsDto } from './dtos/stats.dto';
-import { StatsService } from './stats.service';
+import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
+import { InstanceStatsDto } from './dtos/stats.dto.js';
+import { StatsService } from './stats.service.js';
 
 @Controller('stats')
 @ApiTags(OpenapiTag.InstanceStats)

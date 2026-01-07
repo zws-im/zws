@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { StatsRouter } from '../stats/stats.router';
-import { UrlStatsRouter } from '../url-stats/url-stats.router';
-import { UrlsRouter } from '../urls/urls.router';
-import { router } from './trpc';
+import { StatsRouter } from '../stats/stats.router.js';
+import { UrlStatsRouter } from '../url-stats/url-stats.router.js';
+import { UrlsRouter } from '../urls/urls.router.js';
+import { router } from './trpc.js';
 
 @Injectable()
 export class AppRouter {

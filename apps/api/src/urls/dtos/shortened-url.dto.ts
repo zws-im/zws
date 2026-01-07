@@ -1,6 +1,6 @@
 import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
-import { Short } from './short.dto';
+import { Short } from './short.dto.js';
 
 export const ShortenedUrl = z
 	.object({

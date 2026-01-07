@@ -1,9 +1,9 @@
 import { Controller, Get, Inject, NotFoundException, Param } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { OpenapiTag } from '../openapi/openapi-tag.enum';
-import { Short } from '../urls/dtos/short.dto';
-import { UrlStatsDto } from './dtos/url-stats.dto';
-import { UrlStatsService } from './url-stats.service';
+import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
+import { Short } from '../urls/dtos/short.dto.js';
+import { UrlStatsDto } from './dtos/url-stats.dto.js';
+import { UrlStatsService } from './url-stats.service.js';
 
 @Controller('/')
 @ApiTags(OpenapiTag.ShortenedUrls)

@@ -14,13 +14,13 @@ import {
 } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import type { Response } from 'express';
-import { OpenapiTag } from '../openapi/openapi-tag.enum';
-import { UrlStatsService } from '../url-stats/url-stats.service';
-import { LongUrlDto } from './dtos/long-url.dto';
-import { Short } from './dtos/short.dto';
-import { ShortenedUrlDto } from './dtos/shortened-url.dto';
-import type { VisitShortUrlQueryDto } from './dtos/visit-short-url-query.dto';
-import { UrlsService } from './urls.service';
+import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
+import { UrlStatsService } from '../url-stats/url-stats.service.js';
+import { LongUrlDto } from './dtos/long-url.dto.js';
+import { Short } from './dtos/short.dto.js';
+import { ShortenedUrlDto } from './dtos/shortened-url.dto.js';
+import type { VisitShortUrlQueryDto } from './dtos/visit-short-url-query.dto.js';
+import { UrlsService } from './urls.service.js';
 
 @Controller('/')
 @ApiTags(OpenapiTag.ShortenedUrls)

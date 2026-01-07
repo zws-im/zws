@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { BlockedUrlsModule } from '../blocked-urls/blocked-urls.module';
-import { UrlStatsController } from './url-stats.controller';
-import { UrlStatsRouter } from './url-stats.router';
-import { UrlStatsService } from './url-stats.service';
+import { BlockedUrlsModule } from '../blocked-urls/blocked-urls.module.js';
+import { UrlStatsController } from './url-stats.controller.js';
+import { UrlStatsRouter } from './url-stats.router.js';
+import { UrlStatsService } from './url-stats.service.js';
 
 @Module({
 	imports: [BlockedUrlsModule],

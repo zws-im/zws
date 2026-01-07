@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { OpenapiTag } from '../openapi/openapi-tag.enum';
+import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
 
 @Controller('/health')
 @ApiTags(OpenapiTag.Health)

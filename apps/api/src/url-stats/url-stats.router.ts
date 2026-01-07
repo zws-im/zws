@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { publicProcedure, router } from '../trpc/trpc';
+import { publicProcedure, router } from '../trpc/trpc.js';
 
-import { Short } from '../urls/dtos/short.dto';
-import { UrlStatsSchema } from './dtos/url-stats.dto';
-import { UrlStatsService } from './url-stats.service';
+import { Short } from '../urls/dtos/short.dto.js';
+import { UrlStatsSchema } from './dtos/url-stats.dto.js';
+import { UrlStatsService } from './url-stats.service.js';
 
 @Injectable()
 export class UrlStatsRouter {
