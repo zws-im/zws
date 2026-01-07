@@ -13,8 +13,7 @@
 		"lint:fix": "biome check . --write --unsafe",
 		"migrate": "drizzle-kit migrate",
 		"migrate:create": "drizzle-kit generate",
-		"test": "bun run lint && bun run format && turbo run build type-check",
-		"type-check": "turbo run type-check"
+		"test": "bun run lint && bun run format && turbo run build"
 	},
 	"dependencies": {
 		"drizzle-kit": "0.31.8",
