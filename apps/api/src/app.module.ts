@@ -2,19 +2,19 @@ import { Module } from '@nestjs/common';
 import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { SentryModule } from '@ntegral/nestjs-sentry';
 import { ZodSerializerInterceptor, ZodValidationPipe } from 'nestjs-zod';
-import { BlockedHostnamesModule } from './blocked-hostnames/blocked-hostnames.module';
-import { BlockedUrlsModule } from './blocked-urls/blocked-urls.module';
-import { ConfigModule } from './config/config.module';
-import { ConfigService } from './config/config.service';
-import { DbModule } from './db/db.module';
-import { HealthModule } from './health/health.module';
-import { RedisModule } from './redis/redis.module';
-import { SafeBrowsingModule } from './safe-browsing/safe-browsing.module';
-import { ShieldsBadgesModule } from './shields-badges/shields-badges.module';
-import { StatsModule } from './stats/stats.module';
-import { TrpcModule } from './trpc/trpc.module';
-import { UrlStatsModule } from './url-stats/url-stats.module';
-import { UrlsModule } from './urls/urls.module';
+import { BlockedHostnamesModule } from './blocked-hostnames/blocked-hostnames.module.js';
+import { BlockedUrlsModule } from './blocked-urls/blocked-urls.module.js';
+import { ConfigModule } from './config/config.module.js';
+import { ConfigService } from './config/config.service.js';
+import { DbModule } from './db/db.module.js';
+import { HealthModule } from './health/health.module.js';
+import { RedisModule } from './redis/redis.module.js';
+import { SafeBrowsingModule } from './safe-browsing/safe-browsing.module.js';
+import { ShieldsBadgesModule } from './shields-badges/shields-badges.module.js';
+import { StatsModule } from './stats/stats.module.js';
+import { TrpcModule } from './trpc/trpc.module.js';
+import { UrlStatsModule } from './url-stats/url-stats.module.js';
+import { UrlsModule } from './urls/urls.module.js';
 
 @Module({
 	imports: [

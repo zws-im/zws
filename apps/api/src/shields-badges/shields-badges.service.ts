@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { millify } from 'millify';
-import { ConfigService } from '../config/config.service';
-import { StatsService } from '../stats/stats.service';
-import type { ShieldsResponseSchema } from './dtos/shields-response.dto';
+import { ConfigService } from '../config/config.service.js';
+import { StatsService } from '../stats/stats.service.js';
+import type { ShieldsResponseSchema } from './dtos/shields-response.dto.js';
 
 @Injectable()
 export class ShieldsBadgesService {

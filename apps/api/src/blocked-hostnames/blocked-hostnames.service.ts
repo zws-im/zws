@@ -1,11 +1,11 @@
 import { Inject, Injectable } from '@nestjs/common';
-import convert from 'convert';
+import { convert } from 'convert';
 import { inArray } from 'drizzle-orm';
 import type { RedisClientType } from 'redis';
-import { Schema } from '../db/index';
-import type { Db } from '../db/interfaces/db.interface';
-import { DB_PROVIDER } from '../db/providers';
-import { REDIS_PROVIDER } from '../redis/providers';
+import { Schema } from '../db/index.js';
+import type { Db } from '../db/interfaces/db.interface.js';
+import { DB_PROVIDER } from '../db/providers.js';
+import { REDIS_PROVIDER } from '../redis/providers.js';
 
 type HostnameDomainNamePair = { hostname: string; domainName: string };
 

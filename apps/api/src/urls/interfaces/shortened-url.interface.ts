@@ -1,4 +1,4 @@
-import type { Short } from '../dtos/short.dto';
+import type { Short } from '../dtos/short.dto.js';
 
 export type ShortenedUrlData = {
 	short: Short;

@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { eq, sql } from 'drizzle-orm';
-import type { Db } from '../db/interfaces/db.interface';
-import { DB_PROVIDER } from '../db/providers';
-import type { InstanceStats } from './dtos/stats.dto';
+import type { Db } from '../db/interfaces/db.interface.js';
+import { DB_PROVIDER } from '../db/providers.js';
+import type { InstanceStats } from './dtos/stats.dto.js';
 
 @Injectable()
 export class StatsService {

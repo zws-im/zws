@@ -1,9 +1,9 @@
 import { Global, Module } from '@nestjs/common';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Client } from 'pg';
-import { ConfigService } from '../config/config.service';
-import { Schema } from './index';
-import { DB_PROVIDER } from './providers';
+import { ConfigService } from '../config/config.service.js';
+import { Schema } from './index.js';
+import { DB_PROVIDER } from './providers.js';
 
 @Global()
 @Module({

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { SafeBrowsingService } from './safe-browsing.service';
+import { SafeBrowsingService } from './safe-browsing.service.js';
 
 @Module({
 	providers: [SafeBrowsingService],

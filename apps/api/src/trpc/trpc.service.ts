@@ -2,8 +2,8 @@ import { HttpException, type INestApplication, Inject, Injectable, Logger } from
 import { captureException } from '@sentry/bun';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from 'cors';
-import { ConfigService } from '../config/config.service';
-import { AppRouter } from './app.router';
+import { ConfigService } from '../config/config.service.js';
+import { AppRouter } from './app.router.js';
 
 @Injectable()
 export class TrpcService {

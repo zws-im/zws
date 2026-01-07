@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { BlockedHostnamesService } from './blocked-hostnames.service';
+import { BlockedHostnamesService } from './blocked-hostnames.service.js';
 
 @Module({
 	providers: [BlockedHostnamesService],

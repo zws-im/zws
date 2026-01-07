@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { z } from 'zod';
-import { publicProcedure, router } from '../trpc/trpc';
-import { LongUrl } from './dtos/long-url.dto';
-import { UrlsService } from './urls.service';
+import { publicProcedure, router } from '../trpc/trpc.js';
+import { LongUrl } from './dtos/long-url.dto.js';
+import { UrlsService } from './urls.service.js';
 
 @Injectable()
 export class UrlsRouter {

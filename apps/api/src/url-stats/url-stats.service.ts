@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { asc, eq } from 'drizzle-orm';
-import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service';
-import { Schema } from '../db/index';
-import type { Db } from '../db/interfaces/db.interface';
-import { DB_PROVIDER } from '../db/providers';
-import type { Short } from '../urls/dtos/short.dto';
-import { UrlsService } from '../urls/urls.service';
-import type { UrlStatsSchema } from './dtos/url-stats.dto';
+import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
+import { Schema } from '../db/index.js';
+import type { Db } from '../db/interfaces/db.interface.js';
+import { DB_PROVIDER } from '../db/providers.js';
+import type { Short } from '../urls/dtos/short.dto.js';
+import { UrlsService } from '../urls/urls.service.js';
+import type { UrlStatsSchema } from './dtos/url-stats.dto.js';
 
 @Injectable()
 export class UrlStatsService {

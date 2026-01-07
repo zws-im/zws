@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { cleanupOpenApiDoc } from 'nestjs-zod';
-import { AppModule } from './app.module';
-import { ConfigService } from './config/config.service';
-import { OpenapiTag } from './openapi/openapi-tag.enum';
-import { TrpcService } from './trpc/trpc.service';
+import { AppModule } from './app.module.js';
+import { ConfigService } from './config/config.service.js';
+import { OpenapiTag } from './openapi/openapi-tag.enum.js';
+import { TrpcService } from './trpc/trpc.service.js';
 
 const app = await NestFactory.create(AppModule, {
 	abortOnError: process.env['NODE_ENV'] !== 'development',

@@ -1,8 +1,8 @@
 import { Controller, Get, Inject } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { OpenapiTag } from '../openapi/openapi-tag.enum';
-import { ShieldsResponseDto } from './dtos/shields-response.dto';
-import { ShieldsBadgesService } from './shields-badges.service';
+import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
+import { ShieldsResponseDto } from './dtos/shields-response.dto.js';
+import { ShieldsBadgesService } from './shields-badges.service.js';
 
 @Controller('/stats/shields')
 @ApiTags(OpenapiTag.Badges)

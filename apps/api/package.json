@@ -5,6 +5,7 @@
 	"description": "",
 	"license": "UNLICENSED",
 	"author": "",
+	"type": "module",
 	"scripts": {
 		"dev": "PORT=3001 bun run --env-file ../../.env --watch src/main.ts",
 		"start": "bun run src/main.ts",
