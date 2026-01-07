@@ -26,7 +26,6 @@
 		"drizzle-orm": "0.45.1",
 		"envalid": "8.1.1",
 		"googleapis": "169.0.0",
-		"ky": "1.14.2",
 		"millify": "^6.1.0",
 		"nestjs-zod": "5.1.0",
 		"pg": "8.16.3",
