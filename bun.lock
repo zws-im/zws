@@ -63,7 +63,6 @@
       "dependencies": {
         "@heroicons/react": "2.2.0",
         "@highlight-run/next": "7.9.38",
-        "@jonahsnider/util": "13.0.0",
         "@tailwindcss/postcss": "4.1.18",
         "@tanstack/react-query": "5.90.16",
         "@trpc/client": "11.8.1",
