@@ -36,7 +36,7 @@
 		"apexcharts": "5.3.6",
 		"clsx": "2.1.1",
 		"dotenv": "17.2.3",
-		"framer-motion": "12.24.12",
+		"framer-motion": "12.25.0",
 		"millify": "6.1.0",
 		"next": "15.5.9",
 		"next-plausible": "3.12.5",
