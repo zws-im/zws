@@ -27,7 +27,7 @@
 		"envalid": "8.1.1",
 		"googleapis": "170.0.0",
 		"millify": "^6.1.0",
-		"nestjs-zod": "5.1.0",
+		"nestjs-zod": "5.1.1",
 		"pg": "8.16.3",
 		"redis": "5.10.0",
 		"reflect-metadata": "0.2.2",
