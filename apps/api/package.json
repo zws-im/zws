@@ -16,7 +16,7 @@
 		"@nestjs/common": "11.1.11",
 		"@nestjs/core": "11.1.11",
 		"@nestjs/platform-express": "11.1.11",
-		"@nestjs/swagger": "11.2.4",
+		"@nestjs/swagger": "11.2.5",
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.33.0",
 		"@trpc/server": "11.8.1",
