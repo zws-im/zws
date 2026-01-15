@@ -13,9 +13,9 @@
 	},
 	"dependencies": {
 		"@jonahsnider/util": "13.0.0",
-		"@nestjs/common": "11.1.11",
-		"@nestjs/core": "11.1.11",
-		"@nestjs/platform-express": "11.1.11",
+		"@nestjs/common": "11.1.12",
+		"@nestjs/core": "11.1.12",
+		"@nestjs/platform-express": "11.1.12",
 		"@nestjs/swagger": "11.2.5",
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.34.0",
@@ -36,7 +36,7 @@
 		"zod": "4.3.5"
 	},
 	"devDependencies": {
-		"@nestjs/cli": "11.0.14",
+		"@nestjs/cli": "11.0.15",
 		"@nestjs/schematics": "11.0.9",
 		"@tsconfig/node24": "24.0.3",
 		"@tsconfig/strictest": "2.0.8",
