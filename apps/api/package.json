@@ -36,7 +36,7 @@
 		"zod": "4.3.5"
 	},
 	"devDependencies": {
-		"@nestjs/cli": "11.0.15",
+		"@nestjs/cli": "11.0.16",
 		"@nestjs/schematics": "11.0.9",
 		"@tsconfig/node24": "24.0.3",
 		"@tsconfig/strictest": "2.0.8",
