@@ -24,7 +24,7 @@
 		"prettier": "3.8.0",
 		"prettier-plugin-packagejson": "2.5.21",
 		"prettier-plugin-tailwindcss": "0.7.2",
-		"turbo": "2.7.4",
+		"turbo": "2.7.5",
 		"vercel": "50.4.5"
 	},
 	"packageManager": "bun@1.3.5",
