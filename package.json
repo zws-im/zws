@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.3.10",
 		"prettier": "3.8.0",
-		"prettier-plugin-packagejson": "2.5.22",
+		"prettier-plugin-packagejson": "3.0.0",
 		"prettier-plugin-tailwindcss": "0.7.2",
 		"turbo": "2.7.5",
 		"vercel": "50.4.6"
