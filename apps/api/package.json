@@ -18,7 +18,7 @@
 		"@nestjs/platform-express": "11.1.12",
 		"@nestjs/swagger": "11.2.5",
 		"@ntegral/nestjs-sentry": "4.0.1",
-		"@sentry/bun": "10.35.0",
+		"@sentry/bun": "10.36.0",
 		"@trpc/server": "11.8.1",
 		"convert": "6.0.0",
 		"cors": "2.8.5",
