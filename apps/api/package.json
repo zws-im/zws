@@ -28,7 +28,7 @@
 		"googleapis": "171.0.0",
 		"millify": "^6.1.0",
 		"nestjs-zod": "5.1.1",
-		"pg": "8.17.2",
+		"pg": "8.18.0",
 		"redis": "5.10.0",
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
