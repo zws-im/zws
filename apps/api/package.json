@@ -13,9 +13,9 @@
 	},
 	"dependencies": {
 		"@jonahsnider/util": "13.0.0",
-		"@nestjs/common": "11.1.12",
-		"@nestjs/core": "11.1.12",
-		"@nestjs/platform-express": "11.1.12",
+		"@nestjs/common": "11.1.13",
+		"@nestjs/core": "11.1.13",
+		"@nestjs/platform-express": "11.1.13",
 		"@nestjs/swagger": "11.2.5",
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.38.0",
