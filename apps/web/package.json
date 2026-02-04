@@ -29,7 +29,7 @@
 		"@trpc/next": "11.9.0",
 		"@trpc/react-query": "11.9.0",
 		"@types/node": "24.10.10",
-		"@types/react": "19.2.10",
+		"@types/react": "19.2.11",
 		"@types/react-dom": "19.2.3",
 		"@vercel/analytics": "1.6.1",
 		"@zws.im/api": "workspace:*",
