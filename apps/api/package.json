@@ -19,7 +19,7 @@
 		"@nestjs/swagger": "11.2.6",
 		"@ntegral/nestjs-sentry": "4.0.1",
 		"@sentry/bun": "10.38.0",
-		"@trpc/server": "11.9.0",
+		"@trpc/server": "11.10.0",
 		"convert": "6.0.0",
 		"cors": "2.8.6",
 		"devalue": "5.6.2",
