@@ -33,7 +33,7 @@
 		"@types/react-dom": "19.2.3",
 		"@vercel/analytics": "1.6.1",
 		"@zws.im/api": "workspace:*",
-		"apexcharts": "5.4.0",
+		"apexcharts": "5.5.1",
 		"clsx": "2.1.1",
 		"dotenv": "17.3.1",
 		"framer-motion": "12.34.0",
