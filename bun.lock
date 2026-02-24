@@ -29,7 +29,7 @@
         "@ntegral/nestjs-sentry": "4.0.1",
         "@sentry/bun": "10.39.0",
         "@trpc/server": "11.10.0",
-        "convert": "6.0.0",
+        "convert": "7.0.0",
         "cors": "2.8.6",
         "devalue": "5.6.3",
         "drizzle-orm": "0.45.1",
@@ -1078,7 +1078,7 @@
 
     "content-type": ["content-type@1.0.5", "", {}, "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA=="],
 
-    "convert": ["convert@6.0.0", "", {}, "sha512-6rYpm31xqHZeQBW17SacilLV8Bcqh5r+45OTMBFwM9NmBKvU9VhzAreX9qQHG9f1XSN3sznifXaczz2vcbWsjQ=="],
+    "convert": ["convert@7.0.0", "", {}, "sha512-Sc8P9MeZBPtaAG/hiSYO28LvVjEDfP+iecvP1nvhJxvXcS3d9WQJIQma9XMPRwIWPifA2X8epIR9zbLxJPrT8w=="],
 
     "convert-hrtime": ["convert-hrtime@3.0.0", "", {}, "sha512-7V+KqSvMiHp8yWDuwfww06XleMWVVB9b9tURBx+G7UTADuo5hYPuowKloz4OzOqbPezxgo+fdQ1522WzPG4OeA=="],
 
