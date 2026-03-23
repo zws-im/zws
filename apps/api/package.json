@@ -45,7 +45,7 @@
 		"@types/pg": "8.20.0",
 		"tsx": "4.21.0",
 		"type-fest": "5.5.0",
-		"typescript": "5.9.3"
+		"typescript": "6.0.2"
 	},
 	"packageManager": "bun@1.3.5"
 }
