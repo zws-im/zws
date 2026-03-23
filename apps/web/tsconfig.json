@@ -20,6 +20,7 @@
 			}
 		],
 		"resolveJsonModule": true,
+		"rootDir": ".",
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "es2022"

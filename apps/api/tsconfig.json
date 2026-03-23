@@ -3,8 +3,9 @@
 		"emitDecoratorMetadata": true,
 		"exactOptionalPropertyTypes": false,
 		"experimentalDecorators": true,
+		"noUnusedLocals": false,
 		"outDir": "dist",
-		"noUnusedLocals": false
+		"rootDir": "src"
 	},
 	"extends": ["@tsconfig/strictest", "@tsconfig/node24"],
 	"include": ["src", "types"]
