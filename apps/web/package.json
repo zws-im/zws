@@ -41,7 +41,7 @@
 		"next": "15.5.15",
 		"next-plausible": "3.12.5",
 		"react": "19.2.5",
-		"react-apexcharts": "1.9.0",
+		"react-apexcharts": "2.1.0",
 		"react-dom": "19.2.5",
 		"swagger-ui-react": "5.32.2",
 		"tailwindcss": "4.2.2",
