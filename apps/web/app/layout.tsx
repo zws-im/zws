@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 			<html lang='en'>
 				<head>
-					<PlausibleProvider enabled={true} selfHosted={true} domain='zws.im' />
+					<PlausibleProvider enabled={true} src='https://plausible.io/js/pa-XajU-qmMJYrpEgDCnYn8i.js' />
 				</head>
 				<body className={clsx(inter.className)}>
 					<TrpcProvider>
