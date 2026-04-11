@@ -38,7 +38,7 @@
 		"dotenv": "17.4.1",
 		"framer-motion": "12.38.0",
 		"millify": "6.1.0",
-		"next": "15.5.15",
+		"next": "16.2.3",
 		"next-plausible": "4.0.0",
 		"react": "19.2.5",
 		"react-apexcharts": "2.1.0",
