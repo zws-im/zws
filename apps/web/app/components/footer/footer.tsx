@@ -1,18 +1,4 @@
-'use client';
-
-import va from '@vercel/analytics';
-import Image from 'next/image';
-import { usePlausible } from '@/app/hooks/plausible';
-import poweredByVercel from './powered-by-vercel.svg';
-
 export function Footer() {
-	const plausible = usePlausible();
-
-	const trackVercelClick = () => {
-		va.track('Clicked Vercel badge');
-		plausible('Clicked Vercel badge');
-	};
-
 	return (
 		<footer className='mt-24 flex flex-col items-center gap-4 py-5 text-center'>
 			<p className='text-zws-purple-50'>
@@ -20,10 +6,6 @@ export function Footer() {
 					Contact
 				</a>
 			</p>
-
-			<a href='https://vercel.com/?utm_source=jonah-snider&utm_campaign=oss' onClick={trackVercelClick}>
-				<Image src={poweredByVercel} alt='Powered by Vercel' height={32} />
-			</a>
 		</footer>
 	);
 }

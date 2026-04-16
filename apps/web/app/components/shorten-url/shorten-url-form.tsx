@@ -1,7 +1,6 @@
 'use client';
 
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
-import va from '@vercel/analytics';
 import clsx from 'clsx';
 import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
 import { usePlausible } from '@/app/hooks/plausible';
@@ -37,7 +36,6 @@ export function ShortenUrlForm() {
 	const handleSubmit = (event: FormEvent) => {
 		event.preventDefault();
 
-		va.track('Shorten URL');
 		plausible('Shorten URL');
 
 		mutation.mutate({ url: longUrl });

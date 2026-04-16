@@ -7,8 +7,6 @@ if (!API_URL) {
 	throw new TypeError('Missing NEXT_PUBLIC_API_URL env var');
 }
 
-export const runtime = 'edge';
-
 export default async function UrlSubpathPage(props: {
 	params: Promise<{ short: string }>;
 	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

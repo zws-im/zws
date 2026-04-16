@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Lato } from 'next/font/google';
@@ -55,8 +54,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						</div>
 					</div>
 				</TrpcProvider>
-
-				<Analytics />
 			</body>
 		</html>
 	);

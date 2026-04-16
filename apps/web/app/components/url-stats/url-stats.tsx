@@ -1,6 +1,5 @@
 'use client';
 
-import va from '@vercel/analytics';
 import { Suspense, useEffect, useState } from 'react';
 import { usePlausible } from '@/app/hooks/plausible';
 
@@ -27,7 +26,6 @@ export function UrlStats() {
 	useEffect(() => {
 		if (stats.isSuccess) {
 			plausible('Check URL stats');
-			va.track('Check URL stats');
 		}
 	}, [stats.isSuccess, short, plausible]);
 
