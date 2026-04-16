@@ -17,10 +17,10 @@
 	},
 	"scripts": {
 		"build": "NODE_ENV=production next build --webpack",
+		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"dev": "portless zws.im next dev",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
 		"start": "next start"
 	},
 	"dependencies": {
