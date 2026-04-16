@@ -236,14 +236,23 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,linux,macos,windows,visualstudiocode
 
-# Vercel
-.vercel
 
 # Turbo
 .turbo
 
 # Next.js
 next-env.d.ts
+
+# OpenNext
+.open-next
+
+# Wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+.wrangler/
 
 # Files Biome can format
 **/*.ts
