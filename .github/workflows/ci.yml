@@ -35,3 +35,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
       - name: Build and test
         run: bun run test
+        env:
+          API_URL: https://api.zws.im
+          WEBSITE_URL: https://zws.im
