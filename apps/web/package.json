@@ -18,10 +18,14 @@
 	"scripts": {
 		"build": "NODE_ENV=production next build --webpack",
 		"dev": "portless zws.im next dev",
+		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
 		"start": "next start"
 	},
 	"dependencies": {
 		"@heroicons/react": "2.2.0",
+		"@opennextjs/cloudflare": "^1.19.1",
 		"@tailwindcss/postcss": "4.2.2",
 		"@tanstack/react-query": "5.99.0",
 		"@trpc/client": "11.16.0",
@@ -46,7 +50,8 @@
 	},
 	"devDependencies": {
 		"@trpc/server": "11.16.0",
-		"@types/swagger-ui-react": "5.18.0"
+		"@types/swagger-ui-react": "5.18.0",
+		"wrangler": "^4.83.0"
 	},
 	"packageManager": "bun@1.3.5",
 	"engines": {
