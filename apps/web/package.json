@@ -47,7 +47,7 @@
 		"react-dom": "19.2.5",
 		"swagger-ui-react": "5.32.4",
 		"tailwindcss": "4.2.4",
-		"typescript": "6.0.2"
+		"typescript": "6.0.3"
 	},
 	"devDependencies": {
 		"@trpc/server": "11.16.0",
