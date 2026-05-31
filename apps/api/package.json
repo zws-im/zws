@@ -29,7 +29,7 @@
 		"millify": "^6.1.0",
 		"nestjs-zod": "5.4.0",
 		"pg": "8.21.0",
-		"redis": "5.12.1",
+		"redis": "6.0.0",
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
 		"superjson": "2.2.6",
