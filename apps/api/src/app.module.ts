@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
-import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
-import { SentryModule } from '@ntegral/nestjs-sentry';
+import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
+import { SentryGlobalFilter, SentryModule } from '@sentry/nestjs/setup';
 import { ZodSerializerInterceptor, ZodValidationPipe } from 'nestjs-zod';
 import { BlockedHostnamesModule } from './blocked-hostnames/blocked-hostnames.module.js';
 import { BlockedUrlsModule } from './blocked-urls/blocked-urls.module.js';
 import { ConfigModule } from './config/config.module.js';
-import { ConfigService } from './config/config.service.js';
 import { DbModule } from './db/db.module.js';
 import { HealthModule } from './health/health.module.js';
 import { RedisModule } from './redis/redis.module.js';
@@ -18,16 +17,9 @@ import { UrlsModule } from './urls/urls.module.js';
 
 @Module({
 	imports: [
+		SentryModule.forRoot(),
 		HealthModule,
 		ConfigModule,
-		SentryModule.forRootAsync({
-			imports: [ConfigModule],
-			inject: [ConfigService],
-			useFactory: (config: ConfigService) => ({
-				dsn: config.sentryDsn,
-				environment: config.nodeEnv,
-			}),
-		}),
 		DbModule,
 		RedisModule,
 		StatsModule,
@@ -40,6 +32,10 @@ import { UrlsModule } from './urls/urls.module.js';
 		BlockedUrlsModule,
 	],
 	providers: [
+		{
+			provide: APP_FILTER,
+			useClass: SentryGlobalFilter,
+		},
 		{
 			provide: APP_PIPE,
 			useClass: ZodValidationPipe,
