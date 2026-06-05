@@ -32,7 +32,7 @@
 		"@trpc/client": "11.17.0",
 		"@trpc/next": "11.17.0",
 		"@trpc/react-query": "11.17.0",
-		"@types/node": "24.12.4",
+		"@types/node": "24.13.0",
 		"@types/react": "19.2.16",
 		"@types/react-dom": "19.2.3",
 		"@zws.im/api": "workspace:*",
