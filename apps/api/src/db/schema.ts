@@ -5,10 +5,6 @@ export const blockedHostnames = pgTable('blocked_hostnames', {
 	createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });
 
-// As of writing, Drizzle doesn't honor the `.using()` method for indexes (https://github.com/drizzle-team/drizzle-orm/issues/1349)
-// It will just ignore it and use the default (BTREE) every time
-// At some point they will fix this, and trying to create a migration will suddenly include those index changes
-
 export const urls = pgTable('urls', {
 	blocked: boolean('blocked').default(false).notNull(),
 	createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
