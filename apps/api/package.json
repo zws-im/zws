@@ -23,7 +23,7 @@
 		"cors": "2.8.6",
 		"devalue": "5.8.1",
 		"drizzle-orm": "0.45.2",
-		"envalid": "8.1.1",
+		"envalid": "8.2.0",
 		"googleapis": "173.0.0",
 		"millify": "^6.1.0",
 		"nestjs-zod": "5.4.0",
