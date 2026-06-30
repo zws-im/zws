@@ -24,7 +24,7 @@
 		"prettier": "3.9.3",
 		"prettier-plugin-packagejson": "3.0.2",
 		"prettier-plugin-tailwindcss": "0.8.0",
-		"turbo": "2.10.0"
+		"turbo": "2.10.1"
 	},
 	"packageManager": "bun@1.3.12",
 	"trustedDependencies": [
