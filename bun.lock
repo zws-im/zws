@@ -10,7 +10,7 @@
       },
       "devDependencies": {
         "@biomejs/biome": "2.3.10",
-        "prettier": "3.9.4",
+        "prettier": "3.9.5",
         "prettier-plugin-packagejson": "3.0.2",
         "prettier-plugin-tailwindcss": "0.8.0",
         "turbo": "2.10.4",
@@ -1516,7 +1516,7 @@
 
     "postgres-interval": ["postgres-interval@1.2.0", "", { "dependencies": { "xtend": "^4.0.0" } }, "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ=="],
 
-    "prettier": ["prettier@3.9.4", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg=="],
+    "prettier": ["prettier@3.9.5", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-/FVl766LpUfB5vXgCYOYa0MeV/441Ia99AeICQIQFTY/Nw0roZwULcXpku5i1/m5kt/baz+s4Zogspd839HSMg=="],
 
     "prettier-plugin-packagejson": ["prettier-plugin-packagejson@3.0.2", "", { "dependencies": { "sort-package-json": "^3.6.0" }, "peerDependencies": { "prettier": "^3" }, "optionalPeers": ["prettier"] }, "sha512-kmoj3hEynXwoHDo8ZhmWAIjRBoQWCDUVackiWfSDWdgD0rS3LGB61T9zoVbume/cotYdCoadUh4sqViAmXvpBQ=="],
 
