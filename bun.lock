@@ -70,7 +70,7 @@
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
         "@zws.im/api": "workspace:*",
-        "apexcharts": "6.0.0",
+        "apexcharts": "6.1.0",
         "clsx": "2.1.1",
         "framer-motion": "12.42.2",
         "millify": "6.1.0",
@@ -874,7 +874,7 @@
 
     "ansis": ["ansis@4.2.0", "", {}, "sha512-HqZ5rWlFjGiV0tDm3UxxgNRqsOTniqoKZu0pIAfh7TZQMGuZK+hH0drySty0si0QXj1ieop4+SkSfPZBPPkHig=="],
 
-    "apexcharts": ["apexcharts@6.0.0", "", {}, "sha512-vFto9h6yimqtGK4X1NpRgwrq1xrqRg4g2hGTB68tf4AhS0laAQcybGcGAW3cBySHGoCE8L3Q+xm9P+4Ki5+Shw=="],
+    "apexcharts": ["apexcharts@6.1.0", "", {}, "sha512-XMGZBojjKE37cz1ijmgnC5VjODY8R27dBhKvjgsh8lr67ScyGq16mZhPvbqjJx3SH2UE9gvi1WucdWYuFrtphA=="],
 
     "apg-lite": ["apg-lite@1.0.5", "", {}, "sha512-SlI+nLMQDzCZfS39ihzjGp3JNBQfJXyMi6cg9tkLOCPVErgFsUIAEdO9IezR7kbP5Xd0ozcPNQBkf9TO5cHgWw=="],
 
