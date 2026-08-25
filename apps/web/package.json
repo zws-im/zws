@@ -34,7 +34,7 @@
 		"@trpc/react-query": "11.18.0",
 		"@types/node": "26.2.0",
 		"@types/react": "19.2.18",
-		"@types/react-dom": "19.2.4",
+		"@types/react-dom": "19.2.5",
 		"@zws.im/api": "workspace:*",
 		"apexcharts": "6.10.0",
 		"clsx": "2.1.1",
