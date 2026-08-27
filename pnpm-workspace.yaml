@@ -1,0 +1,13 @@
+packages:
+  - 'apps/*'
+
+enableGlobalVirtualStore: false
+
+allowBuilds:
+  '@scarf/scarf': false
+  '@tree-sitter-grammars/tree-sitter-yaml': true
+  core-js-pure: false
+  esbuild: true
+  tree-sitter: true
+  tree-sitter-json: true
+  workerd: true

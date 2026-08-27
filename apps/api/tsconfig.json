@@ -7,6 +7,6 @@
 		"outDir": "dist",
 		"rootDir": "src"
 	},
-	"extends": ["@tsconfig/strictest", "@tsconfig/bun"],
+	"extends": "@tsconfig/strictest",
 	"include": ["src", "types"]
 }

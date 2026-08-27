@@ -6,14 +6,14 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
-		"dev": "bun --parallel --workspaces dev",
+		"dev": "pnpm --parallel --recursive dev",
 		"format": "prettier --check .",
-		"format:write": "bun run format --write",
+		"format:write": "pnpm run format --write",
 		"lint": "biome check .",
 		"lint:fix": "biome check . --write --unsafe",
 		"migrate": "drizzle-kit migrate",
 		"migrate:create": "drizzle-kit generate",
-		"test": "bun run lint && bun run format && turbo run build"
+		"test": "pnpm run lint && pnpm run format && turbo run build"
 	},
 	"dependencies": {
 		"drizzle-kit": "0.31.10",
@@ -26,8 +26,12 @@
 		"prettier-plugin-tailwindcss": "0.8.1",
 		"turbo": "2.10.12"
 	},
-	"packageManager": "bun@1.3.12",
-	"trustedDependencies": [
-		"@biomejs/biome"
-	]
+	"packageManager": "pnpm@12.0.0",
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.x",
+			"onFail": "error"
+		}
+	}
 }

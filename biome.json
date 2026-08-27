@@ -17,7 +17,7 @@
 			"jsxQuoteStyle": "single",
 			"quoteStyle": "single"
 		},
-		"globals": ["React", "Bun"],
+		"globals": ["React"],
 		"parser": {
 			"unsafeParameterDecoratorsEnabled": true
 		}

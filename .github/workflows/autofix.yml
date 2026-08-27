@@ -12,18 +12,16 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v7
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup pnpm
+        uses: pnpm/setup@v2
         with:
-          bun-version: latest
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+          cache: true
       - name: Format with Prettier
-        run: bun run format:write
+        run: pnpm run format:write
       - name: Migrate Biome config
-        run: bun run biome migrate --write
+        run: pnpm run biome migrate --write
       - name: Format with Biome
-        run: bun run lint:fix
+        run: pnpm run lint:fix
       - name: Run autofix.ci
         uses: autofix-ci/action@v1
         with:
