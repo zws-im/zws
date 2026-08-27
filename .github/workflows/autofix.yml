@@ -19,7 +19,7 @@ jobs:
       - name: Format with Prettier
         run: pnpm run format:write
       - name: Migrate Biome config
-        run: pnpm run biome migrate --write
+        run: pnpm exec biome migrate --write
       - name: Format with Biome
         run: pnpm run lint:fix
       - name: Run autofix.ci
