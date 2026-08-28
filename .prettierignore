@@ -267,3 +267,5 @@ next-env.d.ts
 !package.json
 **/*.jsonc
 **/*.css
+
+pnpm-lock.yaml
