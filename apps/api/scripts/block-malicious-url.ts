@@ -1,15 +1,13 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
-import { and, desc, eq, sql } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/node-postgres';
 import { Client } from 'pg';
 import { createClient } from 'redis';
-import * as Schema from '../src/db/schema.ts';
 
 const { values } = parseArgs({
 	options: {
 		apply: { type: 'boolean' },
 		'dry-run': { type: 'boolean' },
+		help: { short: 'h', type: 'boolean' },
 		hostname: { type: 'string' },
 		'target-url': { type: 'string' },
 		url: { type: 'string' },
@@ -17,183 +15,134 @@ const { values } = parseArgs({
 });
 
 const usage = `Usage:
-  node scripts/block-malicious-url.ts (--dry-run | --apply) [--url <zws-url>] [--target-url <url>] [--hostname <domain>]
-`;
+  node scripts/block-malicious-url.ts (--dry-run | --apply) [--url <zws-url>] [--target-url <url>] [--hostname <domain>]`;
 
-const dryRun = values['dry-run'] === true;
-const apply = values.apply === true;
+if (values.help) {
+	console.log(usage);
+	process.exit(0);
+}
 
-if (dryRun === apply) {
-	throw new Error(`${usage}\nPass exactly one of --dry-run or --apply`);
+if (values['dry-run'] === values.apply) {
+	throw new RangeError(`${usage}\n\nPass exactly one of --dry-run or --apply.`);
 }
 
 if (!values.url && !values['target-url'] && !values.hostname) {
-	throw new Error(`${usage}\nPass at least one of --url, --target-url, or --hostname`);
+	throw new RangeError(`${usage}\n\nPass at least one target.`);
 }
 
-if (!process.env.DATABASE_URL) {
-	throw new Error('Missing DATABASE_URL');
+if (!process.env.DATABASE_URL || (values.apply && !process.env.REDIS_URL)) {
+	throw new TypeError('Missing required production database or Redis configuration.');
 }
 
-function shortBase64(rawUrl: string | undefined): string | undefined {
-	if (!rawUrl) {
-		return undefined;
+function normalizeHostname(value: string): string {
+	const url = new URL(`https://${value.toLowerCase().replace(/\.$/, '')}`);
+
+	if (url.username || url.password || url.port || url.pathname !== '/' || url.search || url.hash) {
+		throw new RangeError(`Invalid hostname: ${value}`);
 	}
 
-	const rawShort = decodeURIComponent(new URL(rawUrl).pathname.slice(1));
-	const rewrites = JSON.parse(process.env.SHORT_REWRITES || '{}') as Record<string, string>;
-	const short = Object.entries(rewrites).reduce((value, [from, to]) => value.replaceAll(from, to), rawShort);
-
-	return short ? Buffer.from(short).toString('base64') : undefined;
+	return url.hostname;
 }
 
-async function targetFromInput(): Promise<{ hostname: string; redirectStatus?: number; resolvedTargetUrl?: string }> {
-	if (values['target-url']) {
-		const targetUrl = new URL(values['target-url']);
-		return { hostname: values.hostname ?? targetUrl.hostname, resolvedTargetUrl: targetUrl.toString() };
-	}
+async function resolveTarget(): Promise<{ hostname: string; targetUrl?: string }> {
+	let targetUrl = values['target-url'];
 
-	if (!values.url) {
-		if (!values.hostname) {
-			throw new Error('Could not determine hostname. Pass --hostname explicitly.');
+	if (values.url) {
+		const shortUrl = new URL(values.url);
+
+		if (!['zws.im', 'api.zws.im'].includes(shortUrl.hostname)) {
+			throw new RangeError('--url must use zws.im or api.zws.im. Use --target-url for a destination URL.');
 		}
 
-		return { hostname: values.hostname };
-	}
+		for (const hostname of [shortUrl.hostname, shortUrl.hostname === 'zws.im' ? 'api.zws.im' : 'zws.im']) {
+			shortUrl.hostname = hostname;
+			const response = await fetch(shortUrl, { redirect: 'manual' });
+			const location = response.headers.get('location');
+			targetUrl = location ? new URL(location, shortUrl).toString() : targetUrl;
 
-	const response = await fetch(values.url, { redirect: 'manual' });
-	let location = response.headers.get('location');
-	let redirectStatus = response.status;
-
-	if (!location) {
-		const apiUrl = new URL(values.url);
-		apiUrl.hostname = 'api.zws.im';
-
-		if (apiUrl.toString() !== values.url) {
-			const apiResponse = await fetch(apiUrl, { redirect: 'manual' });
-			location = apiResponse.headers.get('location');
-			redirectStatus = apiResponse.status;
+			if (targetUrl) break;
 		}
 	}
 
-	if (!location) {
-		if (!values.hostname) {
-			throw new Error('Could not determine hostname from redirect. Pass --hostname explicitly.');
-		}
+	const resolvedHostname = targetUrl ? new URL(targetUrl).hostname : undefined;
+	const explicitHostname = values.hostname ? normalizeHostname(values.hostname) : undefined;
 
-		return { hostname: values.hostname, redirectStatus };
+	if (resolvedHostname && explicitHostname && resolvedHostname !== explicitHostname) {
+		throw new RangeError(`Resolved hostname ${resolvedHostname} does not match ${explicitHostname}.`);
 	}
 
-	const targetUrl = new URL(location, values.url);
-	return {
-		hostname: values.hostname ?? targetUrl.hostname,
-		redirectStatus,
-		resolvedTargetUrl: targetUrl.toString(),
-	};
+	const hostname = explicitHostname ?? resolvedHostname;
+
+	if (!hostname) {
+		throw new RangeError('Could not determine the destination hostname. Pass --hostname explicitly.');
+	}
+
+	return { hostname, targetUrl };
 }
 
-const target = await targetFromInput();
-const encodedShort = shortBase64(values.url);
-const domainPattern = `^https?://([^/@?#]+@)?([^/?#@]*\\.)?${RegExp.escape(target.hostname)}(:[0-9]+)?([/?#]|$)`;
+function hostnamePattern(hostname: string): string {
+	const escaped = hostname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	return `^https?://([^/@?#]+@)?([^/?#@]*\\.)?${escaped}(:[0-9]+)?([/?#]|$)`;
+}
+
+const target = await resolveTarget();
 const client = new Client({ connectionString: process.env.DATABASE_URL });
-const db = drizzle(client, { schema: Schema });
-
 await client.connect();
 
 try {
-	const existing = {
-		blockedHostname: await db
-			.select({ hostname: Schema.blockedHostnames.hostname })
-			.from(Schema.blockedHostnames)
-			.where(eq(Schema.blockedHostnames.hostname, target.hostname)),
-		domainRows: await db
-			.select({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked })
-			.from(Schema.urls)
-			.where(sql`${Schema.urls.url} ~* ${domainPattern}`)
-			.orderBy(desc(Schema.urls.createdAt))
-			.limit(25),
-		shortRow: encodedShort
-			? await db
-					.select({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked })
-					.from(Schema.urls)
-					.where(eq(Schema.urls.shortBase64, encodedShort))
-			: [],
-		targetRows: target.resolvedTargetUrl
-			? await db
-					.select({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked })
-					.from(Schema.urls)
-					.where(eq(Schema.urls.url, target.resolvedTargetUrl))
-			: [],
-	};
+	const blocked = await client.query('SELECT 1 FROM blocked_hostnames WHERE hostname = $1', [target.hostname]);
+	const matches = await client.query<{ total: number; unblocked: number }>(
+		`SELECT count(*)::int AS total,
+			count(*) FILTER (WHERE blocked = false)::int AS unblocked
+		FROM urls WHERE url ~* $1`,
+		[hostnamePattern(target.hostname)],
+	);
+	const sample = await client.query<{ short_base64: string }>(
+		'SELECT short_base64 FROM urls WHERE url ~* $1 ORDER BY created_at DESC LIMIT 1',
+		[hostnamePattern(target.hostname)],
+	);
 
-	const result = {
-		mode: dryRun ? 'dry-run' : 'apply',
+	const result: Record<string, unknown> = {
+		mode: values.apply ? 'apply' : 'dry-run',
 		hostname: target.hostname,
-		inputUrl: values.url,
-		redirectStatus: target.redirectStatus,
-		resolvedTargetUrl: target.resolvedTargetUrl,
-		shortBase64: encodedShort,
-		existingBlockedHostname: existing.blockedHostname[0] ?? null,
-		existingDomainRows: existing.domainRows,
-		existingShortRow: existing.shortRow[0] ?? null,
-		existingTargetRows: existing.targetRows,
+		alreadyBlocked: blocked.rowCount === 1,
+		matchingUrls: matches.rows[0]?.total ?? 0,
+		unblockedUrls: matches.rows[0]?.unblocked ?? 0,
 	};
 
-	if (apply) {
-		const updated = await db.transaction(async (tx) => {
-			const insertedHostname = await tx
-				.insert(Schema.blockedHostnames)
-				.values({ hostname: target.hostname })
-				.onConflictDoNothing()
-				.returning({ hostname: Schema.blockedHostnames.hostname });
-			const updatedShort = encodedShort
-				? await tx
-						.update(Schema.urls)
-						.set({ blocked: true })
-						.where(eq(Schema.urls.shortBase64, encodedShort))
-						.returning({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked })
-				: [];
-			const updatedTarget = target.resolvedTargetUrl
-				? await tx
-						.update(Schema.urls)
-						.set({ blocked: true })
-						.where(eq(Schema.urls.url, target.resolvedTargetUrl))
-						.returning({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked })
-				: [];
-			const updatedDomain = await tx
-				.update(Schema.urls)
-				.set({ blocked: true })
-				.where(and(eq(Schema.urls.blocked, false), sql`${Schema.urls.url} ~* ${domainPattern}`))
-				.returning({ shortBase64: Schema.urls.shortBase64, url: Schema.urls.url, blocked: Schema.urls.blocked });
+	if (values.apply) {
+		const inserted = await client.query('INSERT INTO blocked_hostnames (hostname) VALUES ($1) ON CONFLICT DO NOTHING', [
+			target.hostname,
+		]);
+		const redis = createClient({ url: process.env.REDIS_URL });
+		await redis.connect();
 
-			return { insertedHostname, updatedDomain, updatedShort, updatedTarget };
-		});
+		try {
+			result.hostnameInserted = inserted.rowCount === 1;
+			result.redisAdded = (await redis.sAdd('blocked-hostnames', target.hostname)) === 1;
+			await redis.expire('blocked-hostnames', 1800);
+		} finally {
+			await redis.close();
+		}
 
-		Object.assign(result, {
-			hostnameInserted: updated.insertedHostname.length === 1,
-			updatedDomainCount: updated.updatedDomain.length,
-			updatedDomainRows: updated.updatedDomain,
-			updatedShortCount: updated.updatedShort.length,
-			updatedShortRows: updated.updatedShort,
-			updatedTargetCount: updated.updatedTarget.length,
-			updatedTargetRows: updated.updatedTarget,
-		});
+		const shortUrl = values.url
+			? new URL(values.url)
+			: sample.rows[0]
+				? new URL(encodeURIComponent(Buffer.from(sample.rows[0].short_base64, 'base64').toString()), 'https://zws.im')
+				: undefined;
 
-		if (process.env.REDIS_URL) {
-			const redis = createClient({ url: process.env.REDIS_URL });
-			await redis.connect();
-
-			try {
-				Object.assign(result, {
-					redis: {
-						added: await redis.sAdd('blocked-hostnames', [target.hostname]),
-						ttlSeconds: 1800,
-					},
-				});
-				await redis.expire('blocked-hostnames', 1800);
-			} finally {
-				await redis.close();
-			}
+		if (shortUrl) {
+			shortUrl.hostname = 'zws.im';
+			const apiUrl = new URL(shortUrl);
+			apiUrl.hostname = 'api.zws.im';
+			const [web, api] = await Promise.all([
+				fetch(shortUrl, { redirect: 'manual' }),
+				fetch(apiUrl, { redirect: 'manual' }),
+			]);
+			result.verification = {
+				web: { location: web.headers.get('location'), status: web.status },
+				api: { location: api.headers.get('location'), status: api.status },
+			};
 		}
 	}
 
