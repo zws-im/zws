@@ -51,6 +51,7 @@
 	},
 	"devDependencies": {
 		"@trpc/server": "11.18.0",
+		"@tsconfig/next": "2.0.6",
 		"@types/swagger-ui-react": "5.18.0",
 		"wrangler": "^4.83.0"
 	},
