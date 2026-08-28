@@ -1,0 +1,237 @@
+openapi: 3.1.1
+paths:
+  /health:
+    get:
+      operationId: HealthController_getHealth
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+        - Health
+  /stats:
+    get:
+      operationId: StatsController_getInstanceStats
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstanceStatsDto'
+      tags:
+        - Instance stats
+  /:
+    post:
+      operationId: UrlsController_shortenUrl
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LongUrlDto'
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShortenedUrlDto'
+      tags:
+        - Shortened URLs
+  /{short}:
+    get:
+      operationId: UrlsController_visitShortUrl
+      parameters:
+        - name: short
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LongUrlDto'
+      tags:
+        - Shortened URLs
+  /{short}/stats:
+    get:
+      operationId: UrlStatsController_getShortUrlStats
+      parameters:
+        - name: short
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UrlStatsDto'
+      tags:
+        - Shortened URLs
+  /stats/shields/version:
+    get:
+      operationId: ShieldsBadgesController_getVersionBadge
+      parameters: []
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShieldsResponseDto'
+      tags:
+        - Badges
+  /stats/shields/urls:
+    get:
+      operationId: ShieldsBadgesController_getUrlsBadge
+      parameters: []
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShieldsResponseDto'
+      tags:
+        - Badges
+  /stats/shields/visits:
+    get:
+      operationId: ShieldsBadgesController_getVisitsBadge
+      parameters: []
+      responses:
+        default:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShieldsResponseDto'
+      tags:
+        - Badges
+info:
+  title: Zero Width Shortener
+  description: A URL shortener that uses zero width characters to shorten URLs.
+  version: 2.0.0
+  contact:
+    name: Jonah Snider
+    url: https://jonahsnider.com
+    email: jonah@jonahsnider.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+tags:
+  - name: Shortened URLs
+    description: ''
+  - name: Badges
+    description: ''
+  - name: Instance stats
+    description: ''
+  - name: Health
+    description: ''
+servers:
+  - url: https://zws.im/api
+components:
+  schemas:
+    InstanceStatsDto:
+      type: object
+      properties:
+        urls:
+          type: integer
+          minimum: 0
+          maximum: 9007199254740991
+        visits:
+          type: integer
+          minimum: 0
+          maximum: 9007199254740991
+      required:
+        - urls
+        - visits
+      title: Stats
+    LongUrlDto:
+      type: object
+      properties:
+        url:
+          type: string
+          maxLength: 500
+          format: uri
+      required:
+        - url
+      title: LongUrl
+    ShortenedUrlDto:
+      type: object
+      properties:
+        short:
+          type: string
+        url:
+          type: string
+          format: uri
+      required:
+        - short
+        - url
+      title: ShortenedUrl
+    UrlStatsDto:
+      type: object
+      properties:
+        url:
+          type: string
+          maxLength: 500
+          format: uri
+        visits:
+          type: array
+          items:
+            type: string
+            format: date-time
+            pattern: >-
+              ^(?:(?:\d\d[2468][048]|\d\d[13579][26]|\d\d0[48]|[02468][048]00|[13579][26]00)-02-29|\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\d|30)|(?:02)-(?:0[1-9]|1\d|2[0-8])))T(?:(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?(?:Z))$
+      required:
+        - url
+        - visits
+      title: UrlStats
+    ShieldsResponseDto:
+      type: object
+      properties:
+        schemaVersion:
+          type: number
+          const: 1
+        cacheSeconds:
+          type: number
+          minimum: 300
+        label:
+          type: string
+          examples:
+            - urls
+        message:
+          type: string
+          examples:
+            - 3.4M
+        color:
+          type: string
+        labelColor:
+          type: string
+        isError:
+          type: string
+        namedLogo:
+          type: string
+        logoSvg:
+          type: string
+        logoColor:
+          type: string
+        logoWidth:
+          type: string
+        logoPosition:
+          type: string
+        style:
+          type: string
+      required:
+        - schemaVersion
+        - label
+        - message
+      title: ShieldsResponse

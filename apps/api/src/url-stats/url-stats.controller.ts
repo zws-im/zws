@@ -1,8 +1,8 @@
-import { Controller, Get, Inject, NotFoundException, Param } from '@nestjs/common';
+import { Controller, Get, Inject, NotFoundException, Param, SerializeOptions } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
 import { Short } from '../urls/dtos/short.dto.js';
-import { UrlStatsDto } from './dtos/url-stats.dto.js';
+import { UrlStatsSchema } from './dtos/url-stats.dto.js';
 import { UrlStatsService } from './url-stats.service.js';
 
 @Controller('/')
@@ -11,10 +11,9 @@ export class UrlStatsController {
 	constructor(@Inject(UrlStatsService) private readonly urlStatsService: UrlStatsService) {}
 
 	@Get('/:short/stats')
-	@ApiOkResponse({ type: UrlStatsDto })
-	async getShortUrlStats(@Param('short') rawShort: string): Promise<UrlStatsDto> {
-		const short = Short.parse(rawShort);
-
+	@ApiOkResponse({ standardSchema: UrlStatsSchema })
+	@SerializeOptions({ schema: UrlStatsSchema })
+	async getShortUrlStats(@Param('short', { schema: Short }) short: Short): Promise<UrlStatsSchema> {
 		const stats = await this.urlStatsService.statsForUrl(short);
 
 		if (!stats) {

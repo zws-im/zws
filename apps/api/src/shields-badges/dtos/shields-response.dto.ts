@@ -1,4 +1,3 @@
-import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 
 export const ShieldsResponseSchema = z
@@ -21,8 +20,6 @@ export const ShieldsResponseSchema = z
 		logoPosition: z.string().optional(),
 		style: z.string().optional(),
 	})
-	.meta({ title: 'ShieldsResponse' });
+	.meta({ id: 'ShieldsResponse', title: 'ShieldsResponse' });
 
 export type ShieldsResponseSchema = z.infer<typeof ShieldsResponseSchema>;
-
-export class ShieldsResponseDto extends createZodDto(ShieldsResponseSchema) {}

@@ -182,9 +182,6 @@ importers:
       millify:
         specifier: ^6.1.0
         version: 6.1.0
-      nestjs-zod:
-        specifier: 5.5.0
-        version: 5.5.0(@nestjs/common@12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/swagger@12.0.0(@nestjs/common@12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.0.1)(reflect-metadata@0.2.2))(rxjs@7.8.2)(zod@4.4.3)
       pg:
         specifier: 8.23.0
         version: 8.23.0
@@ -203,6 +200,9 @@ importers:
       zod:
         specifier: 4.4.3
         version: 4.4.3
+      zod-openapi:
+        specifier: 6.0.1
+        version: 6.0.1(zod@4.4.3)
     devDependencies:
       '@nestjs/cli':
         specifier: 12.0.0
@@ -4477,17 +4477,6 @@ packages:
     resolution: {integrity: sha512-WmmLty1YWwJl9yZi77v2dVIV6X2kuYV8YYBI/G3LWGKdGHmHUvL1z7FW0iDvEvGAwNEoc5x1tOOOyDnf5jJw/w==}
     engines: {node: '>= 10'}
 
-  nestjs-zod@5.5.0:
-    resolution: {integrity: sha512-V0WMtmICygYE2RoMKk8ExEeoetkC7PoUmUlZNP4JNk1YgrnUnG1vgkRn2DBNqsDi+Obv3c9AOssmXe/k/AvBOg==}
-    peerDependencies:
-      '@nestjs/common': ^10.0.0 || ^11.0.0
-      '@nestjs/swagger': ^7.4.2 || ^8.0.0 || ^11.0.0
-      rxjs: ^7.0.0
-      zod: ^3.25.0 || ^4.0.0
-    peerDependenciesMeta:
-      '@nestjs/swagger':
-        optional: true
-
   next-plausible@4.0.0:
     resolution: {integrity: sha512-tC48VscREZ4fEvas9T4oj5qJwnpPlms0Wih1Unbgi/ozG08yN1w0IAPGp+/cHB8n6qzEAL5J0MlAS0FOr132jA==}
     peerDependencies:
@@ -5589,6 +5578,12 @@ packages:
 
   zenscroll@4.0.2:
     resolution: {integrity: sha512-jEA1znR7b4C/NnaycInCU6h/d15ZzCd1jmsruqOKnZP6WXQSMH3W2GL+OXbkruslU4h+Tzuos0HdswzRUk/Vgg==}
+
+  zod-openapi@6.0.1:
+    resolution: {integrity: sha512-ITUfaevP/JcrsOavyVHFQHz788F7YcmN8wFYRZk20UM16BUafdUzxq8ZM4ahyTv3c6ESvY9ywA+MwLXzIvVVAw==}
+    engines: {node: '>=22.14.0'}
+    peerDependencies:
+      zod: ^4.0.0
 
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
@@ -9927,15 +9922,6 @@ snapshots:
 
   neotraverse@1.0.1: {}
 
-  nestjs-zod@5.5.0(@nestjs/common@12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/swagger@12.0.0(@nestjs/common@12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.0.1)(reflect-metadata@0.2.2))(rxjs@7.8.2)(zod@4.4.3):
-    dependencies:
-      '@nestjs/common': 12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2)
-      deepmerge: 4.3.1
-      rxjs: 7.8.2
-      zod: 4.4.3
-    optionalDependencies:
-      '@nestjs/swagger': 12.0.0(@nestjs/common@12.0.1(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.0.1)(reflect-metadata@0.2.2)
-
   next-plausible@4.0.0(next@16.3.3(@opentelemetry/api@1.9.1)(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       next: 16.3.3(@opentelemetry/api@1.9.1)(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -11151,5 +11137,9 @@ snapshots:
       youch-core: 0.3.3
 
   zenscroll@4.0.2: {}
+
+  zod-openapi@6.0.1(zod@4.4.3):
+    dependencies:
+      zod: 4.4.3
 
   zod@4.4.3: {}

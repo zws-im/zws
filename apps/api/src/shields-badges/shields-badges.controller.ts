@@ -1,7 +1,7 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Controller, Get, Inject, SerializeOptions } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
-import { ShieldsResponseDto } from './dtos/shields-response.dto.js';
+import { ShieldsResponseSchema } from './dtos/shields-response.dto.js';
 import { ShieldsBadgesService } from './shields-badges.service.js';
 
 @Controller('/stats/shields')
@@ -10,20 +10,23 @@ export class ShieldsBadgesController {
 	constructor(@Inject(ShieldsBadgesService) private readonly shieldsBadgesService: ShieldsBadgesService) {}
 
 	@Get('/version')
-	@ApiResponse({ type: ShieldsResponseDto })
-	getVersionBadge(): ShieldsResponseDto {
+	@ApiResponse({ standardSchema: ShieldsResponseSchema })
+	@SerializeOptions({ schema: ShieldsResponseSchema })
+	getVersionBadge(): ShieldsResponseSchema {
 		return this.shieldsBadgesService.getVersionBadge();
 	}
 
 	@Get('/urls')
-	@ApiResponse({ type: ShieldsResponseDto })
-	getUrlsBadge(): Promise<ShieldsResponseDto> {
+	@ApiResponse({ standardSchema: ShieldsResponseSchema })
+	@SerializeOptions({ schema: ShieldsResponseSchema })
+	getUrlsBadge(): Promise<ShieldsResponseSchema> {
 		return this.shieldsBadgesService.getUrlStatsBadge();
 	}
 
 	@Get('/visits')
-	@ApiResponse({ type: ShieldsResponseDto })
-	getVisitsBadge(): Promise<ShieldsResponseDto> {
+	@ApiResponse({ standardSchema: ShieldsResponseSchema })
+	@SerializeOptions({ schema: ShieldsResponseSchema })
+	getVisitsBadge(): Promise<ShieldsResponseSchema> {
 		return this.shieldsBadgesService.getVisitsStatsBadge();
 	}
 }

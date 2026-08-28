@@ -11,15 +11,16 @@ import {
 	Post,
 	Query,
 	Res,
+	SerializeOptions,
 } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import type { Response } from 'express';
 import { OpenapiTag } from '../openapi/openapi-tag.enum.js';
 import { UrlStatsService } from '../url-stats/url-stats.service.js';
-import { LongUrlDto } from './dtos/long-url.dto.js';
+import { LongUrl } from './dtos/long-url.dto.js';
 import { Short } from './dtos/short.dto.js';
-import { ShortenedUrlDto } from './dtos/shortened-url.dto.js';
-import type { VisitShortUrlQueryDto } from './dtos/visit-short-url-query.dto.js';
+import { ShortenedUrl } from './dtos/shortened-url.dto.js';
+import { VisitShortUrlQuery } from './dtos/visit-short-url-query.dto.js';
 import { UrlsService } from './urls.service.js';
 
 @Controller('/')
@@ -32,8 +33,9 @@ export class UrlsController {
 
 	@Post('/')
 	@HttpCode(HttpStatus.CREATED)
-	@ApiCreatedResponse({ type: ShortenedUrlDto })
-	async shortenUrl(@Body() body: LongUrlDto): Promise<ShortenedUrlDto> {
+	@ApiCreatedResponse({ standardSchema: ShortenedUrl })
+	@SerializeOptions({ schema: ShortenedUrl })
+	async shortenUrl(@Body({ schema: LongUrl }) body: LongUrl): Promise<ShortenedUrl> {
 		const url = await this.urlsService.shortenUrl(body.url);
 
 		return {
@@ -43,14 +45,13 @@ export class UrlsController {
 	}
 
 	@Get('/:short')
-	@ApiOkResponse({ type: LongUrlDto })
+	@ApiOkResponse({ standardSchema: LongUrl })
+	@SerializeOptions({ schema: LongUrl })
 	async visitShortUrl(
-		@Param('short') rawShort: Short,
-		@Query() query: VisitShortUrlQueryDto,
+		@Param('short', { schema: Short }) short: Short,
+		@Query({ schema: VisitShortUrlQuery }) query: VisitShortUrlQuery,
 		@Res({ passthrough: true }) response: Response,
-	): Promise<undefined | LongUrlDto> {
-		const short = Short.parse(rawShort);
-
+	): Promise<undefined | LongUrl> {
 		const url = await this.urlsService.retrieveUrl(short);
 
 		if (!url) {

@@ -1,4 +1,3 @@
-import { createZodDto } from 'nestjs-zod';
 import { z } from 'zod';
 
 export const InstanceStats = z
@@ -6,8 +5,6 @@ export const InstanceStats = z
 		urls: z.number().int().nonnegative(),
 		visits: z.number().int().nonnegative(),
 	})
-	.meta({ title: 'Stats' });
+	.meta({ id: 'InstanceStats', title: 'InstanceStats' });
 
 export type InstanceStats = z.infer<typeof InstanceStats>;
-
-export class InstanceStatsDto extends createZodDto(InstanceStats) {}

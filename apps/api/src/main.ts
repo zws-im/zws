@@ -1,7 +1,7 @@
 import './instrument.js';
 import { NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { cleanupOpenApiDoc } from 'nestjs-zod';
+import { DocumentBuilder, type SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
+import { createSchema } from 'zod-openapi';
 import { AppModule } from './app.module.js';
 import { ConfigService } from './config/config.service.js';
 import { OpenapiTag } from './openapi/openapi-tag.enum.js';
@@ -33,9 +33,19 @@ const openApiDoc = SwaggerModule.createDocument(
 	app,
 
 	openApiConfig.build(),
+	{
+		standardSchemaConverter: (schema, { schemaType }) => {
+			const converted = createSchema(schema as never, {
+				io: schemaType,
+				openapiVersion: '3.1.1',
+			});
+
+			return { schema: converted.schema, components: converted.components };
+		},
+	} satisfies SwaggerDocumentOptions,
 );
 
-SwaggerModule.setup('api', app, cleanupOpenApiDoc(openApiDoc), {
+SwaggerModule.setup('api', app, openApiDoc, {
 	jsonDocumentUrl: '/openapi.json',
 	yamlDocumentUrl: '/openapi.yaml',
 	ui: false,
