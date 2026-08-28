@@ -7,6 +7,6 @@
 		"outDir": "dist",
 		"rootDir": "src"
 	},
-	"extends": ["@tsconfig/node24", "@tsconfig/strictest"],
+	"extends": ["@tsconfig/node26", "@tsconfig/strictest"],
 	"include": ["src", "types"]
 }

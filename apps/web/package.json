@@ -32,7 +32,7 @@
 		"@trpc/client": "11.18.0",
 		"@trpc/next": "11.18.0",
 		"@trpc/react-query": "11.18.0",
-		"@types/node": "24.13.3",
+		"@types/node": "26.4.0",
 		"@types/react": "19.2.18",
 		"@types/react-dom": "19.2.5",
 		"@zws.im/api": "workspace:*",
@@ -56,6 +56,6 @@
 		"wrangler": "^4.83.0"
 	},
 	"engines": {
-		"node": "24.x"
+		"node": "26.x"
 	}
 }

@@ -35,10 +35,6 @@ if (!process.env.DATABASE_URL) {
 	throw new Error('Missing DATABASE_URL');
 }
 
-function escapeRegex(value: string): string {
-	return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 function shortBase64(rawUrl: string | undefined): string | undefined {
 	if (!rawUrl) {
 		return undefined;
@@ -98,7 +94,7 @@ async function targetFromInput(): Promise<{ hostname: string; redirectStatus?: n
 
 const target = await targetFromInput();
 const encodedShort = shortBase64(values.url);
-const domainPattern = `^https?://([^/@?#]+@)?([^/?#@]*\\.)?${escapeRegex(target.hostname)}(:[0-9]+)?([/?#]|$)`;
+const domainPattern = `^https?://([^/@?#]+@)?([^/?#@]*\\.)?${RegExp.escape(target.hostname)}(:[0-9]+)?([/?#]|$)`;
 const client = new Client({ connectionString: process.env.DATABASE_URL });
 const db = drizzle(client, { schema: Schema });
 
