@@ -37,13 +37,13 @@ export class UrlsService {
 	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
 		const encodedId = UrlsService.toBase64(id);
 
-		const [shortenedUrl] = await this.db
-			.select({
-				url: Schema.urls.url,
-				blocked: Schema.urls.blocked,
-			})
-			.from(Schema.urls)
-			.where(eq(Schema.urls.shortBase64, encodedId));
+		const shortenedUrl = await this.db.query.urls.findFirst({
+			columns: {
+				url: true,
+				blocked: true,
+			},
+			where: { shortBase64: encodedId },
+		});
 
 		if (!shortenedUrl) {
 			return undefined;

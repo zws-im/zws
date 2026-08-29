@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
-import { asc, eq } from 'drizzle-orm';
 import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
 import { Schema } from '../db/index.js';
 import type { Db } from '../db/interfaces/db.interface.js';
@@ -27,14 +26,14 @@ export class UrlStatsService {
 	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
 		const encodedId = UrlsService.toBase64(id);
 
-		const [shortenedUrl] = await this.db
-			.select({
-				url: Schema.urls.url,
-				blocked: Schema.urls.blocked,
-				shortBase64: Schema.urls.shortBase64,
-			})
-			.from(Schema.urls)
-			.where(eq(Schema.urls.shortBase64, encodedId));
+		const shortenedUrl = await this.db.query.urls.findFirst({
+			columns: {
+				url: true,
+				blocked: true,
+				shortBase64: true,
+			},
+			where: { shortBase64: encodedId },
+		});
 
 		if (!shortenedUrl) {
 			return undefined;
@@ -44,13 +43,11 @@ export class UrlStatsService {
 			throw new UnprocessableEntityException('That URL is blocked');
 		}
 
-		const visits = await this.db
-			.select({
-				timestamp: Schema.visits.timestamp,
-			})
-			.from(Schema.visits)
-			.where(eq(Schema.visits.urlShortBase64, shortenedUrl.shortBase64))
-			.orderBy(asc(Schema.visits.timestamp));
+		const visits = await this.db.query.visits.findMany({
+			columns: { timestamp: true },
+			where: { urlShortBase64: shortenedUrl.shortBase64 },
+			orderBy: { timestamp: 'asc' },
+		});
 
 		return {
 			visits: visits.map((visit) => visit.timestamp.toISOString()),
@@ -65,10 +62,10 @@ export class UrlStatsService {
 	async trackUrlVisit(id: Short): Promise<void> {
 		const encodedId = UrlsService.toBase64(id);
 
-		const [shortenedUrl] = await this.db
-			.select({ shortBase64: Schema.urls.shortBase64 })
-			.from(Schema.urls)
-			.where(eq(Schema.urls.shortBase64, encodedId));
+		const shortenedUrl = await this.db.query.urls.findFirst({
+			columns: { shortBase64: true },
+			where: { shortBase64: encodedId },
+		});
 
 		assert(shortenedUrl, "URL not found, can't track visit");
 

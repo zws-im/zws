@@ -1,8 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { convert } from 'convert';
-import { inArray } from 'drizzle-orm';
 import type { RedisClientType } from 'redis';
-import { Schema } from '../db/index.js';
+import type { Schema } from '../db/index.js';
 import type { Db } from '../db/interfaces/db.interface.js';
 import { DB_PROVIDER } from '../db/providers.js';
 import { REDIS_PROVIDER } from '../redis/providers.js';
@@ -56,11 +55,9 @@ export class BlockedHostnamesService {
 
 	private async populateRedisCache(): Promise<void> {
 		const hostnames = (
-			await this.db
-				.select({
-					hostname: Schema.blockedHostnames.hostname,
-				})
-				.from(Schema.blockedHostnames)
+			await this.db.query.blockedHostnames.findMany({
+				columns: { hostname: true },
+			})
 		).map((row) => row.hostname);
 
 		if (hostnames.length === 0) {
@@ -75,14 +72,12 @@ export class BlockedHostnamesService {
 	}
 
 	private async databaseContainsHostnames(hostnames: HostnameDomainNamePair): Promise<boolean> {
-		const rows = await this.db
-			.select({
-				hostname: Schema.blockedHostnames.hostname,
-			})
-			.from(Schema.blockedHostnames)
-			.where(inArray(Schema.blockedHostnames.hostname, [hostnames.hostname, hostnames.domainName]));
+		const row = await this.db.query.blockedHostnames.findFirst({
+			columns: { hostname: true },
+			where: { hostname: { in: [hostnames.hostname, hostnames.domainName] } },
+		});
 
-		return rows.length > 0;
+		return row !== undefined;
 	}
 
 	/** @returns Whether the hostnames were blocked in Redis, or `undefined` if they were missing. */
