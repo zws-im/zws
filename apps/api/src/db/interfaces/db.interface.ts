@@ -1,4 +1,4 @@
-import type { NodePgDatabase } from 'drizzle-orm/node-postgres';
+import type { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 import type { relations } from '../relations.js';
 
-export type Db = NodePgDatabase<typeof relations>;
+export type Db = PostgresJsDatabase<typeof relations>;

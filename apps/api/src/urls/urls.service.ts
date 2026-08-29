@@ -1,7 +1,7 @@
 import { sample } from '@jonahsnider/util';
 import { Inject, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
 import { eq } from 'drizzle-orm';
-import { DatabaseError } from 'pg';
+import postgres from 'postgres';
 import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
 import { ConfigService } from '../config/config.service.js';
 import { Schema } from '../db/index.js';
@@ -110,7 +110,7 @@ export class UrlsService {
 					})
 					.returning();
 			} catch (error) {
-				if (error instanceof DatabaseError && error.code === '23505') {
+				if (error instanceof postgres.PostgresError && error.code === '23505') {
 					// Ignore the expected potential duplicate ID errors
 				} else {
 					throw error;

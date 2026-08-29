@@ -12,6 +12,7 @@ const app = await NestFactory.create(AppModule, {
 });
 
 app.enableCors();
+app.enableShutdownHooks();
 
 const trpcService = app.get(TrpcService);
 

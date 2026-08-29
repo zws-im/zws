@@ -26,7 +26,7 @@
 		"envalid": "8.2.0",
 		"googleapis": "176.0.0",
 		"millify": "^6.1.0",
-		"pg": "8.23.0",
+		"postgres": "3.4.9",
 		"redis": "6.2.1",
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
@@ -42,7 +42,6 @@
 		"@types/cors": "2.8.19",
 		"@types/express": "5.0.6",
 		"@types/node": "26.4.0",
-		"@types/pg": "8.23.1",
 		"tsx": "4.23.12",
 		"type-fest": "5.8.0",
 		"typescript": "7.0.2"

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
-import { Client } from 'pg';
+import postgres from 'postgres';
 import { createClient } from 'redis';
 
 const { values } = parseArgs({
@@ -86,39 +86,39 @@ function hostnamePattern(hostname: string): string {
 }
 
 const target = await resolveTarget();
-const client = new Client({ connectionString: process.env.DATABASE_URL });
-await client.connect();
+const sql = postgres(process.env.DATABASE_URL, {
+	max: 1,
+	connect_timeout: 5,
+	connection: { application_name: 'zws-block-malicious-url' },
+});
 
 try {
-	const blocked = await client.query('SELECT 1 FROM blocked_hostnames WHERE hostname = $1', [target.hostname]);
-	const matches = await client.query<{ total: number; unblocked: number }>(
-		`SELECT count(*)::int AS total,
+	const pattern = hostnamePattern(target.hostname);
+	const blocked = await sql`SELECT 1 FROM blocked_hostnames WHERE hostname = ${target.hostname}`;
+	const matches = await sql<{ total: number; unblocked: number }[]>`SELECT count(*)::int AS total,
 			count(*) FILTER (WHERE blocked = false)::int AS unblocked
-		FROM urls WHERE url ~* $1`,
-		[hostnamePattern(target.hostname)],
-	);
-	const sample = await client.query<{ short_base64: string }>(
-		'SELECT short_base64 FROM urls WHERE url ~* $1 ORDER BY created_at DESC LIMIT 1',
-		[hostnamePattern(target.hostname)],
-	);
+		FROM urls WHERE url ~* ${pattern}`;
+	const sample = await sql<{ short_base64: string }[]>`
+		SELECT short_base64 FROM urls WHERE url ~* ${pattern} ORDER BY created_at DESC LIMIT 1
+	`;
 
 	const result: Record<string, unknown> = {
 		mode: values.apply ? 'apply' : 'dry-run',
 		hostname: target.hostname,
-		alreadyBlocked: blocked.rowCount === 1,
-		matchingUrls: matches.rows[0]?.total ?? 0,
-		unblockedUrls: matches.rows[0]?.unblocked ?? 0,
+		alreadyBlocked: blocked.count === 1,
+		matchingUrls: matches[0]?.total ?? 0,
+		unblockedUrls: matches[0]?.unblocked ?? 0,
 	};
 
 	if (values.apply) {
-		const inserted = await client.query('INSERT INTO blocked_hostnames (hostname) VALUES ($1) ON CONFLICT DO NOTHING', [
-			target.hostname,
-		]);
+		const inserted = await sql`
+			INSERT INTO blocked_hostnames (hostname) VALUES (${target.hostname}) ON CONFLICT DO NOTHING
+		`;
 		const redis = createClient({ url: process.env.REDIS_URL });
 		await redis.connect();
 
 		try {
-			result.hostnameInserted = inserted.rowCount === 1;
+			result.hostnameInserted = inserted.count === 1;
 			result.redisAdded = (await redis.sAdd('blocked-hostnames', target.hostname)) === 1;
 			await redis.expire('blocked-hostnames', 1800);
 		} finally {
@@ -127,8 +127,8 @@ try {
 
 		const shortUrl = values.url
 			? new URL(values.url)
-			: sample.rows[0]
-				? new URL(encodeURIComponent(Buffer.from(sample.rows[0].short_base64, 'base64').toString()), 'https://zws.im')
+			: sample[0]
+				? new URL(encodeURIComponent(Buffer.from(sample[0].short_base64, 'base64').toString()), 'https://zws.im')
 				: undefined;
 
 		if (shortUrl) {
@@ -148,5 +148,5 @@ try {
 
 	console.log(JSON.stringify(result, null, 2));
 } finally {
-	await client.end();
+	await sql.end({ timeout: 5 });
 }
