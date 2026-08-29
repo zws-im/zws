@@ -1,0 +1,265 @@
+{
+	"id": "a1a9d125-cfb1-4769-baca-2f88b80c8dc9",
+	"prevIds": ["00000000-0000-0000-0000-000000000000"],
+	"version": "8",
+	"dialect": "postgres",
+	"ddl": [
+		{
+			"isRlsEnabled": false,
+			"name": "blocked_hostnames",
+			"schema": "public",
+			"entityType": "tables"
+		},
+		{
+			"columns": ["hostname"],
+			"nameExplicit": false,
+			"name": "blocked_hostnames_pkey",
+			"schema": "public",
+			"table": "blocked_hostnames",
+			"entityType": "pks"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "hostname",
+			"schema": "public",
+			"table": "blocked_hostnames",
+			"entityType": "columns"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "created_at",
+			"schema": "public",
+			"table": "blocked_hostnames",
+			"entityType": "columns"
+		},
+		{
+			"isRlsEnabled": false,
+			"name": "urls",
+			"schema": "public",
+			"entityType": "tables"
+		},
+		{
+			"type": "boolean",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "false",
+			"generated": null,
+			"identity": null,
+			"name": "blocked",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "columns"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "created_at",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "columns"
+		},
+		{
+			"columns": ["short_base64"],
+			"nameExplicit": false,
+			"name": "urls_pkey",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "pks"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "short_base64",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "columns"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "url",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "columns"
+		},
+		{
+			"nameExplicit": false,
+			"columns": [
+				{
+					"value": "blocked",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				}
+			],
+			"isUnique": false,
+			"where": null,
+			"with": "",
+			"method": "btree",
+			"concurrently": false,
+			"name": "urls_blocked_index",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "indexes"
+		},
+		{
+			"nameExplicit": false,
+			"columns": [
+				{
+					"value": "url",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				}
+			],
+			"isUnique": false,
+			"where": null,
+			"with": "",
+			"method": "btree",
+			"concurrently": false,
+			"name": "urls_url_index",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "indexes"
+		},
+		{
+			"isRlsEnabled": false,
+			"name": "visits",
+			"schema": "public",
+			"entityType": "tables"
+		},
+		{
+			"columns": ["id"],
+			"nameExplicit": false,
+			"name": "visits_pkey",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "pks"
+		},
+		{
+			"type": "serial",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "id",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "columns"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "timestamp",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "columns"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "url_short_base64",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "columns"
+		},
+		{
+			"nameExplicit": false,
+			"columns": [
+				{
+					"value": "url_short_base64",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				}
+			],
+			"isUnique": false,
+			"where": null,
+			"with": "",
+			"method": "btree",
+			"concurrently": false,
+			"name": "visits_url_short_base64_index",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "indexes"
+		},
+		{
+			"nameExplicit": false,
+			"columns": [
+				{
+					"value": "timestamp",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				}
+			],
+			"isUnique": false,
+			"where": null,
+			"with": "",
+			"method": "btree",
+			"concurrently": false,
+			"name": "visits_timestamp_index",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "indexes"
+		},
+		{
+			"nameExplicit": false,
+			"columns": ["url_short_base64"],
+			"schemaTo": "public",
+			"tableTo": "urls",
+			"columnsTo": ["short_base64"],
+			"onUpdate": "CASCADE",
+			"onDelete": "CASCADE",
+			"name": "visits_url_short_base64_urls_short_base64_fk",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "fks"
+		}
+	],
+	"renames": []
+}
