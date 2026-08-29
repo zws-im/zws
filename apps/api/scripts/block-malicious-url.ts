@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
-import { count, desc, eq, sql } from 'drizzle-orm';
+import { eq } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import { createClient } from 'redis';
@@ -83,11 +83,6 @@ async function resolveTarget(): Promise<{ hostname: string; targetUrl?: string }
 	return { hostname, targetUrl };
 }
 
-function hostnamePattern(hostname: string): string {
-	const escaped = hostname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-	return `^https?://([^/@?#]+@)?([^/?#@]*\\.)?${escaped}(:[0-9]+)?([/?#]|$)`;
-}
-
 const target = await resolveTarget();
 const postgresClient = postgres(process.env.DATABASE_URL, {
 	max: 1,
@@ -97,45 +92,24 @@ const postgresClient = postgres(process.env.DATABASE_URL, {
 const db = drizzle({ client: postgresClient });
 
 try {
-	const pattern = hostnamePattern(target.hostname);
-	const matchesHostname = sql`${Schema.urls.url} ~* ${pattern}`;
-	const [blocked, matches] = await Promise.all([
-		db
-			.select({ hostname: Schema.blockedHostnames.hostname })
-			.from(Schema.blockedHostnames)
-			.where(eq(Schema.blockedHostnames.hostname, target.hostname))
-			.limit(1),
-		db
-			.select({
-				total: count(),
-				unblocked: sql<number>`count(*) filter (where ${Schema.urls.blocked} = false)::int`,
-			})
-			.from(Schema.urls)
-			.where(matchesHostname),
-	]);
+	const blocked = await db
+		.select({ hostname: Schema.blockedHostnames.hostname })
+		.from(Schema.blockedHostnames)
+		.where(eq(Schema.blockedHostnames.hostname, target.hostname))
+		.limit(1);
 
 	const result: Record<string, unknown> = {
 		mode: values.apply ? 'apply' : 'dry-run',
 		hostname: target.hostname,
 		alreadyBlocked: blocked.length === 1,
-		matchingUrls: matches[0]?.total ?? 0,
-		unblockedUrls: matches[0]?.unblocked ?? 0,
 	};
 
 	if (values.apply) {
-		const [inserted, sample] = await Promise.all([
-			db
-				.insert(Schema.blockedHostnames)
-				.values({ hostname: target.hostname })
-				.onConflictDoNothing()
-				.returning({ hostname: Schema.blockedHostnames.hostname }),
-			db
-				.select({ shortBase64: Schema.urls.shortBase64 })
-				.from(Schema.urls)
-				.where(matchesHostname)
-				.orderBy(desc(Schema.urls.createdAt))
-				.limit(1),
-		]);
+		const inserted = await db
+			.insert(Schema.blockedHostnames)
+			.values({ hostname: target.hostname })
+			.onConflictDoNothing()
+			.returning({ hostname: Schema.blockedHostnames.hostname });
 		const redis = createClient({ url: process.env.REDIS_URL });
 		await redis.connect();
 
@@ -147,11 +121,7 @@ try {
 			await redis.close();
 		}
 
-		const shortUrl = values.url
-			? new URL(values.url)
-			: sample[0]
-				? new URL(encodeURIComponent(Buffer.from(sample[0].shortBase64, 'base64').toString()), 'https://zws.im')
-				: undefined;
+		const shortUrl = values.url ? new URL(values.url) : undefined;
 
 		if (shortUrl) {
 			shortUrl.hostname = 'zws.im';
