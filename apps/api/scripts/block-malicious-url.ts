@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
+import { count, desc, eq, sql } from 'drizzle-orm';
+import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
 import { createClient } from 'redis';
+import * as Schema from '../src/db/schema.ts';
 
 const { values } = parseArgs({
 	options: {
@@ -86,39 +89,58 @@ function hostnamePattern(hostname: string): string {
 }
 
 const target = await resolveTarget();
-const sql = postgres(process.env.DATABASE_URL, {
+const postgresClient = postgres(process.env.DATABASE_URL, {
 	max: 1,
 	connect_timeout: 5,
 	connection: { application_name: 'zws-block-malicious-url' },
 });
+const db = drizzle({ client: postgresClient });
 
 try {
 	const pattern = hostnamePattern(target.hostname);
-	const blocked = await sql`SELECT 1 FROM blocked_hostnames WHERE hostname = ${target.hostname}`;
-	const matches = await sql<{ total: number; unblocked: number }[]>`SELECT count(*)::int AS total,
-			count(*) FILTER (WHERE blocked = false)::int AS unblocked
-		FROM urls WHERE url ~* ${pattern}`;
-	const sample = await sql<{ short_base64: string }[]>`
-		SELECT short_base64 FROM urls WHERE url ~* ${pattern} ORDER BY created_at DESC LIMIT 1
-	`;
+	const matchesHostname = sql`${Schema.urls.url} ~* ${pattern}`;
+	const [blocked, matches] = await Promise.all([
+		db
+			.select({ hostname: Schema.blockedHostnames.hostname })
+			.from(Schema.blockedHostnames)
+			.where(eq(Schema.blockedHostnames.hostname, target.hostname))
+			.limit(1),
+		db
+			.select({
+				total: count(),
+				unblocked: sql<number>`count(*) filter (where ${Schema.urls.blocked} = false)::int`,
+			})
+			.from(Schema.urls)
+			.where(matchesHostname),
+	]);
 
 	const result: Record<string, unknown> = {
 		mode: values.apply ? 'apply' : 'dry-run',
 		hostname: target.hostname,
-		alreadyBlocked: blocked.count === 1,
+		alreadyBlocked: blocked.length === 1,
 		matchingUrls: matches[0]?.total ?? 0,
 		unblockedUrls: matches[0]?.unblocked ?? 0,
 	};
 
 	if (values.apply) {
-		const inserted = await sql`
-			INSERT INTO blocked_hostnames (hostname) VALUES (${target.hostname}) ON CONFLICT DO NOTHING
-		`;
+		const [inserted, sample] = await Promise.all([
+			db
+				.insert(Schema.blockedHostnames)
+				.values({ hostname: target.hostname })
+				.onConflictDoNothing()
+				.returning({ hostname: Schema.blockedHostnames.hostname }),
+			db
+				.select({ shortBase64: Schema.urls.shortBase64 })
+				.from(Schema.urls)
+				.where(matchesHostname)
+				.orderBy(desc(Schema.urls.createdAt))
+				.limit(1),
+		]);
 		const redis = createClient({ url: process.env.REDIS_URL });
 		await redis.connect();
 
 		try {
-			result.hostnameInserted = inserted.count === 1;
+			result.hostnameInserted = inserted.length === 1;
 			result.redisAdded = (await redis.sAdd('blocked-hostnames', target.hostname)) === 1;
 			await redis.expire('blocked-hostnames', 1800);
 		} finally {
@@ -128,7 +150,7 @@ try {
 		const shortUrl = values.url
 			? new URL(values.url)
 			: sample[0]
-				? new URL(encodeURIComponent(Buffer.from(sample[0].short_base64, 'base64').toString()), 'https://zws.im')
+				? new URL(encodeURIComponent(Buffer.from(sample[0].shortBase64, 'base64').toString()), 'https://zws.im')
 				: undefined;
 
 		if (shortUrl) {
@@ -148,5 +170,5 @@ try {
 
 	console.log(JSON.stringify(result, null, 2));
 } finally {
-	await sql.end({ timeout: 5 });
+	await postgresClient.end({ timeout: 5 });
 }
