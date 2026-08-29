@@ -12,6 +12,7 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check . --write --unsafe",
 		"migrate": "drizzle-kit migrate",
+		"migrate:check": "drizzle-kit check",
 		"migrate:create": "drizzle-kit generate",
 		"test": "pnpm run lint && pnpm run format && turbo run build"
 	},
