@@ -3,6 +3,7 @@ import { drizzle } from 'drizzle-orm/node-postgres';
 import { Client } from 'pg';
 import { ConfigService } from '../config/config.service.js';
 import { DB_PROVIDER } from './providers.js';
+import { relations } from './relations.js';
 
 @Global()
 @Module({
@@ -13,7 +14,7 @@ import { DB_PROVIDER } from './providers.js';
 			useFactory: async (configService: ConfigService) => {
 				const client = new Client({ connectionString: configService.databaseUrl });
 				await client.connect();
-				const db = drizzle({ client });
+				const db = drizzle({ client, relations });
 
 				return db;
 			},
