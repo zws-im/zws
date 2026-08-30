@@ -31,7 +31,7 @@
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
 		"superjson": "2.2.6",
-		"zod": "4.5.2",
+		"zod": "4.5.4",
 		"zod-openapi": "6.0.1"
 	},
 	"devDependencies": {
