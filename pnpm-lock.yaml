@@ -171,8 +171,8 @@ importers:
         specifier: 8.2.0
         version: 8.2.0
       googleapis:
-        specifier: 176.0.0
-        version: 176.0.0(supports-color@10.2.2)
+        specifier: 178.0.0
+        version: 178.0.0(supports-color@10.2.2)
       millify:
         specifier: ^6.1.0
         version: 6.1.0
@@ -3909,8 +3909,8 @@ packages:
     resolution: {integrity: sha512-7g1yzQKx0mmNTjiK0H9dJ8eqKqDBveES9vLHeg5neb3BMQy/d1oQefIMhIpOVT8a+f+LOcixMEdRbFIW/cQUJw==}
     engines: {node: '>=18'}
 
-  googleapis@176.0.0:
-    resolution: {integrity: sha512-v24+WfeIw3R9iF8LT7eixlawezy5SGGNB/WjFV8qeiBS9G6KCsqaFngsnTXvBrVH4womehN2Co8UYJxZ0KpbvQ==}
+  googleapis@178.0.0:
+    resolution: {integrity: sha512-IxI9G8s2p83jvbrAKYY5gzY+j/m+bgJap8kAYsCRW/xkTYTTOAzVEYtGsHJum8EGOcraA25iZ+JKwhdXrZioJQ==}
     engines: {node: '>=18'}
 
   gopd@1.2.0:
@@ -9281,7 +9281,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  googleapis@176.0.0(supports-color@10.2.2):
+  googleapis@178.0.0(supports-color@10.2.2):
     dependencies:
       google-auth-library: 10.5.0(supports-color@10.2.2)
       googleapis-common: 8.0.3(supports-color@10.2.2)
