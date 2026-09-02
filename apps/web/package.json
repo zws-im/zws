@@ -36,7 +36,7 @@
 		"@types/react": "19.2.18",
 		"@types/react-dom": "19.2.5",
 		"@zws.im/api": "workspace:*",
-		"apexcharts": "7.0.0",
+		"apexcharts": "7.1.0",
 		"clsx": "2.1.1",
 		"framer-motion": "13.1.1",
 		"millify": "6.1.0",
