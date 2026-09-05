@@ -19,7 +19,7 @@
 		"@nestjs/swagger": "12.0.1",
 		"@sentry/nestjs": "10.73.0",
 		"@trpc/server": "11.18.0",
-		"convert": "7.0.2",
+		"convert": "8.0.1",
 		"cors": "2.8.6",
 		"devalue": "5.9.2",
 		"drizzle-orm": "1.0.0-rc.5-ab785fc",

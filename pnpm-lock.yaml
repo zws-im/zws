@@ -156,8 +156,8 @@ importers:
         specifier: 11.18.0
         version: 11.18.0(typescript@7.0.2)
       convert:
-        specifier: 7.0.2
-        version: 7.0.2
+        specifier: 8.0.1
+        version: 8.0.1
       cors:
         specifier: 2.8.6
         version: 2.8.6
@@ -3296,8 +3296,8 @@ packages:
     resolution: {integrity: sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag==}
     engines: {node: '>=18'}
 
-  convert@7.0.2:
-    resolution: {integrity: sha512-vDIDqKYqSxmg3x16wYdB+CyfioYOd70GJBtFeU9eoj7PXzhhsmEut+N9NJ7X4Lc+mp18AHOPL9YgyXyejpDc1A==}
+  convert@8.0.1:
+    resolution: {integrity: sha512-lwoEMYZxln/NOBAxEM8RIUqNvaakcm2EBWjilaSyOD+ENh25LlwU5cZfz7rAq/Tf40Jy8FNfl+KV72Dhu7Hu/A==}
 
   cookie-signature@1.2.2:
     resolution: {integrity: sha512-D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg==}
@@ -8668,7 +8668,7 @@ snapshots:
 
   content-type@2.1.0: {}
 
-  convert@7.0.2: {}
+  convert@8.0.1: {}
 
   cookie-signature@1.2.2: {}
 
