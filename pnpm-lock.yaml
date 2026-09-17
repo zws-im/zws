@@ -322,8 +322,8 @@ importers:
         specifier: workspace:*
         version: link:../api
       apexcharts:
-        specifier: 7.3.0
-        version: 7.3.0
+        specifier: 7.4.0
+        version: 7.4.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -344,7 +344,7 @@ importers:
         version: 19.3.0
       react-apexcharts:
         specifier: 2.1.1
-        version: 2.1.1(apexcharts@7.3.0)(react@19.3.0)
+        version: 2.1.1(apexcharts@7.4.0)(react@19.3.0)
       react-dom:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
@@ -2757,9 +2757,6 @@ packages:
   '@types/node@26.4.1':
     resolution: {integrity: sha512-k97ENvZWtvA6yqz5/FS6a7duDgOPEeOQOc2iKS/nY6mX6qJUKtLnWzQS+Xj6tXweyj6ZcTAK2Qecetnvi9nCLA==}
 
-  '@types/node@26.5.1':
-    resolution: {integrity: sha512-CzNm2FezW4VR/LjG6yUdiEgLE/rAQ9Slj5gCu/C2VrdcW7I0ahNZ8DRbHT7zOZ6r3ONgd/bsQIeSaoDGrd1C6g==}
-
   '@types/node@26.6.1':
     resolution: {integrity: sha512-VqGJBMCtdhqkBUCcBLvywI0NJ+KLuVzgNnlBUNFOQjqVxzo2lxLUNg1DSey8+u2u6ktswSAxg+s68QLzWHNOuA==}
 
@@ -3065,11 +3062,11 @@ packages:
     resolution: {integrity: sha512-9k3v7xcHwgdO/DruxGIg4HtjvlAZlcnsX/mzqUb1t3NkYnl9kK2UJ+Gq0io+vQf7iT//BD/HB/NBkUR1LWxoeA==}
     engines: {node: '>=14'}
 
-  apex-commons@0.7.0:
-    resolution: {integrity: sha512-cGspw4G0FV/hULrJy75Du301lFGSkMWph4c5B+/YX4CBImG8WFWRUZ5dTFKYcoK5Q8/Ax2jHAKWVVRzNZOWH7g==}
+  apex-commons@0.8.1:
+    resolution: {integrity: sha512-F7fqJVh0smeTu1d86uuRSNNZvaM/l11GNQMbu6oAiSvuXp+K8KCufg0oZTy2VQBEEipRLAdFqkHnphlVpTG0Gw==}
 
-  apexcharts@7.3.0:
-    resolution: {integrity: sha512-WCpubnhgwuNdhH0VZ/Wizj13NlKqDBAxUTYmhnd01pBnDsdiPKNuXFATvDS2t1sojOVuzDFpCvBOWGEvbSUi6g==}
+  apexcharts@7.4.0:
+    resolution: {integrity: sha512-p7c9d44vWfR6vLyg4gZr1nNwD8dL8+BYXP1kysbDS0jZgca8YF+IVUQMtOnkGc8L4SMRHgadnPj54xbDP75tsQ==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   apg-lite@1.0.5:
@@ -8080,18 +8077,13 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
-  '@types/node@26.5.1':
-    dependencies:
-      undici-types: 8.9.0
-    optional: true
-
   '@types/node@26.6.1':
     dependencies:
       undici-types: 8.9.0
 
   '@types/pg@8.23.1':
     dependencies:
-      '@types/node': 26.5.1
+      '@types/node': 26.6.1
       pg-protocol: 1.16.0
       pg-types: 2.2.0
     optional: true
@@ -8370,11 +8362,11 @@ snapshots:
 
   ansis@4.4.0: {}
 
-  apex-commons@0.7.0: {}
+  apex-commons@0.8.1: {}
 
-  apexcharts@7.3.0:
+  apexcharts@7.4.0:
     dependencies:
-      apex-commons: 0.7.0
+      apex-commons: 0.8.1
 
   apg-lite@1.0.5: {}
 
@@ -9355,7 +9347,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 26.5.1
+      '@types/node': 26.6.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
     optional: true
@@ -9905,9 +9897,9 @@ snapshots:
       iconv-lite: 0.7.3
       unpipe: 1.0.0
 
-  react-apexcharts@2.1.1(apexcharts@7.3.0)(react@19.3.0):
+  react-apexcharts@2.1.1(apexcharts@7.4.0)(react@19.3.0):
     dependencies:
-      apexcharts: 7.3.0
+      apexcharts: 7.4.0
       prop-types: 15.8.1
       react: 19.3.0
 
