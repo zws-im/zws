@@ -45,7 +45,7 @@
 		"react": "19.3.0",
 		"react-apexcharts": "2.1.1",
 		"react-dom": "19.3.0",
-		"swagger-ui-react": "5.32.15",
+		"swagger-ui-react": "5.33.0",
 		"tailwindcss": "4.3.3",
 		"typescript": "7.0.2"
 	},
