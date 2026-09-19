@@ -43,7 +43,7 @@
 		"@types/express": "5.0.6",
 		"@types/node": "26.6.1",
 		"tsx": "4.23.13",
-		"type-fest": "5.9.0",
+		"type-fest": "5.10.0",
 		"typescript": "7.0.2"
 	}
 }
