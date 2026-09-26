@@ -219,8 +219,8 @@ importers:
         specifier: 2.8.6
         version: 2.8.6
       devalue:
-        specifier: 6.0.0
-        version: 6.0.0
+        specifier: 6.0.2
+        version: 6.0.2
       drizzle-orm:
         specifier: 1.0.0-rc.5-ab785fc
         version: 1.0.0-rc.5-ab785fc(@opentelemetry/api@1.9.1)(@types/pg@8.23.1)(pg@8.23.0)(postgres@3.4.9)(zod@4.6.5)
@@ -3424,8 +3424,8 @@ packages:
     resolution: {integrity: sha512-qE3Veg1YXzGHQhlA6jzebZN2qVf6NX+A7m7qlhCGG30dJixrAQhYOsJjsnBjJkCSmuOPpCk30145fr8FV0bzog==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  devalue@6.0.0:
-    resolution: {integrity: sha512-jITRGmc7d+UInNVsQxcz3zsbDwP1MvvVzlNto94FAeieVO5oAk3lupptFvTVBcB+rM2BAagsKtTjgVKFsddCkA==}
+  devalue@6.0.2:
+    resolution: {integrity: sha512-6V1HzU4to74skg//ScZR2mp9bdz+rESC9jQzVIIG/ha0HYgymHcXIQQCjH0+ivRaSuY82fa9fZ7Ro6QZT4s4uw==}
     engines: {node: '>=22.17'}
 
   dompurify@3.4.14:
@@ -8772,7 +8772,7 @@ snapshots:
 
   detect-newline@4.0.1: {}
 
-  devalue@6.0.0: {}
+  devalue@6.0.2: {}
 
   dompurify@3.4.14:
     optionalDependencies:

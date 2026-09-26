@@ -21,7 +21,7 @@
 		"@trpc/server": "11.19.0",
 		"convert": "8.0.2",
 		"cors": "2.8.6",
-		"devalue": "6.0.0",
+		"devalue": "6.0.2",
 		"drizzle-orm": "1.0.0-rc.5-ab785fc",
 		"envalid": "8.2.0",
 		"googleapis": "182.0.0",
