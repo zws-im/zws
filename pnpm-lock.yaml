@@ -349,8 +349,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       swagger-ui-react:
-        specifier: 5.33.0
-        version: 5.33.0(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 5.33.1
+        version: 5.33.1(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       tailwindcss:
         specifier: 4.3.3
         version: 4.3.3
@@ -5090,8 +5090,8 @@ packages:
   swagger-ui-dist@5.33.0:
     resolution: {integrity: sha512-wpdK+m6BU5yj6pmUdMskZVTSWYG4DLglAx3sIhylloY37i8O37IrH+YEpqdXNfpaTGxILRBFzUqLF2jKqbfI7A==}
 
-  swagger-ui-react@5.33.0:
-    resolution: {integrity: sha512-4CJm/NyzuVHYRH3rVWgMeBcsx4TKnSvSHf+hd5uWf6od6l7VbXED5fMhoPB7IkJe+SKnBm5uSxbomoLpXkoFXQ==}
+  swagger-ui-react@5.33.1:
+    resolution: {integrity: sha512-AvfsWJrKsiSxiE/GMvya4z4RRNyHAiGM3LAezdJzPe8pY5MP6jAyCB+2/7Bq+YYd+XcnsNxt6GaottJMj5CRzA==}
     peerDependencies:
       react: '>=16.8.0 <20'
       react-dom: '>=16.8.0 <20'
@@ -10516,7 +10516,7 @@ snapshots:
     dependencies:
       '@scarf/scarf': 1.4.0
 
-  swagger-ui-react@5.33.0(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2):
+  swagger-ui-react@5.33.1(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2):
     dependencies:
       '@babel/runtime-corejs3': 7.29.7
       '@scarf/scarf': 1.4.0
