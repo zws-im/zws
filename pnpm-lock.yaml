@@ -322,8 +322,8 @@ importers:
         specifier: workspace:*
         version: link:../api
       apexcharts:
-        specifier: 7.7.0
-        version: 7.7.0
+        specifier: 7.8.0
+        version: 7.8.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -344,7 +344,7 @@ importers:
         version: 19.3.0
       react-apexcharts:
         specifier: 2.1.1
-        version: 2.1.1(apexcharts@7.7.0)(react@19.3.0)
+        version: 2.1.1(apexcharts@7.8.0)(react@19.3.0)
       react-dom:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
@@ -2768,9 +2768,6 @@ packages:
   '@types/node@26.3.0':
     resolution: {integrity: sha512-L3fgrnchriRC2ExBflb8j4uZZURHZfQsmQeyVzhjcHW4kkwVyo8/0h1B2MVzMTrYUJYu6G7EWs14hW/L9putqw==}
 
-  '@types/node@26.6.3':
-    resolution: {integrity: sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==}
-
   '@types/node@26.6.4':
     resolution: {integrity: sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==}
 
@@ -3079,8 +3076,8 @@ packages:
   apex-commons@0.8.1:
     resolution: {integrity: sha512-F7fqJVh0smeTu1d86uuRSNNZvaM/l11GNQMbu6oAiSvuXp+K8KCufg0oZTy2VQBEEipRLAdFqkHnphlVpTG0Gw==}
 
-  apexcharts@7.7.0:
-    resolution: {integrity: sha512-lvXebAFAUnenxqJ4pSS5QBGuLxXVVQ8+D+AO7GgMeE8DczwYyEmz8UO8cCUmv9tY4yRTIiz7SUCdvoNvRIyF/g==}
+  apexcharts@7.8.0:
+    resolution: {integrity: sha512-UxzR7IDXs3HDaOoxTsdn7L2dw9TdYp347uiU7WvjKuzCQqODmO7l63rxMmLwtbYrZPd+0Vd7v5VINzJgPyqmIw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   apg-lite@1.0.5:
@@ -8145,18 +8142,13 @@ snapshots:
     dependencies:
       undici-types: 8.3.0
 
-  '@types/node@26.6.3':
-    dependencies:
-      undici-types: 8.9.0
-    optional: true
-
   '@types/node@26.6.4':
     dependencies:
       undici-types: 8.9.0
 
   '@types/pg@8.23.1':
     dependencies:
-      '@types/node': 26.6.3
+      '@types/node': 26.6.4
       pg-protocol: 1.16.0
       pg-types: 2.2.0
     optional: true
@@ -8437,7 +8429,7 @@ snapshots:
 
   apex-commons@0.8.1: {}
 
-  apexcharts@7.7.0:
+  apexcharts@7.8.0:
     dependencies:
       apex-commons: 0.8.1
 
@@ -9490,7 +9482,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 26.6.3
+      '@types/node': 26.6.4
       merge-stream: 2.0.0
       supports-color: 8.1.1
     optional: true
@@ -10068,9 +10060,9 @@ snapshots:
       iconv-lite: 0.7.3
       unpipe: 1.0.0
 
-  react-apexcharts@2.1.1(apexcharts@7.7.0)(react@19.3.0):
+  react-apexcharts@2.1.1(apexcharts@7.8.0)(react@19.3.0):
     dependencies:
-      apexcharts: 7.7.0
+      apexcharts: 7.8.0
       prop-types: 15.8.1
       react: 19.3.0
 
