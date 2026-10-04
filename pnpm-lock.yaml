@@ -293,7 +293,7 @@ importers:
         version: 2.2.0(react@19.3.0)
       '@opennextjs/cloudflare':
         specifier: ^1.19.1
-        version: 1.20.8(next@16.3.8(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.146.0(@types/node@26.6.4))
+        version: 1.20.8(next@16.3.8(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.147.0(@types/node@26.6.4))
       '@tailwindcss/postcss':
         specifier: 4.3.3
         version: 4.3.3
@@ -369,7 +369,7 @@ importers:
         version: 5.18.0
       wrangler:
         specifier: ^4.83.0
-        version: 4.146.0(@types/node@26.6.4)
+        version: 4.147.0(@types/node@26.6.4)
 
 packages:
 
@@ -5382,8 +5382,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.146.0:
-    resolution: {integrity: sha512-c27eHUH0Isr8HTmgZ6cLtLr/0cxtiBoLren6ywBeTW8ZIzj/dINVNBcqsbZc+iETnI5jrzO7E7Z8mLgLZ/l9iw==}
+  wrangler@4.147.0:
+    resolution: {integrity: sha512-pQYRoiq8PTAxphaG69z8+GC1DkSGd19EDZehQ8zxjo/Ko3mRB6Qs1mTrd8ZuKAarLklIjTqr1lUdCK9r4q2hUg==}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -7107,7 +7107,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@opennextjs/cloudflare@1.20.8(next@16.3.8(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.146.0(@types/node@26.6.4))':
+  '@opennextjs/cloudflare@1.20.8(next@16.3.8(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.147.0(@types/node@26.6.4))':
     dependencies:
       '@ast-grep/napi': 0.40.5
       '@dotenvx/dotenvx': 1.31.0
@@ -7119,7 +7119,7 @@ snapshots:
       glob: 12.0.0
       next: 16.3.8(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.4)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       ts-tqdm: 0.8.6
-      wrangler: 4.146.0(@types/node@26.6.4)
+      wrangler: 4.147.0(@types/node@26.6.4)
       yargs: 18.1.0
     transitivePeerDependencies:
       - encoding
@@ -10871,7 +10871,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20261001.1
       '@cloudflare/workerd-windows-64': 1.20261001.1
 
-  wrangler@4.146.0(@types/node@26.6.4):
+  wrangler@4.147.0(@types/node@26.6.4):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261001.1)
