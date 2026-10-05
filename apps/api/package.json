@@ -27,7 +27,7 @@
 		"googleapis": "183.0.0",
 		"millify": "^6.1.0",
 		"postgres": "3.4.9",
-		"redis": "6.2.1",
+		"redis": "6.3.0",
 		"reflect-metadata": "0.2.2",
 		"rxjs": "7.8.2",
 		"superjson": "2.2.6",
