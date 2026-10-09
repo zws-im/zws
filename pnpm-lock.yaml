@@ -207,8 +207,8 @@ importers:
         specifier: 12.0.2
         version: 12.0.2(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.2)(reflect-metadata@0.2.2)(typescript@7.0.2)
       '@sentry/nestjs':
-        specifier: 11.5.0
-        version: 11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.2)(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
+        specifier: 11.6.0
+        version: 11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.2)(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
       '@trpc/server':
         specifier: 11.19.0
         version: 11.19.0(typescript@7.0.2)
@@ -2187,8 +2187,8 @@ packages:
   '@scarf/scarf@1.4.0':
     resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==}
 
-  '@sentry/bundler-plugins@11.5.0':
-    resolution: {integrity: sha512-3stxFCNFO2f8GTOsF0rgUOa1UN0if4GYQspZTCdI0MISKinIsts5z3QJUeyZDnGjPkUBBoTo7STuUSqiK88IQg==}
+  '@sentry/bundler-plugins@11.6.0':
+    resolution: {integrity: sha512-qHKQgOQaayRuwDCWWoAkEMkJe13RZwrpAH5Y5edL3d5XD2Gd7uenA6lPdXFw3qP1slezeSYErV0GAdcVYMo8fg==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
     peerDependencies:
       '@babel/core': ^7.18.5
@@ -2206,33 +2206,33 @@ packages:
     resolution: {integrity: sha512-ttSRcoLf2kIENDIFzH12aJaVMdxnidMYLvVNwEX/JjXfXaQot8u5M47QmgAFOOhVJ4nQ2uU8wTCh+fwSPrrCfg==}
     engines: {node: '>=14'}
 
-  '@sentry/core@11.5.0':
-    resolution: {integrity: sha512-flEMRAfk8t3JW7w32shN6piuLJESkuryF90WzMn75ZGEiVoXkhStOvLT8qX8SQaLeFll4vLp7nDPdTsdJe1APw==}
+  '@sentry/core@11.6.0':
+    resolution: {integrity: sha512-PbITT1kfJYKJiS9fH4ZtOcwIONKyt+tUsTZSPtcAjPdkUDOzMKT61MkUa1Ze07VzNtLALT24ZdUOc6d9K4YoKA==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
-  '@sentry/nestjs@11.5.0':
-    resolution: {integrity: sha512-u+CUXKYUj3FsxsqpRWGGNt04aF9eC776nZUlyRpdw/KAu+eNLKv0sY1JA6njVQq21uySF0hgzDZ2m4T2qIpeCw==}
+  '@sentry/nestjs@11.6.0':
+    resolution: {integrity: sha512-XcDWrctU/cyc5pYbt8ivNM9nVgICWgBBqQgubAI0hQJHGzxplld550GI/5G7G/DQHW7grZi29oXI2h/xaqOSHg==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
 
-  '@sentry/node@11.5.0':
-    resolution: {integrity: sha512-uNSFtwEjeRzUPnrpnMIW3g8j4sivk+StlvlpEMZ46zKsBF597UZ7XNldKUJDwopURybhai1wZ8xjc46ufsv1jg==}
+  '@sentry/node@11.6.0':
+    resolution: {integrity: sha512-5uHdUSACyodmtar+LxhFl4/MdICJ1/38mrp5lrMpDKfWSV/7tu/KRmr5gD2J9Nm47I/xxbghSz+oinJ4EtJatQ==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
-  '@sentry/opentelemetry@11.5.0':
-    resolution: {integrity: sha512-k+YlAjKO9iPOb1w/KXjIPZE2P4PcxhuoafXr1EN0yCCs0BFgkgQNDP/S+nw78GLzb2SLs3MtwWbLHOMLMRJM5Q==}
+  '@sentry/opentelemetry@11.6.0':
+    resolution: {integrity: sha512-W6b+/8TVejHSCSOWMGsU2wVQY+d7FH/kI2zIFYXmIcxJCd7A/ULhOXe29UYeh+VX9wObR23LvEcEUmgsFVqf6A==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
     peerDependencies:
       '@opentelemetry/api': ^1.9.0
 
-  '@sentry/server-runtime-injection@11.5.0':
-    resolution: {integrity: sha512-6hmiiFJanSKDfUNBdrwRm47g8CBgFdDcxFguMh3QaRmIim0c5V0eMUfMRJuWhk+NKuI/rsFyj8B5qdBD+5h4Kg==}
+  '@sentry/server-runtime-injection@11.6.0':
+    resolution: {integrity: sha512-3plQzwQfvz4HJkXLDfr5VuQQL5vyjar7RKn7UwFne3jc+9OSXRkxkZ6S0Z3RdBgbaFO1GkFwf/mFNX4H8nNcuw==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
-  '@sentry/server-utils@11.5.0':
-    resolution: {integrity: sha512-cUALUPgVW2jND2RGWyNH9v3epsKz5Ce3QujfnpFAdHKFVj4tjjZMU0FYlbFo9SBxosWPTnZzjIuNO6GROQwR1Q==}
+  '@sentry/server-utils@11.6.0':
+    resolution: {integrity: sha512-pVpGqwxBOXDMSngxTVARRlYyEXEfKA3WU1ENCdgLCeJ4xJ4vNRf4ODGXYPvXBk0zkt2NZZFvray2JHXIeYG+tg==}
     engines: {node: '>=20.19.0 <22.0.0 || >=22.12.0 <23.0.0 || >=23.2.0'}
 
   '@sindresorhus/is@4.6.0':
@@ -7216,9 +7216,9 @@ snapshots:
 
   '@scarf/scarf@1.4.0': {}
 
-  '@sentry/bundler-plugins@11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
+  '@sentry/bundler-plugins@11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
     dependencies:
-      '@sentry/core': 11.5.0
+      '@sentry/core': 11.6.0
       dotenv: 17.4.2
       glob: 13.0.6
       magic-string: 1.4.1
@@ -7231,53 +7231,53 @@ snapshots:
 
   '@sentry/conventions@0.26.0': {}
 
-  '@sentry/core@11.5.0':
+  '@sentry/core@11.6.0':
     dependencies:
       '@sentry/conventions': 0.26.0
 
-  '@sentry/nestjs@11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.2)(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
+  '@sentry/nestjs@11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.2)(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
     dependencies:
       '@nestjs/common': 12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
       '@nestjs/core': 12.1.2(@nestjs/common@12.1.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@12.1.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@sentry/conventions': 0.26.0
-      '@sentry/core': 11.5.0
-      '@sentry/node': 11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
-      '@sentry/server-utils': 11.5.0
+      '@sentry/core': 11.6.0
+      '@sentry/node': 11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
+      '@sentry/server-utils': 11.6.0
     transitivePeerDependencies:
       - '@babel/core'
       - rollup
       - webpack
 
-  '@sentry/node@11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
+  '@sentry/node@11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))':
     dependencies:
       '@opentelemetry/api': 1.9.1
-      '@sentry/bundler-plugins': 11.5.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
+      '@sentry/bundler-plugins': 11.6.0(@babel/core@7.29.7(supports-color@8.1.1))(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.32.0)(postcss@8.5.26))
       '@sentry/conventions': 0.26.0
-      '@sentry/core': 11.5.0
-      '@sentry/opentelemetry': 11.5.0(@opentelemetry/api@1.9.1)
-      '@sentry/server-runtime-injection': 11.5.0
-      '@sentry/server-utils': 11.5.0
+      '@sentry/core': 11.6.0
+      '@sentry/opentelemetry': 11.6.0(@opentelemetry/api@1.9.1)
+      '@sentry/server-runtime-injection': 11.6.0
+      '@sentry/server-utils': 11.6.0
     transitivePeerDependencies:
       - '@babel/core'
       - rollup
       - webpack
 
-  '@sentry/opentelemetry@11.5.0(@opentelemetry/api@1.9.1)':
+  '@sentry/opentelemetry@11.6.0(@opentelemetry/api@1.9.1)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@sentry/conventions': 0.26.0
-      '@sentry/core': 11.5.0
+      '@sentry/core': 11.6.0
 
-  '@sentry/server-runtime-injection@11.5.0':
+  '@sentry/server-runtime-injection@11.6.0':
     dependencies:
-      '@sentry/core': 11.5.0
-      '@sentry/server-utils': 11.5.0
+      '@sentry/core': 11.6.0
+      '@sentry/server-utils': 11.6.0
 
-  '@sentry/server-utils@11.5.0':
+  '@sentry/server-utils@11.6.0':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@sentry/conventions': 0.26.0
-      '@sentry/core': 11.5.0
+      '@sentry/core': 11.6.0
 
   '@sindresorhus/is@4.6.0': {}
 
