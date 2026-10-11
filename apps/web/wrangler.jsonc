@@ -5,6 +5,11 @@
 	// Set this to today's date
 	"compatibility_date": "2026-04-16",
 	"compatibility_flags": ["nodejs_compat"],
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true,
+		"head_sampling_rate": 1
+	},
 	"assets": {
 		"directory": ".open-next/assets",
 		"binding": "ASSETS"
