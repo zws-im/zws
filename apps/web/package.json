@@ -22,7 +22,8 @@
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"dev": "portless zws.im next dev",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"start": "next start"
+		"start": "next start",
+		"test:worker": "NEXT_PUBLIC_API_URL=https://api.zws.im NEXT_PUBLIC_WEBSITE_URL=https://zws.im API_URL=https://api.zws.im pnpm run build:ci && wrangler deploy --dry-run --outdir .open-next/test-worker && node --test tests/worker.test.ts"
 	},
 	"dependencies": {
 		"@heroicons/react": "2.2.0",
@@ -53,6 +54,7 @@
 		"@trpc/server": "11.19.0",
 		"@tsconfig/next": "2.0.6",
 		"@types/swagger-ui-react": "5.18.0",
+		"miniflare": "5.20261006.1-alpha",
 		"wrangler": "^4.83.0"
 	},
 	"engines": {

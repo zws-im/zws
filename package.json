@@ -14,7 +14,7 @@
 		"migrate": "drizzle-kit migrate",
 		"migrate:check": "drizzle-kit check",
 		"migrate:create": "drizzle-kit generate",
-		"test": "pnpm run lint && pnpm run format && turbo run build"
+		"test": "pnpm run lint && pnpm run format && turbo run build && pnpm --filter @zws.im/web run test:worker"
 	},
 	"dependencies": {
 		"drizzle-kit": "1.0.0-rc.5-ab785fc",
