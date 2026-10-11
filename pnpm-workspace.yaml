@@ -11,3 +11,7 @@ allowBuilds:
   tree-sitter: true
   tree-sitter-json: true
   workerd: true
+
+patchedDependencies:
+  # Inline Next.js 16.4 preview props until https://github.com/opennextjs/opennextjs-cloudflare/pull/1356 is released.
+  '@opennextjs/cloudflare@1.20.10': patches/@opennextjs__cloudflare@1.20.10.patch
