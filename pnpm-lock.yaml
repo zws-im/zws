@@ -352,8 +352,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       swagger-ui-react:
-        specifier: 5.33.1
-        version: 5.33.1(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
+        specifier: 5.33.2
+        version: 5.33.2(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2)
       tailwindcss:
         specifier: 4.3.3
         version: 4.3.3
@@ -3267,8 +3267,8 @@ packages:
     resolution: {integrity: sha512-6V1HzU4to74skg//ScZR2mp9bdz+rESC9jQzVIIG/ha0HYgymHcXIQQCjH0+ivRaSuY82fa9fZ7Ro6QZT4s4uw==}
     engines: {node: '>=22.17'}
 
-  dompurify@3.4.14:
-    resolution: {integrity: sha512-dVoH9z+MY+C9IilgGCk3YfFqjLi3fChm2OiKJMzh6axrJ5qwxqWaZamgmHrpv22CN/KdbZJuGEGgfQoL00LTdg==}
+  dompurify@3.4.17:
+    resolution: {integrity: sha512-B/pSlYVHQ58kqISD/yDjuJ1yfzI34m1gF4lAod2bwSRhiN4K5Cl3H8Af7hqB2PmTL911tdEudnnXn5FnhRoz0w==}
 
   dotenv@17.4.2:
     resolution: {integrity: sha512-nI4U3TottKAcAD9LLud4Cb7b2QztQMUEfHbvhTH09bqXTxnSie8WnjPALV/WMCrJZ6UV/qHJ6L03OqO3LcdYZw==}
@@ -4875,8 +4875,8 @@ packages:
   swagger-ui-dist@5.33.0:
     resolution: {integrity: sha512-wpdK+m6BU5yj6pmUdMskZVTSWYG4DLglAx3sIhylloY37i8O37IrH+YEpqdXNfpaTGxILRBFzUqLF2jKqbfI7A==}
 
-  swagger-ui-react@5.33.1:
-    resolution: {integrity: sha512-AvfsWJrKsiSxiE/GMvya4z4RRNyHAiGM3LAezdJzPe8pY5MP6jAyCB+2/7Bq+YYd+XcnsNxt6GaottJMj5CRzA==}
+  swagger-ui-react@5.33.2:
+    resolution: {integrity: sha512-LKMSOABwdw7tAhYtr8ZoMO3itQ/Nws9qJVKKlsImEAOHLue7uCSMALKEjqD5ebnGWiZ2uh6V9IcSPoVGSRRwxQ==}
     peerDependencies:
       react: '>=16.8.0 <20'
       react-dom: '>=16.8.0 <20'
@@ -8508,7 +8508,7 @@ snapshots:
 
   devalue@6.0.2: {}
 
-  dompurify@3.4.14:
+  dompurify@3.4.17:
     optionalDependencies:
       '@types/trusted-types': 2.0.7
 
@@ -10185,7 +10185,7 @@ snapshots:
     dependencies:
       '@scarf/scarf': 1.4.0
 
-  swagger-ui-react@5.33.1(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2):
+  swagger-ui-react@5.33.2(@types/react@19.3.0)(debug@4.4.3(supports-color@10.2.2))(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@10.2.2):
     dependencies:
       '@babel/runtime-corejs3': 7.29.7
       '@scarf/scarf': 1.4.0
@@ -10195,7 +10195,7 @@ snapshots:
       classnames: 2.5.1
       css.escape: 1.5.1
       deep-extend: 0.6.0
-      dompurify: 3.4.14
+      dompurify: 3.4.17
       ieee754: 1.2.1
       immutable: 5.1.9
       js-file-download: 0.4.12
