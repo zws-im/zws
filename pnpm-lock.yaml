@@ -296,7 +296,7 @@ importers:
         version: 2.2.0(react@19.3.0)
       '@opennextjs/cloudflare':
         specifier: 1.20.10
-        version: 1.20.10(patch_hash=05bdafb7555a6a59bbc20518693f291d45f34e9cd7a74466a229da814da2cc73)(next@16.4.0(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.149.0(@types/node@26.6.5))
+        version: 1.20.10(patch_hash=05bdafb7555a6a59bbc20518693f291d45f34e9cd7a74466a229da814da2cc73)(next@16.4.0(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.150.0(@types/node@26.6.5))
       '@tailwindcss/postcss':
         specifier: 4.3.3
         version: 4.3.3
@@ -375,7 +375,7 @@ importers:
         version: 5.20261006.1-alpha(@types/node@26.6.5)
       wrangler:
         specifier: ^4.83.0
-        version: 4.149.0(@types/node@26.6.5)
+        version: 4.150.0(@types/node@26.6.5)
 
 packages:
 
@@ -4133,6 +4133,10 @@ packages:
     resolution: {integrity: sha512-6ylv8tamkrspDI2R/cAYfv+YWmfGNdXe76Pi9TauEUWsFVXn3LNF9Yk8oduzf1a+TYsSRYTqlOE7+nGGRsMHdw==}
     engines: {node: '>=22.0.0'}
 
+  miniflare@5.20261006.2-beta:
+    resolution: {integrity: sha512-agufWI3mXF8xGzry2/sOF8Im8AoYs04DWBCLDWDmd4QtMSGEo9IgrPmYOwsCmQA3K3MbLzsvr01GpWc8x3Duqw==}
+    engines: {node: '>=22.0.0'}
+
   minim@0.23.8:
     resolution: {integrity: sha512-bjdr2xW1dBCMsMGGsUeqM4eFI60m94+szhxWys+B1ztIt6gWSfeGBdSVCIawezeHYLYn0j6zrsXdQS/JllBzww==}
     engines: {node: '>=6'}
@@ -5179,8 +5183,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@4.149.0:
-    resolution: {integrity: sha512-OzK7xmB5r5iLKb3cIT3783g13fe6T7xyeKu9LEdUyl+DKAM2KP/jkjnE0OUhyw+mB/XJM9ycjgF3MWm8PR9amg==}
+  wrangler@4.150.0:
+    resolution: {integrity: sha512-Mf3MiCoGXszX965MtKcOSe8whSyFBL2qpCp+DiSwH94+0FNYveSPQPVRRlMAMH8lkln8PECcSW1do6hnelwPZA==}
     engines: {node: '>=22.0.0'}
     hasBin: true
     peerDependencies:
@@ -6884,7 +6888,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@opennextjs/cloudflare@1.20.10(patch_hash=05bdafb7555a6a59bbc20518693f291d45f34e9cd7a74466a229da814da2cc73)(next@16.4.0(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.149.0(@types/node@26.6.5))':
+  '@opennextjs/cloudflare@1.20.10(patch_hash=05bdafb7555a6a59bbc20518693f291d45f34e9cd7a74466a229da814da2cc73)(next@16.4.0(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(supports-color@10.2.2)(wrangler@4.150.0(@types/node@26.6.5))':
     dependencies:
       '@ast-grep/napi': 0.45.3
       '@dotenvx/dotenvx': 2.34.1
@@ -6896,7 +6900,7 @@ snapshots:
       glob: 13.0.6
       next: 16.4.0(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       ts-tqdm: 0.8.6
-      wrangler: 4.149.0(@types/node@26.6.5)
+      wrangler: 4.150.0(@types/node@26.6.5)
       yargs: 18.2.0
     transitivePeerDependencies:
       - encoding
@@ -9363,6 +9367,19 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  miniflare@5.20261006.2-beta(@types/node@26.6.5):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      sharp: 0.35.5(@types/node@26.6.5)
+      undici: 7.29.1
+      workerd: 1.20261006.1
+      ws: 8.21.0
+      youch: 4.1.0-beta.10
+    transitivePeerDependencies:
+      - '@types/node'
+      - bufferutil
+      - utf-8-validate
+
   minim@0.23.8:
     dependencies:
       lodash: 4.18.1
@@ -10572,13 +10589,13 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20261006.1
       '@cloudflare/workerd-windows-64': 1.20261006.1
 
-  wrangler@4.149.0(@types/node@26.6.5):
+  wrangler@4.150.0(@types/node@26.6.5):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261006.1)
       blake3-wasm: 2.1.5
       esbuild: 0.28.2
-      miniflare: 5.20261006.1-alpha(@types/node@26.6.5)
+      miniflare: 5.20261006.2-beta(@types/node@26.6.5)
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20261006.1
