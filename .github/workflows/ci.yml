@@ -27,12 +27,13 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
-      - name: Build and test
-        run: pnpm run test
-        env:
-          NEXT_PUBLIC_API_URL: https://api.zws.im
-          NEXT_PUBLIC_WEBSITE_URL: https://zws.im
-      - name: Check migrations
-        run: pnpm run migrate:check
-        env:
-          DATABASE_URL: postgresql://localhost/drizzle-migration-check
+      - parallel:
+          - name: Build and test
+            run: pnpm run test
+            env:
+              NEXT_PUBLIC_API_URL: https://api.zws.im
+              NEXT_PUBLIC_WEBSITE_URL: https://zws.im
+          - name: Check migrations
+            run: pnpm run migrate:check
+            env:
+              DATABASE_URL: postgresql://localhost/drizzle-migration-check
