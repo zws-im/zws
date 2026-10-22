@@ -6,7 +6,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
-		"dev": "pnpm --parallel --recursive dev",
+		"dev": "pitchfork start --local && pnpm --parallel --recursive dev",
 		"format": "prettier --check .",
 		"format:write": "pnpm run format --write",
 		"lint": "biome check .",

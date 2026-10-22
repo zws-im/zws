@@ -1,0 +1,15 @@
+#:schema https://pitchfork.jdx.dev/schema.json
+
+[daemons.postgres]
+run = "docker compose up postgres"
+auto = ["start", "stop"]
+ready_cmd = "docker compose exec -T postgres pg_isready -h 127.0.0.1 -U zws -d zws"
+port = 5432
+stop_signal = { signal = "SIGTERM", timeout = "20s" }
+
+[daemons.redis]
+run = "docker compose up redis"
+auto = ["start", "stop"]
+ready_cmd = "docker compose exec -T redis redis-cli ping"
+port = 6379
+stop_signal = { signal = "SIGTERM", timeout = "20s" }
