@@ -25,7 +25,7 @@ export default defineRailway((ctx) => {
 		multiRegionConfig: { 'us-west2': { numReplicas: 1 } },
 		limitOverride: { containers },
 	};
-	redis.networking = { privateNetworkEndpoint: 'redis', tcpProxies: { '6379': {} } };
+	redis.networking = { privateNetworkEndpoint: 'redis' };
 
 	const postgres = database('Postgres', 'postgres', {
 		image: 'ghcr.io/railwayapp-templates/postgres-ssl:latest',
@@ -37,7 +37,7 @@ export default defineRailway((ctx) => {
 		multiRegionConfig: { 'us-west2': { numReplicas: 1 } },
 		limitOverride: { containers: postgresContainers },
 	};
-	postgres.networking = { privateNetworkEndpoint: 'postgres', tcpProxies: { '5432': {} } };
+	postgres.networking = { privateNetworkEndpoint: 'postgres' };
 
 	const redisData = volume('redis data', {
 		alerts: { usage: { '80': {}, '95': {}, '100': {} } },
