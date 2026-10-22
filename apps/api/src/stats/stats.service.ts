@@ -12,13 +12,13 @@ export class StatsService {
 		const [[urls], [visits]] = await Promise.all([
 			this.db
 				.select({
-					estimate: sql`reltuples`,
+					estimate: sql`greatest(reltuples, 0)`,
 				})
 				.from(sql`pg_class`)
 				.where(eq(sql`relname`, 'urls')),
 			this.db
 				.select({
-					estimate: sql`reltuples`,
+					estimate: sql`greatest(reltuples, 0)`,
 				})
 				.from(sql`pg_class`)
 				.where(eq(sql`relname`, 'visits')),
