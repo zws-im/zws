@@ -26,7 +26,7 @@
 		"prettier-plugin-packagejson": "3.0.2",
 		"prettier-plugin-tailwindcss": "0.8.1",
 		"railway": "3.16.0",
-		"turbo": "2.11.9"
+		"turbo": "2.11.10"
 	},
 	"packageManager": "pnpm@12.14.0",
 	"devEngines": {
