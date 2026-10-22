@@ -54,7 +54,7 @@
 		"@trpc/server": "11.19.0",
 		"@tsconfig/next": "2.0.6",
 		"@types/swagger-ui-react": "5.18.0",
-		"miniflare": "5.20261006.1-alpha",
+		"miniflare": "5.20261019.0-beta",
 		"wrangler": "^4.83.0"
 	},
 	"engines": {
