@@ -59,6 +59,7 @@ export default defineRailway((ctx) => {
 			buildEnvironment: 'V3',
 			builder: 'RAILPACK',
 		},
+		preDeploy: 'pnpm run migrate',
 		start: 'node ./apps/api/dist/main.js',
 		healthcheck: '/health',
 		healthcheckTimeout: 10,
