@@ -1,0 +1,209 @@
+{
+	"version": "8",
+	"dialect": "postgres",
+	"id": "bb101ed2-55ba-4aee-9df5-95fb91549605",
+	"prevIds": ["eb9c04b4-5826-4932-9d34-5cd9cc0d8cfb"],
+	"ddl": [
+		{
+			"isRlsEnabled": false,
+			"name": "blocked_hostnames",
+			"entityType": "tables",
+			"schema": "public"
+		},
+		{
+			"isRlsEnabled": false,
+			"name": "urls",
+			"entityType": "tables",
+			"schema": "public"
+		},
+		{
+			"isRlsEnabled": false,
+			"name": "visits",
+			"entityType": "tables",
+			"schema": "public"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "hostname",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "blocked_hostnames"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "created_at",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "blocked_hostnames"
+		},
+		{
+			"type": "boolean",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "false",
+			"generated": null,
+			"identity": null,
+			"name": "blocked",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "urls"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "created_at",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "urls"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "short_base64",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "urls"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "url",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "urls"
+		},
+		{
+			"type": "serial",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "id",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "visits"
+		},
+		{
+			"type": "timestamp with time zone",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": "now()",
+			"generated": null,
+			"identity": null,
+			"name": "timestamp",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "visits"
+		},
+		{
+			"type": "text",
+			"typeSchema": null,
+			"notNull": true,
+			"dimensions": 0,
+			"default": null,
+			"generated": null,
+			"identity": null,
+			"name": "url_short_base64",
+			"entityType": "columns",
+			"schema": "public",
+			"table": "visits"
+		},
+		{
+			"nameExplicit": false,
+			"columns": [
+				{
+					"value": "url_short_base64",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				},
+				{
+					"value": "timestamp",
+					"isExpression": false,
+					"asc": true,
+					"nullsFirst": false,
+					"opclass": null
+				}
+			],
+			"isUnique": false,
+			"where": null,
+			"with": "",
+			"method": "btree",
+			"concurrently": false,
+			"name": "visits_url_short_base64_timestamp_index",
+			"entityType": "indexes",
+			"schema": "public",
+			"table": "visits"
+		},
+		{
+			"nameExplicit": false,
+			"columns": ["url_short_base64"],
+			"schemaTo": "public",
+			"tableTo": "urls",
+			"columnsTo": ["short_base64"],
+			"onUpdate": "CASCADE",
+			"onDelete": "CASCADE",
+			"name": "visits_url_short_base64_urls_short_base64_fk",
+			"entityType": "fks",
+			"schema": "public",
+			"table": "visits"
+		},
+		{
+			"columns": ["hostname"],
+			"nameExplicit": false,
+			"name": "blocked_hostnames_pkey",
+			"schema": "public",
+			"table": "blocked_hostnames",
+			"entityType": "pks"
+		},
+		{
+			"columns": ["short_base64"],
+			"nameExplicit": false,
+			"name": "urls_pkey",
+			"schema": "public",
+			"table": "urls",
+			"entityType": "pks"
+		},
+		{
+			"columns": ["id"],
+			"nameExplicit": false,
+			"name": "visits_pkey",
+			"schema": "public",
+			"table": "visits",
+			"entityType": "pks"
+		}
+	],
+	"renames": []
+}

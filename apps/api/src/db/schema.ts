@@ -22,8 +22,6 @@ export const visits = pgTable(
 			.notNull(),
 	},
 	(visits) => ({
-		// prettier-ignore
-		urlShortBase64Idx: index().using('hash', visits.urlShortBase64),
-		timestampIdx: index().on(visits.timestamp),
+		urlShortBase64TimestampIdx: index().on(visits.urlShortBase64, visits.timestamp),
 	}),
 );
