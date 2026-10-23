@@ -14,10 +14,24 @@
 		"SHORTENED_BASE_URL"
 	],
 	"tasks": {
+		"//#lint": {
+			"cache": false
+		},
+		"//#format": {
+			"cache": false
+		},
 		"build": {
 			"dependsOn": ["^build"],
 			"env": ["API_URL", "WEBSITE_URL", "NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_WEBSITE_URL"],
 			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+		},
+		"test": {
+			"cache": false,
+			"passThroughEnv": ["DOCKER_*", "TESTCONTAINERS_*"]
+		},
+		"test:worker": {
+			"dependsOn": ["build"],
+			"cache": false
 		}
 	}
 }

@@ -6,6 +6,7 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
+		"check": "turbo run lint format build test test:worker",
 		"dev": "pitchfork start --local && pnpm --parallel --recursive dev",
 		"format": "prettier --check .",
 		"format:write": "pnpm run format --write",
@@ -14,7 +15,7 @@
 		"migrate": "drizzle-kit migrate",
 		"migrate:check": "drizzle-kit check",
 		"migrate:create": "drizzle-kit generate",
-		"test": "pnpm run lint && pnpm run format && turbo run build && pnpm --filter @zws.im/web run test:worker"
+		"test": "turbo run test --"
 	},
 	"dependencies": {
 		"drizzle-kit": "1.0.0-rc.5-ab785fc",
