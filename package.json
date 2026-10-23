@@ -29,7 +29,7 @@
 		"railway": "3.16.0",
 		"turbo": "2.11.10"
 	},
-	"packageManager": "pnpm@12.14.0",
+	"packageManager": "pnpm@12.15.0",
 	"devEngines": {
 		"runtime": {
 			"name": "node",
