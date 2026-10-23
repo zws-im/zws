@@ -1,4 +1,4 @@
-import { sample } from '@jonahsnider/util';
+import { multiReplace, sample } from '@jonahsnider/util';
 import { Inject, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
 import { eq } from 'drizzle-orm';
 import postgres from 'postgres';
@@ -35,7 +35,7 @@ export class UrlsService {
 	 * @returns The long URL and whether it was blocked
 	 */
 	async retrieveUrl(id: Short): Promise<VisitUrlData | undefined> {
-		const encodedId = UrlsService.toBase64(id);
+		const encodedId = UrlsService.toBase64(multiReplace(id, this.configService.shortRewrites));
 
 		const shortenedUrl = await this.db.query.urls.findFirst({
 			columns: {

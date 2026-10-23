@@ -1,9 +1,4 @@
-import { multiReplace } from '@jonahsnider/util';
 import { z } from 'zod';
 
-import { env } from '../../config/config.service.js';
-
-export const Short = z.string().overwrite((raw) => {
-	return multiReplace(raw, env.SHORT_REWRITES);
-});
+export const Short = z.string();
 export type Short = z.infer<typeof Short>;

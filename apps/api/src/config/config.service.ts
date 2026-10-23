@@ -3,7 +3,7 @@ import { cleanEnv, json, num, port, str, url } from 'envalid';
 
 type NodeEnv = 'production' | 'development' | 'staging';
 
-const DEFAULT_SHORT_CHARS: readonly string[] = [
+export const DEFAULT_SHORT_CHARS: readonly string[] = [
 	'\u200C',
 	'\u200D',
 	'\uDB40\uDC61',
@@ -35,25 +35,6 @@ const DEFAULT_SHORT_CHARS: readonly string[] = [
 	'\uDB40\uDC7F',
 ];
 
-export const env = cleanEnv(process.env, {
-	NODE_ENV: str({ default: 'production', choices: ['production', 'development', 'staging'] }),
-	PORT: port({ default: 3000 }),
-	DATABASE_URL: url({ desc: 'PostgreSQL URL' }),
-	SENTRY_DSN: url({ desc: 'Sentry DSN' }),
-	REDIS_URL: url({ desc: 'Redis URL' }),
-	WEBSITE_URL: url({ desc: 'Website URL' }),
-	SHORT_LENGTH: num({ desc: 'Number of characters to generate in a shortened URL', default: 7 }),
-	SHORT_CHARS: json<readonly string[]>({
-		desc: 'Characters to use in shortened URLs',
-		default: DEFAULT_SHORT_CHARS,
-	}),
-	SHORT_REWRITES: json<Record<string, string>>({
-		desc: 'A mapping of characters to apply to short IDs before they are used',
-		default: {},
-	}),
-	GOOGLE_API_KEY: str({ desc: 'Google API Key' }),
-});
-
 @Injectable()
 export class ConfigService {
 	public readonly nodeEnv: NodeEnv;
@@ -64,10 +45,30 @@ export class ConfigService {
 	public readonly websiteUrl: string;
 	public readonly shortenedLength: number;
 	public readonly characters: readonly string[];
+	public readonly shortRewrites: Record<string, string>;
 	public readonly version = '3.0.0';
 	public readonly googleApiKey: string;
 
 	constructor() {
+		const env = cleanEnv(process.env, {
+			NODE_ENV: str({ default: 'production', choices: ['production', 'development', 'staging'] }),
+			PORT: port({ default: 3000 }),
+			DATABASE_URL: url({ desc: 'PostgreSQL URL' }),
+			SENTRY_DSN: url({ desc: 'Sentry DSN' }),
+			REDIS_URL: url({ desc: 'Redis URL' }),
+			WEBSITE_URL: url({ desc: 'Website URL' }),
+			SHORT_LENGTH: num({ desc: 'Number of characters to generate in a shortened URL', default: 7 }),
+			SHORT_CHARS: json<readonly string[]>({
+				desc: 'Characters to use in shortened URLs',
+				default: DEFAULT_SHORT_CHARS,
+			}),
+			SHORT_REWRITES: json<Record<string, string>>({
+				desc: 'A mapping of characters to apply to short IDs before they are used',
+				default: {},
+			}),
+			GOOGLE_API_KEY: str({ desc: 'Google API Key' }),
+		});
+
 		this.nodeEnv = env.NODE_ENV;
 		this.port = env.PORT;
 		this.databaseUrl = env.DATABASE_URL;
@@ -76,6 +77,7 @@ export class ConfigService {
 		this.redisUrl = env.REDIS_URL;
 		this.shortenedLength = env.SHORT_LENGTH;
 		this.characters = env.SHORT_CHARS;
+		this.shortRewrites = env.SHORT_REWRITES;
 		this.googleApiKey = env.GOOGLE_API_KEY;
 	}
 }

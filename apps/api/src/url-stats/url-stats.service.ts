@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
+import { multiReplace } from '@jonahsnider/util';
 import { Inject, Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
+import { ConfigService } from '../config/config.service.js';
 import { Schema } from '../db/index.js';
 import type { Db } from '../db/interfaces/db.interface.js';
 import { DB_PROVIDER } from '../db/providers.js';
@@ -14,6 +16,7 @@ export class UrlStatsService {
 		@Inject(BlockedUrlsService)
 		private readonly blockedUrlsService: BlockedUrlsService,
 		@Inject(DB_PROVIDER) private readonly db: Db,
+		@Inject(ConfigService) private readonly configService: ConfigService,
 	) {}
 
 	/**
@@ -24,7 +27,7 @@ export class UrlStatsService {
 	 * @returns Shortened URL information and statistics, or `undefined` if it couldn't be found
 	 */
 	async statsForUrl(id: Short): Promise<UrlStatsSchema | undefined> {
-		const encodedId = UrlsService.toBase64(id);
+		const encodedId = UrlsService.toBase64(multiReplace(id, this.configService.shortRewrites));
 
 		const shortenedUrl = await this.db.query.urls.findFirst({
 			columns: {
@@ -60,7 +63,7 @@ export class UrlStatsService {
 	 * @param id - The ID of the shortened URL
 	 */
 	async trackUrlVisit(id: Short): Promise<void> {
-		const encodedId = UrlsService.toBase64(id);
+		const encodedId = UrlsService.toBase64(multiReplace(id, this.configService.shortRewrites));
 
 		const shortenedUrl = await this.db.query.urls.findFirst({
 			columns: { shortBase64: true },
