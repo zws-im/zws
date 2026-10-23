@@ -1,4 +1,4 @@
-import type { NestApplicationOptions } from '@nestjs/common';
+import type { INestApplication, NestApplicationOptions } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, type SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
 import { createSchema } from 'zod-openapi';
@@ -12,6 +12,11 @@ export async function createApp(options: NestApplicationOptions = {}) {
 		...options,
 	});
 
+	configureApp(app);
+	return app;
+}
+
+export function configureApp(app: INestApplication) {
 	app.enableCors();
 	app.enableShutdownHooks();
 
@@ -52,6 +57,4 @@ export async function createApp(options: NestApplicationOptions = {}) {
 		yamlDocumentUrl: '/openapi.yaml',
 		ui: false,
 	});
-
-	return app;
 }

@@ -7,7 +7,10 @@ allowBuilds:
   '@scarf/scarf': false
   '@tree-sitter-grammars/tree-sitter-yaml': true
   core-js-pure: false
+  cpu-features: false
   esbuild: true
+  protobufjs: false
+  ssh2: false
   tree-sitter: true
   tree-sitter-json: true
   workerd: true
