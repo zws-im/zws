@@ -7,7 +7,31 @@ jobs:
     name: Build and test
 
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
+
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: zws
+          POSTGRES_PASSWORD: zws
+          POSTGRES_DB: zws_test
+        ports:
+          - 5432/tcp
+        options: >-
+          --health-cmd "pg_isready -h 127.0.0.1 -U zws -d zws_test"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 15
+      redis:
+        image: redis:7.4-alpine
+        ports:
+          - 6379/tcp
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 15
 
     steps:
       - name: Checkout Git repository
@@ -33,6 +57,8 @@ jobs:
             env:
               NEXT_PUBLIC_API_URL: https://api.zws.im
               NEXT_PUBLIC_WEBSITE_URL: https://zws.im
+              TEST_DATABASE_URL: postgresql://zws:zws@127.0.0.1:${{ job.services.postgres.ports['5432'] }}/zws_test
+              TEST_REDIS_URL: redis://127.0.0.1:${{ job.services.redis.ports['6379'] }}
           - name: Check migrations
             run: pnpm run migrate:check
             env:

@@ -27,7 +27,7 @@
 		},
 		"test": {
 			"cache": false,
-			"passThroughEnv": ["DOCKER_*", "TESTCONTAINERS_*"]
+			"passThroughEnv": ["CI", "TEST_DATABASE_URL", "TEST_REDIS_URL", "DOCKER_*", "TESTCONTAINERS_*"]
 		},
 		"test:worker": {
 			"dependsOn": ["build"],
