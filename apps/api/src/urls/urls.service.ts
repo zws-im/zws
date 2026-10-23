@@ -49,7 +49,7 @@ export class UrlsService {
 			return undefined;
 		}
 
-		if (await this.blockedUrlsService.isUrlBlocked(new URL(shortenedUrl.url))) {
+		if (await this.blockedUrlsService.isUrlBlocked(shortenedUrl)) {
 			if (!shortenedUrl.blocked) {
 				// The URL hostname is blocked, but the entry in the database isn't
 				// So, we should update the entry in the DB to mark it as blocked

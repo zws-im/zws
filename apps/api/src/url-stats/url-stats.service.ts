@@ -39,7 +39,7 @@ export class UrlStatsService {
 			return undefined;
 		}
 
-		if (await this.blockedUrlsService.isUrlBlocked(new URL(shortenedUrl.url))) {
+		if (await this.blockedUrlsService.isUrlBlocked(shortenedUrl)) {
 			throw new UnprocessableEntityException('That URL is blocked');
 		}
 
