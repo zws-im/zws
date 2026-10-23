@@ -1,0 +1,57 @@
+import type { NestApplicationOptions } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { DocumentBuilder, type SwaggerDocumentOptions, SwaggerModule } from '@nestjs/swagger';
+import { createSchema } from 'zod-openapi';
+import { AppModule } from './app.module.js';
+import { OpenapiTag } from './openapi/openapi-tag.enum.js';
+import { TrpcService } from './trpc/trpc.service.js';
+
+export async function createApp(options: NestApplicationOptions = {}) {
+	const app = await NestFactory.create(AppModule, {
+		abortOnError: process.env['NODE_ENV'] !== 'development',
+		...options,
+	});
+
+	app.enableCors();
+	app.enableShutdownHooks();
+
+	const trpcService = app.get(TrpcService);
+
+	trpcService.register(app);
+
+	const openApiConfig = new DocumentBuilder()
+		.setTitle('Zero Width Shortener')
+		.setOpenAPIVersion('3.1.1')
+		.setDescription('A URL shortener that uses zero width characters to shorten URLs.')
+		.setVersion('2.0.0')
+		.addServer('https://zws.im/api')
+		.setContact('Jonah Snider', 'https://jonahsnider.com', 'jonah@jonahsnider.com')
+		.setLicense('Apache 2.0', 'https://www.apache.org/licenses/LICENSE-2.0.html');
+
+	for (const tag of Object.values(OpenapiTag)) {
+		openApiConfig.addTag(tag);
+	}
+	const openApiDoc = SwaggerModule.createDocument(
+		app,
+
+		openApiConfig.build(),
+		{
+			standardSchemaConverter: (schema, { schemaType }) => {
+				const converted = createSchema(schema as never, {
+					io: schemaType,
+					openapiVersion: '3.1.1',
+				});
+
+				return { schema: converted.schema, components: converted.components };
+			},
+		} satisfies SwaggerDocumentOptions,
+	);
+
+	SwaggerModule.setup('api', app, openApiDoc, {
+		jsonDocumentUrl: '/openapi.json',
+		yamlDocumentUrl: '/openapi.yaml',
+		ui: false,
+	});
+
+	return app;
+}
