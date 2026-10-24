@@ -25,7 +25,7 @@
 		"devalue": "6.0.3",
 		"drizzle-orm": "1.0.0-rc.5-ab785fc",
 		"envalid": "8.2.0",
-		"googleapis": "186.0.0",
+		"googleapis": "188.0.0",
 		"millify": "^6.1.0",
 		"postgres": "3.4.9",
 		"redis": "6.3.0",
