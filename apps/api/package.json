@@ -24,7 +24,7 @@
 		"cors": "2.8.6",
 		"devalue": "6.0.3",
 		"drizzle-orm": "1.0.0-rc.5-ab785fc",
-		"envalid": "8.2.0",
+		"envalid": "9.0.0",
 		"googleapis": "188.0.0",
 		"millify": "^6.1.0",
 		"postgres": "3.4.9",
