@@ -14,9 +14,9 @@
 	},
 	"dependencies": {
 		"@jonahsnider/util": "13.0.0",
-		"@nestjs/common": "12.2.0",
-		"@nestjs/core": "12.2.0",
-		"@nestjs/platform-express": "12.2.0",
+		"@nestjs/common": "12.3.2",
+		"@nestjs/core": "12.3.2",
+		"@nestjs/platform-express": "12.3.2",
 		"@nestjs/swagger": "12.0.5",
 		"@sentry/nestjs": "11.9.0",
 		"@trpc/server": "11.19.0",
@@ -36,9 +36,9 @@
 		"zod-openapi": "6.0.2"
 	},
 	"devDependencies": {
-		"@nestjs/cli": "12.0.10",
-		"@nestjs/schematics": "12.0.10",
-		"@nestjs/testing": "12.2.0",
+		"@nestjs/cli": "12.0.11",
+		"@nestjs/schematics": "12.0.11",
+		"@nestjs/testing": "12.3.2",
 		"@testcontainers/postgresql": "12.2.1",
 		"@trpc/client": "11.19.0",
 		"@tsconfig/node26": "26.0.1",
