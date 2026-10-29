@@ -361,8 +361,8 @@ importers:
         specifier: 19.3.1
         version: 19.3.1
       react-apexcharts:
-        specifier: 2.1.1
-        version: 2.1.1(apexcharts@8.5.0)(react@19.3.1)
+        specifier: 2.1.2
+        version: 2.1.2(apexcharts@8.5.0)(react@19.3.1)
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
@@ -4954,8 +4954,8 @@ packages:
     resolution: {integrity: sha512-K5zQjDllxWkf7Z5xJdV0/B0WTNqx6vxG70zJE4N0kBs4LovmEYWJzQGxC9bS9RAKu3bgM40lrd5zoLJ12MQ5BA==}
     engines: {node: '>= 0.10'}
 
-  react-apexcharts@2.1.1:
-    resolution: {integrity: sha512-aV25n+1ZdAzRG0KhODVC48K8WbhMKBAr3yWSeaaBqM1ySn22kSSKblsNCUvlwegsT+cdMLuOrK9xGZb+IK+OkQ==}
+  react-apexcharts@2.1.2:
+    resolution: {integrity: sha512-vIoltFDOxy/EIdyWam833mgEfZiOQ+R6oqCvRgbGqNNTNNITCKL91CNeXThi2L8+YyxbamxyWY/6aZV66mx1fA==}
     peerDependencies:
       apexcharts: '>=5.10.1'
       react: '>=16.8.0'
@@ -10699,7 +10699,7 @@ snapshots:
       iconv-lite: 0.7.3
       unpipe: 1.0.0
 
-  react-apexcharts@2.1.1(apexcharts@8.5.0)(react@19.3.1):
+  react-apexcharts@2.1.2(apexcharts@8.5.0)(react@19.3.1):
     dependencies:
       apexcharts: 8.5.0
       prop-types: 15.8.1
