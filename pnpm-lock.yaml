@@ -340,8 +340,8 @@ importers:
         specifier: workspace:*
         version: link:../api
       apexcharts:
-        specifier: 8.5.0
-        version: 8.5.0
+        specifier: 8.6.0
+        version: 8.6.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -362,7 +362,7 @@ importers:
         version: 19.3.1
       react-apexcharts:
         specifier: 2.1.2
-        version: 2.1.2(apexcharts@8.5.0)(react@19.3.1)
+        version: 2.1.2(apexcharts@8.6.0)(react@19.3.1)
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
@@ -3057,8 +3057,8 @@ packages:
   apex-commons@0.8.3:
     resolution: {integrity: sha512-WdU5lblyL1ByI/nkFOJkSgJYenCsHmay0P3UIcnSeUiCyF1b30SvPSZLbyxOCUOry8IlL7M0/3GvsGbZTMm8FA==}
 
-  apexcharts@8.5.0:
-    resolution: {integrity: sha512-mH9QiOwIeRGg635OzAc2mznuwrK9XHr9S1RcC26GNNOU6fUPe64cMc7hXGcM9bXz92nO4Ax7P6uxSYaTA7gBDw==}
+  apexcharts@8.6.0:
+    resolution: {integrity: sha512-5524MLoDei2n8EcVMK+u3eOZTWrTpT1BIPRWu4AK8kkJdkODWs1hp3IEax8pMz78sSNAtsD4Tp7tr0s0SW/npQ==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   apg-lite@1.0.5:
@@ -8876,7 +8876,7 @@ snapshots:
 
   apex-commons@0.8.3: {}
 
-  apexcharts@8.5.0:
+  apexcharts@8.6.0:
     dependencies:
       apex-commons: 0.8.3
 
@@ -10694,9 +10694,9 @@ snapshots:
       iconv-lite: 0.7.3
       unpipe: 1.0.0
 
-  react-apexcharts@2.1.2(apexcharts@8.5.0)(react@19.3.1):
+  react-apexcharts@2.1.2(apexcharts@8.6.0)(react@19.3.1):
     dependencies:
-      apexcharts: 8.5.0
+      apexcharts: 8.6.0
       prop-types: 15.8.1
       react: 19.3.1
 
