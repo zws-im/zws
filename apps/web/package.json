@@ -39,7 +39,7 @@
 		"@zws.im/api": "workspace:*",
 		"apexcharts": "8.6.0",
 		"clsx": "2.1.1",
-		"framer-motion": "14.6.0",
+		"framer-motion": "14.8.0",
 		"millify": "6.1.0",
 		"next": "16.4.3",
 		"next-plausible": "4.0.0",
