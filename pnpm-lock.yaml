@@ -226,7 +226,7 @@ importers:
         version: 6.0.3
       drizzle-orm:
         specifier: 1.0.0-rc.5-ab785fc
-        version: 1.0.0-rc.5-ab785fc(@opentelemetry/api@1.9.1)(@types/pg@8.23.1)(pg@8.23.0)(postgres@3.4.9)(zod@4.6.7)
+        version: 1.0.0-rc.5-ab785fc(@opentelemetry/api@1.9.1)(@types/pg@8.23.1)(pg@8.23.0)(postgres@4.0.0)(zod@4.6.7)
       envalid:
         specifier: 9.0.0
         version: 9.0.0
@@ -237,8 +237,8 @@ importers:
         specifier: ^6.1.0
         version: 6.1.0
       postgres:
-        specifier: 3.4.9
-        version: 3.4.9
+        specifier: 4.0.0
+        version: 4.0.0
       redis:
         specifier: 6.3.1
         version: 6.3.1(@opentelemetry/api@1.9.1)
@@ -4804,9 +4804,9 @@ packages:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
 
-  postgres@3.4.9:
-    resolution: {integrity: sha512-GD3qdB0x1z9xgFI6cdRD6xu2Sp2WCOEoe3mtnyB5Ee0XrrL5Pe+e4CCnJrRMnL1zYtRDZmQQVbvOttLnKDLnaw==}
-    engines: {node: '>=12'}
+  postgres@4.0.0:
+    resolution: {integrity: sha512-kBh8qXtcvvIAc00DftQyOxz7M/3Zxww1tRMXZPLzipNXXl5PIzHml+9zB3Mrge2U8ldc0WF1ZdLp1iYQi7Kh3A==}
+    engines: {node: '>=20'}
 
   prettier-plugin-packagejson@3.0.3:
     resolution: {integrity: sha512-qhxhcs3/ppNH8ZhFMbMnucE9VqITVn3Vvu/LF0jcWfVJqlgEo1c9eoiTr1WiaMIKbEEqQb4JTZ8MBZGtGRfAoQ==}
@@ -9365,12 +9365,12 @@ snapshots:
       get-tsconfig: 4.14.3
       jiti: 2.7.0
 
-  drizzle-orm@1.0.0-rc.5-ab785fc(@opentelemetry/api@1.9.1)(@types/pg@8.23.1)(pg@8.23.0)(postgres@3.4.9)(zod@4.6.7):
+  drizzle-orm@1.0.0-rc.5-ab785fc(@opentelemetry/api@1.9.1)(@types/pg@8.23.1)(pg@8.23.0)(postgres@4.0.0)(zod@4.6.7):
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@types/pg': 8.23.1
       pg: 8.23.0
-      postgres: 3.4.9
+      postgres: 4.0.0
       zod: 4.6.7
 
   dunder-proto@1.0.1:
@@ -10588,7 +10588,7 @@ snapshots:
       xtend: 4.0.2
     optional: true
 
-  postgres@3.4.9: {}
+  postgres@4.0.0: {}
 
   prettier-plugin-packagejson@3.0.3(prettier@3.9.10):
     dependencies:
