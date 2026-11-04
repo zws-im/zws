@@ -21,7 +21,7 @@ export function ShortenUrlForm() {
 		},
 	});
 
-	const justSucceeded = mutation.isSuccess && Date.now() - (finishedAt ?? 0) < 1.5e3;
+	const justSucceeded = mutation.isSuccess && finishedAt !== undefined;
 
 	useEffect(() => {
 		if (finishedAt) {
