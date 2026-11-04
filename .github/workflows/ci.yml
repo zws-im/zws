@@ -57,6 +57,7 @@ jobs:
             env:
               NEXT_PUBLIC_API_URL: https://api.zws.im
               NEXT_PUBLIC_WEBSITE_URL: https://zws.im
+              DATABASE_URL: postgresql://zws:zws@127.0.0.1:${{ job.services.postgres.ports['5432'] }}/zws_test
               TEST_DATABASE_URL: postgresql://zws:zws@127.0.0.1:${{ job.services.postgres.ports['5432'] }}/zws_test
               TEST_REDIS_URL: redis://127.0.0.1:${{ job.services.redis.ports['6379'] }}
           - name: Check migrations
