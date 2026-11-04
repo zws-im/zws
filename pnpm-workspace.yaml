@@ -10,6 +10,7 @@ allowBuilds:
   cpu-features: false
   esbuild: true
   protobufjs: false
+  sharp: true
   ssh2: false
   tree-sitter: true
   tree-sitter-json: true

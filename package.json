@@ -6,35 +6,36 @@
 	],
 	"scripts": {
 		"build": "turbo run build",
-		"check": "turbo run lint format build test test:worker",
+		"check": "turbo run lint format knip build test test:worker",
 		"dev": "pitchfork start --local && pnpm --parallel --recursive dev",
-		"format": "prettier --check .",
-		"format:write": "pnpm run format --write",
-		"lint": "biome check .",
-		"lint:fix": "biome check . --write --unsafe",
+		"format": "oxfmt --check",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix",
 		"migrate": "drizzle-kit migrate",
 		"migrate:check": "drizzle-kit check",
 		"migrate:create": "drizzle-kit generate",
-		"test": "turbo run test --"
+		"test": "turbo run test --",
+		"format:fix": "oxfmt",
+		"knip": "knip"
 	},
 	"dependencies": {
 		"drizzle-kit": "1.0.0-rc.5-ab785fc",
 		"envalid": "9.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.10",
-		"prettier": "3.9.10",
-		"prettier-plugin-packagejson": "3.1.0",
-		"prettier-plugin-tailwindcss": "0.8.1",
+		"knip": "6.44.1",
+		"oxfmt": "0.75.0",
+		"oxlint": "1.90.0",
+		"oxlint-tsgolint": "7.0.2005",
 		"railway": "3.16.0",
 		"turbo": "2.11.10"
 	},
-	"packageManager": "pnpm@12.16.1",
 	"devEngines": {
 		"runtime": {
 			"name": "node",
 			"version": "26.x",
 			"onFail": "warn"
 		}
-	}
+	},
+	"packageManager": "pnpm@12.16.1"
 }

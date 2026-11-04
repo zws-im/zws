@@ -17,7 +17,7 @@ import { transformer } from '../src/trpc/transformer.js';
 export const websiteUrl = 'https://zws.example';
 export const toBase64 = (short: string) => Buffer.from(short).toString('base64');
 
-// biome-ignore lint/correctness/noEmptyPattern: Vitest fixtures require a destructured context.
+// oxlint-disable-next-line no-empty-pattern -- Vitest fixtures require a destructured context.
 export const test = baseTest.extend('api', async ({}, { onCleanup }) => {
 	const hostname = `${randomUUID()}.example`;
 	const destination = `https://${hostname}/articles?hello=world#section`;

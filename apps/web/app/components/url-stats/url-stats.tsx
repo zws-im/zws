@@ -22,7 +22,7 @@ export function UrlStats() {
 
 	const stats = trpc.urlStats.getShortUrlStats.useQuery(short, {});
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: Intentional
+	// oxlint-disable-next-line react-hooks/exhaustive-deps -- Intentional
 	useEffect(() => {
 		if (stats.isSuccess) {
 			plausible('Check URL stats');

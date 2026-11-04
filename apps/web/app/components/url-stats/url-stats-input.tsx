@@ -44,7 +44,7 @@ export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 				value={shortUrl}
 				onChange={onChange}
 				required={true}
-				// biome-ignore lint/a11y/noAutofocus: Autofocus is essential here
+				// oxlint-disable-next-line jsx-a11y/no-autofocus -- Autofocus is essential here
 				autoFocus={true}
 			/>
 			<div
@@ -52,7 +52,7 @@ export function UrlStatsInput({ setShortUrl, isLoading, error }: Props) {
 					'bg-red-500 text-white': valid && error,
 				})}
 			>
-				{valid && isLoading && <ArrowPathIcon className='text-zws-purple-500 h-6 w-6 animate-spin' />}
+				{valid && isLoading && <ArrowPathIcon className='h-6 w-6 animate-spin text-zws-purple-500' />}
 				{valid && error && (
 					<p className='align-middle'>
 						<ExclamationCircleIcon className='mr-2 inline h-6 w-6' />

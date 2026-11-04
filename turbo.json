@@ -32,6 +32,9 @@
 		"test:worker": {
 			"dependsOn": ["build"],
 			"cache": false
+		},
+		"//#knip": {
+			"cache": false
 		}
 	}
 }

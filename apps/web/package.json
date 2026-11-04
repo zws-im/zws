@@ -5,15 +5,15 @@
 	"bugs": {
 		"url": "https://github.com/zws-im/zws/issues"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/zws-im/zws.git"
-	},
 	"license": "Apache-2.0",
 	"author": {
 		"name": "Jonah Snider",
 		"email": "jonah@jonah.pw",
 		"url": "https://jonahsnider.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zws-im/zws.git"
 	},
 	"scripts": {
 		"build": "NODE_ENV=production next build",
@@ -55,7 +55,7 @@
 		"@tsconfig/next": "2.0.6",
 		"@types/swagger-ui-react": "5.18.0",
 		"miniflare": "5.20261019.0-beta",
-		"wrangler": "^4.83.0"
+		"wrangler": "4.156.2"
 	},
 	"engines": {
 		"node": "26.x"

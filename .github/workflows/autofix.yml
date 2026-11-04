@@ -16,12 +16,12 @@ jobs:
         uses: pnpm/setup@v3
         with:
           cache: true
-      - name: Format with Prettier
-        run: pnpm run format:write
-      - name: Migrate Biome config
-        run: pnpm exec biome migrate --write
-      - name: Format with Biome
+      - name: Format with Oxfmt
+        run: pnpm run format:fix
+        continue-on-error: true
+      - name: Lint with Oxlint
         run: pnpm run lint:fix
+        continue-on-error: true
       - name: Run autofix.ci
         uses: autofix-ci/action@v1
         with:

@@ -1,0 +1,33 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	},
+	"categories": {
+		"correctness": "error",
+		"perf": "error"
+	},
+	"plugins": ["typescript", "react"],
+	"rules": {
+		"no-await-in-loop": "off"
+	},
+	"overrides": [
+		{
+			"files": ["apps/web/**/*.{js,ts,tsx}"],
+			"plugins": ["typescript", "react", "nextjs", "jsx-a11y"]
+		},
+		{
+			"files": ["apps/api/tests/**/*.ts"],
+			"plugins": ["typescript", "vitest"],
+			"rules": {
+				"vitest/valid-expect": [
+					"error",
+					{
+						"maxArgs": 2
+					}
+				]
+			}
+		}
+	]
+}

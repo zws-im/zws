@@ -7,22 +7,22 @@
 	"upload_source_maps": true,
 	"observability": {
 		"enabled": true,
-		"head_sampling_rate": 1
+		"head_sampling_rate": 1,
 	},
 	"assets": {
 		"directory": ".open-next/assets",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
 	},
 	"routes": [
 		{
 			"pattern": "zws.im",
-			"custom_domain": true
-		}
+			"custom_domain": true,
+		},
 	],
 	"workers_dev": false,
 	"preview_urls": false,
 	"vars": {
 		"NEXT_PUBLIC_API_URL": "https://api.zws.im",
-		"NEXT_PUBLIC_WEBSITE_URL": "https://zws.im"
-	}
+		"NEXT_PUBLIC_WEBSITE_URL": "https://zws.im",
+	},
 }

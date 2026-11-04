@@ -22,7 +22,7 @@ export default function HomePage() {
 					<div className='text-center'>
 						<H1>Zero Width Shortener</H1>
 
-						<p className='text-zws-purple-100 text-lg'>
+						<p className='text-lg text-zws-purple-100'>
 							Shorten URLs with zero width characters, instead of <RandomText length={6} initial='XyGa7z' />.
 						</p>
 

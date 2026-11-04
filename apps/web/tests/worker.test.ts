@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { convertV4MiniflareOptions, Miniflare, Response } from 'miniflare';
 import { unstable_readConfig as readConfig } from 'wrangler';
 
-test('built Worker redirects a zero-width short link', { timeout: 30_000 }, async (t) => {
+await test('built Worker redirects a zero-width short link', { timeout: 30_000 }, async (t) => {
 	const config = readConfig({ config: 'wrangler.jsonc' });
 	assert.ok(config.assets);
 	const shortPath = `/${encodeURIComponent('\u200b'.repeat(7))}`;

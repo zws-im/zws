@@ -1,0 +1,11 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"singleQuote": true,
+	"jsxSingleQuote": true,
+	"useTabs": true,
+	"printWidth": 120,
+	"sortTailwindcss": {
+		"stylesheet": "./apps/web/app/globals.css"
+	},
+	"ignorePatterns": ["pnpm-lock.yaml", "drizzle/**/snapshot.json"]
+}

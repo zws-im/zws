@@ -26,7 +26,7 @@
 		"drizzle-orm": "1.0.0-rc.5-ab785fc",
 		"envalid": "9.0.0",
 		"googleapis": "189.0.0",
-		"millify": "^6.1.0",
+		"millify": "6.1.0",
 		"postgres": "4.0.0",
 		"redis": "6.3.1",
 		"reflect-metadata": "0.2.2",
@@ -36,8 +36,6 @@
 		"zod-openapi": "6.0.2"
 	},
 	"devDependencies": {
-		"@nestjs/cli": "12.0.11",
-		"@nestjs/schematics": "12.0.12",
 		"@nestjs/testing": "12.3.2",
 		"@testcontainers/postgresql": "12.2.1",
 		"@trpc/client": "11.22.1",
