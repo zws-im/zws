@@ -1,5 +1,6 @@
 {
 	"$schema": "https://turbo.build/schema.json",
+	"cacheMaxSize": "2GB",
 	"globalPassThroughEnv": [
 		"DATABASE_URL",
 		"REDIS_URL",
@@ -14,27 +15,27 @@
 		"SHORTENED_BASE_URL"
 	],
 	"tasks": {
-		"//#lint": {
+		"//#format": {
 			"cache": false
 		},
-		"//#format": {
+		"//#knip": {
+			"cache": false
+		},
+		"//#lint": {
 			"cache": false
 		},
 		"build": {
 			"dependsOn": ["^build"],
 			"env": ["API_URL", "WEBSITE_URL", "NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_WEBSITE_URL"],
-			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+			"outputs": [".next/**", "!.next/cache/**", "!.next/dev/**", "dist/**"]
 		},
 		"test": {
 			"cache": false,
 			"passThroughEnv": ["CI", "TEST_DATABASE_URL", "TEST_REDIS_URL", "DOCKER_*", "TESTCONTAINERS_*"]
 		},
 		"test:worker": {
-			"dependsOn": ["build"],
-			"cache": false
-		},
-		"//#knip": {
-			"cache": false
+			"cache": false,
+			"dependsOn": ["build"]
 		}
 	}
 }
