@@ -29,7 +29,7 @@
 		"@heroicons/react": "2.2.0",
 		"@opennextjs/cloudflare": "1.20.15",
 		"@tailwindcss/postcss": "4.3.3",
-		"@tanstack/react-query": "5.105.1",
+		"@tanstack/react-query": "5.106.1",
 		"@trpc/client": "11.22.1",
 		"@trpc/next": "11.22.1",
 		"@trpc/react-query": "11.22.1",
