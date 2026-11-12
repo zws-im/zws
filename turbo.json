@@ -22,7 +22,8 @@
 			"cache": false
 		},
 		"//#lint": {
-			"cache": false
+			"cache": false,
+			"dependsOn": ["@zws.im/web#typegen"]
 		},
 		"build": {
 			"dependsOn": ["^build"],

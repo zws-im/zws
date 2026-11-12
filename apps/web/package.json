@@ -23,7 +23,8 @@
 		"dev": "portless zws.im next dev",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"start": "next start",
-		"test:worker": "NEXT_PUBLIC_API_URL=https://api.zws.im NEXT_PUBLIC_WEBSITE_URL=https://zws.im API_URL=https://api.zws.im pnpm run build:ci && wrangler deploy --dry-run --outdir .open-next/test-worker && node --test tests/worker.test.ts"
+		"test:worker": "NEXT_PUBLIC_API_URL=https://api.zws.im NEXT_PUBLIC_WEBSITE_URL=https://zws.im API_URL=https://api.zws.im pnpm run build:ci && wrangler deploy --dry-run --outdir .open-next/test-worker && node --test tests/worker.test.ts",
+		"typegen": "next typegen"
 	},
 	"dependencies": {
 		"@heroicons/react": "2.2.0",
