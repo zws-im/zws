@@ -334,8 +334,8 @@ importers:
         specifier: workspace:*
         version: link:../api
       apexcharts:
-        specifier: 8.7.0
-        version: 8.7.0
+        specifier: 8.8.1
+        version: 8.8.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -356,7 +356,7 @@ importers:
         version: 19.3.1
       react-apexcharts:
         specifier: 2.2.0
-        version: 2.2.0(apexcharts@8.7.0)(react@19.3.1)
+        version: 2.2.0(apexcharts@8.8.1)(react@19.3.1)
       react-dom:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
@@ -3273,11 +3273,11 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
-  apex-commons@0.8.3:
-    resolution: {integrity: sha512-WdU5lblyL1ByI/nkFOJkSgJYenCsHmay0P3UIcnSeUiCyF1b30SvPSZLbyxOCUOry8IlL7M0/3GvsGbZTMm8FA==}
+  apex-commons@0.10.0:
+    resolution: {integrity: sha512-mBXqK6wykMnWV4TzT9636k4aaeEvE8PmBIfa2bHx91eQoit8RjJrOlBpGxNGz1Bmt6gq2U3CoqPAUZftBbYdLQ==}
 
-  apexcharts@8.7.0:
-    resolution: {integrity: sha512-HHpMlM4QvLXFLL6hyn1iivF+3IyoCrBEXYcV9elJuT+Dc4At9P5+RAaSYA1onOrcXg59+VTAsnyUDdm4GRhUfA==}
+  apexcharts@8.8.1:
+    resolution: {integrity: sha512-Aeha39Wdrg4pTdJTpM+QsQemLoCRpwC5tEgwHYzbvtRxo4E9EmQ6zdTZbhcYia24HyPhqx3IATd1evgS0lRtzw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   apg-lite@1.0.5:
@@ -8834,11 +8834,11 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  apex-commons@0.8.3: {}
+  apex-commons@0.10.0: {}
 
-  apexcharts@8.7.0:
+  apexcharts@8.8.1:
     dependencies:
-      apex-commons: 0.8.3
+      apex-commons: 0.10.0
 
   apg-lite@1.0.5: {}
 
@@ -10513,9 +10513,9 @@ snapshots:
       iconv-lite: 0.7.3
       unpipe: 1.0.0
 
-  react-apexcharts@2.2.0(apexcharts@8.7.0)(react@19.3.1):
+  react-apexcharts@2.2.0(apexcharts@8.8.1)(react@19.3.1):
     dependencies:
-      apexcharts: 8.7.0
+      apexcharts: 8.8.1
       prop-types: 15.8.1
       react: 19.3.1
 
