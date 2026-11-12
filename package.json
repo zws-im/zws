@@ -25,7 +25,7 @@
 	"devDependencies": {
 		"knip": "6.45.0",
 		"oxfmt": "0.78.0",
-		"oxlint": "1.90.0",
+		"oxlint": "1.93.0",
 		"oxlint-tsgolint": "7.0.2006",
 		"railway": "3.16.0",
 		"turbo": "2.11.10"
