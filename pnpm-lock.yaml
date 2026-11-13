@@ -174,8 +174,8 @@ importers:
         version: 9.0.0
     devDependencies:
       knip:
-        specifier: 6.45.0
-        version: 6.45.0
+        specifier: 6.45.1
+        version: 6.45.1
       oxfmt:
         specifier: 0.78.0
         version: 0.78.0
@@ -4350,8 +4350,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  knip@6.45.0:
-    resolution: {integrity: sha512-ywPAhxiJGPWD/1V5dVYawA6el74q4vgX8omkeyl0MbA1CCkdjxrvWXXVqM20a5wQWcl1NbC9ImLHYsbFEbD0Xg==}
+  knip@6.45.1:
+    resolution: {integrity: sha512-zp3zXKy2cZWiIttdlWU5fisKxVQaLSU6471ej0KGz1GdHdaHxpzTAO/LIyFNc3gU3v1W7LJaqvYumoO3l/u+6A==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -6550,12 +6550,12 @@ snapshots:
   '@emnapi/core@1.11.2':
     dependencies:
       '@emnapi/wasi-threads': 1.2.2
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@emnapi/runtime@1.11.2':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@emnapi/runtime@1.11.3':
@@ -6565,7 +6565,7 @@ snapshots:
 
   '@emnapi/wasi-threads@1.2.2':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@esbuild/aix-ppc64@0.25.12':
@@ -8394,7 +8394,7 @@ snapshots:
 
   '@tybys/wasm-util@0.10.4':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.9.1
     optional: true
 
   '@types/body-parser@1.19.6':
@@ -9759,7 +9759,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  knip@6.45.0:
+  knip@6.45.1:
     dependencies:
       formatly: 0.11.4
       get-tsconfig: 4.14.3
