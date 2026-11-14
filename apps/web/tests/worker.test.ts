@@ -35,3 +35,44 @@ await test('built Worker redirects a zero-width short link', { timeout: 30_000 }
 	assert.equal(response.headers.get('location'), destination);
 	assert.equal(apiRequests, 1);
 });
+
+await test('built Worker prefetches and hydrates homepage stats per request', { timeout: 30_000 }, async (t) => {
+	const config = readConfig({ config: 'wrangler.jsonc' });
+	assert.ok(config.assets);
+	let apiRequests = 0;
+
+	const worker = new Miniflare(
+		convertV4MiniflareOptions({
+			modules: true,
+			scriptPath: '.open-next/test-worker/worker.js',
+			compatibilityDate: config.compatibility_date,
+			compatibilityFlags: config.compatibility_flags,
+			bindings: config.vars,
+			assets: { ...config.assets, routerConfig: { has_user_worker: true } },
+			outboundService: async (request) => {
+				const url = new URL(request.url);
+				assert.equal(url.origin, 'https://api.zws.im');
+				assert.equal(url.pathname, '/trpc/stats.getInstanceStats');
+				assert.equal(request.method, 'GET');
+				apiRequests++;
+				// devalue's flattened representation of { urls, visits } on the API wire.
+				return Response.json([
+					{ result: { data: JSON.stringify([{ urls: 1, visits: 2 }, apiRequests * 1000, apiRequests * 2000]) } },
+				]);
+			},
+			cf: false,
+		}),
+	);
+
+	t.after(() => worker.dispose());
+
+	for (const requestNumber of [1, 2]) {
+		const response = await worker.dispatchFetch('https://zws.im/');
+		const html = await response.text();
+		assert.equal(response.status, 200, html);
+		assert.match(html, /Zero Width Shortener/);
+		assert.match(html, new RegExp(`>${requestNumber}K<`));
+		assert.match(html, new RegExp(`>${requestNumber * 2}K<`));
+		assert.equal(apiRequests, requestNumber);
+	}
+});

@@ -1,8 +1,22 @@
 'use client';
 
-import type { PropsWithChildren } from 'react';
-import { trpc } from '@/app/trpc';
+import { environmentManager, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { type PropsWithChildren, useState } from 'react';
+import { makeQueryClient } from '@/app/query-client';
+import { TRPCProvider } from '@/app/trpc';
+import { makeTRPCClient } from '@/app/trpc-client';
 
-const Component = ({ children }: PropsWithChildren) => children;
+let browserQueryClient: QueryClient | undefined;
 
-export const TrpcProvider = trpc.withTRPC(Component) as typeof Component;
+export function TrpcProvider({ children }: PropsWithChildren) {
+	const queryClient = environmentManager.isServer() ? makeQueryClient() : (browserQueryClient ??= makeQueryClient());
+	const [trpcClient] = useState(makeTRPCClient);
+
+	return (
+		<QueryClientProvider client={queryClient}>
+			<TRPCProvider trpcClient={trpcClient} queryClient={queryClient}>
+				{children}
+			</TRPCProvider>
+		</QueryClientProvider>
+	);
+}

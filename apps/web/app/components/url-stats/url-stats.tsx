@@ -1,9 +1,10 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
 import { Suspense, useEffect, useState } from 'react';
 import { usePlausible } from '@/app/hooks/plausible';
 
-import { trpc } from '@/app/trpc';
+import { useTRPC } from '@/app/trpc';
 import { UrlStatsChart } from './url-stats-chart';
 import { UrlStatsInput } from './url-stats-input';
 
@@ -16,11 +17,12 @@ function extractShort(url: string): string | undefined {
 }
 
 export function UrlStats() {
+	const trpc = useTRPC();
 	const [url, setUrl] = useState('');
 	const short = extractShort(url);
 	const plausible = usePlausible();
 
-	const stats = trpc.urlStats.getShortUrlStats.useQuery(short, {});
+	const stats = useQuery(trpc.urlStats.getShortUrlStats.queryOptions(short));
 
 	// oxlint-disable-next-line react-hooks/exhaustive-deps -- Intentional
 	useEffect(() => {

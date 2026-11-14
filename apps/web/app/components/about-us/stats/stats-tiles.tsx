@@ -1,8 +1,10 @@
 'use client';
 
+import { useSuspenseQuery } from '@tanstack/react-query';
+import { fromHandle, type inferQueryHandle } from '@trpc/tanstack-react-query/unstable-handles';
 import millify from 'millify';
 import { useEffect, useState } from 'react';
-import { trpc } from '@/app/trpc';
+import { type TRPC, useTRPC } from '@/app/trpc';
 import { StatsTile } from './stats-tile';
 
 const GITHUB_STARGAZERS_LINK_HEADER_REGEXP = /^.+,.+page=(?<stars>\d+).+$/;
@@ -33,7 +35,7 @@ type Props = {
 	visits: number;
 };
 
-function StatsTilesBase({ githubStars, shortenedUrls, visits }: Props) {
+export function StatsTilesBase({ githubStars, shortenedUrls, visits }: Props) {
 	return (
 		<>
 			<StatsTile wide={true} name='URLs shortened' value={millify(shortenedUrls)} />
@@ -44,7 +46,8 @@ function StatsTilesBase({ githubStars, shortenedUrls, visits }: Props) {
 	);
 }
 
-export function StatsTiles() {
+export function StatsTiles({ instanceStats }: { instanceStats: inferQueryHandle<TRPC['stats']['getInstanceStats']> }) {
+	const trpc = useTRPC();
 	const [stars, setStars] = useState(1.8e3);
 
 	useEffect(() => {
@@ -67,12 +70,7 @@ export function StatsTiles() {
 		};
 	}, []);
 
-	const stats = trpc.stats.getInstanceStats.useQuery(undefined, {
-		initialData: {
-			urls: 7.6e6,
-			visits: 15.6e6,
-		},
-	});
+	const stats = useSuspenseQuery(fromHandle(trpc, instanceStats));
 
 	return <StatsTilesBase githubStars={stars} shortenedUrls={stats.data.urls} visits={stats.data.visits} />;
 }

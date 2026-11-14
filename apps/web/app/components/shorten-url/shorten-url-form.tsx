@@ -1,25 +1,29 @@
 'use client';
 
 import { ArrowPathIcon, CheckIcon } from '@heroicons/react/20/solid';
+import { useMutation } from '@tanstack/react-query';
 import clsx from 'clsx';
 import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
 import { usePlausible } from '@/app/hooks/plausible';
-import { trpc } from '@/app/trpc';
+import { useTRPC } from '@/app/trpc';
 import * as motion from '../../motion';
 
 export function ShortenUrlForm() {
+	const trpc = useTRPC();
 	const [longUrl, setLongUrl] = useState('');
 	const [finishedAt, setFinishedAt] = useState<number | undefined>(undefined);
 	const plausible = usePlausible();
 
-	const mutation = trpc.urls.shortenUrl.useMutation({
-		onMutate: () => {
-			setFinishedAt(undefined);
-		},
-		onSuccess: () => {
-			setFinishedAt(Date.now());
-		},
-	});
+	const mutation = useMutation(
+		trpc.urls.shortenUrl.mutationOptions({
+			onMutate: () => {
+				setFinishedAt(undefined);
+			},
+			onSuccess: () => {
+				setFinishedAt(Date.now());
+			},
+		}),
+	);
 
 	const justSucceeded = mutation.isSuccess && finishedAt !== undefined;
 
