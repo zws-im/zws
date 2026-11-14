@@ -28,7 +28,7 @@
 	},
 	"dependencies": {
 		"@heroicons/react": "2.2.0",
-		"@opennextjs/cloudflare": "1.20.16",
+		"@opennextjs/cloudflare": "1.20.17",
 		"@tailwindcss/postcss": "4.3.5",
 		"@tanstack/react-query": "5.107.1",
 		"@trpc/client": "11.28.0",
