@@ -27,7 +27,7 @@
 		"oxfmt": "0.78.0",
 		"oxlint": "1.93.0",
 		"oxlint-tsgolint": "7.0.2007",
-		"railway": "3.16.0",
+		"railway": "3.17.0",
 		"turbo": "2.11.11"
 	},
 	"devEngines": {
