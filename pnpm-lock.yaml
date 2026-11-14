@@ -207,8 +207,8 @@ importers:
         specifier: 12.4.2
         version: 12.4.2(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(rxjs@7.8.2)(supports-color@10.2.2)
       '@nestjs/swagger':
-        specifier: 12.1.1
-        version: 12.1.1(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(reflect-metadata@0.2.2)(typescript@7.0.2)
+        specifier: 12.1.2
+        version: 12.1.2(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(reflect-metadata@0.2.2)(typescript@7.0.2)
       '@sentry/nestjs':
         specifier: 11.12.0
         version: 11.12.0(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(webpack@5.106.2(esbuild@0.28.2)(lightningcss@1.33.0)(postcss@8.5.31))
@@ -1426,8 +1426,8 @@ packages:
       '@nestjs/core': ^12.0.0
       rxjs: ^7.1.0
 
-  '@nestjs/swagger@12.1.1':
-    resolution: {integrity: sha512-HD4iO7dN6cVFrRaWW7WdYbHkJv0Mr3lDqgIi/31iKBe0gV5bCLV6usWkzgTIXgLTCzd3eDI1cJWhsl5H04RLjQ==}
+  '@nestjs/swagger@12.1.2':
+    resolution: {integrity: sha512-MHQcw9eoO6crcOuBsdUXB/o4yV4OORtU/UNXELAc6WpQ6lxxwgl/CoVCILnRGWeDOxk4/E2s6Ftqu7xvb15X+A==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@fastify/static': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -7021,7 +7021,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@nestjs/swagger@12.1.1(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(reflect-metadata@0.2.2)(typescript@7.0.2)':
+  '@nestjs/swagger@12.1.2(@nestjs/common@12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2))(@nestjs/core@12.4.2)(reflect-metadata@0.2.2)(typescript@7.0.2)':
     dependencies:
       '@microsoft/tsdoc': 0.17.1
       '@nestjs/common': 12.4.2(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@10.2.2)
