@@ -56,7 +56,7 @@
 		"@tsconfig/next": "2.0.7",
 		"@types/swagger-ui-react": "5.18.0",
 		"miniflare": "5.20261019.0-beta",
-		"wrangler": "4.160.0"
+		"wrangler": "4.162.0"
 	},
 	"engines": {
 		"node": "26.x"
