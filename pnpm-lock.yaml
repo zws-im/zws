@@ -225,8 +225,8 @@ importers:
         specifier: 11.28.3
         version: 11.28.3(@types/express@5.0.6)(next@16.4.6(@babel/core@7.29.7(supports-color@10.2.2))(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@7.0.2)
       convert:
-        specifier: 8.0.2
-        version: 8.0.2
+        specifier: 8.1.0
+        version: 8.1.0
       cors:
         specifier: 2.8.6
         version: 2.8.6
@@ -3582,8 +3582,8 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  convert@8.0.2:
-    resolution: {integrity: sha512-Fc/9LZbtnjdrcwnV4M6TJaUnpIWIRp6sR8Qhvn0x+22pVjNhLdqRJMih4Nue3g0W7PH2zy3wdp/+iysZYYg0IQ==}
+  convert@8.1.0:
+    resolution: {integrity: sha512-zMKk2/tGzXMgTzztJwm+AP7sqJEibeB7jA/ykNnk1SzjKrNYvRKYyg8OpQndA9jvSkiuv4COpj4xpfNXkbRTPw==}
 
   cookie-signature@1.2.2:
     resolution: {integrity: sha512-D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg==}
@@ -9153,7 +9153,7 @@ snapshots:
   convert-source-map@2.0.0:
     optional: true
 
-  convert@8.0.2: {}
+  convert@8.1.0: {}
 
   cookie-signature@1.2.2: {}
 
