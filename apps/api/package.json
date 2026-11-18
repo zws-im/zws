@@ -46,7 +46,7 @@
 		"@types/node": "26.6.6",
 		"testcontainers": "12.2.1",
 		"tsx": "4.23.15",
-		"type-fest": "5.10.0",
+		"type-fest": "6.0.1",
 		"typescript": "7.0.2",
 		"vitest": "5.1.0"
 	}
