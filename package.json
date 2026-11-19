@@ -28,7 +28,7 @@
 		"oxlint": "1.94.0",
 		"oxlint-tsgolint": "7.0.2007",
 		"railway": "3.17.0",
-		"turbo": "2.11.11"
+		"turbo": "2.11.13"
 	},
 	"devEngines": {
 		"runtime": {
