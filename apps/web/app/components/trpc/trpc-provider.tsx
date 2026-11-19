@@ -8,8 +8,17 @@ import { makeTRPCClient } from '@/app/trpc-client';
 
 let browserQueryClient: QueryClient | undefined;
 
+function getQueryClient(): QueryClient {
+	if (environmentManager.isServer()) {
+		return makeQueryClient();
+	}
+
+	browserQueryClient ??= makeQueryClient();
+	return browserQueryClient;
+}
+
 export function TrpcProvider({ children }: PropsWithChildren) {
-	const queryClient = environmentManager.isServer() ? makeQueryClient() : (browserQueryClient ??= makeQueryClient());
+	const queryClient = getQueryClient();
 	const [trpcClient] = useState(makeTRPCClient);
 
 	return (
