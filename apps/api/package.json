@@ -48,6 +48,6 @@
 		"tsx": "4.23.15",
 		"type-fest": "6.0.1",
 		"typescript": "7.0.2",
-		"vitest": "5.1.0"
+		"vitest": "5.1.1"
 	}
 }
