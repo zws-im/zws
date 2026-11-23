@@ -19,7 +19,7 @@
 		"@nestjs/platform-express": "12.5.1",
 		"@nestjs/swagger": "12.1.2",
 		"@sentry/nestjs": "11.16.0",
-		"@trpc/server": "11.29.5",
+		"@trpc/server": "11.29.7",
 		"convert": "8.2.0",
 		"cors": "2.8.6",
 		"devalue": "6.0.3",
@@ -38,7 +38,7 @@
 	"devDependencies": {
 		"@nestjs/testing": "12.5.1",
 		"@testcontainers/postgresql": "12.2.2",
-		"@trpc/client": "11.29.5",
+		"@trpc/client": "11.29.7",
 		"@tsconfig/node26": "26.0.2",
 		"@tsconfig/strictest": "2.0.9",
 		"@types/cors": "2.8.19",
