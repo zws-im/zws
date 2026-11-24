@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { convertV4MiniflareOptions, Miniflare, Response } from 'miniflare';
 import { unstable_readConfig as readConfig } from 'wrangler';
 
-await test('built Worker redirects a zero-width short link', { timeout: 30_000 }, async (t) => {
+await test('built Worker redirects API paths and zero-width short links', { timeout: 30_000 }, async (t) => {
 	const config = readConfig({ config: 'wrangler.jsonc' });
 	assert.ok(config.assets);
 	const shortPath = `/${encodeURIComponent('\u200b'.repeat(7))}`;
@@ -29,6 +29,10 @@ await test('built Worker redirects a zero-width short link', { timeout: 30_000 }
 		}),
 	);
 	t.after(() => worker.dispose());
+
+	const apiResponse = await worker.dispatchFetch('https://zws.im/api/openapi.json', { redirect: 'manual' });
+	assert.equal(apiResponse.status, 308);
+	assert.equal(apiResponse.headers.get('location'), 'https://api.zws.im/openapi.json');
 
 	const response = await worker.dispatchFetch(`https://zws.im${shortPath}`, { redirect: 'manual' });
 	assert.equal(response.status, 307, await response.text());
@@ -71,6 +75,8 @@ await test('built Worker prefetches and hydrates homepage stats per request', { 
 		const html = await response.text();
 		assert.equal(response.status, 200, html);
 		assert.match(html, /Zero Width Shortener/);
+		assert.match(html, /rel="canonical" href="https:\/\/zws\.im"/);
+		assert.match(html, /property="og:image" content="https:\/\/zws\.im\/opengraph-image\.png\?/);
 		assert.match(html, new RegExp(`>${requestNumber}K<`));
 		assert.match(html, new RegExp(`>${requestNumber * 2}K<`));
 		assert.equal(apiRequests, requestNumber);

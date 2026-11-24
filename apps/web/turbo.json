@@ -7,7 +7,7 @@
 		},
 		"typegen": {
 			"cache": false,
-			"passThroughEnv": ["API_URL"]
+			"passThroughEnv": ["NEXT_PUBLIC_API_URL"]
 		}
 	}
 }

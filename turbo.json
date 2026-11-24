@@ -27,7 +27,7 @@
 		},
 		"build": {
 			"dependsOn": ["^build"],
-			"env": ["API_URL", "WEBSITE_URL", "NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_WEBSITE_URL"],
+			"env": ["NEXT_PUBLIC_API_URL", "NEXT_PUBLIC_WEBSITE_URL"],
 			"outputs": [".next/**", "!.next/cache/**", "!.next/dev/**", "dist/**"]
 		},
 		"test": {
