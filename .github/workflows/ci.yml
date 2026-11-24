@@ -24,7 +24,7 @@ jobs:
           --health-timeout 5s
           --health-retries 15
       redis:
-        image: redis:8.10-alpine
+        image: redis:8.12-alpine
         ports:
           - 6379/tcp
         options: >-
