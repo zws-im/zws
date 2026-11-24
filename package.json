@@ -23,7 +23,7 @@
 		"envalid": "9.0.0"
 	},
 	"devDependencies": {
-		"knip": "6.47.0",
+		"knip": "6.48.0",
 		"oxfmt": "0.79.0",
 		"oxlint": "1.94.0",
 		"oxlint-tsgolint": "7.0.2008",
