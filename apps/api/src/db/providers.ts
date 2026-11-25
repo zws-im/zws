@@ -1,2 +1,1 @@
 export const DB_PROVIDER = Symbol('DB_PROVIDER');
-export const POSTGRES_CLIENT_PROVIDER = Symbol('POSTGRES_CLIENT_PROVIDER');

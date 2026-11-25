@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
 import { eq } from 'drizzle-orm';
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres';
 import { createClient } from 'redis';
 import * as Schema from '../src/db/schema.ts';
 
@@ -84,12 +83,14 @@ async function resolveTarget(): Promise<{ hostname: string; targetUrl?: string }
 }
 
 const target = await resolveTarget();
-const postgresClient = postgres(process.env.DATABASE_URL, {
-	max: 1,
-	connect_timeout: 5,
-	connection: { application_name: 'zws-block-malicious-url' },
+const db = drizzle({
+	connection: {
+		url: process.env.DATABASE_URL,
+		max: 1,
+		connectTimeout: 5_000,
+		applicationName: 'zws-block-malicious-url',
+	},
 });
-const db = drizzle({ client: postgresClient });
 
 try {
 	const blocked = await db
@@ -140,5 +141,5 @@ try {
 
 	console.log(JSON.stringify(result, null, 2));
 } finally {
-	await postgresClient.end({ timeout: 5 });
+	await db.$client.end();
 }

@@ -1,7 +1,6 @@
 import { multiReplace, sample } from '@jonahsnider/util';
 import { Inject, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
 import { eq } from 'drizzle-orm';
-import postgres from 'postgres';
 import { BlockedUrlsService } from '../blocked-urls/blocked-urls.service.js';
 import { ConfigService } from '../config/config.service.js';
 import { Schema } from '../db/index.js';
@@ -99,23 +98,16 @@ export class UrlsService {
 			id = this.generateShortId();
 			const shortBase64 = UrlsService.toBase64(id);
 
-			try {
-				[created] = await this.db
-					.insert(Schema.urls)
-					.values({
-						url,
-						shortBase64,
-						createdAt: new Date(),
-						blocked: matches,
-					})
-					.returning();
-			} catch (error) {
-				if (error instanceof postgres.PostgresError && error.code === '23505') {
-					// Ignore the expected potential duplicate ID errors
-				} else {
-					throw error;
-				}
-			}
+			[created] = await this.db
+				.insert(Schema.urls)
+				.values({
+					url,
+					shortBase64,
+					createdAt: new Date(),
+					blocked: matches,
+				})
+				.onConflictDoNothing({ target: Schema.urls.shortBase64 })
+				.returning();
 		} while (!created);
 
 		return {

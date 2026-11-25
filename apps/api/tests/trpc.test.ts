@@ -1,4 +1,5 @@
 import { TRPCClientError } from '@trpc/client';
+import { sql } from 'drizzle-orm';
 import { describe } from 'vitest';
 import { z } from 'zod';
 import { test, websiteUrl } from './support.js';
@@ -13,7 +14,7 @@ describe('tRPC over HTTP', { tags: ['integration'] }, () => {
 		expect(visit.status).toBe(308);
 		await visit.body?.cancel();
 		expect(await api.trpc.urlStats.getShortUrlStats.query(short)).toStrictEqual(await api.stats(short));
-		await api.sql`ANALYZE urls, visits`;
+		await api.query(sql`ANALYZE urls, visits`);
 		z.object({ urls: z.number().int().min(1), visits: z.number().int().min(1) }).parse(
 			await api.trpc.stats.getInstanceStats.query(),
 		);

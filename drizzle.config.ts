@@ -1,4 +1,5 @@
 import type { Config } from 'drizzle-kit';
+import { createPool } from 'drizzle-orm/postgres';
 import { cleanEnv, str } from 'envalid';
 
 const env = cleanEnv(process.env, {
@@ -9,7 +10,7 @@ export default {
 	schema: 'apps/api/src/db/schema.ts',
 	dialect: 'postgresql',
 	dbCredentials: {
-		url: env.DATABASE_URL,
+		client: createPool({ url: env.DATABASE_URL, max: 1 }),
 	},
 	out: 'drizzle',
 } satisfies Config;

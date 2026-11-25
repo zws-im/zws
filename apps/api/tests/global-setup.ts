@@ -2,10 +2,9 @@ import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { PostgreSqlContainer } from '@testcontainers/postgresql';
-import { drizzle } from 'drizzle-orm/postgres-js';
-import { migrate } from 'drizzle-orm/postgres-js/migrator';
+import { drizzle } from 'drizzle-orm/postgres';
+import { migrate } from 'drizzle-orm/postgres/migrator';
 import { cleanEnv, url } from 'envalid';
-import postgres from 'postgres';
 import { GenericContainer, type StartedTestContainer, Wait } from 'testcontainers';
 import type { TestProject } from 'vitest/node';
 
@@ -52,13 +51,13 @@ export default async function setup(project: TestProject) {
 			redisUrl = `redis://${redis.getHost()}:${redis.getMappedPort(6379)}`;
 		}
 
-		const sql = postgres(databaseUrl, { max: 1, onnotice: () => {} });
+		const db = drizzle({ connection: { url: databaseUrl, max: 1 } });
 		try {
-			await migrate(drizzle({ client: sql }), {
+			await migrate(db, {
 				migrationsFolder: fileURLToPath(new URL('../../../drizzle', import.meta.url)),
 			});
 		} finally {
-			await sql.end({ timeout: 5 });
+			await db.$client.end();
 		}
 		project.provide('databaseUrl', databaseUrl);
 		project.provide('redisUrl', redisUrl);

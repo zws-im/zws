@@ -1,41 +1,38 @@
 import { Global, Inject, Module, type OnApplicationShutdown } from '@nestjs/common';
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres, { type Sql } from 'postgres';
+import { drizzle } from 'drizzle-orm/postgres';
 import { ConfigService } from '../config/config.service.js';
-import { DB_PROVIDER, POSTGRES_CLIENT_PROVIDER } from './providers.js';
+import type { Db } from './interfaces/db.interface.js';
+import { DB_PROVIDER } from './providers.js';
 import { relations } from './relations.js';
 
 @Global()
 @Module({
 	providers: [
 		{
-			provide: POSTGRES_CLIENT_PROVIDER,
+			provide: DB_PROVIDER,
 			inject: [ConfigService],
 			useFactory: (configService: ConfigService) =>
-				postgres(configService.databaseUrl, {
-					max: 10,
-					connect_timeout: 5,
-					idle_timeout: 30,
+				drizzle({
 					connection: {
-						application_name: 'zws-api',
-						idle_in_transaction_session_timeout: 15_000,
-						lock_timeout: 5_000,
-						statement_timeout: 15_000,
+						url: configService.databaseUrl,
+						max: 10,
+						connectTimeout: 5_000,
+						idleTimeoutMillis: 30_000,
+						applicationName: 'zws-api',
+						idleInTransactionSessionTimeout: 15_000,
+						options: '-c lock_timeout=5000',
+						statementTimeout: 15_000,
 					},
+					relations,
 				}),
-		},
-		{
-			provide: DB_PROVIDER,
-			inject: [POSTGRES_CLIENT_PROVIDER],
-			useFactory: (client: Sql) => drizzle({ client, relations }),
 		},
 	],
 	exports: [DB_PROVIDER],
 })
 export class DbModule implements OnApplicationShutdown {
-	constructor(@Inject(POSTGRES_CLIENT_PROVIDER) private readonly client: Sql) {}
+	constructor(@Inject(DB_PROVIDER) private readonly db: Db) {}
 
 	async onApplicationShutdown(): Promise<void> {
-		await this.client.end({ timeout: 5 });
+		await this.db.$client.end();
 	}
 }

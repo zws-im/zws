@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm';
 import { describe } from 'vitest';
 import { test, toBase64, websiteUrl } from './support.js';
 
@@ -7,7 +8,7 @@ describe('URL shortening and visits', { tags: ['integration'] }, () => {
 		expect(Array.from(link.short).length).toBe(7);
 		expect(link.short).toMatch(/^(?:\u200c|\u200d|[\u{e0061}-\u{e007a}]|\u{e007f})+$/u);
 		expect(link.url).toBe(new URL(link.short, websiteUrl).href);
-		const [row] = await api.sql`SELECT url, blocked FROM urls WHERE short_base64 = ${toBase64(link.short)}`;
+		const [row] = await api.query(sql`SELECT url, blocked FROM urls WHERE short_base64 = ${toBase64(link.short)}`);
 		expect(row).toStrictEqual({ url: api.destination, blocked: false });
 		expect(await api.stats(link.short)).toStrictEqual({ url: api.destination, visits: [] });
 
@@ -26,6 +27,21 @@ describe('URL shortening and visits', { tags: ['integration'] }, () => {
 		expect(visited.visits).toStrictEqual([...visited.visits].sort());
 	});
 
+	test('exhausts retries on a short ID collision without replacing the existing link', async ({ api, expect }) => {
+		api.shortCharacters.splice(0, api.shortCharacters.length, '\u200c');
+		const link = await api.shorten();
+		const response = await api.request('/', {
+			method: 'POST',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ url: `https://${api.hostname}/other` }),
+		});
+		expect(response.status).toBe(500);
+		expect(await response.json()).toMatchObject({
+			message: 'Unable to generate a unique short ID within the max number of attempts',
+		});
+		expect((await api.stats(link.short)).url).toBe(api.destination);
+	});
+
 	test('visit=false resolves without redirecting or recording a visit', async ({ api, expect }) => {
 		const link = await api.shorten();
 		const response = await api.request(`/${encodeURIComponent(link.short)}?visit=false`);
@@ -40,7 +56,7 @@ describe('URL shortening and visits', { tags: ['integration'] }, () => {
 		const canonical = `canonical-${api.hostname}`;
 		api.shortRewrites[alias] = canonical;
 		api.shortRewrites[canonical] = 'other';
-		await api.sql`INSERT INTO urls (short_base64, url) VALUES (${toBase64(canonical)}, ${api.destination})`;
+		await api.query(sql`INSERT INTO urls (short_base64, url) VALUES (${toBase64(canonical)}, ${api.destination})`);
 		const lookup = await api.request(`/${alias}?visit=false`);
 		expect(lookup.status).toBe(200);
 		expect(await lookup.json()).toStrictEqual({ url: api.destination });
@@ -66,7 +82,7 @@ describe('URL shortening and visits', { tags: ['integration'] }, () => {
 			});
 			expect(response.status, await response.text()).toBe(400);
 		}
-		const [row] = await api.sql`SELECT count(*)::int AS count FROM urls WHERE url = ${tooLong}`;
+		const [row] = await api.query(sql`SELECT count(*)::int AS count FROM urls WHERE url = ${tooLong}`);
 		expect(row?.['count']).toBe(0);
 	});
 

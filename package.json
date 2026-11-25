@@ -19,7 +19,8 @@
 		"knip": "knip"
 	},
 	"dependencies": {
-		"drizzle-kit": "1.0.0-rc.5-ab785fc",
+		"drizzle-kit": "1.0.0-rc.6",
+		"drizzle-orm": "1.0.0-rc.6",
 		"envalid": "9.0.0"
 	},
 	"devDependencies": {

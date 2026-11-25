@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm';
 import { describe } from 'vitest';
 import { z } from 'zod';
 import { test } from './support.js';
@@ -8,7 +9,7 @@ describe('Instance statistics and badges', { tags: ['integration'] }, () => {
 		const visit = await api.request(`/${encodeURIComponent(link.short)}`);
 		expect(visit.status).toBe(308);
 		await visit.body?.cancel();
-		await api.sql`ANALYZE urls, visits`;
+		await api.query(sql`ANALYZE urls, visits`);
 		const response = await api.request('/stats');
 		expect(response.status).toBe(200);
 		z.object({ urls: z.number().int().min(1), visits: z.number().int().min(1) }).parse(await response.json());

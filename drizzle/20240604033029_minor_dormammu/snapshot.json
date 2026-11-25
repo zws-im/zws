@@ -1,181 +1,113 @@
 {
-	"id": "5e370c82-32f6-4b3a-9027-8cd493a75f34",
-	"prevIds": ["a1a9d125-cfb1-4769-baca-2f88b80c8dc9"],
-	"version": "8",
-	"dialect": "postgres",
-	"ddl": [
-		{
-			"isRlsEnabled": false,
-			"name": "blocked_hostnames",
-			"schema": "public",
-			"entityType": "tables"
-		},
-		{
-			"columns": ["hostname"],
-			"nameExplicit": false,
-			"name": "blocked_hostnames_pkey",
-			"schema": "public",
-			"table": "blocked_hostnames",
-			"entityType": "pks"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "hostname",
-			"schema": "public",
-			"table": "blocked_hostnames",
-			"entityType": "columns"
-		},
-		{
-			"type": "timestamp with time zone",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": "now()",
-			"generated": null,
-			"identity": null,
-			"name": "created_at",
-			"schema": "public",
-			"table": "blocked_hostnames",
-			"entityType": "columns"
-		},
-		{
-			"isRlsEnabled": false,
-			"name": "urls",
-			"schema": "public",
-			"entityType": "tables"
-		},
-		{
-			"type": "boolean",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": "false",
-			"generated": null,
-			"identity": null,
-			"name": "blocked",
-			"schema": "public",
-			"table": "urls",
-			"entityType": "columns"
-		},
-		{
-			"type": "timestamp with time zone",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": "now()",
-			"generated": null,
-			"identity": null,
-			"name": "created_at",
-			"schema": "public",
-			"table": "urls",
-			"entityType": "columns"
-		},
-		{
-			"columns": ["short_base64"],
-			"nameExplicit": false,
-			"name": "urls_pkey",
-			"schema": "public",
-			"table": "urls",
-			"entityType": "pks"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "short_base64",
-			"schema": "public",
-			"table": "urls",
-			"entityType": "columns"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "url",
-			"schema": "public",
-			"table": "urls",
-			"entityType": "columns"
-		},
-		{
-			"isRlsEnabled": false,
-			"name": "visits",
-			"schema": "public",
-			"entityType": "tables"
-		},
-		{
-			"columns": ["id"],
-			"nameExplicit": false,
-			"name": "visits_pkey",
-			"schema": "public",
-			"table": "visits",
-			"entityType": "pks"
-		},
-		{
-			"type": "serial",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "id",
-			"schema": "public",
-			"table": "visits",
-			"entityType": "columns"
-		},
-		{
-			"type": "timestamp with time zone",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": "now()",
-			"generated": null,
-			"identity": null,
-			"name": "timestamp",
-			"schema": "public",
-			"table": "visits",
-			"entityType": "columns"
-		},
-		{
-			"type": "text",
-			"typeSchema": null,
-			"notNull": true,
-			"dimensions": 0,
-			"default": null,
-			"generated": null,
-			"identity": null,
-			"name": "url_short_base64",
-			"schema": "public",
-			"table": "visits",
-			"entityType": "columns"
-		},
-		{
-			"nameExplicit": false,
-			"columns": ["url_short_base64"],
-			"schemaTo": "public",
-			"tableTo": "urls",
-			"columnsTo": ["short_base64"],
-			"onUpdate": "CASCADE",
-			"onDelete": "CASCADE",
-			"name": "visits_url_short_base64_urls_short_base64_fk",
-			"schema": "public",
-			"table": "visits",
-			"entityType": "fks"
-		}
-	],
-	"renames": []
+  "type": "diff",
+  "version": "10",
+  "dialect": "postgres",
+  "id": "5e370c82-32f6-4b3a-9027-8cd493a75f34",
+  "prevIds": [
+    "a1a9d125-cfb1-4769-baca-2f88b80c8dc9"
+  ],
+  "footprints": [
+    {
+      "statementType": "drop_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "urls",
+        "urls_blocked_index"
+      ],
+      "writes": [
+        "s|idx|public.urls_blocked_index",
+        "n|idx|public.urls_blocked_index",
+        "e|idx|public.urls_blocked_index",
+        "n|rel|public.urls_blocked_index"
+      ],
+      "reads": [
+        "e|tbl|public.urls",
+        "n|sch|public",
+        "e|col|public.urls.blocked"
+      ],
+      "sharedWrites": []
+    },
+    {
+      "statementType": "drop_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "urls",
+        "urls_url_index"
+      ],
+      "writes": [
+        "s|idx|public.urls_url_index",
+        "n|idx|public.urls_url_index",
+        "e|idx|public.urls_url_index",
+        "n|rel|public.urls_url_index"
+      ],
+      "reads": [
+        "e|tbl|public.urls",
+        "n|sch|public",
+        "e|col|public.urls.url"
+      ],
+      "sharedWrites": []
+    },
+    {
+      "statementType": "drop_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "visits",
+        "visits_url_short_base64_index"
+      ],
+      "writes": [
+        "s|idx|public.visits_url_short_base64_index",
+        "n|idx|public.visits_url_short_base64_index",
+        "e|idx|public.visits_url_short_base64_index",
+        "n|rel|public.visits_url_short_base64_index"
+      ],
+      "reads": [
+        "e|tbl|public.visits",
+        "n|sch|public",
+        "e|col|public.visits.url_short_base64"
+      ],
+      "sharedWrites": []
+    },
+    {
+      "statementType": "drop_index",
+      "statementTarget": [
+        "index",
+        "public",
+        "visits",
+        "visits_timestamp_index"
+      ],
+      "writes": [
+        "s|idx|public.visits_timestamp_index",
+        "n|idx|public.visits_timestamp_index",
+        "e|idx|public.visits_timestamp_index",
+        "n|rel|public.visits_timestamp_index"
+      ],
+      "reads": [
+        "e|tbl|public.visits",
+        "n|sch|public",
+        "e|col|public.visits.timestamp"
+      ],
+      "sharedWrites": []
+    }
+  ],
+  "deltas": [
+    {
+      "op": "drop",
+      "key": "indexes\u0000[\"public\",\"urls_blocked_index\"]"
+    },
+    {
+      "op": "drop",
+      "key": "indexes\u0000[\"public\",\"urls_url_index\"]"
+    },
+    {
+      "op": "drop",
+      "key": "indexes\u0000[\"public\",\"visits_url_short_base64_index\"]"
+    },
+    {
+      "op": "drop",
+      "key": "indexes\u0000[\"public\",\"visits_timestamp_index\"]"
+    }
+  ]
 }
