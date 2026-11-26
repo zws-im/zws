@@ -274,8 +274,8 @@ importers:
         specifier: 4.6.7
         version: 4.6.7
       zod-openapi:
-        specifier: 6.0.2
-        version: 6.0.2(zod@4.6.7)
+        specifier: 6.0.3
+        version: 6.0.3(zod@4.6.7)
     devDependencies:
       '@nestjs/testing':
         specifier: 12.6.0
@@ -5686,8 +5686,8 @@ packages:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
 
-  zod-openapi@6.0.2:
-    resolution: {integrity: sha512-SwC5Ppi2ov8WimzNWP/XK95VqPyLDzxPYj10HgNPzhZH9gO7zx0sxdYL9eq7wOADHx1JddOApjhYDmMWQvnVnw==}
+  zod-openapi@6.0.3:
+    resolution: {integrity: sha512-eeXaDnKkQoMiDyz3JGZ90ACQt8BZhhT+62/kU2fELNFN50CQu/gXZRMUfpNdcvty3o38koV5U/2Xv3I93dPFGw==}
     engines: {node: '>=22.14.0'}
     peerDependencies:
       zod: ^4.0.0
@@ -11278,7 +11278,7 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.8.0
 
-  zod-openapi@6.0.2(zod@4.6.7):
+  zod-openapi@6.0.3(zod@4.6.7):
     dependencies:
       zod: 4.6.7
 

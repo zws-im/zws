@@ -32,7 +32,7 @@
 		"rxjs": "7.8.2",
 		"superjson": "2.2.7",
 		"zod": "4.6.7",
-		"zod-openapi": "6.0.2"
+		"zod-openapi": "6.0.3"
 	},
 	"devDependencies": {
 		"@nestjs/testing": "12.6.0",
