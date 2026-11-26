@@ -33,7 +33,7 @@
 		"@tanstack/react-query": "5.108.4",
 		"@trpc/client": "11.29.7",
 		"@trpc/tanstack-react-query": "11.29.7",
-		"@types/node": "26.6.6",
+		"@types/node": "26.6.7",
 		"@types/react": "19.3.0",
 		"@types/react-dom": "19.3.0",
 		"@zws.im/api": "workspace:*",
