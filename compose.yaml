@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:18
+    image: postgres:19
     environment:
       POSTGRES_USER: zws
       POSTGRES_PASSWORD: zws
