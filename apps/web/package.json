@@ -31,8 +31,8 @@
 		"@opennextjs/cloudflare": "1.20.19",
 		"@tailwindcss/postcss": "4.3.5",
 		"@tanstack/react-query": "5.108.4",
-		"@trpc/client": "11.29.7",
-		"@trpc/tanstack-react-query": "11.29.7",
+		"@trpc/client": "11.31.8",
+		"@trpc/tanstack-react-query": "11.31.8",
 		"@types/node": "26.6.11",
 		"@types/react": "19.3.3",
 		"@types/react-dom": "19.3.0",
@@ -52,7 +52,7 @@
 		"typescript": "7.0.2"
 	},
 	"devDependencies": {
-		"@trpc/server": "11.29.7",
+		"@trpc/server": "11.31.8",
 		"@tsconfig/next": "2.0.7",
 		"@types/swagger-ui-react": "5.18.0",
 		"miniflare": "5.20261019.0-beta",
